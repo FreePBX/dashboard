@@ -437,7 +437,6 @@ if (!$quietmode) {
 				scheduleInfoUpdate();
 			},
 			error: function(reqObj, status) {
-			alert(status);
 				$('#datavalue_Web_Server').text("ERROR");
 				$('#datavalue_Web_Server').removeClass("graphok");
 				$('#datavalue_Web_Server').addClass("grapherror");
