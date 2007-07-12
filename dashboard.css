@@ -1,0 +1,153 @@
+#dashboard {
+	position:relative;
+}
+
+/* two columns, sizes of each category box */
+#sysinfo-left, #sysinfo-left .infobox {
+	width:400px;
+}
+#sysinfo-right {
+	position:absolute;
+	width:200px;
+	top:0;
+	margin-left:420px;
+}
+#sysinfo-right .infobox {
+	width:200px;
+}
+
+/* main container for each category of items */
+.infobox {
+	border:1px solid black;
+	padding:0 5px 5px 5px;
+	margin-bottom:1em;
+	background:white;
+}
+
+/* headings */
+.infobox h4 {
+	margin-bottom:0;
+	margin-top:5px;
+}
+
+/* main container for each item */
+.databox {
+	position:relative;
+	border:1px solid #ccc;
+	font-size:9pt;
+	margin-top:4px;
+}
+/* height of main container and actual bar graph */
+.databox , .graphbox .bargraph {
+	height:12pt;
+}
+/* positioning of data title  */
+.databox .dataname {
+	position:absolute;
+	top:1pt;
+	left:2px;
+}
+/* positioning of the value shown in boxes */
+.databox .datavalue {
+	position:absolute;
+	top:1pt;
+	right:2px;
+}
+
+/* graph colors */
+.databox .graphok {
+	background:#0d0;
+}
+.databox .graphwarn {
+	background:yellow;
+}
+.databox .grapherror {
+	background:red;
+}
+
+/* modifier for graph* classes, when inside a "status box" */
+.statusbox .datavalue {
+	width:60px;
+	text-align:center;
+	font-weight:Bold;
+}
+
+#sysinfo table th {
+	text-align:right;
+}
+
+
+#syslog ul {
+	list-style-type:none;
+	padding-left:0;
+}
+#syslog ul li {
+	position:relative;
+	padding-left:18px;
+	margin-bottom:0.2em;
+	border-bottom:1px dashed #ccc;
+	margin-top:1px;
+	color:#333;
+}
+#syslog ul li>div {
+    padding-left:2px;
+}
+#syslog ul li .notify_ignore_btn {
+    position:absolute;
+	right:0;
+	top:0;
+}
+#syslog ul li.notify_critical {
+	background-image:url(images/notify_critical.png);
+	background-repeat:no-repeat;
+}
+#syslog ul li.notify_security {
+	background-image:url(images/notify_security.png);
+	background-repeat:no-repeat;
+}
+#syslog ul li.notify_critical>div, #syslog ul li.notify_security>div {
+	background:#F7181C;
+}
+#syslog ul li.notify_update {
+	background-image:url(images/notify_update.png);
+	background-repeat:no-repeat;
+}
+#syslog ul li.notify_error {
+	background-image:url(images/notify_error.png);
+	background-repeat:no-repeat;
+}
+#syslog ul li.notify_warning {
+	background-image:url(images/notify_warning.png);
+	background-repeat:no-repeat;
+}
+#syslog ul li.notify_notice {
+	background-image:url(images/notify_notice.png);
+	background-repeat:no-repeat;
+}
+
+/*
+#syslog .notify_ignore_btn {
+	background-image:url(images/notify_delete.png);
+	background-repeat:no-repeat;
+	width:16px;
+	height:16px;
+	display:inline;
+}
+*/
+
+#syslog h4 {
+	margin:0;
+	font-weight:normal;
+}
+#syslog h4 span {
+	cursor:pointer;
+}
+/* hide details by default */
+#syslog div.syslog_detail {
+	display:none;
+}
+#syslog div.syslog_detail span {
+	font-size:75%;
+	font-style:italic;
+}
+
