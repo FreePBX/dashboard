@@ -32,7 +32,7 @@ define('BAR_WIDTH_RIGHT', 200);
 
 // AJAX update intervals (in seconds)
 define('STATS_UPDATE_TIME', 6); // update interval for system uptime information
-define('INFO_UPDATE_TIME', 60); // update interval for system uptime information
+define('INFO_UPDATE_TIME', 30); // update interval for system uptime information
 
 function draw_graph($text, $real_units, $val, $total = 100, $classes = null, $show_percent = true, $total_width = 200) {
 	if ($classes == null) {
@@ -390,7 +390,7 @@ define("IN_PHPSYSINFO", "1");
 define("APP_ROOT", dirname(__FILE__).'/phpsysinfo');
 include APP_ROOT."/common_functions.php";
 include APP_ROOT."/class.".PHP_OS.".inc.php";
-include dirname(__FILE__)."/json.inc.php";
+include_once "common/json.inc.php";
 include dirname(__FILE__)."/class.astinfo.php";
 include dirname(__FILE__)."/class.average_rate_calculator.php";
 include dirname(__FILE__)."/class.procinfo.php";
@@ -426,6 +426,7 @@ if (!$quietmode) {
 			dataType: 'json',
 			success: function(data) {
 				$('#procinfo').html(data.procinfo);
+				$('#sysinfo').html(data.sysinfo);
 				// only update syslog div if the md5 has changed
 				if (syslog_md5 != data.syslog_md5) {
 					$('#syslog').html(data.syslog);
@@ -442,7 +443,7 @@ if (!$quietmode) {
 		});
 	}
 	function scheduleInfoUpdate() {
-		setTimeout('updateInfo();',10000);
+		setTimeout('updateInfo();',<?php echo INFO_UPDATE_TIME; ?>);
 	}
 	
 	
@@ -452,7 +453,6 @@ if (!$quietmode) {
 			url: "<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=stats", 
 			dataType: 'json',
 			success: function(data) {
-				$('#sysinfo').html(data.sysinfo);
 				$('#sysstats').html(data.sysstats);
 				$('#aststats').html(data.aststats);
 				scheduleStatsUpdate();
@@ -466,7 +466,7 @@ if (!$quietmode) {
 		});
 	}
 	function scheduleStatsUpdate() {
-		setTimeout('updateStats();',5000);
+		setTimeout('updateStats();',<?php echo STATS_UPDATE_TIME; ?>);
 	}
 	
 	
@@ -557,6 +557,7 @@ if (!$quietmode) {
 			echo $json->encode(
 				array(
 					'procinfo'=>show_procinfo(),
+					'sysinfo'=>show_sysinfo(),
 					'syslog'=>show_syslog($syslog_md5),
 					'syslog_md5'=>$syslog_md5,
 				)
@@ -566,7 +567,6 @@ if (!$quietmode) {
 			$json = new Services_JSON();
 			echo $json->encode(
 				array(
-					'sysinfo'=>show_sysinfo(),
 					'sysstats'=>show_sysstats(),
 					'aststats'=>show_aststats(),
 				)
