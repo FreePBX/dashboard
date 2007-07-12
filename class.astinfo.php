@@ -120,7 +120,10 @@ class astinfo {
 		System uptime: 1 week, 4 days, 22 hours, 29 minutes, 21 seconds
 		Last reload: 1 week, 1 day, 6 hours, 14 minutes, 49 seconds
 		*/
-		$output = array();
+		$output = array(
+			'system' => '',
+			'reload' => '',
+		);
 			
 		foreach ($astout as $line) {
 			if (preg_match('/^System uptime: (.*)$/i',$line,$matches)) {

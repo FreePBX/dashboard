@@ -242,6 +242,12 @@ function show_sysinfo() {
 	
 	$out .= '<tr><th>'._('System Uptime').':</th><td>'.time_string($sysinfo->uptime()).'</td></tr>';
 	$ast_uptime = $astinfo->get_uptime();
+	if (empty($ast_uptime['system'])) {
+		$ast_uptime['system'] = time_string(0);
+	}
+	if (empty($ast_uptime['reload'])) {
+		$ast_uptime['reload'] = time_string(0);
+	}
 	$out .= '<tr><th>'._('Asterisk Uptime').':</th><td>'.$ast_uptime['system'].'</td></tr>';
 	$out .= '<tr><th>'._('Last Reload').':</th><td>'.$ast_uptime['reload'].'</td></tr>';
 	
@@ -443,7 +449,7 @@ if (!$quietmode) {
 		});
 	}
 	function scheduleInfoUpdate() {
-		setTimeout('updateInfo();',<?php echo INFO_UPDATE_TIME; ?>);
+		setTimeout('updateInfo();',<?php echo INFO_UPDATE_TIME; ?>000);
 	}
 	
 	
@@ -466,7 +472,7 @@ if (!$quietmode) {
 		});
 	}
 	function scheduleStatsUpdate() {
-		setTimeout('updateStats();',<?php echo STATS_UPDATE_TIME; ?>);
+		setTimeout('updateStats();',<?php echo STATS_UPDATE_TIME; ?>000);
 	}
 	
 	
