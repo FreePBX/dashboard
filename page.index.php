@@ -31,12 +31,6 @@ define('BAR_WIDTH_LEFT', 400);
 define('BAR_WIDTH_RIGHT', 200);
 
 // AJAX update intervals (in seconds)
-define('SYSSTATS_UPDATE_TIME', 5); // update interval for system stats (cpu, memory, etc)
-define('ASTSTATS_UPDATE_TIME', 5); // update interval for asterisk stats (number calls, ..)
-define('SYSINFO_UPDATE_TIME', 60); // update interval for system uptime information
-define('PROCINFO_UPDATE_TIME', 30); // update interval for process information (asterisk, mysql, etc running)
-define('SYSLOG_UPDATE_TIME', 300); // update interval for system uptime information
-
 define('STATS_UPDATE_TIME', 6); // update interval for system uptime information
 define('INFO_UPDATE_TIME', 60); // update interval for system uptime information
 
@@ -403,11 +397,6 @@ if (!$quietmode) {
 	<script language="javascript">
 	$(document).ready(function(){
 		$.ajaxTimeout( 20000 );
-		/*scheduleSysstatsUpdate('', 'start');
-		scheduleAststatsUpdate('', 'start');
-		scheduleProcinfoUpdate('', 'start');
-		scheduleSysinfoUpdate('', 'start');
-		*/
 		scheduleInfoUpdate();
 		scheduleStatsUpdate();
 		
@@ -463,7 +452,7 @@ if (!$quietmode) {
 				$('#datavalue_Web_Server').text("ERROR");
 				$('#datavalue_Web_Server').removeClass("graphok");
 				$('#datavalue_Web_Server').addClass("grapherror");
-				$('#dashboard').prepend('<div class="warning">Warning: Update timed out<br/></div>');
+				$('#syslog').prepend('<div class="warning">Warning: Update timed out<br/></div>');
 			},
 		});
 	}
@@ -471,65 +460,6 @@ if (!$quietmode) {
 		setTimeout('updateStats();',5000);
 	}
 	
-	/*
-	function updateSysstats() {
-		$('#sysstats').load("<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=sysstats", {}, scheduleSysstatsUpdate);
-	}
-	function scheduleSysstatsUpdate(responseText, status) {
-		if (status == 'start' || status == 'success') {
-			setTimeout('updateSysstats();',<?php echo SYSSTATS_UPDATE_TIME; ?>000);
-		} else {
-			//$('#sysstats').prepend('<div class="warning">Warning: Update timed out<br/></div>');
-		}
-	}
-	
-	function updateAststats() {
-		$('#aststats').load("<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=aststats", {}, scheduleAststatsUpdate);
-	}
-	function scheduleAststatsUpdate(responseText, status) {
-		if (status == 'start' || status == 'success') {
-			setTimeout('updateAststats();',<?php echo ASTSTATS_UPDATE_TIME; ?>000);
-		} else {
-			$('#aststats').prepend('<div class="warning">Warning: Update timed out<br/></div>');
-		}
-	}
-	
-	function updateProcinfo() {
-		$('#procinfo').load("<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=procinfo", {}, scheduleProcinfoUpdate);
-	}
-	function scheduleProcinfoUpdate(responseText, status) {
-		if (status == 'start' || status == 'success') {
-			setTimeout('updateProcinfo();', <?php echo PROCINFO_UPDATE_TIME; ?>000);
-		} else {
-			$('#datavalue_Web_Server').text("ERROR");
-			$('#datavalue_Web_Server').removeClass("graphok");
-			$('#datavalue_Web_Server').addClass("grapherror");
-		}
-	}
-	
-	
-	function updateSysinfo() {
-		$('#sysinfo').load("<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=sysinfo", {}, scheduleSysinfoUpdate);
-	}
-	function scheduleSysinfoUpdate(responseText, status) {
-		if (status == 'start' || status == 'success') {
-			setTimeout('updateSysinfo();',<?php echo SYSINFO_UPDATE_TIME; ?>000);
-		} else {
-			//$('#sysinfo').prepend('<div class="warning">Warning: Update timed out<br/></div>');
-		}
-	}
-	
-	function updateSyslog() {
-		$('#syslog').load("<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=syslog", {}, scheduleSyslogUpdate);
-	}
-	function scheduleSyslogUpdate(responseText, status) {
-		if (status == 'start' || status == 'success') {
-			setTimeout('updateSyslog();',<?php echo SYSLOG_UPDATE_TIME; ?>000);
-		} else {
-			//$('#syslog').prepend('<div class="warning">Warning: Update timed out<br/></div>');
-		}
-	}	
-	*/
 	
 	function changeSyslog(showall) {
 		$('#syslog_button').text('<?php echo _('loading...'); ?>');
@@ -540,13 +470,6 @@ if (!$quietmode) {
 	}
 
 	function hide_notification(domid, module, id) {
-	//	$('#'+domid).hide('slow');
-		
-		/*
-		$('#'+domid).animate({backgroundColor:'red'}, 'fast', function() {
-			$('#'+domid).fadeOut();
-		});
-		*/
 		$('#'+domid).fadeOut('slow');
 		$.post('config.php', {display:'<?php echo $module_page; ?>', quietmode:1, info:'syslog_ack', module:module, id:id});
 	}
