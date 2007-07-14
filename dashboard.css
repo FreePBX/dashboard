@@ -92,10 +92,13 @@
 #syslog ul li>div {
     padding-left:2px;
 }
-#syslog ul li .notify_ignore_btn {
+#syslog ul li .notification_buttons {
     position:absolute;
 	right:0;
 	top:0;
+}
+#syslog ul li .notification_buttons a {
+	cursor:pointer;
 }
 #syslog ul li.notify_critical {
 	background-image:url(images/notify_critical.png);

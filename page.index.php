@@ -344,11 +344,18 @@ function show_syslog(&$md5_checksum) {
 			$out .= '><div>';
 			
 			$out .= '<h4 class="syslog_text"><span>'.$item['display_text'].'</span>';
+			$out .= '<div class="notification_buttons">';
+			if (isset($item['candelete']) && $item['candelete']) {
+				$out .= '<a class="notify_ignore_btn" title="'._('Delete this').'" '.
+				        'onclick="delete_notification(\''.$domid.'\', \''.$item['module'].'\', \''.$item['id'].'\');">'.
+				        '<img src="images/cancel.png" width="16" height="16" border="0" alt="'._('Delete this').'" /></a>';
+			}
 			if (!$item['reset']) {
 				$out .= '<a class="notify_ignore_btn" title="'._('Ignore this').'" '.
 				        'onclick="hide_notification(\''.$domid.'\', \''.$item['module'].'\', \''.$item['id'].'\');">'.
 				        '<img src="'.dirname($_SERVER['PHP_SELF']).'/images/notify_delete.png" width="16" height="16" border="0" alt="'._('Ignore this').'" /></a>';
 			}
+			$out .= '</div>';
 			$out .= '</h4>';
 			
 			$out .= '<div class="syslog_detail">';
@@ -386,6 +393,15 @@ function do_syslog_ack() {
 	
 	if (isset($_REQUEST['module']) && $_REQUEST['id']) {
 		$notify->reset($_REQUEST['module'], $_REQUEST['id']);
+	}
+}
+function do_syslog_delete() {	
+	global $db;
+	$notify =& notifications::create($db);
+	
+	if (isset($_REQUEST['module']) && $_REQUEST['id']) {
+	var_dump($_REQUEST);
+		$notify->safe_delete($_REQUEST['module'], $_REQUEST['id']);
 	}
 }
 
@@ -488,6 +504,10 @@ if (!$quietmode) {
 		$('#'+domid).fadeOut('slow');
 		$.post('config.php', {display:'<?php echo $module_page; ?>', quietmode:1, info:'syslog_ack', module:module, id:id});
 	}
+	function delete_notification(domid, module, id) {
+		$('#'+domid).fadeOut('slow');
+		$.post('config.php', {display:'<?php echo $module_page; ?>', quietmode:1, info:'syslog_delete', module:module, id:id});
+	}
 	</script>
 
 	<h2>Dashboard</h2>
@@ -556,7 +576,9 @@ if (!$quietmode) {
 		case 'syslog_ack':
 			do_syslog_ack();
 		break;
-		
+		case 'syslog_delete':
+			do_syslog_delete();
+		break;
 		
 		case 'info':
 			$json = new Services_JSON();
