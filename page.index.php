@@ -156,6 +156,7 @@ function show_sysstats() {
 	global $sysinfo;
 	$out = '';
 	
+	$out .= "<h3>"._("System Statistics")."</h3>";
 	$out .= "<h4>"._("Processor")."</h4>";
 	$loadavg = $sysinfo->loadavg(true);
 	$out .= draw_box(_("Load Average"), $loadavg['avg'][0]);
@@ -211,13 +212,13 @@ function show_aststats() {
 	$classes = array(0=>'graphok');
 	$max_chans = $max_calls * 2;
 	
-	$out .= "<h4>"._("PBX Statistics")."</h4>";
+	$out .= "<h3>"._("FreePBX Statistics")."</h3>";
 	$out .= draw_graph(_('Total active calls'), '', $channels['total_calls'], $max_calls, $classes , false, BAR_WIDTH_LEFT);
 	$out .= draw_graph(_('Internal calls'), '', $channels['internal_calls'], $max_calls, $classes , false, BAR_WIDTH_LEFT);
 	$out .= draw_graph(_('External calls'), '', $channels['external_calls'], $max_calls, $classes , false, BAR_WIDTH_LEFT);
 	$out .= draw_graph(_('Total active channels'), '', $channels['total_channels'], $max_chans, $classes , false, BAR_WIDTH_LEFT);
 	
-	$out .= "<h4>"._("Connections")."</h4>";
+	$out .= "<h3>"._("FreePBX Connections")."</h3>";
 	
 	$peers = $astinfo->get_peers();
 	$out .= draw_graph(_('Phones Online'), '', $peers['sip_online']+$peers['iax2_online'], $peers['sip_total']+$peers['iax2_total'], $classes, false, BAR_WIDTH_LEFT);
@@ -240,6 +241,7 @@ function show_sysinfo() {
 	$out .= '<tr><th>CPU:</th><td>'.$cpu['model'].' '.$cpu['cpuspeed'].'</td></tr>';
 	*/
 	
+	$out .= "<h3>"._("&nbsp ")."</h3>";
 	$out .= '<tr><th>'._('System Uptime').':</th><td>'.time_string($sysinfo->uptime()).'</td></tr>';
 	$ast_uptime = $astinfo->get_uptime();
 	if (empty($ast_uptime['system'])) {
@@ -261,6 +263,7 @@ function show_procinfo() {
 	global $amp_conf;
 	$out = '';
 	
+	$out .= "<h3>"._("Server Status")."</h3>";
 	// asterisk
 	if ($astver = $astinfo->check_asterisk()) {
 		$out .= draw_status_box(_("Asterisk"), "ok", _('Asterisk is running: '.$astver));
@@ -329,6 +332,8 @@ function show_syslog(&$md5_checksum) {
 	$showall = (isset($_SESSION['syslog_showall']) ? $_SESSION['syslog_showall'] : false);
 	
 	$items = $notify->list_all($showall);
+
+	$out .= "<h3>"._("FreePBX Notices")."</h3>";
 	
 	if (count($items)) {
 		$out .= '<ul>';
@@ -510,7 +515,7 @@ if (!$quietmode) {
 	}
 	</script>
 
-	<h2>Dashboard</h2>
+	<h2>FreePBX System Status</h2>
 	</div>
 	<div id="dashboard">
 	<?php
