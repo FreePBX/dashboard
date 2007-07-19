@@ -241,7 +241,7 @@ function show_sysinfo() {
 	$out .= '<tr><th>CPU:</th><td>'.$cpu['model'].' '.$cpu['cpuspeed'].'</td></tr>';
 	*/
 	
-	$out .= "<h3>"._("&nbsp ")."</h3>";
+	$out .= "<h3>"._("&nbsp ")."</h3></br>";
 	$out .= '<tr><th>'._('System Uptime').':</th><td>'.time_string($sysinfo->uptime()).'</td></tr>';
 	$ast_uptime = $astinfo->get_uptime();
 	if (empty($ast_uptime['system'])) {
