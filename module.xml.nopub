@@ -8,7 +8,8 @@
 		Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes.
 	</description>
 	<menuitems>
-		<index>System Dashboard</index>
+		<dashboard1 display="index" type="tool" category="Admin" sort="-10">System Status</dashboard1>
+		<dashboard2 display="index" type="setup" category="Admin" sort="-10">System Status</dashboard2>
 	</menuitems>
 	<depends>
 		<version>2.3.0beta2</version>
