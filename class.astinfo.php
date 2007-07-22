@@ -39,7 +39,15 @@ class astinfo {
 		$response = $this->astman->send_request('Command',array('Command'=>"sip show peers"));
 		$astout = explode("\n",$response['data']);
 		
-		$return = array();
+		$return = array(
+			'sip_total' => 0,
+			'sip_online' => 0,
+			'sip_offline' => 0,
+			'iax2_total' => 0,
+			'iax2_online' => 0,
+			'iax2_offline' => 0,
+			'iax2_unmonitored' => 0
+		);
 		
 		foreach ($astout as $line) {
 			if (preg_match('/(\d+) sip peers? \[(\d+) online.*(\d+) offline/i', $line, $matches)) {
