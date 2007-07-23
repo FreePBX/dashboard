@@ -34,6 +34,18 @@ define('BAR_WIDTH_RIGHT', 200);
 define('STATS_UPDATE_TIME', 6); // update interval for system uptime information
 define('INFO_UPDATE_TIME', 30); // update interval for system uptime information
 
+/** draw_graph
+ *  draw a bar graph
+ *
+ *  $text         Title of text
+ *  $real_units   Units to display
+ *  $val          Value to graph
+ *  $total        Total of graph
+ *  $classes      CSS classes to use based on value percent
+ *  $show_percent If results should be shown as percent
+ *  $total_width  Width of graph
+ */
+
 function draw_graph($text, $real_units, $val, $total = 100, $classes = null, $show_percent = true, $total_width = 200) {
 	if ($classes == null) {
 		$classes = array(
@@ -42,10 +54,14 @@ function draw_graph($text, $real_units, $val, $total = 100, $classes = null, $sh
 			90=>'grapherror',
 		);
 	}
+
+	$clean_val = preg_replace("/[^0-9\.]*/","",$val);
+	$clean_val = $val;
+
 	if ($total == 0) {
-		$percent = ($val == 0) ? 0 : 100;
+		$percent = ($clean_val == 0) ? 0 : 100;
 	} else {
-		$percent = round($val/$total*100);
+		$percent = round($clean_val/$total*100);
 	}
 	
 	$graph_class = false;
@@ -165,12 +181,12 @@ function show_sysstats() {
 	$out .= "<h4>"._("Memory")."</h4>";
 	$memory = $sysinfo->memory();
 	$app_memory = isset($memory["ram"]["app"]) ? $memory["ram"]["app"] : $memory["ram"]["total"] - $memory["ram"]["t_free"];
-	$out .= draw_graph(_("App Memory"), "MB", number_format($app_memory/1024,2), number_format($memory["ram"]["total"]/1024,2));
-	$out .= draw_graph(_("Swap"), "MB", number_format(($memory["swap"]["total"]-$memory["swap"]["free"])/1024,2), number_format($memory["swap"]["total"]/1024,2));
+	$out .= draw_graph(_("App Memory"), "MB", number_format($app_memory/1024,2), $memory["ram"]["total"]/1024);
+	$out .= draw_graph(_("Swap"), "MB", number_format(($memory["swap"]["total"]-$memory["swap"]["free"])/1024,2), $memory["swap"]["total"]/1024);
 	
 	$out .= "<h4>"._("Disks")."</h4>";
 	foreach ($sysinfo->filesystems() as $fs) {	
-		$out .= draw_graph($fs["mount"], "GB", number_format($fs["used"]/1024/1024, 2), number_format($fs["size"]/1024/1024, 2));
+		$out .= draw_graph($fs["mount"], "GB", number_format($fs["used"]/1024/1024, 2), $fs["size"]/1024/1024);
 	}
 	
 	$out .= "<h4>"._("Networks")."</h4>";

@@ -1,7 +1,7 @@
 <module>
 	<rawname>dashboard</rawname>
 	<name>System Dashboard</name>
-	<version>0.2.2</version>
+	<version>0.2.3</version>
 	<candisable>no</candisable>
 	<type>tool</type>
 	<category>Basic</category>
@@ -16,6 +16,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*0.2.3* #2133 fixed number format error resulting in bogus percentage displays
 		*0.2.2* #2131 fix Undefined Index warnings
 		*0.2.1* make module permanent, should not be able to disable
 		*0.2.0* Add real-time updates
