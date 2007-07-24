@@ -23,7 +23,7 @@
 		*0.2.0* Add real-time updates
 		*0.1.0* Initial release
 	</changelog>
-	<location>release/2.3/dashboard-0.2.3.tgz</location>
+	<location>release/2.3/dashboard-0.2.4.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-SystemInfo</info>
-	<md5sum>5d2ab8425e7bfc1bfd82b206355175e8</md5sum>
+	<md5sum>b62663165fa858c225a6008f8ab5ec9d</md5sum>
 </module>
