@@ -51,9 +51,21 @@ class astinfo {
 		
 		foreach ($astout as $line) {
 			if (preg_match('/(\d+) sip peers? \[(\d+) online.*(\d+) offline/i', $line, $matches)) {
+				// ast 1.2
 				$return['sip_total'] = $matches[1];
 				$return['sip_online'] = $matches[2];
 				$return['sip_offline'] = $matches[3];
+			} else if (preg_match('/(\d+) sip peers? \[Monitored.*(\d+) online.*(\d+) offline.*Unmonitored.*(\d+) online.*(\d+) offline/', $line, $matches)) {
+				// asterisk 1.4
+				// 2 sip peers [Monitored: 1 online, 1 offline Unmonitored: 0 online, 0 offline]
+				$return['sip_total'] = $matches[1];
+				$return['sip_online'] = $matches[2] + $matches[4];
+				$return['sip_offline'] = $matches[3] + $matches[5]; 
+				
+				$return['sip_online_monitored'] = $matches[2];
+				$return['sip_offline_monitored'] = $matches[3];
+				$return['sip_online_unmonitored'] = $matches[4];
+				$return['sip_offline_unmonitored'] = $matches[5];
 			}
 		}
 		
