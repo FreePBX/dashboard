@@ -56,7 +56,6 @@ function draw_graph($text, $real_units, $val, $total = 100, $classes = null, $sh
 	}
 
 	$clean_val = preg_replace("/[^0-9\.]*/","",$val);
-	$clean_val = $val;
 
 	if ($total == 0) {
 		$percent = ($clean_val == 0) ? 0 : 100;
@@ -437,6 +436,10 @@ include_once "common/json.inc.php";
 include dirname(__FILE__)."/class.astinfo.php";
 include dirname(__FILE__)."/class.average_rate_calculator.php";
 include dirname(__FILE__)."/class.procinfo.php";
+include dirname(__FILE__)."/class.error.inc.php";
+
+$error = new Error;
+
 
 $sysinfo = new sysinfo;
 $astinfo = new astinfo($astman);
@@ -573,6 +576,14 @@ if (!$quietmode) {
 	echo '</div></div>'; // #sysinfo, #sysinfo-right
 	
 	echo '<div class="content">';
+
+	if( $error->ErrorsExist() ) {
+		$fh = fopen("/tmp/dashboard-error.log","a");
+		fwrite($fh, $error->ErrorsAsText());
+		fclose($fh);
+	}           
+
+
 } else {
 	// Handle AJAX updates
 	

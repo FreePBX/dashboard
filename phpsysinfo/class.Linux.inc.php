@@ -474,7 +474,14 @@ class sysinfo {
       $results['ram']['t_used'] = $results['ram']['total'] - $results['ram']['t_free'];
       $results['ram']['percent'] = round(($results['ram']['t_used'] * 100) / $results['ram']['total']);
       $results['swap']['used'] = $results['swap']['total'] - $results['swap']['free'];
-      $results['swap']['percent'] = round(($results['swap']['used'] * 100) / $results['swap']['total']);
+
+			// If no swap, avoid divide by 0
+			//
+			if ($results['swap']['total']) {
+      	$results['swap']['percent'] = round(($results['swap']['used'] * 100) / $results['swap']['total']);
+			} else {
+      	$results['swap']['percent'] = 0;
+			}
       
       // values for splitting memory usage
       if (isset($results['ram']['cached']) && isset($results['ram']['buffers'])) {
