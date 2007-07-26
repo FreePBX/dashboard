@@ -447,68 +447,68 @@ class sysinfo {
     return $results;
   } 
 
-  function memory () {
-    $results['ram'] = array();
-    $results['swap'] = array();
-    $results['devswap'] = array();
+	function memory () {
+		$results['ram'] = array();
+		$results['swap'] = array();
+		$results['devswap'] = array();
 
-    $bufr = rfts( '/proc/meminfo' );
-    if ( $bufr != "ERROR" ) {
-      $bufe = explode("\n", $bufr);
-      foreach( $bufe as $buf ) {
-        if (preg_match('/^MemTotal:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
-          $results['ram']['total'] = $ar_buf[1];
-        } else if (preg_match('/^MemFree:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
-          $results['ram']['t_free'] = $ar_buf[1];
-        } else if (preg_match('/^Cached:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
-          $results['ram']['cached'] = $ar_buf[1];
-        } else if (preg_match('/^Buffers:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
-          $results['ram']['buffers'] = $ar_buf[1];
-        } else if (preg_match('/^SwapTotal:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
-          $results['swap']['total'] = $ar_buf[1];
-        } else if (preg_match('/^SwapFree:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
-          $results['swap']['free'] = $ar_buf[1];
-        } 
-      } 
+		$bufr = rfts( '/proc/meminfo' );
+		if ( $bufr != "ERROR" ) {
+			$bufe = explode("\n", $bufr);
+			foreach( $bufe as $buf ) {
+				if (preg_match('/^MemTotal:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
+					$results['ram']['total'] = $ar_buf[1];
+				} else if (preg_match('/^MemFree:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
+					$results['ram']['t_free'] = $ar_buf[1];
+				} else if (preg_match('/^Cached:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
+					$results['ram']['cached'] = $ar_buf[1];
+				} else if (preg_match('/^Buffers:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
+					$results['ram']['buffers'] = $ar_buf[1];
+				} else if (preg_match('/^SwapTotal:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
+					$results['swap']['total'] = $ar_buf[1];
+				} else if (preg_match('/^SwapFree:\s+(.*)\s*kB/i', $buf, $ar_buf)) {
+					$results['swap']['free'] = $ar_buf[1];
+				} 
+			} 
 
-      $results['ram']['t_used'] = $results['ram']['total'] - $results['ram']['t_free'];
-      $results['ram']['percent'] = round(($results['ram']['t_used'] * 100) / $results['ram']['total']);
-      $results['swap']['used'] = $results['swap']['total'] - $results['swap']['free'];
+			$results['ram']['t_used'] = $results['ram']['total'] - $results['ram']['t_free'];
+			$results['ram']['percent'] = round(($results['ram']['t_used'] * 100) / $results['ram']['total']);
+			$results['swap']['used'] = $results['swap']['total'] - $results['swap']['free'];
 
 			// If no swap, avoid divide by 0
 			//
-			if ($results['swap']['total']) {
-      	$results['swap']['percent'] = round(($results['swap']['used'] * 100) / $results['swap']['total']);
+			if (trim($results['swap']['total'])) {
+				$results['swap']['percent'] = round(($results['swap']['used'] * 100) / $results['swap']['total']);
 			} else {
-      	$results['swap']['percent'] = 0;
+				$results['swap']['percent'] = 0;
 			}
       
-      // values for splitting memory usage
-      if (isset($results['ram']['cached']) && isset($results['ram']['buffers'])) {
-        $results['ram']['app'] = $results['ram']['t_used'] - $results['ram']['cached'] - $results['ram']['buffers'];
-	$results['ram']['app_percent'] = round(($results['ram']['app'] * 100) / $results['ram']['total']);
-	$results['ram']['buffers_percent'] = round(($results['ram']['buffers'] * 100) / $results['ram']['total']);
-	$results['ram']['cached_percent'] = round(($results['ram']['cached'] * 100) / $results['ram']['total']);
-      }
+			// values for splitting memory usage
+			if (isset($results['ram']['cached']) && isset($results['ram']['buffers'])) {
+				$results['ram']['app'] = $results['ram']['t_used'] - $results['ram']['cached'] - $results['ram']['buffers'];
+				$results['ram']['app_percent'] = round(($results['ram']['app'] * 100) / $results['ram']['total']);
+				$results['ram']['buffers_percent'] = round(($results['ram']['buffers'] * 100) / $results['ram']['total']);
+				$results['ram']['cached_percent'] = round(($results['ram']['cached'] * 100) / $results['ram']['total']);
+			}
 
-      $bufr = rfts( '/proc/swaps' );
-      if ( $bufr != "ERROR" ) {
-        $swaps = explode("\n", $bufr);
-        for ($i = 1; $i < (sizeof($swaps)); $i++) {
-	  if( trim( $swaps[$i] ) != "" ) {
-            $ar_buf = preg_split('/\s+/', $swaps[$i], 6);
-            $results['devswap'][$i - 1] = array();
-            $results['devswap'][$i - 1]['dev'] = $ar_buf[0];
-            $results['devswap'][$i - 1]['total'] = $ar_buf[2];
-            $results['devswap'][$i - 1]['used'] = $ar_buf[3];
-            $results['devswap'][$i - 1]['free'] = ($results['devswap'][$i - 1]['total'] - $results['devswap'][$i - 1]['used']);
-            $results['devswap'][$i - 1]['percent'] = round(($ar_buf[3] * 100) / $ar_buf[2]);
-	  }
-        } 
-      }
-    }
-    return $results;
-  } 
+			$bufr = rfts( '/proc/swaps' );
+			if ( $bufr != "ERROR" ) {
+				$swaps = explode("\n", $bufr);
+				for ($i = 1; $i < (sizeof($swaps)); $i++) {
+					if( trim( $swaps[$i] ) != "" ) {
+						$ar_buf = preg_split('/\s+/', $swaps[$i], 6);
+						$results['devswap'][$i - 1] = array();
+						$results['devswap'][$i - 1]['dev'] = $ar_buf[0];
+						$results['devswap'][$i - 1]['total'] = $ar_buf[2];
+						$results['devswap'][$i - 1]['used'] = $ar_buf[3];
+						$results['devswap'][$i - 1]['free'] = ($results['devswap'][$i - 1]['total'] - $results['devswap'][$i - 1]['used']);
+						$results['devswap'][$i - 1]['percent'] = round(($ar_buf[3] * 100) / $ar_buf[2]);
+					}
+				}
+			}
+		}
+		return $results;
+	} 
 
   function filesystems () {
     return $this->parser->parse_filesystems();

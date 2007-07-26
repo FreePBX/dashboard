@@ -291,35 +291,34 @@ function finddups( $arrInput ) {
 }
 
 function rfts( $strFileName, $intLines = 0, $intBytes = 4096, $booErrorRep = true ) {
-  global $error;
-  $strFile = "";
-  $intCurLine = 1;
+	global $error;
+	$strFile = "";
+	$intCurLine = 1;
   
-  if( file_exists( $strFileName ) ) {
-    if( $fd = fopen( $strFileName, 'r' ) ) {
-      while( !feof( $fd ) ) {
-        $strFile .= fgets( $fd, $intBytes );
-	if( $intLines <= $intCurLine && $intLines != 0 ) {
-	  break;
+	if( file_exists( $strFileName ) ) {
+		if( $fd = fopen( $strFileName, 'r' ) ) {
+			while( !feof( $fd ) ) {
+				$strFile .= fgets( $fd, $intBytes );
+				if( $intLines <= $intCurLine && $intLines != 0 ) {
+					break;
+				} else {
+					$intCurLine++;
+				}
+			}
+			fclose( $fd );
+		} else {
+			if( $booErrorRep ) {
+				$error->addError( 'fopen(' . $strFileName . ')', 'file can not read by phpsysinfo', __LINE__, __FILE__ );
+			}
+		return "ERROR";
+    }
 	} else {
-	  $intCurLine++;
+		if( $booErrorRep ) {
+			$error->addError( 'file_exists(' . $strFileName . ')', 'the file does not exist on your machine', __LINE__, __FILE__ );
+		}
+		return "ERROR";
 	}
-      }
-      fclose( $fd );
-    } else {
-      if( $booErrorRep ) {
-        $error->addError( 'fopen(' . $strFileName . ')', 'file can not read by phpsysinfo', __LINE__, __FILE__ );
-      }
-      return "ERROR";
-    }
-  } else {
-    if( $booErrorRep ) {
-      $error->addError( 'file_exists(' . $strFileName . ')', 'the file does not exist on your machine', __LINE__, __FILE__ );
-    }
-    return "ERROR";
-  }
-
-  return $strFile;
+	return $strFile;
 }
 
 function gdc( $strPath, $booErrorRep = true ) {
