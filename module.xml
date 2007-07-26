@@ -1,7 +1,7 @@
 <module>
 	<rawname>dashboard</rawname>
 	<name>System Dashboard</name>
-	<version>0.2.4</version>
+	<version>0.2.5</version>
 	<candisable>no</candisable>
 	<type>tool</type>
 	<category>Basic</category>
@@ -16,14 +16,15 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
-		*0.2.3* #2133 again, #2140 divide by 0, #2141 with temp log to determine real issue
+		*0.2.5* #2142 fix online phones for Asterisk 1.4 format, #2140 divide by 0 again
+		*0.2.4* #2133 again, #2140 divide by 0, #2141 with temp log to determine real issue
 		*0.2.3* #2133 fixed number format error resulting in bogus percentage displays
 		*0.2.2* #2131 fix Undefined Index warnings
 		*0.2.1* make module permanent, should not be able to disable
 		*0.2.0* Add real-time updates
 		*0.1.0* Initial release
 	</changelog>
-	<location>release/2.3/dashboard-0.2.4.tgz</location>
+	<location>release/2.3/dashboard-0.2.5.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-SystemInfo</info>
-	<md5sum>b62663165fa858c225a6008f8ab5ec9d</md5sum>
+	<md5sum>f10a14a3e857a896c73860ed976b1b08</md5sum>
 </module>
