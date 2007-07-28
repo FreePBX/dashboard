@@ -11,6 +11,7 @@
 //MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //GNU General Public License for more details.
 
+$dashboard_debug = false;
 
 $dispnum = 'sysinfo'; //used for switch on config.php
 $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
@@ -577,12 +578,11 @@ if (!$quietmode) {
 	
 	echo '<div class="content">';
 
-	if( $error->ErrorsExist() ) {
-		$fh = fopen("/tmp/dashboard-error.log","a");
+	if($dashboard_debug && $error->ErrorsExist()) {
+		$fh = fopen($amp_conf['ASTLOGDIR']."/dashboard-error.log","a");
 		fwrite($fh, $error->ErrorsAsText());
 		fclose($fh);
 	}           
-
 
 } else {
 	// Handle AJAX updates
