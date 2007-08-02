@@ -8,6 +8,14 @@ class astinfo {
 	}
 	
 	function get_channel_totals() {
+		if (!$this->astman) {
+			return array(
+				'external_calls'=>0,
+				'internal_calls'=>0,
+				'total_calls'=>0,
+				'total_channels'=>0,
+			);
+		}
 		$response = $this->astman->send_request('Command',array('Command'=>"show channels"));
 		$astout = explode("\n",$response['data']);
 		
@@ -36,18 +44,27 @@ class astinfo {
 	}
 	
 	function get_peers() {
-		$response = $this->astman->send_request('Command',array('Command'=>"sip show peers"));
-		$astout = explode("\n",$response['data']);
 		
 		$return = array(
 			'sip_total' => 0,
 			'sip_online' => 0,
 			'sip_offline' => 0,
+			'sip_online_monitored' => 0,
+			'sip_offline_monitored' => 0,
+			'sip_online_unmonitored' => 0,
+			'sip_offline_unmonitored' => 0,
 			'iax2_total' => 0,
 			'iax2_online' => 0,
 			'iax2_offline' => 0,
 			'iax2_unmonitored' => 0
 		);
+
+		if (!$this->astman) {
+			return $return;
+		}
+
+		$response = $this->astman->send_request('Command',array('Command'=>"sip show peers"));
+		$astout = explode("\n",$response['data']);
 		
 		foreach ($astout as $line) {
 			if (preg_match('/(\d+) sip peers? \[(\d+) online.*(\d+) offline/i', $line, $matches)) {
@@ -95,7 +112,13 @@ class astinfo {
 			'sip_total' => 0,
 			'iax2_registered' => 0,
 			'iax2_total' => 0,
+			'registered' => 0,
+			'total' => 0,
 		);
+
+		if (!$this->astman) {
+			return $return;
+		}
 		
 		$response = $this->astman->send_request('Command',array('Command'=>"sip show registry"));
 		$astout = explode("\n",$response['data']);
@@ -134,8 +157,6 @@ class astinfo {
 	}
 	
 	function get_uptime() {
-		$response = $this->astman->send_request('Command',array('Command'=>"show uptime"));
-		$astout = explode("\n",$response['data']);
 		/*
 		System uptime: 1 week, 4 days, 22 hours, 29 minutes, 21 seconds
 		Last reload: 1 week, 1 day, 6 hours, 14 minutes, 49 seconds
@@ -144,6 +165,13 @@ class astinfo {
 			'system' => '',
 			'reload' => '',
 		);
+
+		if (!$this->astman) {
+			return $output;
+		}
+
+		$response = $this->astman->send_request('Command',array('Command'=>"show uptime"));
+		$astout = explode("\n",$response['data']);
 			
 		foreach ($astout as $line) {
 			if (preg_match('/^System uptime: (.*)$/i',$line,$matches)) {
@@ -157,6 +185,9 @@ class astinfo {
 	}
 	
 	function check_asterisk() {
+		if (!$this->astman) {
+			return false;
+		}
 		$response = $this->astman->send_request('Command',array('Command'=>"show version"));
 		$astout = explode("\n",$response['data']);
 		
