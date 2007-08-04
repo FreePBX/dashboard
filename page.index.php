@@ -519,7 +519,6 @@ if (!$quietmode) {
 	
 	function changeSyslog(showall) {
 		$('#syslog_button').text('<?php echo _('loading...'); ?>');
-		$('#syslog ul').animate({color:'#ccc'}, 'fast');
 		$('#syslog').load("<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=syslog&showall="+showall,{}, function() {
 			makeSyslogClickable();
 		});
