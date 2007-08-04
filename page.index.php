@@ -237,7 +237,7 @@ function show_aststats() {
 	$out .= "<h3>"._("FreePBX Connections")."</h3>";
 	
 	$peers = $astinfo->get_peers();
-	$out .= draw_graph(_('Phones Online'), '', $peers['sip_online']+$peers['iax2_online'], $peers['sip_total']+$peers['iax2_total'], $classes, false, BAR_WIDTH_LEFT);
+	$out .= draw_graph(_('IP Phones Online'), '', $peers['sip_online']+$peers['iax2_online'], $peers['sip_total']+$peers['iax2_total'], $classes, false, BAR_WIDTH_LEFT);
 	
 	$regs = $astinfo->get_registrations();
 	if ($regs['total'] > 0) {

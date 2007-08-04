@@ -1,7 +1,7 @@
 <module>
 	<rawname>dashboard</rawname>
 	<name>System Dashboard</name>
-	<version>0.2.5.2</version>
+	<version>0.2.5.3</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>tool</type>
@@ -17,6 +17,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*0.2.5.3* remove deprecated javascript call
 		*0.2.5.2* #2194 don't fail when Asterisk is not running
 		*0.2.5.1* disable debug logging, make uninstallable
 		*0.2.5* #2142 fix online phones for Asterisk 1.4 format, #2140 divide by 0 again
