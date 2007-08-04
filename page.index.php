@@ -217,7 +217,13 @@ function show_aststats() {
 	// guess at the max calls: number of users
 	if (!isset($_SESSION["calculated_max_calls"])) {
 		// set max calls to either MAXCALLS in amportal.conf, or the number of users in the system
-		$_SESSION["calculated_max_calls"] = (isset($amp_conf["MAXCALLS"]) ? $amp_conf["MAXCALLS"] : count(core_users_list()));
+		if (isset($amp_conf['MAXCALLS'])) {
+			$_SESSION["calculated_max_calls"] = $amp_conf["MAXCALLS"];
+		} else if (function_exists('core_users_list')) {
+			$_SESSION["calculated_max_calls"] = count(core_users_list());
+		} else {
+			$_SESSION["calculated_max_calls"] = 1;
+		}
 	}
 	// we currently see more calls than we guessed, increase it
 	if ($channels['total_calls'] > $_SESSION["calculated_max_calls"]) {
