@@ -10,13 +10,14 @@
 		Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes.
 	</description>
 	<menuitems>
-		<dashboard1 display="index" type="tool" category="Admin" sort="-10">FreePBX System Status</dashboard1>
-		<dashboard2 display="index" type="setup" category="Admin" sort="-10">FreePBX System Status</dashboard2>
+		<dashboard1 display="index" type="tool" category="Admin" sort="-10" access="all">FreePBX System Status</dashboard1>
+		<dashboard2 display="index" type="setup" category="Admin" sort="-10" access="all">FreePBX System Status</dashboard2>
 	</menuitems>
 	<depends>
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*0.2.5.4* make always accessible even in database mode, fix minor javascript bug
 		*0.2.5.3* remove deprecated javascript call
 		*0.2.5.2* #2194 don't fail when Asterisk is not running
 		*0.2.5.1* disable debug logging, make uninstallable
