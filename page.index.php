@@ -492,7 +492,7 @@ if (!$quietmode) {
 				$('#datavalue_Web_Server').text("ERROR");
 				$('#datavalue_Web_Server').removeClass("graphok");
 				$('#datavalue_Web_Server').addClass("grapherror");
-			},
+			}
 		});
 	}
 	function scheduleInfoUpdate() {
@@ -515,7 +515,7 @@ if (!$quietmode) {
 				$('#datavalue_Web_Server').removeClass("graphok");
 				$('#datavalue_Web_Server').addClass("grapherror");
 				$('#syslog').prepend('<div class="warning">Warning: Update timed out<br/></div>');
-			},
+			}
 		});
 	}
 	function scheduleStatsUpdate() {
