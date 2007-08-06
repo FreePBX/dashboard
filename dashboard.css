@@ -29,7 +29,7 @@
 
 /* headings */
 .infobox h4 , .infobox h3 {
-	margin-bottom:0;
+	margin-bottom:8px;
 	margin-top:5px;
 }
 .infobox h3 {
@@ -88,10 +88,10 @@
 #syslog ul {
 	list-style-type:none;
 	padding-left:0;
+	margin:0;
 }
 #syslog ul li {
 	position:relative;
-	padding-left:18px;
 	margin-bottom:0.2em;
 	border-bottom:1px dashed #ccc;
 	margin-top:1px;
@@ -108,14 +108,6 @@
 #syslog ul li .notification_buttons a {
 	cursor:pointer;
 }
-#syslog ul li.notify_critical {
-	background-image:url(images/notify_critical.png);
-	background-repeat:no-repeat;
-}
-#syslog ul li.notify_security {
-	background-image:url(images/notify_security.png);
-	background-repeat:no-repeat;
-}
 #syslog ul li.notify_critical>div, #syslog ul li.notify_security>div {
 	/*background:#F7181C;*/
 	background:#f6921d;
@@ -123,22 +115,7 @@
 #syslog ul li.notify_critical h4, #syslog ul li.notify_security h4 {
 	color:white;
 }
-#syslog ul li.notify_update {
-	background-image:url(images/notify_update.png);
-	background-repeat:no-repeat;
-}
-#syslog ul li.notify_error {
-	background-image:url(images/notify_error.png);
-	background-repeat:no-repeat;
-}
-#syslog ul li.notify_warning {
-	background-image:url(images/notify_warning.png);
-	background-repeat:no-repeat;
-}
-#syslog ul li.notify_notice {
-	background-image:url(images/notify_notice.png);
-	background-repeat:no-repeat;
-}
+/*
 
 /*
 #syslog .notify_ignore_btn {

@@ -265,7 +265,8 @@ function show_aststats() {
 function show_sysinfo() {
 	global $sysinfo;
 	global $astinfo;
-	$out = '<table>';
+	$out = "<h3>"._("&nbsp ")."</h3></br>";
+	$out .= '<table>';
 	/*
 	$out .= '<tr><th>Distro:</th><td>'.$sysinfo->distro().'</td></tr>';
 	$out .= '<tr><th>Kernel:</th><td>'.$sysinfo->kernel().'</td></tr>';
@@ -273,7 +274,6 @@ function show_sysinfo() {
 	$out .= '<tr><th>CPU:</th><td>'.$cpu['model'].' '.$cpu['cpuspeed'].'</td></tr>';
 	*/
 	
-	$out .= "<h3>"._("&nbsp ")."</h3></br>";
 	$out .= '<tr><th>'._('System Uptime').':</th><td>'.time_string($sysinfo->uptime()).'</td></tr>';
 	$ast_uptime = $astinfo->get_uptime();
 	if (empty($ast_uptime['system'])) {
@@ -349,14 +349,23 @@ function show_syslog(&$md5_checksum) {
 	global $db;
 	$out = '';
 	$checksum = '';
-	
-	$notify_classes = array(
+
+	// notify_classes are also used as the image names
+	$notify_classes = array( 
 		NOTIFICATION_TYPE_CRITICAL => 'notify_critical',
 		NOTIFICATION_TYPE_SECURITY => 'notify_security',
 		NOTIFICATION_TYPE_UPDATE => 'notify_update',
 		NOTIFICATION_TYPE_ERROR => 'notify_error',
 		NOTIFICATION_TYPE_WARNING => 'notify_warning',
 		NOTIFICATION_TYPE_NOTICE => 'notify_notice',
+	);
+	$notify_descriptions = array(
+		NOTIFICATION_TYPE_CRITICAL => _('Critical Error'),
+		NOTIFICATION_TYPE_SECURITY => _('Security Update'),
+		NOTIFICATION_TYPE_UPDATE => _('Update'),
+		NOTIFICATION_TYPE_ERROR => _('Error'),
+		NOTIFICATION_TYPE_WARNING => _('Warning'),
+		NOTIFICATION_TYPE_NOTICE => _('Notice'),
 	);
 	
 	$notify =& notifications::create($db);
@@ -379,8 +388,10 @@ function show_syslog(&$md5_checksum) {
 				$out .= ' class="'.$notify_classes[$item['level']].'"';
 			}
 			$out .= '><div>';
-			
-			$out .= '<h4 class="syslog_text"><span>'.$item['display_text'].'</span>';
+
+			$out .= '<h4 class="syslog_text">';
+			$out .= '<img src="images/'.$notify_classes[$item['level']].'" alt="'.$notify_descriptions[$item['level']].'" title="'.$notify_descriptions[$item['level']].'" width="16" height="16" border="0" />&nbsp;';
+			$out .= '<span>'.$item['display_text'].'</span>';
 			$out .= '<div class="notification_buttons">';
 			if (isset($item['candelete']) && $item['candelete']) {
 				$out .= '<a class="notify_ignore_btn" title="'._('Delete this').'" '.
