@@ -390,8 +390,8 @@ function show_syslog(&$md5_checksum) {
 			$out .= '><div>';
 
 			$out .= '<h4 class="syslog_text">';
-			$out .= '<img src="images/'.$notify_classes[$item['level']].'" alt="'.$notify_descriptions[$item['level']].'" title="'.$notify_descriptions[$item['level']].'" width="16" height="16" border="0" />&nbsp;';
-			$out .= '<span>'.$item['display_text'].'</span>';
+			$out .= '<span><img src="images/'.$notify_classes[$item['level']].'" alt="'.$notify_descriptions[$item['level']].'" title="'.$notify_descriptions[$item['level']].'" width="16" height="16" border="0" />&nbsp;';
+			$out .= $item['display_text'].'</span>';
 			$out .= '<div class="notification_buttons">';
 			if (isset($item['candelete']) && $item['candelete']) {
 				$out .= '<a class="notify_ignore_btn" title="'._('Delete this').'" '.
