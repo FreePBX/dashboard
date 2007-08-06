@@ -160,9 +160,11 @@
 /* hide details by default */
 #syslog div.syslog_detail {
 	display:none;
+	font-size:75%;
+	height:7em;
+	overflow:auto;
 }
 #syslog div.syslog_detail span {
-	font-size:75%;
 	font-style:italic;
 }
 
