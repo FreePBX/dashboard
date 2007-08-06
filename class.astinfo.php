@@ -110,15 +110,17 @@ class astinfo {
 		$astout = explode("\n",$response['data']);
 		$pos = false;
 		foreach ($astout as $line) {
-			if ($pos===false) {
-				// find the position of "State" in the first line
-				$pos = strpos($line,"State");
-			} else {
-				// subsequent lines, check if it syas "Registered" at that position
-				if (substr($line,$pos,10) == "Registered") {
-					$return['sip_registrations_online']++;
+			if (trim($line) != '') {
+				if ($pos===false) {
+					// find the position of "State" in the first line
+					$pos = strpos($line,"State");
 				} else {
-					$return['sip_registrations_offline']++;
+					// subsequent lines, check if it syas "Registered" at that position
+					if (substr($line,$pos,10) == "Registered") {
+						$return['sip_registrations_online']++;
+					} else {
+						$return['sip_registrations_offline']++;
+					}
 				}
 			}
 		}
@@ -148,15 +150,17 @@ class astinfo {
 		$astout = explode("\n",$response['data']);
 		$pos = false;
 		foreach ($astout as $line) {
-			if ($pos===false) {
-				// find the position of "State" in the first line
-				$pos = strpos($line,"State");
-			} else {
-				// subsequent lines, check if it syas "Registered" at that position
-				if (substr($line,$pos,10) == "Registered") {
-					$return['sip_registrations_online']++;
+			if (trim($line) != '') {
+				if ($pos===false) {
+					// find the position of "State" in the first line
+					$pos = strpos($line,"State");
 				} else {
-					$return['sip_registrations_offline']++;
+					// subsequent lines, check if it syas "Registered" at that position
+					if (substr($line,$pos,10) == "Registered") {
+						$return['sip_registrations_online']++;
+					} else {
+						$return['sip_registrations_offline']++;
+					}
 				}
 			}
 		}
