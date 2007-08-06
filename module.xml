@@ -1,7 +1,7 @@
 <module>
 	<rawname>dashboard</rawname>
 	<name>System Dashboard</name>
-	<version>0.2.5.3</version>
+	<version>0.3</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>tool</type>
@@ -17,6 +17,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*0.3* Show IP phones and trunks separately (#2209)
 		*0.2.5.4* make always accessible even in database mode, fix minor javascript bug
 		*0.2.5.3* remove deprecated javascript call
 		*0.2.5.2* #2194 don't fail when Asterisk is not running
@@ -29,7 +30,7 @@
 		*0.2.0* Add real-time updates
 		*0.1.0* Initial release
 	</changelog>
-	<location>release/2.3/dashboard-0.2.5.3.tgz</location>
+	<location>release/2.3/dashboard-0.3.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-SystemInfo</info>
-	<md5sum>67388d9f0d860dc2856253259e8e2d06</md5sum>
+	<md5sum>9f51814efc84c8616fbf02188b75d4f1</md5sum>
 </module>
