@@ -242,13 +242,23 @@ function show_aststats() {
 	
 	$out .= "<h3>"._("FreePBX Connections")."</h3>";
 	
-	$peers = $astinfo->get_peers();
-	$out .= draw_graph(_('IP Phones Online'), '', $peers['sip_online']+$peers['iax2_online'], $peers['sip_total']+$peers['iax2_total'], $classes, false, BAR_WIDTH_LEFT);
-	
-	$regs = $astinfo->get_registrations();
-	if ($regs['total'] > 0) {
-		$out .= draw_graph(_('Provider Registrations'), '', $regs['registered'], $regs['total'], $classes , false, BAR_WIDTH_LEFT);
+	if (function_exists('core_trunks_list')) {
+		$trunks = core_trunks_list(true);
+	} else {
+		$trunks = false;
 	}
+	$conns = $astinfo->get_connections( $trunks );
+
+	if ($conns['users_total'] > 0) {
+		$out .= draw_graph(_('IP Phones Online'), '', $conns['users_online'], $conns['users_total'], $classes, false, BAR_WIDTH_LEFT);
+	}
+	if ($conns['trunks_total'] > 0) {
+		$out .= draw_graph(_('IP Trunks Online'), '', $conns['trunks_online'], $conns['trunks_total'], $classes, false, BAR_WIDTH_LEFT);
+	}
+	if ($conns['registrations_total'] > 0) {
+		$out .= draw_graph(_('IP Trunk Registrations'), '', $conns['registrations_online'], $conns['registrations_total'], $classes, false, BAR_WIDTH_LEFT);
+	}
+
 	return $out;
 }
 

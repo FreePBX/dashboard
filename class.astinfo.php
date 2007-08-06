@@ -43,20 +43,43 @@ class astinfo {
 		);
 	}
 	
-	function get_peers() {
+	function get_connections($trunks = false) {
+		if (!$trunks) {
+			$trunks = array();
+		}
 		
 		$return = array(
-			'sip_total' => 0,
-			'sip_online' => 0,
-			'sip_offline' => 0,
-			'sip_online_monitored' => 0,
-			'sip_offline_monitored' => 0,
-			'sip_online_unmonitored' => 0,
-			'sip_offline_unmonitored' => 0,
-			'iax2_total' => 0,
-			'iax2_online' => 0,
-			'iax2_offline' => 0,
-			'iax2_unmonitored' => 0
+			'sip_users_online' => 0,
+			'sip_users_offline' => 0,
+			'sip_users_total' => 0,
+			'sip_trunks_online' => 0,
+			'sip_trunks_offline' => 0,
+			'sip_trunks_total' => 0,
+			'sip_registrations_online' => 0,
+			'sip_registrations_offline' => 0,
+			'sip_registrations_total' => 0,
+
+			
+			'iax2_users_online' => 0,
+			'iax2_users_offline' => 0,
+			'iax2_users_total' => 0,
+			'iax2_trunks_online' => 0,
+			'iax2_trunks_offline' => 0,
+			'iax2_trunks_total' => 0,
+			'iax2_registrations_online' => 0,
+			'iax2_registrations_offline' => 0,
+			'iax2_registrations_total' => 0,
+
+			//totals
+			'users_online' => 0,
+			'users_offline' => 0,
+			'users_total' => 0,
+			'trunks_online' => 0,
+			'trunks_offline' => 0,
+			'trunks_total' => 0,
+			'registrations_online' => 0,
+			'registrations_offline' => 0,
+			'registrations_total' => 0,
 		);
 
 		if (!$this->astman) {
@@ -64,96 +87,102 @@ class astinfo {
 		}
 
 		$response = $this->astman->send_request('Command',array('Command'=>"sip show peers"));
-		$astout = explode("\n",$response['data']);
-		
+		$astout = explode("\n",$response['data']);	
 		foreach ($astout as $line) {
-			if (preg_match('/(\d+) sip peers? \[(\d+) online.*(\d+) offline/i', $line, $matches)) {
-				// ast 1.2
-				$return['sip_total'] = $matches[1];
-				$return['sip_online'] = $matches[2];
-				$return['sip_offline'] = $matches[3];
-			} else if (preg_match('/(\d+) sip peers? \[Monitored.*(\d+) online.*(\d+) offline.*Unmonitored.*(\d+) online.*(\d+) offline/', $line, $matches)) {
-				// asterisk 1.4
-				// 2 sip peers [Monitored: 1 online, 1 offline Unmonitored: 0 online, 0 offline]
-				$return['sip_total'] = $matches[1];
-				$return['sip_online'] = $matches[2] + $matches[4];
-				$return['sip_offline'] = $matches[3] + $matches[5]; 
-				
-				$return['sip_online_monitored'] = $matches[2];
-				$return['sip_offline_monitored'] = $matches[3];
-				$return['sip_online_unmonitored'] = $matches[4];
-				$return['sip_offline_unmonitored'] = $matches[5];
+			if (preg_match('/^(([a-z0-9\-_]+)(\/([a-z0-9\-_]+))?)\s+(\([a-z]+\)|\d{1,3}(\.\d{1,3}){3})/i', $line, $matches)) {
+				//matches: [2] = name, [4] = username, [5] = host, [6] = part of ip (if IP)
+
+				// have an IP address listed, so its online
+				$online = !empty($matches[6]); 
+
+				if (isset($trunks[$matches[2]])) {
+					// this is a trunk
+					//TODO match trunk tech as well? 
+					$return['sip_trunks_'.($online?'online':'offline')]++;
+				} else {
+					$return['sip_users_'.($online?'online':'offline')]++;
+				}
 			}
 		}
 		
+		
+		$response = $this->astman->send_request('Command',array('Command'=>"sip show registry"));
+		$astout = explode("\n",$response['data']);
+		$pos = false;
+		foreach ($astout as $line) {
+			if ($pos===false) {
+				// find the position of "State" in the first line
+				$pos = strpos($line,"State");
+			} else {
+				// subsequent lines, check if it syas "Registered" at that position
+				if (substr($line,$pos,10) == "Registered") {
+					$return['sip_registrations_online']++;
+				} else {
+					$return['sip_registrations_offline']++;
+				}
+			}
+		}
+
 		
 		$response = $this->astman->send_request('Command',array('Command'=>"iax2 show peers"));
 		$astout = explode("\n",$response['data']);
 		foreach ($astout as $line) {
-			if (preg_match('/(\d+) iax2 peers? \[(\d+) online.*(\d+) offline.*(\d+) unmonitored/i', $line, $matches)) {
-				$return['iax2_total'] = $matches[1];
-				$return['iax2_online'] = $matches[2];
-				$return['iax2_offline'] = $matches[3];
-				$return['iax2_unmonitored'] = $matches[4];
-			}
-		}
-		
-		$return['online'] = $return['sip_online'] + $return['iax2_online'];
-		$return['offline'] = $return['sip_offline'] + $return['iax2_offline'];
-		$return['total'] = $return['sip_total'] + $return['iax2_total'];
-		
-		return $return;
-	}
-	
-	function get_registrations() {
-		
-		$return = array(
-			'sip_registered' => 0,
-			'sip_total' => 0,
-			'iax2_registered' => 0,
-			'iax2_total' => 0,
-			'registered' => 0,
-			'total' => 0,
-		);
+			if (preg_match('/^(([a-z0-9\-_]+)(\/([a-z0-9\-_]+))?)\s+(\([a-z]+\)|\d{1,3}(\.\d{1,3}){3})/i', $line, $matches)) {
+				//matches: [2] = name, [4] = username, [5] = host, [6] = part of ip (if IP)
 
-		if (!$this->astman) {
-			return $return;
-		}
-		
-		$response = $this->astman->send_request('Command',array('Command'=>"sip show registry"));
-		$astout = explode("\n",$response['data']);
-		
-		$pos = false;
-		foreach ($astout as $line) {
-			if ($pos===false) {
-				$pos = strpos($line,"State");
-			} else {
-				if (substr($line,$pos,10) == "Registered") {
-					$return['sip_registered']++;
+				// have an IP address listed, so its online
+				$online = !empty($matches[6]); 
+
+				if (isset($trunks[$matches[2]])) {
+					// this is a trunk
+					//TODO match trunk tech as well? 
+					$return['iax2_trunks_'.($online?'online':'offline')]++;
+				} else {
+					$return['iax2_users_'.($online?'online':'offline')]++;
 				}
-				$return['sip_total']++;
 			}
 		}
-		
 		
 		
 		$response = $this->astman->send_request('Command',array('Command'=>"iax2 show registry"));
 		$astout = explode("\n",$response['data']);
-		
 		$pos = false;
 		foreach ($astout as $line) {
 			if ($pos===false) {
+				// find the position of "State" in the first line
 				$pos = strpos($line,"State");
 			} else {
+				// subsequent lines, check if it syas "Registered" at that position
 				if (substr($line,$pos,10) == "Registered") {
-					$return['iax2_registered']++;
+					$return['sip_registrations_online']++;
+				} else {
+					$return['sip_registrations_offline']++;
 				}
-				$return['iax2_total']++;
 			}
 		}
+
 		
-		$return['registered'] = $return['sip_registered'] + $return['iax2_registered'];
-		$return['total'] = $return['sip_total'] + $return['iax2_total'];
+		$return['sip_users_total'] = $return['sip_users_online'] + $return['sip_users_offline'];
+		$return['sip_trunks_total'] = $return['sip_trunks_online'] + $return['sip_trunks_offline'];
+		$return['sip_registrations_total'] = $return['sip_registrations_online'] + $return['sip_registrations_offline'];
+
+		$return['iax2_users_total'] = $return['iax2_users_online'] + $return['iax2_users_offline'];
+		$return['iax2_trunks_total'] = $return['iax2_trunks_online'] + $return['iax2_trunks_offline'];
+		$return['iax2_registrations_total'] = $return['iax2_registrations_online'] + $return['iax2_registrations_offline'];
+
+		$return['users_online'] = $return['sip_users_online'] + $return['iax2_users_online'];
+		$return['users_offline'] = $return['sip_users_offline'] + $return['iax2_users_offline'];
+		$return['users_total'] = $return['users_online'] + $return['users_offline'];
+		
+		$return['trunks_online'] = $return['sip_trunks_online'] + $return['iax2_trunks_online'];
+		$return['trunks_offline'] = $return['sip_trunks_offline'] + $return['iax2_trunks_offline'];
+		$return['trunks_total'] = $return['trunks_online'] + $return['trunks_offline'];
+
+		$return['registrations_online'] = $return['sip_registrations_online'] + $return['iax2_registrations_online'];
+		$return['registrations_offline'] = $return['sip_registrations_offline'] + $return['iax2_registrations_offline'];
+		$return['registrations_total'] = $return['registrations_online'] + $return['registrations_offline'];
+
+		return $return;
 	}
 	
 	function get_uptime() {
