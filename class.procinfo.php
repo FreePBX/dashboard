@@ -20,8 +20,17 @@ class procinfo {
 		return $this->check_port(4445);
 	}
 	
-	function check_mysql() {
-		return $this->check_port(3306);
+	function check_mysql($hoststr) {
+		$host = 'localhost';
+		$port = '3306';
+		if (preg_match('/^([^:]+)(:(\d+))?$/',$hoststr,$matches) {
+			// matches[1] = host, [3] = port
+			$host = $matches[1];
+			if (!empty($matches[3])) {
+				$port = $matches[3];
+			}
+		}
+		return $this->check_port($port, $host);
 	}
 }
 

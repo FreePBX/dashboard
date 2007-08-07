@@ -326,7 +326,7 @@ function show_procinfo() {
 	
 	// mysql
 	if ($amp_conf['AMPDBENGINE'] == "mysql") {
-		if ($procinfo->check_mysql()) {
+		if ($procinfo->check_mysql($amp_conf['AMPDBHOST'])) {
 			$out .= draw_status_box(_("MySQL"), "ok", _('MySQL Server is running'));
 		} else {
 			$out .= draw_status_box(_("MySQL"), "error", _('MySQL Server is not running, this is a critical service for the web interface and call logs!'));
