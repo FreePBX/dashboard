@@ -23,7 +23,7 @@ class procinfo {
 	function check_mysql($hoststr) {
 		$host = 'localhost';
 		$port = '3306';
-		if (preg_match('/^([^:]+)(:(\d+))?$/',$hoststr,$matches) {
+		if (preg_match('/^([^:]+)(:(\d+))?$/',$hoststr,$matches)) {
 			// matches[1] = host, [3] = port
 			$host = $matches[1];
 			if (!empty($matches[3])) {
