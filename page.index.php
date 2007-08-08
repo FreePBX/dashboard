@@ -265,7 +265,7 @@ function show_aststats() {
 function show_sysinfo() {
 	global $sysinfo;
 	global $astinfo;
-	$out = "<h3>"._("&nbsp ")."</h3></br>";
+	$out = "<h3>"._("Uptime")."</h3></br>";
 	$out .= '<table>';
 	/*
 	$out .= '<tr><th>Distro:</th><td>'.$sysinfo->distro().'</td></tr>';
