@@ -240,7 +240,7 @@ function show_aststats() {
 	$out .= draw_graph(_('External calls'), '', $channels['external_calls'], $max_calls, $classes , false, BAR_WIDTH_LEFT);
 	$out .= draw_graph(_('Total active channels'), '', $channels['total_channels'], $max_chans, $classes , false, BAR_WIDTH_LEFT);
 	
-	$out .= "<h3>"._("FreePBX Connections")."</h3>";
+	$out .= "<h4>"._("FreePBX Connections")."</h4>";
 	
 	if (function_exists('core_trunks_list')) {
 		$trunks = core_trunks_list(true);
