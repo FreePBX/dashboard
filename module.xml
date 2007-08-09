@@ -1,7 +1,7 @@
 <module>
 	<rawname>dashboard</rawname>
 	<name>System Dashboard</name>
-	<version>0.3.1</version>
+	<version>0.3.2</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>tool</type>
@@ -33,6 +33,5 @@
 		*0.1.0* Initial release
 	</changelog>
 	<location>release/2.3/dashboard-0.3.1.tgz</location>
-	<info>http://aussievoip.com.au/wiki/freePBX-SystemInfo</info>
 	<md5sum>f273cc8e0ed83190b49d401f836cec2c</md5sum>
 </module>
