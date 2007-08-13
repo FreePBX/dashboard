@@ -1,7 +1,7 @@
 <module>
 	<rawname>dashboard</rawname>
 	<name>System Dashboard</name>
-	<version>0.3.2.1</version>
+	<version>0.3.3</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>tool</type>
@@ -34,6 +34,6 @@
 		*0.2.0* Add real-time updates
 		*0.1.0* Initial release
 	</changelog>
-	<location>release/2.3/dashboard-0.3.2.1.tgz</location>
-	<md5sum>ab45414e8917ac362022b711164b9398</md5sum>
+	<location>release/2.3/dashboard-0.3.3.tgz</location>
+	<md5sum>c5764ae667e360c42e1569b1e66a36c4</md5sum>
 </module>
