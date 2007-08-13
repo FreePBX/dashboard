@@ -17,6 +17,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*0.3.3* Improved detection of webserver failing, More MySQL detection fixes
 		*0.3.2.1* #2246 make FreePBX Connections visible, #2250 check for SSHPORT
 		*0.3.2* Allow mysql server to be on another host/port (#2229), fix image path problem
 		*0.3.1* Fix issue with miscounting total registrations, minor styling details

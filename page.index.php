@@ -326,11 +326,14 @@ function show_procinfo() {
 	
 	// mysql
 	if ($amp_conf['AMPDBENGINE'] == "mysql") {
+		/* this is silly- it's always running, if the web interface loads
 		if ($procinfo->check_mysql($amp_conf['AMPDBHOST'])) {
 			$out .= draw_status_box(_("MySQL"), "ok", _('MySQL Server is running'));
 		} else {
 			$out .= draw_status_box(_("MySQL"), "error", _('MySQL Server is not running, this is a critical service for the web interface and call logs!'));
 		}
+		*/
+		$out .= draw_status_box(_("MySQL"), "ok", _('MySQL Server is running'));
 	}
 	
 	// web always runs .. HOWEVER, we can turn it off with dhtml
@@ -494,6 +497,34 @@ if (!$quietmode) {
 	}
 	
 	var syslog_md5;
+	var webserver_fail = 0;
+	var info_timer = null;
+	var stats_timer = null;
+
+	function updateFailed(reqObj, status) {
+		// stop updating 
+		clearTimeout(stats_timer);
+		stats_timer = null;
+		clearTimeout(info_timer);
+		info_timer = null;
+
+		webserver_fail += 1;
+		webobj = $('#datavalue_Web_Server')
+
+		if (webserver_fail == 1) {
+			webobj.text("Timeout");
+			webobj.removeClass("graphok");
+			webobj.addClass("graphwarn");	
+		} else {
+			webobj.text("ERROR");
+			webobj.removeClass("graphok");
+			webobj.removeClass("graphwarn");
+			webobj.addClass("grapherror");
+		}
+		scheduleInfoUpdate();
+	}
+
+
 	function updateInfo() {
 		$.ajax({
 			type: 'GET',
@@ -508,17 +539,21 @@ if (!$quietmode) {
 					makeSyslogClickable();
 					syslog_md5 = data.syslog_md5;
 				}
+
+				// webserver is ok
+				webserver_fail = 0;
+
 				scheduleInfoUpdate();
+				if (stats_timer == null) {
+					// restart stats updates
+					scheduleStatsUpdate();
+				}
 			},
-			error: function(reqObj, status) {
-				$('#datavalue_Web_Server').text("ERROR");
-				$('#datavalue_Web_Server').removeClass("graphok");
-				$('#datavalue_Web_Server').addClass("grapherror");
-			}
+			error: updateFailed
 		});
 	}
 	function scheduleInfoUpdate() {
-		setTimeout('updateInfo();',<?php echo INFO_UPDATE_TIME; ?>000);
+		info_timer = setTimeout('updateInfo();',<?php echo INFO_UPDATE_TIME; ?>000);
 	}
 	
 	
@@ -532,16 +567,11 @@ if (!$quietmode) {
 				$('#aststats').html(data.aststats);
 				scheduleStatsUpdate();
 			},
-			error: function(reqObj, status) {
-				$('#datavalue_Web_Server').text("ERROR");
-				$('#datavalue_Web_Server').removeClass("graphok");
-				$('#datavalue_Web_Server').addClass("grapherror");
-				$('#syslog').prepend('<div class="warning">Warning: Update timed out<br/></div>');
-			}
+			error: updateFailed
 		});
 	}
 	function scheduleStatsUpdate() {
-		setTimeout('updateStats();',<?php echo STATS_UPDATE_TIME; ?>000);
+		stats_timer = setTimeout('updateStats();',<?php echo STATS_UPDATE_TIME; ?>000);
 	}
 	
 	
