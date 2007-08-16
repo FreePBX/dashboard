@@ -56,6 +56,13 @@ function draw_graph($text, $real_units, $val, $total = 100, $classes = null, $sh
 		);
 	}
 
+	$chars_per_pixel = 7;
+	if (strlen($text) * $chars_per_pixel > $total_width - 35) {
+		$text_trimmed = substr($text,0, floor(($total_width - 35) / $chars_per_pixel)).'..';
+	} else {
+		$text_trimmed = $text;
+	}
+
 	$clean_val = preg_replace("/[^0-9\.]*/","",$val);
 
 	if ($total == 0) {
@@ -83,10 +90,10 @@ function draw_graph($text, $real_units, $val, $total = 100, $classes = null, $sh
 	$tooltip = $text.": ".$val.$real_units." / ".$total.$real_units." (".$percent."%)";
 	$display_value = ($show_percent ? $percent."%" : $val.$real_units); 
 	
-	$out = "<div class=\"databox graphbox\" style=\"width:".$total_width."px;\">\n";
+	$out = "<div class=\"databox graphbox\" style=\"width:".$total_width."px;\" title=\"".$tooltip."\">\n";
 	$out .= " <div class=\"bargraph ".$graph_class."\" style=\"width:".$width."px;\"></div>\n";
-	$out .= " <div class=\"dataname\">".$text."</div>\n";
-	$out .= " <div class=\"datavalue\"><a href=\"#\" title=\"".$tooltip."\">".$display_value."</a></div>\n";
+	$out .= " <div class=\"dataname\">".$text_trimmed."</div>\n";
+	$out .= " <div class=\"datavalue\">".$display_value."</div>\n";
 	$out .= "</div>\n";
 	
 	return $out;
@@ -185,7 +192,7 @@ function show_sysstats() {
 	$out .= draw_graph(_("Swap"), "MB", number_format(($memory["swap"]["total"]-$memory["swap"]["free"])/1024,2), $memory["swap"]["total"]/1024);
 	
 	$out .= "<h4>"._("Disks")."</h4>";
-	foreach ($sysinfo->filesystems() as $fs) {	
+	foreach ($sysinfo->filesystems() as $fs) {
 		$out .= draw_graph($fs["mount"], "GB", number_format($fs["used"]/1024/1024, 2), $fs["size"]/1024/1024);
 	}
 	
