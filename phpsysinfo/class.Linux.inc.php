@@ -132,7 +132,7 @@ class sysinfo {
 	sscanf($buf, "%*s %Ld %Ld %Ld %Ld", $ab, $ac, $ad, $ae);
 	$load2 = $ab + $ac + $ad;
 	$total2 = $ab + $ac + $ad + $ae;
-	$results['cpupercent'] = (100*($load2 - $load)) / ($total2 - $total);
+	$results['cpupercent'] = ($total2 != $total)?((100*($load2 - $load)) / ($total2 - $total)):0;
       }
     }
     return $results;

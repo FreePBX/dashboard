@@ -1,7 +1,7 @@
 <module>
 	<rawname>dashboard</rawname>
 	<name>System Dashboard</name>
-	<version>0.3.3.1</version>
+	<version>0.3.3.2</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>tool</type>
@@ -17,6 +17,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*0.3.3.2* #2469 fix division my zero in cpu usage
 		*0.3.3.1* Cosmetic fix (#2278 - long mount point paths)
 		*0.3.3* Improved detection of webserver failing, More MySQL detection fixes
 		*0.3.2.1* #2246 make FreePBX Connections visible, #2250 check for SSHPORT
