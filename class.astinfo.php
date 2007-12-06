@@ -2,9 +2,12 @@
 
 class astinfo {
 	var $astman;
+       var $version;
 	
 	function astinfo(&$astman) {
 		$this->astman =& $astman;
+               $arr = engine_getinfo();
+               $this->version = $arr['version'];
 	}
 	
 	function get_channel_totals() {
@@ -16,7 +19,11 @@ class astinfo {
 				'total_channels'=>0,
 			);
 		}
-		$response = $this->astman->send_request('Command',array('Command'=>"show channels"));
+		if (version_compare($this->version, "1.6", "ge")) {
+			$response = $this->astman->send_request('Command',array('Command'=>"core show channels"));
+		} else {
+			$response = $this->astman->send_request('Command',array('Command'=>"show channels"));
+		}
 		$astout = explode("\n",$response['data']);
 		
 		$external_calls = 0;
@@ -203,7 +210,11 @@ class astinfo {
 			return $output;
 		}
 
-		$response = $this->astman->send_request('Command',array('Command'=>"show uptime"));
+		if (version_compare($this->version, "1.6", "ge")) {
+			$response = $this->astman->send_request('Command',array('Command'=>"core show uptime"));
+		} else {
+			$response = $this->astman->send_request('Command',array('Command'=>"show uptime"));
+		}
 		$astout = explode("\n",$response['data']);
 			
 		foreach ($astout as $line) {
@@ -221,7 +232,11 @@ class astinfo {
 		if (!$this->astman) {
 			return false;
 		}
-		$response = $this->astman->send_request('Command',array('Command'=>"show version"));
+		if (version_compare($this->version, "1.6", "ge")) {
+			$response = $this->astman->send_request('Command',array('Command'=>"core show version"));
+		} else {
+			$response = $this->astman->send_request('Command',array('Command'=>"show version"));
+		}
 		$astout = explode("\n",$response['data']);
 		
 		if (!preg_match('/^Asterisk /i', $astout[1])) {
