@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2007-08-12 01:48+0200\n"
+"PO-Revision-Date: 2007-08-12 01:48+0200\n"
+"Last-Translator: Francesco Romano\n"
+"Language-Team:\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: page.index.php:98
+msgid "OK"
+msgstr "OK"
+
+#: page.index.php:102
+msgid "Warn"
+msgstr "Attenz"
+
+#: page.index.php:106
+msgid "ERROR"
+msgstr "ERRORE"
+
+#: page.index.php:139 page.index.php:165
+msgid "minutes"
+msgstr "minuti"
+
+#: page.index.php:156
+msgid "week"
+msgstr "settimana"
+
+#: page.index.php:156
+msgid "weeks"
+msgstr "settimane"
+
+#: page.index.php:159
+msgid "days"
+msgstr "giorni"
+
+#: page.index.php:162
+msgid "hour"
+msgstr "ora"
+
+#: page.index.php:162
+msgid "hours"
+msgstr "ore"
+
+#: page.index.php:165
+msgid "minute"
+msgstr "minuti"
+
+#: page.index.php:175
+msgid "System Statistics"
+msgstr "Statistiche di Sistema"
+
+#: page.index.php:176
+msgid "Processor"
+msgstr "Processore"
+
+#: page.index.php:178
+msgid "Load Average"
+msgstr "Carico Medio"
+
+#: page.index.php:179
+msgid "CPU"
+msgstr "CPU"
+
+#: page.index.php:181
+msgid "Memory"
+msgstr "Memoria"
+
+#: page.index.php:184
+msgid "App Memory"
+msgstr "Memoria App"
+
+#: page.index.php:185
+msgid "Swap"
+msgstr "Swap"
+
+#: page.index.php:187
+msgid "Disks"
+msgstr "Dischi"
+
+#: page.index.php:192
+msgid "Networks"
+msgstr "Reti"
+
+#: page.index.php:203
+msgid "receive"
+msgstr "riceve"
+
+#: page.index.php:204
+msgid "transmit"
+msgstr "trasmette"
+
+#: page.index.php:237
+msgid "FreePBX Statistics"
+msgstr "Statistiche FreePBX"
+
+#: page.index.php:243
+msgid "FreePBX Connections"
+msgstr "Connessioni FreePBX"
+
+#: page.index.php:268
+msgid "Uptime"
+msgstr "Tempo di esercizio"
+
+#: page.index.php:298
+msgid "Server Status"
+msgstr "Stato Server"
+
+#: page.index.php:301 page.index.php:303
+msgid "Asterisk"
+msgstr "Asterisk"
+
+#: page.index.php:309 page.index.php:311
+msgid "Manager Proxy"
+msgstr "Proxy Manager"
+
+#: page.index.php:317 page.index.php:321 page.index.php:323
+msgid "Op Panel"
+msgstr "Pannello Op"
+
+#: page.index.php:330 page.index.php:332
+msgid "MySQL"
+msgstr "MySQL"
+
+#: page.index.php:337
+msgid "Web Server"
+msgstr "Server Web"
+
+#: page.index.php:342 page.index.php:344
+msgid "SSH Server"
+msgstr "Server SSH"
+
+#: page.index.php:378
+msgid "FreePBX Notices"
+msgstr "Notifiche FreePBX"
+
+msgid "FreePBX System Status"
+msgstr "Stato Sistema FreePBX"
+
+msgid "System Uptime"
+msgstr "Sistema"
+
+msgid "Asterisk Uptime"
+msgstr "Asterisk"
+
+msgid "Last Reload"
+msgstr "Ultimo ricaricamento"
+
+msgid "Total active calls"
+msgstr "Totale chiamate attive"
+
+msgid "Internal calls"
+msgstr "Chiamate interne"
+
+msgid "External calls"
+msgstr "Chiamate esterne"
+
+msgid "Total active channels"
+msgstr "Totale chiamate attive"
+
+msgid "IP Phones Online"
+msgstr "Telefoni IP Online"
+
+msgid "IP Trunks Online"
+msgstr "Fasci IP Online"
+
+msgid "show new"
+msgstr "visualizza nuovi"
+
+msgid "show all"
+msgstr "visualizza tutti"
+
+msgid "You are using the default SQL password that is widely known, you should set a secure password"
+msgstr "Stai utilizzando la password predefinita di SQL che è largamente conosciuta, dovresti impostare una password sicura"
+
+msgid "Default SQL Password Used"
+msgstr "Password predefinita di SQL usata"
+
+msgid "Default Asterisk Manager Password Used"
+msgstr "Password predefinita del Manager di Asterisk usata"
+
+msgid "You are using the default Asterisk Manager password that is widely known, you should set a secure password"
+msgstr "Stai utilizzando la password predefinita del Manager di Asterisk che è largamente conosciuta, dovresti impostare una password sicura"
+
+msgid "loading..."
+msgstr "caricamento..."
+
+msgid "Update timed out"
+msgstr "Aggiornamento in timeout"
+
+msgid "Added %s ago"
+msgstr "Aggiunto %s fa"
