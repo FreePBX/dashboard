@@ -102,7 +102,7 @@ class astinfo {
 				// have an IP address listed, so its online
 				$online = !empty($matches[6]); 
 
-				if (isset($trunks[$matches[2]])) {
+				if (isset($trunks['SIP/'.$matches[2]])) {
 					// this is a trunk
 					//TODO match trunk tech as well? 
 					$return['sip_trunks_'.($online?'online':'offline')]++;
@@ -142,7 +142,7 @@ class astinfo {
 				// have an IP address listed, so its online
 				$online = !empty($matches[6]); 
 
-				if (isset($trunks[$matches[2]])) {
+				if (isset($trunks['IAX2/'.$matches[2]])) {
 					// this is a trunk
 					//TODO match trunk tech as well? 
 					$return['iax2_trunks_'.($online?'online':'offline')]++;
