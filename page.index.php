@@ -678,6 +678,7 @@ if (!$quietmode) {
 		
 		case 'info':
 			$json = new Services_JSON();
+			header("Content-type: application/json"); 
 			echo $json->encode(
 				array(
 					'procinfo'=>show_procinfo(),
@@ -689,6 +690,7 @@ if (!$quietmode) {
 		break;
 		case 'stats':
 			$json = new Services_JSON();
+			header("Content-type: application/json"); 
 			echo $json->encode(
 				array(
 					'sysstats'=>show_sysstats(),
@@ -698,6 +700,7 @@ if (!$quietmode) {
 		break;
 		case 'all':
 			$json = new Services_JSON();
+			header("Content-type: application/json"); 
 			echo $json->encode(
 				array(
 					'sysstats'=>show_sysstats(),
