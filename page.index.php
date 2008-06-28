@@ -199,7 +199,7 @@ function show_sysstats() {
 	$out .= "<h4>"._("Networks")."</h4>";
 	foreach ($sysinfo->network() as $net_name=>$net) {
 		$net_name = trim($net_name);
-		if ($net_name == 'lo' || $net_name == 'sit0') continue;
+		if ($net_name == 'lo' || $net_name == 'sit0' || preg_match('/w.g./',$net_name)) continue;
 		
 		$tx = new average_rate_calculator($_SESSION["netstats"][$net_name]["tx"], 10); // 30s max age
 		$rx = new average_rate_calculator($_SESSION["netstats"][$net_name]["rx"], 10); // 30s max age
