@@ -32,8 +32,16 @@ define('BAR_WIDTH_LEFT', 400);
 define('BAR_WIDTH_RIGHT', 200);
 
 // AJAX update intervals (in seconds)
-define('STATS_UPDATE_TIME', 6); // update interval for system uptime information
-define('INFO_UPDATE_TIME', 30); // update interval for system uptime information
+if (isset($amp_conf['DASHBOARD_STATS_UPDATE_TIME']) && $amp_conf['DASHBOARD_STATS_UPDATE_TIME'] && ctype_digit($amp_conf['DASHBOARD_STATS_UPDATE_TIME'])) {
+	define('STATS_UPDATE_TIME', $amp_conf['DASHBOARD_STATS_UPDATE_TIME']);
+} else {
+	define('STATS_UPDATE_TIME', 6); // update interval for system information
+}
+if (isset($amp_conf['DASHBOARD_INFO_UPDATE_TIME']) && $amp_conf['DASHBOARD_INFO_UPDATE_TIME'] && ctype_digit($amp_conf['DASHBOARD_INFO_UPDATE_TIME'])) {
+	define('INFO_UPDATE_TIME', $amp_conf['DASHBOARD_INFO_UPDATE_TIME']);
+} else {
+	define('INFO_UPDATE_TIME', 30); // update interval for system uptime information
+}
 
 /** draw_graph
  *  draw a bar graph
