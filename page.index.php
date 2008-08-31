@@ -543,7 +543,7 @@ if (!$quietmode) {
 	function updateInfo() {
 		$.ajax({
 			type: 'GET',
-			url: "<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=info", 
+			url: "<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=info&restrictmods=core/dashboard", 
 			dataType: 'json',
 			success: function(data) {
 				$('#procinfo').html(data.procinfo);
@@ -575,7 +575,7 @@ if (!$quietmode) {
 	function updateStats() {
 		$.ajax({
 			type: 'GET',
-			url: "<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=stats", 
+			url: "<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=stats&restrictmods=core/dashboard", 
 			dataType: 'json',
 			success: function(data) {
 				$('#sysstats').html(data.sysstats);
@@ -592,18 +592,18 @@ if (!$quietmode) {
 	
 	function changeSyslog(showall) {
 		$('#syslog_button').text('<?php echo _('loading...'); ?>');
-		$('#syslog').load("<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&info=syslog&showall="+showall,{}, function() {
+		$('#syslog').load("<?php echo $_SERVER["PHP_SELF"]; ?>?type=tool&display=<?php echo $module_page; ?>&quietmode=1&restrictmods=core/dashboard&info=syslog&showall="+showall,{}, function() {
 			makeSyslogClickable();
 		});
 	}
 
 	function hide_notification(domid, module, id) {
 		$('#'+domid).fadeOut('slow');
-		$.post('config.php', {display:'<?php echo $module_page; ?>', quietmode:1, info:'syslog_ack', module:module, id:id});
+		$.post('config.php', {display:'<?php echo $module_page; ?>', quietmode:1, info:'syslog_ack', module:module, id:id, restrictmods:'core/dashboard'});
 	}
 	function delete_notification(domid, module, id) {
 		$('#'+domid).fadeOut('slow');
-		$.post('config.php', {display:'<?php echo $module_page; ?>', quietmode:1, info:'syslog_delete', module:module, id:id});
+		$.post('config.php', {display:'<?php echo $module_page; ?>', quietmode:1, info:'syslog_delete', module:module, id:id, restrictmods:'core/dashboard'});
 	}
 	</script>
 
