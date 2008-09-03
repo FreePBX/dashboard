@@ -1,0 +1,290 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FreePBX dashboard 2.5\n"
+"Report-Msgid-Bugs-To: mickecamino@gmail.com\n"
+"POT-Creation-Date: 2008-09-03 20:54+0200\n"
+"PO-Revision-Date: 2008-09-03 21:32+0100\n"
+"Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+
+#: page.index.php:113
+msgid "OK"
+msgstr "OK"
+
+#: page.index.php:117
+msgid "Warn"
+msgstr "Varning"
+
+#: page.index.php:121
+msgid "ERROR"
+msgstr "FEL"
+
+#: page.index.php:154
+#: page.index.php:180
+msgid "minutes"
+msgstr "minuter"
+
+#: page.index.php:171
+msgid "week"
+msgstr "vecka"
+
+#: page.index.php:171
+msgid "weeks"
+msgstr "veckor"
+
+#: page.index.php:174
+msgid "days"
+msgstr "dagar"
+
+#: page.index.php:177
+msgid "hour"
+msgstr "timme"
+
+#: page.index.php:177
+msgid "hours"
+msgstr "timmar"
+
+#: page.index.php:180
+msgid "minute"
+msgstr "minut"
+
+#: page.index.php:190
+msgid "System Statistics"
+msgstr "Systemstatistik"
+
+#: page.index.php:191
+msgid "Processor"
+msgstr "Processor"
+
+#: page.index.php:193
+msgid "Load Average"
+msgstr "Genomsnittlig belastning"
+
+#: page.index.php:194
+msgid "CPU"
+msgstr "CPU"
+
+#: page.index.php:196
+msgid "Memory"
+msgstr "Minne"
+
+#: page.index.php:199
+msgid "App Memory"
+msgstr "Applikationsminne"
+
+#: page.index.php:200
+msgid "Swap"
+msgstr "Växlingsfil"
+
+#: page.index.php:202
+msgid "Disks"
+msgstr "Enheter"
+
+#: page.index.php:207
+msgid "Networks"
+msgstr "Nätverket"
+
+#: page.index.php:218
+msgid "receive"
+msgstr "mottagna"
+
+#: page.index.php:219
+msgid "transmit"
+msgstr "skickade"
+
+#: page.index.php:252
+msgid "FreePBX Statistics"
+msgstr "FreePBX statistik"
+
+#: page.index.php:253
+msgid "Total active calls"
+msgstr "Totalt antal aktiva samtal"
+
+#: page.index.php:254
+msgid "Internal calls"
+msgstr "Interna samtal"
+
+#: page.index.php:255
+msgid "External calls"
+msgstr "Externa samtal"
+
+#: page.index.php:256
+msgid "Total active channels"
+msgstr "Totalt antal aktiva kanaler"
+
+#: page.index.php:258
+msgid "FreePBX Connections"
+msgstr "Anslutningar till FreePBX"
+
+#: page.index.php:268
+msgid "IP Phones Online"
+msgstr "IP-telefoner on-line"
+
+#: page.index.php:271
+msgid "IP Trunks Online"
+msgstr "IP-trunkar on-line"
+
+#: page.index.php:274
+msgid "IP Trunk Registrations"
+msgstr "Registrerade IP-trunkar"
+
+#: page.index.php:283
+msgid "Uptime"
+msgstr "Upptid"
+
+#: page.index.php:292
+msgid "System Uptime"
+msgstr "Systemets upptid"
+
+#: page.index.php:300
+msgid "Asterisk Uptime"
+msgstr "Asterisk upptid"
+
+#: page.index.php:301
+msgid "Last Reload"
+msgstr "Sista omladdning"
+
+#: page.index.php:313
+msgid "Server Status"
+msgstr "Serverstatus"
+
+#: page.index.php:316
+#: page.index.php:318
+msgid "Asterisk"
+msgstr "Asterisk"
+
+#: page.index.php:316
+msgid "Asterisk is running: "
+msgstr "Asterisk körs:"
+
+#: page.index.php:318
+msgid "Asterisk is not running, this is a critical service!"
+msgstr "Asterisk körs inte. detta är en kritisk tjänst!"
+
+#: page.index.php:324
+#: page.index.php:326
+msgid "Manager Proxy"
+msgstr "Proxyhanterare"
+
+#: page.index.php:324
+msgid "Asterisk Manager Proxy is running"
+msgstr "Asterisk proxyhanterare körs"
+
+#: page.index.php:326
+msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
+msgstr "Asterisk proxyhanterare körs inte, FreePBX kommer att köra direkt mot Asterisk, detta kan innebära dålig prestanda"
+
+#: page.index.php:332
+#: page.index.php:336
+#: page.index.php:338
+msgid "Op Panel"
+msgstr "Operatörspanel"
+
+#: page.index.php:332
+msgid "FOP Operator Panel Server is running"
+msgstr "Operatörspanelen körs"
+
+#: page.index.php:336
+msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
+msgstr "Operatörspanelen körs inte, du kommer inte att kunna avända den, men systemet kommer att fungera fint utan den."
+
+#: page.index.php:338
+msgid "FOP Operator Panel is disabled in amportal.conf"
+msgstr "Operatörspanelen är avaktiverad i amportal.conf"
+
+#: page.index.php:351
+msgid "MySQL"
+msgstr "MySQL"
+
+#: page.index.php:351
+msgid "MySQL Server is running"
+msgstr "MySQL-servern körs"
+
+#: page.index.php:355
+msgid "Web Server"
+msgstr "Webserver"
+
+#: page.index.php:355
+msgid "Web Server is running"
+msgstr "Webservern körs"
+
+#: page.index.php:360
+#: page.index.php:362
+msgid "SSH Server"
+msgstr "SSH-server"
+
+#: page.index.php:360
+msgid "SSH Server is running"
+msgstr "SSH-servern körs"
+
+#: page.index.php:362
+msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
+msgstr "SSH-servern körs inte, du kommer inte att kunna koppla upp dig mot systemet via SSH"
+
+#: page.index.php:382
+msgid "Critical Error"
+msgstr "Kritiskt fel"
+
+#: page.index.php:383
+msgid "Security Update"
+msgstr "Säkerhetsuppdatering"
+
+#: page.index.php:384
+msgid "Update"
+msgstr "Uppdatering"
+
+#: page.index.php:385
+msgid "Error"
+msgstr "Fel"
+
+#: page.index.php:386
+msgid "Warning"
+msgstr "Varning"
+
+#: page.index.php:387
+msgid "Notice"
+msgstr "Notering"
+
+#: page.index.php:396
+msgid "FreePBX Notices"
+msgstr "Meddelanden från FreePBX"
+
+#: page.index.php:416
+#: page.index.php:418
+msgid "Delete this"
+msgstr "Ta bort denna"
+
+#: page.index.php:421
+#: page.index.php:423
+msgid "Ignore this"
+msgstr "Ignorera denna"
+
+#: page.index.php:439
+msgid "No notifications"
+msgstr "Inga meddelanden"
+
+#: page.index.php:441
+msgid "No new notifications"
+msgstr "Inga nya meddelanden"
+
+#: page.index.php:449
+msgid "show new"
+msgstr "Visa nya"
+
+#: page.index.php:451
+msgid "show all"
+msgstr "Visa alla"
+
+#: page.index.php:594
+msgid "loading..."
+msgstr "Laddar.."
+
