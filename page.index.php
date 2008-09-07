@@ -331,7 +331,7 @@ function show_procinfo() {
 	if ($procinfo->check_fop_server()) {
 		$out .= draw_status_box(_("Op Panel"), "ok", _('FOP Operator Panel Server is running'));
 	} else {
-		if (isset($amp_conf['FOPRUN']) && $amp_conf['FOPRUN']) {
+		if ($amp_conf['FOPRUN']) {
 			// it should be running
 			$out .= draw_status_box(_("Op Panel"), "warn", _('FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it.'));
 		} else {
