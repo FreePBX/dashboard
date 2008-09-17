@@ -8,13 +8,14 @@ msgstr ""
 "Project-Id-Version: FreePBX dashboard 2.5\n"
 "Report-Msgid-Bugs-To: mickecamino@gmail.com\n"
 "POT-Creation-Date: 2008-09-03 20:54+0200\n"
-"PO-Revision-Date: 2008-09-03 21:32+0100\n"
+"PO-Revision-Date: 2008-09-17 09:56+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
+"Language-Team: \n"
 
 #: page.index.php:113
 msgid "OK"
@@ -195,7 +196,7 @@ msgstr "Operatörspanelen körs"
 
 #: page.index.php:336
 msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
-msgstr "Operatörspanelen körs inte, du kommer inte att kunna avända den, men systemet kommer att fungera fint utan den."
+msgstr "Operatörspanelen körs inte, du kommer inte att kunna använda den, men systemet kommer att fungera fint utan den."
 
 #: page.index.php:338
 msgid "FOP Operator Panel is disabled in amportal.conf"
