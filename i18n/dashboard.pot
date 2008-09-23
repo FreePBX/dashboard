@@ -1,0 +1,287 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-17 11:13+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: page.index.php:113
+msgid "OK"
+msgstr ""
+
+#: page.index.php:117
+msgid "Warn"
+msgstr ""
+
+#: page.index.php:121
+msgid "ERROR"
+msgstr ""
+
+#: page.index.php:154 page.index.php:180
+msgid "minutes"
+msgstr ""
+
+#: page.index.php:171
+msgid "week"
+msgstr ""
+
+#: page.index.php:171
+msgid "weeks"
+msgstr ""
+
+#: page.index.php:174
+msgid "days"
+msgstr ""
+
+#: page.index.php:177
+msgid "hour"
+msgstr ""
+
+#: page.index.php:177
+msgid "hours"
+msgstr ""
+
+#: page.index.php:180
+msgid "minute"
+msgstr ""
+
+#: page.index.php:190
+msgid "System Statistics"
+msgstr ""
+
+#: page.index.php:191
+msgid "Processor"
+msgstr ""
+
+#: page.index.php:193
+msgid "Load Average"
+msgstr ""
+
+#: page.index.php:194
+msgid "CPU"
+msgstr ""
+
+#: page.index.php:196
+msgid "Memory"
+msgstr ""
+
+#: page.index.php:199
+msgid "App Memory"
+msgstr ""
+
+#: page.index.php:200
+msgid "Swap"
+msgstr ""
+
+#: page.index.php:202
+msgid "Disks"
+msgstr ""
+
+#: page.index.php:207
+msgid "Networks"
+msgstr ""
+
+#: page.index.php:218
+msgid "receive"
+msgstr ""
+
+#: page.index.php:219
+msgid "transmit"
+msgstr ""
+
+#: page.index.php:252
+msgid "FreePBX Statistics"
+msgstr ""
+
+#: page.index.php:253
+msgid "Total active calls"
+msgstr ""
+
+#: page.index.php:254
+msgid "Internal calls"
+msgstr ""
+
+#: page.index.php:255
+msgid "External calls"
+msgstr ""
+
+#: page.index.php:256
+msgid "Total active channels"
+msgstr ""
+
+#: page.index.php:258
+msgid "FreePBX Connections"
+msgstr ""
+
+#: page.index.php:268
+msgid "IP Phones Online"
+msgstr ""
+
+#: page.index.php:271
+msgid "IP Trunks Online"
+msgstr ""
+
+#: page.index.php:274
+msgid "IP Trunk Registrations"
+msgstr ""
+
+#: page.index.php:283
+msgid "Uptime"
+msgstr ""
+
+#: page.index.php:292
+msgid "System Uptime"
+msgstr ""
+
+#: page.index.php:300
+msgid "Asterisk Uptime"
+msgstr ""
+
+#: page.index.php:301
+msgid "Last Reload"
+msgstr ""
+
+#: page.index.php:313
+msgid "Server Status"
+msgstr ""
+
+#: page.index.php:316 page.index.php:318
+msgid "Asterisk"
+msgstr ""
+
+#: page.index.php:316
+msgid "Asterisk is running: "
+msgstr ""
+
+#: page.index.php:318
+msgid "Asterisk is not running, this is a critical service!"
+msgstr ""
+
+#: page.index.php:324 page.index.php:326
+msgid "Manager Proxy"
+msgstr ""
+
+#: page.index.php:324
+msgid "Asterisk Manager Proxy is running"
+msgstr ""
+
+#: page.index.php:326
+msgid ""
+"Asterisk Manager Proxy is not running, FreePBX will fall back to using "
+"Asterisk directly, which may result in poor performance"
+msgstr ""
+
+#: page.index.php:333 page.index.php:337 page.index.php:339
+msgid "Op Panel"
+msgstr ""
+
+#: page.index.php:333
+msgid "FOP Operator Panel Server is running"
+msgstr ""
+
+#: page.index.php:337
+msgid ""
+"FOP Operator Panel Server is not running, you will not be able to use the "
+"operator panel, but the system will run fine without it."
+msgstr ""
+
+#: page.index.php:339
+msgid "FOP Operator Panel is disabled in amportal.conf"
+msgstr ""
+
+#: page.index.php:353
+msgid "MySQL"
+msgstr ""
+
+#: page.index.php:353
+msgid "MySQL Server is running"
+msgstr ""
+
+#: page.index.php:357
+msgid "Web Server"
+msgstr ""
+
+#: page.index.php:357
+msgid "Web Server is running"
+msgstr ""
+
+#: page.index.php:362 page.index.php:364
+msgid "SSH Server"
+msgstr ""
+
+#: page.index.php:362
+msgid "SSH Server is running"
+msgstr ""
+
+#: page.index.php:364
+msgid ""
+"SSH Server is not running, you will not be able to connect to the system "
+"console remotely"
+msgstr ""
+
+#: page.index.php:384
+msgid "Critical Error"
+msgstr ""
+
+#: page.index.php:385
+msgid "Security Update"
+msgstr ""
+
+#: page.index.php:386
+msgid "Update"
+msgstr ""
+
+#: page.index.php:387
+msgid "Error"
+msgstr ""
+
+#: page.index.php:388
+msgid "Warning"
+msgstr ""
+
+#: page.index.php:389
+msgid "Notice"
+msgstr ""
+
+#: page.index.php:398
+msgid "FreePBX Notices"
+msgstr ""
+
+#: page.index.php:418 page.index.php:420
+msgid "Delete this"
+msgstr ""
+
+#: page.index.php:423 page.index.php:425
+msgid "Ignore this"
+msgstr ""
+
+#: page.index.php:441
+msgid "No notifications"
+msgstr ""
+
+#: page.index.php:443
+msgid "No new notifications"
+msgstr ""
+
+#: page.index.php:451
+msgid "show new"
+msgstr ""
+
+#: page.index.php:453
+msgid "show all"
+msgstr ""
+
+#: page.index.php:596
+msgid "loading..."
+msgstr ""
