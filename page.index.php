@@ -609,7 +609,7 @@ if (!$quietmode) {
 	}
 	</script>
 
-	<h2><?php _("FreePBX System Status");?></h2>
+	<h2><?php echo _("FreePBX System Status");?></h2>
 	</div>
 	<div id="dashboard">
 	<?php
