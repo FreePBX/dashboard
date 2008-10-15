@@ -19,7 +19,7 @@ $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 $quietmode = isset($_REQUEST['quietmode'])?$_REQUEST['quietmode']:'';
 $info = isset($_REQUEST['info'])?$_REQUEST['info']:false;
 
-$title="freePBX: Sysinfo Info";
+$title="FreePBX: Sysinfo Info";
 $message="System Info";
 
 if (isset($_REQUEST['showall'])) {
@@ -609,7 +609,7 @@ if (!$quietmode) {
 	}
 	</script>
 
-	<h2>FreePBX System Status</h2>
+	<h2><?php _("FreePBX System Status");?></h2>
 	</div>
 	<div id="dashboard">
 	<?php
