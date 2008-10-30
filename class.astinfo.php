@@ -122,17 +122,16 @@ class astinfo {
 					// find the position of "State" in the first line
 					$pos = strpos($line,"State");
 				} else {
-					// subsequent lines, check if it syas "Registered" at that position
+					// subsequent lines, check if it says "Registered" at that position
 					if (substr($line,$pos,10) == "Registered") {
 						$return['sip_registrations_online']++;
-					} else {
+					} elseif (strlen($line) > $pos) {
 						$return['sip_registrations_offline']++;
 					}
 				}
 			}
 		}
 
-		
 		$response = $this->astman->send_request('Command',array('Command'=>"iax2 show peers"));
 		$astout = explode("\n",$response['data']);
 		foreach ($astout as $line) {
@@ -164,15 +163,14 @@ class astinfo {
 				} else {
 					// subsequent lines, check if it syas "Registered" at that position
 					if (substr($line,$pos,10) == "Registered") {
-						$return['sip_registrations_online']++;
-					} else {
-						$return['sip_registrations_offline']++;
+						$return['iax2_registrations_online']++;
+					} elseif (strlen($line) > $pos) {
+						$return['iax2_registrations_offline']++;
 					}
 				}
 			}
 		}
 
-		
 		$return['sip_users_total'] = $return['sip_users_online'] + $return['sip_users_offline'];
 		$return['sip_trunks_total'] = $return['sip_trunks_online'] + $return['sip_trunks_offline'];
 		$return['sip_registrations_total'] = $return['sip_registrations_online'] + $return['sip_registrations_offline'];
