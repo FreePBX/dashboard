@@ -280,8 +280,8 @@ function show_aststats() {
 function show_sysinfo() {
 	global $sysinfo;
 	global $astinfo;
-	$out = "<h3>"._("Uptime")."</h3></br>";
-	$out .= '<table>';
+	$out = "<h3>"._("Uptime")."</h3><br />";
+	$out .= '<table summary="system information table">';
 	/*
 	$out .= '<tr><th>Distro:</th><td>'.$sysinfo->distro().'</td></tr>';
 	$out .= '<tr><th>Kernel:</th><td>'.$sysinfo->kernel().'</td></tr>';
@@ -404,15 +404,19 @@ function show_syslog(&$md5_checksum) {
 			
 			$domid = "notify_item_".str_replace(' ','_',$item['module']).'_'.str_replace(' ','_',$item['id']);
 			
+			$out .= "\n";
 			$out .= '<li id="'.$domid.'" ';
 			if (isset($notify_classes[$item['level']])) {
 				$out .= ' class="'.$notify_classes[$item['level']].'"';
 			}
 			$out .= '><div>';
-
-			$out .= '<h4 class="syslog_text">';
+			
+			$out .= '<div class="syslog_text">';
+			$out .= '<h4>';
 			$out .= '<span><img src="images/'.$notify_classes[$item['level']].'.png" alt="'.$notify_descriptions[$item['level']].'" title="'.$notify_descriptions[$item['level']].'" width="16" height="16" border="0" />&nbsp;';
 			$out .= $item['display_text'].'</span>';
+			$out .= '</h4>';
+			$out .= "\n";
 			$out .= '<div class="notification_buttons">';
 			if (isset($item['candelete']) && $item['candelete']) {
 				$out .= '<a class="notify_ignore_btn" title="'._('Delete this').'" '.
@@ -425,8 +429,8 @@ function show_syslog(&$md5_checksum) {
 				        '<img src="'.dirname($_SERVER['PHP_SELF']).'/images/notify_delete.png" width="16" height="16" border="0" alt="'._('Ignore this').'" /></a>';
 			}
 			$out .= '</div>';
-			$out .= '</h4>';
-			
+			$out .= '</div>';
+			$out .= "\n";
 			$out .= '<div class="syslog_detail">';
 			$out .= nl2br($item['extended_text']);
 			$out .= '<br/><span>'.sprintf('Added %s ago', time_string(time() - $item['timestamp'])).'<br/>'.
@@ -498,7 +502,7 @@ $procinfo = new procinfo;
 if (!$quietmode) {
 	?>
 	
-	<script language="javascript">
+	<script type="text/javascript">
 	$(document).ready(function(){
 		$.ajaxTimeout( 20000 );
 		scheduleInfoUpdate();
@@ -509,7 +513,7 @@ if (!$quietmode) {
 	
 	function makeSyslogClickable() {
 		$('#syslog h4 span').click(function() {
-			$(this).parent().next('div').slideToggle('fast');
+			$(this).parent().parent().next('div').slideToggle('fast');
 		});
 	}
 	
