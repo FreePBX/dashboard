@@ -313,7 +313,7 @@ function show_procinfo() {
 	$out .= "<h3>"._("Server Status")."</h3>";
 	// asterisk
 	if ($astver = $astinfo->check_asterisk()) {
-		$out .= draw_status_box(_("Asterisk"), "ok", _('Asterisk is running: '.$astver));
+		$out .= draw_status_box(_("Asterisk"), "ok", sprintf(_('Asterisk is running: %s'),$astver));
 	} else {
 		$out .= draw_status_box(_("Asterisk"), "error", _('Asterisk is not running, this is a critical service!'));
 	}

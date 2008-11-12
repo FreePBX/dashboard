@@ -162,8 +162,8 @@ msgid "Asterisk"
 msgstr "Asterisk"
 
 #: page.index.php:316
-msgid "Asterisk is running: "
-msgstr "Asterisk körs:"
+msgid "Asterisk is running: %s"
+msgstr "Asterisk körs: %s"
 
 #: page.index.php:318
 msgid "Asterisk is not running, this is a critical service!"
@@ -296,3 +296,6 @@ msgstr "Laddar.."
 #: page.index.php:612
 msgid "FreePBX System Status"
 msgstr "FreePBX systemstatus"
+
+msgid "System Dashboard"
+msgstr "Instrumentpanelen"

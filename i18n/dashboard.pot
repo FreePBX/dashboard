@@ -161,7 +161,7 @@ msgid "Asterisk"
 msgstr ""
 
 #: page.index.php:316
-msgid "Asterisk is running: "
+msgid "Asterisk is running: %s"
 msgstr ""
 
 #: page.index.php:318

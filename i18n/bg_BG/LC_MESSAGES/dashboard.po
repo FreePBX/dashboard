@@ -5,17 +5,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.5\n"
+"Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-10-08 10:32+0200\n"
-"PO-Revision-Date: 2008-11-10 11:55+0100\n"
-"Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
-"Language-Team: Italian\n"
+"PO-Revision-Date: 2008-11-03 03:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: Chavdar Iliev <chavdar_75@yahoo.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Italian\n"
-"X-Poedit-Country: ITALY\n"
+"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Country: BULGARIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: page.index.php:113
 msgid "OK"
@@ -23,52 +24,52 @@ msgstr "OK"
 
 #: page.index.php:117
 msgid "Warn"
-msgstr "Attenz"
+msgstr "Предупреждавам"
 
 #: page.index.php:121
 msgid "ERROR"
-msgstr "ERRORE"
+msgstr "ГРЕШКА"
 
 #: page.index.php:154
 #: page.index.php:180
 msgid "minutes"
-msgstr "minuti"
+msgstr "минути"
 
 #: page.index.php:171
 msgid "week"
-msgstr "settimana"
+msgstr "седмица"
 
 #: page.index.php:171
 msgid "weeks"
-msgstr "settimane"
+msgstr "седмици"
 
 #: page.index.php:174
 msgid "days"
-msgstr "giorni"
+msgstr "дни"
 
 #: page.index.php:177
 msgid "hour"
-msgstr "ora"
+msgstr "час"
 
 #: page.index.php:177
 msgid "hours"
-msgstr "ore"
+msgstr "часа"
 
 #: page.index.php:180
 msgid "minute"
-msgstr "minuti"
+msgstr "минута"
 
 #: page.index.php:190
 msgid "System Statistics"
-msgstr "Statistiche di Sistema"
+msgstr "Системен Статус"
 
 #: page.index.php:191
 msgid "Processor"
-msgstr "Processore"
+msgstr "Процесор"
 
 #: page.index.php:193
 msgid "Load Average"
-msgstr "Carico Medio"
+msgstr "Средно Натоварване"
 
 #: page.index.php:194
 msgid "CPU"
@@ -76,11 +77,11 @@ msgstr "CPU"
 
 #: page.index.php:196
 msgid "Memory"
-msgstr "Memoria"
+msgstr "Памет"
 
 #: page.index.php:199
 msgid "App Memory"
-msgstr "Memoria App"
+msgstr "Използвана Памет"
 
 #: page.index.php:200
 msgid "Swap"
@@ -88,119 +89,119 @@ msgstr "Swap"
 
 #: page.index.php:202
 msgid "Disks"
-msgstr "Dischi"
+msgstr "Дискове"
 
 #: page.index.php:207
 msgid "Networks"
-msgstr "Reti"
+msgstr "Мрежи"
 
 #: page.index.php:218
 msgid "receive"
-msgstr "riceve"
+msgstr "получени"
 
 #: page.index.php:219
 msgid "transmit"
-msgstr "trasmette"
+msgstr "изпратени"
 
 #: page.index.php:252
 msgid "FreePBX Statistics"
-msgstr "Statistiche FreePBX"
+msgstr "FreePBX Статистика"
 
 #: page.index.php:253
 msgid "Total active calls"
-msgstr "Totale chiamate attive"
+msgstr "Общо активни разговори"
 
 #: page.index.php:254
 msgid "Internal calls"
-msgstr "Chiamate interne"
+msgstr "Вътрешни разговори"
 
 #: page.index.php:255
 msgid "External calls"
-msgstr "Chiamate esterne"
+msgstr "Външни разговори"
 
 #: page.index.php:256
 msgid "Total active channels"
-msgstr "Totale canali attivi"
+msgstr "Общо активни канали"
 
 #: page.index.php:258
 msgid "FreePBX Connections"
-msgstr "Connessioni FreePBX"
+msgstr "FreePBX Свързани"
 
 #: page.index.php:268
 msgid "IP Phones Online"
-msgstr "Telefoni IP Online"
+msgstr "IP Телефони Онлайн"
 
 #: page.index.php:271
 msgid "IP Trunks Online"
-msgstr "Fasci IP Online"
+msgstr "IP Външни Линии Онлайн"
 
 #: page.index.php:274
 msgid "IP Trunk Registrations"
-msgstr "Registrazioni Fasci IP"
+msgstr "IP Външни Линии Регистрации"
 
 #: page.index.php:283
 msgid "Uptime"
-msgstr "Tempo di esercizio"
+msgstr "Експлоатация"
 
 #: page.index.php:292
 msgid "System Uptime"
-msgstr "Sistema"
+msgstr "Експлоатация на Системата "
 
 #: page.index.php:300
 msgid "Asterisk Uptime"
-msgstr "Asterisk"
+msgstr "Експлоатация на Астериск"
 
 #: page.index.php:301
 msgid "Last Reload"
-msgstr "Ultimo ricaricamento"
+msgstr "Последно Презареждане"
 
 #: page.index.php:313
 msgid "Server Status"
-msgstr "Stato Server"
+msgstr "Състояние на Сървъра"
 
 #: page.index.php:316
 #: page.index.php:318
 msgid "Asterisk"
-msgstr "Asterisk"
+msgstr "Астериск"
 
 #: page.index.php:316
-msgid "Asterisk is running: %s"
-msgstr "Asterisk è in esecuzione: %s"
+msgid "Asterisk is running: "
+msgstr "Астериск работи"
 
 #: page.index.php:318
 msgid "Asterisk is not running, this is a critical service!"
-msgstr "Asterisk non è in esecuzione, questo è un servizio critico!"
+msgstr "Астериск не работи, това е критична услуга!"
 
 #: page.index.php:324
 #: page.index.php:326
 msgid "Manager Proxy"
-msgstr "Proxy Manager"
+msgstr "Manager Прокси"
 
 #: page.index.php:324
 msgid "Asterisk Manager Proxy is running"
-msgstr "Asterisk Manager Proxy in esecuzione"
+msgstr "Астериск Manager Прокси работи"
 
 #: page.index.php:326
 msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
-msgstr "Asterisk Manager Proxy non è in esecuzione, FreePBX si connetterà utilizzando direttamente Asterisk, e le prestazioni saranno degradate"
+msgstr "Астериск Manager Прокси не работи, FreePBX ще използва Астериск директно, което може да доведе до влошена производителност"
 
 #: page.index.php:333
 #: page.index.php:337
 #: page.index.php:339
 msgid "Op Panel"
-msgstr "Pannello Operatore"
+msgstr "ФОП"
 
 #: page.index.php:333
 msgid "FOP Operator Panel Server is running"
-msgstr "Pannello Operatore FOP in esecuzione"
+msgstr "ФОП Сървъра работи"
 
 #: page.index.php:337
 msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
-msgstr "Il Pannello Operatore FOP non è in esecuzione, non sarai in grado di utilizzare il pannello operatore, ma il sistema funzionerà ugualmente in maniera regolare"
+msgstr "ФОП Сървъра не работи, няма да можете да използвате оператор панела, но системата ще работи нормално без него."
 
 #: page.index.php:339
 msgid "FOP Operator Panel is disabled in amportal.conf"
-msgstr "Pannello Operatore FOP disabilitato in amportal.conf"
+msgstr "ФОП е забранен в amportal.conf"
 
 #: page.index.php:353
 msgid "MySQL"
@@ -208,91 +209,88 @@ msgstr "MySQL"
 
 #: page.index.php:353
 msgid "MySQL Server is running"
-msgstr "Server MySQL in esecuzione"
+msgstr "MySQL Сървъра работи"
 
 #: page.index.php:357
 msgid "Web Server"
-msgstr "Server Web"
+msgstr "Уеб Сървър"
 
 #: page.index.php:357
 msgid "Web Server is running"
-msgstr "Server Web in esecuzione"
+msgstr "Уеб Сървъра работи"
 
 #: page.index.php:362
 #: page.index.php:364
 msgid "SSH Server"
-msgstr "Server SSH"
+msgstr "SSH Сървър"
 
 #: page.index.php:362
 msgid "SSH Server is running"
-msgstr "Server SSH in esecuzione"
+msgstr "SSH Сървъра работи"
 
 #: page.index.php:364
 msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
-msgstr "Il Server SSH non è in esecuzione, non sarai in grado di connetterti in remoto alla console di sistema"
+msgstr "SSH Сървъра не работи, няма да можете да се свързвате със системата дистанционно."
 
 #: page.index.php:384
 msgid "Critical Error"
-msgstr "Errore Critico"
+msgstr "Критична Грешка"
 
 #: page.index.php:385
 msgid "Security Update"
-msgstr "Aggiornamento di Sicurezza"
+msgstr "Защитно Обновяване"
 
 #: page.index.php:386
 msgid "Update"
-msgstr "Aggiorna"
+msgstr "Обновяване"
 
 #: page.index.php:387
 msgid "Error"
-msgstr "Errore"
+msgstr "Грешка"
 
 #: page.index.php:388
 msgid "Warning"
-msgstr "Attenz"
+msgstr "Внимание"
 
 #: page.index.php:389
 msgid "Notice"
-msgstr "Notifica"
+msgstr "Предупреждение"
 
 #: page.index.php:398
 msgid "FreePBX Notices"
-msgstr "Notifiche FreePBX"
+msgstr "FreePBX Предупреждения"
 
 #: page.index.php:418
 #: page.index.php:420
 msgid "Delete this"
-msgstr "Elimina"
+msgstr "Изтрий това"
 
 #: page.index.php:423
 #: page.index.php:425
 msgid "Ignore this"
-msgstr "Ignora"
+msgstr "Игнорирай това"
 
 #: page.index.php:441
 msgid "No notifications"
-msgstr "Nessuna notifica"
+msgstr "Няма предупреждения"
 
 #: page.index.php:443
 msgid "No new notifications"
-msgstr "Nessuna nuova notifica"
+msgstr "Няма нови предупреждения"
 
 #: page.index.php:451
 msgid "show new"
-msgstr "visualizza nuove"
+msgstr "покажи новите"
 
 #: page.index.php:453
 msgid "show all"
-msgstr "visualizza tutte"
+msgstr "покажи всички"
 
 #: page.index.php:596
 msgid "loading..."
-msgstr "caricamento..."
+msgstr "зареждам..."
 
 #: page.index.php:612
 msgid "FreePBX System Status"
-msgstr "Stato Sistema FreePBX"
-
-msgid "System Dashboard"
-msgstr "Cruscotto di Sistema"
+msgstr "FreePBX Системен Статус"
 
