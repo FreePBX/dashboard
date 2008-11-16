@@ -281,7 +281,7 @@ function show_sysinfo() {
 	global $sysinfo;
 	global $astinfo;
 	$out = "<h3>"._("Uptime")."</h3><br />";
-	$out .= '<table summary="system information table">';
+	$out .= '<table summary="'._('System Information Table').'">';
 	/*
 	$out .= '<tr><th>Distro:</th><td>'.$sysinfo->distro().'</td></tr>';
 	$out .= '<tr><th>Kernel:</th><td>'.$sysinfo->kernel().'</td></tr>';

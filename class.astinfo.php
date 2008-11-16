@@ -214,12 +214,42 @@ class astinfo {
 			$response = $this->astman->send_request('Command',array('Command'=>"show uptime"));
 		}
 		$astout = explode("\n",$response['data']);
-			
+
+
+		// Only translate and do the preg_replace if in another language, since it is a somewhat expensive operation
+		//
+		if ($_COOKIE['lang'] == "en_US") {
+			$translate = false;
+		} else {
+			$translate = true;
+			$units = array(
+				'/second/', '/seconds/',
+				'/minute/', '/minutes/',
+				'/hour/', '/hours/',
+				'/day/', '/days/',
+				'/week/', '/weeks/',
+				'/year/', '/years/',
+			);
+			$tunits = array(
+				_('second'), _('seconds'),
+				_('minute'), _('minutes'),
+				_('hour'), _('hours'),
+				_('day'), _('days'),
+				_('week'), _('weeks'),
+				_('year'), _('years'),
+			);
+		}
 		foreach ($astout as $line) {
 			if (preg_match('/^System uptime: (.*)$/i',$line,$matches)) {
 				$output["system"] = preg_replace('/,\s+(\d+ seconds?)?\s*$/', '', $matches[1]);				
+				if ($translate) {
+					$output["system"] = preg_replace($units,$tunits,$output["system"]);
+				}
 			} else if (preg_match('/^Last reload: (.*)$/i',$line,$matches)) {
 				$output["reload"] = preg_replace('/,\s+(\d+ seconds?)?\s*$/', '', $matches[1]);
+				if ($translate) {
+					$output["reload"] = preg_replace($units,$tunits,$output["reload"]);
+				}
 			}
 		}
 		
