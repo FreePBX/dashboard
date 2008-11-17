@@ -218,25 +218,25 @@ class astinfo {
 
 		// Only translate and do the preg_replace if in another language, since it is a somewhat expensive operation
 		//
-		if ($_COOKIE['lang'] == "en_US") {
+		if (!isset($_COOKIE['lang']) || $_COOKIE['lang'] == "en_US") {
 			$translate = false;
 		} else {
 			$translate = true;
 			$units = array(
-				'/second/', '/seconds/',
-				'/minute/', '/minutes/',
-				'/hour/', '/hours/',
-				'/day/', '/days/',
-				'/week/', '/weeks/',
-				'/year/', '/years/',
+				'/seconds/', '/second/',
+				'/minutes/', '/minute/',
+				'/hours/', '/hour/',
+				'/days/', '/day/',
+				'/weeks/', '/week/',
+				'/years/', '/year/',
 			);
 			$tunits = array(
-				_('second'), _('seconds'),
-				_('minute'), _('minutes'),
-				_('hour'), _('hours'),
-				_('day'), _('days'),
-				_('week'), _('weeks'),
-				_('year'), _('years'),
+				_('seconds'), _('second'),
+				_('minutes'), _('minute'),
+				_('hours'), _('hour'),
+				_('days'), _('day'),
+				_('weeks'), _('week'),
+				_('years'), _('year'),
 			);
 		}
 		foreach ($astout as $line) {
