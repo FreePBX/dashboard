@@ -201,7 +201,7 @@ function show_sysstats() {
 	
 	$out .= "<h4>"._("Disks")."</h4>";
 	foreach ($sysinfo->filesystems() as $fs) {
-		$out .= draw_graph($fs["mount"], "GB", number_format($fs["used"]/1024/1024, 2), number_format($fs["size"]/1024/1024,2), strpos( $fs["options"],"ro" )!==false ? array(0=>"graphok"):null);
+		$out .= draw_graph($fs["mount"], "GB", number_format($fs["used"]/1024/1024, 2,".",""), number_format($fs["size"]/1024/1024,2,".",""), strpos( $fs["options"],"ro" )!==false ? array(0=>"graphok"):null);
 	}
 	
 	$out .= "<h4>"._("Networks")."</h4>";
