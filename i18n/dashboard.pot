@@ -8,13 +8,61 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-08 10:32+0200\n"
+"POT-Creation-Date: 2008-11-17 12:06+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: class.astinfo.php:234
+msgid "seconds"
+msgstr ""
+
+#: class.astinfo.php:234
+msgid "second"
+msgstr ""
+
+#: class.astinfo.php:235 page.index.php:154 page.index.php:180
+msgid "minutes"
+msgstr ""
+
+#: class.astinfo.php:235 page.index.php:180
+msgid "minute"
+msgstr ""
+
+#: class.astinfo.php:236 page.index.php:177
+msgid "hours"
+msgstr ""
+
+#: class.astinfo.php:236 page.index.php:177
+msgid "hour"
+msgstr ""
+
+#: class.astinfo.php:237 page.index.php:174
+msgid "days"
+msgstr ""
+
+#: class.astinfo.php:237
+msgid "day"
+msgstr ""
+
+#: class.astinfo.php:238 page.index.php:171
+msgid "weeks"
+msgstr ""
+
+#: class.astinfo.php:238 page.index.php:171
+msgid "week"
+msgstr ""
+
+#: class.astinfo.php:239
+msgid "years"
+msgstr ""
+
+#: class.astinfo.php:239
+msgid "year"
+msgstr ""
 
 #: page.index.php:113
 msgid "OK"
@@ -26,34 +74,6 @@ msgstr ""
 
 #: page.index.php:121
 msgid "ERROR"
-msgstr ""
-
-#: page.index.php:154 page.index.php:180
-msgid "minutes"
-msgstr ""
-
-#: page.index.php:171
-msgid "week"
-msgstr ""
-
-#: page.index.php:171
-msgid "weeks"
-msgstr ""
-
-#: page.index.php:174
-msgid "days"
-msgstr ""
-
-#: page.index.php:177
-msgid "hour"
-msgstr ""
-
-#: page.index.php:177
-msgid "hours"
-msgstr ""
-
-#: page.index.php:180
-msgid "minute"
 msgstr ""
 
 #: page.index.php:190
@@ -140,6 +160,10 @@ msgstr ""
 msgid "Uptime"
 msgstr ""
 
+#: page.index.php:284
+msgid "System Information Table"
+msgstr ""
+
 #: page.index.php:292
 msgid "System Uptime"
 msgstr ""
@@ -161,6 +185,7 @@ msgid "Asterisk"
 msgstr ""
 
 #: page.index.php:316
+#, php-format
 msgid "Asterisk is running: %s"
 msgstr ""
 
@@ -258,34 +283,42 @@ msgstr ""
 msgid "FreePBX Notices"
 msgstr ""
 
-#: page.index.php:418 page.index.php:420
+#: page.index.php:422 page.index.php:424
 msgid "Delete this"
 msgstr ""
 
-#: page.index.php:423 page.index.php:425
+#: page.index.php:427 page.index.php:429
 msgid "Ignore this"
 msgstr ""
 
-#: page.index.php:441
+#: page.index.php:436
+#, php-format
+msgid "Added %s ago"
+msgstr ""
+
+#: page.index.php:445
 msgid "No notifications"
 msgstr ""
 
-#: page.index.php:443
+#: page.index.php:447
 msgid "No new notifications"
 msgstr ""
 
-#: page.index.php:451
+#: page.index.php:455
 msgid "show new"
 msgstr ""
 
-#: page.index.php:453
+#: page.index.php:457
 msgid "show all"
 msgstr ""
 
-#: page.index.php:596
+#: page.index.php:600
 msgid "loading..."
 msgstr ""
 
-#: page.index.php:612
+#: page.index.php:616
 msgid "FreePBX System Status"
+msgstr ""
+
+msgid "System Dashboard"
 msgstr ""

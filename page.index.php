@@ -433,7 +433,7 @@ function show_syslog(&$md5_checksum) {
 			$out .= "\n";
 			$out .= '<div class="syslog_detail">';
 			$out .= nl2br($item['extended_text']);
-			$out .= '<br/><span>'.sprintf('Added %s ago', time_string(time() - $item['timestamp'])).'<br/>'.
+			$out .= '<br/><span>'.sprintf(_('Added %s ago'), time_string(time() - $item['timestamp'])).'<br/>'.
 			        '('.$item['module'].'.'.$item['id'].')</span>';
 			$out .= '</div>';
 			

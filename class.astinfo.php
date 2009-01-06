@@ -223,12 +223,12 @@ class astinfo {
 		} else {
 			$translate = true;
 			$units = array(
-				'/seconds/', '/second/',
-				'/minutes/', '/minute/',
-				'/hours/', '/hour/',
-				'/days/', '/day/',
-				'/weeks/', '/week/',
-				'/years/', '/year/',
+				'/\bseconds\b/', '/\bsecond\b/',
+				'/\bminutes\b/', '/\bminute\b/',
+				'/\bhours\b/', '/\bhour\b/',
+				'/\bdays\b/', '/\bday\b/',
+				'/\bweeks\b/', '/\bweek\b/',
+				'/\byears\b/', '/\byear\b/',
 			);
 			$tunits = array(
 				_('seconds'), _('second'),
