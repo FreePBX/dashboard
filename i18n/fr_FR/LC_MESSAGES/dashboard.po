@@ -1,0 +1,288 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-08 10:32+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Jouniaux <c.jouniauxdiv@laposte.net>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: page.index.php:113
+msgid "OK"
+msgstr "OK"
+
+#: page.index.php:117
+msgid "Warn"
+msgstr "Att"
+
+#: page.index.php:121
+msgid "ERROR"
+msgstr "ERREUR"
+
+#: page.index.php:154
+#: page.index.php:180
+msgid "minutes"
+msgstr "minutes"
+
+#: page.index.php:171
+msgid "week"
+msgstr "semaine"
+
+#: page.index.php:171
+msgid "weeks"
+msgstr "semaines"
+
+#: page.index.php:174
+msgid "days"
+msgstr "jours"
+
+#: page.index.php:177
+msgid "hour"
+msgstr "heure"
+
+#: page.index.php:177
+msgid "hours"
+msgstr "heures"
+
+#: page.index.php:180
+msgid "minute"
+msgstr "minute"
+
+#: page.index.php:190
+msgid "System Statistics"
+msgstr "Statistiques Système"
+
+#: page.index.php:191
+msgid "Processor"
+msgstr "Processeur"
+
+#: page.index.php:193
+msgid "Load Average"
+msgstr "Charge moyenne"
+
+#: page.index.php:194
+msgid "CPU"
+msgstr "CPU"
+
+#: page.index.php:196
+msgid "Memory"
+msgstr "Mémoire"
+
+#: page.index.php:199
+msgid "App Memory"
+msgstr "Mémoire utilisée"
+
+#: page.index.php:200
+msgid "Swap"
+msgstr "Swap"
+
+#: page.index.php:202
+msgid "Disks"
+msgstr "Disques"
+
+#: page.index.php:207
+msgid "Networks"
+msgstr "Réseaux"
+
+#: page.index.php:218
+msgid "receive"
+msgstr "reçu"
+
+#: page.index.php:219
+msgid "transmit"
+msgstr "transmis"
+
+#: page.index.php:252
+msgid "FreePBX Statistics"
+msgstr "Statistiques FreePBX"
+
+#: page.index.php:253
+msgid "Total active calls"
+msgstr "Total appels actifs"
+
+#: page.index.php:254
+msgid "Internal calls"
+msgstr "Appels internes"
+
+#: page.index.php:255
+msgid "External calls"
+msgstr "Appels externes"
+
+#: page.index.php:256
+msgid "Total active channels"
+msgstr "Total canaux actifs"
+
+#: page.index.php:258
+msgid "FreePBX Connections"
+msgstr "Connexions FreePBX"
+
+#: page.index.php:268
+msgid "IP Phones Online"
+msgstr "Téléphones IP connectés"
+
+#: page.index.php:271
+msgid "IP Trunks Online"
+msgstr "Trunks IP connectés"
+
+#: page.index.php:274
+msgid "IP Trunk Registrations"
+msgstr "Trunks IP enregistrés"
+
+#: page.index.php:283
+msgid "Uptime"
+msgstr "Durée de fonctionnement"
+
+#: page.index.php:292
+msgid "System Uptime"
+msgstr "Système"
+
+#: page.index.php:300
+msgid "Asterisk Uptime"
+msgstr "Asterisk"
+
+#: page.index.php:301
+msgid "Last Reload"
+msgstr "Dernier rechargement"
+
+#: page.index.php:313
+msgid "Server Status"
+msgstr "Statut serveurs"
+
+#: page.index.php:316
+#: page.index.php:318
+msgid "Asterisk"
+msgstr "Serveur Asterisk"
+
+#: page.index.php:316
+msgid "Asterisk is running: %s"
+msgstr "Asterisk est démarré depuis: %s"
+
+#: page.index.php:318
+msgid "Asterisk is not running, this is a critical service!"
+msgstr "Asterisk n'est pas démarré, c'est un service critique!"
+
+#: page.index.php:324
+#: page.index.php:326
+msgid "Manager Proxy"
+msgstr "Manager Proxy"
+
+#: page.index.php:324
+msgid "Asterisk Manager Proxy is running"
+msgstr "Le Manager Proxy Asterisk est démarré"
+
+#: page.index.php:326
+msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
+msgstr "Le Proxy Manager Asterisk n'est pas démarré. FreePBX va être connecté à Asterisk en direct, ce qui peut entraîler de mauvaises performances."
+
+#: page.index.php:333
+#: page.index.php:337
+#: page.index.php:339
+msgid "Op Panel"
+msgstr "Serveur Opérateur"
+
+#: page.index.php:333
+msgid "FOP Operator Panel Server is running"
+msgstr "Le serveur Standard est démarré"
+
+#: page.index.php:337
+msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
+msgstr "Le serveur Opérateur n'est pas démarré. Vous ne pourrez utiliser cette fonction."
+
+#: page.index.php:339
+msgid "FOP Operator Panel is disabled in amportal.conf"
+msgstr "La fonction Opérateur est désactivée dans amportal.conf"
+
+#: page.index.php:353
+msgid "MySQL"
+msgstr "Serveur MySQL"
+
+#: page.index.php:353
+msgid "MySQL Server is running"
+msgstr "Le serveur MYSQL est démarré"
+
+#: page.index.php:357
+msgid "Web Server"
+msgstr "Serveur Web"
+
+#: page.index.php:357
+msgid "Web Server is running"
+msgstr "Le serveur Web est démarré"
+
+#: page.index.php:362
+#: page.index.php:364
+msgid "SSH Server"
+msgstr "Serveur SSH"
+
+#: page.index.php:362
+msgid "SSH Server is running"
+msgstr "Le serveur SSH est démarré"
+
+#: page.index.php:364
+msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
+msgstr "Le serveur SSH n'est pas démarré. Vous ne pourrez vous connecter à distance à la console système."
+
+#: page.index.php:384
+msgid "Critical Error"
+msgstr "Erreur critique"
+
+#: page.index.php:385
+msgid "Security Update"
+msgstr "Mis à jour sécurité"
+
+#: page.index.php:386
+msgid "Update"
+msgstr "Mis à jour"
+
+#: page.index.php:387
+msgid "Error"
+msgstr "Erreur"
+
+#: page.index.php:388
+msgid "Warning"
+msgstr "Attention"
+
+#: page.index.php:389
+msgid "Notice"
+msgstr "Information"
+
+#: page.index.php:398
+msgid "FreePBX Notices"
+msgstr "Informations FreePBX"
+
+#: page.index.php:418
+#: page.index.php:420
+msgid "Delete this"
+msgstr "Supprimer"
+
+#: page.index.php:423
+#: page.index.php:425
+msgid "Ignore this"
+msgstr "Ignorer"
+
+#: page.index.php:441
+msgid "No notifications"
+msgstr "Pas d'information"
+
+#: page.index.php:443
+msgid "No new notifications"
+msgstr "Pas de nouvelle information"
+
+#: page.index.php:451
+msgid "show new"
+msgstr "Afficher nouveaux"
+
+#: page.index.php:453
+msgid "show all"
+msgstr "Afficher tous"
+
+#: page.index.php:596
+msgid "loading..."
+msgstr "chargement..."
+
+#: page.index.php:612
+msgid "FreePBX System Status"
+msgstr "Statut Système FreePBX"
+
