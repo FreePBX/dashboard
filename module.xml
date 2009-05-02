@@ -17,6 +17,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*2.5.0.7* #3652
 		*2.5.0.6* #3409, localization fixes, updates
 		*2.5.0.5* #3404 correction
 		*2.5.0.4* #3401, #3404

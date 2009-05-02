@@ -152,6 +152,8 @@ function draw_box($text, $value, $total_width = 200) {
 function time_string($seconds) {
     if ($seconds == 0) {
         return "0 "._("minutes");
+    } elseif ($seconds < 60) {
+        return "$seconds "._("seconds");
     }
 
     $minutes = floor($seconds / 60);
