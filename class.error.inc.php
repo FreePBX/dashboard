@@ -14,6 +14,8 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // $Id: class.error.inc.php,v 1.4 2006/02/27 21:01:44 bigmichi1 Exp $
 
+// Copyright 2006 phpSysInfo
+
 class Error {
 
 	// Array which holds the error messages

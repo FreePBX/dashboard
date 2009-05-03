@@ -18,6 +18,9 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 // $Id: class.Darwin.inc.php,v 1.26 2006/04/15 21:42:20 bigmichi1 Exp $
+
+// Copyright 2006 phpSysInfo
+
 if (!defined('IN_PHPSYSINFO')) {
     die("No Hacking");
 }

@@ -19,6 +19,8 @@
 
 // $Id: class.SunOS.inc.php,v 1.22 2006/02/11 17:55:25 bigmichi1 Exp $
 
+// Copyright 2006 phpSysInfo
+
 $error->addError("WARN", "The SunOS version of phpSysInfo is work in progress, some things currently don't work");
 
 class sysinfo {

@@ -14,6 +14,9 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // $Id: common_functions.php,v 1.42 2006/04/17 13:03:38 bigmichi1 Exp $
 // HTML/XML Comment
+
+// Copyright 2006 phpSysInfo
+
 function created_by ()
 {
   global $VERSION;

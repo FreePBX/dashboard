@@ -19,6 +19,8 @@
 
 // $Id: class.HP-UX.inc.php,v 1.17 2006/02/11 17:31:03 bigmichi1 Exp $
 
+// Copyright 2006 phpSysInfo
+
 class sysinfo {
   // get our apache SERVER_NAME or vhost
   function vhostname () {

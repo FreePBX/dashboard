@@ -15,6 +15,8 @@
 // WINNT implementation written by Carl C. Longnecker, longneck@iname.com
 // $Id: class.WINNT.inc.php,v 1.19 2006/04/22 16:47:25 bigmichi1 Exp $
 
+// Copyright 2006 phpSysInfo
+
 class sysinfo {
   // $wmi holds the COM object that we pull all the WMI data from
   var $wmi; 

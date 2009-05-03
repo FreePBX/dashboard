@@ -19,6 +19,8 @@
 
 // $Id: class.BSD.common.inc.php,v 1.50 2006/04/22 14:35:57 bigmichi1 Exp $
 
+//  Copyright 2006 phpSysInfo
+
 if (!defined('IN_PHPSYSINFO')) {
     die("No Hacking");
 }

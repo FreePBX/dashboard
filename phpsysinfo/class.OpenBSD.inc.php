@@ -18,6 +18,9 @@
 // Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 // $Id: class.OpenBSD.inc.php,v 1.21 2006/04/18 17:46:15 bigmichi1 Exp $
+
+// Copyright 2006 phpSysInfo
+
 if (!defined('IN_PHPSYSINFO')) {
     die("No Hacking");
 }
