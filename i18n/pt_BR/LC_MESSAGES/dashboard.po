@@ -1,0 +1,1673 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GpwmPOT-Creation-Date: 2005-08-17 10:15-0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-03 13:14-0300\n"
+"PO-Revision-Date: 2009-03-14 16:17-0300\n"
+"Last-Translator: Flavio E Goncalves <flavio@voffice.com.br>\n"
+"Language-Team: Português\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid " does NOT need to be an extension, it can be a Ring Group, or even an external number."
+msgstr "não é necessário ser uma extensão, pode ser um grupo de chamadas, ou um número externo"
+
+msgid "(ie. NXXNXXXXXX for US/CAN 10-digit dialing, NXXXXXX for 7-digit)"
+msgstr "(EX. NXXNXXXXXX para discado de US/CAN de 10-dígitos, NXXXXXX para 7-digitos)"
+
+msgid "(pick destination)"
+msgstr "(pegar destino)"
+
+msgid "(pick one)"
+msgstr "(escolha um)"
+
+msgid "** MISSING FEATURE CODE **"
+msgstr "** FALTA CÓDIGO DE FUNÇÃO **"
+
+msgid "** WARNING **"
+msgstr "** ALERTA **"
+
+msgid "/b<br>H323/"
+msgstr "/b<br>H323/"
+
+msgid "24-hour format"
+msgstr "Formato de hora 24H"
+
+msgid "<h2>FreePBX System Status</h2>"
+msgstr "Status do midiVTS"
+
+msgid "A Dial Pattern is a unique set of digits that will select this trunk. Enter one dial pattern per line."
+msgstr "Um padrão de discagem é um parametro único de dígitos que selecionará este tronco. Entar um padão de discagem por linha."
+
+msgid "A Dial Rule controls how calls will be dialed on this trunk. It can be used to add or remove prefixes. Numbers that don't match any patterns defined here will be dialed as-is. Note that a pattern without a + or | (to add or remove a prefix) will not make any changes but will create a match. Only the first matched rule will be executed and the remaining rules will not be acted on."
+msgstr "Uma regra de discagem que controla como as chamadas sao discadas em um tronco. Pode ser usada para agregar ou remover prefixos. Os numeros que não combinam com nenhum padrão pre-definido aqui seram discados como são. Deve-se notar que um padrão que não contenha + ou | (para adicionar ou remover um prefixo) não fará qualquer alteração mas deve casar. Somente a primeira regra que casar será executada."
+
+msgid "A directdid for this DID is already associated with extension:"
+msgstr "Um directdid para este DIS já está associado com o ramal:"
+
+msgid "A route for this DID/CID already exists!"
+msgstr "Uma rota para esse DID/CID já existe!"
+
+msgid "A route with this DID already exists:"
+msgstr "Uma rota para este DID já existe:"
+
+msgid "A user will enter this password when logging onto a device."
+msgstr "O usuário digitará esta senha para autenticar no dispositivo."
+
+msgid "ALL SECTIONS"
+msgstr "TODAS SESSÕES"
+
+msgid "AUTHTYPE is not set to 'database' in /etc/amportal.conf - note that this module is not currently providing access control, and changing passwords here or adding users will have no effect unless AUTHTYPE is set to 'database'."
+msgstr "AUTHTYPE não está configurado para 'database' no /etc/amportal.conf - note que este modulo não está provendo controle de acesso neste momento. Adição de usuários ou troca de senhas aqui não terão efeito enquanto AUTHTYPE não estiver configurado para 'database'. "
+
+msgid "Access Restrictions"
+msgstr "Restrições De Acesso"
+
+msgid "Add"
+msgstr "Adicionar"
+
+msgid "Add Administrator"
+msgstr "Adicionar Administrador"
+
+msgid "Add Custom Destination"
+msgstr "Adicionar Destino Personalizado"
+
+msgid "Add Custom Trunk"
+msgstr "Adicionar um tronco personalizado"
+
+msgid "Add DUNDi Trunk"
+msgstr "Adicionar um tronco DUNDi"
+
+msgid "Add Device"
+msgstr "Adicionar Dispositivo"
+
+msgid "Add ENUM Trunk"
+msgstr "Adicionar um tronco ENUM"
+
+msgid "Add Extension"
+msgstr "Adicionar Ramal"
+
+msgid "Add IAX2 Trunk"
+msgstr "Adicionar um tronco IAX2"
+
+msgid "Add Incoming Route"
+msgstr "Adicionar Rota de Entrada"
+
+msgid "Add Music Category"
+msgstr "Adicionar Categoria de música"
+
+msgid "Add Recording"
+msgstr "Adicionar Gravação"
+
+msgid "Add Route"
+msgstr "Adicionar Rota"
+
+msgid "Add SIP Trunk"
+msgstr "Adicionar um tronco SIP"
+
+msgid "Add Trunk"
+msgstr "Adicionar tronco"
+
+msgid "Add User"
+msgstr "Adicionar Usuário"
+
+msgid "Add User/Extension"
+msgstr "Adicionar Ramal/Usuário"
+
+msgid "Add ZAP Trunk"
+msgstr "Adicionar um tronco ZAP"
+
+msgid "Add a Trunk"
+msgstr "Adicionar um tronco"
+
+msgid "Add an Extension"
+msgstr "Adicionar um Ramal"
+
+msgid "Admin Access<span>Select the Admin Sections this user should have access to.</span>"
+msgstr "Acesso Administrativo<span>Selecione o nivel de acesso que este usuário deverá ter.</span>"
+
+msgid "Administrators"
+msgstr "Administator"
+
+msgid "After recording or uploading,"
+msgstr "Depois de gravar ou fazer o upload de um arquivo,"
+
+msgid "Allow Anonymous Inbound SIP Calls?"
+msgstr "Permitir chamadas SIP de entrada anônimas?"
+
+msgid "Alternatively, upload a recording in"
+msgstr "Alternativamente, pode-se fazer o upload de uma gravação "
+
+msgid "Always"
+msgstr "Sempre"
+
+msgid "Always dial with prefix"
+msgstr "Sempre disca com prefixo"
+
+msgid "App Memory"
+msgstr "Memória App"
+
+msgid "Apply Changes Bar"
+msgstr "Barra de Confirmação de alterações"
+
+msgid "Apply Configuration Changes"
+msgstr "Aplicar Alterações de Configuração"
+
+msgid "Are you sure you wish to proceed?"
+msgstr "Tem certeza que deseja proceder?"
+
+msgid "Asterisk"
+msgstr "Asterisk"
+
+msgid "Asterisk Dial command options:"
+msgstr "Opções para o comando Dial interno:"
+
+msgid "Asterisk Manager Proxy is not running, freePBX will fall back to using Asterisk directly, which may result in poor performance"
+msgstr "O Manager Proxy não está rodando, o midiVTS acessará o Asterisk diretamente,o que pode resultar uma performance fraca"
+
+msgid "Asterisk Manager Proxy is running"
+msgstr "O Manager Proxy não está rodando"
+
+msgid "Asterisk Outbound Dial command options:"
+msgstr "Opções para do comando Dial de saída:"
+
+msgid "Asterisk Uptime"
+msgstr "Tempo ativo do Asterisk"
+
+msgid "Asterisk is not running, this is a critical service!"
+msgstr "Asterisk não está rodando, este é um serviço crítico!"
+
+msgid "Asterisk is running: "
+msgstr "Asterisk está rodando: "
+
+msgid "At least one trunk must be picked"
+msgstr "Ao menos um tronco deve ser selecionado"
+
+msgid "Basic"
+msgstr "Básico"
+
+msgid "Beep Only"
+msgstr "Somente beep"
+
+msgid "Browse"
+msgstr "Pesquisar"
+
+msgid "Built-in Recordings"
+msgstr "Gravações internas"
+
+msgid "Busy"
+msgstr "Ocupado"
+
+msgid "CPU"
+msgstr "CPU"
+
+msgid "Call Forward"
+msgstr "Encaminhamento de Chamadas"
+
+msgid "Call Forward All Activate"
+msgstr "Ativar todos encaminhamentos"
+
+msgid "Call Forward All Deactivate"
+msgstr "Desativar todos encaminhamentos"
+
+msgid "Call Forward All Prompting Deactivate"
+msgstr "Desativar todos os promptings encaminhamento"
+
+msgid "Call Forward Busy Activate"
+msgstr "Ativar encaminhamento quando ocupado"
+
+msgid "Call Forward Busy Deactivate"
+msgstr "Desativar encaminhamento quando ocupado"
+
+msgid "Call Forward Busy Prompting Deactivate"
+msgstr "Destivar encaminhamento quando prompting ocupado"
+
+msgid "Call Forward No Answer/Unavailable Activate"
+msgstr "Ativar encaminhamento quando SEM RESPOSTA/INDISPONÍVEL"
+
+msgid "Call Forward No Answer/Unavailable Deactivate"
+msgstr "Desativar encaminhamento quando SEM RESPOSTA/INDISPONÍVEL"
+
+msgid "Call Logs"
+msgstr "Logs das chamadas"
+
+msgid "Call Waiting"
+msgstr "Chamada em Espera"
+
+msgid "Cancel reload and go back to editing"
+msgstr "Cancelar regarga e retornar à edição"
+
+msgid "Category:"
+msgstr "Categoria"
+
+msgid "Change Name"
+msgstr "Alterar Nome"
+
+msgid "Check for Updates"
+msgstr "Procurar por atualizações"
+
+msgid "Check for updates online"
+msgstr "Procurar por atualizações online"
+
+msgid "Check this to disable this trunk in all routes where it is used."
+msgstr "Marque para desabilitar este tronco em todas as rotas que é usado."
+
+msgid "Check this to remove the default message \"Please leave your message after the tone. When done, hang-up, or press the pound key.\" That is played after the voicemail greeting (the s option). This applies globally to all vm boxes."
+msgstr "Marcar para remover a mensagem padrão \"Por favor deixe sua mensagem depoisdo tom. Ao finalizar, desligue, ou pressione o quadrado.\" Que é executada apósa saudação do Correio de voz (opção s). Isso se aplica globalmente á todas as caixas de correio."
+
+msgid "Choosing Yes will result in the system automatically checking for updates nighly. The resuling infomation will be displayed in the dashboard and will be optionally emailed to the address below if provided.<br />This will trasmit your freePBX and Asterisk version numbers along with a unique but random identifier. This is used to provide proper update information and to track version usage to focus development and maintenance efforts. No private information is trasmitted."
+msgstr "Selecionado Sim o sistema automaticamente buscara por atulizaçõesà noite. A informação resultante será apresentada na tela de estado e pode ser enviada por e-mail para o endereço abaixo de especificado.<br />Será transmitida  sua versão do asterisk e freePBX um idendificador único, porém randômico. Será usadopara gerar estatísticas de uso de versão e focar os esforços de desenvolvimento e manutenção. Nenhuma informação privada será transmitida."
+
+msgid "Clean & Remove duplicates"
+msgstr "Limpa e remove duplicados"
+
+msgid "Click \"SAVE\" when you are satisfied with your recording"
+msgstr "Clique em \"Salvar\" quando estiver satisfeito com a sua gravação"
+
+msgid "Company Directory"
+msgstr "Diretório da empresa"
+
+msgid "Compare Calls"
+msgstr "Comparar chamadas"
+
+msgid "Conflicting Extensions"
+msgstr "Ramais Conflitantes"
+
+msgid "Continue with reload"
+msgstr "Continuar com a recarga"
+
+msgid "Controls the maximum number of outbound channels (simultaneous calls) that can be used on this trunk. Inbound calls are not counted against the maximum. Leave blank to specify no maximum."
+msgstr "Controla a quantidade máxima de canais de saída (chamadas simultâneas) que pode-se realizar desde este tronco, incluiendo chamadas de entradas e saídas. Deixar em branco para especificar o máximo."
+
+msgid "Controls the maximum number of outbound channels (simultaneous calls) that can be used on this trunk. To count inbound calls against this maximum, use the auto-generated context: %s as the inbound trunk's context. (see extensions_additional.conf) Leave blank to specify no maximum."
+msgstr "Controla a quantidade máxima de canais de saída (chamadas simultâneas) que pode-se realizar neste tronco.Para contar as chamadas de entrada use o contexto criadocriado automáticamente %s como o tronco de entrada. Veja extensions_additional.conf)Deixar em branco para especificar o máximo."
+
+msgid "Country"
+msgstr "País"
+
+msgid "Critical Error"
+msgstr "Erro Crítico"
+
+msgid "Custom Destination"
+msgstr "Destino Personalizado"
+
+msgid "Custom Destinations allows you to register your custom destinations that point to custom dialplans and will also 'publish' these destinations as available destinations to other modules. This is an advanced feature and should only be used by knowledgable users. If you are getting warnings or errors in the noticication panel about CUSTOM destinations that are correct, you should include them here. The 'Unknown Destinations' chooser will allow you to choose and insert any such destinations that the registry is not aware of into the Custom Destination field."
+msgstr "Destinos Personalizados permitem você registrar seus destinos personalizados queapontam para planos de discagem personalizados e também 'publica' esses destnos comodestino disponível para outros módulos. Isso é uma função avançada e deve ser usadaapenas por usuários com conhecimento de Asterisk. Se você está recebernso alertas ouerros no painel de notificação sobre destinos CUSTOMIZADOS tenha certeza que foram incluídos por aqui. O selecionador 'Destinos Desconhecidos' permitirá a escolha ea insersão de qualquer destino "
+
+msgid "Custom Dial String"
+msgstr "String de chamada personalizada"
+
+msgid "Custom Extension"
+msgstr "Ramal Personalizado"
+
+msgid "DUNDi Mapping"
+msgstr "Mapeamento DUNDi"
+
+msgid "Daily load"
+msgstr "Carga diária"
+
+msgid "Default"
+msgstr "Padrão"
+
+msgid "Default Context & Pri:"
+msgstr "Contexo Padrão e Pri:"
+
+msgid "Default to use if only an number/extension are provided."
+msgstr "Padrão para usar se somente um número/ramal é provido."
+
+msgid "Define the custom Dial String.  Include the token"
+msgstr "Definir uma string de chamada personalizada."
+
+msgid "Delete"
+msgstr "Excluir"
+
+msgid "Delete Device"
+msgstr "Excluir Dispositivo"
+
+msgid "Delete Extension"
+msgstr "Excluir Ramal"
+
+msgid "Delete Route"
+msgstr "Excluir Rota"
+
+msgid "Delete Trunk"
+msgstr "Excluir tronco"
+
+msgid "Delete User"
+msgstr "Excluir Usuário"
+
+msgid "Delete Vmail"
+msgstr "Excluir Vmail"
+
+msgid "Delete this"
+msgstr "Apagar este"
+
+msgid "Department Name<span>Restrict this user's view of Digital Receptionist menus and System Recordings to only those for this department.</span>"
+msgstr "Nome do Departamento<span>Restringe a visualização desses usuários no Menu Digital de Recepção (URA)e gravações de Sistema para o seu departamento.</span>"
+
+msgid "Department name cannot have a space"
+msgstr "O nome do departamento nao pode ter nenhum espaço"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "Descriptive Name"
+msgstr "Nome descritivo"
+
+msgid "Destination Quick Pick"
+msgstr "Quick Pick de Destino"
+
+msgid "Device"
+msgstr "Dispositivo"
+
+msgid "Device Options"
+msgstr "Opções do dispositivo"
+
+msgid "Devices can be fixed or adhoc. Fixed devices are always associated to the same extension/user. Adhoc devices can be logged into and logged out of by users."
+msgstr "Dispotitivos podem ser fixos adhoc. Dispositivos fixos são sempre associados para a mesmo ramal/usuário. Dispositivos Adhoc podem ser logados e deslogados pelos usuários."
+
+msgid "Dial Patterns"
+msgstr "Regras de discagem"
+
+msgid "Dial Rules"
+msgstr "Regras de Discagem"
+
+msgid "Dial Rules Wizards"
+msgstr "Assistente de regras de discagem"
+
+msgid "Dial System FAX"
+msgstr "FAX"
+
+msgid "Dial pattern is invalid"
+msgstr "Padrão de discagem é inválido"
+
+msgid "Dial patterns wizards"
+msgstr "Assistente de regras de discagem"
+
+msgid "Dialing Options"
+msgstr "Opções de Discagem"
+
+msgid "Direct DID"
+msgstr "DID Direto"
+
+msgid "Direct Dial to Voicemail message type:"
+msgstr "Discar para acessar o Correio de voz diretamente"
+
+msgid "Direct VM Option"
+msgstr "Opção direta de VoiceMail"
+
+msgid "Disable"
+msgstr "Desabilitado"
+
+msgid "Disable Trunk"
+msgstr "Desabilitar Tronco"
+
+msgid "Disabled"
+msgstr "Desabilitado"
+
+msgid "Disks"
+msgstr "Discos"
+
+msgid "Display Name"
+msgstr "Nome de exibição"
+
+msgid "Do Not Play"
+msgstr "Não executar"
+
+msgid "ERROR"
+msgstr "Erro"
+
+msgid "Edit %s Trunk"
+msgstr "Editar tronco %s"
+
+msgid "Edit Administrator"
+msgstr "Editar Administrador"
+
+msgid "Edit Custom Destination"
+msgstr "Editar Destino Personalizado"
+
+msgid "Edit Custom Extension"
+msgstr "Editar Ramal Personalizado"
+
+msgid "Edit Extension"
+msgstr "Editar Ramal"
+
+msgid "Edit Incoming Route"
+msgstr "Editar Rota de entrada"
+
+msgid "Edit Recording"
+msgstr "Editar Gravação"
+
+msgid "Edit Route"
+msgstr "Editar Rota"
+
+msgid "Edit User"
+msgstr "Editar Usuário"
+
+msgid "Edit: "
+msgstr "Editar: "
+
+msgid "Email Address"
+msgstr "Endereço de e-mail"
+
+msgid "Email Attachment"
+msgstr "Anexar ao e-mail"
+
+msgid "Email address"
+msgstr "Direção de email"
+
+msgid "Email address that faxes appear to come from if 'system' has been chosen for the fax extension above."
+msgstr "Endereço de e-mail de origem do fax de 'system' for a escolha para o ramal de fax acima."
+
+msgid "Email address used if 'system' has been chosen for the fax extension above."
+msgstr "Endereço de email usada se 'sistema' for a escolha para a recepção de fax."
+
+msgid "Email address where online udpates will be sent. Leaving blank will result in no udpates being sent."
+msgstr "Endereço de e-mail onde as atualizações on-line serão enviadas. Deixando em branconenhuma informação de atualização será enviada."
+
+msgid "Emergency"
+msgstr "Emergência"
+
+msgid "Emergency CID"
+msgstr "CID de Emergência"
+
+msgid "Emergency Dialing"
+msgstr "Discagem de emergência"
+
+msgid "Enable"
+msgstr "Ativar"
+
+msgid "Enable Random Play"
+msgstr "Habilitar modo aleatório"
+
+msgid "Enabled"
+msgstr "Habilitado"
+
+msgid "Error"
+msgstr "Erro"
+
+msgid "Error Duplicate Channel Entry"
+msgstr "Erro: Entrada de tronco duplicada"
+
+msgid "Error fetching prefix list for: "
+msgstr "Error obtendo lista de prefixos para:"
+
+msgid "Error renaming route: duplicate name"
+msgstr "Erro renomeando rota: rota duplicada"
+
+msgid ""
+"Error: Cannot continue!\\n"
+"\\n"
+"Prefix lookup requires cURL support in PHP on the server. Please install or enable cURL support in your PHP installation to use this function. See http://www.php.net/curl for more information."
+msgstr ""
+"Erro: Não pode continuar!\n"
+"\n"
+"A busca de prefixos reque suporte CURL em PHP no servidor. Por favor, instále-o ou habilite o suporte cURL em sua instalação PHP para usar esta função. Entre em http://www.php.net/curl para maiores informações."
+
+msgid "Extension"
+msgstr "Ramal"
+
+msgid "Extension Options"
+msgstr "Opções do Ramal"
+
+msgid "Extension Range<span>Restrict this user's view to only Extensions, Ring Groups, and Queues within this range.</span>"
+msgstr "Campo de Ramal<span>Restringe deste usuário á grupos internos de camadas, e filas dentro do campo indicado.</span>"
+
+msgid "Extension of"
+msgstr "Ramal de"
+
+msgid "Extension prefix for dialing direct to voicemail:"
+msgstr "Prefixo do ramal para direcionar a chamada para o Correio de Voz:"
+
+msgid "Extensions"
+msgstr "Ramais"
+
+msgid "External calls"
+msgstr "Chamadas externas"
+
+msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
+msgstr "O servidor FOP não está rodando, não será possível usar o Operator panel,porém o sistema funciona normalmente sem ele."
+
+msgid "FOP Operator Panel Server is running"
+msgstr "Servidor FOP está rodando"
+
+msgid "FOP Operator Panel is disabled in amportal.conf"
+msgstr "FOP Operator Panel está desabilitado no amporta.conf"
+
+msgid "Failed to create"
+msgstr "Falha ao criar"
+
+msgid "Fax Handling"
+msgstr "Gerenciamento de FAX"
+
+msgid "Fax Machine"
+msgstr "Maquina de FAX"
+
+msgid "Feature"
+msgstr "Característica"
+
+msgid "Feature Code Admin"
+msgstr "Administrador do Código de Função"
+
+msgid "Feature Code Conflicts with other Extensions"
+msgstr "Código de função conflita com outros ramais"
+
+msgid "Feature Codes"
+msgstr "Codigos de Função"
+
+msgid "Feature Codes have been duplicated"
+msgstr "Códigos de Funções foram duplicados"
+
+msgid "Featurecode: "
+msgstr "Código de função"
+
+msgid "Files"
+msgstr "Arquivos"
+
+msgid "Find users in the Company Directory by:"
+msgstr "Procura usuários no Diretório da empresa por:"
+
+msgid "Fixed"
+msgstr "Fixo"
+
+msgid "For security reasons, you cannot use the department name default"
+msgstr "Por razões de segurança, não se pode usar o nome default/padrão para el departamento"
+
+msgid "FreePBX Connections"
+msgstr "Conexões midiVTS"
+
+msgid "FreePBX Notices"
+msgstr "Notificações do midiVTS"
+
+msgid "FreePBX Statistics"
+msgstr "Estatísticas do midiVTS"
+
+msgid "FreePBX System Status"
+msgstr "Status do midiVTS"
+
+msgid "FreePBX administration"
+msgstr "midiVTS: Administração"
+
+msgid "FreePBX: Call Detail Reports"
+msgstr "midiVTS: Relatórios de Chamadas"
+
+msgid "FreePBX: Flash Operator Panel"
+msgstr "midiVTS: Flash Operator Panel"
+
+msgid "General Settings"
+msgstr "Configurações Gerais"
+
+msgid "Generic IAX2 Device"
+msgstr "Dispositivo IAX2 genérico"
+
+msgid "Generic SIP Device"
+msgstr "Dispositivo SIP Genérico"
+
+msgid "Generic ZAP Device"
+msgstr "Dispositivo ZAP genérico"
+
+msgid "Give this trunk a unique name.  Example: myiaxtel"
+msgstr "Insira neste campo apenas um nome. Exemplo: miteliax"
+
+msgid "Go"
+msgstr "OK"
+
+msgid "IP Phones Online"
+msgstr "Telefones IP Online"
+
+msgid "IP Trunk Registrations"
+msgstr "Registros de troncos IP"
+
+msgid "IP Trunks Online"
+msgstr "Troncos IP Online"
+
+msgid "If no Caller ID is sent, Privacy Manager will asks the caller to enter their 10 digit phone number. The caller is given 3 attempts."
+msgstr "Se o Caller ID não é enviado, o Gerenciador de Privacidade irá pergundar à origem seu número de telfone de 10 dígitos. São oferecidas 3 tentativas."
+
+msgid "If this destination is voicemail, select whether or not to play the standard voicemail instructions or just beep."
+msgstr "Se este destino é o Correio de voz, selecione se deseja executar as instruções padrão ou somente um beep."
+
+msgid "If you want to support direct sip dialing of users internally or through anonymous sip calls, you can supply a friendly name that can be used in addition to the users extension to call them."
+msgstr "Se você precisa suporte a discagem direta por sip a usuários internos ouchamadas sip anônimas, você pode informar um nome amigável para ser usado adicionalmente aos ramais de usuários "
+
+msgid "If you wish to make and verify recordings from your phone, please enter your extension number here:"
+msgstr "Se você deseja fazer e verificar as gravações apartir do seu telefone, digite aqui seu ramal:"
+
+msgid "If you wish to re-record your message, dial"
+msgstr "Se deseja regravar sua mensagem, disque "
+
+msgid "Ignore this"
+msgstr "Ignorar este"
+
+msgid "In use by"
+msgstr "Em uso de"
+
+msgid "Inbound Call Control"
+msgstr "Controle de Chamadas de Entrada"
+
+msgid "Inbound Routes"
+msgstr "Rotas de Entrada"
+
+msgid "Incoming Settings"
+msgstr "Informações de Entrada"
+
+msgid "Indications"
+msgstr "Indicadores"
+
+msgid "Info Services"
+msgstr "Serviços de Informação"
+
+msgid "Information"
+msgstr "Informação"
+
+msgid "Internal Options"
+msgstr "Opções Internas"
+
+msgid "Internal Options &  Configuration"
+msgstr "Opções Internas e Configuração"
+
+msgid "Internal Options & Configuration"
+msgstr "Opções Internas e Configuração"
+
+msgid "Internal calls"
+msgstr "Chamadas internas"
+
+msgid "International"
+msgstr "Internacional"
+
+msgid "International Settings"
+msgstr "Configurações Internacionais"
+
+msgid "Intra Company Route"
+msgstr "Rota Intra-Company"
+
+msgid "Invalid Channel Number, must be numeric and not blank"
+msgstr "Número inválido de tronco, deve ser numérico e não pode estar em branco"
+
+msgid "Invalid Custom Dial String entered"
+msgstr "String de chamada personalizada inválida"
+
+msgid "Invalid DID, must be a non-blank DID"
+msgstr "DID inválido, não pode estar em branco"
+
+msgid "Invalid Dial Rules"
+msgstr "Regras de Discagem Inválidas"
+
+msgid "Invalid Maximum Channels"
+msgstr "Máximo de canais inválido "
+
+msgid "Invalid NPA-NXX. Must be of the format \\'NXX-NXX\\'"
+msgstr "NPA-NXX Inválido. Deve estar no formato 'NXX-NXX'"
+
+msgid "Invalid Outbound Caller ID"
+msgstr "Identificador de chamadas de saída Inválido"
+
+msgid "Invalid Outbound Dial Prefix"
+msgstr "Prefixo de chamadas externas inválido"
+
+msgid "Invalid Trunk Name entered"
+msgstr "Nome de tronco inválido"
+
+msgid "Invalid format for NPA-NXX code (must be format: NXXNXX)"
+msgstr "Formato insválido de codigo NPA-NXX (deve estar no formato: NXXNXX)"
+
+msgid "Invalid pattern. Only 0-9, #, *, Z, N, X and . are allowed."
+msgstr "Parametros inválidos Somente 0-9, #, *, Z, N, X y . são permitidos."
+
+msgid "Invalid prefix. Only 0-9, #, *, Z, N, and X are allowed."
+msgstr "Parametros inválidos Somente 0-9, #, *, Z, N, X y . são permitidos."
+
+msgid "Invalid prefix. Only dialable characters (0-9, #, and *) are allowed."
+msgstr "Prefixo Inválido. Estão permitidos somente caracteres discáveis (0-9, #, y *)"
+
+msgid "It should only be used if you fully understand the impact of allowing anonymous calls into your server"
+msgstr "Isso deve ser usado se somente se estiver a par do impacto que permitirchamadas anônimas no servidor podem causar."
+
+msgid "Last Reload"
+msgstr "Última recarga"
+
+msgid "Load Average"
+msgstr "Média de Carga"
+
+msgid "Local 7 digit"
+msgstr "Local 7 dígitos"
+
+msgid "Local 7/10 digit"
+msgstr "Local 7/10 dígitos"
+
+msgid "Logout"
+msgstr "Sair"
+
+msgid "Long-distance"
+msgstr "Longa distância"
+
+msgid "Lookup local prefixes"
+msgstr "Buscar prefixos locais"
+
+msgid "Lookup numbers for local trunk"
+msgstr "Números de pesquisa para o tronco local"
+
+msgid "Lookup numbers for local trunk (10-digit dialing)"
+msgstr "Número de pesquisa para tronco local (discagem de 10 dígitos)"
+
+msgid "Lookup numbers for local trunk (discagem de 7 dígitos)"
+msgstr "Número de pesquisa para tronco local"
+
+msgid "Loop Exceed default:"
+msgstr "padrão Loop Exceed"
+
+msgid "Make sure Asterisk is not running as root "
+msgstr "Tenha certeza que o Asterisk não está rodando como root"
+
+msgid "Make sure you have entered a proper name"
+msgstr "Tenha certeza que dígitou um nome correto"
+
+msgid "Manager Proxy"
+msgstr "Manager Proxy"
+
+msgid "Maximum Channels"
+msgstr "Máximo de canais"
+
+msgid "Memory"
+msgstr "Memória"
+
+msgid "Modify the default USER connection parameters for your VoIP provider."
+msgstr "Modifica os parametros de conecção do USER para o provedor VoIP."
+
+msgid "Module"
+msgstr "Módulo"
+
+msgid "Module Admin"
+msgstr "Administrador de Módulos"
+
+msgid "Monitor Trunk Failures"
+msgstr "Monitorar falhas de Troncos"
+
+msgid "Monthly Traffic"
+msgstr "Tráfego mensal"
+
+msgid "Move Down"
+msgstr "Mover abaixo"
+
+msgid "Move Up"
+msgstr "Mover acima"
+
+msgid "Msg Play:"
+msgstr "Executar Mensagem:"
+
+msgid "Msg Timeout:"
+msgstr "timeout da mensagem:"
+
+msgid "Music On Hold?"
+msgstr "Música em Espera?"
+
+msgid "Music on Hold"
+msgstr "Música em Espera"
+
+msgid "MySQL"
+msgstr "MySQL"
+
+msgid "MySQL Server is running"
+msgstr "Servidor MySQL está rodando"
+
+msgid "NOTE:"
+msgstr "NOTA:"
+
+msgid "Name of this route. Should be used to describe what type of calls this route matches (for example, 'local' or 'longdistance')."
+msgstr "Nome da rota. Serve usar para descrever que tipo de chamadas está sendo realizada dicha ruta (por ejemplo, 'local' o 'larga distancia')."
+
+msgid "Name this Recording"
+msgstr "Nome desta Gravação"
+
+msgid "Networks"
+msgstr "Redes"
+
+msgid "Never"
+msgstr "Nunca"
+
+msgid "Never Override CallerID"
+msgstr "Nunca Sobrescrever o CallerID"
+
+msgid "New User"
+msgstr "Novo Usuário"
+
+msgid "No"
+msgstr "Não"
+
+msgid "No new notifications"
+msgstr "Sem novas notificações"
+
+msgid "No notifications"
+msgstr "Sem notificações"
+
+msgid "None"
+msgstr "Nada"
+
+msgid "Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
+msgstr "Note que se você estiver .wav (ex. gravado com o gravador de som) O arquivo <b>deve</b> estar codificado no formato PCM, 16 Bits em 8000Hz"
+
+msgid "Note, does not delete file from computer"
+msgstr "Nota: não apaga do computador"
+
+msgid "Notes"
+msgstr "Notas"
+
+msgid "Notice"
+msgstr "Notificação"
+
+msgid "Number of seconds to ring phones before sending callers to voicemail:"
+msgstr "Segundos que os telefones tocam antes de enviar o originatário para o correio de voz:"
+
+msgid "Number of times to play invalid options and repeat the message upon receiving an undefined option."
+msgstr "Número de vezes a executar opções inválidas e repetir a mensagem"
+
+msgid "Number of times to play the recorded message if the caller does not press any options and it times out."
+msgstr "Números de vezes a executar a mensagem gravada se o usuário não selecionarqualquer opção."
+
+msgid "OK"
+msgstr "OK"
+
+msgid "On Demand"
+msgstr "Sobre Demanda"
+
+msgid "On Hold Music"
+msgstr "Música em Espera"
+
+msgid "Online Updates"
+msgstr "Atualizações automáticas"
+
+msgid "Op Panel"
+msgstr "Op Panel"
+
+msgid "Operator Extension:"
+msgstr "Ramal do Operador"
+
+msgid "Optional: A route can prompt users for a password before allowing calls to progress.  This is useful for restricting calls to international destinations or 1-900 numbers.<br><br>A numerical password, or the path to an Authenticate password file can be used.<br><br>Leave this field blank to not prompt for password.</span>"
+msgstr "Opicional: Uma rota pode perguntar aos usuarios por uma senha antes de permitir chamadas. Isto é util para restringir chamadas para destinos internacionais, etc.<br><br>Deixe este campo em branco para não preguntar pela senha.</span>"
+
+msgid "Optional: Selecting this option will enforce the use of a device's Emergency CID setting (if set).  Select this option if this set of routes is used for emergency dialing (ie: 911).</span>"
+msgstr "Opcional: Marcando essa opção irá forçar o uso do CID do dispositivo de Emergência se configurado. Selecione esta opção se estas rotas serão usadas para discagem de emerência ex.: 190."
+
+msgid "Optional: Selecting this option will treat this route as a intra-company connection, preserving the internal Caller ID information and not use the outbound CID of either the extension or trunk.</span>"
+msgstr "Opcional: Selecionando esta opção esta rota será tratada como uma conexãointerna da empresa, preservando a informação do Caller ID, não usando o CID de saída</span>"
+
+msgid "Other (Custom) Device"
+msgstr "Outro dispositivo (personalizado)"
+
+msgid "Outbound Caller ID"
+msgstr "Identificados de chamadas de saída"
+
+msgid "Outbound Dial Prefix"
+msgstr "Prefixo de chamadas de sáida"
+
+msgid "Outbound Routes"
+msgstr "Rotas de saída"
+
+msgid "Outgoing Dial Rules"
+msgstr "Regras de Discagem de saída"
+
+msgid "Outgoing Settings"
+msgstr "Parâmetros de saída"
+
+msgid "PEER Details"
+msgstr "Detalhes do PEER"
+
+msgid "Pager Email Address"
+msgstr "Endereço de e-mail do Pager"
+
+msgid "Panel"
+msgstr "Painel"
+
+msgid "Password<span>Create a password for this new user</span>"
+msgstr "Senha<span>Crie uma senha para este novo usuário</span>"
+
+msgid "Play CID"
+msgstr "Tocar CID"
+
+msgid "Play extension number"
+msgstr "Reproduzir número do ramal"
+
+msgid "Plays a message \"Please hold while I transfer you to extension xxx\" that lets the caller know what extension to use in the future."
+msgstr "Reproduza esta mensagem: \"Por favor espere enquanto te tranfiro para o ramal xxx\" isto permite que te chamem pelo nro. de ramal e o use no futuro."
+
+msgid "Please enter a Feature Code or check Use Default for all Enabled Feature Codes"
+msgstr "Por favor entre um Código de Função ou marque Usar Padrão para todas Códidigosde Função habilitados"
+
+msgid "Please enter a Secret for this device"
+msgstr "Por favor insira uma senha para este dispositivo"
+
+msgid "Please enter a device id."
+msgstr "Por favor insira um id de dispositivo."
+
+msgid "Please enter a valid CID Num Alias (must be a valid number)."
+msgstr "Por favor entre um Alias de número CID (deve ser um número válido)"
+
+msgid "Please enter a valid Description for this device"
+msgstr "Por favor digite uma descrição válida para este dispositivo"
+
+msgid "Please enter a valid Display Name"
+msgstr "Por favor digite nome de exibição válido"
+
+msgid "Please enter a valid Emergency CID"
+msgstr "Por favor digite um CID de Emergência válido"
+
+msgid "Please enter a valid Fax Email"
+msgstr "Por favor entre um e-mail de fax válido"
+
+msgid "Please enter a valid Name for this System Recording"
+msgstr "Por favor entre um número válido para o sistema de gravação"
+
+msgid "Please enter a valid Number of Seconds"
+msgstr "Entre um número de segundos válido"
+
+msgid "Please enter a valid Outbound CID"
+msgstr "Por facor entre um CID de saída válido"
+
+msgid "Please enter a valid extension number."
+msgstr "Por favor número de ramal válido:"
+
+msgid "Please enter a valid pause time in seconds, using digits only"
+msgstr "Por favor entre um tempo de pausa válido em segundos, usando dígitos somente"
+
+msgid "Please enter the channel for this device"
+msgstr "Por favor digite o tronco para este dispositivo"
+
+msgid "Please enter the dtmfmode for this device"
+msgstr "Por favor digite o dtmfmode para este dispositivo"
+
+msgid "Please enter valid User Password using numbers only"
+msgstr "Por favor digite uma senha de usuário com números apenas"
+
+msgid "Please select your Device below then click Submit"
+msgstr "Por favor selecione seu dispositivo abaixo e clique em Aplicar Alterações"
+
+msgid "Please wait until the page reloads."
+msgstr "Por favor aguarde até que a página recarregue."
+
+msgid "Please wait, reloading..."
+msgstr "Por favor aguarde, recarregando..."
+
+msgid "Privacy"
+msgstr "Privacidade"
+
+msgid "Process"
+msgstr "Processar"
+
+msgid "Processor"
+msgstr "Processador"
+
+msgid "Provide a meaningful description of what this incoming route is"
+msgstr "Provê uma descrição para esta rota de entrada"
+
+msgid "Record Incoming"
+msgstr "Gravar entrada"
+
+msgid "Record Outgoing"
+msgstr "Gravar saída"
+
+msgid "Record all inbound calls received at this extension."
+msgstr "Grava todas as chamadas de entrada recebidas por este ramal."
+
+msgid "Record all outbound calls received at this extension."
+msgstr "Grava todas as chamadas de saída recebidas deste ramal."
+
+msgid "Recording Options"
+msgstr "Opções de Gravação"
+
+msgid "Recordings"
+msgstr "Gravações"
+
+msgid "Register String"
+msgstr "Campo de Registro"
+
+msgid "Registration"
+msgstr "Registro"
+
+msgid "Reloading will apply all configuration changes made in FreePBX to your PBX engine and make them active."
+msgstr "Recarregando todas as alterações feitas no midiVTS se tornarão ativas."
+
+msgid "Remove Recording"
+msgstr "Excluir Gravação"
+
+msgid "Remove prefix from local numbers"
+msgstr "Remove um prefixo de numeros locais"
+
+msgid "Rename"
+msgstr "Renomear"
+
+msgid "Rename route"
+msgstr "Renomear rota"
+
+msgid "Reports"
+msgstr "Relatórios"
+
+msgid "Reset"
+msgstr "Reiniciar"
+
+msgid "Ring Time"
+msgstr "Tempo de Ring"
+
+msgid "Route"
+msgstr "Rota"
+
+msgid "Route Name"
+msgstr "Nome da Rota"
+
+msgid "Route Password"
+msgstr "Senha da Rota"
+
+msgid "Route name is invalid, please try again"
+msgstr "O nome da rota é invalido, por favor tente novamente"
+
+msgid "Route name is invalid...please try again"
+msgstr "O nome da rota é invalido, por favor tente novamente"
+
+msgid "Route password must be numberic or leave blank to disable"
+msgstr "Senha do rota dever ser numérica ou deixe em branco para desabilitar"
+
+msgid "Rules:"
+msgstr "Regras:"
+
+msgid "SSH Server"
+msgstr "Servidor SSH"
+
+msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
+msgstr "Servidor SSH não está rodando, Não é possível acessar a console do sistema remotamente"
+
+msgid "SSH Server is running"
+msgstr "Servidor SSH está rodando"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Saved"
+msgstr "Gravado"
+
+msgid "Security Settings"
+msgstr "Configurações de Segurança"
+
+msgid "Security Update"
+msgstr "Atualização de Segurança"
+
+msgid "Select 'system' to have the system receive and email faxes.<br><br>The freePBX default is defined in General Settings."
+msgstr "Selecione 'system' para que este receba e envie pelos contatos de fax. <br>  O padrão é definido nas configurações gerais."
+
+msgid "Select 'system' to have the system receive and email faxes.<br>Selecting 'disabled' will result in incoming calls being answered more quickly."
+msgstr "Selecione 'system' para que este receba e envie pelos contatos de fax. <br> 'desabilitado' resulta num atendimento das chamadas de entrada rapidamente."
+
+msgid "Select System Recording:"
+msgstr "Selecionar Gravações do sistema"
+
+msgid "Select Yes if you use 24-hour format or No if you are using 12-hour am/pm format"
+msgstr "Selecione Sim se você usa o formato de horas 24H, não se usar o formato12H am/pm"
+
+msgid "Select which country you are in"
+msgstr "Selecione em qual país você está"
+
+msgid "Sequence"
+msgstr "Sequência"
+
+msgid "Server Status"
+msgstr "Status do Servidor"
+
+msgid "Set the initial/current Call Waiting state for this user's extension"
+msgstr "Configura o status inicial/atual da função chamada em espera para este ramal"
+
+msgid "Setting this to 'yes' will potentially allow ANYBODY to call into your Asterisk server using the SIP protocol"
+msgstr "Configurando para sim permitirá que qualquer usuário ligue para o Asteriskusando o protocolo SIP."
+
+msgid "Setup"
+msgstr "Configuração"
+
+msgid "Start speaking at the tone. Hangup when finished."
+msgstr "Comece a falar ao escutar um sinal. Desligue ao finalizar"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Std Instructions"
+msgstr "Instruções Padrão"
+
+msgid "Step 1: Record or upload"
+msgstr "Passo 1: Gravar ou upload de arquivo"
+
+msgid "Step 2: Name"
+msgstr "Paso 2: Nome"
+
+msgid "Step 2: Verify"
+msgstr "Passo 2: Verificação"
+
+msgid "Step 3: Name"
+msgstr "Paso 3: Nome"
+
+msgid "Submit"
+msgstr "Continuar"
+
+msgid "Submit Changes"
+msgstr "Aplicar Alterações"
+
+msgid "Successfully uploaded"
+msgstr "Upload executado com sucesso!"
+
+msgid "Swap"
+msgstr "Swap"
+
+msgid "System Administration"
+msgstr "Administração do Sistema"
+
+msgid "System Recording"
+msgstr "Gravações do sistema"
+
+msgid "System Recordings"
+msgstr "Gravações do sistema"
+
+msgid "System Statistics"
+msgstr "Estatísticas "
+
+msgid "System Uptime"
+msgstr "Tempo ativo do Sistema"
+
+msgid "T: Allow the calling user to transfer the call by hitting #"
+msgstr "T: Permitir o usuário de origem transferir a chamada"
+
+msgid "The Trunk Sequence controls the order of trunks that will be used when the above Dial Patterns are matched. <br><br>For Dial Patterns that match long distance numbers, for example, you'd want to pick the cheapest routes for long distance (ie, VoIP trunks first) followed by more expensive routes (POTS lines)."
+msgstr "A sequência dos troncos controla a ordem doas linhas de conecções qual será usado quando os padrões de sequência acima nomeados são igualados. <br><br>Por exemplo para os padrões de discagem de numeros de grande distancia, ud. deveria utilizar as rotas de menor custo de grande (Ex, 1 linhas de coneções de VoIP) seguidas das rotas mais caras (lineas POTS clasicas)."
+
+msgid "The caller id name for calls from this user will be set to this name. Only enter the name, NOT the number."
+msgstr "Nome do originatário das chamadas. Somente entre o nome, NÃO o número."
+
+msgid "The caller id name for this device will be set to this description until it is logged into."
+msgstr "O nome do Caller ID para este dispositivo será configurado para sua descrição enquanto estiver logado."
+
+msgid "The extension number to dial to reach this user."
+msgstr "Número de ramal a discar para alcançar este usuário."
+
+msgid "The number of seconds we should wait after performing an Immediate Answer. The primary purpose of this is to pause and listen for a fax tone before allowing the call to proceed."
+msgstr "O número de segundos que devemos aguardar antes de atender imediatamente. A proposta primária é executar uma pausa e aguardar um tom de discagem antes de prosseguir a chamada."
+
+msgid "These options provide a quick way to add outbound dialing rules. Follow the prompts for each."
+msgstr "Esta opção provê uma forma rápida para adicionar regras de discagem de saída.Siga as telas."
+
+msgid "This DID is already associated with extension:"
+msgstr "Este DID já está associado com a ramal:"
+
+msgid "This caller id will always be set when dialing out an Outbound Route flagged as Emergency.  The Emergency CID overrides all other caller id settings."
+msgstr "Este Caller ID sempre será configurado quando usar uma rota de saídade Emergência. O CID de emergência sobrescreve todas outras configurações de CallerID"
+
+msgid "This changes the short name, visible on the right, of this recording"
+msgstr "Isso muda o nome abreviado à direita desta gravação"
+
+msgid "This device id is already in use"
+msgstr "Este dispositivo já está em uso"
+
+msgid "This device uses %s technology."
+msgstr "Este dispositivo usa tecnologia %s ."
+
+msgid "This is most often the account name or number your provider expects.<br><br>This USER Context will be used to define the below user details."
+msgstr "Este é, normalmente, o nome da conta e o numero assinalado pelo provedor.<br><br>Este contexto USER sera usado para definir os detalhes de usuario aqui abaixo."
+
+msgid "This trunk is not used by any routes!"
+msgstr "Este tronco não está sendo usado por nenhuma rota!"
+
+msgid "This trunk will not be able to be used for outbound calls until a route is setup that uses it. Click on <b>Outbound Routes</b> to setup routing."
+msgstr "Este tronco não pode ser usada para realizar chamadas de saídas bas apenas que uma rota tenha sido setada para usá-la. Click em <b>Rotas de Saída</b> para configurar as rotas."
+
+msgid "This user/extension %s is already in use"
+msgstr "O ramal/usuário %s já está em uso"
+
+msgid "Timeout VM Msg:"
+msgstr "Timeout mensagem de Correio de voz"
+
+msgid "Timeout/#-press default:"
+msgstr "Timeout/por padrão pressione #"
+
+msgid "Toll-free"
+msgstr "Ligue grátis"
+
+msgid "Tools"
+msgstr "Ferramentas"
+
+msgid "Total active calls"
+msgstr "Total de chamadas ativas"
+
+msgid "Total active channels"
+msgstr "Total de canais ativos"
+
+msgid "Trunk"
+msgstr "Tronco"
+
+msgid "Trunk Name"
+msgstr "Nome do Tronco"
+
+msgid "Trunk Name and User Context cannot be set to the same value"
+msgstr "O nome do tronco principal e o contexto do usuário não podem ter o mesmo valor"
+
+msgid "Trunk Sequence"
+msgstr "Sequência dos troncos"
+
+msgid "Trunks"
+msgstr "Troncos"
+
+msgid "Type"
+msgstr "Tipo"
+
+msgid "USER Context"
+msgstr "Contexto do usuário"
+
+msgid "USER Details"
+msgstr "Detalhes do usuário"
+
+msgid "Unable to locate"
+msgstr "Impossível localizar"
+
+msgid "Unavailable"
+msgstr "Indisponível"
+
+msgid "Update"
+msgstr "Atualização"
+
+msgid "Update Email"
+msgstr "Atualizar e-mail"
+
+msgid "Updated"
+msgstr "Atualizado"
+
+msgid "Upload"
+msgstr "Upload"
+
+msgid "Upload a .wav or .mp3 file:"
+msgstr "Fazer upload de arquivo .wav ou .mp3"
+
+msgid "Upload module"
+msgstr "Upload de módulo"
+
+msgid "Uptime"
+msgstr "Tempo ativo"
+
+msgid "Use"
+msgstr "Usar"
+
+msgid "Use gain when recording the voicemail message (optional):"
+msgstr "Usar ganho ao gravar o mensagem de voz (opcional):"
+
+msgid "User"
+msgstr "Usuário"
+
+msgid "User Context was left blank and User Details will not be saved!"
+msgstr "Contexto do usuário foi deixado em branco e os Detalhes do usuário não foram salvos."
+
+msgid "User Extension"
+msgstr "Ramal"
+
+msgid "User Extension: "
+msgstr "Ramal do usuário:"
+
+msgid "Username cannot start with a number, and can only contain letters and numbers"
+msgstr "O nome do usuário não pode comçar por um numero e deverá conter somente letras e números"
+
+msgid "Username must not be blank"
+msgstr "O nome do usuário não deve estar em branco"
+
+msgid "Username<span>Create a unique username for this new user</span>"
+msgstr "Nome do Usuário<span>Crie um único nome para este novo usuário</span>"
+
+msgid "Using your phone,"
+msgstr "Usando seu telefone"
+
+msgid "VM Context"
+msgstr "Contexto CV"
+
+msgid "VM Options"
+msgstr "Opções CV"
+
+msgid "Version"
+msgstr "Versão"
+
+msgid "VmX  Locater"
+msgstr "Localizador VmX"
+
+msgid "Voicemail"
+msgstr "Correio de Voz"
+
+msgid "Voicemail & Directory"
+msgstr "Diretório e Correio de voz"
+
+msgid "Voicemail Passord"
+msgstr "Senha do correio de voz"
+
+msgid "Voicemail VmX Locator"
+msgstr "Localizador VmX do Correio de Voz"
+
+msgid "W: Allow the calling user to start recording after pressing *1 (Asterisk v1.2)"
+msgstr "W: Permitir o usuário de origem a gravar a chamada"
+
+msgid "WARNING:"
+msgstr "ALERTA:"
+
+msgid "Warn"
+msgstr "Alerta"
+
+msgid "Warning"
+msgstr "Alerta"
+
+msgid "Warning! Extension"
+msgstr "Aviso! Ramal"
+
+msgid "Web Server"
+msgstr "Servidor Web"
+
+msgid "Web Server is running"
+msgstr "Servidor Web está rodando"
+
+msgid "What is the dialing pattern for local numbers after"
+msgstr "Qual é o padrão para os numeros locais anterioes"
+
+msgid ""
+"What is the local dialing pattern?\\n"
+"\\n"
+"(ie. NXXNXXXXXX for US/CAN 10-digit dialing, NXXXXXX for 7-digit)"
+msgstr ""
+"Qual é o parâmetro de discagem local?\\n"
+"\\n"
+"(Ex. NXXNXXXXXX para US/CAN de 10-dígitos y NXXXXXX para 7-digitos)"
+
+msgid ""
+"What is your areacode + prefix (NPA-NXX)?\\n"
+"\\n"
+"(Note: this database contains North American numbers only, and is not guaranteed to be 100% accurate. You will still have the option of modifying results.)\\n"
+"\\n"
+"This may take a few seconds."
+msgstr ""
+"Qual é o seu código de área + prefixo (NPA-NXX)?\\n"
+"\\n"
+"(Nota: esta base de dados contém Numeros de USA somente, e não esta garantido que seja 100% exata. Ud. igual tenha a opição de modificar os resultados.)\\n"
+"\\n"
+"Esto pode tomar alguns segundos."
+
+msgid ""
+"What prefix should be added to the dialing pattern?\\n"
+"\\n"
+"(ie. for US/CAN, 1+areacode, ie, \\'1613\\')?"
+msgstr ""
+"Que prefixo deveria ser agregado ao padrão de discagem?\\n"
+"\\n"
+"(Ex. para US/CAN, 1+codigo de area, Ex, \\'1613\\')"
+
+msgid ""
+"What prefix should be removed from the number?\\n"
+"\\n"
+"(ie. for US/CAN, 1+areacode, ie, \\'1613\\')"
+msgstr ""
+"Que prefixo deveria ser removido do numero?\\n"
+"\\n"
+"(Ex. para US/CAN, 1+codigo de area, Ex, '1613')"
+
+msgid "When users hit '0' in the directory, they are put through to this number. Note that it"
+msgstr "Quando um usuário preciona 0 no diretório, ele é direcionado para este número."
+
+msgid "Yes"
+msgstr "Sim"
+
+msgid "You can also use both + and |, for example: 01+0|1ZXXXXXXXXX would match \"016065551234\" and dial it as \"0116065551234\" Note that the order does not matter, eg. 0|01+1ZXXXXXXXXX does the same thing."
+msgstr "Você pode usar ambos + e |, por exemplo: 01+0|1ZXXXXXXXXX que casa\"016065551234\" e disca como  \"0116065551234\" Observe que a ordem não importa, ex.: 0|01+1ZXXXXXXXXX faz a mesma coisa."
+
+msgid "You can choose which music category to use. For example, choose a type appropriate for a destination country which may have announcements in the appropriate language."
+msgstr "Você pode escolher a categoria de música para usar. Por exemplo, escolha o tipodos anúncios apropriados para o país de destino com a linguagem apropriada."
+
+msgid "You have made changes to the configuration that have not yet been applied. When you are finished making all changes, click on %s to put them into effect."
+msgstr "Você fez alterações à configuração que não foram aplicadas ainda. Ao finalizar todas as alterações, clique em %s para torná-las ativas."
+
+msgid "You have not entered a Secret for this device, although this is possible it is generally bad practice to not assign a Secret to a device. Are you sure you want to leave the Secret empty?"
+msgstr "Você não digitou uma senha para este dispositivo.geralmente isso não é uma boa prática. Você tem certeza você deseja deixar a senha em branco?"
+
+msgid ""
+"You have not entered a User Password.  While this is acceptable, this user will not be able to login to an AdHoc device.\\n"
+"\\n"
+"Are you sure you wish to leave the User Password empty?"
+msgstr ""
+"Você não digitou uma senha de usuário. Não será possível para este usuáriose logar num dispositivo AdHoc.\\n"
+"\\n"
+"Tem certeza que deseja deixar a senha em branco?"
+
+msgid "You have selected the 'r' option for your trunks. This is highly discouraged and will create problems with calls on many PRI, VoIP, ISDN and other trunks that are capable of signalling. Asterisk will generate a ringing tone until the signalling indicates the line is answered. This will result in some external IVRs being inaccessible and other strange problems."
+msgstr "Você selecionou a opção r para seus troncos. Isso é altamente desaconselhadoe criará problemas com chamadas em muitos PRI, VoIP, ISDN  e outros troncos que são capazes de sinalização. O Asterisk irá gerar o tom de toque a menosque a sinalização indique que a linha foi atendida. Isso resultará em alguns IVRsinacessíveis entre outros problemas estranhos."
+
+msgid ""
+"You may need to add to the default lines listed below, depending on your provider..<br /><br />WARNING: Oreder is important as it will be retained. For example, if you use the \"allow/deny\" directives make sure deny \n"
+"\t\t\t\tcomes first."
+msgstr ""
+"Pode ser necessário adicionar as linhas padrão listadas abaixo, dependndo seu provedor..<br /><br />ALERTA: A ordem é importante e deve ser mantida.Ex. se usar as diretivas \"allow/deny\" tenha certeza que o deny\n"
+"\t\t\t\tvenha primeiro."
+
+msgid "You must define an Outbound Caller ID when Choosing Never Override CallerID"
+msgstr "Você pode definir um Caller ID ao optar por 'Nunca Sobrescrever o CallerID"
+
+msgid "You must put in a device id"
+msgstr "Você deve colocar um id de dispositivo"
+
+msgid "You must put in an extension (or user) number"
+msgstr "Você deve colocar um ramal ou usuário"
+
+msgid "ZAP channels are referenced either by a group number or channel number (which is defined in zapata.conf).  <br><br>The default setting is <b>g0</b> (group zero)."
+msgstr "os canais ZAP sao rerenciados por um numero de grupo ou por um numero de tronco (o qual é definido em zapata.conf). <br><br>Por default esta opçao é <b>g0</b> (grupo zero)."
+
+msgid "Zap Identifier (trunk name)"
+msgstr "Identificador ZAP (nome do tronco)"
+
+msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
+msgstr "[ERRO] Removendo gravação temporária:"
+
+msgid "[ERROR] SAVING RECORDING:"
+msgstr "[ERRO] Salvando Gravação:"
+
+msgid "[ERROR] The Recorded File Does Not exists:"
+msgstr "[ERRO] O Arquivo gravado não existe:"
+
+msgid "adds a dialing prefix from the number (for example, 1613+NXXXXXX would match when some dialed \"5551234\" and would pass \"16135551234\" to the trunk)"
+msgstr "adiciona um prefixo de discagem ao numero (exemplo, 1613+NXXXXXX se adequaria quando alguiem discar \"5551234\" mas passaria \"16135551234\" como tronco)"
+
+msgid "and speak the message you wish to record."
+msgstr "e diga na mensagem que deseja gravar."
+
+msgid "any CID"
+msgstr "Qualquer CID"
+
+msgid "any DID"
+msgstr "qualquer DID"
+
+msgid "any supported asterisk format."
+msgstr "qualquer formato suportado pelo asterisk."
+
+msgid "category"
+msgstr "Categoria"
+
+msgid "context"
+msgstr "contexto"
+
+msgid "days"
+msgstr "dias"
+
+msgid "default"
+msgstr "padrão"
+
+msgid "deleted"
+msgstr "excluído"
+
+msgid "dial"
+msgstr "discar"
+
+msgid "disabled"
+msgstr "desabilitado"
+
+msgid "exten"
+msgstr "ramal"
+
+msgid "fax machine"
+msgstr "maquina de fax"
+
+msgid "featuredescription"
+msgstr "Descrição da característica"
+
+msgid "first name"
+msgstr "Primeiro Nome"
+
+msgid "first or last name"
+msgstr "Primeiro nome ou Último nome"
+
+msgid "for receiving faxes:"
+msgstr "para receber fax"
+
+msgid "freePBX default"
+msgstr "padrão midiVTS"
+
+msgid "hour"
+msgstr "hora"
+
+msgid "hours"
+msgstr "horas"
+
+msgid "is not allowed for your account"
+msgstr "Sua conta não tem permissão para este acesso"
+
+msgid "is useful for VoIP trunks, where if a number is dialed as \"5551234\", it can be converted to \"16135551234\"."
+msgstr "é util para campos VoIP, quando um numero é discado com \"5551234\", pode ser convertido para \"16135551234\"."
+
+msgid "is useful for ZAP trunks, where if a local number is dialed as \"6135551234\", it can be converted to \"555-1234\"."
+msgstr "é util para troncos ZAP, quando um numero local é discado como \"16135551234\", pode ser convertido para \"555-1234\"."
+
+msgid "last name"
+msgstr "Último Nome"
+
+msgid "loading..."
+msgstr "carregando..."
+
+msgid "logs into a device."
+msgstr "loga no dispositivo."
+
+msgid "logs out of a device."
+msgstr "desloga no dispositivo"
+
+msgid "matches any digit from 0-9"
+msgstr "casa com qualqueer dígito entre 0-9"
+
+msgid "matches any digit from 1-9"
+msgstr "casa com qualquer dígito entre 1-9"
+
+msgid "matches any digit from 2-9"
+msgstr "casa com qualquer dígito entre 2-9"
+
+msgid "matches any digit or letter in the brackets (in this example, 1,2,3,7,8,9)"
+msgstr "casa qualquer dígito ou letra entre as chaves (neste exemplo, 1,2,3,7,8,9)"
+
+msgid "minute"
+msgstr "minuto"
+
+msgid "minutes"
+msgstr "minutos"
+
+msgid "moduledescription"
+msgstr "Descrição do módulo"
+
+msgid "name"
+msgstr "nome"
+
+msgid "no"
+msgstr "não"
+
+msgid "no instructions"
+msgstr "sem instruções"
+
+msgid "none"
+msgstr "nenhum"
+
+msgid "please leave message after tone to caller"
+msgstr "por favor deixe uma mensagem após o tom"
+
+msgid "pri"
+msgstr "pri"
+
+msgid "r: Generate a ringing tone for the calling party"
+msgstr "r: Gera o tom de discagem para o originador da chamada"
+
+msgid "r: You SHOULD NOT use this option on outbound trunks"
+msgstr "r: Evicte usar esta opção em troncos de saída"
+
+msgid "receive"
+msgstr "média rx"
+
+msgid "removes a dialing prefix from the number (for example, 613|NXXXXXX would match when some dialed \"6135551234\" but would only pass \"5551234\" to the trunk)"
+msgstr "remove um prefixo discado do numero (ex, 613|NXXXXXX se mostrado quando alguem disca \"6135551234\" mas somente passaria \"5551234\" para o tronco)"
+
+msgid "route"
+msgstr "rota"
+
+msgid "routes"
+msgstr "rotas"
+
+msgid "seconds"
+msgstr "segundos"
+
+msgid "seperates a dialing prefix from the number (for example, 9|NXXXXXX would match when some dialed \"95551234\" but would only pass \"5551234\" to the trunks)"
+msgstr "separa um prefixo de discagem do numero (por exemplo, 9|NXXXXXX deverá igualar-se quando alguem discar \"95551234\" mas somente deverá deixar passar \"5551234\" para os troncos)"
+
+msgid "show all"
+msgstr "mostrar todos"
+
+msgid "show new"
+msgstr "mostrar novo"
+
+msgid "system"
+msgstr "sistema"
+
+msgid "t: Allow the called user to transfer the call by hitting #"
+msgstr "t: Permitir o usuários de destino transferir a chamada"
+
+msgid "that faxes appear to come from:"
+msgstr "que será a origem dos faxes"
+
+msgid "times"
+msgstr "horas"
+
+msgid "to"
+msgstr "até"
+
+msgid "to caller before transferring call"
+msgstr "Transferir chamadas..."
+
+msgid "to have faxes emailed to:"
+msgstr "para onde serao enviados os fax."
+
+msgid "to listen to your recording."
+msgstr "para escutar sua mensagem."
+
+msgid "to:"
+msgstr "para:"
+
+msgid "transmit"
+msgstr "média tx"
+
+msgid "w: Allow the called user to start recording after pressing *1 (Asterisk v1.2)"
+msgstr "w: Permitir o usuário chamado a gravar a chamada"
+
+msgid "week"
+msgstr "semana"
+
+msgid "weeks"
+msgstr "semanas"
+
+msgid "wherever the number to dial should go.<br><br><b>examples:</b><br><br>CAPI/XXXXXXXX/"
+msgstr "Para onde o numero discado deve ir.<br><br><b>examplos:</b><br><br>CAPI/XXXXXXXX:b"
+
+msgid "wildcard, matches one or more characters"
+msgstr "coringa, casa com 1 ou mais caracteres"
+
+msgid "wildcard, matches one or more characters (not allowed before a | or +)"
+msgstr "coringa, casa 1 ou mais caracteres (não permitido antes de | ou +)"
+
+msgid "with a a valid suffix"
+msgstr "com um sufixo válido"
+
+msgid "yes"
+msgstr "sim"
+
