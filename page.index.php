@@ -512,7 +512,9 @@ if (!$quietmode) {
 	
 	<script type="text/javascript">
 	$(document).ready(function(){
-		$.ajaxTimeout( 20000 );
+    $.ajaxSetup({
+      timeout:10000
+    });
 		scheduleInfoUpdate();
 		scheduleStatsUpdate();
 		
