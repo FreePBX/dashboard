@@ -232,6 +232,7 @@ function show_sysstats() {
 function show_aststats() {
 	global $amp_conf;
 	global $astinfo;
+	global $db;
 	$out = '';
 	
 	$channels = $astinfo->get_channel_totals();
@@ -265,12 +266,19 @@ function show_aststats() {
 	
 	$out .= "<h4>"._("FreePBX Connections")."</h4>";
 	
-	if (function_exists('core_trunks_list')) {
-		$trunks = core_trunks_list(true);
+	/* This is generally very bad style, and we should look at adding this to core_devices_list or another core
+	 * function. However, since this is in Ajax lite weight code, it is currently the cleanest way to get the sip and iax2
+	 * devices in a hash format that we would like to pass to the class
+	 */
+	$sql = "SELECT `id` FROM `devices` WHERE `tech` IN ('sip', 'iax2')";
+	$devices = $db->getCol($sql);
+	if(DB::IsError($devices)) {
+		$devices = false;
 	} else {
-		$trunks = false;
+		$devices = array_flip($devices);
 	}
-	$conns = $astinfo->get_connections( $trunks );
+
+	$conns = $astinfo->get_connections( $devices );
 
 	if ($conns['users_total'] > 0) {
 		$out .= draw_graph(_('IP Phones Online'), '', $conns['users_online'], $conns['users_total'], $classes, false, BAR_WIDTH_LEFT);
