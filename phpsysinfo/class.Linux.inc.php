@@ -121,7 +121,7 @@ class sysinfo {
     if ($bar) {
       $buf = rfts( '/proc/stat', 1 );
       if( $buf != "ERROR" ) {
-	sscanf($buf, "%*s %Ld %Ld %Ld %Ld", $ab, $ac, $ad, $ae);
+  sscanf($buf, "%*s %f %f %f %f", $ab, $ac, $ad, $ae);
 	// Find out the CPU load
 	// user + sys = load 
 	// total = total
@@ -131,7 +131,7 @@ class sysinfo {
 	// we need a second value, wait 1 second befor getting (< 1 second no good value will occour)
 	sleep(1);
 	$buf = rfts( '/proc/stat', 1 );
-	sscanf($buf, "%*s %Ld %Ld %Ld %Ld", $ab, $ac, $ad, $ae);
+  sscanf($buf, "%*s %f %f %f %f", $ab, $ac, $ad, $ae);
 	$load2 = $ab + $ac + $ad;
 	$total2 = $ab + $ac + $ad + $ae;
 	$results['cpupercent'] = ($total2 != $total)?((100*($load2 - $load)) / ($total2 - $total)):0;
