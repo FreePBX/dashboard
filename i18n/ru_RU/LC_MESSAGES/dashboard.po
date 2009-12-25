@@ -1,6 +1,22 @@
+# This file is part of FreePBX.
+#
+#    FreePBX is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    FreePBX is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
+#
+#    Copyright 2008 FreePBX
+#
 # Russian freePBX ver. translation
 # Copyright (c) 2006-2008 PostMet Corporation
-# This file is distributed under the same license as the freePBX package.
 # Alexander Kozyrev <ceo@postmet.com>, Sergey Nikolayev <sergey@postmet.com>, 2006-2008.
 #
 # Использовать iconv amp.new -f UTF-8 -t ISO-8859-5 -o amp.po
@@ -9,7 +25,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-04-19 21:45+0100\n"
+"POT-Creation-Date: 2009-12-25 11:50+0100\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -17,176 +33,314 @@ msgstr ""
 "Content-Type: text/plain; charset=iso-8859-5\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: page.index.php:98
-msgid "OK"
-msgstr "OK"
+#: class.astinfo.php:234 page.index.php:162
+msgid "seconds"
+msgstr ""
 
-#: page.index.php:102
-msgid "Warn"
-msgstr "Ого!"
+#: class.astinfo.php:234
+msgid "second"
+msgstr ""
 
-#: page.index.php:106
-msgid "ERROR"
-msgstr "Ошибка"
-
-#: page.index.php:139 page.index.php:165
+#: class.astinfo.php:235 page.index.php:160 page.index.php:188
 msgid "minutes"
 msgstr "минут"
 
-#: page.index.php:156
-msgid "week"
-msgstr "неделя"
-
-#: page.index.php:156
-msgid "weeks"
-msgstr "недель"
-
-#: page.index.php:159
-msgid "days"
-msgstr "дней"
-
-#: page.index.php:162
-msgid "hour"
-msgstr "час"
-
-#: page.index.php:162
-msgid "hours"
-msgstr "часов"
-
-#: page.index.php:165
+#: class.astinfo.php:235 page.index.php:188
 msgid "minute"
 msgstr "минута"
 
-#: page.index.php:192
-msgid "Networks"
-msgstr "Сеть"
+#: class.astinfo.php:236 page.index.php:185
+msgid "hours"
+msgstr "часов"
 
-#: page.index.php:203
-msgid "receive"
-msgstr "получено"
+#: class.astinfo.php:236 page.index.php:185
+msgid "hour"
+msgstr "час"
 
-#: page.index.php:204
-msgid "transmit"
-msgstr "передано"
+#: class.astinfo.php:237 page.index.php:182
+msgid "days"
+msgstr "дней"
 
-#: page.index.php:301 page.index.php:303
-msgid "Asterisk"
-msgstr "Asterisk"
+#: class.astinfo.php:237
+msgid "day"
+msgstr ""
 
-#: page.index.php:309 page.index.php:311
-msgid "Manager Proxy"
-msgstr "Прокси менеджер"
+#: class.astinfo.php:238 page.index.php:179
+msgid "weeks"
+msgstr "недель"
 
-#: page.index.php:317 page.index.php:321 page.index.php:323
-msgid "Op Panel"
-msgstr "Панель Оператора"
+#: class.astinfo.php:238 page.index.php:179
+msgid "week"
+msgstr "неделя"
 
-#: page.index.php:330 page.index.php:332
-msgid "MySQL"
-msgstr "MySQL"
+#: class.astinfo.php:239
+msgid "years"
+msgstr ""
 
-#: page.index.php:337
-msgid "Web Server"
-msgstr "Вэб сервер"
+#: class.astinfo.php:239
+msgid "year"
+msgstr ""
 
-#: page.index.php:342 page.index.php:344
-msgid "SSH Server"
-msgstr "Сервер SSH"
+#: page.index.php:119
+msgid "OK"
+msgstr "OK"
 
-msgid "FreePBX System Status"
-msgstr "Статус системы FreePBX"
+#: page.index.php:123
+msgid "Warn"
+msgstr "Ого!"
 
-msgid "System Uptime"
-msgstr "Система жива"
+#: page.index.php:127
+msgid "ERROR"
+msgstr "Ошибка"
 
-msgid "Asterisk Uptime"
-msgstr "Asterisk жив"
+#: page.index.php:131
+msgid "Disabled"
+msgstr ""
 
-msgid "Last Reload"
-msgstr "Перезагружался"
-
-msgid "show new"
-msgstr "показать новых"
-
-msgid "show all"
-msgstr "показать все"
-
-msgid "You are using the default SQL password that is widely known, you should set a secure password"
-msgstr "Вы используете дефолтный пароль SQL, который много кому известен, "
-"лучше бы поставить какой-то пароль посекретней."    
-
-msgid "Default SQL Password Used"
-msgstr "Используется дефолтный пароль SQL"
-
-msgid "Default Asterisk Manager Password Used"
-msgstr "Дефолтный пароль Менеджера Астериска"
-
-msgid "You are using the default Asterisk Manager password that is widely known, you should set a secure password"
-msgstr "Вы используете дефолтный пароль Менеджера Астериска, который много кому известен, "
-"лучше бы поставить какой-то пароль посекретней." 
-
-msgid "loading..."
-msgstr "грузимся..."
-
-msgid "Update timed out"
-msgstr "Aggiornamento in timeout"
-
-msgid "Added %s ago"
-msgstr "Добавлено %s назад"
-
-msgid "FreePBX Statistics"
-msgstr "FreePBX Статистика"
-
-msgid "Total active calls"
-msgstr "Активных звонков - всего"
-
-msgid "Internal calls"
-msgstr "Внутренних звонков"
-
-msgid "External calls"
-msgstr "Внешних звонков"
-
-msgid "Total active channels"
-msgstr "Активных каналов - всего"
-
-msgid "IP Phones Online"
-msgstr "ИП Телефонов в онлайне"
-
-msgid "IP Trunk Registrations"
-msgstr "Регистраций ИП транков"
-
-msgid "FreePBX Connections"
-msgstr "Соединений FreePBX"
-
-msgid "FreePBX Notices"
-msgstr "FreePBX сообщения"
-
-msgid "User Logoff"
-msgstr "Разлогиниться пользователю"
-
-msgid "User Logon"
-msgstr "Залогиниться пользователю"
-
+#: page.index.php:198
 msgid "System Statistics"
 msgstr "Статистика Системы"
 
+#: page.index.php:199
 msgid "Processor"
 msgstr "Процессор"
 
+#: page.index.php:201
 msgid "Load Average"
 msgstr "Средняя загрузка"
 
+#: page.index.php:202
 msgid "CPU"
 msgstr "ЦПУ"
 
+#: page.index.php:204
 msgid "Memory"
 msgstr "Память"
 
+#: page.index.php:207
 msgid "App Memory"
 msgstr "Занято приложениями"
 
+#: page.index.php:208
 msgid "Swap"
 msgstr "Файл подкачки"
 
+#: page.index.php:210
 msgid "Disks"
 msgstr "Дисковая подсистема"
+
+#: page.index.php:215
+msgid "Networks"
+msgstr "Сеть"
+
+#: page.index.php:226
+msgid "receive"
+msgstr "получено"
+
+#: page.index.php:227
+msgid "transmit"
+msgstr "передано"
+
+#: page.index.php:261
+msgid "FreePBX Statistics"
+msgstr "FreePBX Статистика"
+
+#: page.index.php:262
+msgid "Total active calls"
+msgstr "Активных звонков - всего"
+
+#: page.index.php:263
+msgid "Internal calls"
+msgstr "Внутренних звонков"
+
+#: page.index.php:264
+msgid "External calls"
+msgstr "Внешних звонков"
+
+#: page.index.php:265
+msgid "Total active channels"
+msgstr "Активных каналов - всего"
+
+#: page.index.php:267
+msgid "FreePBX Connections"
+msgstr "Соединений FreePBX"
+
+#: page.index.php:284
+msgid "IP Phones Online"
+msgstr "ИП Телефонов в онлайне"
+
+#: page.index.php:287
+msgid "IP Trunks Online"
+msgstr ""
+
+#: page.index.php:290
+msgid "IP Trunk Registrations"
+msgstr "Регистраций ИП транков"
+
+#: page.index.php:299
+msgid "Uptime"
+msgstr ""
+
+#: page.index.php:300
+msgid "System Information Table"
+msgstr ""
+
+#: page.index.php:308
+msgid "System Uptime"
+msgstr "Система жива"
+
+#: page.index.php:316
+msgid "Asterisk Uptime"
+msgstr "Asterisk жив"
+
+#: page.index.php:317
+msgid "Last Reload"
+msgstr "Перезагружался"
+
+#: page.index.php:329
+msgid "Server Status"
+msgstr ""
+
+#: page.index.php:332 page.index.php:334
+msgid "Asterisk"
+msgstr "Asterisk"
+
+#: page.index.php:332
+#, php-format
+msgid "Asterisk is running: %s"
+msgstr ""
+
+#: page.index.php:334
+msgid "Asterisk is not running, this is a critical service!"
+msgstr ""
+
+#: page.index.php:340 page.index.php:342
+msgid "Manager Proxy"
+msgstr "Прокси менеджер"
+
+#: page.index.php:340
+msgid "Asterisk Manager Proxy is running"
+msgstr ""
+
+#: page.index.php:342
+msgid ""
+"Asterisk Manager Proxy is not running, FreePBX will fall back to using "
+"Asterisk directly, which may result in poor performance"
+msgstr ""
+
+#: page.index.php:349 page.index.php:353 page.index.php:355
+msgid "Op Panel"
+msgstr "Панель Оператора"
+
+#: page.index.php:349
+msgid "FOP Operator Panel Server is running"
+msgstr ""
+
+#: page.index.php:353
+msgid ""
+"FOP Operator Panel Server is not running, you will not be able to use the "
+"operator panel, but the system will run fine without it."
+msgstr ""
+
+#: page.index.php:355
+msgid "FOP Operator Panel is disabled in amportal.conf"
+msgstr ""
+
+#: page.index.php:369
+msgid "MySQL"
+msgstr "MySQL"
+
+#: page.index.php:369
+msgid "MySQL Server is running"
+msgstr ""
+
+#: page.index.php:373
+msgid "Web Server"
+msgstr "Вэб сервер"
+
+#: page.index.php:373
+msgid "Web Server is running"
+msgstr ""
+
+#: page.index.php:378 page.index.php:380
+msgid "SSH Server"
+msgstr "Сервер SSH"
+
+#: page.index.php:378
+msgid "SSH Server is running"
+msgstr ""
+
+#: page.index.php:380
+msgid ""
+"SSH Server is not running, you will not be able to connect to the system "
+"console remotely"
+msgstr ""
+
+#: page.index.php:400
+msgid "Critical Error"
+msgstr ""
+
+#: page.index.php:401
+msgid "Security Update"
+msgstr ""
+
+#: page.index.php:402
+msgid "Update"
+msgstr ""
+
+#: page.index.php:403
+msgid "Error"
+msgstr ""
+
+#: page.index.php:404
+msgid "Warning"
+msgstr ""
+
+#: page.index.php:405
+msgid "Notice"
+msgstr ""
+
+#: page.index.php:414
+msgid "FreePBX Notices"
+msgstr "FreePBX сообщения"
+
+#: page.index.php:438 page.index.php:440
+msgid "Delete this"
+msgstr ""
+
+#: page.index.php:443 page.index.php:445
+msgid "Ignore this"
+msgstr ""
+
+#: page.index.php:452
+#, php-format
+msgid "Added %s ago"
+msgstr "Добавлено %s назад"
+
+#: page.index.php:461
+msgid "No notifications"
+msgstr ""
+
+#: page.index.php:463
+msgid "No new notifications"
+msgstr ""
+
+#: page.index.php:471
+msgid "show new"
+msgstr "показать новых"
+
+#: page.index.php:473
+msgid "show all"
+msgstr "показать все"
+
+#: page.index.php:618
+msgid "loading..."
+msgstr "грузимся..."
+
+#: page.index.php:634
+msgid "FreePBX System Status"
+msgstr "Статус системы FreePBX"
+
+#: moudle.xml
+msgid "System Dashboard"
+msgstr ""

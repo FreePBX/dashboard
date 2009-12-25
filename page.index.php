@@ -128,7 +128,7 @@ function draw_status_box($text, $status, $tooltip = false, $total_width = 200) {
 			$class = "grapherror";
 		break;
 		case "disabled":
-			$status_text = "Disabled";
+			$status_text = _("Disabled");
 			$class = "";
 		break;
 	}
