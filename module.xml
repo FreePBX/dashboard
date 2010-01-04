@@ -1,7 +1,7 @@
 <module>
 	<rawname>dashboard</rawname>
 	<name>System Dashboard</name>
-	<version>2.6.0.1</version>
+	<version>2.6.0.2</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<candisable>no</candisable>
@@ -19,6 +19,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*2.6.0.2* localizations
 		*2.6.0.1* #3226, #3353
 		*2.6.0.0* localizations, misc
 		*2.5.0.7* #3652, localization updates
@@ -53,6 +54,6 @@
 		*0.2.0* Add real-time updates
 		*0.1.0* Initial release
 	</changelog>
-	<location>release/2.6/dashboard-2.6.0.1.tgz</location>
-	<md5sum>c658b67d23cda77d4fac90071b1b9836</md5sum>
+	<location>release/2.6/dashboard-2.6.0.2.tgz</location>
+	<md5sum>1788c525b45d96d20323b41e48eb8c1d</md5sum>
 </module>
