@@ -32,7 +32,7 @@ class sysinfo {
   function sysinfo() {
   
     $this->parser = new Parser();
-    $this->parser->df_param = 'P';
+    $this->parser->df_param = 'Pl';
   
    $list = parse_ini_file(APP_ROOT . "/" . $this->inifile, true);
    if (!$list) {
