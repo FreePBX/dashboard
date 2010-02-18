@@ -13,15 +13,14 @@
 #    You should have received a copy of the GNU General Public License
 #    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
 #
-#    Copyright 2008, FreePBX
-#    Copyright 2009, Bandwith.com
+# FreePBX language template for dashboard
+# Copyright (C) 2008, 2009, 2010 Bandwith.com
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-25 11:50+0100\n"
+"POT-Creation-Date: 2010-02-18 22:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,314 +28,327 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: class.astinfo.php:234 page.index.php:162
+#: dashboard/class.astinfo.php:234 dashboard/page.index.php:162
 msgid "seconds"
 msgstr ""
 
-#: class.astinfo.php:234
+#: dashboard/class.astinfo.php:234
 msgid "second"
 msgstr ""
 
-#: class.astinfo.php:235 page.index.php:160 page.index.php:188
+#: dashboard/class.astinfo.php:235 dashboard/page.index.php:160
+#: dashboard/page.index.php:188
 msgid "minutes"
 msgstr ""
 
-#: class.astinfo.php:235 page.index.php:188
+#: dashboard/class.astinfo.php:235 dashboard/page.index.php:188
 msgid "minute"
 msgstr ""
 
-#: class.astinfo.php:236 page.index.php:185
+#: dashboard/class.astinfo.php:236 dashboard/page.index.php:185
 msgid "hours"
 msgstr ""
 
-#: class.astinfo.php:236 page.index.php:185
+#: dashboard/class.astinfo.php:236 dashboard/page.index.php:185
 msgid "hour"
 msgstr ""
 
-#: class.astinfo.php:237 page.index.php:182
+#: dashboard/class.astinfo.php:237 dashboard/page.index.php:182
 msgid "days"
 msgstr ""
 
-#: class.astinfo.php:237
+#: dashboard/class.astinfo.php:237
 msgid "day"
 msgstr ""
 
-#: class.astinfo.php:238 page.index.php:179
+#: dashboard/class.astinfo.php:238 dashboard/page.index.php:179
 msgid "weeks"
 msgstr ""
 
-#: class.astinfo.php:238 page.index.php:179
+#: dashboard/class.astinfo.php:238 dashboard/page.index.php:179
 msgid "week"
 msgstr ""
 
-#: class.astinfo.php:239
+#: dashboard/class.astinfo.php:239
 msgid "years"
 msgstr ""
 
-#: class.astinfo.php:239
+#: dashboard/class.astinfo.php:239
 msgid "year"
 msgstr ""
 
-#: page.index.php:119
+#: dashboard/dashboard.i18n.php:5
+msgid "System Dashboard"
+msgstr ""
+
+#: dashboard/dashboard.i18n.php:7
+msgid "Basic"
+msgstr ""
+
+#: dashboard/dashboard.i18n.php:9
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+
+#: dashboard/dashboard.i18n.php:11 dashboard/dashboard.i18n.php:13
+#: dashboard/page.index.php:634
+msgid "FreePBX System Status"
+msgstr ""
+
+#: dashboard/page.index.php:119
 msgid "OK"
 msgstr ""
 
-#: page.index.php:123
+#: dashboard/page.index.php:123
 msgid "Warn"
 msgstr ""
 
-#: page.index.php:127
+#: dashboard/page.index.php:127
 msgid "ERROR"
 msgstr ""
 
-#: page.index.php:131
+#: dashboard/page.index.php:131
 msgid "Disabled"
 msgstr ""
 
-#: page.index.php:198
+#: dashboard/page.index.php:198
 msgid "System Statistics"
 msgstr ""
 
-#: page.index.php:199
+#: dashboard/page.index.php:199
 msgid "Processor"
 msgstr ""
 
-#: page.index.php:201
+#: dashboard/page.index.php:201
 msgid "Load Average"
 msgstr ""
 
-#: page.index.php:202
+#: dashboard/page.index.php:202
 msgid "CPU"
 msgstr ""
 
-#: page.index.php:204
+#: dashboard/page.index.php:204
 msgid "Memory"
 msgstr ""
 
-#: page.index.php:207
+#: dashboard/page.index.php:207
 msgid "App Memory"
 msgstr ""
 
-#: page.index.php:208
+#: dashboard/page.index.php:208
 msgid "Swap"
 msgstr ""
 
-#: page.index.php:210
+#: dashboard/page.index.php:210
 msgid "Disks"
 msgstr ""
 
-#: page.index.php:215
+#: dashboard/page.index.php:215
 msgid "Networks"
 msgstr ""
 
-#: page.index.php:226
+#: dashboard/page.index.php:226
 msgid "receive"
 msgstr ""
 
-#: page.index.php:227
+#: dashboard/page.index.php:227
 msgid "transmit"
 msgstr ""
 
-#: page.index.php:261
+#: dashboard/page.index.php:261
 msgid "FreePBX Statistics"
 msgstr ""
 
-#: page.index.php:262
+#: dashboard/page.index.php:262
 msgid "Total active calls"
 msgstr ""
 
-#: page.index.php:263
+#: dashboard/page.index.php:263
 msgid "Internal calls"
 msgstr ""
 
-#: page.index.php:264
+#: dashboard/page.index.php:264
 msgid "External calls"
 msgstr ""
 
-#: page.index.php:265
+#: dashboard/page.index.php:265
 msgid "Total active channels"
 msgstr ""
 
-#: page.index.php:267
+#: dashboard/page.index.php:267
 msgid "FreePBX Connections"
 msgstr ""
 
-#: page.index.php:284
+#: dashboard/page.index.php:284
 msgid "IP Phones Online"
 msgstr ""
 
-#: page.index.php:287
+#: dashboard/page.index.php:287
 msgid "IP Trunks Online"
 msgstr ""
 
-#: page.index.php:290
+#: dashboard/page.index.php:290
 msgid "IP Trunk Registrations"
 msgstr ""
 
-#: page.index.php:299
+#: dashboard/page.index.php:299
 msgid "Uptime"
 msgstr ""
 
-#: page.index.php:300
+#: dashboard/page.index.php:300
 msgid "System Information Table"
 msgstr ""
 
-#: page.index.php:308
+#: dashboard/page.index.php:308
 msgid "System Uptime"
 msgstr ""
 
-#: page.index.php:316
+#: dashboard/page.index.php:316
 msgid "Asterisk Uptime"
 msgstr ""
 
-#: page.index.php:317
+#: dashboard/page.index.php:317
 msgid "Last Reload"
 msgstr ""
 
-#: page.index.php:329
+#: dashboard/page.index.php:329
 msgid "Server Status"
 msgstr ""
 
-#: page.index.php:332 page.index.php:334
+#: dashboard/page.index.php:332 dashboard/page.index.php:334
 msgid "Asterisk"
 msgstr ""
 
-#: page.index.php:332
+#: dashboard/page.index.php:332
 #, php-format
 msgid "Asterisk is running: %s"
 msgstr ""
 
-#: page.index.php:334
+#: dashboard/page.index.php:334
 msgid "Asterisk is not running, this is a critical service!"
 msgstr ""
 
-#: page.index.php:340 page.index.php:342
+#: dashboard/page.index.php:340 dashboard/page.index.php:342
 msgid "Manager Proxy"
 msgstr ""
 
-#: page.index.php:340
+#: dashboard/page.index.php:340
 msgid "Asterisk Manager Proxy is running"
 msgstr ""
 
-#: page.index.php:342
+#: dashboard/page.index.php:342
 msgid ""
 "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
 "Asterisk directly, which may result in poor performance"
 msgstr ""
 
-#: page.index.php:349 page.index.php:353 page.index.php:355
+#: dashboard/page.index.php:349 dashboard/page.index.php:353
+#: dashboard/page.index.php:355
 msgid "Op Panel"
 msgstr ""
 
-#: page.index.php:349
+#: dashboard/page.index.php:349
 msgid "FOP Operator Panel Server is running"
 msgstr ""
 
-#: page.index.php:353
+#: dashboard/page.index.php:353
 msgid ""
 "FOP Operator Panel Server is not running, you will not be able to use the "
 "operator panel, but the system will run fine without it."
 msgstr ""
 
-#: page.index.php:355
+#: dashboard/page.index.php:355
 msgid "FOP Operator Panel is disabled in amportal.conf"
 msgstr ""
 
-#: page.index.php:369
+#: dashboard/page.index.php:369
 msgid "MySQL"
 msgstr ""
 
-#: page.index.php:369
+#: dashboard/page.index.php:369
 msgid "MySQL Server is running"
 msgstr ""
 
-#: page.index.php:373
+#: dashboard/page.index.php:373
 msgid "Web Server"
 msgstr ""
 
-#: page.index.php:373
+#: dashboard/page.index.php:373
 msgid "Web Server is running"
 msgstr ""
 
-#: page.index.php:378 page.index.php:380
+#: dashboard/page.index.php:378 dashboard/page.index.php:380
 msgid "SSH Server"
 msgstr ""
 
-#: page.index.php:378
+#: dashboard/page.index.php:378
 msgid "SSH Server is running"
 msgstr ""
 
-#: page.index.php:380
+#: dashboard/page.index.php:380
 msgid ""
 "SSH Server is not running, you will not be able to connect to the system "
 "console remotely"
 msgstr ""
 
-#: page.index.php:400
+#: dashboard/page.index.php:400
 msgid "Critical Error"
 msgstr ""
 
-#: page.index.php:401
+#: dashboard/page.index.php:401
 msgid "Security Update"
 msgstr ""
 
-#: page.index.php:402
+#: dashboard/page.index.php:402
 msgid "Update"
 msgstr ""
 
-#: page.index.php:403
+#: dashboard/page.index.php:403
 msgid "Error"
 msgstr ""
 
-#: page.index.php:404
+#: dashboard/page.index.php:404
 msgid "Warning"
 msgstr ""
 
-#: page.index.php:405
+#: dashboard/page.index.php:405
 msgid "Notice"
 msgstr ""
 
-#: page.index.php:414
+#: dashboard/page.index.php:414
 msgid "FreePBX Notices"
 msgstr ""
 
-#: page.index.php:438 page.index.php:440
+#: dashboard/page.index.php:438 dashboard/page.index.php:440
 msgid "Delete this"
 msgstr ""
 
-#: page.index.php:443 page.index.php:445
+#: dashboard/page.index.php:443 dashboard/page.index.php:445
 msgid "Ignore this"
 msgstr ""
 
-#: page.index.php:452
+#: dashboard/page.index.php:452
 #, php-format
 msgid "Added %s ago"
 msgstr ""
 
-#: page.index.php:461
+#: dashboard/page.index.php:461
 msgid "No notifications"
 msgstr ""
 
-#: page.index.php:463
+#: dashboard/page.index.php:463
 msgid "No new notifications"
 msgstr ""
 
-#: page.index.php:471
+#: dashboard/page.index.php:471
 msgid "show new"
 msgstr ""
 
-#: page.index.php:473
+#: dashboard/page.index.php:473
 msgid "show all"
 msgstr ""
 
-#: page.index.php:618
+#: dashboard/page.index.php:618
 msgid "loading..."
-msgstr ""
-
-#: page.index.php:634
-msgid "FreePBX System Status"
-msgstr ""
-
-#: moudle.xml
-msgid "System Dashboard"
 msgstr ""
