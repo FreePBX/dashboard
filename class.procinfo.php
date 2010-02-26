@@ -17,7 +17,15 @@ class procinfo {
 	}
 	
 	function check_fop_server() {
-		return $this->check_port(4445);
+    global $amp_conf;
+    $fop_settings = parse_ini_file($amp_conf['FOPWEBROOT'].'/op_server.cfg');
+    if (is_array($fop_settings)) {
+      $listen_port = isset($fop_settings['listen_port']) && trim($fop_settings['listen_port']) != ''?$fop_settings['listen_port']:4445;
+    } else {
+      $listen_port = 4445;
+    }
+
+		return $this->check_port($listen_port);
 	}
 	
 	function check_mysql($hoststr) {
