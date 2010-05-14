@@ -474,7 +474,7 @@ class sysinfo {
 			} 
 
 			$results['ram']['t_used'] = $results['ram']['total'] - $results['ram']['t_free'];
-			$results['ram']['percent'] = round(($results['ram']['t_used'] * 100) / $results['ram']['total']);
+			$results['ram']['percent'] = $results['ram']['total'] ? (round(($results['ram']['t_used'] * 100) / $results['ram']['total'])) : 0;
 			$results['swap']['used'] = $results['swap']['total'] - $results['swap']['free'];
 
 			// If no swap, avoid divide by 0

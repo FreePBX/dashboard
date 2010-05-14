@@ -19,7 +19,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
-		*2.8.0.0* #4268
+		*2.8.0.0* #4268, #4276
 		*2.7.0.1* #4082, localizations
 		*2.7.0.0* #3547
 		*2.6.0.2* localizations
