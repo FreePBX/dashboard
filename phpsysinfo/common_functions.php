@@ -162,12 +162,12 @@ function execute_program ($programname, $args = '', $booErrorRep = true )
   
   // see if we've gotten a |, if we have we need to do patch checking on the cmd
   if ($args) {
-    $args_list = split(' ', $args);
+    $args_list = preg_split('/\s/', $args);
     for ($i = 0; $i < count($args_list); $i++) {
       if ($args_list[$i] == '|') {
         $cmd = $args_list[$i + 1];
         $new_cmd = find_program($cmd);
-        $args = ereg_replace("\| $cmd", "| $new_cmd", $args);
+        $args = preg_replace("/\| $cmd/", "| $new_cmd", $args);
       } 
     } 
   } 

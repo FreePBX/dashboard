@@ -87,8 +87,8 @@ class bsd_common {
 
   function loadavg ($bar = false) {
     $s = $this->grab_key('vm.loadavg');
-    $s = ereg_replace('{ ', '', $s);
-    $s = ereg_replace(' }', '', $s);
+    $s = preg_replace('/{\s/', '', $s);
+    $s = preg_replace('/\s}/', '', $s);
     $results['avg'] = explode(' ', $s);
 
     if ($bar) {
@@ -228,7 +228,7 @@ class bsd_common {
     $results['ram'] = array();
 
     $pstat = execute_program('vmstat');
-    $lines = split("\n", $pstat);
+    $lines = preg_split("/\n/", $pstat);
     for ($i = 0, $max = sizeof($lines); $i < $max; $i++) {
       $ar_buf = preg_split("/\s+/", $lines[$i], 19);
       if ($i == 2) {
@@ -256,7 +256,7 @@ class bsd_common {
       $pstat = execute_program('swapinfo', '-k');
     } 
 
-    $lines = split("\n", $pstat);
+    $lines = preg_split("/\n/", $pstat);
 
     $results['swap']['total'] = 0;
     $results['swap']['used'] = 0;
