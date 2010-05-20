@@ -106,7 +106,7 @@ class bsd_common {
 	preg_match($this->cpu_regexp2, $fd, $res );
         $load2 = $res[2] + $res[3] + $res[4];
         $total2 = $res[2] + $res[3] + $res[4] + $res[5];
-        $results['cpupercent'] = (100*($load2 - $load)) / ($total2 - $total);
+        $results['cpupercent'] = ($total2 != $total)?((100*($load2 - $load)) / ($total2 - $total)):0;
       }
     }
     return $results;
