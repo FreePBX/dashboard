@@ -19,7 +19,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
-		*2.8.0.0* #4268, #4276
+		*2.8.0.0* #4268, #4276, #4283
 		*2.7.0.1* #4082, localizations
 		*2.7.0.0* #3547
 		*2.6.0.2* localizations
@@ -57,6 +57,6 @@
 		*0.2.0* Add real-time updates
 		*0.1.0* Initial release
 	</changelog>
-	<location>release/2.7/dashboard-2.7.0.1.tgz</location>
-	<md5sum>8220565dd49cd495adb5676c28cc43d0</md5sum>
+	<location>release/2.7/dashboard-2.7.0.2.tgz</location>
+	<md5sum>cbe7da455b4a27f2fa10d7628871502c</md5sum>
 </module>
