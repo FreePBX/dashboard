@@ -180,7 +180,7 @@ msgstr "Upptid"
 
 #: page.index.php:300
 msgid "System Information Table"
-msgstr "Tabel för Systeminformation"
+msgstr "Tabell för systeminformation"
 
 #: page.index.php:308
 msgid "System Uptime"
