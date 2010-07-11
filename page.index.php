@@ -467,10 +467,11 @@ function show_syslog(&$md5_checksum) {
 	$md5_checksum = md5($checksum);
 	
 	$out .= '<div id="syslog_button">';
+  //TODO: there has got to be a better way to do the layout to avoid this hoaky dashboard_adjust_height()!
 	if ($showall) {
-		$out .= '<a href="#" onclick="changeSyslog(0);">'._('show new').'</a>';
+		$out .= '<a href="#" onclick="changeSyslog(0);">'._('show new').'</a><script type="text/javascript">dashboard_adjust_height(); </script>';
 	} else {
-		$out .= '<a href="#" onclick="changeSyslog(1);">'._('show all').'</a>';
+		$out .= '<a href="#" onclick="changeSyslog(1);">'._('show all').'</a><script type="text/javascript">dashboard_adjust_height(); </script>';
 	}
 	$out .= '</div>';
 	return $out;
@@ -633,6 +634,7 @@ if (!$quietmode) {
 
 	<h2><?php echo _("FreePBX System Status");?></h2>
 	</div>
+	<div class="content">
 	<div id="dashboard">
 	<?php
 	echo '<div id="sysinfo-left">';
@@ -649,16 +651,12 @@ if (!$quietmode) {
 	echo show_aststats();
 	echo '</div>';
 	
-	
 	echo '<div id="sysinfo" class="infobox">';
 	echo show_sysinfo();
 	echo '</div>';
 	
 	
-	
 	echo '</div><div id="sysinfo-right">';
-	
-	
 	
 	echo '<div id="sysstats" class="infobox">';
 	echo show_sysstats();
@@ -670,10 +668,24 @@ if (!$quietmode) {
 	
 	echo '<div style="clear:both;"></div>';
 	
-	echo '</div></div>'; // #sysinfo, #sysinfo-right
-	
-	echo '<div class="content">';
+	echo '</div></div>'; // #sysinfo-right, #dashboard
 
+// TODO: There has got to be a better way to do this simply with proper layout styles!
+?>
+<script type="text/javascript">
+$(document).ready(function(){
+  dashboard_adjust_height();
+});
+function dashboard_adjust_height() {
+  left = $('#sysinfo-left').css('height','').height();
+  right = $('#sysinfo-right').height();
+  if (right > left) {
+    $('#sysinfo-left').height(right);
+  }
+}
+</script>
+<?php
+	
 	if($dashboard_debug && $error->ErrorsExist()) {
 		$fh = fopen($amp_conf['ASTLOGDIR']."/dashboard-error.log","a");
 		fwrite($fh, $error->ErrorsAsText());
