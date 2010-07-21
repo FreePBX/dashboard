@@ -5,17 +5,21 @@
 /* two columns, sizes of each category box */
 #sysinfo-left, #sysinfo-left .infobox {
 	width:400px;
+	float: left;
 }
+
 #sysinfo-right {
-	position:absolute;
+	float: left;
 	width:200px;
-	top:0;
-	margin-left:420px;
+	padding-left: 30px;
 }
 #sysinfo-right .infobox {
 	width:200px;
 }
-
+#sysinfo-bot{
+	clear:both;
+	height: 0px;
+}
 /* main container for each category of items */
 .infobox {
 	border:1px solid black;
@@ -25,6 +29,10 @@
 	background-image:url(images/dashboard-sysinfo.png);
 	background-repeat:repeat-x;
 	color: #333;
+}
+
+#procinfo.infobox {
+	margin-bottom: 0px;
 }
 
 /* headings */
