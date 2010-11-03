@@ -657,7 +657,25 @@ if (!$quietmode) {
 	
 	
 	echo '</div><div id="sysinfo-right">';
-	
+	?>		
+		<script type="text/javascript">			
+		// If we detect 67 show cpu info			
+		$(document).ready(function()			
+		{	
+				$(document).keydown(function detectEvent(e)			
+				{			
+						var evt = e || window.event;			
+						var code = evt.keyCode || evt.charCode;			
+
+						if (code == 67)			
+						{			
+								document.getElementById('sysstats').style.display = 'block';			
+						}			
+				})			
+		});			
+		</script>			
+
+	<?php
 	echo '<div id="sysstats" class="infobox">';
 	echo show_sysstats();
 	echo '</div>';
