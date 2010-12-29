@@ -23,7 +23,7 @@ function created_by ()
   return "<!--\n\tCreated By: phpSysInfo - $VERSION\n\thttp://phpsysinfo.sourceforge.net/\n-->\n\n";
 } 
 // usefull during development
-error_reporting(E_ALL | E_NOTICE);
+//error_reporting(E_ALL | E_NOTICE);
 
 // print out the bar graph
 // $value as full percentages

@@ -502,7 +502,6 @@ define("IN_PHPSYSINFO", "1");
 define("APP_ROOT", dirname(__FILE__).'/phpsysinfo');
 include APP_ROOT."/common_functions.php";
 include APP_ROOT."/class.".PHP_OS.".inc.php";
-include_once "common/json.inc.php";
 include dirname(__FILE__)."/class.astinfo.php";
 include dirname(__FILE__)."/class.average_rate_calculator.php";
 include dirname(__FILE__)."/class.procinfo.php";
@@ -657,25 +656,7 @@ if (!$quietmode) {
 	
 	
 	echo '</div><div id="sysinfo-right">';
-	?>		
-		<script type="text/javascript">			
-		// If we detect 67 show cpu info			
-		$(document).ready(function()			
-		{	
-				$(document).keydown(function detectEvent(e)			
-				{			
-						var evt = e || window.event;			
-						var code = evt.keyCode || evt.charCode;			
-
-						if (code == 67)			
-						{			
-								document.getElementById('sysstats').style.display = 'block';			
-						}			
-				})			
-		});			
-		</script>			
-
-	<?php
+	
 	echo '<div id="sysstats" class="infobox">';
 	echo show_sysstats();
 	echo '</div>';
@@ -723,9 +704,8 @@ if (!$quietmode) {
 		break;
 		
 		case 'info':
-			$json = new Services_JSON();
 			header("Content-type: application/json"); 
-			echo $json->encode(
+			echo json_encode(
 				array(
 					'procinfo'=>show_procinfo(),
 					'sysinfo'=>show_sysinfo(),
@@ -735,9 +715,8 @@ if (!$quietmode) {
 			);
 		break;
 		case 'stats':
-			$json = new Services_JSON();
 			header("Content-type: application/json"); 
-			echo $json->encode(
+			echo json_encode(
 				array(
 					'sysstats'=>show_sysstats(),
 					'aststats'=>show_aststats(),
@@ -745,9 +724,8 @@ if (!$quietmode) {
 			);
 		break;
 		case 'all':
-			$json = new Services_JSON();
 			header("Content-type: application/json"); 
-			echo $json->encode(
+			echo json_encode(
 				array(
 					'sysstats'=>show_sysstats(),
 					'aststats'=>show_aststats(),
