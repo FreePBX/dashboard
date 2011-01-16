@@ -17,6 +17,8 @@
 // Copyright (C) 2011 Philippe Lindheimer
 //
 
+$freepbx_conf =& freepbx_conf::create();
+
   // DASHBOARD_STATS_UPDATE_TIME
   // 
   $set['value'] = 6;
