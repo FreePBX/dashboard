@@ -335,7 +335,7 @@ function show_procinfo() {
 	}
 	
 	// asterisk proxy (optionally)
-	if (isset($amp_conf['ASTMANAGERPROXYPORT'])) {
+	if ($amp_conf['ASTMANAGERPROXYPORT']) {
 		if ($procinfo->check_port($amp_conf['ASTMANAGERPROXYPORT'])) {
 			$out .= draw_status_box(_("Manager Proxy"), "ok", _('Asterisk Manager Proxy is running'));
 		} else {
