@@ -352,7 +352,7 @@ function show_procinfo() {
 				// it should be running
 				$out .= draw_status_box(_("Op Panel"), "warn", _('FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it.'));
 			} else {
-				$out .= draw_status_box(_("Op Panel"), "disabled", _('FOP Operator Panel is disabled in General Settings/Advanced Settings'));
+				$out .= draw_status_box(_("Op Panel"), "disabled", _('FOP Operator Panel is disabled in Advanced Settings'));
 			}
 		}
 	}
