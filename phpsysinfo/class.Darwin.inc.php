@@ -42,18 +42,18 @@ class sysinfo extends bsd_common {
 
   function grab_key ($key) {
     $s = execute_program('sysctl', $key);
-    $s = ereg_replace($key . ': ', '', $s);
-    $s = ereg_replace($key . ' = ', '', $s); // fix Apple set keys
+    $s = preg_replace('/' . $key . ': /', '', $s);
+    $s = preg_replace('/' . $key . ' = /', '', $s); // fix Apple set keys
     
     return $s;
   } 
 
   function grab_ioreg ($key) {
     $s = execute_program('ioreg', '-cls "' . $key . '" | grep "' . $key . '"'); //ioreg -cls "$key" | grep "$key"
-    $s = ereg_replace('\|', '', $s);
-    $s = ereg_replace('\+\-\o', '', $s);
-    $s = ereg_replace('[ ]+', '', $s);
-    $s = ereg_replace('<[^>]+>', '', $s); // remove possible XML conflicts
+    $s = preg_replace('/\|/', '', $s);
+    $s = preg_replace('/\+\-\o/', '', $s);
+    $s = preg_replace('/[ ]+/', '', $s);
+    $s = preg_replace('/<[^>]+>/', '', $s); // remove possible XML conflicts
 
     return $s;
   } 
@@ -69,7 +69,7 @@ class sysinfo extends bsd_common {
     $results = array(); 
     // $results['model'] = $this->grab_key('hw.model'); // need to expand this somehow...
     // $results['model'] = $this->grab_key('hw.machine');
-    $results['model'] = ereg_replace('Processor type: ', '', execute_program('hostinfo', '| grep "Processor type"')); // get processor type
+    $results['model'] = preg_replace('/Processor type: /', '', execute_program('hostinfo', '| grep "Processor type"')); // get processor type
     $results['cpus'] = $this->grab_key('hw.ncpu');
     $results['cpuspeed'] = round($this->grab_key('hw.cpufrequency') / 1000000); // return cpu speed - Mhz
     $results['busspeed'] = round($this->grab_key('hw.busfrequency') / 1000000); // return bus speed - Mhz
