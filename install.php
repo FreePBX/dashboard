@@ -26,8 +26,11 @@ $freepbx_conf =& freepbx_conf::create();
 $stats_options = array(6,10,20,30,45,60,120,300,600);
 $info_options = array(15,30,60,120,300,600);
 
+$stats_value = 6;
+$info_value = 30;
+
 if ($freepbx_conf->conf_setting_exists('DASHBOARD_STATS_UPDATE_TIME') || $freepbx_conf->conf_setting_exists('DASHBOARD_INFO_UPDATE_TIME')) {
-  $full_settings &= $freepbx_conf->get_conf_settings();
+  $full_settings =& $freepbx_conf->get_conf_settings();
 
   if ($full_settings['DASHBOARD_STATS_UPDATE_TIME']['type'] != CONF_TYPE_SELECT) {
     $old_val = $full_settings['DASHBOARD_STATS_UPDATE_TIME']['value'];
@@ -38,6 +41,9 @@ if ($freepbx_conf->conf_setting_exists('DASHBOARD_STATS_UPDATE_TIME') || $freepb
         break;
       }
       $stats_value = $val;
+    }
+    if ($stats_value != $old_val) {
+      out(sprintf(_("%s changed from %s to %s"),'DASHBOARD_STATS_UPDATE_TIME',$old_val,$stats_value));
     }
   }
   if ($full_settings['DASHBOARD_INFO_UPDATE_TIME']['type'] != CONF_TYPE_SELECT) {
@@ -50,13 +56,11 @@ if ($freepbx_conf->conf_setting_exists('DASHBOARD_STATS_UPDATE_TIME') || $freepb
       }
       $info_value = $val;
     }
+    if ($info_value != $old_val) {
+      out(sprintf(_("%s changed from %s to %s"),'DASHBOARD_INFO_UPDATE_TIME',$old_val,$info_value));
+    }
   }
   unset($full_settings);
-
-} else {
-
-  $stats_value = 6;
-  $info_value = 30;
 }
 
 // DASHBOARD_STATS_UPDATE_TIME

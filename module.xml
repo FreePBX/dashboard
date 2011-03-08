@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>2.9.0.2</version>
+	<version>2.9.0.3</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<candisable>no</candisable>
@@ -20,6 +20,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*2.9.0.3* #4925
 		*2.9.0.2* #4401
 		*2.9.0.1* #4740
 		*2.9.0.0* 2.9 Update
