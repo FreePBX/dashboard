@@ -344,18 +344,16 @@ function show_procinfo() {
 	}
 	
 	// fop
-	if(!$amp_conf['FOPDISABLE'])  {
-		if ($procinfo->check_fop_server()) {
+	if($amp_conf['FOPDISABLE']) {
+	 $out .= draw_status_box(_("Op Panel"), "disabled", _('FOP Operator Panel is disabled in Advanced Settings'));
+	 } else {
+		if($amp_conf['FOPRUN']) {
+		 if ($procinfo->check_fop_server()) {
 			$out .= draw_status_box(_("Op Panel"), "ok", _('FOP Operator Panel Server is running'));
-		} else {
-			if ($amp_conf['FOPRUN']) {
-				// it should be running
-				$out .= draw_status_box(_("Op Panel"), "warn", _('FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it.'));
-			} else {
-				$out .= draw_status_box(_("Op Panel"), "disabled", _('FOP Operator Panel is disabled in Advanced Settings'));
-			}
+			} 
 		}
-	}
+		$out .= draw_status_box(_("Op Panel"), "warn", _('FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it.'));			
+	 }
 	
 	// mysql
 	if ($amp_conf['AMPDBENGINE'] == "mysql") {
