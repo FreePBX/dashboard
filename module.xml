@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>2.9.0.3</version>
+	<version>2.9.0.4</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<candisable>no</candisable>
@@ -20,6 +20,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*2.9.0.4* #5075
 		*2.9.0.3* #4925
 		*2.9.0.2* #4401
 		*2.9.0.1* #4740
@@ -65,6 +66,6 @@
 		*0.2.0* Add real-time updates
 		*0.1.0* Initial release
 	</changelog>
-	<location>release/2.9/dashboard-2.9.0.3.tgz</location>
-	<md5sum>af79bb9d9744ff80176df276be721b26</md5sum>
+	<location>release/2.9/dashboard-2.9.0.4.tgz</location>
+	<md5sum>5fdf26c462517a272d97d2c8b7c58bdd</md5sum>
 </module>
