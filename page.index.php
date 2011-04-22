@@ -346,16 +346,16 @@ function show_procinfo() {
 	// fop
 	$warn = draw_status_box(_("Op Panel"), "warn", _('FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it.'));
 	if($amp_conf['FOPDISABLE']) { // FOP is disabled, display that on the dashboard
-	 $out .= draw_status_box(_("Op Panel"), "disabled", _('FOP Operator Panel is disabled in Advanced Settings'));
-	 } else {
-		if(!$amp_conf['FOPRUN']) { 
-		 $out .= $warn; // if FOPRUN is false, display warning on the dashboard
-		 } elseif ($procinfo->check_fop_server()) { // if FOPRUN is true, then check the fop tcp port, if OK display that on dashboard
-			$out .= draw_status_box(_("Op Panel"), "ok", _('FOP Operator Panel Server is running'));
-			} else { // check_fop_server returned an error, display warning
+    $out .= draw_status_box(_("Op Panel"), "disabled", _('FOP Operator Panel is disabled in Advanced Settings'));
+  } else {
+    if (!$amp_conf['FOPRUN']) { 
+      $out .= $warn; // if FOPRUN is false, display warning on the dashboard
+    } elseif ($procinfo->check_fop_server()) { // if FOPRUN is true, then check the fop tcp port, if OK display that on dashboard
+      $out .= draw_status_box(_("Op Panel"), "ok", _('FOP Operator Panel Server is running'));
+    } else { // check_fop_server returned an error, display warning
 			$out .= $warn;
-			}
-		 }
+    }
+  }
 
 	// mysql
 	if ($amp_conf['AMPDBENGINE'] == "mysql") {
