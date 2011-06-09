@@ -442,7 +442,7 @@ function show_syslog(&$md5_checksum) {
 			if (!$item['reset']) {
 				$out .= '<a class="notify_ignore_btn" title="'._('Ignore this').'" '.
 				        'onclick="hide_notification(\''.$domid.'\', \''.$item['module'].'\', \''.$item['id'].'\');">'.
-				        '<img src="'.dirname($_SERVER['PHP_SELF']).'/images/notify_delete.png" width="16" height="16" border="0" alt="'._('Ignore this').'" /></a>';
+				        '<img src="images/notify_delete.png" width="16" height="16" border="0" alt="'._('Ignore this').'" /></a>';
 			}
 			$out .= '</div>';
 			$out .= '</div>';
