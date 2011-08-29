@@ -7,14 +7,12 @@
 	<license>GPLv2+</license>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
-	<type>tool</type>
-	<category>Basic</category>
+	<category>Reports</category>
 	<description>
 		Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes.
 	</description>
 	<menuitems>
-		<dashboard1 display="index" type="tool" category="Admin" sort="-10" access="all">FreePBX System Status</dashboard1>
-		<dashboard2 display="index" type="setup" category="Admin" sort="-10" access="all">FreePBX System Status</dashboard2>
+		<dashboard display="index" access="all">FreePBX System Status</dashboard>
 	</menuitems>
 	<depends>
 		<version>2.3.0beta2</version>

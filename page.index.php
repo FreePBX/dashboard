@@ -195,7 +195,7 @@ function show_sysstats() {
 	global $sysinfo;
 	$out = '';
 	
-	$out .= "<h3>"._("System Statistics")."</h3>";
+	$out .= "<h3 class=\"ui-widget-header  ui-state-default ui-corner-all\">"._("System Statistics")."</h3>";
 	$out .= "<h4>"._("Processor")."</h4>";
 	$loadavg = $sysinfo->loadavg(true);
 	$out .= draw_box(_("Load Average"), $loadavg['avg'][0]);
@@ -258,7 +258,7 @@ function show_aststats() {
 	$classes = array(0=>'graphok');
 	$max_chans = $max_calls * 2;
 	
-	$out .= "<h3>"._("FreePBX Statistics")."</h3>";
+	$out .= "<h3 class=\"ui-widget-header  ui-state-default ui-corner-all\">"._("FreePBX Statistics")."</h3>";
 	$out .= draw_graph(_('Total active calls'), '', $channels['total_calls'], $max_calls, $classes , false, BAR_WIDTH_LEFT);
 	$out .= draw_graph(_('Internal calls'), '', $channels['internal_calls'], $max_calls, $classes , false, BAR_WIDTH_LEFT);
 	$out .= draw_graph(_('External calls'), '', $channels['external_calls'], $max_calls, $classes , false, BAR_WIDTH_LEFT);
@@ -296,7 +296,7 @@ function show_aststats() {
 function show_sysinfo() {
 	global $sysinfo;
 	global $astinfo;
-	$out = "<h3>"._("Uptime")."</h3><br />";
+	$out = "<h3 class=\"ui-widget-header  ui-state-default ui-corner-all\">"._("Uptime")."</h3><br />";
 	$out .= '<table summary="'._('System Information Table').'">';
 	/*
 	$out .= '<tr><th>Distro:</th><td>'.$sysinfo->distro().'</td></tr>';
@@ -326,7 +326,7 @@ function show_procinfo() {
 	global $amp_conf;
 	$out = '';
 	
-	$out .= "<h3>"._("Server Status")."</h3>";
+	$out .= "<h3 class=\"ui-widget-header  ui-state-default ui-corner-all\">"._("Server Status")."</h3>";
 	// asterisk
 	if ($astver = $astinfo->check_asterisk()) {
 		$out .= draw_status_box(_("Asterisk"), "ok", sprintf(_('Asterisk is running: %s'),$astver));
@@ -411,7 +411,7 @@ function show_syslog(&$md5_checksum) {
 	
 	$items = $notify->list_all($showall);
 
-	$out .= "<h3>"._("FreePBX Notices")."</h3>";
+	$out .= "<h3 class=\"ui-widget-header  ui-state-default ui-state-default ui-corner-all\">"._("FreePBX Notices")."</h3>";
 	
 	if (count($items)) {
 		$out .= '<ul>';
@@ -632,41 +632,39 @@ if (!$quietmode) {
 	</script>
 
 	<h2><?php echo _("FreePBX System Status");?></h2>
-	</div>
-	<div class="content">
 	<div id="dashboard">
 	<?php
 	echo '<div id="sysinfo-left">';
 	
 	// regular page
-	echo '<div id="syslog" class="infobox">';
+	echo '<div id="syslog" class="infobox ui-widget-content  ui-corner-all">';
 	echo show_syslog($syslog_md5);
 	// syslog_md5 is used by javascript updateInfo() to determine if the syslog div contents have changed
 	echo '<script type="text/javascript"> syslog_md5 = "'.$syslog_md5.'"; </script>';
 	//echo "log goes here<br/><br/><br/>";
 	echo '</div>';
 	
-	echo '<div id="aststats" class="infobox">';
+	echo '<div id="aststats" class="infobox ui-widget-content  ui-corner-all">';
 	echo show_aststats();
 	echo '</div>';
 	
-	echo '<div id="sysinfo" class="infobox">';
+	echo '<div id="sysinfo" class="infobox ui-widget-content  ui-corner-all">';
 	echo show_sysinfo();
 	echo '</div>';
 	
 	
 	echo '</div><div id="sysinfo-right">';
 	
-	echo '<div id="sysstats" class="infobox">';
+	echo '<div id="sysstats" class="infobox ui-widget-content  ui-corner-all">';
 	echo show_sysstats();
 	echo '</div>';
 	
-	echo '<div id="procinfo" class="infobox">';
+	echo '<div id="procinfo" class="infobox ui-widget-content  ui-corner-all">';
 	echo show_procinfo();
 	echo '</div>';
 	
-	echo '<div style="clear:both;"></div>';
-	echo '</div>'; // #sysinfo-right, #dashboard
+	//echo '<div style="clear:both;"></div>';
+	echo '</div></div>'; // #sysinfo-right, #dashboard
 	echo '<div id="sysinfo-bot">&nbsp</div>';
 
 	if($dashboard_debug && $error->ErrorsExist()) {
