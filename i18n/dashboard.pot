@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-10 22:46+0100\n"
+"POT-Creation-Date: 2011-09-04 18:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,7 +67,7 @@ msgstr ""
 msgid "System Dashboard"
 msgstr ""
 
-msgid "Basic"
+msgid "Reports"
 msgstr ""
 
 msgid ""
@@ -233,15 +233,15 @@ msgstr ""
 msgid "Op Panel"
 msgstr ""
 
-msgid "FOP Operator Panel Server is running"
-msgstr ""
-
 msgid ""
 "FOP Operator Panel Server is not running, you will not be able to use the "
 "operator panel, but the system will run fine without it."
 msgstr ""
 
 msgid "FOP Operator Panel is disabled in Advanced Settings"
+msgstr ""
+
+msgid "FOP Operator Panel Server is running"
 msgstr ""
 
 msgid "MySQL"
