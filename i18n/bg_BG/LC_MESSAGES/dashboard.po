@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-25 11:50+0100\n"
+"POT-Creation-Date: 2011-09-23 09:52+0000\n"
 "PO-Revision-Date: 2009-01-16 14:06+0200\n"
 "Last-Translator: \n"
 "Language-Team: Chavdar Iliev <chavdar_75@yahoo.com>\n"
@@ -32,196 +32,203 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: class.astinfo.php:234 page.index.php:162
 msgid "seconds"
 msgstr "секунди"
 
-#: class.astinfo.php:234
 msgid "second"
 msgstr "секунда"
 
-#: class.astinfo.php:235 page.index.php:160 page.index.php:188
 msgid "minutes"
 msgstr "минути"
 
-#: class.astinfo.php:235 page.index.php:188
 msgid "minute"
 msgstr "минута"
 
-#: class.astinfo.php:236 page.index.php:185
 msgid "hours"
 msgstr "часа"
 
-#: class.astinfo.php:236 page.index.php:185
 msgid "hour"
 msgstr "час"
 
-#: class.astinfo.php:237 page.index.php:182
 msgid "days"
 msgstr "дни"
 
-#: class.astinfo.php:237
 msgid "day"
 msgstr "ден"
 
-#: class.astinfo.php:238 page.index.php:179
 msgid "weeks"
 msgstr "седмици"
 
-#: class.astinfo.php:238 page.index.php:179
 msgid "week"
 msgstr "седмица"
 
-#: class.astinfo.php:239
 msgid "years"
 msgstr "години"
 
-#: class.astinfo.php:239
 msgid "year"
 msgstr "година"
 
-#: page.index.php:119
+msgid "System Dashboard"
+msgstr "Информация за Системата"
+
+msgid "Reports"
+msgstr ""
+
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+
+msgid "FreePBX System Status"
+msgstr "FreePBX Системен Статус"
+
+msgid "Dashboard Info Update Frequency"
+msgstr ""
+
+msgid "GUI Behavior"
+msgstr ""
+
+msgid "Update rate in seconds of the Info section of the System Status panel."
+msgstr ""
+
+msgid "Dashboard Max Calls Initial Scale"
+msgstr ""
+
+msgid ""
+"Use this to pre-set the scale for maximum calls on the Dashboard display. If "
+"not set, the the scale is dynamically sized based on the active calls on the "
+"system."
+msgstr ""
+
+msgid "Dashboard Stats Update Frequency"
+msgstr ""
+
+msgid ""
+"Update rate in seconds of all sections of the System Status panel except the "
+"Info box."
+msgstr ""
+
+msgid "Dashboard Non-Std SSH Port"
+msgstr ""
+
+msgid "System Setup"
+msgstr ""
+
+msgid ""
+"SSH port number configured on your system if not using the default port 22, "
+"this allows the dashboard monitoring to watch the poper port."
+msgstr ""
+
+#, php-format
+msgid "%s changed from %s to %s"
+msgstr ""
+
 msgid "OK"
 msgstr "OK"
 
-#: page.index.php:123
 msgid "Warn"
 msgstr "Предупреждавам"
 
-#: page.index.php:127
 msgid "ERROR"
 msgstr "ГРЕШКА"
 
-#: page.index.php:131
 msgid "Disabled"
 msgstr ""
 
-#: page.index.php:198
 msgid "System Statistics"
 msgstr "Системен Статус"
 
-#: page.index.php:199
 msgid "Processor"
 msgstr "Използван Процесор"
 
-#: page.index.php:201
 msgid "Load Average"
 msgstr "Средно Натоварване"
 
-#: page.index.php:202
 msgid "CPU"
 msgstr "CPU"
 
-#: page.index.php:204
 msgid "Memory"
 msgstr "Използвана Памет"
 
-#: page.index.php:207
 msgid "App Memory"
 msgstr "Памет"
 
-#: page.index.php:208
 msgid "Swap"
 msgstr "Swap"
 
-#: page.index.php:210
 msgid "Disks"
 msgstr "Дискове"
 
-#: page.index.php:215
 msgid "Networks"
 msgstr "Мрежи"
 
-#: page.index.php:226
 msgid "receive"
 msgstr "получени"
 
-#: page.index.php:227
 msgid "transmit"
 msgstr "изпратени"
 
-#: page.index.php:261
 msgid "FreePBX Statistics"
 msgstr "FreePBX Статистика"
 
-#: page.index.php:262
 msgid "Total active calls"
 msgstr "Общо активни разговори"
 
-#: page.index.php:263
 msgid "Internal calls"
 msgstr "Вътрешни разговори"
 
-#: page.index.php:264
 msgid "External calls"
 msgstr "Външни разговори"
 
-#: page.index.php:265
 msgid "Total active channels"
 msgstr "Общо активни канали"
 
-#: page.index.php:267
 msgid "FreePBX Connections"
 msgstr "FreePBX Свързани"
 
-#: page.index.php:284
 msgid "IP Phones Online"
 msgstr "IP Телефони Онлайн"
 
-#: page.index.php:287
 msgid "IP Trunks Online"
 msgstr "IP Външни Линии Онлайн"
 
-#: page.index.php:290
 msgid "IP Trunk Registrations"
 msgstr "IP Външни Линии Регистрации"
 
-#: page.index.php:299
 msgid "Uptime"
 msgstr "Експлоатация"
 
-#: page.index.php:300
 msgid "System Information Table"
 msgstr "Информация за Системата"
 
-#: page.index.php:308
 msgid "System Uptime"
 msgstr "Експлоатация на Системата "
 
-#: page.index.php:316
 msgid "Asterisk Uptime"
 msgstr "Експлоатация на Астериск"
 
-#: page.index.php:317
 msgid "Last Reload"
 msgstr "Последно Презареждане"
 
-#: page.index.php:329
 msgid "Server Status"
 msgstr "Състояние на Сървъра"
 
-#: page.index.php:332 page.index.php:334
 msgid "Asterisk"
 msgstr "Астериск"
 
-#: page.index.php:332
 #, php-format
 msgid "Asterisk is running: %s"
 msgstr "Астериск работи: %s"
 
-#: page.index.php:334
 msgid "Asterisk is not running, this is a critical service!"
 msgstr "Астериск не работи, това е критична услуга!"
 
-#: page.index.php:340 page.index.php:342
 msgid "Manager Proxy"
 msgstr "Manager Прокси"
 
-#: page.index.php:340
 msgid "Asterisk Manager Proxy is running"
 msgstr "Астериск Manager Прокси работи"
 
-#: page.index.php:342
 msgid ""
 "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
 "Asterisk directly, which may result in poor performance"
@@ -229,15 +236,9 @@ msgstr ""
 "Астериск Manager Прокси не работи, FreePBX ще използва Астериск директно, "
 "което може да доведе до влошена производителност"
 
-#: page.index.php:349 page.index.php:353 page.index.php:355
 msgid "Op Panel"
 msgstr "ФОП"
 
-#: page.index.php:349
-msgid "FOP Operator Panel Server is running"
-msgstr "ФОП Сървъра работи"
-
-#: page.index.php:353
 msgid ""
 "FOP Operator Panel Server is not running, you will not be able to use the "
 "operator panel, but the system will run fine without it."
@@ -245,35 +246,30 @@ msgstr ""
 "ФОП Сървъра не работи, няма да можете да използвате оператор панела, но "
 "системата ще работи нормално без него."
 
-#: page.index.php:355
-msgid "FOP Operator Panel is disabled in amportal.conf"
-msgstr "ФОП е забранен в amportal.conf"
+msgid "FOP Operator Panel is disabled in Advanced Settings"
+msgstr ""
 
-#: page.index.php:369
+msgid "FOP Operator Panel Server is running"
+msgstr "ФОП Сървъра работи"
+
 msgid "MySQL"
 msgstr "MySQL"
 
-#: page.index.php:369
 msgid "MySQL Server is running"
 msgstr "MySQL Сървъра работи"
 
-#: page.index.php:373
 msgid "Web Server"
 msgstr "Уеб Сървър"
 
-#: page.index.php:373
 msgid "Web Server is running"
 msgstr "Уеб Сървъра работи"
 
-#: page.index.php:378 page.index.php:380
 msgid "SSH Server"
 msgstr "SSH Сървър"
 
-#: page.index.php:378
 msgid "SSH Server is running"
 msgstr "SSH Сървъра работи"
 
-#: page.index.php:380
 msgid ""
 "SSH Server is not running, you will not be able to connect to the system "
 "console remotely"
@@ -281,71 +277,51 @@ msgstr ""
 "SSH Сървъра не работи, няма да можете да се свързвате със системата "
 "дистанционно."
 
-#: page.index.php:400
 msgid "Critical Error"
 msgstr "Критична Грешка"
 
-#: page.index.php:401
 msgid "Security Update"
 msgstr "Защитно Обновяване"
 
-#: page.index.php:402
 msgid "Update"
 msgstr "Обновяване"
 
-#: page.index.php:403
 msgid "Error"
 msgstr "Грешка"
 
-#: page.index.php:404
 msgid "Warning"
 msgstr "Внимание"
 
-#: page.index.php:405
 msgid "Notice"
 msgstr "Предупреждение"
 
-#: page.index.php:414
 msgid "FreePBX Notices"
 msgstr "FreePBX Предупреждения"
 
-#: page.index.php:438 page.index.php:440
 msgid "Delete this"
 msgstr "Изтрий това"
 
-#: page.index.php:443 page.index.php:445
 msgid "Ignore this"
 msgstr "Игнорирай това"
 
-#: page.index.php:452
 #, php-format
 msgid "Added %s ago"
 msgstr "Добавено преди %s"
 
-#: page.index.php:461
 msgid "No notifications"
 msgstr "Няма предупреждения"
 
-#: page.index.php:463
 msgid "No new notifications"
 msgstr "Няма нови предупреждения"
 
-#: page.index.php:471
 msgid "show new"
 msgstr "покажи новите"
 
-#: page.index.php:473
 msgid "show all"
 msgstr "покажи всички"
 
-#: page.index.php:618
 msgid "loading..."
 msgstr "зареждам..."
 
-#: page.index.php:634
-msgid "FreePBX System Status"
-msgstr "FreePBX Системен Статус"
-
-#: moudle.xml
-msgid "System Dashboard"
-msgstr "Информация за Системата"
+#~ msgid "FOP Operator Panel is disabled in amportal.conf"
+#~ msgstr "ФОП е забранен в amportal.conf"

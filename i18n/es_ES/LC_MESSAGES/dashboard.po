@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - dashboard module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-25 11:50+0100\n"
+"POT-Creation-Date: 2011-09-23 09:52+0000\n"
 "PO-Revision-Date: 2009-01-23 10:45+0100\n"
 "Last-Translator: Juan Asensio Sánchez <okelet@gmail.com>\n"
 "Language-Team: Juan Asensio Sánchez <okelet@gmail.com>\n"
@@ -32,196 +32,203 @@ msgstr ""
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: class.astinfo.php:234 page.index.php:162
 msgid "seconds"
 msgstr "segundos"
 
-#: class.astinfo.php:234
 msgid "second"
 msgstr "segundo"
 
-#: class.astinfo.php:235 page.index.php:160 page.index.php:188
 msgid "minutes"
 msgstr "minutos"
 
-#: class.astinfo.php:235 page.index.php:188
 msgid "minute"
 msgstr "minuto"
 
-#: class.astinfo.php:236 page.index.php:185
 msgid "hours"
 msgstr "horas"
 
-#: class.astinfo.php:236 page.index.php:185
 msgid "hour"
 msgstr "hora"
 
-#: class.astinfo.php:237 page.index.php:182
 msgid "days"
 msgstr "días"
 
-#: class.astinfo.php:237
 msgid "day"
 msgstr "días"
 
-#: class.astinfo.php:238 page.index.php:179
 msgid "weeks"
 msgstr "semanas"
 
-#: class.astinfo.php:238 page.index.php:179
 msgid "week"
 msgstr "semana"
 
-#: class.astinfo.php:239
 msgid "years"
 msgstr "años"
 
-#: class.astinfo.php:239
 msgid "year"
 msgstr "año"
 
-#: page.index.php:119
+msgid "System Dashboard"
+msgstr "Resumen del sistema"
+
+msgid "Reports"
+msgstr ""
+
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+
+msgid "FreePBX System Status"
+msgstr "Estado del sistema de FreePBX"
+
+msgid "Dashboard Info Update Frequency"
+msgstr ""
+
+msgid "GUI Behavior"
+msgstr ""
+
+msgid "Update rate in seconds of the Info section of the System Status panel."
+msgstr ""
+
+msgid "Dashboard Max Calls Initial Scale"
+msgstr ""
+
+msgid ""
+"Use this to pre-set the scale for maximum calls on the Dashboard display. If "
+"not set, the the scale is dynamically sized based on the active calls on the "
+"system."
+msgstr ""
+
+msgid "Dashboard Stats Update Frequency"
+msgstr ""
+
+msgid ""
+"Update rate in seconds of all sections of the System Status panel except the "
+"Info box."
+msgstr ""
+
+msgid "Dashboard Non-Std SSH Port"
+msgstr ""
+
+msgid "System Setup"
+msgstr ""
+
+msgid ""
+"SSH port number configured on your system if not using the default port 22, "
+"this allows the dashboard monitoring to watch the poper port."
+msgstr ""
+
+#, php-format
+msgid "%s changed from %s to %s"
+msgstr ""
+
 msgid "OK"
 msgstr "OK"
 
-#: page.index.php:123
 msgid "Warn"
 msgstr "Atención"
 
-#: page.index.php:127
 msgid "ERROR"
 msgstr "ERROR"
 
-#: page.index.php:131
 msgid "Disabled"
 msgstr ""
 
-#: page.index.php:198
 msgid "System Statistics"
 msgstr "Estadísticas del sistema"
 
-#: page.index.php:199
 msgid "Processor"
 msgstr "Procesador"
 
-#: page.index.php:201
 msgid "Load Average"
 msgstr "Carga media"
 
-#: page.index.php:202
 msgid "CPU"
 msgstr "CPU"
 
-#: page.index.php:204
 msgid "Memory"
 msgstr "Memoria"
 
-#: page.index.php:207
 msgid "App Memory"
 msgstr "Memoria de aplicaciones"
 
-#: page.index.php:208
 msgid "Swap"
 msgstr "Memoria Swap"
 
-#: page.index.php:210
 msgid "Disks"
 msgstr "Discos"
 
-#: page.index.php:215
 msgid "Networks"
 msgstr "Redes"
 
-#: page.index.php:226
 msgid "receive"
 msgstr "recibidos"
 
-#: page.index.php:227
 msgid "transmit"
 msgstr "enviados"
 
-#: page.index.php:261
 msgid "FreePBX Statistics"
 msgstr "Estadísticas de FreePBX"
 
-#: page.index.php:262
 msgid "Total active calls"
 msgstr "Total de llamadas activas"
 
-#: page.index.php:263
 msgid "Internal calls"
 msgstr "Llamadas internas"
 
-#: page.index.php:264
 msgid "External calls"
 msgstr "Llamadas externas"
 
-#: page.index.php:265
 msgid "Total active channels"
 msgstr "Total de canales activos"
 
-#: page.index.php:267
 msgid "FreePBX Connections"
 msgstr "Conexiones de FreePBX"
 
-#: page.index.php:284
 msgid "IP Phones Online"
 msgstr "Teléfonos IP online"
 
-#: page.index.php:287
 msgid "IP Trunks Online"
 msgstr "Líneas troncales IP online"
 
-#: page.index.php:290
 msgid "IP Trunk Registrations"
 msgstr "Registros de líneas troncales IP"
 
-#: page.index.php:299
 msgid "Uptime"
 msgstr "Tiempo encendido"
 
-#: page.index.php:300
 msgid "System Information Table"
 msgstr "Tabla de información del sistema"
 
-#: page.index.php:308
 msgid "System Uptime"
 msgstr "Tiempo encendido del sistema"
 
-#: page.index.php:316
 msgid "Asterisk Uptime"
 msgstr "Tiempo encendido de Asterisk"
 
-#: page.index.php:317
 msgid "Last Reload"
 msgstr "Última recarga"
 
-#: page.index.php:329
 msgid "Server Status"
 msgstr "Estado del servidor"
 
-#: page.index.php:332 page.index.php:334
 msgid "Asterisk"
 msgstr "Asterisk"
 
-#: page.index.php:332
 #, php-format
 msgid "Asterisk is running: %s"
 msgstr "Asterisk se está ejecutando: %s"
 
-#: page.index.php:334
 msgid "Asterisk is not running, this is a critical service!"
 msgstr "Asterisk no se está ejecutando; ¡éste es un servicio crítico!"
 
-#: page.index.php:340 page.index.php:342
 msgid "Manager Proxy"
 msgstr "Proxy del manager"
 
-#: page.index.php:340
 msgid "Asterisk Manager Proxy is running"
 msgstr "El proxy del manager de Asterisk se está ejecutando"
 
-#: page.index.php:342
 msgid ""
 "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
 "Asterisk directly, which may result in poor performance"
@@ -229,15 +236,9 @@ msgstr ""
 "El proxy del manager de Asterisk no se está ejecutando; FreePBX usará en su "
 "lugar Asterisk directamente, lo que puede resultar en un rendimiento pobre"
 
-#: page.index.php:349 page.index.php:353 page.index.php:355
 msgid "Op Panel"
 msgstr "Panel de operador FOP"
 
-#: page.index.php:349
-msgid "FOP Operator Panel Server is running"
-msgstr "El servidor del panel de operador FOP se está ejecutando"
-
-#: page.index.php:353
 msgid ""
 "FOP Operator Panel Server is not running, you will not be able to use the "
 "operator panel, but the system will run fine without it."
@@ -246,37 +247,30 @@ msgstr ""
 "el panel de operador, aunque el sistema continuará ejecutándose "
 "correctamente sin él."
 
-#: page.index.php:355
-msgid "FOP Operator Panel is disabled in amportal.conf"
+msgid "FOP Operator Panel is disabled in Advanced Settings"
 msgstr ""
-"El panel de operador FOP está deshabilitado en el archivo de configuración "
-"amportal.conf"
 
-#: page.index.php:369
+msgid "FOP Operator Panel Server is running"
+msgstr "El servidor del panel de operador FOP se está ejecutando"
+
 msgid "MySQL"
 msgstr "MySQL"
 
-#: page.index.php:369
 msgid "MySQL Server is running"
 msgstr "El servidor MySQL se está ejecutando"
 
-#: page.index.php:373
 msgid "Web Server"
 msgstr "Servidor web"
 
-#: page.index.php:373
 msgid "Web Server is running"
 msgstr "El servidor web se está ejecutando"
 
-#: page.index.php:378 page.index.php:380
 msgid "SSH Server"
 msgstr "Servidor SSH"
 
-#: page.index.php:378
 msgid "SSH Server is running"
 msgstr "El servidor SSH se está ejecutando"
 
-#: page.index.php:380
 msgid ""
 "SSH Server is not running, you will not be able to connect to the system "
 "console remotely"
@@ -284,71 +278,53 @@ msgstr ""
 "El servidor SSH no se está ejecutando; no podrá conectarse a la consola del "
 "sistema de forma remota"
 
-#: page.index.php:400
 msgid "Critical Error"
 msgstr "Error crítico"
 
-#: page.index.php:401
 msgid "Security Update"
 msgstr "Actualización de seguridad"
 
-#: page.index.php:402
 msgid "Update"
 msgstr "Actualizar"
 
-#: page.index.php:403
 msgid "Error"
 msgstr "Error"
 
-#: page.index.php:404
 msgid "Warning"
 msgstr "Aviso"
 
-#: page.index.php:405
 msgid "Notice"
 msgstr "Notificación"
 
-#: page.index.php:414
 msgid "FreePBX Notices"
 msgstr "Notificaciones de FreePBX"
 
-#: page.index.php:438 page.index.php:440
 msgid "Delete this"
 msgstr "Eliminar esto"
 
-#: page.index.php:443 page.index.php:445
 msgid "Ignore this"
 msgstr "Ignorar esto"
 
-#: page.index.php:452
 #, php-format
 msgid "Added %s ago"
 msgstr "Añadido hace %s"
 
-#: page.index.php:461
 msgid "No notifications"
 msgstr "No hay notificaciones"
 
-#: page.index.php:463
 msgid "No new notifications"
 msgstr "No hay notificaciones nuevas."
 
-#: page.index.php:471
 msgid "show new"
 msgstr "Mostrar nuevas"
 
-#: page.index.php:473
 msgid "show all"
 msgstr "Mostrar todas las notificaciones"
 
-#: page.index.php:618
 msgid "loading..."
 msgstr "Cargando..."
 
-#: page.index.php:634
-msgid "FreePBX System Status"
-msgstr "Estado del sistema de FreePBX"
-
-#: moudle.xml
-msgid "System Dashboard"
-msgstr "Resumen del sistema"
+#~ msgid "FOP Operator Panel is disabled in amportal.conf"
+#~ msgstr ""
+#~ "El panel de operador FOP está deshabilitado en el archivo de "
+#~ "configuración amportal.conf"
