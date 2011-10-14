@@ -16,6 +16,7 @@ class procinfo {
 		return false;
 	}
 	
+	/* FOP has been removed, currenlty unsupported optional module
 	function check_fop_server() {
     global $amp_conf;
     $fop_settings = parse_ini_file($amp_conf['FOPWEBROOT'].'/op_server.cfg');
@@ -27,6 +28,7 @@ class procinfo {
 
 		return $this->check_port($listen_port);
 	}
+	 */
 	
 	function check_mysql($hoststr) {
 		$host = 'localhost';
