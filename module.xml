@@ -66,6 +66,6 @@
 		*0.2.0* Add real-time updates
 		*0.1.0* Initial release
 	</changelog>
-	<location>release/2.10/dashboard-2.10.0.0.tgz</location>
-	<md5sum>a1698c53d6a370ef2ea318675083ede6</md5sum>
+	<location>release/2.10/dashboard-2.10.0.1.tgz</location>
+	<md5sum>6ae6cc24c6d152de7fccaf07c33c3941</md5sum>
 </module>
