@@ -17,6 +17,8 @@
 //    Copyright (C) 2006 Astrogen LLC 
 //
 
+if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
+
 $dashboard_debug = false;
 
 $dispnum = 'sysinfo'; //used for switch on config.php
