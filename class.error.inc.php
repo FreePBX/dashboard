@@ -1,4 +1,5 @@
 <?php 
+if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 // phpSysInfo - A PHP System Information Script
 // http://phpsysinfo.sourceforge.net/
 // This program is free software; you can redistribute it and/or
