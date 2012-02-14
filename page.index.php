@@ -205,7 +205,10 @@ function show_sysstats() {
 	
 	$out .= "<h4>"._("Memory")."</h4>";
 	$memory = $sysinfo->memory();
-	$app_memory = isset($memory["ram"]["app"]) ? $memory["ram"]["app"] : $memory["ram"]["total"] - $memory["ram"]["t_free"];
+	$app_memory = isset($memory["ram"]["app"]) ? 
+		$memory["ram"]["app"] : 
+		$memory["ram"]["total"] - $memory["ram"]["t_free"] - $memory['ram']['cached'] - $memory['ram']['buffers'];
+
 	$out .= draw_graph(_("App Memory"), "MB", number_format($app_memory/1024,2), $memory["ram"]["total"]/1024);
 	$out .= draw_graph(_("Swap"), "MB", number_format(($memory["swap"]["total"]-$memory["swap"]["free"])/1024,2), $memory["swap"]["total"]/1024);
 	
