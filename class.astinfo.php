@@ -97,6 +97,7 @@ class astinfo {
 		$response = $this->astman->send_request('Command',array('Command'=>"sip show peers"));
 		$astout = explode("\n",$response['data']);	
 		foreach ($astout as $line) {
+			$line = trim(str_replace('//','/',$line),'/');
 			if (preg_match('/^(([a-z0-9\-_]+)(\/([a-z0-9\-_]+))?)\s+(\([a-z]+\)|\d{1,3}(\.\d{1,3}){3})/i', $line, $matches)) {
 				//matches: [2] = name, [4] = username, [5] = host, [6] = part of ip (if IP)
 
