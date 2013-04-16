@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>2.10.0.3</version>
+	<version>2.11.0.0</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<candisable>no</candisable>
@@ -18,55 +18,11 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*2.11.0.0* bump to 2.11
 		*2.10.0.3* #5292, #5145
 		*2.10.0.2* #5478 
 		*2.10.0.1* remove FOP specific code
 		*2.10.0.0* new version changes
-		*2.9.0.4* #5075
-		*2.9.0.3* #4925
-		*2.9.0.2* #4401
-		*2.9.0.1* #4740
-		*2.9.0.0* 2.9 Update
-		*2.8.0.3* #4474
-		*2.8.0.2* #4175 (better fix)
-		*2.8.0.1* #4175
-		*2.8.0.0* #4268, #4276, #4283
-		*2.7.0.1* #4082, localizations
-		*2.7.0.0* #3547
-		*2.6.0.2* localizations
-		*2.6.0.1* #3226, #3353
-		*2.6.0.0* localizations, misc
-		*2.5.0.7* #3652, localization updates
-		*2.5.0.6* #3409, localization fixes, updates
-		*2.5.0.5* #3404 correction
-		*2.5.0.4* #3401, #3404
-		*2.5.0.3* #3348, localizations
-		*2.5.0.2* localization string enclosures
-		*2.5.0.1* #3170, Swedish Translation
-		*2.5.0* #3134 add amportal DASHBOARD_STATS_UPDATE_TIME, DASHBOARD_INFO_UPDATE_TIME
-		*2.4.0.3* #2871 do not show Sangoma wanpipe interfaces in the Network Stats
-		*2.4.0.2* #2701, #2843 add proper JSON header to fix some proxy servers, Russian Translation
-		*2.4.0.1* #2620 adjust to new format of core_trunks_list(true)
-		*2.4.0* #2415 1.6 support, #2301, it translation
-		*0.3.3.3* #2365 don't make readonly disk devices red when 100%
-		*0.3.3.2* #2469 fix division my zero in cpu usage
-		*0.3.3.1* Cosmetic fix (#2278 - long mount point paths)
-		*0.3.3* Improved detection of webserver failing, More MySQL detection fixes
-		*0.3.2.1* #2246 make FreePBX Connections visible, #2250 check for SSHPORT
-		*0.3.2* Allow mysql server to be on another host/port (#2229), fix image path problem
-		*0.3.1* Fix issue with miscounting total registrations, minor styling details
-		*0.3* Show IP phones and trunks separately (#2209)
-		*0.2.5.4* make always accessible even in database mode, fix minor javascript bug
-		*0.2.5.3* remove deprecated javascript call
-		*0.2.5.2* #2194 don't fail when Asterisk is not running
-		*0.2.5.1* disable debug logging, make uninstallable
-		*0.2.5* #2142 fix online phones for Asterisk 1.4 format, #2140 divide by 0 again
-		*0.2.4* #2133 again, #2140 divide by 0, #2141 with temp log to determine real issue
-		*0.2.3* #2133 fixed number format error resulting in bogus percentage displays
-		*0.2.2* #2131 fix Undefined Index warnings
-		*0.2.1* make module permanent, should not be able to disable
-		*0.2.0* Add real-time updates
-		*0.1.0* Initial release
 	</changelog>
 	<location>release/2.10/dashboard-2.10.0.3.tgz</location>
 	<md5sum>42b019f6ea20e7b0bf58ec3b1c954c62</md5sum>
