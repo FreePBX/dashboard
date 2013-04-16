@@ -19,6 +19,10 @@
 
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
+if (!defined('DASHBOARD_FREEPBX_BRAND')) { 
+	define('DASHBOARD_FREEPBX_BRAND', 'FreePBX');
+}
+
 $dashboard_debug = false;
 
 $dispnum = 'sysinfo'; //used for switch on config.php
@@ -27,7 +31,7 @@ $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 $quietmode = isset($_REQUEST['quietmode'])?$_REQUEST['quietmode']:'';
 $info = isset($_REQUEST['info'])?$_REQUEST['info']:false;
 
-$title="FreePBX: Sysinfo Info";
+$title=sprintf("%s: Sysinfo Info", DASHBOARD_FREEPBX_BRAND);
 $message="System Info";
 
 if (isset($_REQUEST['showall'])) {
@@ -263,13 +267,13 @@ function show_aststats() {
 	$classes = array(0=>'graphok');
 	$max_chans = $max_calls * 2;
 	
-	$out .= "<h3 class=\"ui-widget-header  ui-state-default ui-corner-all\">"._("FreePBX Statistics")."</h3>";
+	$out .= "<h3 class=\"ui-widget-header  ui-state-default ui-corner-all\">".sprintf(_("%s Statistics"), DASHBOARD_FREEPBX_BRAND)."</h3>";
 	$out .= draw_graph(_('Total active calls'), '', $channels['total_calls'], $max_calls, $classes , false, BAR_WIDTH_LEFT);
 	$out .= draw_graph(_('Internal calls'), '', $channels['internal_calls'], $max_calls, $classes , false, BAR_WIDTH_LEFT);
 	$out .= draw_graph(_('External calls'), '', $channels['external_calls'], $max_calls, $classes , false, BAR_WIDTH_LEFT);
 	$out .= draw_graph(_('Total active channels'), '', $channels['total_channels'], $max_chans, $classes , false, BAR_WIDTH_LEFT);
 	
-	$out .= "<h4>"._("FreePBX Connections")."</h4>";
+	$out .= "<h4>".sprintf(_("%s Connections"), DASHBOARD_FREEPBX_BRAND)."</h4>";
 	
 	/* This is generally very bad style, and we should look at adding this to core_devices_list or another core
 	 * function. However, since this is in Ajax lite weight code, it is currently the cleanest way to get the sip and iax2
@@ -344,7 +348,7 @@ function show_procinfo() {
 		if ($procinfo->check_port($amp_conf['ASTMANAGERPROXYPORT'])) {
 			$out .= draw_status_box(_("Manager Proxy"), "ok", _('Asterisk Manager Proxy is running'));
 		} else {
-			$out .= draw_status_box(_("Manager Proxy"), "warn", _('Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance'));
+			$out .= draw_status_box(_("Manager Proxy"), "warn", sprintf(_('Asterisk Manager Proxy is not running, %s will fall back to using Asterisk directly, which may result in poor performance'), DASHBOARD_FREEPBX_BRAND));
 		}		
 	}
 	
@@ -418,7 +422,7 @@ function show_syslog(&$md5_checksum) {
 	
 	$items = $notify->list_all($showall);
 
-	$out .= "<h3 class=\"ui-widget-header  ui-state-default ui-state-default ui-corner-all\">"._("FreePBX Notices")."</h3>";
+	$out .= "<h3 class=\"ui-widget-header  ui-state-default ui-state-default ui-corner-all\">".sprintf(_("%s Notices"), DASHBOARD_FREEPBX_BRAND)."</h3>";
 	
 	if (count($items)) {
 		$out .= '<ul>';
@@ -638,7 +642,7 @@ if (!$quietmode) {
 	}
 	</script>
 
-	<h2><?php echo _("FreePBX System Status");?></h2>
+	<h2><?php echo sprintf(_("%s System Status"), DASHBOARD_FREEPBX_BRAND);?></h2>
 	<div id="dashboard">
 	<?php
 	echo '<div id="sysinfo-left">';
