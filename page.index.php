@@ -20,7 +20,13 @@
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 if (!defined('DASHBOARD_FREEPBX_BRAND')) { 
-	define('DASHBOARD_FREEPBX_BRAND', 'FreePBX');
+	if (!empty($_SESSION['DASHBOARD_FREEPBX_BRAND'])) {
+		define('DASHBOARD_FREEPBX_BRAND', $_SESSION['DASHBOARD_FREEPBX_BRAND']);
+	} else {
+		define('DASHBOARD_FREEPBX_BRAND', 'FreePBX');
+	}
+} else {
+	$_SESSION['DASHBOARD_FREEPBX_BRAND'] = DASHBOARD_FREEPBX_BRAND;
 }
 
 $dashboard_debug = false;
