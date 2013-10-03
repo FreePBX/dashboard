@@ -390,7 +390,7 @@ function show_procinfo() {
 	$out .= draw_status_box(_("Web Server"), "ok", _('Web Server is running'));
 	
 	// ssh	
-	$ssh_port = (isset($amp_conf['SSHPORT']) && ctype_digit($amp_conf['SSHPORT']) && ($amp_conf['SSHPORT'] > 0) && ($amp_conf['SSHPORT'] < 65536))?$amp_conf['SSHPORT']:22;
+	$ssh_port = (isset($amp_conf['SSHPORT']) && (ctype_digit($amp_conf['SSHPORT']) || is_int($amp_conf['SSHPORT'])) && ($amp_conf['SSHPORT'] > 0) && ($amp_conf['SSHPORT'] < 65536))?$amp_conf['SSHPORT']:22;
 	if ($procinfo->check_port($ssh_port)) {
 		$out .= draw_status_box(_("SSH Server"), "ok", _('SSH Server is running'));
 	} else {
