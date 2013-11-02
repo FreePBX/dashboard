@@ -20,12 +20,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 09:52+0000\n"
+"POT-Creation-Date: 2013-10-31 12:10-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "seconds"
@@ -164,7 +164,8 @@ msgstr ""
 msgid "transmit"
 msgstr ""
 
-msgid "FreePBX Statistics"
+#, php-format
+msgid "%s Statistics"
 msgstr ""
 
 msgid "Total active calls"
@@ -179,7 +180,8 @@ msgstr ""
 msgid "Total active channels"
 msgstr ""
 
-msgid "FreePBX Connections"
+#, php-format
+msgid "%s Connections"
 msgstr ""
 
 msgid "IP Phones Online"
@@ -225,23 +227,10 @@ msgstr ""
 msgid "Asterisk Manager Proxy is running"
 msgstr ""
 
+#, php-format
 msgid ""
-"Asterisk Manager Proxy is not running, FreePBX will fall back to using "
-"Asterisk directly, which may result in poor performance"
-msgstr ""
-
-msgid "Op Panel"
-msgstr ""
-
-msgid ""
-"FOP Operator Panel Server is not running, you will not be able to use the "
-"operator panel, but the system will run fine without it."
-msgstr ""
-
-msgid "FOP Operator Panel is disabled in Advanced Settings"
-msgstr ""
-
-msgid "FOP Operator Panel Server is running"
+"Asterisk Manager Proxy is not running, %s will fall back to using Asterisk "
+"directly, which may result in poor performance"
 msgstr ""
 
 msgid "MySQL"
@@ -285,7 +274,8 @@ msgstr ""
 msgid "Notice"
 msgstr ""
 
-msgid "FreePBX Notices"
+#, php-format
+msgid "%s Notices"
 msgstr ""
 
 msgid "Delete this"
@@ -311,4 +301,8 @@ msgid "show all"
 msgstr ""
 
 msgid "loading..."
+msgstr ""
+
+#, php-format
+msgid "%s System Status"
 msgstr ""
