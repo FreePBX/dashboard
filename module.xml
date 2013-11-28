@@ -70,4 +70,4 @@
 	</changelog>
 	<location>release/2.10/dashboard-2.10.0.3.tgz</location>
 	<md5sum>42b019f6ea20e7b0bf58ec3b1c954c62</md5sum>
-</module>
+<supported><version>2.10</version></supported></module>
