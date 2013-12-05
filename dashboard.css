@@ -4,17 +4,17 @@
 
 /* two columns, sizes of each category box */
 #sysinfo-left, #sysinfo-left .infobox {
-	width:400px;
+	width:420px;
 	float: left;
 }
 
 #sysinfo-right {
 	float: left;
-	width:200px;
+	width:210px;
 	padding-left: 30px;
 }
 #sysinfo-right .infobox {
-	width:200px;
+	width:210px;
 }
 #sysinfo-bot{
 	clear:both;
