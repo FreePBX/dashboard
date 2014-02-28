@@ -19,301 +19,294 @@
 # Copyright (c) 2006-2008 PostMet Corporation
 # Alexander Kozyrev <ceo@postmet.com>, Sergey Nikolayev <sergey@postmet.com>, 2006-2008.
 #
-# ������������ iconv amp.new -f UTF-8 -t ISO-8859-5 -o amp.po
-# fuzzy
+# Использовать iconv amp.new -f UTF-8 -t ISO-8859-5 -o amp.po
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 09:52+0000\n"
+"POT-Creation-Date: 2012-10-30 00:04+0400\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-5\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "seconds"
-msgstr ""
+msgstr "секунды"
 
 msgid "second"
-msgstr ""
+msgstr "секунда"
 
 msgid "minutes"
-msgstr "�����"
+msgstr "минут"
 
 msgid "minute"
-msgstr "������"
+msgstr "минута"
 
 msgid "hours"
-msgstr "�����"
+msgstr "часов"
 
 msgid "hour"
-msgstr "���"
+msgstr "час"
 
 msgid "days"
-msgstr "����"
+msgstr "дней"
 
 msgid "day"
-msgstr ""
+msgstr "день"
 
 msgid "weeks"
-msgstr "������"
+msgstr "недель"
 
 msgid "week"
-msgstr "������"
+msgstr "неделя"
 
 msgid "years"
-msgstr ""
+msgstr "годы"
 
 msgid "year"
-msgstr ""
+msgstr "год"
 
 msgid "System Dashboard"
-msgstr ""
+msgstr "Панель системы"
 
 msgid "Reports"
-msgstr ""
+msgstr "Отчеты"
 
 msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
-msgstr ""
+msgstr "Отображает панель системной информации, информации о вызовах, загрузке CPU, памяти, занятость дисков, "
+"сети и процессов"
 
 msgid "FreePBX System Status"
-msgstr "������ ������� FreePBX"
+msgstr "Статус системы FreePBX"
 
 msgid "Dashboard Info Update Frequency"
-msgstr ""
+msgstr "Частота обновления информации системной панели"
 
 msgid "GUI Behavior"
-msgstr ""
+msgstr "поведение интерфейса"
 
 msgid "Update rate in seconds of the Info section of the System Status panel."
-msgstr ""
+msgstr "Интервал обновления в секундах в секции Инфо панели 'Статус Системы'."
 
 msgid "Dashboard Max Calls Initial Scale"
-msgstr ""
+msgstr "Начальная шкала максимального количества вызовов в панели"
 
 msgid ""
 "Use this to pre-set the scale for maximum calls on the Dashboard display. If "
 "not set, the the scale is dynamically sized based on the active calls on the "
 "system."
-msgstr ""
+msgstr "Используйте этот параметр для установки шкалы максимального количества звонков на "
+"панели. Если не установлено, шкала будет установлена автоматически в зависимости от количества "
+"звонков в системе"
 
 msgid "Dashboard Stats Update Frequency"
-msgstr ""
+msgstr "Частота обновления статистики в панели системной информации"
 
 msgid ""
 "Update rate in seconds of all sections of the System Status panel except the "
 "Info box."
-msgstr ""
+msgstr "Интервал обновления в секундах всех секций в панели Статуса Системы кроме окна Информации"
 
 msgid "Dashboard Non-Std SSH Port"
-msgstr ""
+msgstr "Нестандартный SSH порт системной панели"
 
 msgid "System Setup"
-msgstr ""
+msgstr "Настройка Системы"
 
 msgid ""
 "SSH port number configured on your system if not using the default port 22, "
 "this allows the dashboard monitoring to watch the poper port."
-msgstr ""
+msgstr "Номер SSH порта, если не используется стандартный порт 22. Данная настройка позволяет монитору панели"
+" обращаться на правильный порт"
 
 #, php-format
 msgid "%s changed from %s to %s"
-msgstr ""
+msgstr "%s изменено с %s на %s"
 
 msgid "OK"
 msgstr "OK"
 
 msgid "Warn"
-msgstr "���!"
+msgstr "Ого!"
 
 msgid "ERROR"
-msgstr "������"
+msgstr "Ошибка"
 
 msgid "Disabled"
-msgstr ""
+msgstr "Запрещено"
 
 msgid "System Statistics"
-msgstr "���������� �������"
+msgstr "Статистика Системы"
 
 msgid "Processor"
-msgstr "���������"
+msgstr "Процессор"
 
 msgid "Load Average"
-msgstr "������� ��������"
+msgstr "Средняя загрузка"
 
 msgid "CPU"
-msgstr "ƿ�"
+msgstr "ЦПУ"
 
 msgid "Memory"
-msgstr "������"
+msgstr "Память"
 
 msgid "App Memory"
-msgstr "������ ������������"
+msgstr "Занято приложениями"
 
 msgid "Swap"
-msgstr "���� ��������"
+msgstr "Файл подкачки"
 
 msgid "Disks"
-msgstr "�������� ����������"
+msgstr "Дисковая подсистема"
 
 msgid "Networks"
-msgstr "����"
+msgstr "Сеть"
 
 msgid "receive"
-msgstr "��������"
+msgstr "получено"
 
 msgid "transmit"
-msgstr "��������"
+msgstr "передано"
 
 msgid "FreePBX Statistics"
-msgstr "FreePBX ����������"
+msgstr "FreePBX Статистика"
 
 msgid "Total active calls"
-msgstr "�������� ������� - �����"
+msgstr "Активных звонков - всего"
 
 msgid "Internal calls"
-msgstr "���������� �������"
+msgstr "Внутренних звонков"
 
 msgid "External calls"
-msgstr "������� �������"
+msgstr "Внешних звонков"
 
 msgid "Total active channels"
-msgstr "�������� ������� - �����"
+msgstr "Активных каналов - всего"
 
 msgid "FreePBX Connections"
-msgstr "���������� FreePBX"
+msgstr "Соединений FreePBX"
 
 msgid "IP Phones Online"
-msgstr "�� ��������� � �������"
+msgstr "ИП Телефонов в онлайне"
 
 msgid "IP Trunks Online"
-msgstr ""
+msgstr "IP транков в онлайне"
 
 msgid "IP Trunk Registrations"
-msgstr "����������� �� �������"
+msgstr "Регистраций ИП транков"
 
 msgid "Uptime"
-msgstr ""
+msgstr "Время запуска"
 
 msgid "System Information Table"
-msgstr ""
+msgstr "Талица системной информации"
 
 msgid "System Uptime"
-msgstr "������� ����"
+msgstr "Система жива"
 
 msgid "Asterisk Uptime"
-msgstr "Asterisk ���"
+msgstr "Asterisk жив"
 
 msgid "Last Reload"
-msgstr "��������������"
+msgstr "Перезагружался"
 
 msgid "Server Status"
-msgstr ""
+msgstr "Состояние сервера"
 
 msgid "Asterisk"
 msgstr "Asterisk"
 
 #, php-format
 msgid "Asterisk is running: %s"
-msgstr ""
+msgstr "Asterisk работает: %s"
 
 msgid "Asterisk is not running, this is a critical service!"
-msgstr ""
+msgstr "Asterisk не работает, это критично!"
 
 msgid "Manager Proxy"
-msgstr "������ ��������"
+msgstr "Прокси менеджер"
 
 msgid "Asterisk Manager Proxy is running"
-msgstr ""
+msgstr "Asterisk Manager Proxy работает"
 
 msgid ""
 "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
 "Asterisk directly, which may result in poor performance"
-msgstr ""
-
-msgid "Op Panel"
-msgstr "������ ���������"
-
-msgid ""
-"FOP Operator Panel Server is not running, you will not be able to use the "
-"operator panel, but the system will run fine without it."
-msgstr ""
-
-msgid "FOP Operator Panel is disabled in Advanced Settings"
-msgstr ""
-
-msgid "FOP Operator Panel Server is running"
-msgstr ""
+msgstr "Asterisk Manager Proxy не работает, FreePBX будет использовать Asterisk напрямую, "
+"что может привести к ухудшению производительности"
 
 msgid "MySQL"
 msgstr "MySQL"
 
 msgid "MySQL Server is running"
-msgstr ""
+msgstr "MySQL сервер работает"
 
 msgid "Web Server"
-msgstr "��� ������"
+msgstr "Вэб сервер"
 
 msgid "Web Server is running"
-msgstr ""
+msgstr "Web Server работает"
 
 msgid "SSH Server"
-msgstr "������ SSH"
+msgstr "Сервер SSH"
 
 msgid "SSH Server is running"
-msgstr ""
+msgstr "SSH Server работает"
 
 msgid ""
 "SSH Server is not running, you will not be able to connect to the system "
 "console remotely"
-msgstr ""
+msgstr "SSH Server не работает, Вы не сможете подключаться к системной консоли удаленно"
 
 msgid "Critical Error"
-msgstr ""
+msgstr "Критическая ошибка"
 
 msgid "Security Update"
-msgstr ""
+msgstr "Обновление безопасности"
 
 msgid "Update"
-msgstr ""
+msgstr "Обновление"
 
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
 msgid "Warning"
-msgstr ""
+msgstr "Предупреждение"
 
 msgid "Notice"
-msgstr ""
+msgstr "Уведомление"
 
 msgid "FreePBX Notices"
-msgstr "FreePBX ���������"
+msgstr "FreePBX сообщения"
 
 msgid "Delete this"
-msgstr ""
+msgstr "Удалите это"
 
 msgid "Ignore this"
-msgstr ""
+msgstr "Вы можете не обращать внимание на это"
 
 #, php-format
 msgid "Added %s ago"
-msgstr "��������� %s �����"
+msgstr "Добавлено %s назад"
 
 msgid "No notifications"
-msgstr ""
+msgstr "Уведомлений нет"
 
 msgid "No new notifications"
-msgstr ""
+msgstr "Нет новых уведомлений"
 
 msgid "show new"
-msgstr "�������� �����"
+msgstr "показать новых"
 
 msgid "show all"
-msgstr "�������� ���"
+msgstr "показать все"
 
 msgid "loading..."
-msgstr "��������..."
+msgstr "грузимся..."
+
+#~ msgid "Op Panel"
+#~ msgstr "Панель Оператора"
