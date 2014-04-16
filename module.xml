@@ -2,9 +2,10 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>2.11.0.2</version>
-	<publisher>FreePBX</publisher>
-	<license>GPLv2+</license>
+	<version>2.11.0.3</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>GPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<category>Reports</category>
@@ -18,6 +19,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
+		*2.11.0.3* Add license info
 		*2.11.0.2* Fixes #6514 Check if is_int or ctype_digit
 		*2.11.0.1* fix to ajax path for alt labels
 		*2.11.0.0* bump to 2.11
