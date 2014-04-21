@@ -28,6 +28,9 @@
 		*2.10.0.1* remove FOP specific code
 		*2.10.0.0* new version changes
 	</changelog>
+	<supported>
+		<version>2.10</version>
+	</supported>
 	<location>release/2.11/dashboard-2.11.0.2.tgz</location>
 	<md5sum>291999a3523f5ed531083f54a9144463</md5sum>
 </module>
