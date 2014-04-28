@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>2.11.0.4</version>
+	<version>2.11.0.5</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -19,7 +19,7 @@
 		<version>2.3.0beta2</version>
 	</depends>
 	<changelog>
-		*2.11.0.4* Add license info
+		*2.11.0.5* Add license info
 		*2.11.0.2* Fixes #6514 Check if is_int or ctype_digit
 		*2.11.0.1* fix to ajax path for alt labels
 		*2.11.0.0* bump to 2.11
