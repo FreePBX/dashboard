@@ -5,6 +5,7 @@
 	<version>12.0.1</version>
 	<publisher>FreePBX</publisher>
 	<license>AGPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<category>Reports</category>
@@ -12,13 +13,13 @@
 		Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes.
 	</description>
 	<menuitems>
-		<dashboard2>System Dashboard</dashboard2>
+		<dashboard display="index" access="all">FreePBX System Status</dashboard>
 	</menuitems>
 	<depends>
 		<version>12.0</version>
 	</depends>
 	<changelog>
-		*12.0.1* Initial checkin
+		*12.0.1* Initial checkin of new dashboard for FreePBX 12!
 	</changelog>
 	<supported>
 		<version>12.0</version>

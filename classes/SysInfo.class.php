@@ -1,7 +1,15 @@
 <?php
 // vim: set ai ts=4 sw=4 ft=php:
-// Wrapper for PhpSysInfo
-// Note: Licence under AGPL v3+ -and- GPL v2
+//
+// License for all code of this FreePBX module can be found in the license file inside the module directory
+// Copyright 2006-2014 Schmooze Com Inc.
+//
+// This is the wrapper for PhpSysInfo
+//
+// As PhpSysInfo is licenced soley under the GPLv2, this part of the Dashboard module is
+// dual licenced, under both the AGPLv3 -and- the GPLv2. 
+//
+// This file is deemed to be our demarcation point for the licence handover.
 
 class SysInfo {
 	private static $obj = false;
