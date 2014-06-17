@@ -11,8 +11,7 @@ var DashboardC = Class.extend({
 
 		// If modulename isn't already defined...
 		if (typeof(window.modulename) == "undefined") {
-			// This assumes the module name is the first param.
-			window.modulename = window.location.search.split("?")[1].split("=")[1];
+			window.modulename = "dashboard";
 		}
 		//TODO: this should go away eventually
 		window.ajaxurl = "ajax.php";
