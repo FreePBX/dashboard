@@ -13,7 +13,7 @@
 		Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes.
 	</description>
 	<menuitems>
-		<dashboard display="index" access="all">FreePBX System Status</dashboard>
+		<dashboard display="index" access="all">System Status</dashboard>
 	</menuitems>
 	<depends>
 		<version>12.0</version>
