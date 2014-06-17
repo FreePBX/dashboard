@@ -335,6 +335,6 @@
 			},
 		});
 	};
-	Dashboard.sysstatAjax = {command: "sysstat", target: "uptime", period: "Hour", module: "dashboard2"};
+	Dashboard.sysstatAjax = {command: "sysstat", target: "uptime", period: "Hour", module: "dashboard"};
 	window.observers["builtin_aststat"]();
 </script>
