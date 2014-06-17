@@ -8,7 +8,6 @@
 		</div>
 	</div>
 </div>
-<br/><br/>
 <div id="statuspage">
 	<div id="mainpages"></div>
 </div>
