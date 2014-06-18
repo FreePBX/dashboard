@@ -53,7 +53,7 @@ class Blogs {
 
 	public function getTitle($section) {
 		if(isset($this->urls[$section])) {
-			$contents = file_get_contents($this->urls[$section]);
+			$contents = $this->getURL($this->urls[$section]);
 			libxml_use_internal_errors(true);
 			$doc = simplexml_load_string($contents);
 			if (!$doc) {
@@ -66,7 +66,7 @@ class Blogs {
 
 	public function getContent($section) {
 		if(isset($this->urls[$section])) {
-			$contents = file_get_contents($this->urls[$section]);
+			$contents = $this->getURL($this->urls[$section]);
 			libxml_use_internal_errors(true);
 			$doc = simplexml_load_string($contents);
 			if (!$doc) {
@@ -95,7 +95,7 @@ class Blogs {
 		}
 	}
 
-	function display_xml_error($error, $xmlstr) {
+	public function display_xml_error($error, $xmlstr) {
 		$xml = explode("\n", $xmlstr);
 		$return  = $xml[$error->line - 1] . "\n";
 		$return .= str_repeat('-', $error->column) . "^\n";
@@ -121,5 +121,21 @@ class Blogs {
 		}
 
 		return "$return\n\n--------------------------------------------\n\n";
+	}
+
+	private function getURL($url) {
+		// Check to see if we've already grabbed this recently
+		$d = \FreePBX::Dashboard();
+		$res = $d->getConfig($url, "Blogs");
+		// 3 Hours.
+		$expired = time() - 10800;
+		// Has this expired, or is it new?
+		if (!$res || $res['timestamp'] < $expired) {
+			$contents = file_get_contents($url);
+			$res['timestamp'] = time();
+			$res['contents'] = $contents;
+			$d->setConfig($url, $res, "Blogs");
+		}
+		return $res['contents'];
 	}
 }
