@@ -74,8 +74,10 @@ var DashboardC = Class.extend({
 			itemSelector: '.item',
 			gutter: 5,
 			columnWidth: 10,
-			rowHeight: 10
+			rowHeight: 10,
 		});
+		//$('.page').packery( 'on', 'layoutComplete', Dashboard.orderItems );
+		$('.page').packery( 'on', 'dragItemPositioned', Dashboard.orderItems );
 		$.each($('.page').packery('getItemElements'),function(i,v) {
 			var draggie = new Draggabilly( v, {handle: '.title-bar'} );
 			draggie.on( 'dragStart', function(instance, event, pointer) {
@@ -87,6 +89,20 @@ var DashboardC = Class.extend({
 			$('.page').packery( 'bindDraggabillyEvents', draggie );
 		});
 
+	},
+	orderItems: function(pckryInstance, laidOutItems) {
+		// items are in order within the layout
+		var itemElems = $('.page').packery('getItemElements');
+		// for this demo, let's set text based on their order
+		var order = {};
+		for ( var i=0, len = itemElems.length; i < len; i++ ) {
+			var elem = itemElems[i];
+			var section = $(elem).find('.displaybox').data('section');
+			order[section] = (i + 1);
+		}
+		$.post( "ajax.php", {command: 'saveorder', module: 'dashboard', order: order},function( data ) {
+
+		});
 	},
 	loadPage: function(pagename) {
 		this.currentpage = pagename;

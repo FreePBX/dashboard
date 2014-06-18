@@ -9,13 +9,13 @@ namespace FreePBX\modules\Dashboard\Sections;
 class Overview {
 	public $rawname = 'Overview';
 
-	public function getSections() {
+	public function getSections($order) {
 		return array(
 			array(
 				"title" => _("System Overview"),
 				"group" => _("Overview"),
-				"width" => "500px",
-				"order" => '1',
+				"width" => "550px",
+				"order" => isset($order['overview']) ? $order['overview'] : '1',
 				"section" => "overview"
 			)
 		);

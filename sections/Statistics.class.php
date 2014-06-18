@@ -9,7 +9,7 @@ namespace FreePBX\modules\Dashboard\Sections;
 class Statistics {
 	public $rawname = 'Statistics';
 
-	public function getSections() {
+	public function getSections($order) {
 		if (!defined('DASHBOARD_FREEPBX_BRAND')) {
 			if (!empty($_SESSION['DASHBOARD_FREEPBX_BRAND'])) {
 				define('DASHBOARD_FREEPBX_BRAND', $_SESSION['DASHBOARD_FREEPBX_BRAND']);
@@ -26,9 +26,9 @@ class Statistics {
 			array(
 				"title" => "$brand ". _("Statistics"),
 				"group" => _("Statistics"),
-				"width" => "700px",
-				"order" => '400',
-				"section" => "uptime"
+				"width" => "550px",
+				"order" => isset($order['statistics']) ? $order['statistics'] : '300',
+				"section" => "statistics"
 			)
 		);
 	}

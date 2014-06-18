@@ -26,7 +26,7 @@ class Blogs {
 		}
 	}
 
-	public function getSections() {
+	public function getSections($order) {
 		$blogs = array();
 		foreach($this->urls as $name => $url) {
 			$title = $this->getTitle($name);
@@ -34,16 +34,16 @@ class Blogs {
 				$blogs[] = array(
 					"title" => $title . " " . _('Feed'),
 					"group" => _("Blogs"),
-					"width" => "400px",
-					"order" => '100',
+					"width" => "550px",
+					"order" => isset($order[$name]) ? $order[$name] : '100',
 					"section" => $name
 				);
 			} else {
 				$blogs[] = array(
 					"title" => $name . " " . _('Feed'),
 					"group" => _("Blogs"),
-					"width" => "400px",
-					"order" => '100',
+					"width" => "500px",
+					"order" => isset($order[$name]) ? $order[$name] : '100',
 					"section" => $name
 				);
 			}

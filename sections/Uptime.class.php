@@ -9,13 +9,13 @@ namespace FreePBX\modules\Dashboard\Sections;
 class Uptime {
 	public $rawname = 'Uptime';
 
-	public function getSections() {
+	public function getSections($order) {
 		return array(
 			array(
 				"title" => _("Uptime"),
 				"group" => _("Statistics"),
-				"width" => "300px",
-				"order" => '300',
+				"width" => "550px",
+				"order" => isset($order['uptime']) ? $order['uptime'] : '400',
 				"section" => "uptime"
 			)
 		);

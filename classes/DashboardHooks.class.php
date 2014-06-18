@@ -7,8 +7,8 @@ class DashboardHooks {
 
 	private static $pages = array();
 
-	public static function genHooks() {
-		self::$pages[] = array("pagename" => "Main", "entries" => self::getMainEntries());
+	public static function genHooks($order) {
+		self::$pages[] = array("pagename" => "Main", "entries" => self::getMainEntries($order));
 		self::addExtraPages();
 
 		// Add things to make the Javascript easier.
@@ -22,7 +22,7 @@ class DashboardHooks {
 		return self::$pages;
 	}
 
-	private static function getMainEntries() {
+	private static function getMainEntries($order) {
 		// If we have a registered system, change the layout.
 		if (!function_exists('sysadmin_get_license')) {
 			$dir= FreePBX::create()->Config->get_conf_setting('AMPWEBROOT');
@@ -53,7 +53,7 @@ class DashboardHooks {
 				include $file ;
 			}
 			$class = new $class();
-			foreach($class->getSections() as $section) {
+			foreach($class->getSections($order) as $section) {
 				//avoid duplicate orders
 				while(isset($sections[$section['order']])) {
 					$section['order']++;

@@ -78,7 +78,7 @@
 		}
 		</script>
 	</div>
-	<div id="builtin_aststat" class="col-sm-10" style="height: 250px">
+	<div id="builtin_aststat" class="col-sm-10" style="height: 200px">
 		Loading Graph....
 	</div>
 </div>
