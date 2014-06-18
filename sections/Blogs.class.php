@@ -13,18 +13,55 @@ class Blogs {
 		"Digium" => "http://blogs.digium.com/feed/"
 	);
 
+	public function __construct() {
+		$feeds = \FreePBX::Config()->get('RSSFEEDS');
+		if(!empty($feeds)) {
+			$feeds = explode("\n",$feeds);
+			$i = 0;
+			$this->urls = array();
+			foreach($feeds as $feed) {
+				$this->urls['rss-'.$i] = $feed;
+				$i++;
+			}
+		}
+	}
+
 	public function getSections() {
 		$blogs = array();
 		foreach($this->urls as $name => $url) {
-			$blogs[] = array(
-				"title" => $name . " Blog",
-				"group" => _("Blogs"),
-				"width" => "400px",
-				"order" => '100',
-				"section" => $name
-			);
+			$title = $this->getTitle($name);
+			if(!empty($title)) {
+				$blogs[] = array(
+					"title" => $title . " " . _('Feed'),
+					"group" => _("Blogs"),
+					"width" => "400px",
+					"order" => '100',
+					"section" => $name
+				);
+			} else {
+				$blogs[] = array(
+					"title" => $name . " " . _('Feed'),
+					"group" => _("Blogs"),
+					"width" => "400px",
+					"order" => '100',
+					"section" => $name
+				);
+			}
 		}
 		return $blogs;
+	}
+
+	public function getTitle($section) {
+		if(isset($this->urls[$section])) {
+			$contents = file_get_contents($this->urls[$section]);
+			libxml_use_internal_errors(true);
+			$doc = simplexml_load_string($contents);
+			if (!$doc) {
+				return false;
+			}
+
+			return $doc->channel->title;
+		}
 	}
 
 	public function getContent($section) {
@@ -43,18 +80,19 @@ class Blogs {
 				libxml_clear_errors();
 				return $html;
 			}
-		}
-		$items = array();
-		$limit = 5;
-		$c = 0;
-		foreach($doc->channel->item as $item) {
-			if($c == $limit) {
-				break;
+
+			$items = array();
+			$limit = 5;
+			$c = 0;
+			foreach($doc->channel->item as $item) {
+				if($c == $limit) {
+					break;
+				}
+				$items[] = json_decode(json_encode($item),true);
+				$c++;
 			}
-			$items[] = json_decode(json_encode($item),true);
-			$c++;
+			return load_view(dirname(__DIR__).'/views/sections/blog.php',array("items" => $items));
 		}
-		return load_view(dirname(__DIR__).'/views/sections/blog.php',array("items" => $items));
 	}
 
 	function display_xml_error($error, $xmlstr) {
