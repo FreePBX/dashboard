@@ -124,7 +124,7 @@ var DashboardC = Class.extend({
 				}
 			},
 			error: function() {
-				Dashboard.loadIntoBox(divobj, "Ajax has a case of poobrain. I asked for "+divobj.data('rawname')+" and it errored.");
+				Dashboard.loadIntoBox(divobj, "Ajax derped. I'm sorry, I don't have any further information. All I know is that I asked for "+divobj.data('rawname')+" and it errored. Check the error logs for more information.");
 				divobj.find('.fa-spin').removeClass('fa-spin');
 			}
 		}).done(function() {
