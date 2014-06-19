@@ -147,6 +147,13 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	}
 
 	public function genSysInfo() {
+
+		// PHP SysInfo requires 'php-xml'. If it doesn't exist,
+		// then we can't really do anything.
+		if (!class_exists('DOMDocument')) {
+			return false;
+		}
+
 		// Time how long it takes to run
 		$start = microtime(true);
 		if (!class_exists('SysInfo')) {
@@ -182,7 +189,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		$si = $this->getConfig('latestsysinfo');
 
 		// Does it need to be updated? Older than $maxage seconds?
-		if ($si['timestamp'] + $this->maxage <= time()) {
+		if (!$si || $si['timestamp'] + $this->maxage <= time()) {
 			$si = $this->genSysInfo();
 			return $si;
 		}

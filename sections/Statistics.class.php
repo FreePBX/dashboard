@@ -34,6 +34,10 @@ class Statistics {
 	}
 
 	public function getContent($section) {
-		return load_view(dirname(__DIR__).'/views/sections/statistics.php');
+		if (class_exists('DOMDocument')) {
+			return load_view(dirname(__DIR__).'/views/sections/statistics.php');
+		} else {
+			return load_view(dirname(__DIR__).'/views/sections/stats-no-phpxml.php');
+		}
 	}
 }
