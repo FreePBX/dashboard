@@ -35,7 +35,7 @@
 			<div class="text-center"><?php echo sprintf(_('SysInfo updated %s seconds ago'),$since)?></div>
 			<br/>
 			<div class='alert alert-<?php echo $alerts['state']?> sysalerts'>
-				<div class='text-center'><?php echo _('System Alerts')?></div>
+				<div class='text-center'><?php echo $alerts['alerttitle'] ?></div>
 				<p><?php echo $alerts['text']?></p>
 			</div>
 		</div>

@@ -84,8 +84,9 @@ class Overview {
 	public function getAlerts($nots = false) {
 		// Check notifications and decide what we want to do with them.
 		// Start with everything happy
+		$alerttitle = _("System Alerts");
 		$state = "success";
-		$text = "No critical issues found";
+		$text = "<br /><br /><center>"._("No critical issues found")."</center>";
 		$foundalerts = array();
 		// Go through our notifications now..
 		foreach ($nots as $n) {
@@ -94,8 +95,9 @@ class Overview {
 			if ($n['rawlevel'] == 200) {
 				// Security vulnerability. This is bad.
 				$state = "danger";
-				$text = "<center><h4>Security Issue</h4></center><br /><p>".$n['title']."</p><p>This is a critical issue and should be resolved urgently</p>";
-				return array("state" => $state, "text" => $text);
+				$alerttitle = "<center><h4>"._("Security Issue")."</h4></center>";
+				$text = "<p>".$n['title']."</p><p>This is a critical issue and should be resolved urgently</p>";
+				return array("alerttitle" => $alerttitle, "state" => $state, "text" => $text);
 			}
 
 			// Now lets find some alerts!
