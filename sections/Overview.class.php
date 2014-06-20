@@ -128,7 +128,7 @@ class Overview {
 			"apache" => _("Web Server"),
 			"fail2ban" => _("Fail2Ban Service"),
 			"isreged" => _("System Registration"),
-			"xmpp" => _("XMPP Server"),
+			// "xmpp" => _("XMPP Server"),
 			"openvpn" => _("Open VPN Server"),
 			"hiav" => _("High Availability"),
 		);
