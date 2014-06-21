@@ -10,15 +10,6 @@ class DashboardHooks {
 	public static function genHooks($order) {
 		self::$pages[] = array("pagename" => "Main", "entries" => self::getMainEntries($order));
 		self::addExtraPages();
-
-		// Add things to make the Javascript easier.
-		// Add a 'groups' to each page.
-		foreach (self::$pages as $id => $page) {
-			$groups = array();
-			foreach ($page['entries'] as $entry) {
-				self::$pages[$id]['groups'][$entry['group']][] = $entry;
-			}
-		}
 		return self::$pages;
 	}
 
@@ -33,19 +24,6 @@ class DashboardHooks {
 		}
 		$reged = (function_exists('sysadmin_get_license') && sysadmin_get_license());
 
-		/*
-		$ov = _("Overview");
-		$sysov = _("System Overview");
-		$blogposts = _("Blog Posts");
-		$sysstat = _("System Statistics");
-		$stats = _("Statistics");
-		$name = _("FreePBX");
-		$uptime = _("Uptime");
-		$srvstat = _("Service Status");
-		$reginfo = _("Registration Info");
-		*/
-
-		//$retarr = array();
 		$sections = array();
 		foreach(glob(dirname(__DIR__).'/sections/*.class.php') as $file) {
 			$class = "\\FreePBX\\modules\\Dashboard\\Sections\\".str_replace('.class','',pathinfo($file,PATHINFO_FILENAME));
@@ -60,29 +38,10 @@ class DashboardHooks {
 				}
 				$sections[$section['order']] = array("group" => $section['group'], "title" => $section['title'], "width" => $section['width'], "rawname" => $class->rawname, "section" => $section['section']);
 			}
-			//$sections[$class->rawname] =
 		}
 		ksort($sections);
 
 		return array_values($sections);
-		//dbug($sections)
-		//die();
-		/*
-		// Built in Hooks here.
-		if (!$reged) {
-			$retarr[100] = array("group" => $ov, "title" => $sysov, "width" => 7, "func" => "builtin_overview");
-			$retarr[110] = array("group" => $ov, "title" => $blogposts, "width" => 5, "func" => "builtin_blog");
-		} else {
-			$retarr[100] = array("group" => $ov, "title" => $sysov, "width" => 8, "func" => "builtin_overview");
-			$retarr[110] = array("group" => $ov, "title" => $reginfo, "width" => 4, "func" => "dashboard", "module" => "sysadmin");
-			$retarr[200] = array("group" => $ov, "title" => $blogposts, "width" => 12, "func" => "builtin_blog");
-		}
-		$retarr[300] = array("group" => $stats, "title" => $sysstat, "width" => 4, "func" => "builtin_sysstat");
-		$retarr[310] = array("group" => $stats, "title" => "$name $stats", "width" => 8, "func" => "builtin_aststat");
-		$retarr[320] = array("group" => $stats, "title" => $uptime, "width" => 12, "func" => "builtin_uptime");
-		$retarr[400] = array("group" => $stats, "title" => $srvstat, "width" => 12, "func" => "builtin_srvstat");
-		*/
-		//return $retarr;
 	}
 
 	private static function addExtraPages() {

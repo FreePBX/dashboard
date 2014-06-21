@@ -116,7 +116,18 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 				}
 				// Remove next line to enable caching.
 				// $this->doDialplanHook($foo = null, null, null); // Avoid warnings.
-				return $this->getConfig('allhooks');
+				$config = $this->getConfig('allhooks');
+				$order = $this->getConfig('visualorder');
+				foreach($config as &$page) {
+					$entries = array();
+					foreach($page['entries'] as $e) {
+						$o = $order[$e['section']];
+						$entries[$o] = $e;
+					}
+					ksort($entries);
+					$page['entries'] = $entries;
+				}
+				return $config;
 			break;
 			case "getblogxml":
 				// TODO: Cache this.

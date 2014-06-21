@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>12.0.5</version>
+	<version>12.0.6</version>
 	<publisher>FreePBX</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -19,6 +19,7 @@
 		<version>12.0.1alpha57</version>
 	</depends>
 	<changelog>
+		*12.0.6* Order saving recognized and some cleanup
 		*12.0.5* Be more verbose about php-xml not being installed
 		*12.0.4* Speed improvements.
 		*12.0.3* Drag and drop order sorting and saving

@@ -46,27 +46,16 @@ var DashboardC = Class.extend({
 		var sb = $("#sidebar");
 		sb.append('<h4>'+pageArr.pagename+'</h4>'); // This is a bit derpy, but seems to work.
 		var p = $("#"+pageid);
-		$.each(pageArr.groups, function(i,v) {
-			var sh = "<li";
-			if (!Dashboard.firstpage) {
-				sh += " class='active'";
-				Dashboard.firstpage = true;
-			}
-			sh += "><a data-toggle='tab' href='#"+i.replace(/s+/g, '-').toLowerCase()+"'>"+i+"</a></li>\n";
-			sb.append(sh);
-
-			// Add the Sections to the page.
+		$.each(pageArr.entries, function(i,val) {
 			var s = "";
-			$.each(v, function(ind, val) {
-				var id = pageid+"_"+val.rawname+"_"+val.section;
-				s += "<div class='item' style='width:"+val.width+"'><div id='"+id+"' class='displaybox' data-rawname='"+val.rawname+"' data-section='"+val.section+"'";
-				if (typeof(val.module) != "undefined") {
-					s += " data-module='"+val.module+"'";
-				}
-				s += "><div class='shadow'></div><div class='title-bar'>"+val.title+"";
-				s += "<span class='reload text-center' data-pagename='"+pageid+"' data-rawname='"+val.rawname+"' data-section='"+val.section+"'>";
-				s += "<i class='fa fa-refresh'></i></span></div><div class='content'></div></div></div>";
-			});
+			var id = pageid+"_"+val.rawname+"_"+val.section;
+			s += "<div class='item' style='width:"+val.width+"'><div id='"+id+"' class='displaybox' data-rawname='"+val.rawname+"' data-section='"+val.section+"'";
+			if (typeof(val.module) != "undefined") {
+				s += " data-module='"+val.module+"'";
+			}
+			s += "><div class='shadow'></div><div class='title-bar'>"+val.title+"";
+			s += "<span class='reload text-center' data-pagename='"+pageid+"' data-rawname='"+val.rawname+"' data-section='"+val.section+"'>";
+			s += "<i class='fa fa-refresh'></i></span></div><div class='content'></div></div></div>";
 			p.append(s);
 		});
 
@@ -76,7 +65,6 @@ var DashboardC = Class.extend({
 			columnWidth: 10,
 			rowHeight: 10,
 		});
-		//$('.page').packery( 'on', 'layoutComplete', Dashboard.orderItems );
 		$('.page').packery( 'on', 'dragItemPositioned', Dashboard.orderItems );
 		$.each($('.page').packery('getItemElements'),function(i,v) {
 			var draggie = new Draggabilly( v, {handle: '.title-bar'} );
