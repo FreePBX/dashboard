@@ -125,8 +125,8 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 				if(!empty($order)) {
 					foreach($config as &$page) {
 						$entries = array();
-						foreach($page['entries'] as $e) {
-							$o = $order[$e['section']];
+						foreach($page['entries'] as $k => $e) {
+							$o = isset($order[$e['section']]) ? $order[$e['section']] : $k;
 							$entries[$o] = $e;
 						}
 						ksort($entries);
@@ -134,16 +134,6 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 					}
 				}
 				return $config;
-			break;
-			case "getblogxml":
-				// TODO: Cache this.
-				$url = "http://www.freepbx.org/rss.xml";
-				$xml[] = file_get_contents($url);
-				$xml[] = file_get_contents("http://blogs.digium.com/feed/");
-				return $xml;
-			break;
-			case "delnotification":
-				return $this->delNotification();
 			break;
 			case "sysstat":
 				if (!class_exists('Statistics')) {
