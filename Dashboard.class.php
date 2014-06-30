@@ -96,6 +96,10 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		}
 
 		switch ($_REQUEST['command']) {
+			case "deletemessage":
+				\FreePBX::create()->Notifications->safe_delete($_REQUEST['raw'], $_REQUEST['id']);
+				return array("status" => true);
+			break;
 			case "saveorder":
 				$this->setConfig('visualorder',$_REQUEST['order']);
 				return array("status" => true);

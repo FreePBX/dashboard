@@ -45,7 +45,7 @@
 			<div class='panel-group' id='notifications_group'>
 				<?php foreach($nots as $n) {?>
 					<div class="panel panel-default panel-<?php echo $n['level']?> fade in" id="panel_<?php echo $n['id']?>">
-						<div class="panel-heading collapsed" data-notid="<?php echo $n['id']?>" data-toggle="collapse" data-parent="#notifications_group" href="#link_<?php echo $n['id']?>">
+						<div class="panel-heading collapsed" data-notid="<?php echo $n['id']?>" data-notmod="<?php echo $n['module']?>" data-toggle="collapse" data-parent="#notifications_group" href="#link_<?php echo $n['id']?>">
 							<div class="actions">
 								<i class="fa fa-minus-circle" title="<?php echo _('Ignore This')?>"></i>
 								<i class="fa fa-times-circle <?php echo !empty($n['candelete']) ? '' : 'hidden'?>" title="<?php echo _('Delete This')?>"></i>
@@ -74,6 +74,15 @@
 		$(this).parents('.panel').fadeOut('slow');
 	})
 	$('#notifications_group .actions i.fa-times-circle').click(function() {
-		$(this).parents('.panel').fadeOut('slow');
+		var id = $(this).parents('.panel-heading').data('notid');
+		var raw = $(this).parents('.panel-heading').data('notmod');
+		$.ajax({
+			url: "ajax.php",
+			data: { command: "deletemessage", id: id, module:'dashboard', raw: raw},
+			success: function(data) {
+				$('#panel_'+id).fadeOut('slow');
+			},
+		});
+
 	})
 </script>
