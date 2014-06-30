@@ -122,14 +122,16 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 				// $this->doDialplanHook($foo = null, null, null); // Avoid warnings.
 				$config = $this->getConfig('allhooks');
 				$order = $this->getConfig('visualorder');
-				foreach($config as &$page) {
-					$entries = array();
-					foreach($page['entries'] as $e) {
-						$o = $order[$e['section']];
-						$entries[$o] = $e;
+				if(!empty($order)) {
+					foreach($config as &$page) {
+						$entries = array();
+						foreach($page['entries'] as $e) {
+							$o = $order[$e['section']];
+							$entries[$o] = $e;
+						}
+						ksort($entries);
+						$page['entries'] = $entries;
 					}
-					ksort($entries);
-					$page['entries'] = $entries;
 				}
 				return $config;
 			break;
