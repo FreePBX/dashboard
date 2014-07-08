@@ -70,10 +70,14 @@
 	$('.status-element').tooltip();
 	$('.panel-collapse').on('shown.bs.collapse', function() { $('.page').packery(); });
 	$('.panel-collapse').on('hidden.bs.collapse', function() { $('.page').packery(); });
-	$('#notifications_group .actions i.fa-minus-circle').click(function() {
-		$(this).parents('.panel').fadeOut('slow');
+	$('#notifications_group .actions i.fa-minus-circle').click(function(event) {
+		event.stopPropagation();
+		$(this).parents('.panel').fadeOut('slow', function() {
+			$('.page').packery();
+		});
 	})
-	$('#notifications_group .actions i.fa-times-circle').click(function() {
+	$('#notifications_group .actions i.fa-times-circle').click(function(event) {
+		event.stopPropagation();
 		var id = $(this).parents('.panel-heading').data('notid');
 		var raw = $(this).parents('.panel-heading').data('notmod');
 		$.ajax({

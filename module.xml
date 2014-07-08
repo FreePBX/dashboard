@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>12.0.8</version>
+	<version>12.0.10</version>
 	<publisher>FreePBX</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -19,6 +19,8 @@
 		<version>12.0.1alpha57</version>
 	</depends>
 	<changelog>
+		*12.0.10* Dont expand system overview if we are hiding or removing
+		*12.0.9* Fixes fluke Javascript error and allows processing to continue
 		*12.0.8* FREEPBX-7540 Fixed Nothing But Uptime Window Displayed
 		*12.0.7* FREEPBX-7536 allow deleting of deletable messages
 		*12.0.6* Order saving recognized and some cleanup

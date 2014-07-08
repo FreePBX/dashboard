@@ -122,7 +122,9 @@ var DashboardC = Class.extend({
 	loadIntoBox: function(divobj, html) {
 		// This removes any hooks from charts that are being replaced.
 		// Doesn't appear to break anything else.
-		$("#"+divobj.data('rawname')).chart('clear');
+		try {
+			$("#"+divobj.data('rawname')).chart('clear');
+		} catch(err) {}
 		divobj.children(".content").html(html);
 		$('.page').packery();
 		this.updateProgressBar();
