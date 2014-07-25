@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-23 09:52+0000\n"
-"PO-Revision-Date: 2014-07-25 23:21+0200\n"
+"PO-Revision-Date: 2014-07-25 23:28+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://git.freepbx.org/projects/freepbx/dashboard/pt_BR/>\n"
@@ -68,7 +68,7 @@ msgid "year"
 msgstr "ano"
 
 msgid "System Dashboard"
-msgstr "Painel do sistema"
+msgstr "Painel do Sistema"
 
 msgid "Reports"
 msgstr "Relatórios"
@@ -81,7 +81,7 @@ msgstr ""
 "Chamadas, CPU, Memória, Discos, Rede e processos."
 
 msgid "FreePBX System Status"
-msgstr "Status do freePBX"
+msgstr "Status do FreePBX"
 
 msgid "Dashboard Info Update Frequency"
 msgstr "Frequência de atualização do Painel de Informações"
@@ -118,7 +118,7 @@ msgid "Dashboard Non-Std SSH Port"
 msgstr "Porta SSH não padrão no Painel"
 
 msgid "System Setup"
-msgstr "Configurar Sistema"
+msgstr "Configuração do Sistema"
 
 msgid ""
 "SSH port number configured on your system if not using the default port 22, "
@@ -138,7 +138,7 @@ msgid "Warn"
 msgstr "Alerta"
 
 msgid "ERROR"
-msgstr "Erro"
+msgstr "ERRO"
 
 msgid "Disabled"
 msgstr "Desabilitado"
@@ -177,7 +177,7 @@ msgid "transmit"
 msgstr "média tx"
 
 msgid "FreePBX Statistics"
-msgstr "Estatísticas do freePBX"
+msgstr "Estatísticas do FreePBX"
 
 msgid "Total active calls"
 msgstr "Total de chamadas ativas"
@@ -192,7 +192,7 @@ msgid "Total active channels"
 msgstr "Total de canais ativos"
 
 msgid "FreePBX Connections"
-msgstr "Conexões freePBX"
+msgstr "Conexões FreePBX"
 
 msgid "IP Phones Online"
 msgstr "Telefones IP Online"
@@ -201,7 +201,7 @@ msgid "IP Trunks Online"
 msgstr "Troncos IP Online"
 
 msgid "IP Trunk Registrations"
-msgstr "Registros de troncos IP"
+msgstr "Troncos IP Registrados"
 
 msgid "Uptime"
 msgstr "Tempo ativo"
@@ -232,30 +232,30 @@ msgid "Asterisk is not running, this is a critical service!"
 msgstr "Asterisk não está rodando, este é um serviço crítico!"
 
 msgid "Manager Proxy"
-msgstr "Manager Proxy"
+msgstr "Proxy"
 
 msgid "Asterisk Manager Proxy is running"
-msgstr "O Manager Proxy está rodando"
+msgstr "O Proxy está rodando"
 
 msgid ""
 "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
 "Asterisk directly, which may result in poor performance"
 msgstr ""
-"O Manager Proxy não está rodando, o freePBX acessará o Asterisk diretamente,"
-"o que pode resultar uma performance fraca"
+"O Proxy não está rodando, o FreePBX acessará o Asterisk diretamente,o que "
+"pode resultar uma baixa performance"
 
 msgid "Op Panel"
-msgstr "Op Panel"
+msgstr "Painel do Operador"
 
 msgid ""
 "FOP Operator Panel Server is not running, you will not be able to use the "
 "operator panel, but the system will run fine without it."
 msgstr ""
-"O servidor FOP não está rodando, não será possível usar o Operator panel,"
-"porém o sistema funciona normalmente sem ele."
+"O servidor FOP não está rodando, não será possível usar o Painel do "
+"Operador,porém o sistema funciona normalmente sem ele."
 
 msgid "FOP Operator Panel is disabled in Advanced Settings"
-msgstr "O Painel do Operador FOP esta desabilitado nas Configurações Avançadas"
+msgstr "O Servidor FOP esta desabilitado nas Configurações Avançadas"
 
 msgid "FOP Operator Panel Server is running"
 msgstr "Servidor FOP está rodando"
@@ -304,13 +304,13 @@ msgid "Notice"
 msgstr "Notificação"
 
 msgid "FreePBX Notices"
-msgstr "Notificações do freePBX"
+msgstr "Notificações do FreePBX"
 
 msgid "Delete this"
-msgstr "Excluír este"
+msgstr "Excluír"
 
 msgid "Ignore this"
-msgstr "Ignorar este"
+msgstr "Ignorar"
 
 #, php-format
 msgid "Added %s ago"
