@@ -20,18 +20,22 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-23 09:52+0000\n"
-"PO-Revision-Date: 2009-05-11 20:10-0300\n"
-"Last-Translator: Marcelo Araujo <marcelo.araujo@voffice.com.br>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2014-07-25 23:21+0200\n"
+"Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://git.freepbx.org/projects/freepbx/dashboard/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.10-dev\n"
 
 msgid "seconds"
 msgstr "segundos"
 
 msgid "second"
-msgstr ""
+msgstr "segundo"
 
 msgid "minutes"
 msgstr "minutos"
@@ -58,65 +62,74 @@ msgid "week"
 msgstr "semana"
 
 msgid "years"
-msgstr ""
+msgstr "anos"
 
 msgid "year"
-msgstr ""
+msgstr "ano"
 
 msgid "System Dashboard"
 msgstr "Painel do sistema"
 
 msgid "Reports"
-msgstr ""
+msgstr "Relatórios"
 
 msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
+"Exibe um painel de informações do sistema, mostrando informações sobre "
+"Chamadas, CPU, Memória, Discos, Rede e processos."
 
 msgid "FreePBX System Status"
 msgstr "Status do freePBX"
 
 msgid "Dashboard Info Update Frequency"
-msgstr ""
+msgstr "Frequência de atualização do Painel de Informações"
 
 msgid "GUI Behavior"
-msgstr ""
+msgstr "Comportamento da Interface"
 
 msgid "Update rate in seconds of the Info section of the System Status panel."
-msgstr ""
+msgstr "Tempo de atualização em segundos do Painel de Status do Sistema."
 
 msgid "Dashboard Max Calls Initial Scale"
-msgstr ""
+msgstr "Numero máximo de chamadas exibidas no Painel"
 
 msgid ""
 "Use this to pre-set the scale for maximum calls on the Dashboard display. If "
 "not set, the the scale is dynamically sized based on the active calls on the "
 "system."
 msgstr ""
+"Use este para setar numero máximo de chamadas exibidas no Painel. Se este "
+"não for configurado, será exibido em escala dinâmica baseado nas chamadas "
+"ativas no sistema."
 
 msgid "Dashboard Stats Update Frequency"
-msgstr ""
+msgstr "Frequência de Atualização do Status do Painel"
 
 msgid ""
 "Update rate in seconds of all sections of the System Status panel except the "
 "Info box."
 msgstr ""
+"Tempo de atualização de todas as seções do Status do Sistema, exceto a Tela "
+"de Informações."
 
 msgid "Dashboard Non-Std SSH Port"
-msgstr ""
+msgstr "Porta SSH não padrão no Painel"
 
 msgid "System Setup"
-msgstr ""
+msgstr "Configurar Sistema"
 
 msgid ""
 "SSH port number configured on your system if not using the default port 22, "
 "this allows the dashboard monitoring to watch the poper port."
 msgstr ""
+"A Porta SSH de seu sistema não esta configurada como a padrão 22, desta "
+"forma o Painel não poderá monitora-la."
 
 #, php-format
 msgid "%s changed from %s to %s"
-msgstr ""
+msgstr "%s alterado de %s para %s"
 
 msgid "OK"
 msgstr "OK"
@@ -128,7 +141,7 @@ msgid "ERROR"
 msgstr "Erro"
 
 msgid "Disabled"
-msgstr ""
+msgstr "Desabilitado"
 
 msgid "System Statistics"
 msgstr "Estatísticas do sistema"
@@ -242,7 +255,7 @@ msgstr ""
 "porém o sistema funciona normalmente sem ele."
 
 msgid "FOP Operator Panel is disabled in Advanced Settings"
-msgstr ""
+msgstr "O Painel do Operador FOP esta desabilitado nas Configurações Avançadas"
 
 msgid "FOP Operator Panel Server is running"
 msgstr "Servidor FOP está rodando"
@@ -301,7 +314,7 @@ msgstr "Ignorar este"
 
 #, php-format
 msgid "Added %s ago"
-msgstr ""
+msgstr "Adicionado %s atrás"
 
 msgid "No notifications"
 msgstr "Sem notificações"
