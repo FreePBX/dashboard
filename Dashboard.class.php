@@ -12,6 +12,10 @@
 
 class Dashboard extends FreePBX_Helpers implements BMO {
 
+	public function __construct($freepbx) {
+		$this->db = $freepbx->Database;
+	}
+
 	// Always regen sys stats if they're older or equal to this, in seconds.
 	private $maxage = 50;
 
