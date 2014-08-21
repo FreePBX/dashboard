@@ -1,9 +1,9 @@
 <div class="row">
 	<div class="col-sm-2">
 		<div class="btn-group-vertical">
-			<div class="btn-group btn-group-lg" data-type="uptime">
+			<div class="btn-group btn-group-lg" data-type="asterisk">
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					Uptime <span class="caret"></span>
+					Asterisk <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
 					<li><a href="#" onclick="sbClick()">Hour</a></li>
@@ -12,9 +12,9 @@
 					<li><a href="#" onclick="sbClick()">Month</a></li>
 				</ul>
 			</div>
-			<div class="btn-group btn-group-lg" data-type="asterisk">
+			<div class="btn-group btn-group-lg" data-type="uptime">
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					Asterisk <span class="caret"></span>
+					Uptime <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
 					<li><a href="#" onclick="sbClick()">Hour</a></li>
@@ -214,7 +214,7 @@
 	$.elycharts.templates['astchart'] = {
 		type : 'line',
 		autoresize : true,
-		margins : [20, 30, 40, 0],
+		margins : [25, 30, 5, 15],
 		defaultSeries : {
 			type: 'line',
 			axis: 'r',
@@ -291,7 +291,7 @@
 			uoffline: 'Users Offline',
 			tonline: 'Trunks Reg\'d',
 			toffline: 'Trunks Offline',
-			channels: 'Active Chans',
+			channels: 'Active Calls',
 		},
 		defaultAxis : {
 			labels : true
@@ -335,6 +335,6 @@
 			},
 		});
 	};
-	Dashboard.sysstatAjax = {command: "sysstat", target: "uptime", period: "Hour", module: "dashboard"};
+	Dashboard.sysstatAjax = {command: "sysstat", target: "asterisk", period: "Hour", module: "dashboard"};
 	window.observers["builtin_aststat"]();
 </script>

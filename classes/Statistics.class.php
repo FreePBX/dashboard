@@ -640,11 +640,11 @@ $.elycharts.templates['astchart'] = {
 						$retarr['values']['toffline'][$count] = 0;
 						$trunkoffline = false;
 					} else {
-						$retarr['values']['toffline'][$count] = null;
+						// $retarr['values']['toffline'][$count] = null;
 					}
 				}
-				$retarr['values']['channels'][$count] = (int) $val['ast.chan_totals.total_channels'];
-				$retarr['tooltips']['channels'][$count] = $val['ast.chan_totals.total_channels']." channels in use";
+				$retarr['values']['channels'][$count] = (int) $val['ast.chan_totals.total_calls'];
+				$retarr['tooltips']['channels'][$count] = $val['ast.chan_totals.total_calls']." active calls";
 			}
 			$count++;
 	   	}
