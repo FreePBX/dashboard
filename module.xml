@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>12.0.10</version>
+	<version>12.0.11</version>
 	<publisher>FreePBX</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -17,8 +17,10 @@
 	</menuitems>
 	<depends>
 		<version>12.0.1alpha57</version>
+		<module>core ge 12.0.1beta11</module>
 	</depends>
 	<changelog>
+		*12.0.11* Remove RSS feed setting from dashboard
 		*12.0.10* Dont expand system overview if we are hiding or removing
 		*12.0.9* Fixes fluke Javascript error and allows processing to continue
 		*12.0.8* FREEPBX-7540 Fixed Nothing But Uptime Window Displayed
