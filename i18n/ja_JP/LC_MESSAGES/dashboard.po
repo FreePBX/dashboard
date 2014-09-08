@@ -1,0 +1,354 @@
+# CREDITS for JAPANESE TRANSLATION
+# ================================
+# Current translation & maintenance: QLOOG, Inc. (Kobe, Japan)
+# Inquiries: info@qloog.com / www.qloog.com
+# 
+# This translation is a culmination of the hard work of
+# several outstanding individuals, which started in 2009 with the 
+# first-ever Japanese localization of FreePBX by Kenichi Fukaumi 
+# and Kazuhiro Tokuyama (FreePBX Japanized Project).
+#
+# Beginning in 2013, with the approval of the original authors, 
+# QLOOG undertook a large scale overhaul of the translation to 
+# expand it for compatibility with FreePBX 2.11. Our work is, 
+# of course, released under the same GPLv2 license as FreePBX. 
+# We only ask that you kindly retain these credits in honor of 
+# the time and effort that all of us have contributed. Enjoy!
+# 
+# This file is part of FreePBX.
+#
+#    FreePBX is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    FreePBX is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
+#
+# FreePBX language template for dashboard
+# Copyright (C) 2008, 2009, 2010 Bandwith.com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FreePBX 2.10.0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-05 19:32+0900\n"
+"PO-Revision-Date: 2014-06-03 16:12+0200\n"
+"Last-Translator: Kevin <kevin@qloog.com>\n"
+"Language-Team: Japanese "
+"<http://git.freepbx.org/projects/freepbx/dashboard/ja/>\n"
+"Language: ja_JP\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 1.9-dev\n"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Warn"
+msgstr "警告"
+
+msgid "ERROR"
+msgstr "エラー"
+
+msgid "Disabled"
+msgstr "無効"
+
+msgid "minutes"
+msgstr "分"
+
+msgid "seconds"
+msgstr "秒"
+
+msgid "week"
+msgstr "週間"
+
+msgid "weeks"
+msgstr "週間"
+
+msgid "days"
+msgstr "日"
+
+msgid "hour"
+msgstr "時間"
+
+msgid "hours"
+msgstr "時間"
+
+msgid "minute"
+msgstr "分"
+
+msgid "System Statistics"
+msgstr "システム統計情報"
+
+msgid "Processor"
+msgstr "プロセッサー"
+
+msgid "Load Average"
+msgstr "負荷状況"
+
+msgid "CPU"
+msgstr "CPU"
+
+msgid "Memory"
+msgstr "メモリー"
+
+msgid "App Memory"
+msgstr "Appメモリー"
+
+msgid "Swap"
+msgstr "スワップ"
+
+msgid "Disks"
+msgstr "ディスク"
+
+msgid "Networks"
+msgstr "ネットワーク"
+
+msgid "receive"
+msgstr "受信"
+
+msgid "transmit"
+msgstr "送信"
+
+#, php-format
+msgid "%s Statistics"
+msgstr "%s 統計情報"
+
+msgid "Total active calls"
+msgstr "現在の合計通話数"
+
+msgid "Internal calls"
+msgstr "内線通話数"
+
+msgid "External calls"
+msgstr "外線通話数"
+
+msgid "Total active channels"
+msgstr "現在の合計チャネル数"
+
+#, php-format
+msgid "%s Connections"
+msgstr "%s 接続"
+
+msgid "IP Phones Online"
+msgstr "オンラインIP電話数"
+
+msgid "IP Trunks Online"
+msgstr "オンラインIPトランク数"
+
+msgid "IP Trunk Registrations"
+msgstr "IPトランク登録数"
+
+msgid "Uptime"
+msgstr "稼働時間"
+
+msgid "System Information Table"
+msgstr "システム情報テーブル"
+
+msgid "System Uptime"
+msgstr "システム稼働時間"
+
+msgid "Asterisk Uptime"
+msgstr "Asterisk稼働時間"
+
+msgid "Last Reload"
+msgstr "リロード後経過時間"
+
+msgid "Server Status"
+msgstr "サーバーの状態"
+
+msgid "Asterisk"
+msgstr "Asterisk"
+
+#, php-format
+msgid "Asterisk is running: %s"
+msgstr "Asterisk は動作しています: %s"
+
+msgid "Asterisk is not running, this is a critical service!"
+msgstr "Asteriskは起動していません。Asteriskはクリティカルなサービスです!"
+
+msgid "Manager Proxy"
+msgstr "マネージャープロキシー"
+
+msgid "Asterisk Manager Proxy is running"
+msgstr "Asteriskマネージャプロキシーは動作しています"
+
+#, php-format
+msgid ""
+"Asterisk Manager Proxy is not running, %s will fall back to using Asterisk "
+"directly, which may result in poor performance"
+msgstr ""
+"Asteriskマネージャープロキシーは動作していません。%s は Asteriskに直接接続しているため、パフォーマンスが低下している可能性があります。"
+
+msgid "MySQL"
+msgstr "MySQLサーバー"
+
+msgid "MySQL Server is running"
+msgstr "MySQLサーバーは動作しています"
+
+msgid "Web Server"
+msgstr "Webサーバー"
+
+msgid "Web Server is running"
+msgstr "Webサーバーは動作しています"
+
+msgid "SSH Server"
+msgstr "SSHサーバー"
+
+msgid "SSH Server is running"
+msgstr "SSHサーバーは動作しています"
+
+msgid ""
+"SSH Server is not running, you will not be able to connect to the system "
+"console remotely"
+msgstr "SSHサーバーは動作していません。このため、システムコンソールにリモート接続できません。"
+
+msgid "Critical Error"
+msgstr "致命的エラー"
+
+msgid "Security Update"
+msgstr "セキュリティアップデート"
+
+msgid "Update"
+msgstr "アップデート"
+
+msgid "Error"
+msgstr "エラー"
+
+msgid "Warning"
+msgstr "警告"
+
+msgid "Notice"
+msgstr "通知"
+
+#, php-format
+msgid "%s Notices"
+msgstr "%s の通知"
+
+msgid "Delete this"
+msgstr "削除"
+
+msgid "Ignore this"
+msgstr "無視"
+
+#, php-format
+msgid "Added %s ago"
+msgstr "%s 前に追加"
+
+msgid "No notifications"
+msgstr "通知はありません"
+
+msgid "No new notifications"
+msgstr "新しい通知はありません"
+
+msgid "show new"
+msgstr "新規通知を表示"
+
+msgid "show all"
+msgstr "すべて表示"
+
+msgid "loading..."
+msgstr "読み込み中..."
+
+#, php-format
+msgid "%s System Status"
+msgstr "%s システムステータス"
+
+msgid "System Dashboard"
+msgstr "システムダッシュボード"
+
+msgid "Reports"
+msgstr "レポート"
+
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr "システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、ネットワークの負荷状況等を表示します。"
+
+msgid "FreePBX System Status"
+msgstr "FreePBXシステムステータス"
+
+msgid "Dashboard Info Update Frequency"
+msgstr "ダッシュボード情報の更新間隔"
+
+msgid "GUI Behavior"
+msgstr "GUIの動作"
+
+msgid "Update rate in seconds of the Info section of the System Status panel."
+msgstr "システムステータスパネルの情報セクションの更新間隔(秒)を指定します。"
+
+msgid "Dashboard Max Calls Initial Scale"
+msgstr "ダッシュボードの最大通話数初期スケール"
+
+msgid ""
+"Use this to pre-set the scale for maximum calls on the Dashboard display. If "
+"not set, the the scale is dynamically sized based on the active calls on the "
+"system."
+msgstr ""
+"この設定項目では、ダッシュボードの最大通話数に対応するスケールを設定できます。設定されていない場合には、アクティブな通話数に応じて動的にスケールを変更しま"
+"す。"
+
+msgid "Dashboard Stats Update Frequency"
+msgstr "ダッシュボード統計値の更新間隔"
+
+msgid ""
+"Update rate in seconds of all sections of the System Status panel except the "
+"Info box."
+msgstr "情報ボックスを除いた、システムステータスパネルの更新間隔(秒)を指定します。"
+
+msgid "Dashboard Non-Std SSH Port"
+msgstr "ダッシュボード非標準SSHポート"
+
+msgid "System Setup"
+msgstr "システムセットアップ"
+
+msgid ""
+"SSH port number configured on your system if not using the default port 22, "
+"this allows the dashboard monitoring to watch the poper port."
+msgstr "SSHのポート番号をデフォルトの 22番から変更している場合には、この設定項目を設定してください。"
+
+msgid "second"
+msgstr "秒"
+
+msgid "day"
+msgstr "日"
+
+msgid "years"
+msgstr "年"
+
+msgid "year"
+msgstr "年"
+
+#, php-format
+msgid "%s changed from %s to %s"
+msgstr "%s を %s から %s に変更しました。"
+
+#~ msgid "FreePBX Statistics"
+#~ msgstr "FreePBX統計"
+
+#~ msgid "Op Panel"
+#~ msgstr "Opパネル"
+
+#~ msgid ""
+#~ "FOP Operator Panel Server is not running, you will not be able to use the "
+#~ "operator panel, but the system will run fine without it."
+#~ msgstr ""
+#~ "FOPオペレーターパネルサーバーが実行されていません、オペレーターパネルを使"
+#~ "用することができませんが、それ以外システムは問題なく実行されます。"
+
+#~ msgid "FOP Operator Panel is disabled in Advanced Settings"
+#~ msgstr "FOPオペレーターパネルが高度な設定で無効にされています。"
+
+#~ msgid "FOP Operator Panel Server is running"
+#~ msgstr "FOP オペレーターパネルサーバーが実行されています。"
+
+#~ msgid "FreePBX Notices"
+#~ msgstr "FreePBX 通知"

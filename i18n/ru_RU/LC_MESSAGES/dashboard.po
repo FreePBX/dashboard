@@ -1,0 +1,312 @@
+# This file is part of FreePBX.
+#
+#    FreePBX is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    FreePBX is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
+#
+#    Copyright 2008 FreePBX
+#
+# Russian freePBX ver. translation
+# Copyright (c) 2006-2008 PostMet Corporation
+# Alexander Kozyrev <ceo@postmet.com>, Sergey Nikolayev <sergey@postmet.com>, 2006-2008.
+#
+# Использовать iconv amp.new -f UTF-8 -t ISO-8859-5 -o amp.po
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-30 00:04+0400\n"
+"PO-Revision-Date: 2008-01-16 16:38+0100\n"
+"Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
+"Language-Team: Russian <faq@postmet.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "seconds"
+msgstr "секунды"
+
+msgid "second"
+msgstr "секунда"
+
+msgid "minutes"
+msgstr "минут"
+
+msgid "minute"
+msgstr "минута"
+
+msgid "hours"
+msgstr "часов"
+
+msgid "hour"
+msgstr "час"
+
+msgid "days"
+msgstr "дней"
+
+msgid "day"
+msgstr "день"
+
+msgid "weeks"
+msgstr "недель"
+
+msgid "week"
+msgstr "неделя"
+
+msgid "years"
+msgstr "годы"
+
+msgid "year"
+msgstr "год"
+
+msgid "System Dashboard"
+msgstr "Панель системы"
+
+msgid "Reports"
+msgstr "Отчеты"
+
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr "Отображает панель системной информации, информации о вызовах, загрузке CPU, памяти, занятость дисков, "
+"сети и процессов"
+
+msgid "FreePBX System Status"
+msgstr "Статус системы FreePBX"
+
+msgid "Dashboard Info Update Frequency"
+msgstr "Частота обновления информации системной панели"
+
+msgid "GUI Behavior"
+msgstr "поведение интерфейса"
+
+msgid "Update rate in seconds of the Info section of the System Status panel."
+msgstr "Интервал обновления в секундах в секции Инфо панели 'Статус Системы'."
+
+msgid "Dashboard Max Calls Initial Scale"
+msgstr "Начальная шкала максимального количества вызовов в панели"
+
+msgid ""
+"Use this to pre-set the scale for maximum calls on the Dashboard display. If "
+"not set, the the scale is dynamically sized based on the active calls on the "
+"system."
+msgstr "Используйте этот параметр для установки шкалы максимального количества звонков на "
+"панели. Если не установлено, шкала будет установлена автоматически в зависимости от количества "
+"звонков в системе"
+
+msgid "Dashboard Stats Update Frequency"
+msgstr "Частота обновления статистики в панели системной информации"
+
+msgid ""
+"Update rate in seconds of all sections of the System Status panel except the "
+"Info box."
+msgstr "Интервал обновления в секундах всех секций в панели Статуса Системы кроме окна Информации"
+
+msgid "Dashboard Non-Std SSH Port"
+msgstr "Нестандартный SSH порт системной панели"
+
+msgid "System Setup"
+msgstr "Настройка Системы"
+
+msgid ""
+"SSH port number configured on your system if not using the default port 22, "
+"this allows the dashboard monitoring to watch the poper port."
+msgstr "Номер SSH порта, если не используется стандартный порт 22. Данная настройка позволяет монитору панели"
+" обращаться на правильный порт"
+
+#, php-format
+msgid "%s changed from %s to %s"
+msgstr "%s изменено с %s на %s"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Warn"
+msgstr "Ого!"
+
+msgid "ERROR"
+msgstr "Ошибка"
+
+msgid "Disabled"
+msgstr "Запрещено"
+
+msgid "System Statistics"
+msgstr "Статистика Системы"
+
+msgid "Processor"
+msgstr "Процессор"
+
+msgid "Load Average"
+msgstr "Средняя загрузка"
+
+msgid "CPU"
+msgstr "ЦПУ"
+
+msgid "Memory"
+msgstr "Память"
+
+msgid "App Memory"
+msgstr "Занято приложениями"
+
+msgid "Swap"
+msgstr "Файл подкачки"
+
+msgid "Disks"
+msgstr "Дисковая подсистема"
+
+msgid "Networks"
+msgstr "Сеть"
+
+msgid "receive"
+msgstr "получено"
+
+msgid "transmit"
+msgstr "передано"
+
+msgid "FreePBX Statistics"
+msgstr "FreePBX Статистика"
+
+msgid "Total active calls"
+msgstr "Активных звонков - всего"
+
+msgid "Internal calls"
+msgstr "Внутренних звонков"
+
+msgid "External calls"
+msgstr "Внешних звонков"
+
+msgid "Total active channels"
+msgstr "Активных каналов - всего"
+
+msgid "FreePBX Connections"
+msgstr "Соединений FreePBX"
+
+msgid "IP Phones Online"
+msgstr "ИП Телефонов в онлайне"
+
+msgid "IP Trunks Online"
+msgstr "IP транков в онлайне"
+
+msgid "IP Trunk Registrations"
+msgstr "Регистраций ИП транков"
+
+msgid "Uptime"
+msgstr "Время запуска"
+
+msgid "System Information Table"
+msgstr "Талица системной информации"
+
+msgid "System Uptime"
+msgstr "Система жива"
+
+msgid "Asterisk Uptime"
+msgstr "Asterisk жив"
+
+msgid "Last Reload"
+msgstr "Перезагружался"
+
+msgid "Server Status"
+msgstr "Состояние сервера"
+
+msgid "Asterisk"
+msgstr "Asterisk"
+
+#, php-format
+msgid "Asterisk is running: %s"
+msgstr "Asterisk работает: %s"
+
+msgid "Asterisk is not running, this is a critical service!"
+msgstr "Asterisk не работает, это критично!"
+
+msgid "Manager Proxy"
+msgstr "Прокси менеджер"
+
+msgid "Asterisk Manager Proxy is running"
+msgstr "Asterisk Manager Proxy работает"
+
+msgid ""
+"Asterisk Manager Proxy is not running, FreePBX will fall back to using "
+"Asterisk directly, which may result in poor performance"
+msgstr "Asterisk Manager Proxy не работает, FreePBX будет использовать Asterisk напрямую, "
+"что может привести к ухудшению производительности"
+
+msgid "MySQL"
+msgstr "MySQL"
+
+msgid "MySQL Server is running"
+msgstr "MySQL сервер работает"
+
+msgid "Web Server"
+msgstr "Вэб сервер"
+
+msgid "Web Server is running"
+msgstr "Web Server работает"
+
+msgid "SSH Server"
+msgstr "Сервер SSH"
+
+msgid "SSH Server is running"
+msgstr "SSH Server работает"
+
+msgid ""
+"SSH Server is not running, you will not be able to connect to the system "
+"console remotely"
+msgstr "SSH Server не работает, Вы не сможете подключаться к системной консоли удаленно"
+
+msgid "Critical Error"
+msgstr "Критическая ошибка"
+
+msgid "Security Update"
+msgstr "Обновление безопасности"
+
+msgid "Update"
+msgstr "Обновление"
+
+msgid "Error"
+msgstr "Ошибка"
+
+msgid "Warning"
+msgstr "Предупреждение"
+
+msgid "Notice"
+msgstr "Уведомление"
+
+msgid "FreePBX Notices"
+msgstr "FreePBX сообщения"
+
+msgid "Delete this"
+msgstr "Удалите это"
+
+msgid "Ignore this"
+msgstr "Вы можете не обращать внимание на это"
+
+#, php-format
+msgid "Added %s ago"
+msgstr "Добавлено %s назад"
+
+msgid "No notifications"
+msgstr "Уведомлений нет"
+
+msgid "No new notifications"
+msgstr "Нет новых уведомлений"
+
+msgid "show new"
+msgstr "показать новых"
+
+msgid "show all"
+msgstr "показать все"
+
+msgid "loading..."
+msgstr "грузимся..."
+
+#~ msgid "Op Panel"
+#~ msgstr "Панель Оператора"
