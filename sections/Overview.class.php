@@ -149,7 +149,21 @@ class Overview {
 			$i++;
 		}
 
-		return $final;
+		$t = \FreePBX::Hooks()->processHooks();
+		$f = $final;
+		foreach($t as $d) {
+			foreach($d as $d1) {
+				$order = isset($d1['order']) ? $d1['order'] : count($f);
+				if($order == 0) {
+					array_unshift($f, $d1);
+					continue;
+				}
+				$t1 = array_slice($f, 0, $order, true);
+				$t2 = array_slice($f, $order, count($f) - 1, true);
+				$f = array_merge($t1, array($d1), $t2);
+			}
+		}
+		return $f;
 	}
 
 	private function genAlertGlyphicon($res, $tt = null) {

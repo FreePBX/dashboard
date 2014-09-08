@@ -4,7 +4,7 @@
 // License for all code of this FreePBX module can be found in the license file inside the module directory
 // Copyright 2006-2014 Schmooze Com Inc.
 
-class AsteriskInfo  {
+class AsteriskInfo2  {
 
 	public $astman = false;
 
@@ -57,12 +57,12 @@ class AsteriskInfo  {
 		$sql = "SELECT `id` FROM `devices` WHERE `tech` <> 'custom'";
 		$alldevices = FreePBX::create()->Database->query($sql)->fetchAll(PDO::FETCH_COLUMN, 0);
 		$devices = array_flip($alldevices);
-		
+
 		$protocols = array("sip", "iax2", "pjsip");
 		$vars = array(
-			"users_online", "users_offline", "users_total", 
-			"trunks_online", "trunks_offline", "trunks_total", 
-			"registrations_online", "registrations_offline", "registrations_total", 
+			"users_online", "users_offline", "users_total",
+			"trunks_online", "trunks_offline", "trunks_total",
+			"registrations_online", "registrations_offline", "registrations_total",
 		);
 
 		// Build array to return
@@ -137,11 +137,11 @@ class AsteriskInfo  {
 				//matches: [2] = name, [4] = username, [5] = host, [6] = part of ip (if IP)
 
 				// have an IP address listed, so its online
-				$online = !empty($matches[6]); 
+				$online = !empty($matches[6]);
 
 				if (!isset($devices[$matches[2]])) {
 					// this is a trunk
-					//TODO match trunk tech as well? 
+					//TODO match trunk tech as well?
 					$retarr['iax2_trunks_'.($online?'online':'offline')]++;
 				} else {
 					$retarr['iax2_users_'.($online?'online':'offline')]++;
@@ -180,7 +180,7 @@ class AsteriskInfo  {
 			$regs = $retarr[$p."_registrations_online"]+$retarr[$p."_registrations_offline"];
 			$retarr[$p."_registrations_total"] = $regs;
 		}
-		
+
 		foreach ($vars as $v) {
 			foreach ($protocols as $p) {
 				$retarr[$v] += $retarr[$p."_".$v];
@@ -210,7 +210,7 @@ class AsteriskInfo  {
 			include 'TimeUtils.class.php';
 		}
 
-		// Second line: 
+		// Second line:
 		// System uptime: 922134
 		$words = explode(" ", $astout[1]);
 		$output['system'] = TimeUtils::getReadable($words[2]);

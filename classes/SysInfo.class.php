@@ -7,7 +7,7 @@
 // This is the wrapper for PhpSysInfo
 //
 // As PhpSysInfo is licenced soley under the GPLv2, this part of the Dashboard module is
-// dual licenced, under both the AGPLv3 -and- the GPLv2. 
+// dual licenced, under both the AGPLv3 -and- the GPLv2.
 //
 // This file is deemed to be our demarcation point for the licence handover.
 
@@ -85,9 +85,9 @@ class SysInfo {
 
 	public function getAstInfo() {
 
-		if (!class_exists('AsteriskInfo')) {
+		if (!class_exists('AsteriskInfo2')) {
 			include 'AsteriskInfo.class.php';
-			$this->astinfo = new AsteriskInfo();
+			$this->astinfo = new AsteriskInfo2();
 		}
 
 		if ($this->astinfo) {
@@ -107,5 +107,3 @@ class SysInfo {
 
 	public function getAvg() { return false; }
 }
-
-
