@@ -6,10 +6,10 @@
 					Asterisk <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" onclick="sbClick()">Hour</a></li>
-					<li><a href="#" onclick="sbClick()">Day</a></li>
-					<li><a href="#" onclick="sbClick()">Week</a></li>
-					<li><a href="#" onclick="sbClick()">Month</a></li>
+					<li><a href="#" class="graph-button">Hour</a></li>
+					<li><a href="#" class="graph-button">Day</a></li>
+					<li><a href="#" class="graph-button">Week</a></li>
+					<li><a href="#" class="graph-button">Month</a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="uptime">
@@ -17,10 +17,10 @@
 					Uptime <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" onclick="sbClick()">Hour</a></li>
-					<li><a href="#" onclick="sbClick()">Day</a></li>
-					<li><a href="#" onclick="sbClick()">Week</a></li>
-					<li><a href="#" onclick="sbClick()">Month</a></li>
+					<li><a href="#" class="graph-button">Hour</a></li>
+					<li><a href="#" class="graph-button">Day</a></li>
+					<li><a href="#" class="graph-button">Week</a></li>
+					<li><a href="#" class="graph-button">Month</a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="cpuusage">
@@ -28,10 +28,10 @@
 					CPU <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" onclick="sbClick()">Hour</a></li>
-					<li><a href="#" onclick="sbClick()">Day</a></li>
-					<li><a href="#" onclick="sbClick()">Week</a></li>
-					<li><a href="#" onclick="sbClick()">Month</a></li>
+					<li><a href="#" class="graph-button">Hour</a></li>
+					<li><a href="#" class="graph-button">Day</a></li>
+					<li><a href="#" class="graph-button">Week</a></li>
+					<li><a href="#" class="graph-button">Month</a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="memusage">
@@ -39,10 +39,10 @@
 					Memory <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" onclick="sbClick()">Hour</a></li>
-					<li><a href="#" onclick="sbClick()">Day</a></li>
-					<li><a href="#" onclick="sbClick()">Week</a></li>
-					<li><a href="#" onclick="sbClick()">Month</a></li>
+					<li><a href="#" class="graph-button">Hour</a></li>
+					<li><a href="#" class="graph-button">Day</a></li>
+					<li><a href="#" class="graph-button">Week</a></li>
+					<li><a href="#" class="graph-button">Month</a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="diskusage">
@@ -50,10 +50,10 @@
 					Disk <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" onclick="sbClick()">Hour</a></li>
-					<li><a href="#" onclick="sbClick()">Day</a></li>
-					<li><a href="#" onclick="sbClick()">Week</a></li>
-					<li><a href="#" onclick="sbClick()">Month</a></li>
+					<li><a href="#" class="graph-button">Hour</a></li>
+					<li><a href="#" class="graph-button">Day</a></li>
+					<li><a href="#" class="graph-button">Week</a></li>
+					<li><a href="#" class="graph-button">Month</a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="networking">
@@ -61,22 +61,27 @@
 					Network <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" onclick="sbClick()">Hour</a></li>
-					<li><a href="#" onclick="sbClick()">Day</a></li>
-					<li><a href="#" onclick="sbClick()">Week</a></li>
-					<li><a href="#" onclick="sbClick()">Month</a></li>
+					<li><a href="#" class="graph-button">Hour</a></li>
+					<li><a href="#" class="graph-button">Day</a></li>
+					<li><a href="#" class="graph-button">Week</a></li>
+					<li><a href="#" class="graph-button">Month</a></li>
 				</ul>
 			</div>
 		</div>
 		<script type="text/javascript">
-		function sbClick() {
+		$(".graph-button").click(function(event) {
 			event.preventDefault();
-			var target = $(event.target);
+			var target = $(this);
 			Dashboard.sysstatAjax.period = target.text();
 			Dashboard.sysstatAjax.target = target.parents(".btn-group").data("type")
 			window.observers["builtin_aststat"]();
-		}
+		})
 		</script>
+		<style>
+		#page_Main_Statistics_statistics .btn-group {
+			width: 90px;
+		}
+		</style>
 	</div>
 	<div id="builtin_aststat" class="col-sm-10" style="height: 200px">
 		Loading Graph....
