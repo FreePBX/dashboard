@@ -126,11 +126,6 @@ class Overview {
 			"asterisk" => _("Asterisk"),
 			"mysql" => _("MySQL"),
 			"apache" => _("Web Server"),
-			"fail2ban" => _("Fail2Ban Service"),
-			"isreged" => _("System Registration"),
-			// "xmpp" => _("XMPP Server"),
-			"openvpn" => _("Open VPN Server"),
-			"hiav" => _("High Availability"),
 		);
 
 		$sysinfo = \FreePBX::create()->Dashboard->getSysInfo();
@@ -149,7 +144,7 @@ class Overview {
 			$i++;
 		}
 
-		$t = \FreePBX::Hooks()->processHooks();
+		$t = \FreePBX::Hooks()->processHooks($sysinfo);
 		$f = $final;
 		foreach($t as $d) {
 			foreach($d as $d1) {
@@ -167,36 +162,7 @@ class Overview {
 	}
 
 	private function genAlertGlyphicon($res, $tt = null) {
-		$glyphs = array(
-			"ok" => "glyphicon-ok text-success",
-			"warning" => "glyphicon-warning-sign text-warning",
-			"error" => "glyphicon-remove text-danger",
-			"unknown" => "glyphicon-question-sign text-info",
-			"info" => "glyphicon-info-sign text-info",
-			"critical" => "glyphicon-fire text-danger"
-		);
-		// Are we being asked for an alert we actually know about?
-		if (!isset($glyphs[$res])) {
-			return array('type' => 'unknown', "tooltip" => "Don't know what $res is", "glyph-class" => $glyphs['unknown']);
-		}
-
-		if ($tt === null) {
-			// No Tooltip
-			return array('type' => $res, "tooltip" => null, "glyph-class" => $glyphs[$res]);
-		} else {
-			// Generate a tooltip
-			$html = '';
-			if (is_array($tt)) {
-				foreach ($tt as $line) {
-					$html .= htmlentities($line, ENT_QUOTES)."\n";
-				}
-			} else {
-				$html .= htmlentities($tt, ENT_QUOTES);
-			}
-
-			return array('type' => $res, "tooltip" => $html, "glyph-class" => $glyphs[$res]);
-		}
-		return '';
+		return \FreePBX::Dashboard()->genStatusIcon($res, $tt);
 	}
 
 	private function checkasterisk($sysinfo) {
@@ -233,91 +199,6 @@ class Overview {
 		// something traumatic happens to apache. For the moment, however, we just
 		// say yes.
 		return $this->genAlertGlyphicon('ok', "Apache running");
-	}
-
-	private function checkhiav() {
-		return $this->genAlertGlyphicon('info', "High Av isn't installed");
-	}
-
-	private function checkxmpp() {
-		// This is a handy feature of exec - it'll APPEND to an array.
-		// So we preload the error message, if we need it.
-		$output = array("Prosody status check failed. Return text is:");
-
-		exec("service prosody status 2>&1", $output, $ret);
-		if ($ret === 0) {
-			return $this->genAlertGlyphicon('ok', "Prosody running");
-		}
-
-		return $this->genAlertGlyphicon('warning', $output);
-	}
-
-	private function checkopenvpn($si) {
-		exec("service openvpn status 2>&1", $output, $ret);
-		if ($ret === 1) {
-			return $this->genAlertGlyphicon('info', "OpenVPN Service not running");
-		}
-		if ($ret === 0) {
-			// Open VPN is running! Let's see if we can figure out what our IP
-			// address is.
-			$tuns = array();
-			foreach ($si as $k => $v) {
-				if (strpos($v, "tun") === 0) {
-					// Woo, this could be a tunnel address...
-					if (preg_match('/psi.Network.NetDevice.(\d+).@attributes.Name/', $k, $match)) {
-						// It is! Now, what's its interface number?
-						$int = $match[1];
-						if (isset($si["psi.Network.NetDevice.$int.@attributes.Info"])) {
-							$info = $si["psi.Network.NetDevice.$int.@attributes.Info"];
-							list($ip, $null) = split(';', $info);
-							$tuns[] = $ip;
-						}
-					}
-				}
-			}
-			// Note that this is exactly the same as if (count($tuns) === 0)
-			if (!$tuns) {
-				return $this->genAlertGlyphicon('warning', "OpenVPN Service running, but not connected.");
-			}
-
-			if (count($tuns) > 1) {
-				$rettext = "OpenVPN Service running. Detected IP Addresses are: ";
-			} else {
-				$rettext = "OpenVPN Service running. Detected IP Address is ";
-			}
-
-			foreach ($tuns as $tun) {
-				$rettext .= "$tun, ";
-			}
-
-			// Remove the trailing ", "
-			return $this->genAlertGlyphicon('ok', substr($rettext, 0, -2));
-		}
-	}
-
-	private function checkfail2ban() {
-		exec("service fail2ban status 2>&1", $output, $ret);
-		if ($ret === 0) {
-			return $this->genAlertGlyphicon('ok', "Fail2ban running");
-		}
-		return $this->genAlertGlyphicon('critical', "Fail2Ban should always be running");
-	}
-
-	private function checkisreged() {
-		// It may or may not exist. Lets be cautious.
-		if (!function_exists('sysadmin_get_license')) {
-			$dir= \FreePBX::create()->Config->get_conf_setting('AMPWEBROOT');
-			if (file_exists($dir."/admin/modules/sysadmin/functions.inc.php")) {
-				// Woo. Lets load it!
-				include $dir."/admin/modules/sysadmin/functions.inc.php";
-			}
-		}
-		// NOW. Does it exist, and, if it does, is it true?
-		if (function_exists('sysadmin_get_license') && sysadmin_get_license()) {
-			return $this->genAlertGlyphicon('ok', 'System registered');
-		} else {
-			return $this->genAlertGlyphicon('info', 'System not registered');
-		}
 	}
 
 	private function delNotification() {

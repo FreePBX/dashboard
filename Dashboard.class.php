@@ -237,6 +237,39 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		return $this->$methodname();
 	}
 
+	public function genStatusIcon($res, $tt = null) {
+		$glyphs = array(
+			"ok" => "glyphicon-ok text-success",
+			"warning" => "glyphicon-warning-sign text-warning",
+			"error" => "glyphicon-remove text-danger",
+			"unknown" => "glyphicon-question-sign text-info",
+			"info" => "glyphicon-info-sign text-info",
+			"critical" => "glyphicon-fire text-danger"
+		);
+		// Are we being asked for an alert we actually know about?
+		if (!isset($glyphs[$res])) {
+			return array('type' => 'unknown', "tooltip" => "Don't know what $res is", "glyph-class" => $glyphs['unknown']);
+		}
+
+		if ($tt === null) {
+			// No Tooltip
+			return array('type' => $res, "tooltip" => null, "glyph-class" => $glyphs[$res]);
+		} else {
+			// Generate a tooltip
+			$html = '';
+			if (is_array($tt)) {
+				foreach ($tt as $line) {
+					$html .= htmlentities($line, ENT_QUOTES)."\n";
+				}
+			} else {
+				$html .= htmlentities($tt, ENT_QUOTES);
+			}
+
+			return array('type' => $res, "tooltip" => $html, "glyph-class" => $glyphs[$res]);
+		}
+		return '';
+	}
+
 	// The actual hooks themselves!
 	private function getAjaxOverview() {
 		// Autoloaded!
