@@ -29,7 +29,7 @@ class Overview {
 			if (!empty($_SESSION['DASHBOARD_FREEPBX_BRAND'])) {
 				define('DASHBOARD_FREEPBX_BRAND', $_SESSION['DASHBOARD_FREEPBX_BRAND']);
 			} else {
-				define('DASHBOARD_FREEPBX_BRAND', 'FreePBX');
+				define('DASHBOARD_FREEPBX_BRAND', FreePBX::Config()->get("DASHBOARD_FREEPBX_BRAND"));
 			}
 		} else {
 			$_SESSION['DASHBOARD_FREEPBX_BRAND'] = DASHBOARD_FREEPBX_BRAND;
