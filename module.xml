@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>12.0.17</version>
+	<version>12.0.18</version>
 	<publisher>FreePBX</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,6 +20,7 @@
 		<module>core ge 12.0.1beta11</module>
 	</depends>
 	<changelog>
+		*12.0.18* FREEPBX-8066 Notification links not used in New Dashboard, FREEPBX-8005 Repeats Previous Alerts
 		*12.0.17* Escape out freepbx object
 		*12.0.16* Tweaks and cleanup
 		*12.0.15* Remove most core service checking to modules

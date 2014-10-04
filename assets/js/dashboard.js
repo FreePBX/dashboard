@@ -58,25 +58,45 @@ var DashboardC = Class.extend({
 			s += "<i class='fa fa-refresh'></i></span></div><div class='content'></div></div></div>";
 			p.append(s);
 		});
-
-		$('.page').packery({
-			itemSelector: '.item',
-			gutter: 5,
-			columnWidth: 10,
-			rowHeight: 10,
-		});
-		$('.page').packery( 'on', 'dragItemPositioned', Dashboard.orderItems );
-		$.each($('.page').packery('getItemElements'),function(i,v) {
-			var draggie = new Draggabilly( v, {handle: '.title-bar'} );
-			draggie.on( 'dragStart', function(instance, event, pointer) {
-				$(instance.element).css('z-index','5000');
+		if ($('.page').length > 0) {
+			$('.page').packery({
+				itemSelector: '.item',
+				gutter: 5,
+				columnWidth: 10,
+				rowHeight: 10,
 			});
-			draggie.on( 'dragEnd', function(instance, event, pointer) {
-				$(instance.element).css('z-index', '');
+			$('.page').packery( 'on', 'dragItemPositioned', Dashboard.orderItems );
+			$.each($('.page').packery('getItemElements'),function(i,v) {
+				var draggie = new Draggabilly( v, {handle: '.title-bar'} );
+				draggie.on( 'dragStart', function(instance, event, pointer) {
+					$(instance.element).css('z-index','5000');
+				});
+				draggie.on( 'dragEnd', function(instance, event, pointer) {
+					$(instance.element).css('z-index', '');
+				});
+				$('.page').packery( 'bindDraggabillyEvents', draggie );
 			});
-			$('.page').packery( 'bindDraggabillyEvents', draggie );
-		});
-
+		} else {
+			setTimeout(function(){
+				$('.page').packery({
+					itemSelector: '.item',
+					gutter: 5,
+					columnWidth: 10,
+					rowHeight: 10,
+				});
+				$('.page').packery( 'on', 'dragItemPositioned', Dashboard.orderItems );
+				$.each($('.page').packery('getItemElements'),function(i,v) {
+					var draggie = new Draggabilly( v, {handle: '.title-bar'} );
+					draggie.on( 'dragStart', function(instance, event, pointer) {
+						$(instance.element).css('z-index','5000');
+					});
+					draggie.on( 'dragEnd', function(instance, event, pointer) {
+						$(instance.element).css('z-index', '');
+					});
+					$('.page').packery( 'bindDraggabillyEvents', draggie );
+				});
+			}, 500);
+		}
 	},
 	orderItems: function(pckryInstance, laidOutItems) {
 		// items are in order within the layout

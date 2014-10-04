@@ -21,7 +21,7 @@ class Overview {
 		);
 	}
 
-	public function getContent($section) {
+	public function getContent($section, $data) {
 		if (!class_exists('TimeUtils')) {
 			include dirname(__DIR__).'/classes/TimeUtils.class.php';
 		}
@@ -44,18 +44,22 @@ class Overview {
 		}
 
 		$since = time() - $getsi['timestamp'];
-		$nots = $this->getNotifications();
+		$notifications = $this->getNotifications((isset($_COOKIE['dashboardShowAll']) && $_COOKIE['dashboardShowAll'] == "true"));
+		$nots = $notifications['nots'];
 		$alerts = $this->getAlerts($nots);
 
-		return load_view(dirname(__DIR__).'/views/sections/overview.php',array("nots" => $nots, "alerts" => $alerts, "brand" => $brand, "version" => get_framework_version(), "since" => $since, "services" => $this->getSummary()));
+		return load_view(dirname(__DIR__).'/views/sections/overview.php',array("showAllMessage" => $notifications['showAllMessage'], "nots" => $nots, "alerts" => $alerts, "brand" => $brand, "version" => get_framework_version(), "since" => $since, "services" => $this->getSummary()));
 	}
 
-	private function getNotifications() {
+	private function getNotifications($showall = false) {
 		if (!class_exists('TimeUtils')) {
 			include dirname(__DIR__).'/classes/TimeUtils.class.php';
 		}
-		$showall = true;
+		$final['nots'] = array();
 		$items = \FreePBX::create()->Notifications->list_all($showall);
+		$allItems = \FreePBX::create()->Notifications->list_all(true);
+
+		$final['showAllMessage'] = (count($items) != count($allItems));
 		// This is where we map the Notifications priorities to Bootstrap priorities.
 		// define("NOTIFICATION_TYPE_CRITICAL", 100) -> 'danger' (orange)
 		// define("NOTIFICATION_TYPE_SECURITY", 200) -> 'danger' (red)
@@ -65,9 +69,8 @@ class Overview {
 		// define("NOTIFICATION_TYPE_NOTICE",   600) -> 'success' -> (green)
 
 		$alerts = array(100 => "danger", 200 => "danger", 300 => "warning", 400 => "info", 500 => "info", 600 => "success");
-		$final = array();
 		foreach ($items as $notification) {
-			$final[] = array(
+			$final['nots'][] = array(
 				"id" => $notification['id'],
 				"rawlevel" => $notification['level'],
 				"level" => !isset($alerts[$notification['level']]) ? 'danger' : $alerts[$notification['level']],
@@ -75,7 +78,9 @@ class Overview {
 				"title" => $notification['display_text'],
 				"time" => \TimeUtils::getReadable(time() - $notification['timestamp']),
 				"text" => nl2br($notification['extended_text']),
-				"module" => $notification['module']
+				"module" => $notification['module'],
+				"link" => $notification['link'],
+				"reset" => $notification['reset']
 			);
 		}
 		return $final;
@@ -86,7 +91,7 @@ class Overview {
 		// Start with everything happy
 		$alerttitle = _("System Alerts");
 		$state = "success";
-		$text = "<br /><br /><center>"._("No critical issues found")."</center>";
+		$text = "<div class='text-center'>"._("No critical issues found")."</div>";
 		$foundalerts = array();
 		// Go through our notifications now..
 		foreach ($nots as $n) {
@@ -95,8 +100,8 @@ class Overview {
 			if ($n['rawlevel'] == 200) {
 				// Security vulnerability. This is bad.
 				$state = "danger";
-				$alerttitle = "<center><h4>"._("Security Issue")."</h4></center>";
-				$text = "<p>".$n['title']."</p><p>This is a critical issue and should be resolved urgently</p>";
+				$alerttitle = "<center><h4><i class='fa fa-exclamation-triangle'></i> "._("Security Issue")." <i class='fa fa-exclamation-triangle'></i></h4></center>";
+				$text = "<p>".$n['title']."</p><p>" . _("This is a critical issue and should be resolved urgently") . "</p>";
 				return array("alerttitle" => $alerttitle, "state" => $state, "text" => $text);
 			}
 
@@ -113,12 +118,14 @@ class Overview {
 		if (isset($foundalerts['danger'])) {
 			// There's a critical issue. That's what we're doing.
 			$state = "danger";
-			$text = "Critical Errors found. Please check notifications";
+			$text = _("Please check for errors in the notification section");
+			$alerttitle = _("Critical Errors found");
 		} elseif (isset($foundalerts['warning'])) {
 			$state = "warning";
-			$text = "Warning: Please check for errors in the notification section";
+			$text = _("Please check for errors in the notification section");
+			$alerttitle = _("Warnings Found");
 		}
-		return array("state" => $state, "text" => $text);
+		return array("alerttitle" => $alerttitle, "state" => $state, "text" => $text);
 	}
 
 	public function getSummary() {
