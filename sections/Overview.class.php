@@ -21,7 +21,7 @@ class Overview {
 		);
 	}
 
-	public function getContent($section, $data) {
+	public function getContent($section) {
 		if (!class_exists('TimeUtils')) {
 			include dirname(__DIR__).'/classes/TimeUtils.class.php';
 		}
