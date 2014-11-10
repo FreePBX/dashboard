@@ -8,10 +8,7 @@ namespace FreePBX\modules\Dashboard\Sections;
 
 class Blogs {
 	public $rawname = 'Blogs';
-	private $urls = array(
-		"FreePBX" => "http://www.freepbx.org/rss.xml",
-		"Digium" => "http://blogs.digium.com/feed/"
-	);
+	private $urls = array();
 
 	public function __construct() {
 		$feeds = \FreePBX::Config()->get('RSSFEEDS');
