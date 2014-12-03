@@ -1,13 +1,7 @@
 <?php
 // vim: set ai ts=4 sw=4 ft=php:
-//
-// License for all code of this FreePBX module can be found in the license file inside the module directory
-// Copyright 2006-2014 Schmooze Com Inc.
-//
-// This module is primarily licenced under the AGPL version 3, or at your
-// choice, any higher version.  However, as PHP SysInfo is licenced under
-// the GPLv2, some parts of this module is dual licenced under GPLv2 -and-
-// AGPL v3+. Those files have notations to signify this.
+//	License for all code of this FreePBX module can be found in the license file inside the module directory
+//	Copyright 2013 Schmooze Com Inc.
 //
 
 class Dashboard extends FreePBX_Helpers implements BMO {

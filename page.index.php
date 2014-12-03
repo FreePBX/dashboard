@@ -1,6 +1,8 @@
 <?php // vim: set ai ts=4 sw=4 ft=phtml:
 // New Dashboard
-
+//	License for all code of this FreePBX module can be found in the license file inside the module directory
+//	Copyright 2013 Schmooze Com Inc.
+//
 if (!defined('DASHBOARD_FREEPBX_BRAND')) {
 	if (!empty($_SESSION['DASHBOARD_FREEPBX_BRAND'])) {
 		define('DASHBOARD_FREEPBX_BRAND', $_SESSION['DASHBOARD_FREEPBX_BRAND']);

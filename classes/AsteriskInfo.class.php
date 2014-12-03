@@ -1,8 +1,9 @@
 <?php
 // vim: set ai ts=4 sw=4 ft=php:
 //
-// License for all code of this FreePBX module can be found in the license file inside the module directory
-// Copyright 2006-2014 Schmooze Com Inc.
+//	License for all code of this FreePBX module can be found in the license file inside the module directory
+//	Copyright 2013 Schmooze Com Inc.
+//
 
 class AsteriskInfo2  {
 
