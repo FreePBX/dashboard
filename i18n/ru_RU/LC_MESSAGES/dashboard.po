@@ -24,289 +24,450 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-30 00:04+0400\n"
+"POT-Creation-Date: 2015-02-11 17:43-0500\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "seconds"
-msgstr "секунды"
-
-msgid "second"
-msgstr "секунда"
-
-msgid "minutes"
-msgstr "минут"
-
-msgid "minute"
-msgstr "минута"
-
-msgid "hours"
-msgstr "часов"
-
-msgid "hour"
-msgstr "час"
-
-msgid "days"
-msgstr "дней"
-
-msgid "day"
-msgstr "день"
-
-msgid "weeks"
-msgstr "недель"
-
-msgid "week"
-msgstr "неделя"
-
-msgid "years"
-msgstr "годы"
-
-msgid "year"
-msgstr "год"
-
-msgid "System Dashboard"
-msgstr "Панель системы"
-
-msgid "Reports"
-msgstr "Отчеты"
-
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr "Отображает панель системной информации, информации о вызовах, загрузке CPU, памяти, занятость дисков, "
-"сети и процессов"
-
-msgid "FreePBX System Status"
-msgstr "Статус системы FreePBX"
-
-msgid "Dashboard Info Update Frequency"
-msgstr "Частота обновления информации системной панели"
-
-msgid "GUI Behavior"
-msgstr "поведение интерфейса"
-
-msgid "Update rate in seconds of the Info section of the System Status panel."
-msgstr "Интервал обновления в секундах в секции Инфо панели 'Статус Системы'."
-
-msgid "Dashboard Max Calls Initial Scale"
-msgstr "Начальная шкала максимального количества вызовов в панели"
-
-msgid ""
-"Use this to pre-set the scale for maximum calls on the Dashboard display. If "
-"not set, the the scale is dynamically sized based on the active calls on the "
-"system."
-msgstr "Используйте этот параметр для установки шкалы максимального количества звонков на "
-"панели. Если не установлено, шкала будет установлена автоматически в зависимости от количества "
-"звонков в системе"
-
-msgid "Dashboard Stats Update Frequency"
-msgstr "Частота обновления статистики в панели системной информации"
-
-msgid ""
-"Update rate in seconds of all sections of the System Status panel except the "
-"Info box."
-msgstr "Интервал обновления в секундах всех секций в панели Статуса Системы кроме окна Информации"
-
-msgid "Dashboard Non-Std SSH Port"
-msgstr "Нестандартный SSH порт системной панели"
-
-msgid "System Setup"
-msgstr "Настройка Системы"
-
-msgid ""
-"SSH port number configured on your system if not using the default port 22, "
-"this allows the dashboard monitoring to watch the poper port."
-msgstr "Номер SSH порта, если не используется стандартный порт 22. Данная настройка позволяет монитору панели"
-" обращаться на правильный порт"
-
+#: /usr/src/freepbx/dashboard/views/sections/overview.php:65
+#: /usr/src/freepbx/dashboard/views/sections/uptime.php:6
 #, php-format
-msgid "%s changed from %s to %s"
-msgstr "%s изменено с %s на %s"
+msgid "%s ago"
+msgstr ""
 
-msgid "OK"
-msgstr "OK"
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:23
+msgid "0 seconds"
+msgstr ""
 
-msgid "Warn"
-msgstr "Ого!"
+#: /usr/src/freepbx/dashboard/views/sections/uptime.php:16
+msgid "1 Minute"
+msgstr ""
 
-msgid "ERROR"
-msgstr "Ошибка"
+#: /usr/src/freepbx/dashboard/views/sections/uptime.php:22
+msgid "15 Minutes"
+msgstr ""
 
-msgid "Disabled"
-msgstr "Запрещено"
+#: /usr/src/freepbx/dashboard/views/sections/uptime.php:19
+msgid "5 Minutes"
+msgstr ""
 
-msgid "System Statistics"
-msgstr "Статистика Системы"
-
-msgid "Processor"
-msgstr "Процессор"
-
-msgid "Load Average"
-msgstr "Средняя загрузка"
-
-msgid "CPU"
-msgstr "ЦПУ"
-
-msgid "Memory"
-msgstr "Память"
-
-msgid "App Memory"
-msgstr "Занято приложениями"
-
-msgid "Swap"
-msgstr "Файл подкачки"
-
-msgid "Disks"
-msgstr "Дисковая подсистема"
-
-msgid "Networks"
-msgstr "Сеть"
-
-msgid "receive"
-msgstr "получено"
-
-msgid "transmit"
-msgstr "передано"
-
-msgid "FreePBX Statistics"
-msgstr "FreePBX Статистика"
-
-msgid "Total active calls"
-msgstr "Активных звонков - всего"
-
-msgid "Internal calls"
-msgstr "Внутренних звонков"
-
-msgid "External calls"
-msgstr "Внешних звонков"
-
-msgid "Total active channels"
-msgstr "Активных каналов - всего"
-
-msgid "FreePBX Connections"
-msgstr "Соединений FreePBX"
-
-msgid "IP Phones Online"
-msgstr "ИП Телефонов в онлайне"
-
-msgid "IP Trunks Online"
-msgstr "IP транков в онлайне"
-
-msgid "IP Trunk Registrations"
-msgstr "Регистраций ИП транков"
-
-msgid "Uptime"
-msgstr "Время запуска"
-
-msgid "System Information Table"
-msgstr "Талица системной информации"
-
-msgid "System Uptime"
-msgstr "Система жива"
-
-msgid "Asterisk Uptime"
-msgstr "Asterisk жив"
-
-msgid "Last Reload"
-msgstr "Перезагружался"
-
-msgid "Server Status"
-msgstr "Состояние сервера"
-
+#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:122
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:133
 msgid "Asterisk"
 msgstr "Asterisk"
 
-#, php-format
-msgid "Asterisk is running: %s"
-msgstr "Asterisk работает: %s"
+#: /usr/src/freepbx/dashboard/sections/Blogs.class.php:33
+#: /usr/src/freepbx/dashboard/sections/Blogs.class.php:41
+msgid "Blogs"
+msgstr ""
 
-msgid "Asterisk is not running, this is a critical service!"
-msgstr "Asterisk не работает, это критично!"
+#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:123
+msgid "CPU"
+msgstr "ЦПУ"
 
-msgid "Manager Proxy"
-msgstr "Прокси менеджер"
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:122
+msgid "Critical Errors found"
+msgstr ""
 
-msgid "Asterisk Manager Proxy is running"
-msgstr "Asterisk Manager Proxy работает"
+#: /usr/src/freepbx/dashboard/views/sections/overview.php:53
+msgid "Delete This"
+msgstr ""
 
-msgid ""
-"Asterisk Manager Proxy is not running, FreePBX will fall back to using "
-"Asterisk directly, which may result in poor performance"
-msgstr "Asterisk Manager Proxy не работает, FreePBX будет использовать Asterisk напрямую, "
-"что может привести к ухудшению производительности"
+#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:125
+msgid "Disk"
+msgstr ""
 
+#: /usr/src/freepbx/dashboard/sections/Blogs.class.php:32
+#: /usr/src/freepbx/dashboard/sections/Blogs.class.php:40
+msgid "Feed"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/views/main.php:6
+msgid "Frobulating"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/views/sections/overview.php:52
+msgid "Ignore This"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/views/sections/uptime.php:13
+msgid "Load Averages"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:124
+msgid "Memory"
+msgstr "Память"
+
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:134
 msgid "MySQL"
 msgstr "MySQL"
 
-msgid "MySQL Server is running"
-msgstr "MySQL сервер работает"
+#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:126
+msgid "Network"
+msgstr ""
 
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:94
+msgid "No critical issues found"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:16
+msgid "Overview"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:121
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:125
+msgid "Please check for errors in the notification section"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:103
+msgid "Security Issue"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/views/sections/overview.php:74
+msgid "Show All"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/views/sections/overview.php:76
+msgid "Show New"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/sections/Statistics.class.php:27
+#: /usr/src/freepbx/dashboard/sections/Statistics.class.php:28
+#: /usr/src/freepbx/dashboard/sections/Uptime.class.php:16
+msgid "Statistics"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/views/sections/overview.php:22
+msgid "Summary"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/views/sections/overview.php:35
+#, php-format
+msgid "SysInfo updated %s seconds ago"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:92
+msgid "System Alerts"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/views/sections/uptime.php:5
+msgid "System Last Rebooted"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:15
+msgid "System Overview"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:104
+msgid "This is a critical issue and should be resolved urgently"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:121
+#: /usr/src/freepbx/dashboard/sections/Uptime.class.php:15
+msgid "Uptime"
+msgstr "Время запуска"
+
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:126
+msgid "Warnings Found"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/sections/Overview.class.php:135
 msgid "Web Server"
 msgstr "Вэб сервер"
 
-msgid "Web Server is running"
-msgstr "Web Server работает"
-
-msgid "SSH Server"
-msgstr "Сервер SSH"
-
-msgid "SSH Server is running"
-msgstr "SSH Server работает"
-
-msgid ""
-"SSH Server is not running, you will not be able to connect to the system "
-"console remotely"
-msgstr "SSH Server не работает, Вы не сможете подключаться к системной консоли удаленно"
-
-msgid "Critical Error"
-msgstr "Критическая ошибка"
-
-msgid "Security Update"
-msgstr "Обновление безопасности"
-
-msgid "Update"
-msgstr "Обновление"
-
-msgid "Error"
-msgstr "Ошибка"
-
-msgid "Warning"
-msgstr "Предупреждение"
-
-msgid "Notice"
-msgstr "Уведомление"
-
-msgid "FreePBX Notices"
-msgstr "FreePBX сообщения"
-
-msgid "Delete this"
-msgstr "Удалите это"
-
-msgid "Ignore this"
-msgstr "Вы можете не обращать внимание на это"
-
+#: /usr/src/freepbx/dashboard/views/main.php:3
+#: /usr/src/freepbx/dashboard/views/sections/overview.php:6
 #, php-format
-msgid "Added %s ago"
-msgstr "Добавлено %s назад"
+msgid "Welcome to %s"
+msgstr ""
 
-msgid "No notifications"
-msgstr "Уведомлений нет"
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:15
+msgid "day"
+msgstr "день"
 
-msgid "No new notifications"
-msgstr "Нет новых уведомлений"
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:16
+msgid "days"
+msgstr "дней"
 
-msgid "show new"
-msgstr "показать новых"
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:17
+msgid "hour"
+msgstr "час"
 
-msgid "show all"
-msgstr "показать все"
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:18
+msgid "hours"
+msgstr "часов"
 
-msgid "loading..."
-msgstr "грузимся..."
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:19
+msgid "minute"
+msgstr "минута"
+
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:20
+msgid "minutes"
+msgstr "минут"
+
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:11
+msgid "month"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:12
+msgid "months"
+msgstr ""
+
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:21
+msgid "second"
+msgstr "секунда"
+
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:22
+msgid "seconds"
+msgstr "секунды"
+
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:13
+msgid "week"
+msgstr "неделя"
+
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:14
+msgid "weeks"
+msgstr "недель"
+
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:9
+msgid "year"
+msgstr "год"
+
+#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:10
+msgid "years"
+msgstr "годы"
+
+#~ msgid "System Dashboard"
+#~ msgstr "Панель системы"
+
+#~ msgid "Reports"
+#~ msgstr "Отчеты"
+
+#~ msgid ""
+#~ "Provides a system information dashboard, showing information about Calls, "
+#~ "CPU, Memory, Disks, Network, and processes."
+#~ msgstr ""
+#~ "Отображает панель системной информации, информации о вызовах, загрузке "
+#~ "CPU, памяти, занятость дисков, сети и процессов"
+
+#~ msgid "FreePBX System Status"
+#~ msgstr "Статус системы FreePBX"
+
+#~ msgid "Dashboard Info Update Frequency"
+#~ msgstr "Частота обновления информации системной панели"
+
+#~ msgid "GUI Behavior"
+#~ msgstr "поведение интерфейса"
+
+#~ msgid ""
+#~ "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr ""
+#~ "Интервал обновления в секундах в секции Инфо панели 'Статус Системы'."
+
+#~ msgid "Dashboard Max Calls Initial Scale"
+#~ msgstr "Начальная шкала максимального количества вызовов в панели"
+
+#~ msgid ""
+#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
+#~ "If not set, the the scale is dynamically sized based on the active calls "
+#~ "on the system."
+#~ msgstr ""
+#~ "Используйте этот параметр для установки шкалы максимального количества "
+#~ "звонков на панели. Если не установлено, шкала будет установлена "
+#~ "автоматически в зависимости от количества звонков в системе"
+
+#~ msgid "Dashboard Stats Update Frequency"
+#~ msgstr "Частота обновления статистики в панели системной информации"
+
+#~ msgid ""
+#~ "Update rate in seconds of all sections of the System Status panel except "
+#~ "the Info box."
+#~ msgstr ""
+#~ "Интервал обновления в секундах всех секций в панели Статуса Системы кроме "
+#~ "окна Информации"
+
+#~ msgid "Dashboard Non-Std SSH Port"
+#~ msgstr "Нестандартный SSH порт системной панели"
+
+#~ msgid "System Setup"
+#~ msgstr "Настройка Системы"
+
+#~ msgid ""
+#~ "SSH port number configured on your system if not using the default port "
+#~ "22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr ""
+#~ "Номер SSH порта, если не используется стандартный порт 22. Данная "
+#~ "настройка позволяет монитору панели обращаться на правильный порт"
+
+#~ msgid "%s changed from %s to %s"
+#~ msgstr "%s изменено с %s на %s"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Warn"
+#~ msgstr "Ого!"
+
+#~ msgid "ERROR"
+#~ msgstr "Ошибка"
+
+#~ msgid "Disabled"
+#~ msgstr "Запрещено"
+
+#~ msgid "System Statistics"
+#~ msgstr "Статистика Системы"
+
+#~ msgid "Processor"
+#~ msgstr "Процессор"
+
+#~ msgid "Load Average"
+#~ msgstr "Средняя загрузка"
+
+#~ msgid "App Memory"
+#~ msgstr "Занято приложениями"
+
+#~ msgid "Swap"
+#~ msgstr "Файл подкачки"
+
+#~ msgid "Disks"
+#~ msgstr "Дисковая подсистема"
+
+#~ msgid "Networks"
+#~ msgstr "Сеть"
+
+#~ msgid "receive"
+#~ msgstr "получено"
+
+#~ msgid "transmit"
+#~ msgstr "передано"
+
+#~ msgid "FreePBX Statistics"
+#~ msgstr "FreePBX Статистика"
+
+#~ msgid "Total active calls"
+#~ msgstr "Активных звонков - всего"
+
+#~ msgid "Internal calls"
+#~ msgstr "Внутренних звонков"
+
+#~ msgid "External calls"
+#~ msgstr "Внешних звонков"
+
+#~ msgid "Total active channels"
+#~ msgstr "Активных каналов - всего"
+
+#~ msgid "FreePBX Connections"
+#~ msgstr "Соединений FreePBX"
+
+#~ msgid "IP Phones Online"
+#~ msgstr "ИП Телефонов в онлайне"
+
+#~ msgid "IP Trunks Online"
+#~ msgstr "IP транков в онлайне"
+
+#~ msgid "IP Trunk Registrations"
+#~ msgstr "Регистраций ИП транков"
+
+#~ msgid "System Information Table"
+#~ msgstr "Талица системной информации"
+
+#~ msgid "System Uptime"
+#~ msgstr "Система жива"
+
+#~ msgid "Asterisk Uptime"
+#~ msgstr "Asterisk жив"
+
+#~ msgid "Last Reload"
+#~ msgstr "Перезагружался"
+
+#~ msgid "Server Status"
+#~ msgstr "Состояние сервера"
+
+#~ msgid "Asterisk is running: %s"
+#~ msgstr "Asterisk работает: %s"
+
+#~ msgid "Asterisk is not running, this is a critical service!"
+#~ msgstr "Asterisk не работает, это критично!"
+
+#~ msgid "Manager Proxy"
+#~ msgstr "Прокси менеджер"
+
+#~ msgid "Asterisk Manager Proxy is running"
+#~ msgstr "Asterisk Manager Proxy работает"
+
+#~ msgid ""
+#~ "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
+#~ "Asterisk directly, which may result in poor performance"
+#~ msgstr ""
+#~ "Asterisk Manager Proxy не работает, FreePBX будет использовать Asterisk "
+#~ "напрямую, что может привести к ухудшению производительности"
+
+#~ msgid "MySQL Server is running"
+#~ msgstr "MySQL сервер работает"
+
+#~ msgid "Web Server is running"
+#~ msgstr "Web Server работает"
+
+#~ msgid "SSH Server"
+#~ msgstr "Сервер SSH"
+
+#~ msgid "SSH Server is running"
+#~ msgstr "SSH Server работает"
+
+#~ msgid ""
+#~ "SSH Server is not running, you will not be able to connect to the system "
+#~ "console remotely"
+#~ msgstr ""
+#~ "SSH Server не работает, Вы не сможете подключаться к системной консоли "
+#~ "удаленно"
+
+#~ msgid "Critical Error"
+#~ msgstr "Критическая ошибка"
+
+#~ msgid "Security Update"
+#~ msgstr "Обновление безопасности"
+
+#~ msgid "Update"
+#~ msgstr "Обновление"
+
+#~ msgid "Error"
+#~ msgstr "Ошибка"
+
+#~ msgid "Warning"
+#~ msgstr "Предупреждение"
+
+#~ msgid "Notice"
+#~ msgstr "Уведомление"
+
+#~ msgid "FreePBX Notices"
+#~ msgstr "FreePBX сообщения"
+
+#~ msgid "Delete this"
+#~ msgstr "Удалите это"
+
+#~ msgid "Ignore this"
+#~ msgstr "Вы можете не обращать внимание на это"
+
+#~ msgid "Added %s ago"
+#~ msgstr "Добавлено %s назад"
+
+#~ msgid "No notifications"
+#~ msgstr "Уведомлений нет"
+
+#~ msgid "No new notifications"
+#~ msgstr "Нет новых уведомлений"
+
+#~ msgid "show new"
+#~ msgstr "показать новых"
+
+#~ msgid "show all"
+#~ msgstr "показать все"
+
+#~ msgid "loading..."
+#~ msgstr "грузимся..."
 
 #~ msgid "Op Panel"
 #~ msgstr "Панель Оператора"
