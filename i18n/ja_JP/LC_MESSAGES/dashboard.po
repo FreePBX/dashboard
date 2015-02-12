@@ -38,38 +38,38 @@ msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-11 17:43-0500\n"
-"PO-Revision-Date: 2014-06-03 16:12+0200\n"
+"PO-Revision-Date: 2015-02-12 10:28+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
-"Language-Team: Japanese <http://git.freepbx.org/projects/freepbx/dashboard/"
-"ja/>\n"
+"Language-Team: Japanese "
+"<http://git.freepbx.org/projects/freepbx/dashboard/ja_JP/>\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 1.9-dev\n"
+"X-Generator: Weblate 2.1\n"
 
 #: /usr/src/freepbx/dashboard/views/sections/overview.php:65
 #: /usr/src/freepbx/dashboard/views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
-msgstr ""
+msgstr "%s 前"
 
 #: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:23
 msgid "0 seconds"
-msgstr ""
+msgstr "0秒"
 
 #: /usr/src/freepbx/dashboard/views/sections/uptime.php:16
 msgid "1 Minute"
-msgstr ""
+msgstr "1分"
 
 #: /usr/src/freepbx/dashboard/views/sections/uptime.php:22
 msgid "15 Minutes"
-msgstr ""
+msgstr "15分"
 
 #: /usr/src/freepbx/dashboard/views/sections/uptime.php:19
 msgid "5 Minutes"
-msgstr ""
+msgstr "5分"
 
 #: /usr/src/freepbx/dashboard/classes/Statistics.class.php:122
 #: /usr/src/freepbx/dashboard/sections/Overview.class.php:133
@@ -79,7 +79,7 @@ msgstr "Asterisk"
 #: /usr/src/freepbx/dashboard/sections/Blogs.class.php:33
 #: /usr/src/freepbx/dashboard/sections/Blogs.class.php:41
 msgid "Blogs"
-msgstr ""
+msgstr "ブログ"
 
 #: /usr/src/freepbx/dashboard/classes/Statistics.class.php:123
 msgid "CPU"
@@ -87,20 +87,20 @@ msgstr "CPU"
 
 #: /usr/src/freepbx/dashboard/sections/Overview.class.php:122
 msgid "Critical Errors found"
-msgstr ""
+msgstr "致命的なエラーが見つかりました"
 
 #: /usr/src/freepbx/dashboard/views/sections/overview.php:53
 msgid "Delete This"
-msgstr ""
+msgstr "削除する"
 
 #: /usr/src/freepbx/dashboard/classes/Statistics.class.php:125
 msgid "Disk"
-msgstr ""
+msgstr "ディスク"
 
 #: /usr/src/freepbx/dashboard/sections/Blogs.class.php:32
 #: /usr/src/freepbx/dashboard/sections/Blogs.class.php:40
 msgid "Feed"
-msgstr ""
+msgstr "フィード"
 
 #: /usr/src/freepbx/dashboard/views/main.php:6
 msgid "Frobulating"
