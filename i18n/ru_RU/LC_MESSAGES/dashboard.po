@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-11 17:43-0500\n"
+"POT-Creation-Date: 2015-02-20 19:18-0500\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -32,226 +32,225 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /usr/src/freepbx/dashboard/views/sections/overview.php:65
-#: /usr/src/freepbx/dashboard/views/sections/uptime.php:6
+#: views/sections/overview.php:65 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:23
+#: classes/TimeUtils.class.php:23
 msgid "0 seconds"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/sections/uptime.php:16
+#: views/sections/uptime.php:16
 msgid "1 Minute"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/sections/uptime.php:22
+#: views/sections/uptime.php:22
 msgid "15 Minutes"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/sections/uptime.php:19
+#: views/sections/uptime.php:19
 msgid "5 Minutes"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:122
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:133
+#: classes/Statistics.class.php:122 sections/Overview.class.php:133
 msgid "Asterisk"
 msgstr "Asterisk"
 
-#: /usr/src/freepbx/dashboard/sections/Blogs.class.php:33
-#: /usr/src/freepbx/dashboard/sections/Blogs.class.php:41
+#: sections/Blogs.class.php:33 sections/Blogs.class.php:41
 msgid "Blogs"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:123
+#: classes/Statistics.class.php:123
 msgid "CPU"
 msgstr "ЦПУ"
 
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:122
+#: sections/Overview.class.php:122
 msgid "Critical Errors found"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/sections/overview.php:53
+#: views/sections/overview.php:53
 msgid "Delete This"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:125
+#: classes/Statistics.class.php:125
 msgid "Disk"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/sections/Blogs.class.php:32
-#: /usr/src/freepbx/dashboard/sections/Blogs.class.php:40
+#: sections/Blogs.class.php:32 sections/Blogs.class.php:40
 msgid "Feed"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/main.php:6
+#: views/main.php:6
 msgid "Frobulating"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/sections/overview.php:52
+#: views/sections/overview.php:52
 msgid "Ignore This"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/sections/uptime.php:13
+#: views/sections/uptime.php:13
 msgid "Load Averages"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:124
+#: classes/Statistics.class.php:124
 msgid "Memory"
 msgstr "Память"
 
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:134
+#: sections/Overview.class.php:134
 msgid "MySQL"
 msgstr "MySQL"
 
-#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:126
+#: classes/Statistics.class.php:126
 msgid "Network"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:94
+#: sections/Overview.class.php:94
 msgid "No critical issues found"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:16
+#: sections/Overview.class.php:16
 msgid "Overview"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:121
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:125
+#: sections/Overview.class.php:121 sections/Overview.class.php:125
 msgid "Please check for errors in the notification section"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:103
+#: dashboard.i18n.php:5
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"Отображает панель системной информации, информации о вызовах, загрузке CPU, "
+"памяти, занятость дисков, сети и процессов"
+
+#: dashboard.i18n.php:4
+msgid "Reports"
+msgstr "Отчеты"
+
+#: sections/Overview.class.php:103
 msgid "Security Issue"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/sections/overview.php:74
+#: views/sections/overview.php:74
 msgid "Show All"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/sections/overview.php:76
+#: views/sections/overview.php:76
 msgid "Show New"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/sections/Statistics.class.php:27
-#: /usr/src/freepbx/dashboard/sections/Statistics.class.php:28
-#: /usr/src/freepbx/dashboard/sections/Uptime.class.php:16
+#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
+#: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/sections/overview.php:22
+#: views/sections/overview.php:22
 msgid "Summary"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/sections/overview.php:35
+#: views/sections/overview.php:35
 #, php-format
 msgid "SysInfo updated %s seconds ago"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:92
+#: sections/Overview.class.php:92
 msgid "System Alerts"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/views/sections/uptime.php:5
+#: dashboard.i18n.php:3
+msgid "System Dashboard"
+msgstr "Панель системы"
+
+#: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:15
+#: sections/Overview.class.php:15
 msgid "System Overview"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:104
+#: dashboard.i18n.php:6
+msgid "System Status"
+msgstr ""
+
+#: sections/Overview.class.php:104
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/classes/Statistics.class.php:121
-#: /usr/src/freepbx/dashboard/sections/Uptime.class.php:15
+#: classes/Statistics.class.php:121 sections/Uptime.class.php:15
 msgid "Uptime"
 msgstr "Время запуска"
 
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:126
+#: sections/Overview.class.php:126
 msgid "Warnings Found"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/sections/Overview.class.php:135
+#: sections/Overview.class.php:135
 msgid "Web Server"
 msgstr "Вэб сервер"
 
-#: /usr/src/freepbx/dashboard/views/main.php:3
-#: /usr/src/freepbx/dashboard/views/sections/overview.php:6
+#: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:15
+#: classes/TimeUtils.class.php:15
 msgid "day"
 msgstr "день"
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:16
+#: classes/TimeUtils.class.php:16
 msgid "days"
 msgstr "дней"
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:17
+#: classes/TimeUtils.class.php:17
 msgid "hour"
 msgstr "час"
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:18
+#: classes/TimeUtils.class.php:18
 msgid "hours"
 msgstr "часов"
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:19
+#: classes/TimeUtils.class.php:19
 msgid "minute"
 msgstr "минута"
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:20
+#: classes/TimeUtils.class.php:20
 msgid "minutes"
 msgstr "минут"
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:11
+#: classes/TimeUtils.class.php:11
 msgid "month"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:12
+#: classes/TimeUtils.class.php:12
 msgid "months"
 msgstr ""
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:21
+#: classes/TimeUtils.class.php:21
 msgid "second"
 msgstr "секунда"
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:22
+#: classes/TimeUtils.class.php:22
 msgid "seconds"
 msgstr "секунды"
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:13
+#: classes/TimeUtils.class.php:13
 msgid "week"
 msgstr "неделя"
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:14
+#: classes/TimeUtils.class.php:14
 msgid "weeks"
 msgstr "недель"
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:9
+#: classes/TimeUtils.class.php:9
 msgid "year"
 msgstr "год"
 
-#: /usr/src/freepbx/dashboard/classes/TimeUtils.class.php:10
+#: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "годы"
-
-#~ msgid "System Dashboard"
-#~ msgstr "Панель системы"
-
-#~ msgid "Reports"
-#~ msgstr "Отчеты"
-
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "Отображает панель системной информации, информации о вызовах, загрузке "
-#~ "CPU, памяти, занятость дисков, сети и процессов"
 
 #~ msgid "FreePBX System Status"
 #~ msgstr "Статус системы FreePBX"
