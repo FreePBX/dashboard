@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>12.0.21</version>
+	<version>12.0.22</version>
 	<publisher>FreePBX</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,6 +20,7 @@
 		<module>core ge 12.0.1beta11</module>
 	</depends>
 	<changelog>
+		*12.0.22* Make RSS feeds more resilient
 		*12.0.21* FREEPBX-8184 Cant remove feeds from dashboard
 		*12.0.20* Better messages
 		*12.0.19* Make this 12 compatible with hooks
