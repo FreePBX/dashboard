@@ -1,0 +1,237 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for dashboard
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-27 20:50-0500\n"
+"PO-Revision-Date: 2015-02-20 19:18-0500\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+
+#: views/sections/overview.php:65 views/sections/uptime.php:6
+#, php-format
+msgid "%s ago"
+msgstr ""
+
+#: classes/TimeUtils.class.php:23
+msgid "0 seconds"
+msgstr ""
+
+#: views/sections/uptime.php:16
+msgid "1 Minute"
+msgstr ""
+
+#: views/sections/uptime.php:22
+msgid "15 Minutes"
+msgstr ""
+
+#: views/sections/uptime.php:19
+msgid "5 Minutes"
+msgstr ""
+
+#: classes/Statistics.class.php:122 sections/Overview.class.php:133
+msgid "Asterisk"
+msgstr "Asterisk"
+
+#: sections/Blogs.class.php:34 sections/Blogs.class.php:42
+msgid "Blogs"
+msgstr ""
+
+#: classes/Statistics.class.php:123
+msgid "CPU"
+msgstr "CPU"
+
+#: sections/Overview.class.php:122
+msgid "Critical Errors found"
+msgstr ""
+
+#: views/sections/overview.php:53
+msgid "Delete This"
+msgstr ""
+
+#: classes/Statistics.class.php:125
+msgid "Disk"
+msgstr ""
+
+#: sections/Blogs.class.php:33 sections/Blogs.class.php:41
+msgid "Feed"
+msgstr ""
+
+#: views/main.php:6
+msgid "Frobulating"
+msgstr ""
+
+#: views/sections/overview.php:52
+msgid "Ignore This"
+msgstr ""
+
+#: views/sections/uptime.php:13
+msgid "Load Averages"
+msgstr ""
+
+#: classes/Statistics.class.php:124
+msgid "Memory"
+msgstr "内存"
+
+#: sections/Overview.class.php:134
+msgid "MySQL"
+msgstr "MySQL"
+
+#: classes/Statistics.class.php:126
+msgid "Network"
+msgstr ""
+
+#: sections/Overview.class.php:94
+msgid "No critical issues found"
+msgstr ""
+
+#: sections/Overview.class.php:16
+msgid "Overview"
+msgstr ""
+
+#: sections/Overview.class.php:121 sections/Overview.class.php:125
+msgid "Please check for errors in the notification section"
+msgstr ""
+
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+
+#: dashboard.i18n.php:6 dashboard.i18n.php:12
+msgid "Reports"
+msgstr ""
+
+#: sections/Overview.class.php:103
+msgid "Security Issue"
+msgstr ""
+
+#: views/sections/overview.php:74
+msgid "Show All"
+msgstr ""
+
+#: views/sections/overview.php:76
+msgid "Show New"
+msgstr ""
+
+#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
+#: sections/Uptime.class.php:16
+msgid "Statistics"
+msgstr ""
+
+#: views/sections/overview.php:22
+msgid "Summary"
+msgstr ""
+
+#: views/sections/overview.php:35
+#, php-format
+msgid "SysInfo updated %s seconds ago"
+msgstr ""
+
+#: sections/Overview.class.php:92
+msgid "System Alerts"
+msgstr ""
+
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "系统状态"
+
+#: views/sections/uptime.php:5
+msgid "System Last Rebooted"
+msgstr ""
+
+#: sections/Overview.class.php:15
+msgid "System Overview"
+msgstr ""
+
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr ""
+
+#: sections/Overview.class.php:104
+msgid "This is a critical issue and should be resolved urgently"
+msgstr ""
+
+#: classes/Statistics.class.php:121 sections/Uptime.class.php:15
+msgid "Uptime"
+msgstr "已运行时间"
+
+#: sections/Overview.class.php:126
+msgid "Warnings Found"
+msgstr ""
+
+#: sections/Overview.class.php:135
+msgid "Web Server"
+msgstr "Web服务器"
+
+#: views/main.php:3 views/sections/overview.php:6
+#, php-format
+msgid "Welcome to %s"
+msgstr ""
+
+#: classes/TimeUtils.class.php:15
+msgid "day"
+msgstr "天"
+
+#: classes/TimeUtils.class.php:16
+msgid "days"
+msgstr "天"
+
+#: classes/TimeUtils.class.php:17
+msgid "hour"
+msgstr "小时"
+
+#: classes/TimeUtils.class.php:18
+msgid "hours"
+msgstr "小时"
+
+#: classes/TimeUtils.class.php:19
+msgid "minute"
+msgstr "分钟"
+
+#: classes/TimeUtils.class.php:20
+msgid "minutes"
+msgstr "分钟"
+
+#: classes/TimeUtils.class.php:11
+msgid "month"
+msgstr ""
+
+#: classes/TimeUtils.class.php:12
+msgid "months"
+msgstr ""
+
+#: classes/TimeUtils.class.php:21
+msgid "second"
+msgstr "秒"
+
+#: classes/TimeUtils.class.php:22
+msgid "seconds"
+msgstr "秒"
+
+#: classes/TimeUtils.class.php:13
+msgid "week"
+msgstr "星期"
+
+#: classes/TimeUtils.class.php:14
+msgid "weeks"
+msgstr "星期"
+
+#: classes/TimeUtils.class.php:9
+msgid "year"
+msgstr "年"
+
+#: classes/TimeUtils.class.php:10
+msgid "years"
+msgstr "年"

@@ -12,6 +12,7 @@ class Blogs {
 
 	public function __construct() {
 		$feeds = \FreePBX::Config()->get('RSSFEEDS');
+		$feeds = str_replace("\r","",$feeds);
 		if(!empty($feeds)) {
 			$feeds = explode("\n",$feeds);
 			$i = 0;
@@ -81,14 +82,7 @@ class Blogs {
 			$items = array();
 			$limit = 5;
 			$c = 0;
-			foreach($doc->channel->item as $item) {
-				if($c == $limit) {
-					break;
-				}
-				$items[] = json_decode(json_encode($item),true);
-				$c++;
-			}
-			return load_view(dirname(__DIR__).'/views/sections/blog.php',array("items" => $items));
+			return load_view(dirname(__DIR__).'/views/sections/blog.php',array("items" => $doc->channel->item, "limit" => 5));
 		}
 	}
 
