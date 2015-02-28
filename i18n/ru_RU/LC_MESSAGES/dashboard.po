@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:18-0500\n"
+"POT-Creation-Date: 2015-02-27 20:50-0500\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -57,7 +57,7 @@ msgstr ""
 msgid "Asterisk"
 msgstr "Asterisk"
 
-#: sections/Blogs.class.php:33 sections/Blogs.class.php:41
+#: sections/Blogs.class.php:34 sections/Blogs.class.php:42
 msgid "Blogs"
 msgstr ""
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Disk"
 msgstr ""
 
-#: sections/Blogs.class.php:32 sections/Blogs.class.php:40
+#: sections/Blogs.class.php:33 sections/Blogs.class.php:41
 msgid "Feed"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Please check for errors in the notification section"
 msgstr ""
 
-#: dashboard.i18n.php:5
+#: dashboard.i18n.php:8
 msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
@@ -125,7 +125,7 @@ msgstr ""
 "Отображает панель системной информации, информации о вызовах, загрузке CPU, "
 "памяти, занятость дисков, сети и процессов"
 
-#: dashboard.i18n.php:4
+#: dashboard.i18n.php:6 dashboard.i18n.php:12
 msgid "Reports"
 msgstr "Отчеты"
 
@@ -159,7 +159,7 @@ msgstr ""
 msgid "System Alerts"
 msgstr ""
 
-#: dashboard.i18n.php:3
+#: dashboard.i18n.php:4
 msgid "System Dashboard"
 msgstr "Панель системы"
 
@@ -171,7 +171,7 @@ msgstr ""
 msgid "System Overview"
 msgstr ""
 
-#: dashboard.i18n.php:6
+#: dashboard.i18n.php:10
 msgid "System Status"
 msgstr ""
 
