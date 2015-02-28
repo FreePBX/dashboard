@@ -38,16 +38,16 @@ msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:18-0500\n"
-"PO-Revision-Date: 2015-02-12 10:28+0200\n"
+"PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
-"Language-Team: Japanese <http://git.freepbx.org/projects/freepbx/dashboard/"
-"ja_JP/>\n"
+"Language-Team: Japanese "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/ja_JP/>\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.1\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: views/sections/overview.php:65 views/sections/uptime.php:6
 #, php-format
@@ -104,11 +104,11 @@ msgstr ""
 
 #: views/sections/overview.php:52
 msgid "Ignore This"
-msgstr ""
+msgstr "無視する"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
-msgstr ""
+msgstr "ロードアベレージ"
 
 #: classes/Statistics.class.php:124
 msgid "Memory"
@@ -120,19 +120,19 @@ msgstr "MySQLサーバー"
 
 #: classes/Statistics.class.php:126
 msgid "Network"
-msgstr ""
+msgstr "ネットワーク"
 
 #: sections/Overview.class.php:94
 msgid "No critical issues found"
-msgstr ""
+msgstr "クリティカルな問題は見つかりませんでした"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
-msgstr ""
+msgstr "一覧"
 
 #: sections/Overview.class.php:121 sections/Overview.class.php:125
 msgid "Please check for errors in the notification section"
-msgstr ""
+msgstr "通知セクションでエラーを確認してください"
 
 #: dashboard.i18n.php:5
 msgid ""
@@ -148,33 +148,33 @@ msgstr "レポート"
 
 #: sections/Overview.class.php:103
 msgid "Security Issue"
-msgstr ""
+msgstr "セキュリティ問題"
 
 #: views/sections/overview.php:74
 msgid "Show All"
-msgstr ""
+msgstr "全て表示"
 
 #: views/sections/overview.php:76
 msgid "Show New"
-msgstr ""
+msgstr "新規を表示"
 
 #: sections/Statistics.class.php:27 sections/Statistics.class.php:28
 #: sections/Uptime.class.php:16
 msgid "Statistics"
-msgstr ""
+msgstr "統計"
 
 #: views/sections/overview.php:22
 msgid "Summary"
-msgstr ""
+msgstr "サマリー"
 
 #: views/sections/overview.php:35
 #, php-format
 msgid "SysInfo updated %s seconds ago"
-msgstr ""
+msgstr "%s 秒前にシステム情報を更新済み"
 
 #: sections/Overview.class.php:92
 msgid "System Alerts"
-msgstr ""
+msgstr "システム通知"
 
 #: dashboard.i18n.php:3
 msgid "System Dashboard"
@@ -182,19 +182,19 @@ msgstr "システムダッシュボード"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr ""
+msgstr "最後の再起動"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr ""
+msgstr "システム一覧"
 
 #: dashboard.i18n.php:6
 msgid "System Status"
-msgstr ""
+msgstr "システムステータス"
 
 #: sections/Overview.class.php:104
 msgid "This is a critical issue and should be resolved urgently"
-msgstr ""
+msgstr "クリティカルな問題であるため速やかに解決する必要があります"
 
 #: classes/Statistics.class.php:121 sections/Uptime.class.php:15
 msgid "Uptime"
@@ -202,7 +202,7 @@ msgstr "稼働時間"
 
 #: sections/Overview.class.php:126
 msgid "Warnings Found"
-msgstr ""
+msgstr "通知が見つかりました"
 
 #: sections/Overview.class.php:135
 msgid "Web Server"
@@ -211,7 +211,7 @@ msgstr "Webサーバー"
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
-msgstr ""
+msgstr "%s へようこそ"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
@@ -239,11 +239,11 @@ msgstr "分"
 
 #: classes/TimeUtils.class.php:11
 msgid "month"
-msgstr ""
+msgstr "ヶ月"
 
 #: classes/TimeUtils.class.php:12
 msgid "months"
-msgstr ""
+msgstr "ヶ月"
 
 #: classes/TimeUtils.class.php:21
 msgid "second"
