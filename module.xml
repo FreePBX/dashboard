@@ -20,6 +20,7 @@
 		<module>core ge 12.0.1beta11</module>
 	</depends>
 	<changelog>
+		*12.0.23* Fix permissions
 		*12.0.22* Make RSS feeds more resilient
 		*12.0.21* FREEPBX-8184 Cant remove feeds from dashboard
 		*12.0.20* Better messages
