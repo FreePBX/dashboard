@@ -42,6 +42,11 @@
 		*12.0.2* Visuals
 		*12.0.1* Initial checkin of new dashboard for FreePBX 12!
 	</changelog>
+	<hooks>
+		<framework namespace="FreePBX\Console\Command" class="Chown">
+			<method class="Dashboard" callingMethod="fwcChownFiles">chownFreepbx</method>
+		</framework>
+	</hooks>
 	<supported>
 		<version>13.0</version>
 	</supported>

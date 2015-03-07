@@ -88,6 +88,17 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		return true;
 	}
 
+	/**
+	* Chown hook for freepbx fwconsole
+	*/
+	public function chownFreepbx() {
+		$files = array();
+		$files[] = array('type' => 'file',
+												'path' => __DIR__."/scheduler.php",
+												'perms' => 0755);
+		return $files;
+	}
+
 	public function ajaxHandler() {
 		if (!class_exists('DashboardHooks')) {
 			include 'classes/DashboardHooks.class.php';
