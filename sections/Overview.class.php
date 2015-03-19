@@ -43,6 +43,7 @@ class Overview {
 
 		}
 
+		$getsi['timestamp'] = isset($getsi['timestamp']) ? $getsi['timestamp'] : time();
 		$since = time() - $getsi['timestamp'];
 		$notifications = $this->getNotifications((isset($_COOKIE['dashboardShowAll']) && $_COOKIE['dashboardShowAll'] == "true"));
 		$nots = $notifications['nots'];
