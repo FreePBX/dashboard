@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-27 20:50-0500\n"
+"POT-Creation-Date: 2015-03-18 22:23-0400\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -70,7 +70,7 @@ msgstr "15分"
 msgid "5 Minutes"
 msgstr "5分"
 
-#: classes/Statistics.class.php:122 sections/Overview.class.php:133
+#: classes/Statistics.class.php:122 sections/Overview.class.php:134
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -82,9 +82,13 @@ msgstr "ブログ"
 msgid "CPU"
 msgstr "CPU"
 
-#: sections/Overview.class.php:122
+#: sections/Overview.class.php:123
 msgid "Critical Errors found"
 msgstr "致命的なエラーが見つかりました"
+
+#: dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr ""
 
 #: views/sections/overview.php:53
 msgid "Delete This"
@@ -114,7 +118,7 @@ msgstr "ロードアベレージ"
 msgid "Memory"
 msgstr "メモリー"
 
-#: sections/Overview.class.php:134
+#: sections/Overview.class.php:135
 msgid "MySQL"
 msgstr "MySQLサーバー"
 
@@ -122,7 +126,7 @@ msgstr "MySQLサーバー"
 msgid "Network"
 msgstr "ネットワーク"
 
-#: sections/Overview.class.php:94
+#: sections/Overview.class.php:95
 msgid "No critical issues found"
 msgstr "クリティカルな問題は見つかりませんでした"
 
@@ -130,7 +134,7 @@ msgstr "クリティカルな問題は見つかりませんでした"
 msgid "Overview"
 msgstr "一覧"
 
-#: sections/Overview.class.php:121 sections/Overview.class.php:125
+#: sections/Overview.class.php:122 sections/Overview.class.php:126
 msgid "Please check for errors in the notification section"
 msgstr "通知セクションでエラーを確認してください"
 
@@ -142,11 +146,11 @@ msgstr ""
 "システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、ネッ"
 "トワークの負荷状況等を表示します。"
 
-#: dashboard.i18n.php:6 dashboard.i18n.php:12
+#: dashboard.i18n.php:6
 msgid "Reports"
 msgstr "レポート"
 
-#: sections/Overview.class.php:103
+#: sections/Overview.class.php:104
 msgid "Security Issue"
 msgstr "セキュリティ問題"
 
@@ -172,7 +176,7 @@ msgstr "サマリー"
 msgid "SysInfo updated %s seconds ago"
 msgstr "%s 秒前にシステム情報を更新済み"
 
-#: sections/Overview.class.php:92
+#: sections/Overview.class.php:93
 msgid "System Alerts"
 msgstr "システム通知"
 
@@ -188,11 +192,7 @@ msgstr "最後の再起動"
 msgid "System Overview"
 msgstr "システム一覧"
 
-#: dashboard.i18n.php:10
-msgid "System Status"
-msgstr "システムステータス"
-
-#: sections/Overview.class.php:104
+#: sections/Overview.class.php:105
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "クリティカルな問題であるため速やかに解決する必要があります"
 
@@ -200,11 +200,11 @@ msgstr "クリティカルな問題であるため速やかに解決する必要
 msgid "Uptime"
 msgstr "稼働時間"
 
-#: sections/Overview.class.php:126
+#: sections/Overview.class.php:127
 msgid "Warnings Found"
 msgstr "通知が見つかりました"
 
-#: sections/Overview.class.php:135
+#: sections/Overview.class.php:136
 msgid "Web Server"
 msgstr "Webサーバー"
 
@@ -268,6 +268,9 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
+
+#~ msgid "System Status"
+#~ msgstr "システムステータス"
 
 #~ msgid "OK"
 #~ msgstr "OK"
