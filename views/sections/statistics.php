@@ -6,21 +6,21 @@
 					Asterisk <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button">Hour</a></li>
-					<li><a href="#" class="graph-button">Day</a></li>
-					<li><a href="#" class="graph-button">Week</a></li>
-					<li><a href="#" class="graph-button">Month</a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="uptime">
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					Uptime <span class="caret"></span>
+					<?php echo _("Uptime")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button">Hour</a></li>
-					<li><a href="#" class="graph-button">Day</a></li>
-					<li><a href="#" class="graph-button">Week</a></li>
-					<li><a href="#" class="graph-button">Month</a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="cpuusage">
@@ -28,43 +28,43 @@
 					CPU <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button">Hour</a></li>
-					<li><a href="#" class="graph-button">Day</a></li>
-					<li><a href="#" class="graph-button">Week</a></li>
-					<li><a href="#" class="graph-button">Month</a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="memusage">
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					Memory <span class="caret"></span>
+					<?php echo _("Memory")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button">Hour</a></li>
-					<li><a href="#" class="graph-button">Day</a></li>
-					<li><a href="#" class="graph-button">Week</a></li>
-					<li><a href="#" class="graph-button">Month</a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="diskusage">
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					Disk <span class="caret"></span>
+					<?php echo _("Disk")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button">Hour</a></li>
-					<li><a href="#" class="graph-button">Day</a></li>
-					<li><a href="#" class="graph-button">Week</a></li>
-					<li><a href="#" class="graph-button">Month</a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="networking">
 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-					Network <span class="caret"></span>
+					<?php echo _("Network")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button">Hour</a></li>
-					<li><a href="#" class="graph-button">Day</a></li>
-					<li><a href="#" class="graph-button">Week</a></li>
-					<li><a href="#" class="graph-button">Month</a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 		</div>

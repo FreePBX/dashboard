@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-18 22:23-0400\n"
+"POT-Creation-Date: 2015-03-19 11:49-0400\n"
 "PO-Revision-Date: 2015-02-20 19:18-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "5 Minutes"
 msgstr ""
 
-#: classes/Statistics.class.php:122 sections/Overview.class.php:134
+#: classes/Statistics.class.php:122 sections/Overview.class.php:133
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -51,19 +51,21 @@ msgstr ""
 msgid "CPU"
 msgstr "CPU"
 
-#: sections/Overview.class.php:123
+#: sections/Overview.class.php:122
 msgid "Critical Errors found"
 msgstr ""
 
-#: dashboard.i18n.php:10
-msgid "Dashboard"
+#: views/sections/statistics.php:10 views/sections/statistics.php:21
+#: views/sections/statistics.php:32 views/sections/statistics.php:43
+#: views/sections/statistics.php:54 views/sections/statistics.php:65
+msgid "Day"
 msgstr ""
 
 #: views/sections/overview.php:53
 msgid "Delete This"
 msgstr ""
 
-#: classes/Statistics.class.php:125
+#: classes/Statistics.class.php:125 views/sections/statistics.php:50
 msgid "Disk"
 msgstr ""
 
@@ -75,6 +77,12 @@ msgstr ""
 msgid "Frobulating"
 msgstr ""
 
+#: views/sections/statistics.php:9 views/sections/statistics.php:20
+#: views/sections/statistics.php:31 views/sections/statistics.php:42
+#: views/sections/statistics.php:53 views/sections/statistics.php:64
+msgid "Hour"
+msgstr ""
+
 #: views/sections/overview.php:52
 msgid "Ignore This"
 msgstr ""
@@ -83,19 +91,25 @@ msgstr ""
 msgid "Load Averages"
 msgstr ""
 
-#: classes/Statistics.class.php:124
+#: classes/Statistics.class.php:124 views/sections/statistics.php:39
 msgid "Memory"
 msgstr "内存"
 
-#: sections/Overview.class.php:135
+#: views/sections/statistics.php:12 views/sections/statistics.php:23
+#: views/sections/statistics.php:34 views/sections/statistics.php:45
+#: views/sections/statistics.php:56 views/sections/statistics.php:67
+msgid "Month"
+msgstr ""
+
+#: sections/Overview.class.php:134
 msgid "MySQL"
 msgstr "MySQL"
 
-#: classes/Statistics.class.php:126
+#: classes/Statistics.class.php:126 views/sections/statistics.php:61
 msgid "Network"
 msgstr ""
 
-#: sections/Overview.class.php:95
+#: sections/Overview.class.php:94
 msgid "No critical issues found"
 msgstr ""
 
@@ -103,7 +117,7 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: sections/Overview.class.php:122 sections/Overview.class.php:126
+#: sections/Overview.class.php:121 sections/Overview.class.php:125
 msgid "Please check for errors in the notification section"
 msgstr ""
 
@@ -113,11 +127,11 @@ msgid ""
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
 
-#: dashboard.i18n.php:6
+#: dashboard.i18n.php:6 dashboard.i18n.php:12
 msgid "Reports"
 msgstr ""
 
-#: sections/Overview.class.php:104
+#: sections/Overview.class.php:103
 msgid "Security Issue"
 msgstr ""
 
@@ -143,7 +157,7 @@ msgstr ""
 msgid "SysInfo updated %s seconds ago"
 msgstr ""
 
-#: sections/Overview.class.php:93
+#: sections/Overview.class.php:92
 msgid "System Alerts"
 msgstr ""
 
@@ -159,21 +173,32 @@ msgstr ""
 msgid "System Overview"
 msgstr ""
 
-#: sections/Overview.class.php:105
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr ""
+
+#: sections/Overview.class.php:104
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
 #: classes/Statistics.class.php:121 sections/Uptime.class.php:15
+#: views/sections/statistics.php:17
 msgid "Uptime"
 msgstr "已运行时间"
 
-#: sections/Overview.class.php:127
+#: sections/Overview.class.php:126
 msgid "Warnings Found"
 msgstr ""
 
-#: sections/Overview.class.php:136
+#: sections/Overview.class.php:135
 msgid "Web Server"
 msgstr "Web服务器"
+
+#: views/sections/statistics.php:11 views/sections/statistics.php:22
+#: views/sections/statistics.php:33 views/sections/statistics.php:44
+#: views/sections/statistics.php:55 views/sections/statistics.php:66
+msgid "Week"
+msgstr ""
 
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format

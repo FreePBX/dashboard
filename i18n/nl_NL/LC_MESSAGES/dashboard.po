@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-19 11:49-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2015-02-27 20:50-0500\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: views/sections/overview.php:65
-#: views/sections/uptime.php:6
+#: views/sections/overview.php:65 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
 msgstr ""
@@ -39,13 +39,11 @@ msgstr ""
 msgid "5 Minutes"
 msgstr ""
 
-#: classes/Statistics.class.php:122
-#: sections/Overview.class.php:133
+#: classes/Statistics.class.php:122 sections/Overview.class.php:133
 msgid "Asterisk"
 msgstr ""
 
-#: sections/Blogs.class.php:34
-#: sections/Blogs.class.php:42
+#: sections/Blogs.class.php:34 sections/Blogs.class.php:42
 msgid "Blogs"
 msgstr ""
 
@@ -57,12 +55,9 @@ msgstr ""
 msgid "Critical Errors found"
 msgstr ""
 
-#: views/sections/statistics.php:10
-#: views/sections/statistics.php:21
-#: views/sections/statistics.php:32
-#: views/sections/statistics.php:43
-#: views/sections/statistics.php:54
-#: views/sections/statistics.php:65
+#: views/sections/statistics.php:10 views/sections/statistics.php:21
+#: views/sections/statistics.php:32 views/sections/statistics.php:43
+#: views/sections/statistics.php:54 views/sections/statistics.php:65
 msgid "Day"
 msgstr ""
 
@@ -70,13 +65,11 @@ msgstr ""
 msgid "Delete This"
 msgstr ""
 
-#: classes/Statistics.class.php:125
-#: views/sections/statistics.php:50
+#: classes/Statistics.class.php:125 views/sections/statistics.php:50
 msgid "Disk"
 msgstr ""
 
-#: sections/Blogs.class.php:33
-#: sections/Blogs.class.php:41
+#: sections/Blogs.class.php:33 sections/Blogs.class.php:41
 msgid "Feed"
 msgstr ""
 
@@ -84,12 +77,9 @@ msgstr ""
 msgid "Frobulating"
 msgstr ""
 
-#: views/sections/statistics.php:9
-#: views/sections/statistics.php:20
-#: views/sections/statistics.php:31
-#: views/sections/statistics.php:42
-#: views/sections/statistics.php:53
-#: views/sections/statistics.php:64
+#: views/sections/statistics.php:9 views/sections/statistics.php:20
+#: views/sections/statistics.php:31 views/sections/statistics.php:42
+#: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
 msgstr ""
 
@@ -101,17 +91,13 @@ msgstr ""
 msgid "Load Averages"
 msgstr ""
 
-#: classes/Statistics.class.php:124
-#: views/sections/statistics.php:39
+#: classes/Statistics.class.php:124 views/sections/statistics.php:39
 msgid "Memory"
 msgstr ""
 
-#: views/sections/statistics.php:12
-#: views/sections/statistics.php:23
-#: views/sections/statistics.php:34
-#: views/sections/statistics.php:45
-#: views/sections/statistics.php:56
-#: views/sections/statistics.php:67
+#: views/sections/statistics.php:12 views/sections/statistics.php:23
+#: views/sections/statistics.php:34 views/sections/statistics.php:45
+#: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
 msgstr ""
 
@@ -119,8 +105,7 @@ msgstr ""
 msgid "MySQL"
 msgstr ""
 
-#: classes/Statistics.class.php:126
-#: views/sections/statistics.php:61
+#: classes/Statistics.class.php:126 views/sections/statistics.php:61
 msgid "Network"
 msgstr ""
 
@@ -132,8 +117,7 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: sections/Overview.class.php:121
-#: sections/Overview.class.php:125
+#: sections/Overview.class.php:121 sections/Overview.class.php:125
 msgid "Please check for errors in the notification section"
 msgstr ""
 
@@ -143,8 +127,7 @@ msgid ""
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
 
-#: dashboard.i18n.php:6
-#: dashboard.i18n.php:12
+#: dashboard.i18n.php:6 dashboard.i18n.php:12
 msgid "Reports"
 msgstr ""
 
@@ -160,8 +143,7 @@ msgstr ""
 msgid "Show New"
 msgstr ""
 
-#: sections/Statistics.class.php:27
-#: sections/Statistics.class.php:28
+#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr ""
@@ -199,8 +181,7 @@ msgstr ""
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
-#: classes/Statistics.class.php:121
-#: sections/Uptime.class.php:15
+#: classes/Statistics.class.php:121 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
 msgstr ""
@@ -213,17 +194,13 @@ msgstr ""
 msgid "Web Server"
 msgstr ""
 
-#: views/sections/statistics.php:11
-#: views/sections/statistics.php:22
-#: views/sections/statistics.php:33
-#: views/sections/statistics.php:44
-#: views/sections/statistics.php:55
-#: views/sections/statistics.php:66
+#: views/sections/statistics.php:11 views/sections/statistics.php:22
+#: views/sections/statistics.php:33 views/sections/statistics.php:44
+#: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
 msgstr ""
 
-#: views/main.php:3
-#: views/sections/overview.php:6
+#: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
 msgstr ""
