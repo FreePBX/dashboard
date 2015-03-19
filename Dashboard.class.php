@@ -159,7 +159,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 
 		// PHP SysInfo requires 'php-xml'. If it doesn't exist,
 		// then we can't really do anything.
-		if (!class_exists('DOMDocument')) {
+		if (!class_exists('DOMDocument') || !extension_loaded('mbstring')) {
 			return false;
 		}
 

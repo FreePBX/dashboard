@@ -34,10 +34,12 @@ class Statistics {
 	}
 
 	public function getContent($section) {
-		if (class_exists('DOMDocument')) {
+		if (class_exists('DOMDocument') && extension_loaded('mbstring')) {
 			return load_view(dirname(__DIR__).'/views/sections/statistics.php');
-		} else {
+		} elseif(!class_exists('DOMDocument')) {
 			return load_view(dirname(__DIR__).'/views/sections/stats-no-phpxml.php');
+		} elseif(!extension_loaded('mbstring')) {
+			return load_view(dirname(__DIR__).'/views/sections/stats-no-mbstring.php');
 		}
 	}
 }
