@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-19 11:49-0400\n"
+"POT-Creation-Date: 2015-03-19 11:53-0400\n"
 "PO-Revision-Date: 2014-07-23 16:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/"
@@ -56,7 +56,7 @@ msgstr ""
 msgid "5 Minutes"
 msgstr ""
 
-#: classes/Statistics.class.php:122 sections/Overview.class.php:133
+#: classes/Statistics.class.php:122 sections/Overview.class.php:134
 msgid "Asterisk"
 msgstr "Астериск"
 
@@ -68,8 +68,12 @@ msgstr ""
 msgid "CPU"
 msgstr "CPU"
 
-#: sections/Overview.class.php:122
+#: sections/Overview.class.php:123
 msgid "Critical Errors found"
+msgstr ""
+
+#: dashboard.i18n.php:10
+msgid "Dashboard"
 msgstr ""
 
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
@@ -118,7 +122,7 @@ msgstr "Използвана Памет"
 msgid "Month"
 msgstr ""
 
-#: sections/Overview.class.php:134
+#: sections/Overview.class.php:135
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -126,7 +130,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr ""
 
-#: sections/Overview.class.php:94
+#: sections/Overview.class.php:95
 msgid "No critical issues found"
 msgstr ""
 
@@ -134,7 +138,7 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: sections/Overview.class.php:121 sections/Overview.class.php:125
+#: sections/Overview.class.php:122 sections/Overview.class.php:126
 msgid "Please check for errors in the notification section"
 msgstr ""
 
@@ -146,11 +150,11 @@ msgstr ""
 "Предоставя информация за системата, показва информация за Разговори, CPU, "
 "Памет, Твърд Диск, Мрежа и процеси."
 
-#: dashboard.i18n.php:6 dashboard.i18n.php:12
+#: dashboard.i18n.php:6
 msgid "Reports"
 msgstr "Отчети"
 
-#: sections/Overview.class.php:103
+#: sections/Overview.class.php:104
 msgid "Security Issue"
 msgstr ""
 
@@ -176,7 +180,7 @@ msgstr ""
 msgid "SysInfo updated %s seconds ago"
 msgstr ""
 
-#: sections/Overview.class.php:92
+#: sections/Overview.class.php:93
 msgid "System Alerts"
 msgstr ""
 
@@ -192,11 +196,7 @@ msgstr ""
 msgid "System Overview"
 msgstr ""
 
-#: dashboard.i18n.php:10
-msgid "System Status"
-msgstr ""
-
-#: sections/Overview.class.php:104
+#: sections/Overview.class.php:105
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
@@ -205,11 +205,11 @@ msgstr ""
 msgid "Uptime"
 msgstr "Експлоатация"
 
-#: sections/Overview.class.php:126
+#: sections/Overview.class.php:127
 msgid "Warnings Found"
 msgstr ""
 
-#: sections/Overview.class.php:135
+#: sections/Overview.class.php:136
 msgid "Web Server"
 msgstr "Уеб Сървър"
 
