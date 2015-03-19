@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-27 20:50-0500\n"
+"POT-Creation-Date: 2015-03-19 11:49-0400\n"
 "PO-Revision-Date: 2015-02-27 20:50-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -55,11 +55,17 @@ msgstr ""
 msgid "Critical Errors found"
 msgstr ""
 
+#: views/sections/statistics.php:10 views/sections/statistics.php:21
+#: views/sections/statistics.php:32 views/sections/statistics.php:43
+#: views/sections/statistics.php:54 views/sections/statistics.php:65
+msgid "Day"
+msgstr ""
+
 #: views/sections/overview.php:53
 msgid "Delete This"
 msgstr ""
 
-#: classes/Statistics.class.php:125
+#: classes/Statistics.class.php:125 views/sections/statistics.php:50
 msgid "Disk"
 msgstr ""
 
@@ -71,6 +77,12 @@ msgstr ""
 msgid "Frobulating"
 msgstr ""
 
+#: views/sections/statistics.php:9 views/sections/statistics.php:20
+#: views/sections/statistics.php:31 views/sections/statistics.php:42
+#: views/sections/statistics.php:53 views/sections/statistics.php:64
+msgid "Hour"
+msgstr ""
+
 #: views/sections/overview.php:52
 msgid "Ignore This"
 msgstr ""
@@ -79,15 +91,21 @@ msgstr ""
 msgid "Load Averages"
 msgstr ""
 
-#: classes/Statistics.class.php:124
+#: classes/Statistics.class.php:124 views/sections/statistics.php:39
 msgid "Memory"
+msgstr ""
+
+#: views/sections/statistics.php:12 views/sections/statistics.php:23
+#: views/sections/statistics.php:34 views/sections/statistics.php:45
+#: views/sections/statistics.php:56 views/sections/statistics.php:67
+msgid "Month"
 msgstr ""
 
 #: sections/Overview.class.php:134
 msgid "MySQL"
 msgstr ""
 
-#: classes/Statistics.class.php:126
+#: classes/Statistics.class.php:126 views/sections/statistics.php:61
 msgid "Network"
 msgstr ""
 
@@ -164,6 +182,7 @@ msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
 #: classes/Statistics.class.php:121 sections/Uptime.class.php:15
+#: views/sections/statistics.php:17
 msgid "Uptime"
 msgstr ""
 
@@ -173,6 +192,12 @@ msgstr ""
 
 #: sections/Overview.class.php:135
 msgid "Web Server"
+msgstr ""
+
+#: views/sections/statistics.php:11 views/sections/statistics.php:22
+#: views/sections/statistics.php:33 views/sections/statistics.php:44
+#: views/sections/statistics.php:55 views/sections/statistics.php:66
+msgid "Week"
 msgstr ""
 
 #: views/main.php:3 views/sections/overview.php:6
