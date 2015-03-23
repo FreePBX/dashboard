@@ -10,253 +10,262 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-03-19 11:49-0400\n"
-"PO-Revision-Date: 2015-02-27 20:50-0500\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2015-03-23 17:04+0200\n"
+"Last-Translator: Jan Peter <jpveldhuizen@gmail.com>\n"
+"Language-Team: Dutch "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/nl_NL/>\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: views/sections/overview.php:65 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
-msgstr ""
+msgstr "%s geleden"
 
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
-msgstr ""
+msgstr "0 seconden"
 
 #: views/sections/uptime.php:16
 msgid "1 Minute"
-msgstr ""
+msgstr "1 Minuut"
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
-msgstr ""
+msgstr "15 Minuten"
 
 #: views/sections/uptime.php:19
 msgid "5 Minutes"
-msgstr ""
+msgstr "5 Minuten"
 
 #: classes/Statistics.class.php:122 sections/Overview.class.php:133
 msgid "Asterisk"
-msgstr ""
+msgstr "Asterisk"
 
 #: sections/Blogs.class.php:34 sections/Blogs.class.php:42
 msgid "Blogs"
-msgstr ""
+msgstr "Blogs"
 
 #: classes/Statistics.class.php:123
 msgid "CPU"
-msgstr ""
+msgstr "Processor"
 
 #: sections/Overview.class.php:122
 msgid "Critical Errors found"
-msgstr ""
+msgstr "Kritieke fouten gevonden"
 
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
 msgid "Day"
-msgstr ""
+msgstr "Dag"
 
 #: views/sections/overview.php:53
 msgid "Delete This"
-msgstr ""
+msgstr "Verwijder dit"
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:50
 msgid "Disk"
-msgstr ""
+msgstr "Harde schijf"
 
 #: sections/Blogs.class.php:33 sections/Blogs.class.php:41
+#, fuzzy
 msgid "Feed"
-msgstr ""
+msgstr "Voeding"
 
 #: views/main.php:6
+#, fuzzy
 msgid "Frobulating"
-msgstr ""
+msgstr "Bijwerken"
 
 #: views/sections/statistics.php:9 views/sections/statistics.php:20
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
-msgstr ""
+msgstr "Uur"
 
 #: views/sections/overview.php:52
 msgid "Ignore This"
-msgstr ""
+msgstr "Negeer dit"
 
 #: views/sections/uptime.php:13
+#, fuzzy
 msgid "Load Averages"
-msgstr ""
+msgstr "Gemiddelde belasting"
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:39
 msgid "Memory"
-msgstr ""
+msgstr "Geheugen"
 
 #: views/sections/statistics.php:12 views/sections/statistics.php:23
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
-msgstr ""
+msgstr "Maand"
 
 #: sections/Overview.class.php:134
 msgid "MySQL"
-msgstr ""
+msgstr "MySQL"
 
 #: classes/Statistics.class.php:126 views/sections/statistics.php:61
 msgid "Network"
-msgstr ""
+msgstr "Netwerk"
 
 #: sections/Overview.class.php:94
 msgid "No critical issues found"
-msgstr ""
+msgstr "Geen kritieke problemen gevonden"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
-msgstr ""
+msgstr "Overzicht"
 
 #: sections/Overview.class.php:121 sections/Overview.class.php:125
 msgid "Please check for errors in the notification section"
-msgstr ""
+msgstr "Controleer de notificatie-sectie voor fouten"
 
 #: dashboard.i18n.php:8
 msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
+"Voorziet in een systeemoverzicht, met informatie over gesprekken, processor, "
+"geheugen, harde schijven, netwerk en processen."
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:12
 msgid "Reports"
-msgstr ""
+msgstr "Rapporten"
 
 #: sections/Overview.class.php:103
 msgid "Security Issue"
-msgstr ""
+msgstr "Beveiligingsprobleem"
 
 #: views/sections/overview.php:74
 msgid "Show All"
-msgstr ""
+msgstr "Alles tonen"
 
 #: views/sections/overview.php:76
 msgid "Show New"
-msgstr ""
+msgstr "Nieuwe tonen"
 
 #: sections/Statistics.class.php:27 sections/Statistics.class.php:28
 #: sections/Uptime.class.php:16
 msgid "Statistics"
-msgstr ""
+msgstr "Statistieken"
 
 #: views/sections/overview.php:22
 msgid "Summary"
-msgstr ""
+msgstr "Samenvatting"
 
 #: views/sections/overview.php:35
 #, php-format
 msgid "SysInfo updated %s seconds ago"
-msgstr ""
+msgstr "Systeeminformatie %s seconden geleden geüpdatet"
 
 #: sections/Overview.class.php:92
+#, fuzzy
 msgid "System Alerts"
-msgstr ""
+msgstr "Systeem alarmen"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
-msgstr ""
+msgstr "Systeemoverzicht"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr ""
+msgstr "Systeem laatste keer herstart"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr ""
+msgstr "Systeemoverzicht"
 
 #: dashboard.i18n.php:10
 msgid "System Status"
-msgstr ""
+msgstr "Systeemstatus"
 
 #: sections/Overview.class.php:104
 msgid "This is a critical issue and should be resolved urgently"
-msgstr ""
+msgstr "Dit is een kritiek probleem en moet zo spoedig mogelijk opgelost worden"
 
 #: classes/Statistics.class.php:121 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr ""
+msgstr "In bedrijf"
 
 #: sections/Overview.class.php:126
 msgid "Warnings Found"
-msgstr ""
+msgstr "Waarschuwingen gevonden"
 
 #: sections/Overview.class.php:135
 msgid "Web Server"
-msgstr ""
+msgstr "Internetserver"
 
 #: views/sections/statistics.php:11 views/sections/statistics.php:22
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
-msgstr ""
+msgstr "Week"
 
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
-msgstr ""
+msgstr "Welkom bij %s"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
-msgstr ""
+msgstr "dag"
 
 #: classes/TimeUtils.class.php:16
 msgid "days"
-msgstr ""
+msgstr "dagen"
 
 #: classes/TimeUtils.class.php:17
 msgid "hour"
-msgstr ""
+msgstr "uur"
 
 #: classes/TimeUtils.class.php:18
 msgid "hours"
-msgstr ""
+msgstr "uren"
 
 #: classes/TimeUtils.class.php:19
 msgid "minute"
-msgstr ""
+msgstr "minuut"
 
 #: classes/TimeUtils.class.php:20
 msgid "minutes"
-msgstr ""
+msgstr "minuten"
 
 #: classes/TimeUtils.class.php:11
 msgid "month"
-msgstr ""
+msgstr "maand"
 
 #: classes/TimeUtils.class.php:12
 msgid "months"
-msgstr ""
+msgstr "maanden"
 
 #: classes/TimeUtils.class.php:21
 msgid "second"
-msgstr ""
+msgstr "seconde"
 
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
-msgstr ""
+msgstr "seconden"
 
 #: classes/TimeUtils.class.php:13
 msgid "week"
-msgstr ""
+msgstr "week"
 
 #: classes/TimeUtils.class.php:14
 msgid "weeks"
-msgstr ""
+msgstr "weken"
 
 #: classes/TimeUtils.class.php:9
 msgid "year"
-msgstr ""
+msgstr "jaar"
 
 #: classes/TimeUtils.class.php:10
 msgid "years"
-msgstr ""
+msgstr "jaren"
