@@ -268,10 +268,10 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			$html = '';
 			if (is_array($tt)) {
 				foreach ($tt as $line) {
-					$html .= htmlentities($line, ENT_QUOTES)."\n";
+					$html .= htmlentities($line, ENT_QUOTES,"UTF-8")."\n";
 				}
 			} else {
-				$html .= htmlentities($tt, ENT_QUOTES);
+				$html .= htmlentities($tt, ENT_QUOTES,"UTF-8");
 			}
 
 			return array('type' => $res, "tooltip" => $html, "glyph-class" => $glyphs[$res]);
