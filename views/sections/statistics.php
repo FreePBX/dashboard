@@ -194,11 +194,11 @@
 			},
 		},
 		legend: {
-			memfree: 'Free Mem',
-			cached: 'Cached',
-			buffers: 'Buffers',
-			memused: 'Used',
-			swappct: 'Swap Used',
+			memfree: '<?php echo _("Free Mem")?>',
+			cached: '<?php echo _("Cached")?>',
+			buffers: '<?php echo _("Buffers")?>',
+			memused: '<?php echo _("Used")?>',
+			swappct: '<?php echo _("Swap Used")?>',
 		},
 		defaultAxis : { labels : true },
 		axis : { r : { max: 100, suffix: '%', }, l : { max: 100, suffix: '%', normalize: false } },
@@ -292,11 +292,11 @@
 			},
 		},
 		legend: {
-			uonline: 'Users Online',
-			uoffline: 'Users Offline',
-			tonline: 'Trunks Reg\'d',
-			toffline: 'Trunks Offline',
-			channels: 'Active Calls',
+			uonline: '<?php echo _("Users Online")?>',
+			uoffline: '<?php echo _("Users Offline")?>',
+			tonline: '<?php echo _("Trunks Reged")?>',
+			toffline: '<?php echo _("Trunks Offline")?>',
+			channels: '<?php echo _("Active Calls")?>',
 		},
 		defaultAxis : {
 			labels : true
