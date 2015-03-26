@@ -126,9 +126,7 @@ msgid "Please check for errors in the notification section"
 msgstr ""
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
 msgstr ""
 
 #: dashboard.i18n.php:6
@@ -259,4 +257,101 @@ msgstr ""
 
 #: classes/TimeUtils.class.php:10
 msgid "years"
+msgstr ""
+
+#: classes/Statistics.class.php:365 classes/Statistics.class.php:368
+#, php-format
+msgid "%s Min Avg"
+msgstr ""
+
+#: views/sections/statistics.php:299
+msgid "Active Calls"
+msgstr ""
+
+#: classes/Statistics.class.php:306
+msgid "Active Chans"
+msgstr ""
+
+#: classes/Statistics.class.php:113
+msgid "Asterisk Uptime"
+msgstr ""
+
+#: classes/Statistics.class.php:266 views/sections/statistics.php:199
+msgid "Buffers"
+msgstr ""
+
+#: classes/Statistics.class.php:368
+msgid "CPU Temp"
+msgstr ""
+
+#: classes/Statistics.class.php:265 views/sections/statistics.php:198
+msgid "Cached"
+msgstr ""
+
+#: classes/Statistics.class.php:264 views/sections/statistics.php:197
+msgid "Free Mem"
+msgstr ""
+
+#: classes/Statistics.class.php:14
+msgid "Invalid Selection"
+msgstr ""
+
+#: classes/Statistics.class.php:26
+msgid "Invalid period"
+msgstr ""
+
+#: classes/Statistics.class.php:377
+msgid "Load"
+msgstr ""
+
+#: classes/Statistics.class.php:107
+msgid "Reload"
+msgstr ""
+
+#: classes/Statistics.class.php:90 classes/Statistics.class.php:114
+msgid "Since Reload"
+msgstr ""
+
+#: classes/Statistics.class.php:268 views/sections/statistics.php:201
+msgid "Swap Used"
+msgstr ""
+
+#: classes/Statistics.class.php:88 classes/Statistics.class.php:108
+msgid "System"
+msgstr ""
+
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr ""
+
+#: classes/Statistics.class.php:112
+msgid "System Uptime"
+msgstr ""
+
+#: classes/Statistics.class.php:349 classes/Statistics.class.php:378
+msgid "Temp"
+msgstr ""
+
+#: classes/Statistics.class.php:305
+msgid "Trnks Offline"
+msgstr ""
+
+#: views/sections/statistics.php:298
+msgid "Trunks Offline"
+msgstr ""
+
+#: classes/Statistics.class.php:304 views/sections/statistics.php:297
+msgid "Trunks Reged"
+msgstr ""
+
+#: classes/Statistics.class.php:267 views/sections/statistics.php:200
+msgid "Used"
+msgstr ""
+
+#: classes/Statistics.class.php:303 views/sections/statistics.php:296
+msgid "Users Offline"
+msgstr ""
+
+#: classes/Statistics.class.php:302 views/sections/statistics.php:295
+msgid "Users Online"
 msgstr ""

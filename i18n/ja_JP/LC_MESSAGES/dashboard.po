@@ -40,8 +40,7 @@ msgstr ""
 "POT-Creation-Date: 2015-03-19 11:53-0400\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
-"Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
-"dashboard/ja_JP/>\n"
+"Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/dashboard/ja_JP/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -157,12 +156,8 @@ msgid "Please check for errors in the notification section"
 msgstr "通知セクションでエラーを確認してください"
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、ネッ"
-"トワークの負荷状況等を表示します。"
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+msgstr "システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、ネットワークの負荷状況等を表示します。"
 
 #: dashboard.i18n.php:6
 msgid "Reports"
@@ -294,245 +289,303 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-#~ msgid "System Status"
-#~ msgstr "システムステータス"
+#: classes/Statistics.class.php:365 classes/Statistics.class.php:368
+#, php-format
+msgid "%s Min Avg"
+msgstr ""
 
-#~ msgid "OK"
-#~ msgstr "OK"
+#: views/sections/statistics.php:299
+msgid "Active Calls"
+msgstr ""
 
-#~ msgid "Warn"
-#~ msgstr "警告"
+#: classes/Statistics.class.php:306
+msgid "Active Chans"
+msgstr ""
 
-#~ msgid "ERROR"
-#~ msgstr "エラー"
+#: classes/Statistics.class.php:266 views/sections/statistics.php:199
+msgid "Buffers"
+msgstr ""
 
-#~ msgid "Disabled"
-#~ msgstr "無効"
+#: classes/Statistics.class.php:368
+msgid "CPU Temp"
+msgstr ""
 
-#~ msgid "System Statistics"
-#~ msgstr "システム統計情報"
+#: classes/Statistics.class.php:265 views/sections/statistics.php:198
+msgid "Cached"
+msgstr ""
 
-#~ msgid "Processor"
-#~ msgstr "プロセッサー"
+#: classes/Statistics.class.php:264 views/sections/statistics.php:197
+msgid "Free Mem"
+msgstr ""
 
-#~ msgid "Load Average"
-#~ msgstr "負荷状況"
+#: classes/Statistics.class.php:14
+msgid "Invalid Selection"
+msgstr ""
 
-#~ msgid "App Memory"
-#~ msgstr "Appメモリー"
+#: classes/Statistics.class.php:26
+msgid "Invalid period"
+msgstr ""
 
-#~ msgid "Swap"
-#~ msgstr "スワップ"
+#: classes/Statistics.class.php:377
+msgid "Load"
+msgstr ""
 
-#~ msgid "Disks"
-#~ msgstr "ディスク"
+#: classes/Statistics.class.php:107
+msgid "Reload"
+msgstr ""
 
-#~ msgid "Networks"
-#~ msgstr "ネットワーク"
+#: classes/Statistics.class.php:90 classes/Statistics.class.php:114
+msgid "Since Reload"
+msgstr ""
 
-#~ msgid "receive"
-#~ msgstr "受信"
+#: classes/Statistics.class.php:268 views/sections/statistics.php:201
+msgid "Swap Used"
+msgstr ""
 
-#~ msgid "transmit"
-#~ msgstr "送信"
+#: classes/Statistics.class.php:88 classes/Statistics.class.php:108
+msgid "System"
+msgstr ""
 
-#~ msgid "%s Statistics"
-#~ msgstr "%s 統計情報"
+#: classes/Statistics.class.php:349 classes/Statistics.class.php:378
+msgid "Temp"
+msgstr ""
 
-#~ msgid "Total active calls"
-#~ msgstr "現在の合計通話数"
+#: classes/Statistics.class.php:305
+msgid "Trnks Offline"
+msgstr ""
 
-#~ msgid "Internal calls"
-#~ msgstr "内線通話数"
+#: views/sections/statistics.php:298
+msgid "Trunks Offline"
+msgstr ""
 
-#~ msgid "External calls"
-#~ msgstr "外線通話数"
+#: classes/Statistics.class.php:304 views/sections/statistics.php:297
+msgid "Trunks Reged"
+msgstr ""
 
-#~ msgid "Total active channels"
-#~ msgstr "現在の合計チャネル数"
+#: classes/Statistics.class.php:267 views/sections/statistics.php:200
+msgid "Used"
+msgstr ""
 
-#~ msgid "%s Connections"
-#~ msgstr "%s 接続"
+#: classes/Statistics.class.php:303 views/sections/statistics.php:296
+msgid "Users Offline"
+msgstr ""
 
-#~ msgid "IP Phones Online"
-#~ msgstr "オンラインIP電話数"
-
-#~ msgid "IP Trunks Online"
-#~ msgstr "オンラインIPトランク数"
-
-#~ msgid "IP Trunk Registrations"
-#~ msgstr "IPトランク登録数"
-
-#~ msgid "System Information Table"
-#~ msgstr "システム情報テーブル"
-
-#~ msgid "System Uptime"
-#~ msgstr "システム稼働時間"
+#: classes/Statistics.class.php:302 views/sections/statistics.php:295
+msgid "Users Online"
+msgstr ""
 
 #~ msgid "Asterisk Uptime"
 #~ msgstr "Asterisk稼働時間"
 
-#~ msgid "Last Reload"
-#~ msgstr "リロード後経過時間"
+#~ msgid "System Status"
+#~ msgstr "システムステータス"
 
-#~ msgid "Server Status"
-#~ msgstr "サーバーの状態"
+#~ msgid "System Uptime"
+#~ msgstr "システム稼働時間"
 
-#~ msgid "Asterisk is running: %s"
-#~ msgstr "Asterisk は動作しています: %s"
-
-#~ msgid "Asterisk is not running, this is a critical service!"
-#~ msgstr "Asteriskは起動していません。Asteriskはクリティカルなサービスです!"
-
-#~ msgid "Manager Proxy"
-#~ msgstr "マネージャープロキシー"
-
-#~ msgid "Asterisk Manager Proxy is running"
-#~ msgstr "Asteriskマネージャプロキシーは動作しています"
-
-#~ msgid ""
-#~ "Asterisk Manager Proxy is not running, %s will fall back to using "
-#~ "Asterisk directly, which may result in poor performance"
-#~ msgstr ""
-#~ "Asteriskマネージャープロキシーは動作していません。%s は Asteriskに直接接続"
-#~ "しているため、パフォーマンスが低下している可能性があります。"
-
-#~ msgid "MySQL Server is running"
-#~ msgstr "MySQLサーバーは動作しています"
-
-#~ msgid "Web Server is running"
-#~ msgstr "Webサーバーは動作しています"
-
-#~ msgid "SSH Server"
-#~ msgstr "SSHサーバー"
-
-#~ msgid "SSH Server is running"
-#~ msgstr "SSHサーバーは動作しています"
-
-#~ msgid ""
-#~ "SSH Server is not running, you will not be able to connect to the system "
-#~ "console remotely"
-#~ msgstr ""
-#~ "SSHサーバーは動作していません。このため、システムコンソールにリモート接続"
-#~ "できません。"
-
-#~ msgid "Critical Error"
-#~ msgstr "致命的エラー"
-
-#~ msgid "Security Update"
-#~ msgstr "セキュリティアップデート"
-
-#~ msgid "Update"
-#~ msgstr "アップデート"
-
-#~ msgid "Error"
-#~ msgstr "エラー"
-
-#~ msgid "Warning"
-#~ msgstr "警告"
-
-#~ msgid "Notice"
-#~ msgstr "通知"
+#~ msgid "%s Connections"
+#~ msgstr "%s 接続"
 
 #~ msgid "%s Notices"
 #~ msgstr "%s の通知"
 
-#~ msgid "Delete this"
-#~ msgstr "削除"
-
-#~ msgid "Ignore this"
-#~ msgstr "無視"
-
-#~ msgid "Added %s ago"
-#~ msgstr "%s 前に追加"
-
-#~ msgid "No notifications"
-#~ msgstr "通知はありません"
-
-#~ msgid "No new notifications"
-#~ msgstr "新しい通知はありません"
-
-#~ msgid "show new"
-#~ msgstr "新規通知を表示"
-
-#~ msgid "show all"
-#~ msgstr "すべて表示"
-
-#~ msgid "loading..."
-#~ msgstr "読み込み中..."
+#~ msgid "%s Statistics"
+#~ msgstr "%s 統計情報"
 
 #~ msgid "%s System Status"
 #~ msgstr "%s システムステータス"
 
-#~ msgid "FreePBX System Status"
-#~ msgstr "FreePBXシステムステータス"
+#~ msgid "%s changed from %s to %s"
+#~ msgstr "%s を %s から %s に変更しました。"
+
+#~ msgid "Added %s ago"
+#~ msgstr "%s 前に追加"
+
+#~ msgid "App Memory"
+#~ msgstr "Appメモリー"
+
+#~ msgid "Asterisk Manager Proxy is not running, %s will fall back to using Asterisk directly, which may result in poor performance"
+#~ msgstr "Asteriskマネージャープロキシーは動作していません。%s は Asteriskに直接接続しているため、パフォーマンスが低下している可能性があります。"
+
+#~ msgid "Asterisk Manager Proxy is running"
+#~ msgstr "Asteriskマネージャプロキシーは動作しています"
+
+#~ msgid "Asterisk is not running, this is a critical service!"
+#~ msgstr "Asteriskは起動していません。Asteriskはクリティカルなサービスです!"
+
+#~ msgid "Asterisk is running: %s"
+#~ msgstr "Asterisk は動作しています: %s"
+
+#~ msgid "Critical Error"
+#~ msgstr "致命的エラー"
 
 #~ msgid "Dashboard Info Update Frequency"
 #~ msgstr "ダッシュボード情報の更新間隔"
 
-#~ msgid "GUI Behavior"
-#~ msgstr "GUIの動作"
-
-#~ msgid ""
-#~ "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr ""
-#~ "システムステータスパネルの情報セクションの更新間隔(秒)を指定します。"
-
 #~ msgid "Dashboard Max Calls Initial Scale"
 #~ msgstr "ダッシュボードの最大通話数初期スケール"
-
-#~ msgid ""
-#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
-#~ "If not set, the the scale is dynamically sized based on the active calls "
-#~ "on the system."
-#~ msgstr ""
-#~ "この設定項目では、ダッシュボードの最大通話数に対応するスケールを設定できま"
-#~ "す。設定されていない場合には、アクティブな通話数に応じて動的にスケールを変"
-#~ "更します。"
-
-#~ msgid "Dashboard Stats Update Frequency"
-#~ msgstr "ダッシュボード統計値の更新間隔"
-
-#~ msgid ""
-#~ "Update rate in seconds of all sections of the System Status panel except "
-#~ "the Info box."
-#~ msgstr ""
-#~ "情報ボックスを除いた、システムステータスパネルの更新間隔(秒)を指定します。"
 
 #~ msgid "Dashboard Non-Std SSH Port"
 #~ msgstr "ダッシュボード非標準SSHポート"
 
-#~ msgid "System Setup"
-#~ msgstr "システムセットアップ"
+#~ msgid "Dashboard Stats Update Frequency"
+#~ msgstr "ダッシュボード統計値の更新間隔"
 
-#~ msgid ""
-#~ "SSH port number configured on your system if not using the default port "
-#~ "22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr ""
-#~ "SSHのポート番号をデフォルトの 22番から変更している場合には、この設定項目を"
-#~ "設定してください。"
+#~ msgid "Delete this"
+#~ msgstr "削除"
 
-#~ msgid "%s changed from %s to %s"
-#~ msgstr "%s を %s から %s に変更しました。"
+#~ msgid "Disabled"
+#~ msgstr "無効"
 
-#~ msgid "FreePBX Statistics"
-#~ msgstr "FreePBX統計"
+#~ msgid "Disks"
+#~ msgstr "ディスク"
 
-#~ msgid "Op Panel"
-#~ msgstr "Opパネル"
+#~ msgid "ERROR"
+#~ msgstr "エラー"
 
-#~ msgid ""
-#~ "FOP Operator Panel Server is not running, you will not be able to use the "
-#~ "operator panel, but the system will run fine without it."
-#~ msgstr ""
-#~ "FOPオペレーターパネルサーバーが実行されていません、オペレーターパネルを使"
-#~ "用することができませんが、それ以外システムは問題なく実行されます。"
+#~ msgid "Error"
+#~ msgstr "エラー"
 
-#~ msgid "FOP Operator Panel is disabled in Advanced Settings"
-#~ msgstr "FOPオペレーターパネルが高度な設定で無効にされています。"
+#~ msgid "External calls"
+#~ msgstr "外線通話数"
+
+#~ msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
+#~ msgstr "FOPオペレーターパネルサーバーが実行されていません、オペレーターパネルを使用することができませんが、それ以外システムは問題なく実行されます。"
 
 #~ msgid "FOP Operator Panel Server is running"
 #~ msgstr "FOP オペレーターパネルサーバーが実行されています。"
 
+#~ msgid "FOP Operator Panel is disabled in Advanced Settings"
+#~ msgstr "FOPオペレーターパネルが高度な設定で無効にされています。"
+
 #~ msgid "FreePBX Notices"
 #~ msgstr "FreePBX 通知"
+
+#~ msgid "FreePBX Statistics"
+#~ msgstr "FreePBX統計"
+
+#~ msgid "FreePBX System Status"
+#~ msgstr "FreePBXシステムステータス"
+
+#~ msgid "GUI Behavior"
+#~ msgstr "GUIの動作"
+
+#~ msgid "IP Phones Online"
+#~ msgstr "オンラインIP電話数"
+
+#~ msgid "IP Trunk Registrations"
+#~ msgstr "IPトランク登録数"
+
+#~ msgid "IP Trunks Online"
+#~ msgstr "オンラインIPトランク数"
+
+#~ msgid "Ignore this"
+#~ msgstr "無視"
+
+#~ msgid "Internal calls"
+#~ msgstr "内線通話数"
+
+#~ msgid "Last Reload"
+#~ msgstr "リロード後経過時間"
+
+#~ msgid "Load Average"
+#~ msgstr "負荷状況"
+
+#~ msgid "Manager Proxy"
+#~ msgstr "マネージャープロキシー"
+
+#~ msgid "MySQL Server is running"
+#~ msgstr "MySQLサーバーは動作しています"
+
+#~ msgid "Networks"
+#~ msgstr "ネットワーク"
+
+#~ msgid "No new notifications"
+#~ msgstr "新しい通知はありません"
+
+#~ msgid "No notifications"
+#~ msgstr "通知はありません"
+
+#~ msgid "Notice"
+#~ msgstr "通知"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Op Panel"
+#~ msgstr "Opパネル"
+
+#~ msgid "Processor"
+#~ msgstr "プロセッサー"
+
+#~ msgid "SSH Server"
+#~ msgstr "SSHサーバー"
+
+#~ msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
+#~ msgstr "SSHサーバーは動作していません。このため、システムコンソールにリモート接続できません。"
+
+#~ msgid "SSH Server is running"
+#~ msgstr "SSHサーバーは動作しています"
+
+#~ msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr "SSHのポート番号をデフォルトの 22番から変更している場合には、この設定項目を設定してください。"
+
+#~ msgid "Security Update"
+#~ msgstr "セキュリティアップデート"
+
+#~ msgid "Server Status"
+#~ msgstr "サーバーの状態"
+
+#~ msgid "Swap"
+#~ msgstr "スワップ"
+
+#~ msgid "System Information Table"
+#~ msgstr "システム情報テーブル"
+
+#~ msgid "System Setup"
+#~ msgstr "システムセットアップ"
+
+#~ msgid "System Statistics"
+#~ msgstr "システム統計情報"
+
+#~ msgid "Total active calls"
+#~ msgstr "現在の合計通話数"
+
+#~ msgid "Total active channels"
+#~ msgstr "現在の合計チャネル数"
+
+#~ msgid "Update"
+#~ msgstr "アップデート"
+
+#~ msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
+#~ msgstr "情報ボックスを除いた、システムステータスパネルの更新間隔(秒)を指定します。"
+
+#~ msgid "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr "システムステータスパネルの情報セクションの更新間隔(秒)を指定します。"
+
+#~ msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
+#~ msgstr "この設定項目では、ダッシュボードの最大通話数に対応するスケールを設定できます。設定されていない場合には、アクティブな通話数に応じて動的にスケールを変更します。"
+
+#~ msgid "Warn"
+#~ msgstr "警告"
+
+#~ msgid "Warning"
+#~ msgstr "警告"
+
+#~ msgid "Web Server is running"
+#~ msgstr "Webサーバーは動作しています"
+
+#~ msgid "loading..."
+#~ msgstr "読み込み中..."
+
+#~ msgid "receive"
+#~ msgstr "受信"
+
+#~ msgid "show all"
+#~ msgstr "すべて表示"
+
+#~ msgid "show new"
+#~ msgstr "新規通知を表示"
+
+#~ msgid "transmit"
+#~ msgstr "送信"
