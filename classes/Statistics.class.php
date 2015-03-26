@@ -11,7 +11,7 @@ class Statistics {
 
 	public function getStats() {
 		if (!isset($_REQUEST['target']) || !isset($_REQUEST['period'])) {
-			return 'Invalid Selection';
+			return _('Invalid Selection');
 		}
 		$t = $_REQUEST['target'];
 
@@ -23,7 +23,7 @@ class Statistics {
 		);
 
 		if (!isset($defs[strtolower($_REQUEST['period'])])) {
-			return 'Invalid period';
+			return _('Invalid period');
 		}
 
 		$settings = $defs[strtolower($_REQUEST['period'])];
@@ -42,7 +42,7 @@ class Statistics {
 		case 'asterisk':
 			return $this->getGraphDataAst($settings);
 		}
-		// Or else... 
+		// Or else...
 		return 'Code not written';
 	}
 
@@ -51,7 +51,6 @@ class Statistics {
 		$html .= "<script type='text/javascript'>".$this->getTemplates()."
 Dashboard.sysstatAjax = { command: 'sysstat', target: 'uptime', period: 'hour', module: window.modulename };
 window.observers['builtin_aststat'] = function() {
-	console.log('Running'); console.log(Dashboard.sysstatAjax);
   $.ajax({
     url: window.ajaxurl,
     data: Dashboard.sysstatAjax,
@@ -86,9 +85,9 @@ window.observers['builtin_aststat'] = function() {
 			}
 
 			$ttip = date('c', $key)."<br>";
-			$ttip .= "System:<br>&nbsp;&nbsp; ".TimeUtils::getReadable($ut, 3)."<br>";
+			$ttip .= _("System").":<br>&nbsp;&nbsp; ".TimeUtils::getReadable($ut, 3)."<br>";
 			$ttip .= "Asterisk:<br>&nbsp;&nbsp; ".TimeUtils::getReadable($us, 3)."<br>";
-			$ttip .= "Since Reload:<br>&nbsp;&nbsp; ".TimeUtils::getReadable($rs, 3);
+			$ttip .= _("Since Reload").":<br>&nbsp;&nbsp; ".TimeUtils::getReadable($rs, 3);
 			$tooltips[] = $ttip;
 
 			$sysuptime[] = $ut;
@@ -105,14 +104,14 @@ window.observers['builtin_aststat'] = function() {
 			"astreload" => array( "color" => "blue", "axis" => "r" ),
 		);
 		$retarr['axis'] = array(
-			"r" => array("title" => "Reload", "titleDistance" => 8 ),
-			"l" => array("title" => "System", "titleDistance" => 8 ),
+			"r" => array("title" => _("Reload"), "titleDistance" => 8 ),
+			"l" => array("title" => _("System"), "titleDistance" => 8 ),
 		);
 
 		$retarr['legend'] = array(
-			"sysuptime" => 'System Uptime',
-			"astuptime" => 'Asterisk Uptime',
-			"astreload" => 'Since Reload',
+			"sysuptime" => _('System Uptime'),
+			"astuptime" => _('Asterisk Uptime'),
+			"astreload" => _('Since Reload'),
 		);
 		return $retarr;
 	}
@@ -131,10 +130,10 @@ window.observers['builtin_aststat'] = function() {
       '.$uptime.' <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="#" onClick="sbClick()">Hour</a></li>
-      <li><a href="#" onClick="sbClick()">Day</a></li>
-      <li><a href="#" onClick="sbClick()">Week</a></li>
-	  <li><a href="#" onClick="sbClick()">Month</a></li>
+      <li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
+      <li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
+      <li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
+	  <li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
 	</ul>
   </div>
   <div class="btn-group btn-group-lg" data-type="asterisk">
@@ -142,10 +141,10 @@ window.observers['builtin_aststat'] = function() {
 	  '.$asterisk.' <span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu">
-	  <li><a href="#" onClick="sbClick()">Hour</a></li>
-	  <li><a href="#" onClick="sbClick()">Day</a></li>
-	  <li><a href="#" onClick="sbClick()">Week</a></li>
-	  <li><a href="#" onClick="sbClick()">Month</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
+<li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
 	</ul>
   </div>
   <div class="btn-group btn-group-lg" data-type="cpuusage">
@@ -153,10 +152,10 @@ window.observers['builtin_aststat'] = function() {
 	  '.$cpu.' <span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu">
-      <li><a href="#" onClick="sbClick()">Hour</a></li>
-      <li><a href="#" onClick="sbClick()">Day</a></li>
-      <li><a href="#" onClick="sbClick()">Week</a></li>
-      <li><a href="#" onClick="sbClick()">Month</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
+<li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
 	</ul>
   </div>
   <div class="btn-group btn-group-lg" data-type="memusage">
@@ -164,10 +163,10 @@ window.observers['builtin_aststat'] = function() {
 	  '.$mem.' <span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu">
-      <li><a href="#" onClick="sbClick()">Hour</a></li>
-      <li><a href="#" onClick="sbClick()">Day</a></li>
-      <li><a href="#" onClick="sbClick()">Week</a></li>
-      <li><a href="#" onClick="sbClick()">Month</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
+<li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
 	</ul>
   </div>
   <div class="btn-group btn-group-lg" data-type="diskusage">
@@ -175,10 +174,10 @@ window.observers['builtin_aststat'] = function() {
 	  '.$disk.' <span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu">
-      <li><a href="#" onClick="sbClick()">Hour</a></li>
-      <li><a href="#" onClick="sbClick()">Day</a></li>
-      <li><a href="#" onClick="sbClick()">Week</a></li>
-      <li><a href="#" onClick="sbClick()">Month</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
+<li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
 	</ul>
   </div>
   <div class="btn-group btn-group-lg" data-type="networking">
@@ -186,10 +185,10 @@ window.observers['builtin_aststat'] = function() {
 	  '.$network.' <span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu">
-      <li><a href="#" onClick="sbClick()">Hour</a></li>
-      <li><a href="#" onClick="sbClick()">Day</a></li>
-      <li><a href="#" onClick="sbClick()">Week</a></li>
-      <li><a href="#" onClick="sbClick()">Month</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
+	<li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
+<li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
 	</ul>
   </div>
 </div>
@@ -243,10 +242,10 @@ $.elycharts.templates['memchart'] = {
  type : 'line',
  autoresize : true,
  margins : [20, 40, 40, 30],
- defaultSeries : { 
-  type : 'bar', 
+ defaultSeries : {
+  type : 'bar',
   stacked : true,
-  highlight : { 
+  highlight : {
    newProps : { r : 8, opacity : 1 },
    overlayProps : { fill : 'white', opacity : 0.2 }
   },
@@ -262,11 +261,11 @@ $.elycharts.templates['memchart'] = {
   },
  },
  legend: {
-  memfree: 'Free Mem',
-  cached: 'Cached',
-  buffers: 'Buffers',
-  memused: 'Used',
-  swappct: 'Swap Used',
+  memfree: '"._('Free Mem')."',
+  cached: '"._('Cached')."',
+  buffers: '"._('Buffers')."',
+  memused: '"._('Used')."',
+  swappct: '"._('Swap Used')."',
  },
  defaultAxis : { labels : true },
  axis : { r : { max: 100, suffix: '%', }, l : { max: 100, suffix: '%', normalize: false } },
@@ -280,14 +279,14 @@ $.elycharts.templates['astchart'] = {
  type : 'line',
  autoresize : true,
  margins : [20, 30, 40, 0],
- defaultSeries : { 
+ defaultSeries : {
   type: 'line',
   axis: 'r',
   dot: true,
   startAnimation : { active : true, type : 'avg', speed : 1000 },
   dotProps: { r: 0, opacity: 0,  'stroke-width' : 0, },
   plotProps: { 'stroke-width': 2 },
-  highlight : { 
+  highlight : {
    newProps : { r : 8, opacity : 1 },
    overlayProps : { fill : 'white', opacity : 0.2 }
   },
@@ -300,11 +299,11 @@ $.elycharts.templates['astchart'] = {
   channels : { color : 'blue', tooltip : { frameProps : { stroke : 'blue' } } },
  },
  legend: {
-  uonline: 'Users Online',
-  uoffline: 'Users Offline',
-  tonline: 'Trunks Reg\'d',
-  toffline: 'Trunks Offline',
-  channels: 'Active Chans',
+  uonline: '"._('Users Online')."Users Online',
+  uoffline: '"._('Users Offline')."Users Offline',
+  tonline: '"._('Trunks Reged')."',
+  toffline: '"._('Trnks Offline')."Trunks Offline',
+  channels: '"._('Active Chans')."Active Chans',
  },
  defaultAxis : { labels : true },
  features : { grid : { draw : true, forceBorder : true, ny : 5 },
@@ -347,7 +346,7 @@ $.elycharts.templates['astchart'] = {
 			$ttip .= "$lfive<br>$lten<br>$lfifteen";
 			if ($temp) {
 				$cputemp[] = $temp;
-				$ttip .= "<br>Temp: $temp";
+				$ttip .= "<br>"._('Temp').": $temp";
 			} else {
 				$cputemp[] = 0;
 			}
@@ -363,10 +362,10 @@ $.elycharts.templates['astchart'] = {
 		$retarr['tooltips'] = $tooltips;
 		if (!$foundtemps) {
 			$retarr['values'] = array( $loadfive, $loadten, $loadfifteen );
-			$retarr['legend'] = array( '1 Min Avg', '5 Min Avg', '15 Min Avg');
+			$retarr['legend'] = array( sprintf(_('%s Min Avg'),1), sprintf(_('%s Min Avg'),5), sprintf(_('%s Min Avg'),15));
 		} else {
 			$retarr['values'] = array( $loadfive, $loadten, $loadfifteen, $cputemp );
-			$retarr['legend'] = array( '1 Min Avg', '5 Min Avg', '15 Min Avg', 'CPU Temp');
+			$retarr['legend'] = array( sprintf(_('%s Min Avg'),1), sprintf(_('%s Min Avg'),5), sprintf(_('%s Min Avg'),15), _('CPU Temp'));
 		}
 		$retarr['series'] = array(
 			array( "color" => "blue", "axis" => "l" ),
@@ -375,8 +374,8 @@ $.elycharts.templates['astchart'] = {
 			array( "color" => "orange", "axis" => "r" ),
 		);
 		$retarr['axis'] = array(
-			"l" => array("title" => "Load", "titleDistance" => 8, "labels" => true ),
-			"r" => array("title" => "Temp", "titleDistance" => 8, "labels" => true ),
+			"l" => array("title" => _("Load"), "titleDistance" => 8, "labels" => true ),
+			"r" => array("title" => _("Temp"), "titleDistance" => 8, "labels" => true ),
 		);
 
  		$retarr['margins'] = array (25, 35, 10, 35);
@@ -451,7 +450,7 @@ $.elycharts.templates['astchart'] = {
 	public function getGraphDataNet($period) {
 
 		// Colours for the network lines.
-		$colours = array ( 
+		$colours = array (
 			// tx (top), rx (bottom).
 			array("90-#669900-#CCDD99", "90-#336600-#339900", "#669900"),
 			array("90-#00AA00-#99FF99", "90-#006600-#00AA00", "#00AA00"),
@@ -495,7 +494,7 @@ $.elycharts.templates['astchart'] = {
 			);
 			$retarr['series']["tx$key"] = array( "type" => "bar", "axis" => "r", "stacked" => "rx$key", "color" => $colours[$key][0],
 			   	"tooltip" => array( "frameProps" => array("stroke" => $colours[$key][2])));
-			$retarr['series']["rx$key"] = array( "type" => "bar", "axis" => "r", "stacked" => "tx$key", "color" => $colours[$key][1], 
+			$retarr['series']["rx$key"] = array( "type" => "bar", "axis" => "r", "stacked" => "tx$key", "color" => $colours[$key][1],
 				"tooltip" => array( "frameProps" => array("stroke" => $colours[$key][2])));
 
 			// Legends.
@@ -515,7 +514,7 @@ $.elycharts.templates['astchart'] = {
 			$ttip = "";
 			foreach ($allints as $i) {
 				// Difference from the previous view..
-				// If we don't HAVE a previous, then just return null, because we can't 
+				// If we don't HAVE a previous, then just return null, because we can't
 				// figure it out.
 				if (!$interfaces[$i]['previous']['tx'] || !isset($row["psi.Network.NetDevice.$i.@attributes.TxBytes"])) {
 					$tx = null;
@@ -551,7 +550,7 @@ $.elycharts.templates['astchart'] = {
 		$retarr['barmargins'] = 10;
 		$retarr['features'] = array(
 			"grid" => array( "draw" => true, "forceBorder" => true, "ny" =>  5 ),
-			"legend" => array( "horizontal" => true, "width" => "auto", "x" => 10, "y" => 0, 
+			"legend" => array( "horizontal" => true, "width" => "auto", "x" => 10, "y" => 0,
 			"borderProps" => array('fill-opacity' => 0.3, 'stroke-width' => 0 )
 			),
 		);
