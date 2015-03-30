@@ -276,7 +276,7 @@ msgstr ""
 
 #: classes/Statistics.class.php:113
 msgid "Asterisk Uptime"
-msgstr ""
+msgstr "Tiempo activo Asterisk"
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
@@ -324,7 +324,7 @@ msgstr ""
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
-msgstr ""
+msgstr "Tiempo activo sistema"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
