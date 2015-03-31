@@ -281,7 +281,7 @@ msgstr "Tiempo activo Asterisk"
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
-msgstr "Buffers"
+msgstr "buffers"
 
 #: classes/Statistics.class.php:368
 msgid "CPU Temp"
