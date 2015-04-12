@@ -9,39 +9,265 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-25 22:00-0400\n"
-"PO-Revision-Date: 2015-02-27 20:50-0500\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"POT-Creation-Date: 2015-03-19 11:49-0400\n"
+"PO-Revision-Date: 2015-03-23 17:04+0200\n"
+"Last-Translator: Jan Peter <jpveldhuizen@gmail.com>\n"
+"Language-Team: Dutch <http://weblate.freepbx.org/projects/freepbx/dashboard/nl_NL/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: classes/Statistics.class.php:365 classes/Statistics.class.php:368
-#, php-format
-msgid "%s Min Avg"
-msgstr ""
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: views/sections/overview.php:65 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
-msgstr ""
+msgstr "%s geleden"
 
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
-msgstr ""
+msgstr "0 seconden"
 
 #: views/sections/uptime.php:16
 msgid "1 Minute"
-msgstr ""
+msgstr "1 Minuut"
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
-msgstr ""
+msgstr "15 Minuten"
 
 #: views/sections/uptime.php:19
 msgid "5 Minutes"
+msgstr "5 Minuten"
+
+#: classes/Statistics.class.php:122 sections/Overview.class.php:133
+msgid "Asterisk"
+msgstr "Asterisk"
+
+#: sections/Blogs.class.php:34 sections/Blogs.class.php:42
+msgid "Blogs"
+msgstr "Blogs"
+
+#: classes/Statistics.class.php:123
+msgid "CPU"
+msgstr "Processor"
+
+#: sections/Overview.class.php:122
+msgid "Critical Errors found"
+msgstr "Kritieke fouten gevonden"
+
+#: views/sections/statistics.php:10 views/sections/statistics.php:21
+#: views/sections/statistics.php:32 views/sections/statistics.php:43
+#: views/sections/statistics.php:54 views/sections/statistics.php:65
+msgid "Day"
+msgstr "Dag"
+
+#: views/sections/overview.php:53
+msgid "Delete This"
+msgstr "Verwijder dit"
+
+#: classes/Statistics.class.php:125 views/sections/statistics.php:50
+msgid "Disk"
+msgstr "Harde schijf"
+
+#: sections/Blogs.class.php:33 sections/Blogs.class.php:41
+#, fuzzy
+msgid "Feed"
+msgstr "Voeding"
+
+#: views/main.php:6
+#, fuzzy
+msgid "Frobulating"
+msgstr "Bijwerken"
+
+#: views/sections/statistics.php:9 views/sections/statistics.php:20
+#: views/sections/statistics.php:31 views/sections/statistics.php:42
+#: views/sections/statistics.php:53 views/sections/statistics.php:64
+msgid "Hour"
+msgstr "Uur"
+
+#: views/sections/overview.php:52
+msgid "Ignore This"
+msgstr "Negeer dit"
+
+#: views/sections/uptime.php:13
+#, fuzzy
+msgid "Load Averages"
+msgstr "Gemiddelde belasting"
+
+#: classes/Statistics.class.php:124 views/sections/statistics.php:39
+msgid "Memory"
+msgstr "Geheugen"
+
+#: views/sections/statistics.php:12 views/sections/statistics.php:23
+#: views/sections/statistics.php:34 views/sections/statistics.php:45
+#: views/sections/statistics.php:56 views/sections/statistics.php:67
+msgid "Month"
+msgstr "Maand"
+
+#: sections/Overview.class.php:134
+msgid "MySQL"
+msgstr "MySQL"
+
+#: classes/Statistics.class.php:126 views/sections/statistics.php:61
+msgid "Network"
+msgstr "Netwerk"
+
+#: sections/Overview.class.php:94
+msgid "No critical issues found"
+msgstr "Geen kritieke problemen gevonden"
+
+#: sections/Overview.class.php:16
+msgid "Overview"
+msgstr "Overzicht"
+
+#: sections/Overview.class.php:121 sections/Overview.class.php:125
+msgid "Please check for errors in the notification section"
+msgstr "Controleer de notificatie-sectie voor fouten"
+
+#: dashboard.i18n.php:8
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+msgstr "Voorziet in een systeemoverzicht, met informatie over gesprekken, processor, geheugen, harde schijven, netwerk en processen."
+
+#: dashboard.i18n.php:6 dashboard.i18n.php:12
+msgid "Reports"
+msgstr "Rapporten"
+
+#: sections/Overview.class.php:103
+msgid "Security Issue"
+msgstr "Beveiligingsprobleem"
+
+#: views/sections/overview.php:74
+msgid "Show All"
+msgstr "Alles tonen"
+
+#: views/sections/overview.php:76
+msgid "Show New"
+msgstr "Nieuwe tonen"
+
+#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
+#: sections/Uptime.class.php:16
+msgid "Statistics"
+msgstr "Statistieken"
+
+#: views/sections/overview.php:22
+msgid "Summary"
+msgstr "Samenvatting"
+
+#: views/sections/overview.php:35
+#, php-format
+msgid "SysInfo updated %s seconds ago"
+msgstr "Systeeminformatie %s seconden geleden geüpdatet"
+
+#: sections/Overview.class.php:92
+#, fuzzy
+msgid "System Alerts"
+msgstr "Systeem alarmen"
+
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "Systeemoverzicht"
+
+#: views/sections/uptime.php:5
+msgid "System Last Rebooted"
+msgstr "Systeem laatste keer herstart"
+
+#: sections/Overview.class.php:15
+msgid "System Overview"
+msgstr "Systeemoverzicht"
+
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr "Systeemstatus"
+
+#: sections/Overview.class.php:104
+msgid "This is a critical issue and should be resolved urgently"
+msgstr "Dit is een kritiek probleem en moet zo spoedig mogelijk opgelost worden"
+
+#: classes/Statistics.class.php:121 sections/Uptime.class.php:15
+#: views/sections/statistics.php:17
+msgid "Uptime"
+msgstr "In bedrijf"
+
+#: sections/Overview.class.php:126
+msgid "Warnings Found"
+msgstr "Waarschuwingen gevonden"
+
+#: sections/Overview.class.php:135
+msgid "Web Server"
+msgstr "Internetserver"
+
+#: views/sections/statistics.php:11 views/sections/statistics.php:22
+#: views/sections/statistics.php:33 views/sections/statistics.php:44
+#: views/sections/statistics.php:55 views/sections/statistics.php:66
+msgid "Week"
+msgstr "Week"
+
+#: views/main.php:3 views/sections/overview.php:6
+#, php-format
+msgid "Welcome to %s"
+msgstr "Welkom bij %s"
+
+#: classes/TimeUtils.class.php:15
+msgid "day"
+msgstr "dag"
+
+#: classes/TimeUtils.class.php:16
+msgid "days"
+msgstr "dagen"
+
+#: classes/TimeUtils.class.php:17
+msgid "hour"
+msgstr "uur"
+
+#: classes/TimeUtils.class.php:18
+msgid "hours"
+msgstr "uren"
+
+#: classes/TimeUtils.class.php:19
+msgid "minute"
+msgstr "minuut"
+
+#: classes/TimeUtils.class.php:20
+msgid "minutes"
+msgstr "minuten"
+
+#: classes/TimeUtils.class.php:11
+msgid "month"
+msgstr "maand"
+
+#: classes/TimeUtils.class.php:12
+msgid "months"
+msgstr "maanden"
+
+#: classes/TimeUtils.class.php:21
+msgid "second"
+msgstr "seconde"
+
+#: classes/TimeUtils.class.php:22
+msgid "seconds"
+msgstr "seconden"
+
+#: classes/TimeUtils.class.php:13
+msgid "week"
+msgstr "week"
+
+#: classes/TimeUtils.class.php:14
+msgid "weeks"
+msgstr "weken"
+
+#: classes/TimeUtils.class.php:9
+msgid "year"
+msgstr "jaar"
+
+#: classes/TimeUtils.class.php:10
+msgid "years"
+msgstr "jaren"
+
+#: classes/Statistics.class.php:365 classes/Statistics.class.php:368
+#, php-format
+msgid "%s Min Avg"
 msgstr ""
 
 #: views/sections/statistics.php:299
@@ -52,24 +278,12 @@ msgstr ""
 msgid "Active Chans"
 msgstr ""
 
-#: classes/Statistics.class.php:121 sections/Overview.class.php:133
-msgid "Asterisk"
-msgstr ""
-
 #: classes/Statistics.class.php:113
 msgid "Asterisk Uptime"
 msgstr ""
 
-#: sections/Blogs.class.php:34 sections/Blogs.class.php:42
-msgid "Blogs"
-msgstr ""
-
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
-msgstr ""
-
-#: classes/Statistics.class.php:122
-msgid "CPU"
 msgstr ""
 
 #: classes/Statistics.class.php:368
@@ -80,50 +294,8 @@ msgstr ""
 msgid "Cached"
 msgstr ""
 
-#: sections/Overview.class.php:122
-msgid "Critical Errors found"
-msgstr ""
-
-#: classes/Statistics.class.php:134 classes/Statistics.class.php:145
-#: classes/Statistics.class.php:156 classes/Statistics.class.php:167
-#: classes/Statistics.class.php:178 classes/Statistics.class.php:189
-#: views/sections/statistics.php:10 views/sections/statistics.php:21
-#: views/sections/statistics.php:32 views/sections/statistics.php:43
-#: views/sections/statistics.php:54 views/sections/statistics.php:65
-msgid "Day"
-msgstr ""
-
-#: views/sections/overview.php:53
-msgid "Delete This"
-msgstr ""
-
-#: classes/Statistics.class.php:124 views/sections/statistics.php:50
-msgid "Disk"
-msgstr ""
-
-#: sections/Blogs.class.php:33 sections/Blogs.class.php:41
-msgid "Feed"
-msgstr ""
-
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
-msgstr ""
-
-#: views/main.php:6
-msgid "Frobulating"
-msgstr ""
-
-#: classes/Statistics.class.php:133 classes/Statistics.class.php:144
-#: classes/Statistics.class.php:155 classes/Statistics.class.php:166
-#: classes/Statistics.class.php:177 classes/Statistics.class.php:188
-#: views/sections/statistics.php:9 views/sections/statistics.php:20
-#: views/sections/statistics.php:31 views/sections/statistics.php:42
-#: views/sections/statistics.php:53 views/sections/statistics.php:64
-msgid "Hour"
-msgstr ""
-
-#: views/sections/overview.php:52
-msgid "Ignore This"
 msgstr ""
 
 #: classes/Statistics.class.php:14
@@ -138,113 +310,20 @@ msgstr ""
 msgid "Load"
 msgstr ""
 
-#: views/sections/uptime.php:13
-msgid "Load Averages"
-msgstr ""
-
-#: classes/Statistics.class.php:123 views/sections/statistics.php:39
-msgid "Memory"
-msgstr ""
-
-#: classes/Statistics.class.php:136 classes/Statistics.class.php:147
-#: classes/Statistics.class.php:158 classes/Statistics.class.php:169
-#: classes/Statistics.class.php:180 classes/Statistics.class.php:191
-#: views/sections/statistics.php:12 views/sections/statistics.php:23
-#: views/sections/statistics.php:34 views/sections/statistics.php:45
-#: views/sections/statistics.php:56 views/sections/statistics.php:67
-msgid "Month"
-msgstr ""
-
-#: sections/Overview.class.php:134
-msgid "MySQL"
-msgstr ""
-
-#: classes/Statistics.class.php:125 views/sections/statistics.php:61
-msgid "Network"
-msgstr ""
-
-#: sections/Overview.class.php:94
-msgid "No critical issues found"
-msgstr ""
-
-#: sections/Overview.class.php:16
-msgid "Overview"
-msgstr ""
-
-#: sections/Overview.class.php:121 sections/Overview.class.php:125
-msgid "Please check for errors in the notification section"
-msgstr ""
-
-#: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-
 #: classes/Statistics.class.php:107
 msgid "Reload"
-msgstr ""
-
-#: dashboard.i18n.php:6 dashboard.i18n.php:12
-msgid "Reports"
-msgstr ""
-
-#: sections/Overview.class.php:103
-msgid "Security Issue"
-msgstr ""
-
-#: views/sections/overview.php:74
-msgid "Show All"
-msgstr ""
-
-#: views/sections/overview.php:76
-msgid "Show New"
 msgstr ""
 
 #: classes/Statistics.class.php:90 classes/Statistics.class.php:114
 msgid "Since Reload"
 msgstr ""
 
-#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
-#: sections/Uptime.class.php:16
-msgid "Statistics"
-msgstr ""
-
-#: views/sections/overview.php:22
-msgid "Summary"
-msgstr ""
-
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
 msgstr ""
 
-#: views/sections/overview.php:35
-#, php-format
-msgid "SysInfo updated %s seconds ago"
-msgstr ""
-
 #: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
-msgstr ""
-
-#: sections/Overview.class.php:92
-msgid "System Alerts"
-msgstr ""
-
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr ""
-
-#: views/sections/uptime.php:5
-msgid "System Last Rebooted"
-msgstr ""
-
-#: sections/Overview.class.php:15
-msgid "System Overview"
-msgstr ""
-
-#: dashboard.i18n.php:10
-msgid "System Status"
 msgstr ""
 
 #: classes/Statistics.class.php:112
@@ -253,10 +332,6 @@ msgstr ""
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr ""
-
-#: sections/Overview.class.php:104
-msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
 #: classes/Statistics.class.php:305
@@ -271,11 +346,6 @@ msgstr ""
 msgid "Trunks Reged"
 msgstr ""
 
-#: classes/Statistics.class.php:120 sections/Uptime.class.php:15
-#: views/sections/statistics.php:17
-msgid "Uptime"
-msgstr ""
-
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
 msgstr ""
@@ -286,82 +356,4 @@ msgstr ""
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr ""
-
-#: sections/Overview.class.php:126
-msgid "Warnings Found"
-msgstr ""
-
-#: sections/Overview.class.php:135
-msgid "Web Server"
-msgstr ""
-
-#: classes/Statistics.class.php:135 classes/Statistics.class.php:146
-#: classes/Statistics.class.php:157 classes/Statistics.class.php:168
-#: classes/Statistics.class.php:179 classes/Statistics.class.php:190
-#: views/sections/statistics.php:11 views/sections/statistics.php:22
-#: views/sections/statistics.php:33 views/sections/statistics.php:44
-#: views/sections/statistics.php:55 views/sections/statistics.php:66
-msgid "Week"
-msgstr ""
-
-#: views/main.php:3 views/sections/overview.php:6
-#, php-format
-msgid "Welcome to %s"
-msgstr ""
-
-#: classes/TimeUtils.class.php:15
-msgid "day"
-msgstr ""
-
-#: classes/TimeUtils.class.php:16
-msgid "days"
-msgstr ""
-
-#: classes/TimeUtils.class.php:17
-msgid "hour"
-msgstr ""
-
-#: classes/TimeUtils.class.php:18
-msgid "hours"
-msgstr ""
-
-#: classes/TimeUtils.class.php:19
-msgid "minute"
-msgstr ""
-
-#: classes/TimeUtils.class.php:20
-msgid "minutes"
-msgstr ""
-
-#: classes/TimeUtils.class.php:11
-msgid "month"
-msgstr ""
-
-#: classes/TimeUtils.class.php:12
-msgid "months"
-msgstr ""
-
-#: classes/TimeUtils.class.php:21
-msgid "second"
-msgstr ""
-
-#: classes/TimeUtils.class.php:22
-msgid "seconds"
-msgstr ""
-
-#: classes/TimeUtils.class.php:13
-msgid "week"
-msgstr ""
-
-#: classes/TimeUtils.class.php:14
-msgid "weeks"
-msgstr ""
-
-#: classes/TimeUtils.class.php:9
-msgid "year"
-msgstr ""
-
-#: classes/TimeUtils.class.php:10
-msgid "years"
 msgstr ""
