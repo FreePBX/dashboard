@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-25 22:00-0400\n"
+"POT-Creation-Date: 2015-04-13 05:07+1000\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -54,7 +54,7 @@ msgstr ""
 msgid "%s Min Avg"
 msgstr ""
 
-#: views/sections/overview.php:65 views/sections/uptime.php:6
+#: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
 msgstr "%s 前"
@@ -75,6 +75,13 @@ msgstr "15分"
 msgid "5 Minutes"
 msgstr "5分"
 
+#: sections/Overview.class.php:41
+#, php-format
+msgid ""
+"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
+"i>"
+msgstr ""
+
 #: views/sections/statistics.php:299
 msgid "Active Calls"
 msgstr ""
@@ -83,7 +90,7 @@ msgstr ""
 msgid "Active Chans"
 msgstr ""
 
-#: classes/Statistics.class.php:121 sections/Overview.class.php:133
+#: classes/Statistics.class.php:121 sections/Overview.class.php:139
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -111,9 +118,25 @@ msgstr ""
 msgid "Cached"
 msgstr ""
 
-#: sections/Overview.class.php:122
+#: sections/Overview.class.php:128
 msgid "Critical Errors found"
 msgstr "致命的なエラーが見つかりました"
+
+#: dashboard.i18n.php:14
+msgid "Dashboard Info Update Frequency"
+msgstr "ダッシュボード情報の更新間隔"
+
+#: dashboard.i18n.php:20
+msgid "Dashboard Max Calls Initial Scale"
+msgstr "ダッシュボードの最大通話数初期スケール"
+
+#: dashboard.i18n.php:28
+msgid "Dashboard Non-Std SSH Port"
+msgstr "ダッシュボード非標準SSHポート"
+
+#: dashboard.i18n.php:24
+msgid "Dashboard Stats Update Frequency"
+msgstr "ダッシュボード統計値の更新間隔"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -124,7 +147,7 @@ msgstr "致命的なエラーが見つかりました"
 msgid "Day"
 msgstr ""
 
-#: views/sections/overview.php:53
+#: views/sections/overview.php:54
 msgid "Delete This"
 msgstr "削除する"
 
@@ -144,6 +167,10 @@ msgstr ""
 msgid "Frobulating"
 msgstr ""
 
+#: dashboard.i18n.php:16
+msgid "GUI Behavior"
+msgstr "GUIの動作"
+
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
 #: classes/Statistics.class.php:177 classes/Statistics.class.php:188
@@ -153,7 +180,7 @@ msgstr ""
 msgid "Hour"
 msgstr ""
 
-#: views/sections/overview.php:52
+#: views/sections/overview.php:53
 msgid "Ignore This"
 msgstr "無視する"
 
@@ -186,7 +213,7 @@ msgstr "メモリー"
 msgid "Month"
 msgstr ""
 
-#: sections/Overview.class.php:134
+#: sections/Overview.class.php:140
 msgid "MySQL"
 msgstr "MySQLサーバー"
 
@@ -194,7 +221,7 @@ msgstr "MySQLサーバー"
 msgid "Network"
 msgstr "ネットワーク"
 
-#: sections/Overview.class.php:94
+#: sections/Overview.class.php:100
 msgid "No critical issues found"
 msgstr "クリティカルな問題は見つかりませんでした"
 
@@ -202,7 +229,7 @@ msgstr "クリティカルな問題は見つかりませんでした"
 msgid "Overview"
 msgstr "一覧"
 
-#: sections/Overview.class.php:121 sections/Overview.class.php:125
+#: sections/Overview.class.php:127 sections/Overview.class.php:131
 msgid "Please check for errors in the notification section"
 msgstr "通知セクションでエラーを確認してください"
 
@@ -222,15 +249,23 @@ msgstr ""
 msgid "Reports"
 msgstr "レポート"
 
-#: sections/Overview.class.php:103
+#: dashboard.i18n.php:32
+msgid ""
+"SSH port number configured on your system if not using the default port 22, "
+"this allows the dashboard monitoring to watch the poper port."
+msgstr ""
+"SSHのポート番号をデフォルトの 22番から変更している場合には、この設定項目を設"
+"定してください。"
+
+#: sections/Overview.class.php:109
 msgid "Security Issue"
 msgstr "セキュリティ問題"
 
-#: views/sections/overview.php:74
+#: views/sections/overview.php:75
 msgid "Show All"
 msgstr "全て表示"
 
-#: views/sections/overview.php:76
+#: views/sections/overview.php:77
 msgid "Show New"
 msgstr "新規を表示"
 
@@ -243,7 +278,7 @@ msgstr ""
 msgid "Statistics"
 msgstr "統計"
 
-#: views/sections/overview.php:22
+#: views/sections/overview.php:23
 msgid "Summary"
 msgstr "サマリー"
 
@@ -251,7 +286,7 @@ msgstr "サマリー"
 msgid "Swap Used"
 msgstr ""
 
-#: views/sections/overview.php:35
+#: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
 msgstr "%s 秒前にシステム情報を更新済み"
@@ -260,7 +295,7 @@ msgstr "%s 秒前にシステム情報を更新済み"
 msgid "System"
 msgstr ""
 
-#: sections/Overview.class.php:92
+#: sections/Overview.class.php:98
 msgid "System Alerts"
 msgstr "システム通知"
 
@@ -276,6 +311,10 @@ msgstr "最後の再起動"
 msgid "System Overview"
 msgstr "システム一覧"
 
+#: dashboard.i18n.php:30
+msgid "System Setup"
+msgstr "システムセットアップ"
+
 #: dashboard.i18n.php:10
 msgid "System Status"
 msgstr "システムステータス"
@@ -288,7 +327,7 @@ msgstr "システム稼働時間"
 msgid "Temp"
 msgstr ""
 
-#: sections/Overview.class.php:104
+#: sections/Overview.class.php:110
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "クリティカルな問題であるため速やかに解決する必要があります"
 
@@ -304,10 +343,31 @@ msgstr ""
 msgid "Trunks Reged"
 msgstr ""
 
+#: dashboard.i18n.php:26
+msgid ""
+"Update rate in seconds of all sections of the System Status panel except the "
+"Info box."
+msgstr ""
+"情報ボックスを除いた、システムステータスパネルの更新間隔(秒)を指定します。"
+
+#: dashboard.i18n.php:18
+msgid "Update rate in seconds of the Info section of the System Status panel."
+msgstr "システムステータスパネルの情報セクションの更新間隔(秒)を指定します。"
+
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
 msgstr "稼働時間"
+
+#: dashboard.i18n.php:22
+msgid ""
+"Use this to pre-set the scale for maximum calls on the Dashboard display. If "
+"not set, the the scale is dynamically sized based on the active calls on the "
+"system."
+msgstr ""
+"この設定項目では、ダッシュボードの最大通話数に対応するスケールを設定できま"
+"す。設定されていない場合には、アクティブな通話数に応じて動的にスケールを変更"
+"します。"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
@@ -321,11 +381,11 @@ msgstr ""
 msgid "Users Online"
 msgstr ""
 
-#: sections/Overview.class.php:126
+#: sections/Overview.class.php:132
 msgid "Warnings Found"
 msgstr "通知が見つかりました"
 
-#: sections/Overview.class.php:135
+#: sections/Overview.class.php:141
 msgid "Web Server"
 msgstr "Webサーバー"
 
@@ -562,51 +622,6 @@ msgstr "年"
 
 #~ msgid "FreePBX System Status"
 #~ msgstr "FreePBXシステムステータス"
-
-#~ msgid "Dashboard Info Update Frequency"
-#~ msgstr "ダッシュボード情報の更新間隔"
-
-#~ msgid "GUI Behavior"
-#~ msgstr "GUIの動作"
-
-#~ msgid ""
-#~ "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr ""
-#~ "システムステータスパネルの情報セクションの更新間隔(秒)を指定します。"
-
-#~ msgid "Dashboard Max Calls Initial Scale"
-#~ msgstr "ダッシュボードの最大通話数初期スケール"
-
-#~ msgid ""
-#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
-#~ "If not set, the the scale is dynamically sized based on the active calls "
-#~ "on the system."
-#~ msgstr ""
-#~ "この設定項目では、ダッシュボードの最大通話数に対応するスケールを設定できま"
-#~ "す。設定されていない場合には、アクティブな通話数に応じて動的にスケールを変"
-#~ "更します。"
-
-#~ msgid "Dashboard Stats Update Frequency"
-#~ msgstr "ダッシュボード統計値の更新間隔"
-
-#~ msgid ""
-#~ "Update rate in seconds of all sections of the System Status panel except "
-#~ "the Info box."
-#~ msgstr ""
-#~ "情報ボックスを除いた、システムステータスパネルの更新間隔(秒)を指定します。"
-
-#~ msgid "Dashboard Non-Std SSH Port"
-#~ msgstr "ダッシュボード非標準SSHポート"
-
-#~ msgid "System Setup"
-#~ msgstr "システムセットアップ"
-
-#~ msgid ""
-#~ "SSH port number configured on your system if not using the default port "
-#~ "22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr ""
-#~ "SSHのポート番号をデフォルトの 22番から変更している場合には、この設定項目を"
-#~ "設定してください。"
 
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s を %s から %s に変更しました。"

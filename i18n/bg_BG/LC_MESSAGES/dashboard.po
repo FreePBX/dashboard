@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-25 22:00-0400\n"
+"POT-Creation-Date: 2015-04-13 05:07+1000\n"
 "PO-Revision-Date: 2014-07-23 16:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "%s Min Avg"
 msgstr ""
 
-#: views/sections/overview.php:65 views/sections/uptime.php:6
+#: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
 msgstr ""
@@ -61,6 +61,13 @@ msgstr ""
 msgid "5 Minutes"
 msgstr ""
 
+#: sections/Overview.class.php:41
+#, php-format
+msgid ""
+"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
+"i>"
+msgstr ""
+
 #: views/sections/statistics.php:299
 msgid "Active Calls"
 msgstr ""
@@ -69,7 +76,7 @@ msgstr ""
 msgid "Active Chans"
 msgstr ""
 
-#: classes/Statistics.class.php:121 sections/Overview.class.php:133
+#: classes/Statistics.class.php:121 sections/Overview.class.php:139
 msgid "Asterisk"
 msgstr "Астериск"
 
@@ -97,9 +104,25 @@ msgstr ""
 msgid "Cached"
 msgstr ""
 
-#: sections/Overview.class.php:122
+#: sections/Overview.class.php:128
 msgid "Critical Errors found"
 msgstr ""
+
+#: dashboard.i18n.php:14
+msgid "Dashboard Info Update Frequency"
+msgstr "Период на Обновяване на Информацията"
+
+#: dashboard.i18n.php:20
+msgid "Dashboard Max Calls Initial Scale"
+msgstr "Начален Размер на Максимално Обаждания в Информация за Системата"
+
+#: dashboard.i18n.php:28
+msgid "Dashboard Non-Std SSH Port"
+msgstr "Non-Std SSH Порт на Информация за Системата"
+
+#: dashboard.i18n.php:24
+msgid "Dashboard Stats Update Frequency"
+msgstr "Период на Обновяване на Статуса на Системата"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -110,7 +133,7 @@ msgstr ""
 msgid "Day"
 msgstr ""
 
-#: views/sections/overview.php:53
+#: views/sections/overview.php:54
 msgid "Delete This"
 msgstr ""
 
@@ -130,6 +153,10 @@ msgstr ""
 msgid "Frobulating"
 msgstr ""
 
+#: dashboard.i18n.php:16
+msgid "GUI Behavior"
+msgstr "GUI Режим на Работа"
+
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
 #: classes/Statistics.class.php:177 classes/Statistics.class.php:188
@@ -139,7 +166,7 @@ msgstr ""
 msgid "Hour"
 msgstr ""
 
-#: views/sections/overview.php:52
+#: views/sections/overview.php:53
 msgid "Ignore This"
 msgstr ""
 
@@ -172,7 +199,7 @@ msgstr "Използвана Памет"
 msgid "Month"
 msgstr ""
 
-#: sections/Overview.class.php:134
+#: sections/Overview.class.php:140
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -180,7 +207,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr ""
 
-#: sections/Overview.class.php:94
+#: sections/Overview.class.php:100
 msgid "No critical issues found"
 msgstr ""
 
@@ -188,7 +215,7 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: sections/Overview.class.php:121 sections/Overview.class.php:125
+#: sections/Overview.class.php:127 sections/Overview.class.php:131
 msgid "Please check for errors in the notification section"
 msgstr ""
 
@@ -208,15 +235,23 @@ msgstr ""
 msgid "Reports"
 msgstr "Отчети"
 
-#: sections/Overview.class.php:103
+#: dashboard.i18n.php:32
+msgid ""
+"SSH port number configured on your system if not using the default port 22, "
+"this allows the dashboard monitoring to watch the poper port."
+msgstr ""
+"SSH порт, конфигуриран на вашата система, ако не се използва по-подразбиране "
+"порт 22."
+
+#: sections/Overview.class.php:109
 msgid "Security Issue"
 msgstr ""
 
-#: views/sections/overview.php:74
+#: views/sections/overview.php:75
 msgid "Show All"
 msgstr ""
 
-#: views/sections/overview.php:76
+#: views/sections/overview.php:77
 msgid "Show New"
 msgstr ""
 
@@ -229,7 +264,7 @@ msgstr ""
 msgid "Statistics"
 msgstr ""
 
-#: views/sections/overview.php:22
+#: views/sections/overview.php:23
 msgid "Summary"
 msgstr ""
 
@@ -237,7 +272,7 @@ msgstr ""
 msgid "Swap Used"
 msgstr ""
 
-#: views/sections/overview.php:35
+#: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
 msgstr ""
@@ -246,7 +281,7 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: sections/Overview.class.php:92
+#: sections/Overview.class.php:98
 msgid "System Alerts"
 msgstr ""
 
@@ -262,6 +297,10 @@ msgstr ""
 msgid "System Overview"
 msgstr ""
 
+#: dashboard.i18n.php:30
+msgid "System Setup"
+msgstr "Общи Настройки"
+
 #: dashboard.i18n.php:10
 msgid "System Status"
 msgstr ""
@@ -274,7 +313,7 @@ msgstr "Експлоатация на Системата"
 msgid "Temp"
 msgstr ""
 
-#: sections/Overview.class.php:104
+#: sections/Overview.class.php:110
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
@@ -290,10 +329,34 @@ msgstr ""
 msgid "Trunks Reged"
 msgstr ""
 
+#: dashboard.i18n.php:26
+msgid ""
+"Update rate in seconds of all sections of the System Status panel except the "
+"Info box."
+msgstr ""
+"Стойност на обновяване в секунди на всички секции в Статус на Системата с "
+"изключение на секцията за Информация."
+
+#: dashboard.i18n.php:18
+msgid "Update rate in seconds of the Info section of the System Status panel."
+msgstr ""
+"Стойност на обновяване в секунди на секцията за Информация на Статус на "
+"Системата."
+
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
 msgstr "Експлоатация"
+
+#: dashboard.i18n.php:22
+msgid ""
+"Use this to pre-set the scale for maximum calls on the Dashboard display. If "
+"not set, the the scale is dynamically sized based on the active calls on the "
+"system."
+msgstr ""
+"Използвайте за предварително задаване на скала за максимално обаждания на "
+"Информационния  дисплей. Ако не е зададено, ще се определя динамично на "
+"базата на активните повиквания в системата."
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
@@ -307,11 +370,11 @@ msgstr ""
 msgid "Users Online"
 msgstr ""
 
-#: sections/Overview.class.php:126
+#: sections/Overview.class.php:132
 msgid "Warnings Found"
 msgstr ""
 
-#: sections/Overview.class.php:135
+#: sections/Overview.class.php:141
 msgid "Web Server"
 msgstr "Уеб Сървър"
 
@@ -387,53 +450,6 @@ msgstr "години"
 
 #~ msgid "FreePBX System Status"
 #~ msgstr "FreePBX Статус на Системата"
-
-#~ msgid "Dashboard Info Update Frequency"
-#~ msgstr "Период на Обновяване на Информацията"
-
-#~ msgid "GUI Behavior"
-#~ msgstr "GUI Режим на Работа"
-
-#~ msgid ""
-#~ "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr ""
-#~ "Стойност на обновяване в секунди на секцията за Информация на Статус на "
-#~ "Системата."
-
-#~ msgid "Dashboard Max Calls Initial Scale"
-#~ msgstr "Начален Размер на Максимално Обаждания в Информация за Системата"
-
-#~ msgid ""
-#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
-#~ "If not set, the the scale is dynamically sized based on the active calls "
-#~ "on the system."
-#~ msgstr ""
-#~ "Използвайте за предварително задаване на скала за максимално обаждания на "
-#~ "Информационния  дисплей. Ако не е зададено, ще се определя динамично на "
-#~ "базата на активните повиквания в системата."
-
-#~ msgid "Dashboard Stats Update Frequency"
-#~ msgstr "Период на Обновяване на Статуса на Системата"
-
-#~ msgid ""
-#~ "Update rate in seconds of all sections of the System Status panel except "
-#~ "the Info box."
-#~ msgstr ""
-#~ "Стойност на обновяване в секунди на всички секции в Статус на Системата с "
-#~ "изключение на секцията за Информация."
-
-#~ msgid "Dashboard Non-Std SSH Port"
-#~ msgstr "Non-Std SSH Порт на Информация за Системата"
-
-#~ msgid "System Setup"
-#~ msgstr "Общи Настройки"
-
-#~ msgid ""
-#~ "SSH port number configured on your system if not using the default port "
-#~ "22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr ""
-#~ "SSH порт, конфигуриран на вашата система, ако не се използва по-"
-#~ "подразбиране порт 22."
 
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s е променен от %s на %s"
