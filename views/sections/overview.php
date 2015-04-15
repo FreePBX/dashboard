@@ -12,6 +12,7 @@
 		<div class='col-sm-12'>
 			<p class='text-center'>
 				<?php echo $brand . " " . $version?>
+				<?php echo $idline; ?>
 			</p>
 		</div>
 	</div>

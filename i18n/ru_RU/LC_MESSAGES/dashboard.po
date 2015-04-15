@@ -194,12 +194,8 @@ msgid "Please check for errors in the notification section"
 msgstr ""
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Отображает панель системной информации, информации о вызовах, загрузке CPU, "
-"памяти, занятость дисков, сети и процессов"
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+msgstr "Отображает панель системной информации, информации о вызовах, загрузке CPU, памяти, занятость дисков, сети и процессов"
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
@@ -382,33 +378,14 @@ msgstr "год"
 msgid "years"
 msgstr "годы"
 
-#~ msgid "%s changed from %s to %s"
-#~ msgstr "%s изменено с %s на %s"
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr ""
 
-#~ msgid "Added %s ago"
-#~ msgstr "Добавлено %s назад"
-
-#~ msgid "App Memory"
-#~ msgstr "Занято приложениями"
-
-#~ msgid ""
-#~ "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
-#~ "Asterisk directly, which may result in poor performance"
-#~ msgstr ""
-#~ "Asterisk Manager Proxy не работает, FreePBX будет использовать Asterisk "
-#~ "напрямую, что может привести к ухудшению производительности"
-
-#~ msgid "Asterisk Manager Proxy is running"
-#~ msgstr "Asterisk Manager Proxy работает"
-
-#~ msgid "Asterisk is not running, this is a critical service!"
-#~ msgstr "Asterisk не работает, это критично!"
-
-#~ msgid "Asterisk is running: %s"
-#~ msgstr "Asterisk работает: %s"
-
-#~ msgid "Critical Error"
-#~ msgstr "Критическая ошибка"
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr ""
 
 #~ msgid "Dashboard Info Update Frequency"
 #~ msgstr "Частота обновления информации системной панели"
@@ -421,6 +398,48 @@ msgstr "годы"
 
 #~ msgid "Dashboard Stats Update Frequency"
 #~ msgstr "Частота обновления статистики в панели системной информации"
+
+#~ msgid "GUI Behavior"
+#~ msgstr "поведение интерфейса"
+
+#~ msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr "Номер SSH порта, если не используется стандартный порт 22. Данная настройка позволяет монитору панели обращаться на правильный порт"
+
+#~ msgid "System Setup"
+#~ msgstr "Настройка Системы"
+
+#~ msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
+#~ msgstr "Интервал обновления в секундах всех секций в панели Статуса Системы кроме окна Информации"
+
+#~ msgid "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr "Интервал обновления в секундах в секции Инфо панели 'Статус Системы'."
+
+#~ msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
+#~ msgstr "Используйте этот параметр для установки шкалы максимального количества звонков на панели. Если не установлено, шкала будет установлена автоматически в зависимости от количества звонков в системе"
+
+#~ msgid "%s changed from %s to %s"
+#~ msgstr "%s изменено с %s на %s"
+
+#~ msgid "Added %s ago"
+#~ msgstr "Добавлено %s назад"
+
+#~ msgid "App Memory"
+#~ msgstr "Занято приложениями"
+
+#~ msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
+#~ msgstr "Asterisk Manager Proxy не работает, FreePBX будет использовать Asterisk напрямую, что может привести к ухудшению производительности"
+
+#~ msgid "Asterisk Manager Proxy is running"
+#~ msgstr "Asterisk Manager Proxy работает"
+
+#~ msgid "Asterisk is not running, this is a critical service!"
+#~ msgstr "Asterisk не работает, это критично!"
+
+#~ msgid "Asterisk is running: %s"
+#~ msgstr "Asterisk работает: %s"
+
+#~ msgid "Critical Error"
+#~ msgstr "Критическая ошибка"
 
 #~ msgid "Delete this"
 #~ msgstr "Удалите это"
@@ -451,9 +470,6 @@ msgstr "годы"
 
 #~ msgid "FreePBX System Status"
 #~ msgstr "Статус системы FreePBX"
-
-#~ msgid "GUI Behavior"
-#~ msgstr "поведение интерфейса"
 
 #~ msgid "IP Phones Online"
 #~ msgstr "ИП Телефонов в онлайне"
@@ -506,22 +522,11 @@ msgstr "годы"
 #~ msgid "SSH Server"
 #~ msgstr "Сервер SSH"
 
-#~ msgid ""
-#~ "SSH Server is not running, you will not be able to connect to the system "
-#~ "console remotely"
-#~ msgstr ""
-#~ "SSH Server не работает, Вы не сможете подключаться к системной консоли "
-#~ "удаленно"
+#~ msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
+#~ msgstr "SSH Server не работает, Вы не сможете подключаться к системной консоли удаленно"
 
 #~ msgid "SSH Server is running"
 #~ msgstr "SSH Server работает"
-
-#~ msgid ""
-#~ "SSH port number configured on your system if not using the default port "
-#~ "22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr ""
-#~ "Номер SSH порта, если не используется стандартный порт 22. Данная "
-#~ "настройка позволяет монитору панели обращаться на правильный порт"
 
 #~ msgid "Security Update"
 #~ msgstr "Обновление безопасности"
@@ -535,9 +540,6 @@ msgstr "годы"
 #~ msgid "System Information Table"
 #~ msgstr "Талица системной информации"
 
-#~ msgid "System Setup"
-#~ msgstr "Настройка Системы"
-
 #~ msgid "System Statistics"
 #~ msgstr "Статистика Системы"
 
@@ -549,27 +551,6 @@ msgstr "годы"
 
 #~ msgid "Update"
 #~ msgstr "Обновление"
-
-#~ msgid ""
-#~ "Update rate in seconds of all sections of the System Status panel except "
-#~ "the Info box."
-#~ msgstr ""
-#~ "Интервал обновления в секундах всех секций в панели Статуса Системы кроме "
-#~ "окна Информации"
-
-#~ msgid ""
-#~ "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr ""
-#~ "Интервал обновления в секундах в секции Инфо панели 'Статус Системы'."
-
-#~ msgid ""
-#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
-#~ "If not set, the the scale is dynamically sized based on the active calls "
-#~ "on the system."
-#~ msgstr ""
-#~ "Используйте этот параметр для установки шкалы максимального количества "
-#~ "звонков на панели. Если не установлено, шкала будет установлена "
-#~ "автоматически в зависимости от количества звонков в системе"
 
 #~ msgid "Warn"
 #~ msgstr "Ого!"

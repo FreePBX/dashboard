@@ -23,8 +23,7 @@ msgstr ""
 "POT-Creation-Date: 2015-03-25 22:02-0400\n"
 "PO-Revision-Date: 2014-07-23 16:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
-"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/"
-"bg/>\n"
+"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/bg/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -197,12 +196,8 @@ msgid "Please check for errors in the notification section"
 msgstr ""
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Предоставя информация за системата, показва информация за Разговори, CPU, "
-"Памет, Твърд Диск, Мрежа и процеси."
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+msgstr "Предоставя информация за системата, показва информация за Разговори, CPU, Памет, Твърд Диск, Мрежа и процеси."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
@@ -385,33 +380,14 @@ msgstr "година"
 msgid "years"
 msgstr "години"
 
-#~ msgid "%s changed from %s to %s"
-#~ msgstr "%s е променен от %s на %s"
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr ""
 
-#~ msgid "Added %s ago"
-#~ msgstr "Добавено преди %s"
-
-#~ msgid "App Memory"
-#~ msgstr "Памет"
-
-#~ msgid ""
-#~ "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
-#~ "Asterisk directly, which may result in poor performance"
-#~ msgstr ""
-#~ "Астериск Manager Прокси не работи, FreePBX ще използва Астериск директно, "
-#~ "което може да доведе до влошена производителност"
-
-#~ msgid "Asterisk Manager Proxy is running"
-#~ msgstr "Астериск Manager Прокси работи"
-
-#~ msgid "Asterisk is not running, this is a critical service!"
-#~ msgstr "Астериск не работи, това е критична услуга!"
-
-#~ msgid "Asterisk is running: %s"
-#~ msgstr "Астериск работи: %s"
-
-#~ msgid "Critical Error"
-#~ msgstr "Критична Грешка"
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr ""
 
 #~ msgid "Dashboard Info Update Frequency"
 #~ msgstr "Период на Обновяване на Информацията"
@@ -424,6 +400,48 @@ msgstr "години"
 
 #~ msgid "Dashboard Stats Update Frequency"
 #~ msgstr "Период на Обновяване на Статуса на Системата"
+
+#~ msgid "GUI Behavior"
+#~ msgstr "GUI Режим на Работа"
+
+#~ msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr "SSH порт, конфигуриран на вашата система, ако не се използва по-подразбиране порт 22."
+
+#~ msgid "System Setup"
+#~ msgstr "Общи Настройки"
+
+#~ msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
+#~ msgstr "Стойност на обновяване в секунди на всички секции в Статус на Системата с изключение на секцията за Информация."
+
+#~ msgid "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr "Стойност на обновяване в секунди на секцията за Информация на Статус на Системата."
+
+#~ msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
+#~ msgstr "Използвайте за предварително задаване на скала за максимално обаждания на Информационния  дисплей. Ако не е зададено, ще се определя динамично на базата на активните повиквания в системата."
+
+#~ msgid "%s changed from %s to %s"
+#~ msgstr "%s е променен от %s на %s"
+
+#~ msgid "Added %s ago"
+#~ msgstr "Добавено преди %s"
+
+#~ msgid "App Memory"
+#~ msgstr "Памет"
+
+#~ msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
+#~ msgstr "Астериск Manager Прокси не работи, FreePBX ще използва Астериск директно, което може да доведе до влошена производителност"
+
+#~ msgid "Asterisk Manager Proxy is running"
+#~ msgstr "Астериск Manager Прокси работи"
+
+#~ msgid "Asterisk is not running, this is a critical service!"
+#~ msgstr "Астериск не работи, това е критична услуга!"
+
+#~ msgid "Asterisk is running: %s"
+#~ msgstr "Астериск работи: %s"
+
+#~ msgid "Critical Error"
+#~ msgstr "Критична Грешка"
 
 #~ msgid "Delete this"
 #~ msgstr "Изтрий това"
@@ -443,12 +461,8 @@ msgstr "години"
 #~ msgid "External calls"
 #~ msgstr "Външни разговори"
 
-#~ msgid ""
-#~ "FOP Operator Panel Server is not running, you will not be able to use the "
-#~ "operator panel, but the system will run fine without it."
-#~ msgstr ""
-#~ "ФОП Сървъра не работи, няма да можете да използвате оператор панела, но "
-#~ "системата ще работи нормално без него."
+#~ msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
+#~ msgstr "ФОП Сървъра не работи, няма да можете да използвате оператор панела, но системата ще работи нормално без него."
 
 #~ msgid "FOP Operator Panel Server is running"
 #~ msgstr "ФОП Сървъра работи"
@@ -470,9 +484,6 @@ msgstr "години"
 
 #~ msgid "FreePBX System Status"
 #~ msgstr "FreePBX Статус на Системата"
-
-#~ msgid "GUI Behavior"
-#~ msgstr "GUI Режим на Работа"
 
 #~ msgid "IP Phones Online"
 #~ msgstr "IP Телефони Онлайн"
@@ -525,22 +536,11 @@ msgstr "години"
 #~ msgid "SSH Server"
 #~ msgstr "SSH Сървър"
 
-#~ msgid ""
-#~ "SSH Server is not running, you will not be able to connect to the system "
-#~ "console remotely"
-#~ msgstr ""
-#~ "SSH Сървъра не работи, няма да можете да се свързвате със системата "
-#~ "дистанционно"
+#~ msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
+#~ msgstr "SSH Сървъра не работи, няма да можете да се свързвате със системата дистанционно"
 
 #~ msgid "SSH Server is running"
 #~ msgstr "SSH Сървъра работи"
-
-#~ msgid ""
-#~ "SSH port number configured on your system if not using the default port "
-#~ "22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr ""
-#~ "SSH порт, конфигуриран на вашата система, ако не се използва по-"
-#~ "подразбиране порт 22."
 
 #~ msgid "Security Update"
 #~ msgstr "Защитно Обновяване"
@@ -554,9 +554,6 @@ msgstr "години"
 #~ msgid "System Information Table"
 #~ msgstr "Информация за Системата"
 
-#~ msgid "System Setup"
-#~ msgstr "Общи Настройки"
-
 #~ msgid "System Statistics"
 #~ msgstr "Системен Статус"
 
@@ -568,28 +565,6 @@ msgstr "години"
 
 #~ msgid "Update"
 #~ msgstr "Обнови"
-
-#~ msgid ""
-#~ "Update rate in seconds of all sections of the System Status panel except "
-#~ "the Info box."
-#~ msgstr ""
-#~ "Стойност на обновяване в секунди на всички секции в Статус на Системата с "
-#~ "изключение на секцията за Информация."
-
-#~ msgid ""
-#~ "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr ""
-#~ "Стойност на обновяване в секунди на секцията за Информация на Статус на "
-#~ "Системата."
-
-#~ msgid ""
-#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
-#~ "If not set, the the scale is dynamically sized based on the active calls "
-#~ "on the system."
-#~ msgstr ""
-#~ "Използвайте за предварително задаване на скала за максимално обаждания на "
-#~ "Информационния  дисплей. Ако не е зададено, ще се определя динамично на "
-#~ "базата на активните повиквания в системата."
 
 #~ msgid "Warn"
 #~ msgstr "Предупреждавам"
