@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-13 05:07+1000\n"
-"PO-Revision-Date: 2015-03-31 07:26+0200\n"
+"PO-Revision-Date: 2015-04-16 01:42+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
-"dashboard/es_ES/>\n"
+"Language-Team: Spanish "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/es_ES/>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -53,6 +53,8 @@ msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
 "i>"
 msgstr ""
+"<strong>'%s'</strong><br><i>(Usted puede cambiar este nombre en "
+"Configuración Avanzada)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
@@ -96,11 +98,11 @@ msgstr "Errores Críticos Encontrados"
 
 #: dashboard.i18n.php:14
 msgid "Dashboard Info Update Frequency"
-msgstr ""
+msgstr "Frecuencia de Actualización del Tabero"
 
 #: dashboard.i18n.php:20
 msgid "Dashboard Max Calls Initial Scale"
-msgstr ""
+msgstr "Escala Inicial Máxima de Llamadas del Tablero"
 
 #: dashboard.i18n.php:28
 msgid "Dashboard Non-Std SSH Port"
