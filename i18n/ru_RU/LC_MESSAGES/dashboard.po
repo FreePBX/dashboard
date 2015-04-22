@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-13 05:07+1000\n"
-"PO-Revision-Date: 2015-04-22 15:33+0200\n"
+"PO-Revision-Date: 2015-04-22 16:28+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/ru_RU/>\n"
@@ -118,7 +118,7 @@ msgstr "Частота обновления информации системн�
 
 #: dashboard.i18n.php:20
 msgid "Dashboard Max Calls Initial Scale"
-msgstr "Начальная шкала максимального количества вызовов в панели"
+msgstr "Начальный масштаб максимального количества вызовов в системной панели"
 
 #: dashboard.i18n.php:28
 msgid "Dashboard Non-Std SSH Port"
@@ -126,7 +126,7 @@ msgstr "Нестандартный SSH порт системной панели"
 
 #: dashboard.i18n.php:24
 msgid "Dashboard Stats Update Frequency"
-msgstr "Частота обновления статистики в панели системной информации"
+msgstr "Частота обновления статистики в системной панели"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -213,7 +213,7 @@ msgstr "Сеть"
 
 #: sections/Overview.class.php:100
 msgid "No critical issues found"
-msgstr "Не найдено критических проблем"
+msgstr "Критических проблем не найдено"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
@@ -271,7 +271,7 @@ msgstr "Статистика"
 
 #: views/sections/overview.php:23
 msgid "Summary"
-msgstr "Суммарно"
+msgstr "Краткая сводка"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
@@ -292,7 +292,7 @@ msgstr "Системные уведомления"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
-msgstr "Панель системы"
+msgstr "Системная панель"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -304,7 +304,7 @@ msgstr "Обзор системы"
 
 #: dashboard.i18n.php:30
 msgid "System Setup"
-msgstr "Настройка Системы"
+msgstr "Системные настройки"
 
 #: dashboard.i18n.php:10
 msgid "System Status"
@@ -349,7 +349,7 @@ msgstr "Интервал обновления в секундах в секци�
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr "Время запуска"
+msgstr "Время работы"
 
 #: dashboard.i18n.php:22
 msgid ""
@@ -379,7 +379,7 @@ msgstr "Найдены предупреждения"
 
 #: sections/Overview.class.php:141
 msgid "Web Server"
-msgstr "Вэб сервер"
+msgstr "Веб сервер"
 
 #: classes/Statistics.class.php:135 classes/Statistics.class.php:146
 #: classes/Statistics.class.php:157 classes/Statistics.class.php:168
@@ -449,7 +449,7 @@ msgstr "год"
 
 #: classes/TimeUtils.class.php:10
 msgid "years"
-msgstr "годы"
+msgstr "лет"
 
 #~ msgid "FreePBX System Status"
 #~ msgstr "Статус системы FreePBX"
