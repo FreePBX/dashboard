@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-13 05:07+1000\n"
-"PO-Revision-Date: 2015-04-28 05:39+0200\n"
+"PO-Revision-Date: 2015-04-28 09:54+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/pt_BR/>\n"
@@ -80,7 +80,7 @@ msgstr "Asterisk"
 
 #: classes/Statistics.class.php:113
 msgid "Asterisk Uptime"
-msgstr "Tempo ativo do Asterisk"
+msgstr "Tempo Ativo do Asterisk"
 
 #: sections/Blogs.class.php:34 sections/Blogs.class.php:42
 msgid "Blogs"
@@ -342,7 +342,7 @@ msgstr "Tempo de atualização em segundos do painel de Estado do Sistema."
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr "Tempo ativo"
+msgstr "Tempo Ativo"
 
 #: dashboard.i18n.php:22
 msgid ""
