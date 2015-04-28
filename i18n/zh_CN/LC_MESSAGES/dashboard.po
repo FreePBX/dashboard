@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-13 05:07+1000\n"
+"POT-Creation-Date: 2015-04-27 23:20-0400\n"
 "PO-Revision-Date: 2015-02-20 19:18-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -91,22 +91,6 @@ msgstr ""
 msgid "Critical Errors found"
 msgstr ""
 
-#: dashboard.i18n.php:14
-msgid "Dashboard Info Update Frequency"
-msgstr ""
-
-#: dashboard.i18n.php:20
-msgid "Dashboard Max Calls Initial Scale"
-msgstr ""
-
-#: dashboard.i18n.php:28
-msgid "Dashboard Non-Std SSH Port"
-msgstr ""
-
-#: dashboard.i18n.php:24
-msgid "Dashboard Stats Update Frequency"
-msgstr ""
-
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
 #: classes/Statistics.class.php:178 classes/Statistics.class.php:189
@@ -134,10 +118,6 @@ msgstr ""
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr ""
-
-#: dashboard.i18n.php:16
-msgid "GUI Behavior"
 msgstr ""
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
@@ -216,12 +196,6 @@ msgstr ""
 msgid "Reports"
 msgstr ""
 
-#: dashboard.i18n.php:32
-msgid ""
-"SSH port number configured on your system if not using the default port 22, "
-"this allows the dashboard monitoring to watch the poper port."
-msgstr ""
-
 #: sections/Overview.class.php:109
 msgid "Security Issue"
 msgstr ""
@@ -276,10 +250,6 @@ msgstr ""
 msgid "System Overview"
 msgstr ""
 
-#: dashboard.i18n.php:30
-msgid "System Setup"
-msgstr ""
-
 #: dashboard.i18n.php:10
 msgid "System Status"
 msgstr ""
@@ -308,27 +278,10 @@ msgstr ""
 msgid "Trunks Reged"
 msgstr ""
 
-#: dashboard.i18n.php:26
-msgid ""
-"Update rate in seconds of all sections of the System Status panel except the "
-"Info box."
-msgstr ""
-
-#: dashboard.i18n.php:18
-msgid "Update rate in seconds of the Info section of the System Status panel."
-msgstr ""
-
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
 msgstr "已运行时间"
-
-#: dashboard.i18n.php:22
-msgid ""
-"Use this to pre-set the scale for maximum calls on the Dashboard display. If "
-"not set, the the scale is dynamically sized based on the active calls on the "
-"system."
-msgstr ""
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"

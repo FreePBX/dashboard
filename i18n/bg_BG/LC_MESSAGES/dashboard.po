@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-13 05:07+1000\n"
+"POT-Creation-Date: 2015-04-27 23:20-0400\n"
 "PO-Revision-Date: 2014-07-23 16:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/"
@@ -108,22 +108,6 @@ msgstr ""
 msgid "Critical Errors found"
 msgstr ""
 
-#: dashboard.i18n.php:14
-msgid "Dashboard Info Update Frequency"
-msgstr "Период на Обновяване на Информацията"
-
-#: dashboard.i18n.php:20
-msgid "Dashboard Max Calls Initial Scale"
-msgstr "Начален Размер на Максимално Обаждания в Информация за Системата"
-
-#: dashboard.i18n.php:28
-msgid "Dashboard Non-Std SSH Port"
-msgstr "Non-Std SSH Порт на Информация за Системата"
-
-#: dashboard.i18n.php:24
-msgid "Dashboard Stats Update Frequency"
-msgstr "Период на Обновяване на Статуса на Системата"
-
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
 #: classes/Statistics.class.php:178 classes/Statistics.class.php:189
@@ -152,10 +136,6 @@ msgstr ""
 #: views/main.php:6
 msgid "Frobulating"
 msgstr ""
-
-#: dashboard.i18n.php:16
-msgid "GUI Behavior"
-msgstr "GUI Режим на Работа"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -235,14 +215,6 @@ msgstr ""
 msgid "Reports"
 msgstr "Отчети"
 
-#: dashboard.i18n.php:32
-msgid ""
-"SSH port number configured on your system if not using the default port 22, "
-"this allows the dashboard monitoring to watch the poper port."
-msgstr ""
-"SSH порт, конфигуриран на вашата система, ако не се използва по-подразбиране "
-"порт 22."
-
 #: sections/Overview.class.php:109
 msgid "Security Issue"
 msgstr ""
@@ -297,10 +269,6 @@ msgstr ""
 msgid "System Overview"
 msgstr ""
 
-#: dashboard.i18n.php:30
-msgid "System Setup"
-msgstr "Общи Настройки"
-
 #: dashboard.i18n.php:10
 msgid "System Status"
 msgstr ""
@@ -329,34 +297,10 @@ msgstr ""
 msgid "Trunks Reged"
 msgstr ""
 
-#: dashboard.i18n.php:26
-msgid ""
-"Update rate in seconds of all sections of the System Status panel except the "
-"Info box."
-msgstr ""
-"Стойност на обновяване в секунди на всички секции в Статус на Системата с "
-"изключение на секцията за Информация."
-
-#: dashboard.i18n.php:18
-msgid "Update rate in seconds of the Info section of the System Status panel."
-msgstr ""
-"Стойност на обновяване в секунди на секцията за Информация на Статус на "
-"Системата."
-
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
 msgstr "Експлоатация"
-
-#: dashboard.i18n.php:22
-msgid ""
-"Use this to pre-set the scale for maximum calls on the Dashboard display. If "
-"not set, the the scale is dynamically sized based on the active calls on the "
-"system."
-msgstr ""
-"Използвайте за предварително задаване на скала за максимално обаждания на "
-"Информационния  дисплей. Ако не е зададено, ще се определя динамично на "
-"базата на активните повиквания в системата."
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
@@ -447,6 +391,53 @@ msgstr "година"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "години"
+
+#~ msgid "Dashboard Info Update Frequency"
+#~ msgstr "Период на Обновяване на Информацията"
+
+#~ msgid "Dashboard Max Calls Initial Scale"
+#~ msgstr "Начален Размер на Максимално Обаждания в Информация за Системата"
+
+#~ msgid "Dashboard Non-Std SSH Port"
+#~ msgstr "Non-Std SSH Порт на Информация за Системата"
+
+#~ msgid "Dashboard Stats Update Frequency"
+#~ msgstr "Период на Обновяване на Статуса на Системата"
+
+#~ msgid "GUI Behavior"
+#~ msgstr "GUI Режим на Работа"
+
+#~ msgid ""
+#~ "SSH port number configured on your system if not using the default port "
+#~ "22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr ""
+#~ "SSH порт, конфигуриран на вашата система, ако не се използва по-"
+#~ "подразбиране порт 22."
+
+#~ msgid "System Setup"
+#~ msgstr "Общи Настройки"
+
+#~ msgid ""
+#~ "Update rate in seconds of all sections of the System Status panel except "
+#~ "the Info box."
+#~ msgstr ""
+#~ "Стойност на обновяване в секунди на всички секции в Статус на Системата с "
+#~ "изключение на секцията за Информация."
+
+#~ msgid ""
+#~ "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr ""
+#~ "Стойност на обновяване в секунди на секцията за Информация на Статус на "
+#~ "Системата."
+
+#~ msgid ""
+#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
+#~ "If not set, the the scale is dynamically sized based on the active calls "
+#~ "on the system."
+#~ msgstr ""
+#~ "Използвайте за предварително задаване на скала за максимално обаждания на "
+#~ "Информационния  дисплей. Ако не е зададено, ще се определя динамично на "
+#~ "базата на активните повиквания в системата."
 
 #~ msgid "FreePBX System Status"
 #~ msgstr "FreePBX Статус на Системата"

@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-13 05:07+1000\n"
+"POT-Creation-Date: 2015-04-27 23:20-0400\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -122,22 +122,6 @@ msgstr ""
 msgid "Critical Errors found"
 msgstr "致命的なエラーが見つかりました"
 
-#: dashboard.i18n.php:14
-msgid "Dashboard Info Update Frequency"
-msgstr "ダッシュボード情報の更新間隔"
-
-#: dashboard.i18n.php:20
-msgid "Dashboard Max Calls Initial Scale"
-msgstr "ダッシュボードの最大通話数初期スケール"
-
-#: dashboard.i18n.php:28
-msgid "Dashboard Non-Std SSH Port"
-msgstr "ダッシュボード非標準SSHポート"
-
-#: dashboard.i18n.php:24
-msgid "Dashboard Stats Update Frequency"
-msgstr "ダッシュボード統計値の更新間隔"
-
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
 #: classes/Statistics.class.php:178 classes/Statistics.class.php:189
@@ -166,10 +150,6 @@ msgstr ""
 #: views/main.php:6
 msgid "Frobulating"
 msgstr ""
-
-#: dashboard.i18n.php:16
-msgid "GUI Behavior"
-msgstr "GUIの動作"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -249,14 +229,6 @@ msgstr ""
 msgid "Reports"
 msgstr "レポート"
 
-#: dashboard.i18n.php:32
-msgid ""
-"SSH port number configured on your system if not using the default port 22, "
-"this allows the dashboard monitoring to watch the poper port."
-msgstr ""
-"SSHのポート番号をデフォルトの 22番から変更している場合には、この設定項目を設"
-"定してください。"
-
 #: sections/Overview.class.php:109
 msgid "Security Issue"
 msgstr "セキュリティ問題"
@@ -311,10 +283,6 @@ msgstr "最後の再起動"
 msgid "System Overview"
 msgstr "システム一覧"
 
-#: dashboard.i18n.php:30
-msgid "System Setup"
-msgstr "システムセットアップ"
-
 #: dashboard.i18n.php:10
 msgid "System Status"
 msgstr "システムステータス"
@@ -343,31 +311,10 @@ msgstr ""
 msgid "Trunks Reged"
 msgstr ""
 
-#: dashboard.i18n.php:26
-msgid ""
-"Update rate in seconds of all sections of the System Status panel except the "
-"Info box."
-msgstr ""
-"情報ボックスを除いた、システムステータスパネルの更新間隔(秒)を指定します。"
-
-#: dashboard.i18n.php:18
-msgid "Update rate in seconds of the Info section of the System Status panel."
-msgstr "システムステータスパネルの情報セクションの更新間隔(秒)を指定します。"
-
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
 msgstr "稼働時間"
-
-#: dashboard.i18n.php:22
-msgid ""
-"Use this to pre-set the scale for maximum calls on the Dashboard display. If "
-"not set, the the scale is dynamically sized based on the active calls on the "
-"system."
-msgstr ""
-"この設定項目では、ダッシュボードの最大通話数に対応するスケールを設定できま"
-"す。設定されていない場合には、アクティブな通話数に応じて動的にスケールを変更"
-"します。"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
@@ -458,6 +405,51 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
+
+#~ msgid "Dashboard Info Update Frequency"
+#~ msgstr "ダッシュボード情報の更新間隔"
+
+#~ msgid "Dashboard Max Calls Initial Scale"
+#~ msgstr "ダッシュボードの最大通話数初期スケール"
+
+#~ msgid "Dashboard Non-Std SSH Port"
+#~ msgstr "ダッシュボード非標準SSHポート"
+
+#~ msgid "Dashboard Stats Update Frequency"
+#~ msgstr "ダッシュボード統計値の更新間隔"
+
+#~ msgid "GUI Behavior"
+#~ msgstr "GUIの動作"
+
+#~ msgid ""
+#~ "SSH port number configured on your system if not using the default port "
+#~ "22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr ""
+#~ "SSHのポート番号をデフォルトの 22番から変更している場合には、この設定項目を"
+#~ "設定してください。"
+
+#~ msgid "System Setup"
+#~ msgstr "システムセットアップ"
+
+#~ msgid ""
+#~ "Update rate in seconds of all sections of the System Status panel except "
+#~ "the Info box."
+#~ msgstr ""
+#~ "情報ボックスを除いた、システムステータスパネルの更新間隔(秒)を指定します。"
+
+#~ msgid ""
+#~ "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr ""
+#~ "システムステータスパネルの情報セクションの更新間隔(秒)を指定します。"
+
+#~ msgid ""
+#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
+#~ "If not set, the the scale is dynamically sized based on the active calls "
+#~ "on the system."
+#~ msgstr ""
+#~ "この設定項目では、ダッシュボードの最大通話数に対応するスケールを設定できま"
+#~ "す。設定されていない場合には、アクティブな通話数に応じて動的にスケールを変"
+#~ "更します。"
 
 #~ msgid "OK"
 #~ msgstr "OK"
