@@ -19,15 +19,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-27 23:20-0400\n"
-"PO-Revision-Date: 2015-04-28 10:02+0200\n"
+"POT-Creation-Date: 2015-04-13 05:07+1000\n"
+"PO-Revision-Date: 2015-04-30 20:19+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
-"Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
-"freepbx/dashboard/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -59,12 +59,8 @@ msgstr "5 Minutos"
 
 #: sections/Overview.class.php:41
 #, php-format
-msgid ""
-"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
-"i>"
-msgstr ""
-"<strong>'%s'</strong><br><i>(Você pode mudar este nome em Configurações "
-"Avançadas)</i>"
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr "<strong>'%s'</strong><br><i>(Você pode mudar este nome em Configurações Avançadas)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
@@ -106,6 +102,22 @@ msgstr "Em Cache"
 msgid "Critical Errors found"
 msgstr "Erros Críticos encontrados"
 
+#: dashboard.i18n.php:14
+msgid "Dashboard Info Update Frequency"
+msgstr "Frequência de atualização do Painel de Informações"
+
+#: dashboard.i18n.php:20
+msgid "Dashboard Max Calls Initial Scale"
+msgstr "Numero máximo de chamadas exibidas no Painel"
+
+#: dashboard.i18n.php:28
+msgid "Dashboard Non-Std SSH Port"
+msgstr "Porta SSH não padrão no Painel"
+
+#: dashboard.i18n.php:24
+msgid "Dashboard Stats Update Frequency"
+msgstr "Frequência de Atualização do Status do Painel"
+
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
 #: classes/Statistics.class.php:178 classes/Statistics.class.php:189
@@ -134,6 +146,10 @@ msgstr "Mem Livre"
 #: views/main.php:6
 msgid "Frobulating"
 msgstr "- Frobulating"
+
+#: dashboard.i18n.php:16
+msgid "GUI Behavior"
+msgstr "Comportamento da Interface"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -198,12 +214,8 @@ msgid "Please check for errors in the notification section"
 msgstr "Por favor verifique por erros na seção de notificações"
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Exibe um painel de informações do sistema, mostrando informações sobre "
-"Chamadas, CPU, Memória, Discos, Rede e processos."
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+msgstr "Exibe um painel de informações do sistema, mostrando informações sobre Chamadas, CPU, Memória, Discos, Rede e processos."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
@@ -212,6 +224,10 @@ msgstr "Recarregar"
 #: dashboard.i18n.php:6 dashboard.i18n.php:12
 msgid "Reports"
 msgstr "Relatórios"
+
+#: dashboard.i18n.php:32
+msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
+msgstr "A Porta SSH de seu sistema não esta configurada como a padrão 22, desta forma o Painel não poderá monitora-la."
 
 #: sections/Overview.class.php:109
 msgid "Security Issue"
@@ -253,7 +269,7 @@ msgstr "Sistema"
 
 #: sections/Overview.class.php:98
 msgid "System Alerts"
-msgstr "Alertas de Sistema"
+msgstr "Alertas do Sistema"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
@@ -266,6 +282,10 @@ msgstr "Última Inicialização do Sistema"
 #: sections/Overview.class.php:15
 msgid "System Overview"
 msgstr "Visão Geral do Sistema"
+
+#: dashboard.i18n.php:30
+msgid "System Setup"
+msgstr "Configuração do Sistema"
 
 #: dashboard.i18n.php:10
 msgid "System Status"
@@ -295,10 +315,22 @@ msgstr "Troncos Offline"
 msgid "Trunks Reged"
 msgstr "Troncos Registrados"
 
+#: dashboard.i18n.php:26
+msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
+msgstr "Tempo de atualização de todas as seções do Estado do Sistema, exceto a Tela de Informações."
+
+#: dashboard.i18n.php:18
+msgid "Update rate in seconds of the Info section of the System Status panel."
+msgstr "Tempo de atualização em segundos do painel de Estado do Sistema."
+
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
 msgstr "Tempo Ativo"
+
+#: dashboard.i18n.php:22
+msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
+msgstr "Use este para setar numero máximo de chamadas exibidas no Painel. Se não for configurado, será exibido em escala dinâmica baseado nas chamadas ativas no sistema."
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
@@ -332,7 +364,7 @@ msgstr "Semana"
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
-msgstr "Bem Vindo a %s"
+msgstr "Bem Vindo ao %s"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
@@ -390,230 +422,173 @@ msgstr "ano"
 msgid "years"
 msgstr "anos"
 
-#~ msgid "Dashboard Info Update Frequency"
-#~ msgstr "Frequência de atualização do Painel de Informações"
-
-#~ msgid "Dashboard Max Calls Initial Scale"
-#~ msgstr "Numero máximo de chamadas exibidas no Painel"
-
-#~ msgid "Dashboard Non-Std SSH Port"
-#~ msgstr "Porta SSH não padrão no Painel"
-
-#~ msgid "Dashboard Stats Update Frequency"
-#~ msgstr "Frequência de Atualização do Status do Painel"
-
-#~ msgid "GUI Behavior"
-#~ msgstr "Comportamento da Interface"
-
-#~ msgid ""
-#~ "SSH port number configured on your system if not using the default port "
-#~ "22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr ""
-#~ "A Porta SSH de seu sistema não esta configurada como a padrão 22, desta "
-#~ "forma o Painel não poderá monitora-la."
-
-#~ msgid "System Setup"
-#~ msgstr "Configuração do Sistema"
-
-#~ msgid ""
-#~ "Update rate in seconds of all sections of the System Status panel except "
-#~ "the Info box."
-#~ msgstr ""
-#~ "Tempo de atualização de todas as seções do Estado do Sistema, exceto a "
-#~ "Tela de Informações."
-
-#~ msgid ""
-#~ "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr "Tempo de atualização em segundos do painel de Estado do Sistema."
-
-#~ msgid ""
-#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
-#~ "If not set, the the scale is dynamically sized based on the active calls "
-#~ "on the system."
-#~ msgstr ""
-#~ "Use este para setar numero máximo de chamadas exibidas no Painel. Se não "
-#~ "for configurado, será exibido em escala dinâmica baseado nas chamadas "
-#~ "ativas no sistema."
-
-#~ msgid "FreePBX System Status"
-#~ msgstr "Status do FreePBX"
-
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s alterado de %s para %s"
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid "Warn"
-#~ msgstr "Alerta"
-
-#~ msgid "ERROR"
-#~ msgstr "ERRO"
-
-#~ msgid "Disabled"
-#~ msgstr "Desabilitado"
-
-#~ msgid "System Statistics"
-#~ msgstr "Estatísticas do sistema"
-
-#~ msgid "Processor"
-#~ msgstr "Processador"
-
-#~ msgid "Load Average"
-#~ msgstr "Média de Carga"
-
-#~ msgid "App Memory"
-#~ msgstr "Memória App"
-
-#~ msgid "Swap"
-#~ msgstr "Swap"
-
-#~ msgid "Disks"
-#~ msgstr "Discos"
-
-#~ msgid "Networks"
-#~ msgstr "Redes"
-
-#~ msgid "receive"
-#~ msgstr "média rx"
-
-#~ msgid "transmit"
-#~ msgstr "média tx"
-
-#~ msgid "FreePBX Statistics"
-#~ msgstr "Estatísticas do FreePBX"
-
-#~ msgid "Total active calls"
-#~ msgstr "Total de chamadas ativas"
-
-#~ msgid "Internal calls"
-#~ msgstr "Chamadas internas"
-
-#~ msgid "External calls"
-#~ msgstr "Chamadas externas"
-
-#~ msgid "Total active channels"
-#~ msgstr "Total de canais ativos"
-
-#~ msgid "FreePBX Connections"
-#~ msgstr "Conexões FreePBX"
-
-#~ msgid "IP Phones Online"
-#~ msgstr "Telefones IP Online"
-
-#~ msgid "IP Trunks Online"
-#~ msgstr "Troncos IP Online"
-
-#~ msgid "IP Trunk Registrations"
-#~ msgstr "Troncos IP Registrados"
-
-#~ msgid "System Information Table"
-#~ msgstr "Tabela de Informações do sistema"
-
-#~ msgid "Last Reload"
-#~ msgstr "Última recarga"
-
-#~ msgid "Server Status"
-#~ msgstr "Status do Servidor"
-
-#~ msgid "Asterisk is running: %s"
-#~ msgstr "Asterisk está rodando: %s"
-
-#~ msgid "Asterisk is not running, this is a critical service!"
-#~ msgstr "Asterisk não está rodando, este é um serviço crítico!"
-
-#~ msgid "Manager Proxy"
-#~ msgstr "Proxy"
-
-#~ msgid "Asterisk Manager Proxy is running"
-#~ msgstr "O Proxy está rodando"
-
-#~ msgid ""
-#~ "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
-#~ "Asterisk directly, which may result in poor performance"
-#~ msgstr ""
-#~ "O Proxy não está rodando, o FreePBX acessará o Asterisk diretamente,o que "
-#~ "pode resultar uma baixa performance"
-
-#~ msgid "Op Panel"
-#~ msgstr "Painel do Operador"
-
-#~ msgid ""
-#~ "FOP Operator Panel Server is not running, you will not be able to use the "
-#~ "operator panel, but the system will run fine without it."
-#~ msgstr ""
-#~ "O servidor FOP não está rodando, não será possível usar o Painel do "
-#~ "Operador,porém o sistema funciona normalmente sem ele."
-
-#~ msgid "FOP Operator Panel is disabled in Advanced Settings"
-#~ msgstr "O Servidor FOP esta desabilitado nas Configurações Avançadas"
-
-#~ msgid "FOP Operator Panel Server is running"
-#~ msgstr "Servidor FOP está rodando"
-
-#~ msgid "MySQL Server is running"
-#~ msgstr "Servidor MySQL está rodando"
-
-#~ msgid "Web Server is running"
-#~ msgstr "Servidor Web está rodando"
-
-#~ msgid "SSH Server"
-#~ msgstr "Servidor SSH"
-
-#~ msgid "SSH Server is running"
-#~ msgstr "Servidor SSH está rodando"
-
-#~ msgid ""
-#~ "SSH Server is not running, you will not be able to connect to the system "
-#~ "console remotely"
-#~ msgstr ""
-#~ "Servidor SSH não está rodando, Não é possível acessar a console do "
-#~ "sistema remotamente"
-
-#~ msgid "Critical Error"
-#~ msgstr "Erro Crítico"
-
-#~ msgid "Security Update"
-#~ msgstr "Atualização de Segurança"
-
-#~ msgid "Update"
-#~ msgstr "Atualização"
-
-#~ msgid "Error"
-#~ msgstr "Erro"
-
-#~ msgid "Warning"
-#~ msgstr "Alerta"
-
-#~ msgid "Notice"
-#~ msgstr "Notificação"
-
-#~ msgid "FreePBX Notices"
-#~ msgstr "Notificações do FreePBX"
-
-#~ msgid "Delete this"
-#~ msgstr "Excluír"
-
-#~ msgid "Ignore this"
-#~ msgstr "Ignorar"
 
 #~ msgid "Added %s ago"
 #~ msgstr "Adicionado %s atrás"
 
-#~ msgid "No notifications"
-#~ msgstr "Sem notificações"
+#~ msgid "App Memory"
+#~ msgstr "Memória App"
+
+#~ msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
+#~ msgstr "O Proxy não está rodando, o FreePBX acessará o Asterisk diretamente,o que pode resultar uma baixa performance"
+
+#~ msgid "Asterisk Manager Proxy is running"
+#~ msgstr "O Proxy está rodando"
+
+#~ msgid "Asterisk is not running, this is a critical service!"
+#~ msgstr "Asterisk não está rodando, este é um serviço crítico!"
+
+#~ msgid "Asterisk is running: %s"
+#~ msgstr "Asterisk está rodando: %s"
+
+#~ msgid "Critical Error"
+#~ msgstr "Erro Crítico"
+
+#~ msgid "Delete this"
+#~ msgstr "Excluír"
+
+#~ msgid "Disabled"
+#~ msgstr "Desabilitado"
+
+#~ msgid "Disks"
+#~ msgstr "Discos"
+
+#~ msgid "ERROR"
+#~ msgstr "ERRO"
+
+#~ msgid "Error"
+#~ msgstr "Erro"
+
+#~ msgid "External calls"
+#~ msgstr "Chamadas externas"
+
+#~ msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
+#~ msgstr "O servidor FOP não está rodando, não será possível usar o Painel do Operador,porém o sistema funciona normalmente sem ele."
+
+#~ msgid "FOP Operator Panel Server is running"
+#~ msgstr "Servidor FOP está rodando"
+
+#~ msgid "FOP Operator Panel is disabled in Advanced Settings"
+#~ msgstr "O Servidor FOP esta desabilitado nas Configurações Avançadas"
+
+#~ msgid "FOP Operator Panel is disabled in amportal.conf"
+#~ msgstr "FOP Operator Panel está desabilitado no amporta.conf"
+
+#~ msgid "FreePBX Connections"
+#~ msgstr "Conexões FreePBX"
+
+#~ msgid "FreePBX Notices"
+#~ msgstr "Notificações do FreePBX"
+
+#~ msgid "FreePBX Statistics"
+#~ msgstr "Estatísticas do FreePBX"
+
+#~ msgid "FreePBX System Status"
+#~ msgstr "Status do FreePBX"
+
+#~ msgid "IP Phones Online"
+#~ msgstr "Telefones IP Online"
+
+#~ msgid "IP Trunk Registrations"
+#~ msgstr "Troncos IP Registrados"
+
+#~ msgid "IP Trunks Online"
+#~ msgstr "Troncos IP Online"
+
+#~ msgid "Ignore this"
+#~ msgstr "Ignorar"
+
+#~ msgid "Internal calls"
+#~ msgstr "Chamadas internas"
+
+#~ msgid "Last Reload"
+#~ msgstr "Última recarga"
+
+#~ msgid "Load Average"
+#~ msgstr "Média de Carga"
+
+#~ msgid "Manager Proxy"
+#~ msgstr "Proxy"
+
+#~ msgid "MySQL Server is running"
+#~ msgstr "Servidor MySQL está rodando"
+
+#~ msgid "Networks"
+#~ msgstr "Redes"
 
 #~ msgid "No new notifications"
 #~ msgstr "Sem novas notificações"
 
-#~ msgid "show new"
-#~ msgstr "mostrar novo"
+#~ msgid "No notifications"
+#~ msgstr "Sem notificações"
 
-#~ msgid "show all"
-#~ msgstr "mostrar todos"
+#~ msgid "Notice"
+#~ msgstr "Notificação"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Op Panel"
+#~ msgstr "Painel do Operador"
+
+#~ msgid "Processor"
+#~ msgstr "Processador"
+
+#~ msgid "SSH Server"
+#~ msgstr "Servidor SSH"
+
+#~ msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
+#~ msgstr "Servidor SSH não está rodando, Não é possível acessar a console do sistema remotamente"
+
+#~ msgid "SSH Server is running"
+#~ msgstr "Servidor SSH está rodando"
+
+#~ msgid "Security Update"
+#~ msgstr "Atualização de Segurança"
+
+#~ msgid "Server Status"
+#~ msgstr "Status do Servidor"
+
+#~ msgid "Swap"
+#~ msgstr "Swap"
+
+#~ msgid "System Information Table"
+#~ msgstr "Tabela de Informações do sistema"
+
+#~ msgid "System Statistics"
+#~ msgstr "Estatísticas do sistema"
+
+#~ msgid "Total active calls"
+#~ msgstr "Total de chamadas ativas"
+
+#~ msgid "Total active channels"
+#~ msgstr "Total de canais ativos"
+
+#~ msgid "Update"
+#~ msgstr "Atualização"
+
+#~ msgid "Warn"
+#~ msgstr "Alerta"
+
+#~ msgid "Warning"
+#~ msgstr "Alerta"
+
+#~ msgid "Web Server is running"
+#~ msgstr "Servidor Web está rodando"
 
 #~ msgid "loading..."
 #~ msgstr "carregando..."
 
-#~ msgid "FOP Operator Panel is disabled in amportal.conf"
-#~ msgstr "FOP Operator Panel está desabilitado no amporta.conf"
+#~ msgid "receive"
+#~ msgstr "média rx"
+
+#~ msgid "show all"
+#~ msgstr "mostrar todos"
+
+#~ msgid "show new"
+#~ msgstr "mostrar novo"
+
+#~ msgid "transmit"
+#~ msgstr "média tx"
