@@ -58,6 +58,11 @@ msgstr "15 Минут"
 msgid "5 Minutes"
 msgstr "5 Минут"
 
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr "<strong>'%s'</strong><br><i>(Вы можете изменить это имя в Дополнительных Настройках)</i>"
+
 #: views/sections/statistics.php:299
 msgid "Active Calls"
 msgstr "Звонки"
@@ -67,7 +72,6 @@ msgid "Active Chans"
 msgstr "Акт Кан"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:134
-#, fuzzy
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -175,9 +179,8 @@ msgid "Month"
 msgstr "Месяц"
 
 #: sections/Overview.class.php:135
-#, fuzzy
 msgid "MySQL"
-msgstr "Сервер MySQL"
+msgstr "MySQL"
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
@@ -261,6 +264,10 @@ msgstr "Последняя перезагрузка системы"
 msgid "System Overview"
 msgstr "Обзор системы"
 
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr "Статус системы"
+
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
 msgstr "Система жива"
@@ -307,7 +314,6 @@ msgid "Warnings Found"
 msgstr "Найдены предупреждения"
 
 #: sections/Overview.class.php:136
-#, fuzzy
 msgid "Web Server"
 msgstr "Вэб сервер"
 
@@ -380,15 +386,6 @@ msgstr "год"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "лет"
-
-#: sections/Overview.class.php:41
-#, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
-msgstr "<strong>'%s'</strong><br><i>(Вы можете изменить это имя в Дополнительных Настройках)</i>"
-
-#: dashboard.i18n.php:10
-msgid "System Status"
-msgstr "Статус системы"
 
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s изменено с %s на %s"

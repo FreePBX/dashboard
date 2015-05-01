@@ -44,6 +44,11 @@ msgstr ""
 msgid "5 Minutes"
 msgstr ""
 
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr ""
+
 #: views/sections/statistics.php:299
 msgid "Active Calls"
 msgstr ""
@@ -245,6 +250,10 @@ msgstr ""
 msgid "System Overview"
 msgstr ""
 
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr ""
+
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
 msgstr ""
@@ -364,11 +373,42 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-#: sections/Overview.class.php:41
-#, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+#: dashboard.i18n.php:14
+msgid "Dashboard Info Update Frequency"
 msgstr ""
 
-#: dashboard.i18n.php:10
-msgid "System Status"
+#: dashboard.i18n.php:20
+msgid "Dashboard Max Calls Initial Scale"
+msgstr ""
+
+#: dashboard.i18n.php:28
+msgid "Dashboard Non-Std SSH Port"
+msgstr ""
+
+#: dashboard.i18n.php:24
+msgid "Dashboard Stats Update Frequency"
+msgstr ""
+
+#: dashboard.i18n.php:16
+msgid "GUI Behavior"
+msgstr ""
+
+#: dashboard.i18n.php:32
+msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
+msgstr ""
+
+#: dashboard.i18n.php:30
+msgid "System Setup"
+msgstr ""
+
+#: dashboard.i18n.php:26
+msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
+msgstr ""
+
+#: dashboard.i18n.php:18
+msgid "Update rate in seconds of the Info section of the System Status panel."
+msgstr ""
+
+#: dashboard.i18n.php:22
+msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
 msgstr ""

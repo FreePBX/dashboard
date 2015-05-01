@@ -74,6 +74,11 @@ msgstr "15分"
 msgid "5 Minutes"
 msgstr "5分"
 
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr ""
+
 #: views/sections/statistics.php:299
 msgid "Active Calls"
 msgstr ""
@@ -393,11 +398,6 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
-
-#: sections/Overview.class.php:41
-#, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
-msgstr ""
 
 #~ msgid "%s Connections"
 #~ msgstr "%s 接続"

@@ -60,6 +60,11 @@ msgstr ""
 msgid "5 Minutes"
 msgstr ""
 
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr ""
+
 #: views/sections/statistics.php:299
 msgid "Active Calls"
 msgstr ""
@@ -261,6 +266,10 @@ msgstr ""
 msgid "System Overview"
 msgstr ""
 
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr ""
+
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
 msgstr "Експлоатация на Системата"
@@ -379,15 +388,6 @@ msgstr "година"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "години"
-
-#: sections/Overview.class.php:41
-#, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
-msgstr ""
-
-#: dashboard.i18n.php:10
-msgid "System Status"
-msgstr ""
 
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s е променен от %s на %s"

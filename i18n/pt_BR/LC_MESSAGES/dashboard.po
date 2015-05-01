@@ -56,6 +56,11 @@ msgstr "15 Minutos"
 msgid "5 Minutes"
 msgstr "5 Minutos"
 
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr "<strong>'%s'</strong><br><i>(Você pode mudar este nome em Configurações Avançadas)</i>"
+
 #: views/sections/statistics.php:299
 msgid "Active Calls"
 msgstr "Chamdas Ativas"
@@ -257,6 +262,10 @@ msgstr "Última Inicialização do Sistema"
 msgid "System Overview"
 msgstr "Visão Geral do Sistema"
 
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr "Estado do Sistema"
+
 #: classes/Statistics.class.php:112
 #, fuzzy
 msgid "System Uptime"
@@ -376,15 +385,6 @@ msgstr "ano"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "anos"
-
-#: sections/Overview.class.php:41
-#, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
-msgstr "<strong>'%s'</strong><br><i>(Você pode mudar este nome em Configurações Avançadas)</i>"
-
-#: dashboard.i18n.php:10
-msgid "System Status"
-msgstr "Estado do Sistema"
 
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s alterado de %s para %s"

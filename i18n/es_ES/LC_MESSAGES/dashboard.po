@@ -44,6 +44,11 @@ msgstr "15 Minutos"
 msgid "5 Minutes"
 msgstr "5 Minutos"
 
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr "<strong>'%s'</strong><br><i>(Usted puede cambiar este nombre en Configuración Avanzada)</i>"
+
 #: views/sections/statistics.php:299
 msgid "Active Calls"
 msgstr "Llamadas Activas"
@@ -245,6 +250,10 @@ msgstr "Ultimo reinicio del sistema"
 msgid "System Overview"
 msgstr "Vision de conjunto del sistema"
 
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr "Estado del Sistema"
+
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
 msgstr "Tiempo activo sistema"
@@ -363,15 +372,6 @@ msgstr "año"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "años"
-
-#: sections/Overview.class.php:41
-#, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
-msgstr "<strong>'%s'</strong><br><i>(Usted puede cambiar este nombre en Configuración Avanzada)</i>"
-
-#: dashboard.i18n.php:10
-msgid "System Status"
-msgstr "Estado del Sistema"
 
 #~ msgid "Dashboard Info Update Frequency"
 #~ msgstr "Frecuencia de Actualización del Tabero"
