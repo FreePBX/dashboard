@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-25 22:02-0400\n"
+"POT-Creation-Date: 2015-05-01 17:29-0400\n"
 "PO-Revision-Date: 2015-02-27 20:50-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -46,7 +46,9 @@ msgstr "5 Minuten"
 
 #: sections/Overview.class.php:41
 #, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgid ""
+"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
+"i>"
 msgstr ""
 
 #: views/sections/statistics.php:299
@@ -57,7 +59,7 @@ msgstr ""
 msgid "Active Chans"
 msgstr ""
 
-#: classes/Statistics.class.php:121 sections/Overview.class.php:139
+#: classes/Statistics.class.php:121 sections/Overview.class.php:140
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -85,7 +87,7 @@ msgstr ""
 msgid "Cached"
 msgstr ""
 
-#: sections/Overview.class.php:128
+#: sections/Overview.class.php:129
 msgid "Critical Errors found"
 msgstr "Kritieke fouten gevonden"
 
@@ -167,7 +169,7 @@ msgstr "Geheugen"
 msgid "Month"
 msgstr "Maand"
 
-#: sections/Overview.class.php:140
+#: sections/Overview.class.php:141
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -175,7 +177,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr "Netwerk"
 
-#: sections/Overview.class.php:100
+#: sections/Overview.class.php:101
 msgid "No critical issues found"
 msgstr "Geen kritieke problemen gevonden"
 
@@ -183,23 +185,27 @@ msgstr "Geen kritieke problemen gevonden"
 msgid "Overview"
 msgstr "Overzicht"
 
-#: sections/Overview.class.php:127 sections/Overview.class.php:131
+#: sections/Overview.class.php:128 sections/Overview.class.php:132
 msgid "Please check for errors in the notification section"
 msgstr "Controleer de notificatie-sectie voor fouten"
 
 #: dashboard.i18n.php:8
-msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
-msgstr "Voorziet in een systeemoverzicht, met informatie over gesprekken, processor, geheugen, harde schijven, netwerk en processen."
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"Voorziet in een systeemoverzicht, met informatie over gesprekken, processor, "
+"geheugen, harde schijven, netwerk en processen."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr ""
 
-#: dashboard.i18n.php:6 dashboard.i18n.php:12
+#: dashboard.i18n.php:6
 msgid "Reports"
 msgstr "Rapporten"
 
-#: sections/Overview.class.php:109
+#: sections/Overview.class.php:110
 msgid "Security Issue"
 msgstr "Beveiligingsprobleem"
 
@@ -237,7 +243,7 @@ msgstr "Systeeminformatie %s seconden geleden geüpdatet"
 msgid "System"
 msgstr ""
 
-#: sections/Overview.class.php:93
+#: sections/Overview.class.php:99
 #, fuzzy
 msgid "System Alerts"
 msgstr "Systeem alarmen"
@@ -254,10 +260,6 @@ msgstr "Systeem laatste keer herstart"
 msgid "System Overview"
 msgstr "Systeemoverzicht"
 
-#: dashboard.i18n.php:10
-msgid "System Status"
-msgstr "Systeemstatus"
-
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
 msgstr ""
@@ -266,9 +268,10 @@ msgstr ""
 msgid "Temp"
 msgstr ""
 
-#: sections/Overview.class.php:110
+#: sections/Overview.class.php:111
 msgid "This is a critical issue and should be resolved urgently"
-msgstr "Dit is een kritiek probleem en moet zo spoedig mogelijk opgelost worden"
+msgstr ""
+"Dit is een kritiek probleem en moet zo spoedig mogelijk opgelost worden"
 
 #: classes/Statistics.class.php:305
 msgid "Trnks Offline"
@@ -299,11 +302,11 @@ msgstr ""
 msgid "Users Online"
 msgstr ""
 
-#: sections/Overview.class.php:132
+#: sections/Overview.class.php:133
 msgid "Warnings Found"
 msgstr "Waarschuwingen gevonden"
 
-#: sections/Overview.class.php:141
+#: sections/Overview.class.php:142
 msgid "Web Server"
 msgstr "Internetserver"
 
@@ -377,42 +380,5 @@ msgstr "jaar"
 msgid "years"
 msgstr "jaren"
 
-#: dashboard.i18n.php:14
-msgid "Dashboard Info Update Frequency"
-msgstr ""
-
-#: dashboard.i18n.php:20
-msgid "Dashboard Max Calls Initial Scale"
-msgstr ""
-
-#: dashboard.i18n.php:28
-msgid "Dashboard Non-Std SSH Port"
-msgstr ""
-
-#: dashboard.i18n.php:24
-msgid "Dashboard Stats Update Frequency"
-msgstr ""
-
-#: dashboard.i18n.php:16
-msgid "GUI Behavior"
-msgstr ""
-
-#: dashboard.i18n.php:32
-msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
-msgstr ""
-
-#: dashboard.i18n.php:30
-msgid "System Setup"
-msgstr ""
-
-#: dashboard.i18n.php:26
-msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
-msgstr ""
-
-#: dashboard.i18n.php:18
-msgid "Update rate in seconds of the Info section of the System Status panel."
-msgstr ""
-
-#: dashboard.i18n.php:22
-msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
-msgstr ""
+#~ msgid "System Status"
+#~ msgstr "Systeemstatus"
