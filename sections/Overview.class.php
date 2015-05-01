@@ -74,7 +74,7 @@ class Overview {
 		// define("NOTIFICATION_TYPE_WARNING" , 500) -> 'info' -> (blue)
 		// define("NOTIFICATION_TYPE_NOTICE",   600) -> 'success' -> (green)
 
-		$alerts = array(100 => "danger", 200 => "danger", 300 => "warning", 400 => "info", 500 => "info", 600 => "success");
+		$alerts = array(100 => "danger", 200 => "danger", 250 => 'warning', 300 => "warning", 400 => "info", 500 => "info", 600 => "success");
 		foreach ($items as $notification) {
 			$final['nots'][] = array(
 				"id" => $notification['id'],
