@@ -14,17 +14,15 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: classes/Statistics.class.php:365
-#: classes/Statistics.class.php:368
+#: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
 msgid "%s Min Avg"
 msgstr ""
 
-#: views/sections/overview.php:65
-#: views/sections/uptime.php:6
+#: views/sections/overview.php:65 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
 msgstr ""
@@ -53,8 +51,7 @@ msgstr ""
 msgid "Active Chans"
 msgstr ""
 
-#: classes/Statistics.class.php:121
-#: sections/Overview.class.php:134
+#: classes/Statistics.class.php:121 sections/Overview.class.php:134
 msgid "Asterisk"
 msgstr ""
 
@@ -62,13 +59,11 @@ msgstr ""
 msgid "Asterisk Uptime"
 msgstr ""
 
-#: sections/Blogs.class.php:34
-#: sections/Blogs.class.php:42
+#: sections/Blogs.class.php:34 sections/Blogs.class.php:42
 msgid "Blogs"
 msgstr ""
 
-#: classes/Statistics.class.php:266
-#: views/sections/statistics.php:199
+#: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
 msgstr ""
 
@@ -80,8 +75,7 @@ msgstr ""
 msgid "CPU Temp"
 msgstr ""
 
-#: classes/Statistics.class.php:265
-#: views/sections/statistics.php:198
+#: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
 msgstr ""
 
@@ -93,18 +87,12 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: classes/Statistics.class.php:134
-#: classes/Statistics.class.php:145
-#: classes/Statistics.class.php:156
-#: classes/Statistics.class.php:167
-#: classes/Statistics.class.php:178
-#: classes/Statistics.class.php:189
-#: views/sections/statistics.php:10
-#: views/sections/statistics.php:21
-#: views/sections/statistics.php:32
-#: views/sections/statistics.php:43
-#: views/sections/statistics.php:54
-#: views/sections/statistics.php:65
+#: classes/Statistics.class.php:134 classes/Statistics.class.php:145
+#: classes/Statistics.class.php:156 classes/Statistics.class.php:167
+#: classes/Statistics.class.php:178 classes/Statistics.class.php:189
+#: views/sections/statistics.php:10 views/sections/statistics.php:21
+#: views/sections/statistics.php:32 views/sections/statistics.php:43
+#: views/sections/statistics.php:54 views/sections/statistics.php:65
 msgid "Day"
 msgstr ""
 
@@ -112,18 +100,15 @@ msgstr ""
 msgid "Delete This"
 msgstr ""
 
-#: classes/Statistics.class.php:124
-#: views/sections/statistics.php:50
+#: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
 msgstr ""
 
-#: sections/Blogs.class.php:33
-#: sections/Blogs.class.php:41
+#: sections/Blogs.class.php:33 sections/Blogs.class.php:41
 msgid "Feed"
 msgstr ""
 
-#: classes/Statistics.class.php:264
-#: views/sections/statistics.php:197
+#: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
 msgstr ""
 
@@ -131,18 +116,12 @@ msgstr ""
 msgid "Frobulating"
 msgstr ""
 
-#: classes/Statistics.class.php:133
-#: classes/Statistics.class.php:144
-#: classes/Statistics.class.php:155
-#: classes/Statistics.class.php:166
-#: classes/Statistics.class.php:177
-#: classes/Statistics.class.php:188
-#: views/sections/statistics.php:9
-#: views/sections/statistics.php:20
-#: views/sections/statistics.php:31
-#: views/sections/statistics.php:42
-#: views/sections/statistics.php:53
-#: views/sections/statistics.php:64
+#: classes/Statistics.class.php:133 classes/Statistics.class.php:144
+#: classes/Statistics.class.php:155 classes/Statistics.class.php:166
+#: classes/Statistics.class.php:177 classes/Statistics.class.php:188
+#: views/sections/statistics.php:9 views/sections/statistics.php:20
+#: views/sections/statistics.php:31 views/sections/statistics.php:42
+#: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
 msgstr ""
 
@@ -166,23 +145,16 @@ msgstr ""
 msgid "Load Averages"
 msgstr ""
 
-#: classes/Statistics.class.php:123
-#: views/sections/statistics.php:39
+#: classes/Statistics.class.php:123 views/sections/statistics.php:39
 msgid "Memory"
 msgstr ""
 
-#: classes/Statistics.class.php:136
-#: classes/Statistics.class.php:147
-#: classes/Statistics.class.php:158
-#: classes/Statistics.class.php:169
-#: classes/Statistics.class.php:180
-#: classes/Statistics.class.php:191
-#: views/sections/statistics.php:12
-#: views/sections/statistics.php:23
-#: views/sections/statistics.php:34
-#: views/sections/statistics.php:45
-#: views/sections/statistics.php:56
-#: views/sections/statistics.php:67
+#: classes/Statistics.class.php:136 classes/Statistics.class.php:147
+#: classes/Statistics.class.php:158 classes/Statistics.class.php:169
+#: classes/Statistics.class.php:180 classes/Statistics.class.php:191
+#: views/sections/statistics.php:12 views/sections/statistics.php:23
+#: views/sections/statistics.php:34 views/sections/statistics.php:45
+#: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
 msgstr ""
 
@@ -190,8 +162,7 @@ msgstr ""
 msgid "MySQL"
 msgstr ""
 
-#: classes/Statistics.class.php:125
-#: views/sections/statistics.php:61
+#: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
 msgstr ""
 
@@ -203,15 +174,12 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: sections/Overview.class.php:122
-#: sections/Overview.class.php:126
+#: sections/Overview.class.php:122 sections/Overview.class.php:126
 msgid "Please check for errors in the notification section"
 msgstr ""
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
 msgstr ""
 
 #: classes/Statistics.class.php:107
@@ -234,13 +202,11 @@ msgstr ""
 msgid "Show New"
 msgstr ""
 
-#: classes/Statistics.class.php:90
-#: classes/Statistics.class.php:114
+#: classes/Statistics.class.php:90 classes/Statistics.class.php:114
 msgid "Since Reload"
 msgstr ""
 
-#: sections/Statistics.class.php:27
-#: sections/Statistics.class.php:28
+#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr ""
@@ -249,8 +215,7 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-#: classes/Statistics.class.php:268
-#: views/sections/statistics.php:201
+#: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
 msgstr ""
 
@@ -259,8 +224,7 @@ msgstr ""
 msgid "SysInfo updated %s seconds ago"
 msgstr ""
 
-#: classes/Statistics.class.php:88
-#: classes/Statistics.class.php:108
+#: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
 msgstr ""
 
@@ -284,8 +248,7 @@ msgstr ""
 msgid "System Uptime"
 msgstr ""
 
-#: classes/Statistics.class.php:349
-#: classes/Statistics.class.php:378
+#: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
 msgstr ""
 
@@ -301,29 +264,24 @@ msgstr ""
 msgid "Trunks Offline"
 msgstr ""
 
-#: classes/Statistics.class.php:304
-#: views/sections/statistics.php:297
+#: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
 msgstr ""
 
-#: classes/Statistics.class.php:120
-#: sections/Uptime.class.php:15
+#: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
 msgstr ""
 
-#: classes/Statistics.class.php:267
-#: views/sections/statistics.php:200
+#: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
 msgstr ""
 
-#: classes/Statistics.class.php:303
-#: views/sections/statistics.php:296
+#: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
 msgstr ""
 
-#: classes/Statistics.class.php:302
-#: views/sections/statistics.php:295
+#: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
 msgstr ""
 
@@ -335,23 +293,16 @@ msgstr ""
 msgid "Web Server"
 msgstr ""
 
-#: classes/Statistics.class.php:135
-#: classes/Statistics.class.php:146
-#: classes/Statistics.class.php:157
-#: classes/Statistics.class.php:168
-#: classes/Statistics.class.php:179
-#: classes/Statistics.class.php:190
-#: views/sections/statistics.php:11
-#: views/sections/statistics.php:22
-#: views/sections/statistics.php:33
-#: views/sections/statistics.php:44
-#: views/sections/statistics.php:55
-#: views/sections/statistics.php:66
+#: classes/Statistics.class.php:135 classes/Statistics.class.php:146
+#: classes/Statistics.class.php:157 classes/Statistics.class.php:168
+#: classes/Statistics.class.php:179 classes/Statistics.class.php:190
+#: views/sections/statistics.php:11 views/sections/statistics.php:22
+#: views/sections/statistics.php:33 views/sections/statistics.php:44
+#: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
 msgstr ""
 
-#: views/main.php:3
-#: views/sections/overview.php:6
+#: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
 msgstr ""
@@ -410,4 +361,13 @@ msgstr ""
 
 #: classes/TimeUtils.class.php:10
 msgid "years"
+msgstr ""
+
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr ""
+
+#: dashboard.i18n.php:10
+msgid "System Status"
 msgstr ""

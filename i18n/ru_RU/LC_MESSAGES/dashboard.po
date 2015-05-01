@@ -35,38 +35,39 @@ msgstr ""
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
 msgid "%s Min Avg"
-msgstr ""
+msgstr "%s Мин Сред"
 
-#: views/sections/overview.php:65 views/sections/uptime.php:6
+#: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
-msgstr ""
+msgstr "%s назад"
 
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
-msgstr ""
+msgstr "0 секунд"
 
 #: views/sections/uptime.php:16
 msgid "1 Minute"
-msgstr ""
+msgstr "1 Минута"
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
-msgstr ""
+msgstr "15 Минут"
 
 #: views/sections/uptime.php:19
 msgid "5 Minutes"
-msgstr ""
+msgstr "5 Минут"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
-msgstr ""
+msgstr "Звонки"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr ""
+msgstr "Акт Кан"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:134
+#, fuzzy
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -76,11 +77,11 @@ msgstr "Asterisk жив"
 
 #: sections/Blogs.class.php:34 sections/Blogs.class.php:42
 msgid "Blogs"
-msgstr ""
+msgstr "Блоги"
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
-msgstr ""
+msgstr "Буферы"
 
 #: classes/Statistics.class.php:122
 msgid "CPU"
@@ -88,15 +89,15 @@ msgstr "ЦПУ"
 
 #: classes/Statistics.class.php:368
 msgid "CPU Temp"
-msgstr ""
+msgstr "Темп. ЦПУ"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
-msgstr ""
+msgstr "Кешировано"
 
-#: sections/Overview.class.php:123
+#: sections/Overview.class.php:128
 msgid "Critical Errors found"
-msgstr ""
+msgstr "Обнаружены критические ошибки"
 
 #: dashboard.i18n.php:10
 msgid "Dashboard"
@@ -109,27 +110,27 @@ msgstr ""
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
 msgid "Day"
-msgstr ""
+msgstr "День"
 
-#: views/sections/overview.php:53
+#: views/sections/overview.php:54
 msgid "Delete This"
-msgstr ""
+msgstr "Удалить это"
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
-msgstr ""
+msgstr "Диск"
 
 #: sections/Blogs.class.php:33 sections/Blogs.class.php:41
 msgid "Feed"
-msgstr ""
+msgstr "Лента"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
-msgstr ""
+msgstr "Св. память"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr ""
+msgstr "Бурление"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -138,27 +139,27 @@ msgstr ""
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
-msgstr ""
+msgstr "Час"
 
-#: views/sections/overview.php:52
+#: views/sections/overview.php:53
 msgid "Ignore This"
-msgstr ""
+msgstr "Игнорировать"
 
 #: classes/Statistics.class.php:14
 msgid "Invalid Selection"
-msgstr ""
+msgstr "Неверный выбор"
 
 #: classes/Statistics.class.php:26
 msgid "Invalid period"
-msgstr ""
+msgstr "Неверный период"
 
 #: classes/Statistics.class.php:377
 msgid "Load"
-msgstr ""
+msgstr "Нагрузка"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
-msgstr ""
+msgstr "Ср. нагрузка"
 
 #: classes/Statistics.class.php:123 views/sections/statistics.php:39
 msgid "Memory"
@@ -171,97 +172,94 @@ msgstr "Память"
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
-msgstr ""
+msgstr "Месяц"
 
 #: sections/Overview.class.php:135
+#, fuzzy
 msgid "MySQL"
-msgstr "MySQL"
+msgstr "Сервер MySQL"
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
-msgstr ""
+msgstr "Сеть"
 
-#: sections/Overview.class.php:95
+#: sections/Overview.class.php:100
 msgid "No critical issues found"
-msgstr ""
+msgstr "Критических проблем не найдено"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
-msgstr ""
+msgstr "Обзор"
 
-#: sections/Overview.class.php:122 sections/Overview.class.php:126
+#: sections/Overview.class.php:127 sections/Overview.class.php:131
 msgid "Please check for errors in the notification section"
-msgstr ""
+msgstr "Пожалуйста, проверьте наличие ошибок в разделе уведомлений"
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Отображает панель системной информации, информации о вызовах, загрузке CPU, "
-"памяти, занятость дисков, сети и процессов"
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+msgstr "Отображает панель системной информации, отображающую информацию о вызовах, загрузке CPU, использовании памяти, занятости дисков, загруженности сети и процессов."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
-msgstr ""
+msgstr "Перезагрузка"
 
 #: dashboard.i18n.php:6
 msgid "Reports"
 msgstr "Отчеты"
 
-#: sections/Overview.class.php:104
+#: sections/Overview.class.php:109
 msgid "Security Issue"
-msgstr ""
+msgstr "Проблема безопасности"
 
-#: views/sections/overview.php:74
+#: views/sections/overview.php:75
 msgid "Show All"
-msgstr ""
+msgstr "Показать все"
 
-#: views/sections/overview.php:76
+#: views/sections/overview.php:77
 msgid "Show New"
-msgstr ""
+msgstr "Показать новые"
 
 #: classes/Statistics.class.php:90 classes/Statistics.class.php:114
 msgid "Since Reload"
-msgstr ""
+msgstr "После перезагрузки"
 
 #: sections/Statistics.class.php:27 sections/Statistics.class.php:28
 #: sections/Uptime.class.php:16
 msgid "Statistics"
-msgstr ""
+msgstr "Статистика"
 
-#: views/sections/overview.php:22
+#: views/sections/overview.php:23
 msgid "Summary"
-msgstr ""
+msgstr "Краткая сводка"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
-msgstr ""
+msgstr "Подк. исп"
 
-#: views/sections/overview.php:35
+#: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
-msgstr ""
+msgstr "Сист. информация обновлена %s секунд назад"
 
 #: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
-msgstr ""
+msgstr "Система"
 
-#: sections/Overview.class.php:93
+#: sections/Overview.class.php:98
 msgid "System Alerts"
-msgstr ""
+msgstr "Системные уведомления"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
-msgstr "Панель системы"
+msgstr "Системная панель"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr ""
+msgstr "Последняя перезагрузка системы"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr ""
+msgstr "Обзор системы"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
@@ -269,46 +267,47 @@ msgstr "Система жива"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr ""
+msgstr "Темп"
 
-#: sections/Overview.class.php:105
+#: sections/Overview.class.php:110
 msgid "This is a critical issue and should be resolved urgently"
-msgstr ""
+msgstr "Этот важный вопрос нужно решить срочно"
 
 #: classes/Statistics.class.php:305
 msgid "Trnks Offline"
-msgstr ""
+msgstr "Трнк. Откл"
 
 #: views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr ""
+msgstr "Трнк. Откл"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr ""
+msgstr "Трнк. Рег"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr "Время запуска"
+msgstr "Сис. жива"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
-msgstr ""
+msgstr "Использ"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
-msgstr ""
+msgstr "Польз. Откл"
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr ""
+msgstr "Польз. Вкл"
 
-#: sections/Overview.class.php:127
+#: sections/Overview.class.php:132
 msgid "Warnings Found"
-msgstr ""
+msgstr "Найдены предупреждения"
 
 #: sections/Overview.class.php:136
+#, fuzzy
 msgid "Web Server"
 msgstr "Вэб сервер"
 
@@ -319,12 +318,12 @@ msgstr "Вэб сервер"
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
-msgstr ""
+msgstr "Неделя"
 
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
-msgstr ""
+msgstr "Добро пожаловать в %s"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
@@ -352,11 +351,11 @@ msgstr "минут"
 
 #: classes/TimeUtils.class.php:11
 msgid "month"
-msgstr ""
+msgstr "Месяц"
 
 #: classes/TimeUtils.class.php:12
 msgid "months"
-msgstr ""
+msgstr "Месяцев"
 
 #: classes/TimeUtils.class.php:21
 msgid "second"
@@ -380,7 +379,16 @@ msgstr "год"
 
 #: classes/TimeUtils.class.php:10
 msgid "years"
-msgstr "годы"
+msgstr "лет"
+
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr "<strong>'%s'</strong><br><i>(Вы можете изменить это имя в Дополнительных Настройках)</i>"
+
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr "Статус системы"
 
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s изменено с %s на %s"
@@ -391,12 +399,8 @@ msgstr "годы"
 #~ msgid "App Memory"
 #~ msgstr "Занято приложениями"
 
-#~ msgid ""
-#~ "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
-#~ "Asterisk directly, which may result in poor performance"
-#~ msgstr ""
-#~ "Asterisk Manager Proxy не работает, FreePBX будет использовать Asterisk "
-#~ "напрямую, что может привести к ухудшению производительности"
+#~ msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
+#~ msgstr "Asterisk Manager Proxy не работает, FreePBX будет использовать Asterisk напрямую, что может привести к ухудшению производительности"
 
 #~ msgid "Asterisk Manager Proxy is running"
 #~ msgstr "Asterisk Manager Proxy работает"
@@ -414,13 +418,13 @@ msgstr "годы"
 #~ msgstr "Частота обновления информации системной панели"
 
 #~ msgid "Dashboard Max Calls Initial Scale"
-#~ msgstr "Начальная шкала максимального количества вызовов в панели"
+#~ msgstr "Начальный масштаб максимального количества вызовов в системной панели"
 
 #~ msgid "Dashboard Non-Std SSH Port"
 #~ msgstr "Нестандартный SSH порт системной панели"
 
 #~ msgid "Dashboard Stats Update Frequency"
-#~ msgstr "Частота обновления статистики в панели системной информации"
+#~ msgstr "Частота обновления статистики в системной панели"
 
 #~ msgid "Delete this"
 #~ msgstr "Удалите это"
@@ -506,22 +510,14 @@ msgstr "годы"
 #~ msgid "SSH Server"
 #~ msgstr "Сервер SSH"
 
-#~ msgid ""
-#~ "SSH Server is not running, you will not be able to connect to the system "
-#~ "console remotely"
-#~ msgstr ""
-#~ "SSH Server не работает, Вы не сможете подключаться к системной консоли "
-#~ "удаленно"
+#~ msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
+#~ msgstr "SSH Server не работает, Вы не сможете подключаться к системной консоли удаленно"
 
 #~ msgid "SSH Server is running"
 #~ msgstr "SSH Server работает"
 
-#~ msgid ""
-#~ "SSH port number configured on your system if not using the default port "
-#~ "22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr ""
-#~ "Номер SSH порта, если не используется стандартный порт 22. Данная "
-#~ "настройка позволяет монитору панели обращаться на правильный порт"
+#~ msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr "Номер SSH порта, если не используется стандартный порт 22. Данная настройка позволяет монитору панели обращаться на правильный порт."
 
 #~ msgid "Security Update"
 #~ msgstr "Обновление безопасности"
@@ -536,7 +532,7 @@ msgstr "годы"
 #~ msgstr "Талица системной информации"
 
 #~ msgid "System Setup"
-#~ msgstr "Настройка Системы"
+#~ msgstr "Системные настройки"
 
 #~ msgid "System Statistics"
 #~ msgstr "Статистика Системы"
@@ -550,26 +546,14 @@ msgstr "годы"
 #~ msgid "Update"
 #~ msgstr "Обновление"
 
-#~ msgid ""
-#~ "Update rate in seconds of all sections of the System Status panel except "
-#~ "the Info box."
-#~ msgstr ""
-#~ "Интервал обновления в секундах всех секций в панели Статуса Системы кроме "
-#~ "окна Информации"
+#~ msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
+#~ msgstr "Частота обновления в секундах всех секций в панели Статуса Системы кроме окна Информации."
 
-#~ msgid ""
-#~ "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr ""
-#~ "Интервал обновления в секундах в секции Инфо панели 'Статус Системы'."
+#~ msgid "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr "Интервал обновления в секундах в секции Инфо панели 'Статус Системы'."
 
-#~ msgid ""
-#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
-#~ "If not set, the the scale is dynamically sized based on the active calls "
-#~ "on the system."
-#~ msgstr ""
-#~ "Используйте этот параметр для установки шкалы максимального количества "
-#~ "звонков на панели. Если не установлено, шкала будет установлена "
-#~ "автоматически в зависимости от количества звонков в системе"
+#~ msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
+#~ msgstr "Используйте этот параметр для установки масштаба отображения количества звонков на панели. Если не установлено, масштаб будет установлен автоматически в зависимости от количества звонков в системе."
 
 #~ msgid "Warn"
 #~ msgstr "Ого!"

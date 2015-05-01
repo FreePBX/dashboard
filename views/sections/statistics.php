@@ -6,10 +6,10 @@
 					Asterisk <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
+					<li><a href="#" class="graph-button" data-period="hour"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button" data-period="day"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button" data-period="week"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button" data-period="month"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="uptime">
@@ -17,10 +17,10 @@
 					<?php echo _("Uptime")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
+					<li><a href="#" class="graph-button" data-period="hour"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button" data-period="day"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button" data-period="week"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button" data-period="month"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="cpuusage">
@@ -28,10 +28,10 @@
 					CPU <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
+					<li><a href="#" class="graph-button" data-period="hour"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button" data-period="day"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button" data-period="week"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button" data-period="month"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="memusage">
@@ -39,10 +39,10 @@
 					<?php echo _("Memory")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
+					<li><a href="#" class="graph-button" data-period="hour"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button" data-period="day"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button" data-period="week"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button" data-period="month"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="diskusage">
@@ -50,10 +50,10 @@
 					<?php echo _("Disk")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
+					<li><a href="#" class="graph-button" data-period="hour"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button" data-period="day"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button" data-period="week"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button" data-period="month"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="networking">
@@ -61,10 +61,10 @@
 					<?php echo _("Network")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
-					<li><a href="#" class="graph-button"><?php echo _("Hour")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Day")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Week")?></a></li>
-					<li><a href="#" class="graph-button"><?php echo _("Month")?></a></li>
+					<li><a href="#" class="graph-button" data-period="hour"><?php echo _("Hour")?></a></li>
+					<li><a href="#" class="graph-button" data-period="day"><?php echo _("Day")?></a></li>
+					<li><a href="#" class="graph-button" data-period="week"><?php echo _("Week")?></a></li>
+					<li><a href="#" class="graph-button" data-period="month"><?php echo _("Month")?></a></li>
 				</ul>
 			</div>
 		</div>
@@ -72,7 +72,7 @@
 		$(".graph-button").click(function(event) {
 			event.preventDefault();
 			var target = $(this);
-			Dashboard.sysstatAjax.period = target.text();
+			Dashboard.sysstatAjax.period = target.data("period");
 			Dashboard.sysstatAjax.target = target.parents(".btn-group").data("type")
 			window.observers["builtin_aststat"]();
 		})

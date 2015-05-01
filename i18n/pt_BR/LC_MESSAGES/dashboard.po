@@ -22,8 +22,7 @@ msgstr ""
 "POT-Creation-Date: 2015-03-25 22:02-0400\n"
 "PO-Revision-Date: 2015-02-04 00:41+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
-"Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
-"dashboard/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/dashboard/pt_BR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,36 +33,36 @@ msgstr ""
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
 msgid "%s Min Avg"
-msgstr ""
+msgstr "%s Min Méd"
 
-#: views/sections/overview.php:65 views/sections/uptime.php:6
+#: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
-msgstr ""
+msgstr "%s atrás"
 
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
-msgstr ""
+msgstr "0 segundos"
 
 #: views/sections/uptime.php:16
 msgid "1 Minute"
-msgstr ""
+msgstr "1 Minuto"
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
-msgstr ""
+msgstr "15 Minutos"
 
 #: views/sections/uptime.php:19
 msgid "5 Minutes"
-msgstr ""
+msgstr "5 Minutos"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
-msgstr ""
+msgstr "Chamdas Ativas"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr ""
+msgstr "Canis Ativos"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:134
 msgid "Asterisk"
@@ -71,15 +70,15 @@ msgstr "Asterisk"
 
 #: classes/Statistics.class.php:113
 msgid "Asterisk Uptime"
-msgstr "Tempo ativo do Asterisk"
+msgstr "Tempo Ativo do Asterisk"
 
 #: sections/Blogs.class.php:34 sections/Blogs.class.php:42
 msgid "Blogs"
-msgstr ""
+msgstr "Blog"
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
-msgstr ""
+msgstr "Buffers"
 
 #: classes/Statistics.class.php:122
 msgid "CPU"
@@ -87,15 +86,15 @@ msgstr "CPU"
 
 #: classes/Statistics.class.php:368
 msgid "CPU Temp"
-msgstr ""
+msgstr "Temp CPU"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
-msgstr ""
+msgstr "Em Cache"
 
-#: sections/Overview.class.php:123
+#: sections/Overview.class.php:128
 msgid "Critical Errors found"
-msgstr ""
+msgstr "Erros Críticos encontrados"
 
 #: dashboard.i18n.php:10
 msgid "Dashboard"
@@ -108,27 +107,27 @@ msgstr ""
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
 msgid "Day"
-msgstr ""
+msgstr "Dia"
 
-#: views/sections/overview.php:53
+#: views/sections/overview.php:54
 msgid "Delete This"
-msgstr ""
+msgstr "Apagar Isto"
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
-msgstr ""
+msgstr "Disco"
 
 #: sections/Blogs.class.php:33 sections/Blogs.class.php:41
 msgid "Feed"
-msgstr ""
+msgstr "Feed"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
-msgstr ""
+msgstr "Mem Livre"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr ""
+msgstr "- Frobulating"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -137,27 +136,27 @@ msgstr ""
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
-msgstr ""
+msgstr "Hora"
 
-#: views/sections/overview.php:52
+#: views/sections/overview.php:53
 msgid "Ignore This"
-msgstr ""
+msgstr "Ignorar Isto"
 
 #: classes/Statistics.class.php:14
 msgid "Invalid Selection"
-msgstr ""
+msgstr "Seleção Inválida"
 
 #: classes/Statistics.class.php:26
 msgid "Invalid period"
-msgstr ""
+msgstr "Período inválido"
 
 #: classes/Statistics.class.php:377
 msgid "Load"
-msgstr ""
+msgstr "Carga"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
-msgstr ""
+msgstr "Médias de Carga"
 
 #: classes/Statistics.class.php:123 views/sections/statistics.php:39
 msgid "Memory"
@@ -170,7 +169,7 @@ msgstr "Memória"
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
-msgstr ""
+msgstr "Mês"
 
 #: sections/Overview.class.php:135
 msgid "MySQL"
@@ -178,77 +177,73 @@ msgstr "MySQL"
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
-msgstr ""
+msgstr "Rede"
 
-#: sections/Overview.class.php:95
+#: sections/Overview.class.php:100
 msgid "No critical issues found"
-msgstr ""
+msgstr "Nenhum problema crítico encontrado"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
-#: sections/Overview.class.php:122 sections/Overview.class.php:126
+#: sections/Overview.class.php:127 sections/Overview.class.php:131
 msgid "Please check for errors in the notification section"
-msgstr ""
+msgstr "Por favor verifique por erros na seção de notificações"
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Exibe um painel de informações do sistema, mostrando informações sobre "
-"Chamadas, CPU, Memória, Discos, Rede e processos."
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+msgstr "Exibe um painel de informações do sistema, mostrando informações sobre Chamadas, CPU, Memória, Discos, Rede e processos."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
-msgstr ""
+msgstr "Recarregar"
 
 #: dashboard.i18n.php:6
 msgid "Reports"
 msgstr "Relatórios"
 
-#: sections/Overview.class.php:104
+#: sections/Overview.class.php:109
 msgid "Security Issue"
-msgstr ""
+msgstr "Problema de Segurança"
 
-#: views/sections/overview.php:74
+#: views/sections/overview.php:75
 msgid "Show All"
-msgstr ""
+msgstr "Mostrar Todos"
 
-#: views/sections/overview.php:76
+#: views/sections/overview.php:77
 msgid "Show New"
-msgstr ""
+msgstr "Mostrar Novos"
 
 #: classes/Statistics.class.php:90 classes/Statistics.class.php:114
 msgid "Since Reload"
-msgstr ""
+msgstr "Desde Recarregado"
 
 #: sections/Statistics.class.php:27 sections/Statistics.class.php:28
 #: sections/Uptime.class.php:16
 msgid "Statistics"
-msgstr ""
+msgstr "Estatísticas"
 
-#: views/sections/overview.php:22
+#: views/sections/overview.php:23
 msgid "Summary"
-msgstr ""
+msgstr "Resumo"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
-msgstr ""
+msgstr "Swap Usado"
 
-#: views/sections/overview.php:35
+#: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
-msgstr ""
+msgstr "SysInfo atualizado %s segundos atrás"
 
 #: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
-msgstr ""
+msgstr "Sistema"
 
-#: sections/Overview.class.php:93
+#: sections/Overview.class.php:98
 msgid "System Alerts"
-msgstr ""
+msgstr "Alertas do Sistema"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
@@ -256,56 +251,57 @@ msgstr "Painel do Sistema"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr ""
+msgstr "Última Inicialização do Sistema"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr ""
+msgstr "Visão Geral do Sistema"
 
 #: classes/Statistics.class.php:112
+#, fuzzy
 msgid "System Uptime"
-msgstr "Tempo ativo do Sistema"
+msgstr "Tempo Ativo do Sistema"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr ""
+msgstr "Temp."
 
-#: sections/Overview.class.php:105
+#: sections/Overview.class.php:110
 msgid "This is a critical issue and should be resolved urgently"
-msgstr ""
+msgstr "Este é um problema crítico e deve ser resolvido com urgência"
 
 #: classes/Statistics.class.php:305
 msgid "Trnks Offline"
-msgstr ""
+msgstr "Troncos Offiline"
 
 #: views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr ""
+msgstr "Troncos Offline"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr ""
+msgstr "Troncos Registrados"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr "Tempo ativo"
+msgstr "Tempo Ativo"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
-msgstr ""
+msgstr "Usado"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
-msgstr ""
+msgstr "Usuários Offline"
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr ""
+msgstr "Usuários Online"
 
-#: sections/Overview.class.php:127
+#: sections/Overview.class.php:132
 msgid "Warnings Found"
-msgstr ""
+msgstr "Avisos Encontrados"
 
 #: sections/Overview.class.php:136
 msgid "Web Server"
@@ -318,16 +314,16 @@ msgstr "Servidor Web"
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
-msgstr ""
+msgstr "Semana"
 
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
-msgstr ""
+msgstr "Bem Vindo ao %s"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
-msgstr "dias"
+msgstr "dia"
 
 #: classes/TimeUtils.class.php:16
 msgid "days"
@@ -351,11 +347,11 @@ msgstr "minutos"
 
 #: classes/TimeUtils.class.php:11
 msgid "month"
-msgstr ""
+msgstr "mês"
 
 #: classes/TimeUtils.class.php:12
 msgid "months"
-msgstr ""
+msgstr "meses"
 
 #: classes/TimeUtils.class.php:21
 msgid "second"
@@ -381,6 +377,15 @@ msgstr "ano"
 msgid "years"
 msgstr "anos"
 
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr "<strong>'%s'</strong><br><i>(Você pode mudar este nome em Configurações Avançadas)</i>"
+
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr "Estado do Sistema"
+
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s alterado de %s para %s"
 
@@ -390,12 +395,8 @@ msgstr "anos"
 #~ msgid "App Memory"
 #~ msgstr "Memória App"
 
-#~ msgid ""
-#~ "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
-#~ "Asterisk directly, which may result in poor performance"
-#~ msgstr ""
-#~ "O Proxy não está rodando, o FreePBX acessará o Asterisk diretamente,o que "
-#~ "pode resultar uma baixa performance"
+#~ msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
+#~ msgstr "O Proxy não está rodando, o FreePBX acessará o Asterisk diretamente,o que pode resultar uma baixa performance"
 
 #~ msgid "Asterisk Manager Proxy is running"
 #~ msgstr "O Proxy está rodando"
@@ -439,12 +440,8 @@ msgstr "anos"
 #~ msgid "External calls"
 #~ msgstr "Chamadas externas"
 
-#~ msgid ""
-#~ "FOP Operator Panel Server is not running, you will not be able to use the "
-#~ "operator panel, but the system will run fine without it."
-#~ msgstr ""
-#~ "O servidor FOP não está rodando, não será possível usar o Painel do "
-#~ "Operador,porém o sistema funciona normalmente sem ele."
+#~ msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
+#~ msgstr "O servidor FOP não está rodando, não será possível usar o Painel do Operador,porém o sistema funciona normalmente sem ele."
 
 #~ msgid "FOP Operator Panel Server is running"
 #~ msgstr "Servidor FOP está rodando"
@@ -521,22 +518,14 @@ msgstr "anos"
 #~ msgid "SSH Server"
 #~ msgstr "Servidor SSH"
 
-#~ msgid ""
-#~ "SSH Server is not running, you will not be able to connect to the system "
-#~ "console remotely"
-#~ msgstr ""
-#~ "Servidor SSH não está rodando, Não é possível acessar a console do "
-#~ "sistema remotamente"
+#~ msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
+#~ msgstr "Servidor SSH não está rodando, Não é possível acessar a console do sistema remotamente"
 
 #~ msgid "SSH Server is running"
 #~ msgstr "Servidor SSH está rodando"
 
-#~ msgid ""
-#~ "SSH port number configured on your system if not using the default port "
-#~ "22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr ""
-#~ "A Porta SSH de seu sistema não esta configurada como a padrão 22, desta "
-#~ "forma o Painel não poderá monitora-la."
+#~ msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr "A Porta SSH de seu sistema não esta configurada como a padrão 22, desta forma o Painel não poderá monitora-la."
 
 #~ msgid "Security Update"
 #~ msgstr "Atualização de Segurança"
@@ -565,25 +554,14 @@ msgstr "anos"
 #~ msgid "Update"
 #~ msgstr "Atualização"
 
-#~ msgid ""
-#~ "Update rate in seconds of all sections of the System Status panel except "
-#~ "the Info box."
-#~ msgstr ""
-#~ "Tempo de atualização de todas as seções do Status do Sistema, exceto a "
-#~ "Tela de Informações."
+#~ msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
+#~ msgstr "Tempo de atualização de todas as seções do Estado do Sistema, exceto a Tela de Informações."
 
-#~ msgid ""
-#~ "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr "Tempo de atualização em segundos do Painel de Status do Sistema."
+#~ msgid "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr "Tempo de atualização em segundos do painel de Estado do Sistema."
 
-#~ msgid ""
-#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
-#~ "If not set, the the scale is dynamically sized based on the active calls "
-#~ "on the system."
-#~ msgstr ""
-#~ "Use este para setar numero máximo de chamadas exibidas no Painel. Se este "
-#~ "não for configurado, será exibido em escala dinâmica baseado nas chamadas "
-#~ "ativas no sistema."
+#~ msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
+#~ msgstr "Use este para setar numero máximo de chamadas exibidas no Painel. Se não for configurado, será exibido em escala dinâmica baseado nas chamadas ativas no sistema."
 
 #~ msgid "Warn"
 #~ msgstr "Alerta"

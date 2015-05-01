@@ -37,6 +37,12 @@ class Overview {
 
 		$brand = DASHBOARD_FREEPBX_BRAND;
 
+		if (\FreePBX::Config()->get("FREEPBX_SYSTEM_IDENT")) {
+			$idline = sprintf(_("<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"), \FreePBX::Config()->get("FREEPBX_SYSTEM_IDENT"));
+		} else {
+			$idline = "";
+		}
+
 		try {
 			$getsi = \FreePBX::create()->Dashboard->getSysInfo();
 		} catch (\Exception $e) {
@@ -49,7 +55,7 @@ class Overview {
 		$nots = $notifications['nots'];
 		$alerts = $this->getAlerts($nots);
 
-		return load_view(dirname(__DIR__).'/views/sections/overview.php',array("showAllMessage" => $notifications['showAllMessage'], "nots" => $nots, "alerts" => $alerts, "brand" => $brand, "version" => get_framework_version(), "since" => $since, "services" => $this->getSummary()));
+		return load_view(dirname(__DIR__).'/views/sections/overview.php',array("showAllMessage" => $notifications['showAllMessage'], "nots" => $nots, "alerts" => $alerts, "brand" => $brand, "idline" => $idline, "version" => get_framework_version(), "since" => $since, "services" => $this->getSummary()));
 	}
 
 	private function getNotifications($showall = false) {
@@ -69,7 +75,7 @@ class Overview {
 		// define("NOTIFICATION_TYPE_WARNING" , 500) -> 'info' -> (blue)
 		// define("NOTIFICATION_TYPE_NOTICE",   600) -> 'success' -> (green)
 
-		$alerts = array(100 => "danger", 200 => "danger", 300 => "warning", 400 => "info", 500 => "info", 600 => "success");
+		$alerts = array(100 => "danger", 200 => "danger", 250 => 'warning', 300 => "warning", 400 => "info", 500 => "info", 600 => "success");
 		foreach ($items as $notification) {
 			$final['nots'][] = array(
 				"id" => $notification['id'],

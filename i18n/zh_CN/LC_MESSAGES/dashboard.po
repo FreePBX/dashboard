@@ -180,9 +180,7 @@ msgid "Please check for errors in the notification section"
 msgstr ""
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
 msgstr ""
 
 #: classes/Statistics.class.php:107
@@ -365,3 +363,12 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
+
+#: sections/Overview.class.php:41
+#, php-format
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr ""
+
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr ""
