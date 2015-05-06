@@ -10,17 +10,7 @@ class Statistics {
 	public $rawname = 'Statistics';
 
 	public function getSections($order) {
-		if (!defined('DASHBOARD_FREEPBX_BRAND')) {
-			if (!empty($_SESSION['DASHBOARD_FREEPBX_BRAND'])) {
-				define('DASHBOARD_FREEPBX_BRAND', $_SESSION['DASHBOARD_FREEPBX_BRAND']);
-			} else {
-				define('DASHBOARD_FREEPBX_BRAND', \FreePBX::Config()->get("DASHBOARD_FREEPBX_BRAND"));
-			}
-		} else {
-			$_SESSION['DASHBOARD_FREEPBX_BRAND'] = DASHBOARD_FREEPBX_BRAND;
-		}
-
-		$brand = DASHBOARD_FREEPBX_BRAND;
+		$brand = \FreePBX::Config()->get("DASHBOARD_FREEPBX_BRAND");
 
 		return array(
 			array(
