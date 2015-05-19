@@ -10,23 +10,26 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-27 23:20-0400\n"
-"PO-Revision-Date: 2015-02-20 19:18-0500\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2015-05-18 21:45+0200\n"
+"Last-Translator: james <zhulizhong@gmail.com>\n"
+"Language-Team: Simplified Chinese "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/zh_CN/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
 msgid "%s Min Avg"
-msgstr ""
+msgstr "%s 分钟 平均"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
-msgstr ""
+msgstr "%s 前"
 
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
@@ -53,11 +56,11 @@ msgstr ""
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
-msgstr ""
+msgstr "活动呼叫"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr ""
+msgstr "活动通道"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:139
 msgid "Asterisk"
@@ -65,7 +68,7 @@ msgstr "Asterisk"
 
 #: classes/Statistics.class.php:113
 msgid "Asterisk Uptime"
-msgstr ""
+msgstr "Asterisk 已运行时间"
 
 #: sections/Blogs.class.php:34 sections/Blogs.class.php:42
 msgid "Blogs"
@@ -73,7 +76,7 @@ msgstr ""
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
-msgstr ""
+msgstr "缓存"
 
 #: classes/Statistics.class.php:122
 msgid "CPU"
@@ -81,7 +84,7 @@ msgstr "CPU"
 
 #: classes/Statistics.class.php:368
 msgid "CPU Temp"
-msgstr ""
+msgstr "CPU 温度"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
@@ -106,7 +109,7 @@ msgstr ""
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
-msgstr ""
+msgstr "硬盘"
 
 #: sections/Blogs.class.php:33 sections/Blogs.class.php:41
 msgid "Feed"
@@ -135,19 +138,19 @@ msgstr ""
 
 #: classes/Statistics.class.php:14
 msgid "Invalid Selection"
-msgstr ""
+msgstr "无效选项"
 
 #: classes/Statistics.class.php:26
 msgid "Invalid period"
-msgstr ""
+msgstr "无效循环"
 
 #: classes/Statistics.class.php:377
 msgid "Load"
-msgstr ""
+msgstr "加载"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
-msgstr ""
+msgstr "平均负载"
 
 #: classes/Statistics.class.php:123 views/sections/statistics.php:39
 msgid "Memory"
@@ -176,7 +179,7 @@ msgstr ""
 
 #: sections/Overview.class.php:16
 msgid "Overview"
-msgstr ""
+msgstr "总览"
 
 #: sections/Overview.class.php:127 sections/Overview.class.php:131
 msgid "Please check for errors in the notification section"
@@ -190,36 +193,36 @@ msgstr ""
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
-msgstr ""
+msgstr "重新加载"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:12
 msgid "Reports"
-msgstr ""
+msgstr "报表"
 
 #: sections/Overview.class.php:109
 msgid "Security Issue"
-msgstr ""
+msgstr "安全问题"
 
 #: views/sections/overview.php:75
 msgid "Show All"
-msgstr ""
+msgstr "显示所有信息"
 
 #: views/sections/overview.php:77
 msgid "Show New"
-msgstr ""
+msgstr "显示新信息"
 
 #: classes/Statistics.class.php:90 classes/Statistics.class.php:114
 msgid "Since Reload"
-msgstr ""
+msgstr "自从重新加载后"
 
 #: sections/Statistics.class.php:27 sections/Statistics.class.php:28
 #: sections/Uptime.class.php:16
 msgid "Statistics"
-msgstr ""
+msgstr "统计数据"
 
 #: views/sections/overview.php:23
 msgid "Summary"
-msgstr ""
+msgstr "汇总"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
@@ -236,7 +239,7 @@ msgstr ""
 
 #: sections/Overview.class.php:98
 msgid "System Alerts"
-msgstr ""
+msgstr "系统告警"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
@@ -244,19 +247,19 @@ msgstr "系统状态"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr ""
+msgstr "系统最近一次重启"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr ""
+msgstr "系统总览"
 
 #: dashboard.i18n.php:10
 msgid "System Status"
-msgstr ""
+msgstr "系统状态"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
-msgstr ""
+msgstr "系统运行时间"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
