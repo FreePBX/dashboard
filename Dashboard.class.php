@@ -8,6 +8,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 
 	public function __construct($freepbx) {
 		$this->db = $freepbx->Database;
+		$this->freepbx = $freepbx;
 	}
 
 	// Always regen sys stats if they're older or equal to this, in seconds.
@@ -44,6 +45,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	private $sched = "scheduler.php";
 
 	public function install() {
+		$freepbx->Config->remove_conf_settings(array("DASHBOARD_INFO_UPDATE_TIME", "MAXCALLS", "DASHBOARD_STATS_UPDATE_TIME"));
 	}
 	public function uninstall() {
 	}

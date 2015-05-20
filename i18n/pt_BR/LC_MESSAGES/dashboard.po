@@ -22,8 +22,7 @@ msgstr ""
 "POT-Creation-Date: 2015-05-01 17:29-0400\n"
 "PO-Revision-Date: 2015-02-04 00:41+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
-"Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
-"dashboard/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/dashboard/pt_BR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,12 +58,8 @@ msgstr "5 Minutos"
 
 #: sections/Overview.class.php:41
 #, php-format
-msgid ""
-"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
-"i>"
-msgstr ""
-"<strong>'%s'</strong><br><i>(Você pode mudar este nome em Configurações "
-"Avançadas)</i>"
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr "<strong>'%s'</strong><br><i>(Você pode mudar este nome em Configurações Avançadas)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
@@ -202,12 +197,8 @@ msgid "Please check for errors in the notification section"
 msgstr "Por favor verifique por erros na seção de notificações"
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Exibe um painel de informações do sistema, mostrando informações sobre "
-"Chamadas, CPU, Memória, Discos, Rede e processos."
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+msgstr "Exibe um painel de informações do sistema, mostrando informações sobre Chamadas, CPU, Memória, Discos, Rede e processos."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
@@ -272,7 +263,6 @@ msgid "System Overview"
 msgstr "Visão Geral do Sistema"
 
 #: classes/Statistics.class.php:112
-#, fuzzy
 msgid "System Uptime"
 msgstr "Tempo Ativo do Sistema"
 
@@ -391,9 +381,6 @@ msgstr "ano"
 msgid "years"
 msgstr "anos"
 
-#~ msgid "System Status"
-#~ msgstr "Estado do Sistema"
-
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s alterado de %s para %s"
 
@@ -403,12 +390,8 @@ msgstr "anos"
 #~ msgid "App Memory"
 #~ msgstr "Memória App"
 
-#~ msgid ""
-#~ "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
-#~ "Asterisk directly, which may result in poor performance"
-#~ msgstr ""
-#~ "O Proxy não está rodando, o FreePBX acessará o Asterisk diretamente,o que "
-#~ "pode resultar uma baixa performance"
+#~ msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
+#~ msgstr "O Proxy não está rodando, o FreePBX acessará o Asterisk diretamente,o que pode resultar uma baixa performance"
 
 #~ msgid "Asterisk Manager Proxy is running"
 #~ msgstr "O Proxy está rodando"
@@ -452,12 +435,8 @@ msgstr "anos"
 #~ msgid "External calls"
 #~ msgstr "Chamadas externas"
 
-#~ msgid ""
-#~ "FOP Operator Panel Server is not running, you will not be able to use the "
-#~ "operator panel, but the system will run fine without it."
-#~ msgstr ""
-#~ "O servidor FOP não está rodando, não será possível usar o Painel do "
-#~ "Operador,porém o sistema funciona normalmente sem ele."
+#~ msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
+#~ msgstr "O servidor FOP não está rodando, não será possível usar o Painel do Operador,porém o sistema funciona normalmente sem ele."
 
 #~ msgid "FOP Operator Panel Server is running"
 #~ msgstr "Servidor FOP está rodando"
@@ -534,22 +513,14 @@ msgstr "anos"
 #~ msgid "SSH Server"
 #~ msgstr "Servidor SSH"
 
-#~ msgid ""
-#~ "SSH Server is not running, you will not be able to connect to the system "
-#~ "console remotely"
-#~ msgstr ""
-#~ "Servidor SSH não está rodando, Não é possível acessar a console do "
-#~ "sistema remotamente"
+#~ msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
+#~ msgstr "Servidor SSH não está rodando, Não é possível acessar a console do sistema remotamente"
 
 #~ msgid "SSH Server is running"
 #~ msgstr "Servidor SSH está rodando"
 
-#~ msgid ""
-#~ "SSH port number configured on your system if not using the default port "
-#~ "22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr ""
-#~ "A Porta SSH de seu sistema não esta configurada como a padrão 22, desta "
-#~ "forma o Painel não poderá monitora-la."
+#~ msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr "A Porta SSH de seu sistema não esta configurada como a padrão 22, desta forma o Painel não poderá monitora-la."
 
 #~ msgid "Security Update"
 #~ msgstr "Atualização de Segurança"
@@ -569,6 +540,9 @@ msgstr "anos"
 #~ msgid "System Statistics"
 #~ msgstr "Estatísticas do sistema"
 
+#~ msgid "System Status"
+#~ msgstr "Estado do Sistema"
+
 #~ msgid "Total active calls"
 #~ msgstr "Total de chamadas ativas"
 
@@ -578,25 +552,14 @@ msgstr "anos"
 #~ msgid "Update"
 #~ msgstr "Atualização"
 
-#~ msgid ""
-#~ "Update rate in seconds of all sections of the System Status panel except "
-#~ "the Info box."
-#~ msgstr ""
-#~ "Tempo de atualização de todas as seções do Estado do Sistema, exceto a "
-#~ "Tela de Informações."
+#~ msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
+#~ msgstr "Tempo de atualização de todas as seções do Estado do Sistema, exceto a Tela de Informações."
 
-#~ msgid ""
-#~ "Update rate in seconds of the Info section of the System Status panel."
+#~ msgid "Update rate in seconds of the Info section of the System Status panel."
 #~ msgstr "Tempo de atualização em segundos do painel de Estado do Sistema."
 
-#~ msgid ""
-#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
-#~ "If not set, the the scale is dynamically sized based on the active calls "
-#~ "on the system."
-#~ msgstr ""
-#~ "Use este para setar numero máximo de chamadas exibidas no Painel. Se não "
-#~ "for configurado, será exibido em escala dinâmica baseado nas chamadas "
-#~ "ativas no sistema."
+#~ msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
+#~ msgstr "Use este para setar numero máximo de chamadas exibidas no Painel. Se não for configurado, será exibido em escala dinâmica baseado nas chamadas ativas no sistema."
 
 #~ msgid "Warn"
 #~ msgstr "Alerta"

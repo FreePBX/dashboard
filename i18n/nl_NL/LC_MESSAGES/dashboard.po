@@ -46,9 +46,7 @@ msgstr "5 Minuten"
 
 #: sections/Overview.class.php:41
 #, php-format
-msgid ""
-"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
-"i>"
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
 msgstr ""
 
 #: views/sections/statistics.php:299
@@ -190,12 +188,8 @@ msgid "Please check for errors in the notification section"
 msgstr "Controleer de notificatie-sectie voor fouten"
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Voorziet in een systeemoverzicht, met informatie over gesprekken, processor, "
-"geheugen, harde schijven, netwerk en processen."
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+msgstr "Voorziet in een systeemoverzicht, met informatie over gesprekken, processor, geheugen, harde schijven, netwerk en processen."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
@@ -270,8 +264,7 @@ msgstr ""
 
 #: sections/Overview.class.php:111
 msgid "This is a critical issue and should be resolved urgently"
-msgstr ""
-"Dit is een kritiek probleem en moet zo spoedig mogelijk opgelost worden"
+msgstr "Dit is een kritiek probleem en moet zo spoedig mogelijk opgelost worden"
 
 #: classes/Statistics.class.php:305
 msgid "Trnks Offline"
