@@ -45,7 +45,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	private $sched = "scheduler.php";
 
 	public function install() {
-		$freepbx->Config->remove_conf_settings(array("DASHBOARD_INFO_UPDATE_TIME", "MAXCALLS", "DASHBOARD_STATS_UPDATE_TIME"));
+		$this->freepbx->Config->remove_conf_settings(array("DASHBOARD_INFO_UPDATE_TIME", "MAXCALLS", "DASHBOARD_STATS_UPDATE_TIME"));
 	}
 	public function uninstall() {
 	}
