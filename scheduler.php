@@ -9,6 +9,8 @@
 // Runs every minute.
 //
 
+//Sleep to fix crazy issues with large VM hosting providers
+sleep(mt_rand(1,30));
 // Start quickly.
 $bootstrap_settings['freepbx_auth'] = false;  // Just in case.
 $restrict_mods = true; // Takes startup from 0.2 seconds to 0.07 seconds.
