@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>13.0.6</version>
+	<version>13.0.7</version>
 	<publisher>FreePBX</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,6 +20,7 @@
 		<module>core ge 12.0.1beta11</module>
 	</depends>
 	<changelog>
+		*13.0.7* Sleep for 0 to 30 seconds on scheduler
     *13.0.6* Classify unsigned modules
 		*13.0.5* Translation additions
 		*13.0.4* Language fixes

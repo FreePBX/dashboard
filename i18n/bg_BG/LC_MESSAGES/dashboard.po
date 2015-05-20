@@ -20,10 +20,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 17:29-0400\n"
+"POT-Creation-Date: 2015-05-20 16:39-0400\n"
 "PO-Revision-Date: 2014-07-23 16:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
-"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/bg/>\n"
+"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/"
+"bg/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -60,9 +61,11 @@ msgstr ""
 msgid "5 Minutes"
 msgstr ""
 
-#: sections/Overview.class.php:41
+#: sections/Overview.class.php:31
 #, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgid ""
+"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
+"i>"
 msgstr ""
 
 #: views/sections/statistics.php:299
@@ -73,7 +76,7 @@ msgstr ""
 msgid "Active Chans"
 msgstr ""
 
-#: classes/Statistics.class.php:121 sections/Overview.class.php:140
+#: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
 msgstr "Астериск"
 
@@ -101,12 +104,8 @@ msgstr ""
 msgid "Cached"
 msgstr ""
 
-#: sections/Overview.class.php:129
+#: sections/Overview.class.php:119
 msgid "Critical Errors found"
-msgstr ""
-
-#: dashboard.i18n.php:10
-msgid "Dashboard"
 msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
@@ -180,7 +179,7 @@ msgstr "Използвана Памет"
 msgid "Month"
 msgstr ""
 
-#: sections/Overview.class.php:141
+#: sections/Overview.class.php:131
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -188,7 +187,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr ""
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:91
 msgid "No critical issues found"
 msgstr ""
 
@@ -196,23 +195,15 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: sections/Overview.class.php:128 sections/Overview.class.php:132
+#: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
 msgstr ""
-
-#: dashboard.i18n.php:8
-msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
-msgstr "Предоставя информация за системата, показва информация за Разговори, CPU, Памет, Твърд Диск, Мрежа и процеси."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr ""
 
-#: dashboard.i18n.php:6
-msgid "Reports"
-msgstr "Отчети"
-
-#: sections/Overview.class.php:110
+#: sections/Overview.class.php:100
 msgid "Security Issue"
 msgstr ""
 
@@ -228,7 +219,7 @@ msgstr ""
 msgid "Since Reload"
 msgstr ""
 
-#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
+#: sections/Statistics.class.php:17 sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr ""
@@ -250,13 +241,9 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: sections/Overview.class.php:99
+#: sections/Overview.class.php:89
 msgid "System Alerts"
 msgstr ""
-
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "Информация за Системата"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -274,7 +261,7 @@ msgstr "Експлоатация на Системата"
 msgid "Temp"
 msgstr ""
 
-#: sections/Overview.class.php:111
+#: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
@@ -307,11 +294,11 @@ msgstr ""
 msgid "Users Online"
 msgstr ""
 
-#: sections/Overview.class.php:133
+#: sections/Overview.class.php:123
 msgid "Warnings Found"
 msgstr ""
 
-#: sections/Overview.class.php:142
+#: sections/Overview.class.php:132
 msgid "Web Server"
 msgstr "Уеб Сървър"
 
@@ -385,9 +372,18 @@ msgstr "година"
 msgid "years"
 msgstr "години"
 
-#: dashboard.i18n.php:10
-msgid "System Status"
-msgstr ""
+#~ msgid ""
+#~ "Provides a system information dashboard, showing information about Calls, "
+#~ "CPU, Memory, Disks, Network, and processes."
+#~ msgstr ""
+#~ "Предоставя информация за системата, показва информация за Разговори, CPU, "
+#~ "Памет, Твърд Диск, Мрежа и процеси."
+
+#~ msgid "Reports"
+#~ msgstr "Отчети"
+
+#~ msgid "System Dashboard"
+#~ msgstr "Информация за Системата"
 
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s е променен от %s на %s"
@@ -398,8 +394,12 @@ msgstr ""
 #~ msgid "App Memory"
 #~ msgstr "Памет"
 
-#~ msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
-#~ msgstr "Астериск Manager Прокси не работи, FreePBX ще използва Астериск директно, което може да доведе до влошена производителност"
+#~ msgid ""
+#~ "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
+#~ "Asterisk directly, which may result in poor performance"
+#~ msgstr ""
+#~ "Астериск Manager Прокси не работи, FreePBX ще използва Астериск директно, "
+#~ "което може да доведе до влошена производителност"
 
 #~ msgid "Asterisk Manager Proxy is running"
 #~ msgstr "Астериск Manager Прокси работи"
@@ -443,8 +443,12 @@ msgstr ""
 #~ msgid "External calls"
 #~ msgstr "Външни разговори"
 
-#~ msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
-#~ msgstr "ФОП Сървъра не работи, няма да можете да използвате оператор панела, но системата ще работи нормално без него."
+#~ msgid ""
+#~ "FOP Operator Panel Server is not running, you will not be able to use the "
+#~ "operator panel, but the system will run fine without it."
+#~ msgstr ""
+#~ "ФОП Сървъра не работи, няма да можете да използвате оператор панела, но "
+#~ "системата ще работи нормално без него."
 
 #~ msgid "FOP Operator Panel Server is running"
 #~ msgstr "ФОП Сървъра работи"
@@ -521,14 +525,22 @@ msgstr ""
 #~ msgid "SSH Server"
 #~ msgstr "SSH Сървър"
 
-#~ msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
-#~ msgstr "SSH Сървъра не работи, няма да можете да се свързвате със системата дистанционно"
+#~ msgid ""
+#~ "SSH Server is not running, you will not be able to connect to the system "
+#~ "console remotely"
+#~ msgstr ""
+#~ "SSH Сървъра не работи, няма да можете да се свързвате със системата "
+#~ "дистанционно"
 
 #~ msgid "SSH Server is running"
 #~ msgstr "SSH Сървъра работи"
 
-#~ msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr "SSH порт, конфигуриран на вашата система, ако не се използва по-подразбиране порт 22."
+#~ msgid ""
+#~ "SSH port number configured on your system if not using the default port "
+#~ "22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr ""
+#~ "SSH порт, конфигуриран на вашата система, ако не се използва по-"
+#~ "подразбиране порт 22."
 
 #~ msgid "Security Update"
 #~ msgstr "Защитно Обновяване"
@@ -557,14 +569,27 @@ msgstr ""
 #~ msgid "Update"
 #~ msgstr "Обнови"
 
-#~ msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
-#~ msgstr "Стойност на обновяване в секунди на всички секции в Статус на Системата с изключение на секцията за Информация."
+#~ msgid ""
+#~ "Update rate in seconds of all sections of the System Status panel except "
+#~ "the Info box."
+#~ msgstr ""
+#~ "Стойност на обновяване в секунди на всички секции в Статус на Системата с "
+#~ "изключение на секцията за Информация."
 
-#~ msgid "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr "Стойност на обновяване в секунди на секцията за Информация на Статус на Системата."
+#~ msgid ""
+#~ "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr ""
+#~ "Стойност на обновяване в секунди на секцията за Информация на Статус на "
+#~ "Системата."
 
-#~ msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
-#~ msgstr "Използвайте за предварително задаване на скала за максимално обаждания на Информационния  дисплей. Ако не е зададено, ще се определя динамично на базата на активните повиквания в системата."
+#~ msgid ""
+#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
+#~ "If not set, the the scale is dynamically sized based on the active calls "
+#~ "on the system."
+#~ msgstr ""
+#~ "Използвайте за предварително задаване на скала за максимално обаждания на "
+#~ "Информационния  дисплей. Ако не е зададено, ще се определя динамично на "
+#~ "базата на активните повиквания в системата."
 
 #~ msgid "Warn"
 #~ msgstr "Предупреждавам"

@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 17:29-0400\n"
+"POT-Creation-Date: 2015-05-20 16:39-0400\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -58,10 +58,14 @@ msgstr "15 Минут"
 msgid "5 Minutes"
 msgstr "5 Минут"
 
-#: sections/Overview.class.php:41
+#: sections/Overview.class.php:31
 #, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
-msgstr "<strong>'%s'</strong><br><i>(Вы можете изменить это имя в Дополнительных Настройках)</i>"
+msgid ""
+"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
+"i>"
+msgstr ""
+"<strong>'%s'</strong><br><i>(Вы можете изменить это имя в Дополнительных "
+"Настройках)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
@@ -71,7 +75,7 @@ msgstr "Звонки"
 msgid "Active Chans"
 msgstr "Акт Кан"
 
-#: classes/Statistics.class.php:121 sections/Overview.class.php:140
+#: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -99,13 +103,9 @@ msgstr "Темп. ЦПУ"
 msgid "Cached"
 msgstr "Кешировано"
 
-#: sections/Overview.class.php:129
+#: sections/Overview.class.php:119
 msgid "Critical Errors found"
 msgstr "Обнаружены критические ошибки"
-
-#: dashboard.i18n.php:10
-msgid "Dashboard"
-msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -178,7 +178,7 @@ msgstr "Память"
 msgid "Month"
 msgstr "Месяц"
 
-#: sections/Overview.class.php:141
+#: sections/Overview.class.php:131
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -186,7 +186,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr "Сеть"
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:91
 msgid "No critical issues found"
 msgstr "Критических проблем не найдено"
 
@@ -194,23 +194,15 @@ msgstr "Критических проблем не найдено"
 msgid "Overview"
 msgstr "Обзор"
 
-#: sections/Overview.class.php:128 sections/Overview.class.php:132
+#: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
 msgstr "Пожалуйста, проверьте наличие ошибок в разделе уведомлений"
-
-#: dashboard.i18n.php:8
-msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
-msgstr "Отображает панель системной информации, отображающую информацию о вызовах, загрузке CPU, использовании памяти, занятости дисков, загруженности сети и процессов."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "Перезагрузка"
 
-#: dashboard.i18n.php:6
-msgid "Reports"
-msgstr "Отчеты"
-
-#: sections/Overview.class.php:110
+#: sections/Overview.class.php:100
 msgid "Security Issue"
 msgstr "Проблема безопасности"
 
@@ -226,7 +218,7 @@ msgstr "Показать новые"
 msgid "Since Reload"
 msgstr "После перезагрузки"
 
-#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
+#: sections/Statistics.class.php:17 sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "Статистика"
@@ -248,13 +240,9 @@ msgstr "Сист. информация обновлена %s секунд наз
 msgid "System"
 msgstr "Система"
 
-#: sections/Overview.class.php:99
+#: sections/Overview.class.php:89
 msgid "System Alerts"
 msgstr "Системные уведомления"
-
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "Системная панель"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -272,7 +260,7 @@ msgstr "Система жива"
 msgid "Temp"
 msgstr "Темп"
 
-#: sections/Overview.class.php:111
+#: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "Этот важный вопрос нужно решить срочно"
 
@@ -305,11 +293,11 @@ msgstr "Польз. Откл"
 msgid "Users Online"
 msgstr "Польз. Вкл"
 
-#: sections/Overview.class.php:133
+#: sections/Overview.class.php:123
 msgid "Warnings Found"
 msgstr "Найдены предупреждения"
 
-#: sections/Overview.class.php:142
+#: sections/Overview.class.php:132
 msgid "Web Server"
 msgstr "Вэб сервер"
 
@@ -383,6 +371,20 @@ msgstr "год"
 msgid "years"
 msgstr "лет"
 
+#~ msgid ""
+#~ "Provides a system information dashboard, showing information about Calls, "
+#~ "CPU, Memory, Disks, Network, and processes."
+#~ msgstr ""
+#~ "Отображает панель системной информации, отображающую информацию о "
+#~ "вызовах, загрузке CPU, использовании памяти, занятости дисков, "
+#~ "загруженности сети и процессов."
+
+#~ msgid "Reports"
+#~ msgstr "Отчеты"
+
+#~ msgid "System Dashboard"
+#~ msgstr "Системная панель"
+
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s изменено с %s на %s"
 
@@ -392,8 +394,12 @@ msgstr "лет"
 #~ msgid "App Memory"
 #~ msgstr "Занято приложениями"
 
-#~ msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
-#~ msgstr "Asterisk Manager Proxy не работает, FreePBX будет использовать Asterisk напрямую, что может привести к ухудшению производительности"
+#~ msgid ""
+#~ "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
+#~ "Asterisk directly, which may result in poor performance"
+#~ msgstr ""
+#~ "Asterisk Manager Proxy не работает, FreePBX будет использовать Asterisk "
+#~ "напрямую, что может привести к ухудшению производительности"
 
 #~ msgid "Asterisk Manager Proxy is running"
 #~ msgstr "Asterisk Manager Proxy работает"
@@ -411,7 +417,8 @@ msgstr "лет"
 #~ msgstr "Частота обновления информации системной панели"
 
 #~ msgid "Dashboard Max Calls Initial Scale"
-#~ msgstr "Начальный масштаб максимального количества вызовов в системной панели"
+#~ msgstr ""
+#~ "Начальный масштаб максимального количества вызовов в системной панели"
 
 #~ msgid "Dashboard Non-Std SSH Port"
 #~ msgstr "Нестандартный SSH порт системной панели"
@@ -503,14 +510,22 @@ msgstr "лет"
 #~ msgid "SSH Server"
 #~ msgstr "Сервер SSH"
 
-#~ msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
-#~ msgstr "SSH Server не работает, Вы не сможете подключаться к системной консоли удаленно"
+#~ msgid ""
+#~ "SSH Server is not running, you will not be able to connect to the system "
+#~ "console remotely"
+#~ msgstr ""
+#~ "SSH Server не работает, Вы не сможете подключаться к системной консоли "
+#~ "удаленно"
 
 #~ msgid "SSH Server is running"
 #~ msgstr "SSH Server работает"
 
-#~ msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr "Номер SSH порта, если не используется стандартный порт 22. Данная настройка позволяет монитору панели обращаться на правильный порт."
+#~ msgid ""
+#~ "SSH port number configured on your system if not using the default port "
+#~ "22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr ""
+#~ "Номер SSH порта, если не используется стандартный порт 22. Данная "
+#~ "настройка позволяет монитору панели обращаться на правильный порт."
 
 #~ msgid "Security Update"
 #~ msgstr "Обновление безопасности"
@@ -542,14 +557,26 @@ msgstr "лет"
 #~ msgid "Update"
 #~ msgstr "Обновление"
 
-#~ msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
-#~ msgstr "Частота обновления в секундах всех секций в панели Статуса Системы кроме окна Информации."
+#~ msgid ""
+#~ "Update rate in seconds of all sections of the System Status panel except "
+#~ "the Info box."
+#~ msgstr ""
+#~ "Частота обновления в секундах всех секций в панели Статуса Системы кроме "
+#~ "окна Информации."
 
-#~ msgid "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr "Интервал обновления в секундах в секции Инфо панели 'Статус Системы'."
+#~ msgid ""
+#~ "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr ""
+#~ "Интервал обновления в секундах в секции Инфо панели 'Статус Системы'."
 
-#~ msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
-#~ msgstr "Используйте этот параметр для установки масштаба отображения количества звонков на панели. Если не установлено, масштаб будет установлен автоматически в зависимости от количества звонков в системе."
+#~ msgid ""
+#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
+#~ "If not set, the the scale is dynamically sized based on the active calls "
+#~ "on the system."
+#~ msgstr ""
+#~ "Используйте этот параметр для установки масштаба отображения количества "
+#~ "звонков на панели. Если не установлено, масштаб будет установлен "
+#~ "автоматически в зависимости от количества звонков в системе."
 
 #~ msgid "Warn"
 #~ msgstr "Ого!"

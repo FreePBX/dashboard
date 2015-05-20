@@ -19,10 +19,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 17:29-0400\n"
+"POT-Creation-Date: 2015-05-20 16:39-0400\n"
 "PO-Revision-Date: 2015-02-04 00:41+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
-"Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/dashboard/pt_BR/>\n"
+"Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
+"dashboard/pt_BR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -56,10 +57,14 @@ msgstr "15 Minutos"
 msgid "5 Minutes"
 msgstr "5 Minutos"
 
-#: sections/Overview.class.php:41
+#: sections/Overview.class.php:31
 #, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
-msgstr "<strong>'%s'</strong><br><i>(Você pode mudar este nome em Configurações Avançadas)</i>"
+msgid ""
+"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
+"i>"
+msgstr ""
+"<strong>'%s'</strong><br><i>(Você pode mudar este nome em Configurações "
+"Avançadas)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
@@ -69,7 +74,7 @@ msgstr "Chamdas Ativas"
 msgid "Active Chans"
 msgstr "Canis Ativos"
 
-#: classes/Statistics.class.php:121 sections/Overview.class.php:140
+#: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -97,13 +102,9 @@ msgstr "Temp CPU"
 msgid "Cached"
 msgstr "Em Cache"
 
-#: sections/Overview.class.php:129
+#: sections/Overview.class.php:119
 msgid "Critical Errors found"
 msgstr "Erros Críticos encontrados"
-
-#: dashboard.i18n.php:10
-msgid "Dashboard"
-msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -176,7 +177,7 @@ msgstr "Memória"
 msgid "Month"
 msgstr "Mês"
 
-#: sections/Overview.class.php:141
+#: sections/Overview.class.php:131
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -184,7 +185,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr "Rede"
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:91
 msgid "No critical issues found"
 msgstr "Nenhum problema crítico encontrado"
 
@@ -192,23 +193,15 @@ msgstr "Nenhum problema crítico encontrado"
 msgid "Overview"
 msgstr "Visão Geral"
 
-#: sections/Overview.class.php:128 sections/Overview.class.php:132
+#: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
 msgstr "Por favor verifique por erros na seção de notificações"
-
-#: dashboard.i18n.php:8
-msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
-msgstr "Exibe um painel de informações do sistema, mostrando informações sobre Chamadas, CPU, Memória, Discos, Rede e processos."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "Recarregar"
 
-#: dashboard.i18n.php:6
-msgid "Reports"
-msgstr "Relatórios"
-
-#: sections/Overview.class.php:110
+#: sections/Overview.class.php:100
 msgid "Security Issue"
 msgstr "Problema de Segurança"
 
@@ -224,7 +217,7 @@ msgstr "Mostrar Novos"
 msgid "Since Reload"
 msgstr "Desde Recarregado"
 
-#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
+#: sections/Statistics.class.php:17 sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "Estatísticas"
@@ -246,13 +239,9 @@ msgstr "SysInfo atualizado %s segundos atrás"
 msgid "System"
 msgstr "Sistema"
 
-#: sections/Overview.class.php:99
+#: sections/Overview.class.php:89
 msgid "System Alerts"
 msgstr "Alertas do Sistema"
-
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "Painel do Sistema"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -270,7 +259,7 @@ msgstr "Tempo Ativo do Sistema"
 msgid "Temp"
 msgstr "Temp."
 
-#: sections/Overview.class.php:111
+#: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "Este é um problema crítico e deve ser resolvido com urgência"
 
@@ -303,11 +292,11 @@ msgstr "Usuários Offline"
 msgid "Users Online"
 msgstr "Usuários Online"
 
-#: sections/Overview.class.php:133
+#: sections/Overview.class.php:123
 msgid "Warnings Found"
 msgstr "Avisos Encontrados"
 
-#: sections/Overview.class.php:142
+#: sections/Overview.class.php:132
 msgid "Web Server"
 msgstr "Servidor Web"
 
@@ -381,6 +370,19 @@ msgstr "ano"
 msgid "years"
 msgstr "anos"
 
+#~ msgid ""
+#~ "Provides a system information dashboard, showing information about Calls, "
+#~ "CPU, Memory, Disks, Network, and processes."
+#~ msgstr ""
+#~ "Exibe um painel de informações do sistema, mostrando informações sobre "
+#~ "Chamadas, CPU, Memória, Discos, Rede e processos."
+
+#~ msgid "Reports"
+#~ msgstr "Relatórios"
+
+#~ msgid "System Dashboard"
+#~ msgstr "Painel do Sistema"
+
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s alterado de %s para %s"
 
@@ -390,8 +392,12 @@ msgstr "anos"
 #~ msgid "App Memory"
 #~ msgstr "Memória App"
 
-#~ msgid "Asterisk Manager Proxy is not running, FreePBX will fall back to using Asterisk directly, which may result in poor performance"
-#~ msgstr "O Proxy não está rodando, o FreePBX acessará o Asterisk diretamente,o que pode resultar uma baixa performance"
+#~ msgid ""
+#~ "Asterisk Manager Proxy is not running, FreePBX will fall back to using "
+#~ "Asterisk directly, which may result in poor performance"
+#~ msgstr ""
+#~ "O Proxy não está rodando, o FreePBX acessará o Asterisk diretamente,o que "
+#~ "pode resultar uma baixa performance"
 
 #~ msgid "Asterisk Manager Proxy is running"
 #~ msgstr "O Proxy está rodando"
@@ -435,8 +441,12 @@ msgstr "anos"
 #~ msgid "External calls"
 #~ msgstr "Chamadas externas"
 
-#~ msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
-#~ msgstr "O servidor FOP não está rodando, não será possível usar o Painel do Operador,porém o sistema funciona normalmente sem ele."
+#~ msgid ""
+#~ "FOP Operator Panel Server is not running, you will not be able to use the "
+#~ "operator panel, but the system will run fine without it."
+#~ msgstr ""
+#~ "O servidor FOP não está rodando, não será possível usar o Painel do "
+#~ "Operador,porém o sistema funciona normalmente sem ele."
 
 #~ msgid "FOP Operator Panel Server is running"
 #~ msgstr "Servidor FOP está rodando"
@@ -513,14 +523,22 @@ msgstr "anos"
 #~ msgid "SSH Server"
 #~ msgstr "Servidor SSH"
 
-#~ msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
-#~ msgstr "Servidor SSH não está rodando, Não é possível acessar a console do sistema remotamente"
+#~ msgid ""
+#~ "SSH Server is not running, you will not be able to connect to the system "
+#~ "console remotely"
+#~ msgstr ""
+#~ "Servidor SSH não está rodando, Não é possível acessar a console do "
+#~ "sistema remotamente"
 
 #~ msgid "SSH Server is running"
 #~ msgstr "Servidor SSH está rodando"
 
-#~ msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr "A Porta SSH de seu sistema não esta configurada como a padrão 22, desta forma o Painel não poderá monitora-la."
+#~ msgid ""
+#~ "SSH port number configured on your system if not using the default port "
+#~ "22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr ""
+#~ "A Porta SSH de seu sistema não esta configurada como a padrão 22, desta "
+#~ "forma o Painel não poderá monitora-la."
 
 #~ msgid "Security Update"
 #~ msgstr "Atualização de Segurança"
@@ -552,14 +570,25 @@ msgstr "anos"
 #~ msgid "Update"
 #~ msgstr "Atualização"
 
-#~ msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
-#~ msgstr "Tempo de atualização de todas as seções do Estado do Sistema, exceto a Tela de Informações."
+#~ msgid ""
+#~ "Update rate in seconds of all sections of the System Status panel except "
+#~ "the Info box."
+#~ msgstr ""
+#~ "Tempo de atualização de todas as seções do Estado do Sistema, exceto a "
+#~ "Tela de Informações."
 
-#~ msgid "Update rate in seconds of the Info section of the System Status panel."
+#~ msgid ""
+#~ "Update rate in seconds of the Info section of the System Status panel."
 #~ msgstr "Tempo de atualização em segundos do painel de Estado do Sistema."
 
-#~ msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
-#~ msgstr "Use este para setar numero máximo de chamadas exibidas no Painel. Se não for configurado, será exibido em escala dinâmica baseado nas chamadas ativas no sistema."
+#~ msgid ""
+#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
+#~ "If not set, the the scale is dynamically sized based on the active calls "
+#~ "on the system."
+#~ msgstr ""
+#~ "Use este para setar numero máximo de chamadas exibidas no Painel. Se não "
+#~ "for configurado, será exibido em escala dinâmica baseado nas chamadas "
+#~ "ativas no sistema."
 
 #~ msgid "Warn"
 #~ msgstr "Alerta"

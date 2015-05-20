@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 17:29-0400\n"
+"POT-Creation-Date: 2015-05-20 16:39-0400\n"
 "PO-Revision-Date: 2015-02-27 20:50-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -44,9 +44,11 @@ msgstr "15 Minuten"
 msgid "5 Minutes"
 msgstr "5 Minuten"
 
-#: sections/Overview.class.php:41
+#: sections/Overview.class.php:31
 #, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgid ""
+"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
+"i>"
 msgstr ""
 
 #: views/sections/statistics.php:299
@@ -57,7 +59,7 @@ msgstr ""
 msgid "Active Chans"
 msgstr ""
 
-#: classes/Statistics.class.php:121 sections/Overview.class.php:140
+#: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -85,13 +87,9 @@ msgstr ""
 msgid "Cached"
 msgstr ""
 
-#: sections/Overview.class.php:129
+#: sections/Overview.class.php:119
 msgid "Critical Errors found"
 msgstr "Kritieke fouten gevonden"
-
-#: dashboard.i18n.php:10
-msgid "Dashboard"
-msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -167,7 +165,7 @@ msgstr "Geheugen"
 msgid "Month"
 msgstr "Maand"
 
-#: sections/Overview.class.php:141
+#: sections/Overview.class.php:131
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -175,7 +173,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr "Netwerk"
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:91
 msgid "No critical issues found"
 msgstr "Geen kritieke problemen gevonden"
 
@@ -183,23 +181,15 @@ msgstr "Geen kritieke problemen gevonden"
 msgid "Overview"
 msgstr "Overzicht"
 
-#: sections/Overview.class.php:128 sections/Overview.class.php:132
+#: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
 msgstr "Controleer de notificatie-sectie voor fouten"
-
-#: dashboard.i18n.php:8
-msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
-msgstr "Voorziet in een systeemoverzicht, met informatie over gesprekken, processor, geheugen, harde schijven, netwerk en processen."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr ""
 
-#: dashboard.i18n.php:6
-msgid "Reports"
-msgstr "Rapporten"
-
-#: sections/Overview.class.php:110
+#: sections/Overview.class.php:100
 msgid "Security Issue"
 msgstr "Beveiligingsprobleem"
 
@@ -215,7 +205,7 @@ msgstr "Nieuwe tonen"
 msgid "Since Reload"
 msgstr ""
 
-#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
+#: sections/Statistics.class.php:17 sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "Statistieken"
@@ -237,14 +227,10 @@ msgstr "Systeeminformatie %s seconden geleden geüpdatet"
 msgid "System"
 msgstr ""
 
-#: sections/Overview.class.php:99
+#: sections/Overview.class.php:89
 #, fuzzy
 msgid "System Alerts"
 msgstr "Systeem alarmen"
-
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "Systeemoverzicht"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -262,9 +248,10 @@ msgstr ""
 msgid "Temp"
 msgstr ""
 
-#: sections/Overview.class.php:111
+#: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
-msgstr "Dit is een kritiek probleem en moet zo spoedig mogelijk opgelost worden"
+msgstr ""
+"Dit is een kritiek probleem en moet zo spoedig mogelijk opgelost worden"
 
 #: classes/Statistics.class.php:305
 msgid "Trnks Offline"
@@ -295,11 +282,11 @@ msgstr ""
 msgid "Users Online"
 msgstr ""
 
-#: sections/Overview.class.php:133
+#: sections/Overview.class.php:123
 msgid "Warnings Found"
 msgstr "Waarschuwingen gevonden"
 
-#: sections/Overview.class.php:142
+#: sections/Overview.class.php:132
 msgid "Web Server"
 msgstr "Internetserver"
 
@@ -372,6 +359,19 @@ msgstr "jaar"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "jaren"
+
+#~ msgid ""
+#~ "Provides a system information dashboard, showing information about Calls, "
+#~ "CPU, Memory, Disks, Network, and processes."
+#~ msgstr ""
+#~ "Voorziet in een systeemoverzicht, met informatie over gesprekken, "
+#~ "processor, geheugen, harde schijven, netwerk en processen."
+
+#~ msgid "Reports"
+#~ msgstr "Rapporten"
+
+#~ msgid "System Dashboard"
+#~ msgstr "Systeemoverzicht"
 
 #~ msgid "System Status"
 #~ msgstr "Systeemstatus"

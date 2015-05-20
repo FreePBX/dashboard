@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 17:29-0400\n"
+"POT-Creation-Date: 2015-05-20 16:39-0400\n"
 "PO-Revision-Date: 2015-03-19 11:49-0400\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -44,10 +44,14 @@ msgstr "15 Minutos"
 msgid "5 Minutes"
 msgstr "5 Minutos"
 
-#: sections/Overview.class.php:41
+#: sections/Overview.class.php:31
 #, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
-msgstr "<strong>'%s'</strong><br><i>(Usted puede cambiar este nombre en Configuración Avanzada)</i>"
+msgid ""
+"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
+"i>"
+msgstr ""
+"<strong>'%s'</strong><br><i>(Usted puede cambiar este nombre en "
+"Configuración Avanzada)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
@@ -57,7 +61,7 @@ msgstr "Llamadas Activas"
 msgid "Active Chans"
 msgstr "Canales Activos"
 
-#: classes/Statistics.class.php:121 sections/Overview.class.php:140
+#: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
 msgstr "asterisk"
 
@@ -85,13 +89,9 @@ msgstr "Temp CPU"
 msgid "Cached"
 msgstr "cached"
 
-#: sections/Overview.class.php:129
+#: sections/Overview.class.php:119
 msgid "Critical Errors found"
 msgstr "Errores Críticos Encontrados"
-
-#: dashboard.i18n.php:10
-msgid "Dashboard"
-msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -164,7 +164,7 @@ msgstr "Memoria"
 msgid "Month"
 msgstr "Mes"
 
-#: sections/Overview.class.php:141
+#: sections/Overview.class.php:131
 msgid "MySQL"
 msgstr "- MySQL"
 
@@ -172,7 +172,7 @@ msgstr "- MySQL"
 msgid "Network"
 msgstr "Red"
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:91
 msgid "No critical issues found"
 msgstr "No se encontraron asuntos criticos"
 
@@ -180,23 +180,15 @@ msgstr "No se encontraron asuntos criticos"
 msgid "Overview"
 msgstr "Visión de Conjunto"
 
-#: sections/Overview.class.php:128 sections/Overview.class.php:132
+#: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
 msgstr "Por favor revise los errores en la sección de notificaciones"
-
-#: dashboard.i18n.php:8
-msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
-msgstr "Proporciona un Tablero de información del sistema, que muestra información sobre las llamadas, CPU, memoria, discos, redes y procesos."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "Recarga"
 
-#: dashboard.i18n.php:6
-msgid "Reports"
-msgstr "Reportes"
-
-#: sections/Overview.class.php:110
+#: sections/Overview.class.php:100
 msgid "Security Issue"
 msgstr "Asunto de Seguridad"
 
@@ -212,7 +204,7 @@ msgstr "Mostrar nuevo"
 msgid "Since Reload"
 msgstr "Desde Recarga"
 
-#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
+#: sections/Statistics.class.php:17 sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "Estadisticas"
@@ -234,13 +226,9 @@ msgstr "Sysinfo actualizada hace %s segundos"
 msgid "System"
 msgstr "Sistema"
 
-#: sections/Overview.class.php:99
+#: sections/Overview.class.php:89
 msgid "System Alerts"
 msgstr "Alertas del Sistema"
-
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "Tablero del Sistema"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -258,7 +246,7 @@ msgstr "Tiempo activo sistema"
 msgid "Temp"
 msgstr "Temperatura"
 
-#: sections/Overview.class.php:111
+#: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "Este es un asunto critico y debe ser resuelto con urgencia"
 
@@ -291,11 +279,11 @@ msgstr "Usuarios Fuera de Linea"
 msgid "Users Online"
 msgstr "Usuarios en Linea"
 
-#: sections/Overview.class.php:133
+#: sections/Overview.class.php:123
 msgid "Warnings Found"
 msgstr "Advertencias encontradas"
 
-#: sections/Overview.class.php:142
+#: sections/Overview.class.php:132
 msgid "Web Server"
 msgstr "Servidor Web"
 
@@ -369,6 +357,19 @@ msgstr "año"
 msgid "years"
 msgstr "años"
 
+#~ msgid ""
+#~ "Provides a system information dashboard, showing information about Calls, "
+#~ "CPU, Memory, Disks, Network, and processes."
+#~ msgstr ""
+#~ "Proporciona un Tablero de información del sistema, que muestra "
+#~ "información sobre las llamadas, CPU, memoria, discos, redes y procesos."
+
+#~ msgid "Reports"
+#~ msgstr "Reportes"
+
+#~ msgid "System Dashboard"
+#~ msgstr "Tablero del Sistema"
+
 #~ msgid "Dashboard Info Update Frequency"
 #~ msgstr "Frecuencia de Actualización del Tabero"
 
@@ -384,8 +385,13 @@ msgstr "años"
 #~ msgid "GUI Behavior"
 #~ msgstr "Comportamiento de la GUI"
 
-#~ msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr "Número de puerto SSH configurado en su sistema, si no se utiliza el puerto predeterminado 22, esto permite que el monitoreo tablero para ver el puerto correcto."
+#~ msgid ""
+#~ "SSH port number configured on your system if not using the default port "
+#~ "22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr ""
+#~ "Número de puerto SSH configurado en su sistema, si no se utiliza el "
+#~ "puerto predeterminado 22, esto permite que el monitoreo tablero para ver "
+#~ "el puerto correcto."
 
 #~ msgid "System Setup"
 #~ msgstr "Configuración del Sistema"
@@ -393,11 +399,24 @@ msgstr "años"
 #~ msgid "System Status"
 #~ msgstr "Estado del Sistema"
 
-#~ msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
-#~ msgstr "Tasa de actualización en segundos de todas las secciones del panel de Estado del Sistema excepto la caja de Info."
+#~ msgid ""
+#~ "Update rate in seconds of all sections of the System Status panel except "
+#~ "the Info box."
+#~ msgstr ""
+#~ "Tasa de actualización en segundos de todas las secciones del panel de "
+#~ "Estado del Sistema excepto la caja de Info."
 
-#~ msgid "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr "Tasa de actualización en segundos de la sección Info del panel del Estado del Sistema."
+#~ msgid ""
+#~ "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr ""
+#~ "Tasa de actualización en segundos de la sección Info del panel del Estado "
+#~ "del Sistema."
 
-#~ msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
-#~ msgstr "Use esto para pre-configurar la escala para las llamadas máximas en la pantalla del tablero de instrumentos. Si no se establece la escala se dimensiona dinámicamente basándose en las llamadas activas en el sistema."
+#~ msgid ""
+#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
+#~ "If not set, the the scale is dynamically sized based on the active calls "
+#~ "on the system."
+#~ msgstr ""
+#~ "Use esto para pre-configurar la escala para las llamadas máximas en la "
+#~ "pantalla del tablero de instrumentos. Si no se establece la escala se "
+#~ "dimensiona dinámicamente basándose en las llamadas activas en el sistema."

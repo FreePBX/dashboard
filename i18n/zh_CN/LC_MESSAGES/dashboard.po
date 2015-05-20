@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-01 17:29-0400\n"
+"POT-Creation-Date: 2015-05-20 16:39-0400\n"
 "PO-Revision-Date: 2015-02-20 19:18-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -44,9 +44,11 @@ msgstr ""
 msgid "5 Minutes"
 msgstr ""
 
-#: sections/Overview.class.php:41
+#: sections/Overview.class.php:31
 #, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgid ""
+"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
+"i>"
 msgstr ""
 
 #: views/sections/statistics.php:299
@@ -57,7 +59,7 @@ msgstr "活动呼叫"
 msgid "Active Chans"
 msgstr "活动通道"
 
-#: classes/Statistics.class.php:121 sections/Overview.class.php:140
+#: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -85,12 +87,8 @@ msgstr "CPU 温度"
 msgid "Cached"
 msgstr ""
 
-#: sections/Overview.class.php:129
+#: sections/Overview.class.php:119
 msgid "Critical Errors found"
-msgstr ""
-
-#: dashboard.i18n.php:10
-msgid "Dashboard"
 msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
@@ -164,7 +162,7 @@ msgstr "内存"
 msgid "Month"
 msgstr ""
 
-#: sections/Overview.class.php:141
+#: sections/Overview.class.php:131
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -172,7 +170,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr ""
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:91
 msgid "No critical issues found"
 msgstr ""
 
@@ -180,19 +178,15 @@ msgstr ""
 msgid "Overview"
 msgstr "总览"
 
-#: sections/Overview.class.php:128 sections/Overview.class.php:132
+#: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
-msgstr ""
-
-#: dashboard.i18n.php:8
-msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
 msgstr ""
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "重新加载"
 
-#: sections/Overview.class.php:109
+#: sections/Overview.class.php:100
 msgid "Security Issue"
 msgstr "安全问题"
 
@@ -208,7 +202,7 @@ msgstr "显示新信息"
 msgid "Since Reload"
 msgstr "自从重新加载后"
 
-#: sections/Statistics.class.php:27 sections/Statistics.class.php:28
+#: sections/Statistics.class.php:17 sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "统计数据"
@@ -230,13 +224,9 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: sections/Overview.class.php:98
+#: sections/Overview.class.php:89
 msgid "System Alerts"
 msgstr "系统告警"
-
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "系统状态"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -254,7 +244,7 @@ msgstr "系统运行时间"
 msgid "Temp"
 msgstr ""
 
-#: sections/Overview.class.php:111
+#: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
@@ -287,11 +277,11 @@ msgstr ""
 msgid "Users Online"
 msgstr ""
 
-#: sections/Overview.class.php:133
+#: sections/Overview.class.php:123
 msgid "Warnings Found"
 msgstr ""
 
-#: sections/Overview.class.php:142
+#: sections/Overview.class.php:132
 msgid "Web Server"
 msgstr "Web服务器"
 
@@ -364,6 +354,9 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
+
+#~ msgid "System Dashboard"
+#~ msgstr "系统状态"
 
 #~ msgid "Reports"
 #~ msgstr "报表"
