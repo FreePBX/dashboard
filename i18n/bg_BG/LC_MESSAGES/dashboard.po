@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-27 23:20-0400\n"
+"POT-Creation-Date: 2015-05-20 16:30-0400\n"
 "PO-Revision-Date: 2014-07-23 16:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/"
@@ -199,21 +199,9 @@ msgstr ""
 msgid "Please check for errors in the notification section"
 msgstr ""
 
-#: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Предоставя информация за системата, показва информация за Разговори, CPU, "
-"Памет, Твърд Диск, Мрежа и процеси."
-
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr ""
-
-#: dashboard.i18n.php:6 dashboard.i18n.php:12
-msgid "Reports"
-msgstr "Отчети"
 
 #: sections/Overview.class.php:109
 msgid "Security Issue"
@@ -257,20 +245,12 @@ msgstr ""
 msgid "System Alerts"
 msgstr ""
 
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "Информация за Системата"
-
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr ""
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr ""
-
-#: dashboard.i18n.php:10
-msgid "System Status"
 msgstr ""
 
 #: classes/Statistics.class.php:112
@@ -391,6 +371,19 @@ msgstr "година"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "години"
+
+#~ msgid ""
+#~ "Provides a system information dashboard, showing information about Calls, "
+#~ "CPU, Memory, Disks, Network, and processes."
+#~ msgstr ""
+#~ "Предоставя информация за системата, показва информация за Разговори, CPU, "
+#~ "Памет, Твърд Диск, Мрежа и процеси."
+
+#~ msgid "Reports"
+#~ msgstr "Отчети"
+
+#~ msgid "System Dashboard"
+#~ msgstr "Информация за Системата"
 
 #~ msgid "Dashboard Info Update Frequency"
 #~ msgstr "Период на Обновяване на Информацията"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-27 23:20-0400\n"
+"POT-Creation-Date: 2015-05-20 16:30-0400\n"
 "PO-Revision-Date: 2015-04-17 23:00+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -187,21 +187,9 @@ msgstr "Visión de Conjunto"
 msgid "Please check for errors in the notification section"
 msgstr "Por favor revise los errores en la sección de notificaciones"
 
-#: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Proporciona un Tablero de información del sistema, que muestra información "
-"sobre las llamadas, CPU, memoria, discos, redes y procesos."
-
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "Recarga"
-
-#: dashboard.i18n.php:6 dashboard.i18n.php:12
-msgid "Reports"
-msgstr "Reportes"
 
 #: sections/Overview.class.php:109
 msgid "Security Issue"
@@ -245,10 +233,6 @@ msgstr "Sistema"
 msgid "System Alerts"
 msgstr "Alertas del Sistema"
 
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "Tablero del Sistema"
-
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "Ultimo reinicio del sistema"
@@ -256,10 +240,6 @@ msgstr "Ultimo reinicio del sistema"
 #: sections/Overview.class.php:15
 msgid "System Overview"
 msgstr "Vision de conjunto del sistema"
-
-#: dashboard.i18n.php:10
-msgid "System Status"
-msgstr "Estado del Sistema"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
@@ -379,6 +359,22 @@ msgstr "año"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "años"
+
+#~ msgid ""
+#~ "Provides a system information dashboard, showing information about Calls, "
+#~ "CPU, Memory, Disks, Network, and processes."
+#~ msgstr ""
+#~ "Proporciona un Tablero de información del sistema, que muestra "
+#~ "información sobre las llamadas, CPU, memoria, discos, redes y procesos."
+
+#~ msgid "Reports"
+#~ msgstr "Reportes"
+
+#~ msgid "System Dashboard"
+#~ msgstr "Tablero del Sistema"
+
+#~ msgid "System Status"
+#~ msgstr "Estado del Sistema"
 
 #~ msgid "Dashboard Info Update Frequency"
 #~ msgstr "Frecuencia de Actualización del Tabero"

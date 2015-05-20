@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-27 23:20-0400\n"
+"POT-Creation-Date: 2015-05-20 16:30-0400\n"
 "PO-Revision-Date: 2015-05-18 21:45+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
-"Language-Team: Simplified Chinese "
-"<http://weblate.freepbx.org/projects/freepbx/dashboard/zh_CN/>\n"
-"Language: zh_CN\n"
+"Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
+"freepbx/dashboard/zh_CN/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -185,19 +185,9 @@ msgstr "总览"
 msgid "Please check for errors in the notification section"
 msgstr ""
 
-#: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "重新加载"
-
-#: dashboard.i18n.php:6 dashboard.i18n.php:12
-msgid "Reports"
-msgstr "报表"
 
 #: sections/Overview.class.php:109
 msgid "Security Issue"
@@ -241,10 +231,6 @@ msgstr ""
 msgid "System Alerts"
 msgstr "系统告警"
 
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "系统状态"
-
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "系统最近一次重启"
@@ -252,10 +238,6 @@ msgstr "系统最近一次重启"
 #: sections/Overview.class.php:15
 msgid "System Overview"
 msgstr "系统总览"
-
-#: dashboard.i18n.php:10
-msgid "System Status"
-msgstr "系统状态"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
@@ -375,3 +357,12 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
+
+#~ msgid "Reports"
+#~ msgstr "报表"
+
+#~ msgid "System Dashboard"
+#~ msgstr "系统状态"
+
+#~ msgid "System Status"
+#~ msgstr "系统状态"
