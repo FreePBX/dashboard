@@ -2,7 +2,7 @@
 	<div class="col-sm-2">
 		<div class="btn-group-vertical">
 			<div class="btn-group btn-group-lg" data-type="asterisk">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				<button type="button" class="btn btn-default dropdown-toggle btn-stats" data-toggle="dropdown">
 					Asterisk <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
@@ -13,7 +13,7 @@
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="uptime">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				<button type="button" class="btn btn-default dropdown-toggle btn-stats" data-toggle="dropdown">
 					<?php echo _("Uptime")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
@@ -24,7 +24,7 @@
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="cpuusage">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				<button type="button" class="btn btn-default dropdown-toggle btn-stats" data-toggle="dropdown">
 					CPU <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
@@ -35,7 +35,7 @@
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="memusage">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				<button type="button" class="btn btn-default dropdown-toggle btn-stats" data-toggle="dropdown">
 					<?php echo _("Memory")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
@@ -46,7 +46,7 @@
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="diskusage">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				<button type="button" class="btn btn-default dropdown-toggle btn-stats" data-toggle="dropdown">
 					<?php echo _("Disk")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
@@ -57,7 +57,7 @@
 				</ul>
 			</div>
 			<div class="btn-group btn-group-lg" data-type="networking">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+				<button type="button" class="btn btn-default dropdown-toggle btn-stats" data-toggle="dropdown">
 					<?php echo _("Network")?> <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">
