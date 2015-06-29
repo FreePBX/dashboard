@@ -61,7 +61,7 @@
 									<?php echo $n['text']?>
 								</div>
 								<?php if(!empty($n['link'])) { ?>
-									<div class="link alert-<?php echo $n['level']?>"><a class="alert-<?php echo $n['level']?>" href="<?php echo $n['link']?>"><?php echo $n['link']?></a></div>
+									<div class="link alert-<?php echo $n['level']?>"><a class="alert-<?php echo $n['level']?>" href="<?php echo $n['link']?>"><?php echo _("Resolve")?></a></div>
 								<?php } ?>
 								<div class="timestamp alert-<?php echo $n['level']?>"><?php echo sprintf(_('%s ago'),$n['time'])?></div>
 							</div>
