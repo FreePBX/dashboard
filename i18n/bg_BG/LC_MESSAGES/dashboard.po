@@ -137,7 +137,7 @@ msgstr "Свободна"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr ""
+msgstr "Frobulating"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -150,15 +150,15 @@ msgstr "Час"
 
 #: views/sections/overview.php:53
 msgid "Ignore This"
-msgstr ""
+msgstr "Игнорирайте Това"
 
 #: classes/Statistics.class.php:14
 msgid "Invalid Selection"
-msgstr ""
+msgstr "Невалиден Избор"
 
 #: classes/Statistics.class.php:26
 msgid "Invalid period"
-msgstr ""
+msgstr "Невалиден период"
 
 #: classes/Statistics.class.php:377
 msgid "Load"
@@ -195,11 +195,11 @@ msgstr "Няма критични проблеми"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
-msgstr ""
+msgstr "Преглед"
 
 #: sections/Overview.class.php:127 sections/Overview.class.php:131
 msgid "Please check for errors in the notification section"
-msgstr ""
+msgstr "Моля проверете за грешки в раздела за уведомления"
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
@@ -207,7 +207,7 @@ msgstr "Обновяване"
 
 #: sections/Overview.class.php:109
 msgid "Security Issue"
-msgstr ""
+msgstr "Проблем със Сигурността"
 
 #: views/sections/overview.php:75
 msgid "Show All"
@@ -245,7 +245,7 @@ msgstr "Система"
 
 #: sections/Overview.class.php:98
 msgid "System Alerts"
-msgstr ""
+msgstr "Системи Предупреждения"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -261,23 +261,23 @@ msgstr "Система на Линия"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr ""
+msgstr "Темп"
 
 #: sections/Overview.class.php:110
 msgid "This is a critical issue and should be resolved urgently"
-msgstr ""
+msgstr "Това е критичен проблем и трябва да бъде решен спешно"
 
 #: classes/Statistics.class.php:305
 msgid "Trnks Offline"
-msgstr ""
+msgstr "ВънЛ Offline"
 
 #: views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr ""
+msgstr "ВънЛ Offline"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr ""
+msgstr "ВънЛ Рег"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
@@ -298,7 +298,7 @@ msgstr "Потр.Online"
 
 #: sections/Overview.class.php:132
 msgid "Warnings Found"
-msgstr ""
+msgstr "Намерени Предупреждения"
 
 #: sections/Overview.class.php:141
 msgid "Web Server"
