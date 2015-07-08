@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-20 16:30-0400\n"
-"PO-Revision-Date: 2015-07-08 00:59+0200\n"
+"PO-Revision-Date: 2015-07-08 01:22+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/bg_BG/>\n"
@@ -108,7 +108,7 @@ msgstr "Кеширани"
 
 #: sections/Overview.class.php:128
 msgid "Critical Errors found"
-msgstr ""
+msgstr "Намерени са Критични Грешки"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -121,7 +121,7 @@ msgstr "Ден"
 
 #: views/sections/overview.php:54
 msgid "Delete This"
-msgstr ""
+msgstr "Изтрий Това"
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
@@ -191,7 +191,7 @@ msgstr "Мрежа"
 
 #: sections/Overview.class.php:100
 msgid "No critical issues found"
-msgstr ""
+msgstr "Няма критични проблеми"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
@@ -249,15 +249,15 @@ msgstr ""
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr ""
+msgstr "Последно Рестартиране на Системата"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr ""
+msgstr "Преглед на Системата"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
-msgstr "Експлоатация на Системата"
+msgstr "Система на Линия"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
@@ -282,19 +282,19 @@ msgstr ""
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr "Експлоатация"
+msgstr "На Линия"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
-msgstr ""
+msgstr "Използвана"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
-msgstr ""
+msgstr "Потр.Offline"
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr ""
+msgstr "Потр.Online"
 
 #: sections/Overview.class.php:132
 msgid "Warnings Found"
@@ -311,12 +311,12 @@ msgstr "Уеб Сървър"
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
-msgstr ""
+msgstr "Седмица"
 
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
-msgstr ""
+msgstr "Заповядайте в %s"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
@@ -344,11 +344,11 @@ msgstr "минути"
 
 #: classes/TimeUtils.class.php:11
 msgid "month"
-msgstr ""
+msgstr "месец"
 
 #: classes/TimeUtils.class.php:12
 msgid "months"
-msgstr ""
+msgstr "месеца"
 
 #: classes/TimeUtils.class.php:21
 msgid "second"
