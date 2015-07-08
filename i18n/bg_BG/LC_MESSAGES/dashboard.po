@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-20 16:30-0400\n"
-"PO-Revision-Date: 2015-07-08 01:22+0200\n"
+"PO-Revision-Date: 2015-07-08 16:17+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/bg_BG/>\n"
@@ -137,7 +137,7 @@ msgstr "Свободна"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr "Frobulating"
+msgstr "Промяна"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
