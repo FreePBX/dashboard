@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-20 16:30-0400\n"
+"POT-Creation-Date: 2015-07-17 08:53+1000\n"
 "PO-Revision-Date: 2015-03-23 17:04+0200\n"
 "Last-Translator: Jan Peter <jpveldhuizen@gmail.com>\n"
 "Language-Team: Dutch <http://weblate.freepbx.org/projects/freepbx/dashboard/"
@@ -188,9 +188,21 @@ msgstr "Overzicht"
 msgid "Please check for errors in the notification section"
 msgstr "Controleer de notificatie-sectie voor fouten"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"Voorziet in een systeemoverzicht, met informatie over gesprekken, processor, "
+"geheugen, harde schijven, netwerk en processen."
+
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr ""
+
+#: dashboard.i18n.php:6 dashboard.i18n.php:12
+msgid "Reports"
+msgstr "Rapporten"
 
 #: sections/Overview.class.php:109
 msgid "Security Issue"
@@ -235,6 +247,10 @@ msgstr ""
 msgid "System Alerts"
 msgstr "Systeem alarmen"
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "Systeemoverzicht"
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "Systeem laatste keer herstart"
@@ -242,6 +258,10 @@ msgstr "Systeem laatste keer herstart"
 #: sections/Overview.class.php:15
 msgid "System Overview"
 msgstr "Systeemoverzicht"
+
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr "Systeemstatus"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
@@ -362,19 +382,3 @@ msgstr "jaar"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "jaren"
-
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "Voorziet in een systeemoverzicht, met informatie over gesprekken, "
-#~ "processor, geheugen, harde schijven, netwerk en processen."
-
-#~ msgid "Reports"
-#~ msgstr "Rapporten"
-
-#~ msgid "System Dashboard"
-#~ msgstr "Systeemoverzicht"
-
-#~ msgid "System Status"
-#~ msgstr "Systeemstatus"

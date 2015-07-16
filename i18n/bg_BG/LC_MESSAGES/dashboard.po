@@ -20,15 +20,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-20 16:30-0400\n"
+"POT-Creation-Date: 2015-07-17 08:53+1000\n"
 "PO-Revision-Date: 2015-07-08 16:17+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
-"Language-Team: Bulgarian "
-"<http://weblate.freepbx.org/projects/freepbx/dashboard/bg_BG/>\n"
-"Language: bg_BG\n"
+"Language-Team: Bulgarian <http://weblate.freepbx.org/projects/freepbx/"
+"dashboard/bg_BG/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: bg_BG\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 "X-Poedit-Language: Bulgarian\n"
@@ -201,9 +201,21 @@ msgstr "Преглед"
 msgid "Please check for errors in the notification section"
 msgstr "Моля проверете за грешки в раздела за уведомления"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"Предоставя информация за системата, показва информация за Разговори, CPU, "
+"Памет, Твърд Диск, Мрежа и процеси."
+
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "Обновяване"
+
+#: dashboard.i18n.php:6 dashboard.i18n.php:12
+msgid "Reports"
+msgstr "Отчети"
 
 #: sections/Overview.class.php:109
 msgid "Security Issue"
@@ -247,6 +259,10 @@ msgstr "Система"
 msgid "System Alerts"
 msgstr "Системи Предупреждения"
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "Информация за Системата"
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "Последно Рестартиране на Системата"
@@ -254,6 +270,10 @@ msgstr "Последно Рестартиране на Системата"
 #: sections/Overview.class.php:15
 msgid "System Overview"
 msgstr "Преглед на Системата"
+
+#: dashboard.i18n.php:10
+msgid "System Status"
+msgstr ""
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
@@ -373,19 +393,6 @@ msgstr "година"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "години"
-
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "Предоставя информация за системата, показва информация за Разговори, CPU, "
-#~ "Памет, Твърд Диск, Мрежа и процеси."
-
-#~ msgid "Reports"
-#~ msgstr "Отчети"
-
-#~ msgid "System Dashboard"
-#~ msgstr "Информация за Системата"
 
 #~ msgid "Dashboard Info Update Frequency"
 #~ msgstr "Период на Обновяване на Информацията"
