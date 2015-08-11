@@ -178,9 +178,13 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		$si = SysInfo::create();
 		$info = $si->getSysInfo();
 		$end = microtime(true);
-		$delay = $end - $start;
+		$delay = (float) $end - $start;
 		// This is now a float in seconds of how long it took
 		// to generate the sysinfo.
+		// Make sure it's a valid number, and it's not too small.
+		if ($delay < 0.1 || is_nan($delay)) {
+			$delay = 0.1;
+		}
 
 		$info['generationlength'] = $delay;
 
