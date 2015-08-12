@@ -40,8 +40,7 @@ msgstr ""
 "POT-Creation-Date: 2015-05-20 16:39-0400\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
-"Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
-"dashboard/ja_JP/>\n"
+"Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/dashboard/ja_JP/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -52,7 +51,7 @@ msgstr ""
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
 msgid "%s Min Avg"
-msgstr ""
+msgstr "%s 分 平均"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
@@ -75,20 +74,18 @@ msgstr "15分"
 msgid "5 Minutes"
 msgstr "5分"
 
-#: sections/Overview.class.php:31
+#: sections/Overview.class.php:41
 #, php-format
-msgid ""
-"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
-"i>"
-msgstr ""
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr "<strong>'%s'</strong><br><i>(高度な設定で変更できます)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
-msgstr ""
+msgstr "アクティブ通話"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr ""
+msgstr "アクティブチャネル"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
@@ -104,7 +101,7 @@ msgstr "ブログ"
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
-msgstr ""
+msgstr "バッファー"
 
 #: classes/Statistics.class.php:122
 msgid "CPU"
@@ -112,11 +109,11 @@ msgstr "CPU"
 
 #: classes/Statistics.class.php:368
 msgid "CPU Temp"
-msgstr ""
+msgstr "CPU温度"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
-msgstr ""
+msgstr "キャッシュ"
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
@@ -129,7 +126,7 @@ msgstr "致命的なエラーが見つかりました"
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
 msgid "Day"
-msgstr ""
+msgstr "日"
 
 #: views/sections/overview.php:54
 msgid "Delete This"
@@ -145,11 +142,11 @@ msgstr "フィード"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
-msgstr ""
+msgstr "空きメモリ"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr ""
+msgstr "変動"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -158,7 +155,7 @@ msgstr ""
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
-msgstr ""
+msgstr "時"
 
 #: views/sections/overview.php:53
 msgid "Ignore This"
@@ -166,15 +163,15 @@ msgstr "無視する"
 
 #: classes/Statistics.class.php:14
 msgid "Invalid Selection"
-msgstr ""
+msgstr "無効な選択"
 
 #: classes/Statistics.class.php:26
 msgid "Invalid period"
-msgstr ""
+msgstr "無効な期間"
 
 #: classes/Statistics.class.php:377
 msgid "Load"
-msgstr ""
+msgstr "負荷"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
@@ -191,7 +188,7 @@ msgstr "メモリー"
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
-msgstr ""
+msgstr "月"
 
 #: sections/Overview.class.php:131
 msgid "MySQL"
@@ -215,7 +212,7 @@ msgstr "通知セクションでエラーを確認してください"
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
-msgstr ""
+msgstr "再読込"
 
 #: sections/Overview.class.php:100
 msgid "Security Issue"
@@ -231,7 +228,7 @@ msgstr "新規を表示"
 
 #: classes/Statistics.class.php:90 classes/Statistics.class.php:114
 msgid "Since Reload"
-msgstr ""
+msgstr "リロード後"
 
 #: sections/Statistics.class.php:17 sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
@@ -244,7 +241,7 @@ msgstr "サマリー"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
-msgstr ""
+msgstr "使用済みスワップ"
 
 #: views/sections/overview.php:36
 #, php-format
@@ -253,7 +250,7 @@ msgstr "%s 秒前にシステム情報を更新済み"
 
 #: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
-msgstr ""
+msgstr "システム"
 
 #: sections/Overview.class.php:89
 msgid "System Alerts"
@@ -273,7 +270,7 @@ msgstr "システム稼働時間"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr ""
+msgstr "温度"
 
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
@@ -281,15 +278,15 @@ msgstr "クリティカルな問題であるため速やかに解決する必要
 
 #: classes/Statistics.class.php:305
 msgid "Trnks Offline"
-msgstr ""
+msgstr "オフライントランク"
 
 #: views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr ""
+msgstr "オフライントランク"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr ""
+msgstr "登録済みトランク"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
@@ -298,15 +295,15 @@ msgstr "稼働時間"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
-msgstr ""
+msgstr "使用済み"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
-msgstr ""
+msgstr "オフラインユーザー"
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr ""
+msgstr "オンラインユーザー"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
@@ -323,7 +320,7 @@ msgstr "Webサーバー"
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
-msgstr ""
+msgstr "週"
 
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
@@ -386,18 +383,17 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、"
-#~ "ネットワークの負荷状況等を表示します。"
+#~ msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+#~ msgstr "システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、ネットワークの負荷状況等を表示します。"
 
 #~ msgid "Reports"
 #~ msgstr "レポート"
 
 #~ msgid "System Dashboard"
 #~ msgstr "システムダッシュボード"
+
+#~ msgid "System Status"
+#~ msgstr "システムステータス"
 
 #~ msgid "%s Connections"
 #~ msgstr "%s 接続"
@@ -420,12 +416,8 @@ msgstr "年"
 #~ msgid "App Memory"
 #~ msgstr "Appメモリー"
 
-#~ msgid ""
-#~ "Asterisk Manager Proxy is not running, %s will fall back to using "
-#~ "Asterisk directly, which may result in poor performance"
-#~ msgstr ""
-#~ "Asteriskマネージャープロキシーは動作していません。%s は Asteriskに直接接続"
-#~ "しているため、パフォーマンスが低下している可能性があります。"
+#~ msgid "Asterisk Manager Proxy is not running, %s will fall back to using Asterisk directly, which may result in poor performance"
+#~ msgstr "Asteriskマネージャープロキシーは動作していません。%s は Asteriskに直接接続しているため、パフォーマンスが低下している可能性があります。"
 
 #~ msgid "Asterisk Manager Proxy is running"
 #~ msgstr "Asteriskマネージャプロキシーは動作しています"
@@ -469,12 +461,8 @@ msgstr "年"
 #~ msgid "External calls"
 #~ msgstr "外線通話数"
 
-#~ msgid ""
-#~ "FOP Operator Panel Server is not running, you will not be able to use the "
-#~ "operator panel, but the system will run fine without it."
-#~ msgstr ""
-#~ "FOPオペレーターパネルサーバーが実行されていません、オペレーターパネルを使"
-#~ "用することができませんが、それ以外システムは問題なく実行されます。"
+#~ msgid "FOP Operator Panel Server is not running, you will not be able to use the operator panel, but the system will run fine without it."
+#~ msgstr "FOPオペレーターパネルサーバーが実行されていません、オペレーターパネルを使用することができませんが、それ以外システムは問題なく実行されます。"
 
 #~ msgid "FOP Operator Panel Server is running"
 #~ msgstr "FOP オペレーターパネルサーバーが実行されています。"
@@ -545,22 +533,14 @@ msgstr "年"
 #~ msgid "SSH Server"
 #~ msgstr "SSHサーバー"
 
-#~ msgid ""
-#~ "SSH Server is not running, you will not be able to connect to the system "
-#~ "console remotely"
-#~ msgstr ""
-#~ "SSHサーバーは動作していません。このため、システムコンソールにリモート接続"
-#~ "できません。"
+#~ msgid "SSH Server is not running, you will not be able to connect to the system console remotely"
+#~ msgstr "SSHサーバーは動作していません。このため、システムコンソールにリモート接続できません。"
 
 #~ msgid "SSH Server is running"
 #~ msgstr "SSHサーバーは動作しています"
 
-#~ msgid ""
-#~ "SSH port number configured on your system if not using the default port "
-#~ "22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr ""
-#~ "SSHのポート番号をデフォルトの 22番から変更している場合には、この設定項目を"
-#~ "設定してください。"
+#~ msgid "SSH port number configured on your system if not using the default port 22, this allows the dashboard monitoring to watch the poper port."
+#~ msgstr "SSHのポート番号をデフォルトの 22番から変更している場合には、この設定項目を設定してください。"
 
 #~ msgid "Security Update"
 #~ msgstr "セキュリティアップデート"
@@ -580,9 +560,6 @@ msgstr "年"
 #~ msgid "System Statistics"
 #~ msgstr "システム統計情報"
 
-#~ msgid "System Status"
-#~ msgstr "システムステータス"
-
 #~ msgid "Total active calls"
 #~ msgstr "現在の合計通話数"
 
@@ -592,25 +569,14 @@ msgstr "年"
 #~ msgid "Update"
 #~ msgstr "アップデート"
 
-#~ msgid ""
-#~ "Update rate in seconds of all sections of the System Status panel except "
-#~ "the Info box."
-#~ msgstr ""
-#~ "情報ボックスを除いた、システムステータスパネルの更新間隔(秒)を指定します。"
+#~ msgid "Update rate in seconds of all sections of the System Status panel except the Info box."
+#~ msgstr "情報ボックスを除いた、システムステータスパネルの更新間隔(秒)を指定します。"
 
-#~ msgid ""
-#~ "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr ""
-#~ "システムステータスパネルの情報セクションの更新間隔(秒)を指定します。"
+#~ msgid "Update rate in seconds of the Info section of the System Status panel."
+#~ msgstr "システムステータスパネルの情報セクションの更新間隔(秒)を指定します。"
 
-#~ msgid ""
-#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
-#~ "If not set, the the scale is dynamically sized based on the active calls "
-#~ "on the system."
-#~ msgstr ""
-#~ "この設定項目では、ダッシュボードの最大通話数に対応するスケールを設定できま"
-#~ "す。設定されていない場合には、アクティブな通話数に応じて動的にスケールを変"
-#~ "更します。"
+#~ msgid "Use this to pre-set the scale for maximum calls on the Dashboard display. If not set, the the scale is dynamically sized based on the active calls on the system."
+#~ msgstr "この設定項目では、ダッシュボードの最大通話数に対応するスケールを設定できます。設定されていない場合には、アクティブな通話数に応じて動的にスケールを変更します。"
 
 #~ msgid "Warn"
 #~ msgstr "警告"

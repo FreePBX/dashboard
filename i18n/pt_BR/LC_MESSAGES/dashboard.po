@@ -365,6 +365,18 @@ msgstr "ano"
 msgid "years"
 msgstr "anos"
 
+#~ msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+#~ msgstr "Exibe um painel de informações do sistema, mostrando informações sobre Chamadas, CPU, Memória, Discos, Rede e processos."
+
+#~ msgid "Reports"
+#~ msgstr "Relatórios"
+
+#~ msgid "System Dashboard"
+#~ msgstr "Painel do Sistema"
+
+#~ msgid "System Status"
+#~ msgstr "Estado do Sistema"
+
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s alterado de %s para %s"
 
@@ -494,12 +506,6 @@ msgstr "anos"
 #~ msgid "Processor"
 #~ msgstr "Processador"
 
-#~ msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
-#~ msgstr "Exibe um painel de informações do sistema, mostrando informações sobre Chamadas, CPU, Memória, Discos, Rede e processos."
-
-#~ msgid "Reports"
-#~ msgstr "Relatórios"
-
 #~ msgid "SSH Server"
 #~ msgstr "Servidor SSH"
 
@@ -521,9 +527,6 @@ msgstr "anos"
 #~ msgid "Swap"
 #~ msgstr "Swap"
 
-#~ msgid "System Dashboard"
-#~ msgstr "Painel do Sistema"
-
 #~ msgid "System Information Table"
 #~ msgstr "Tabela de Informações do sistema"
 
@@ -532,9 +535,6 @@ msgstr "anos"
 
 #~ msgid "System Statistics"
 #~ msgstr "Estatísticas do sistema"
-
-#~ msgid "System Status"
-#~ msgstr "Estado do Sistema"
 
 #~ msgid "Total active calls"
 #~ msgstr "Total de chamadas ativas"

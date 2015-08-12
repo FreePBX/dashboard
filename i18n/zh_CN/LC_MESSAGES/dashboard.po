@@ -46,9 +46,7 @@ msgstr ""
 
 #: sections/Overview.class.php:31
 #, php-format
-msgid ""
-"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
-"i>"
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
 msgstr ""
 
 #: views/sections/statistics.php:299
@@ -355,11 +353,15 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-#~ msgid "System Dashboard"
-#~ msgstr "系统状态"
+#: dashboard.i18n.php:8
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+msgstr ""
 
 #~ msgid "Reports"
 #~ msgstr "报表"
+
+#~ msgid "System Dashboard"
+#~ msgstr "系统状态"
 
 #~ msgid "System Status"
 #~ msgstr "系统状态"
