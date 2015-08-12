@@ -115,6 +115,7 @@ class Blogs {
 	}
 
 	private function getURL($url) {
+
 		// Check to see if we've already grabbed this recently
 		$d = \FreePBX::Dashboard();
 		$res = $d->getConfig($url, "Blogs");
@@ -122,10 +123,18 @@ class Blogs {
 		$expired = time() - 10800;
 		// Has this expired, or is it new?
 		if (!$res || $res['timestamp'] < $expired) {
-			$contents = file_get_contents($url);
-			$res['timestamp'] = time();
-			$res['contents'] = $contents;
-			$d->setConfig($url, $res, "Blogs");
+			$urlParts = parse_url($url);
+			$host = !empty($urlParts['port']) ? $urlParts['port'] . ":" . $urlParts['host'] : $urlParts['host'];
+			$query = !empty($urlParts['query']) ? '?'.$urlParts['query'] : '';
+			$p = new \Pest($urlParts['scheme']."://".$host.$query);
+			$p->curl_opts[CURLOPT_FOLLOWLOCATION] = true;
+			$p->curl_opts[CURLOPT_CONNECTTIMEOUT] = 10;
+			try {
+				$contents = $p->get($urlParts['path']);
+				$res['timestamp'] = time();
+				$res['contents'] = $contents;
+				$d->setConfig($url, $res, "Blogs");
+			} catch(\Exception $e) {}
 		}
 		return $res['contents'];
 	}
