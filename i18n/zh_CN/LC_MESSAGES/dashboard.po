@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-20 16:39-0400\n"
+"POT-Creation-Date: 2015-08-12 07:19-0700\n"
 "PO-Revision-Date: 2015-02-20 19:18-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -46,7 +46,9 @@ msgstr ""
 
 #: sections/Overview.class.php:31
 #, php-format
-msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgid ""
+"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
+"i>"
 msgstr ""
 
 #: views/sections/statistics.php:299
@@ -183,6 +185,10 @@ msgstr ""
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "重新加载"
+
+#: views/sections/overview.php:64
+msgid "Resolve"
+msgstr ""
 
 #: sections/Overview.class.php:100
 msgid "Security Issue"
@@ -352,10 +358,6 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
-
-#: dashboard.i18n.php:8
-msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
-msgstr ""
 
 #~ msgid "Reports"
 #~ msgstr "报表"
