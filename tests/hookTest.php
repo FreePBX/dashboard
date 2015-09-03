@@ -13,7 +13,7 @@ class HookTest extends PHPUnit_Framework_TestCase {
 	}
 
 	public function testDefaultHooks() {
-		$hooks = DashboardHooks::genHooks();
+		$hooks = DashboardHooks::genHooks(array());
 		$this->assertTrue(is_array($hooks), "genHooks didn't return an array");
 		$this->assertTrue(isset($hooks[0]['entries'][0]['group']), "genHooks didn't return the correct hooks");
 		$this->assertEquals($hooks[0]['entries'][0]['group'], "Overview",  "genHooks didn't return sane hooks");
@@ -38,7 +38,7 @@ class HookTest extends PHPUnit_Framework_TestCase {
 	}
 
 	public function testAllHooks() {
-		$hooks = DashboardHooks::genHooks();
+		$hooks = DashboardHooks::genHooks(array());
 		return;
 		$allhooks = array();
 		foreach ($hooks as $page) {

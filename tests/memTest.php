@@ -9,7 +9,7 @@ class MemTest extends PHPUnit_Framework_TestCase {
 		global $amp_conf, $db;
 		include "/etc/freepbx.conf";
 		if (!class_exists('MemInfo')) {
-			include 'classes/MemInfo.class.php';
+			include __DIR__.'/../classes/MemInfo.class.php';
 		}
 		self::$f = FreePBX::create();
 		self::$m = new MemInfo();
