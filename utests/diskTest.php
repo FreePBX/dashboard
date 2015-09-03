@@ -8,7 +8,7 @@ class DiskTest extends PHPUnit_Framework_TestCase {
 	public static function setUpBeforeClass() {
 		global $amp_conf, $db;
 		include "/etc/freepbx.conf";
-		include 'classes/DiskUsage.class.php';
+		include __DIR__.'/../classes/DiskUsage.class.php';
 		self::$f = FreePBX::create();
 		self::$d = new DiskUsage();
 	}

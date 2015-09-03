@@ -9,7 +9,7 @@ class HookTest extends PHPUnit_Framework_TestCase {
 		include '/etc/freepbx.conf';
 		restore_error_handler();
 		error_reporting(-1);
-		include 'classes/DashboardHooks.class.php';
+		include __DIR__.'/../classes/DashboardHooks.class.php';
 	}
 
 	public function testDefaultHooks() {
