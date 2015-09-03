@@ -170,6 +170,67 @@ class AsteriskInfo2  {
 			}
 		}
 
+		$response = $this->astman->send_request('Command',array('Command'=>"pjsip show endpoints"));
+		// This is an amazingly awful format to parse.
+		$lines = explode("\n", $response['data']);
+		$inheader = true;
+		$istrunk = $isendpoint = false;
+		foreach ($lines as $l) {
+			if ($inheader) {
+				if (isset($l[1]) && $l[1] == "=") {
+					// Last line of the header.
+					$inheader = false;
+				}
+				continue;
+			}
+
+			$l = trim($l);
+			if (!$l) {
+				continue;
+			}
+
+			// If we have a line starting with 'Endpoint:' then we found one!
+			if (strpos($l, "Endpoint:") === 0) {
+				if (preg_match("/Endpoint:\s+(.+)\/(.+?)\b\s+(.+)/", $l, $out)) {
+					// Found a device
+					$isendpoint = $out[1];
+					$istrunk = false;
+					if (isset($out[3]) && strpos($out[3], "Unavail") === 0) {
+						// Unavailable endpoint.
+						$retarr['pjsip_users_offline']++;
+					} else {
+						$retarr['pjsip_users_online']++;
+					}
+					continue;
+				} elseif (preg_match("/Endpoint:\s+(.+?)\b/", $l, $out)) {
+					// Found a trunk
+					$isendpoint = false;
+					$istrunk = $out[1];
+					continue;
+				} else {
+					throw new \Exception("Unable to parse endpoint $l");
+				}
+			}
+
+			// If we have a Contact: line, then that's something that's registered!
+			if (strpos($l, "Contact:") === 0) {
+				if ($isendpoint !== false) {
+					// This is a registered endpoint
+					$retarr['pjsip_registrations_online']++;
+				} elseif ($istrunk !== false) {
+					// Trunk status... Check for 'avail'
+					if (strpos($l, "Avail ") === false) {
+						// Trunk down.
+						$retarr['pjsip_trunks_offline']++;
+					} else {
+						$retarr['pjsip_trunks_online']++;
+					}
+				} else {
+					throw new \Exception("Found a contact before I figured out what it is!");
+				}
+			}
+		}
+
 		// Now figure out the totals.
 		foreach ($protocols as $p) {
 			$users = $retarr[$p."_users_online"]+$retarr[$p."_users_offline"];
