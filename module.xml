@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>13.0.10</version>
+	<version>13.0.11</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,6 +20,7 @@
 		<module>core ge 12.0.1beta11</module>
 	</depends>
 	<changelog>
+		*13.0.11* Enable PJSIP reporting
 		*13.0.10* FREEPBX-9993 Cant reload if RSS feed is down
 		*13.0.9* Fix button sizing on statistics chart
 		*13.0.8* Sleep for 0 to 30 seconds on scheduler
