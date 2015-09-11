@@ -8,7 +8,7 @@ class CPUTest extends PHPUnit_Framework_TestCase {
 	public static function setUpBeforeClass() {
 		global $amp_conf, $db;
 		include "/etc/freepbx.conf";
-		include 'classes/CPUInfo.class.php';
+		include __DIR__.'/../classes/CPUInfo.class.php';
 		self::$f = FreePBX::create();
 		self::$c = new CPUInfo();
 	}

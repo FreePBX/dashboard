@@ -8,9 +8,9 @@ class AsteriskTest extends PHPUnit_Framework_TestCase {
 	public static function setUpBeforeClass() {
 		global $amp_conf, $db;
 		include "/etc/freepbx.conf";
-		include 'classes/AsteriskInfo.class.php';
+		include __DIR__.'/../classes/AsteriskInfo.class.php';
 		self::$f = FreePBX::create();
-		self::$a = new AsteriskInfo();
+		self::$a = new AsteriskInfo2();
 	}
 
 	public function testAstmanConnection() {
