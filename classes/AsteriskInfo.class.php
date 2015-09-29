@@ -84,6 +84,7 @@ class AsteriskInfo2  {
 
 		$response = $this->astman->send_request('Command',array('Command'=>"sip show peers"));
 		$astout = explode("\n",$response['data']);
+		$blacklist = \FreePBX::Dashboard()->extIgnoreList();
 		foreach ($astout as $line) {
 			// Previous bug IRT trunks starting or ending with /'s here. Investigate.
 			$exploded = preg_split('/\s+/', $line);
@@ -91,6 +92,11 @@ class AsteriskInfo2  {
 				$name = $exploded[0];
 			} else {
 				list($name, $null) = explode('/', $exploded[0]);
+			}
+			//prefix blacklist
+			foreach($blacklist as $num)
+			if(substr($name,0,$num['length']) == $num['value'] && $name !== $num['value']){
+				continue;
 			}
 			// How to we see if a trunk is down?
 			if ( $exploded[1] == "(Unspecified)" ||  // No IP Address

@@ -327,4 +327,14 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	private function getAjaxServerStats() {
 		return "No\n";
 	}
+	public function extIgnoreList(){
+		$numbers = array();
+		$hooks = \FreePBX::Hooks()->processHooks();
+		foreach ($hooks as $key => $value) {
+			if(is_array($value)){
+				$numbers = array_merge($numbers,$value);
+			}
+		}
+		return $numbers;
+	}
 }
