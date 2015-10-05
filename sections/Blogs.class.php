@@ -61,6 +61,7 @@ class Blogs {
 	}
 
 	public function getSections($order) {
+		$blogs = array();
 		foreach($this->urls as $name => $url) {
 			$feed = $this->urls[$name];
 			$title = $feed->title;
