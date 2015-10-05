@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-12 07:19-0700\n"
+"POT-Creation-Date: 2015-10-05 11:07-0700\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -83,7 +83,7 @@ msgstr "Asterisk"
 msgid "Asterisk Uptime"
 msgstr "Asterisk жив"
 
-#: sections/Blogs.class.php:34 sections/Blogs.class.php:42
+#: sections/Blogs.class.php:70 sections/Blogs.class.php:78
 msgid "Blogs"
 msgstr "Блоги"
 
@@ -124,7 +124,7 @@ msgstr "Удалить это"
 msgid "Disk"
 msgstr "Диск"
 
-#: sections/Blogs.class.php:33 sections/Blogs.class.php:41
+#: sections/Blogs.class.php:69 sections/Blogs.class.php:77
 msgid "Feed"
 msgstr "Лента"
 
