@@ -5,14 +5,14 @@ foreach($items as $item) {
 	if($c > $limit) {
 		break;
 	}
-	if ((string)$item->description) {
-		$desc = (string)$item->description;
-		$tooltip = substr(strip_tags($desc,'<br>'),0,200)."...";
+	$description = $item->content;
+	if ($description) {
+		$tooltip = substr(strip_tags($description,'<br>'),0,200)."...";
 	} else {
 		$tooltip = "";
 	}
-	$href = (string)$item->link;
-	$title = (string)$item->title;
+	$href = $item->url;
+	$title = $item->title;
 	print "<li><small><a data-toggle='tooltip' title='$tooltip' href='$href' target='_blank'>$title</a></small></li>\n";
 	$c++;
 }

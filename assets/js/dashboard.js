@@ -181,7 +181,10 @@ var DashboardC = Class.extend({
 	}
 });
 
-var Dashboard = new DashboardC();
-$( document ).ajaxComplete(function() {
-	$('.page').packery();
+var Dashboard = null;
+$(function() {
+	Dashboard = new DashboardC();
+	$( document ).ajaxComplete(function() {
+		$('.page').packery();
+	});
 });
