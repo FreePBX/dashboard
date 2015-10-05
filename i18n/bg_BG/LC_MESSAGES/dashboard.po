@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 11:07-0700\n"
+"POT-Creation-Date: 2015-10-05 13:31-0700\n"
 "PO-Revision-Date: 2014-07-23 16:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/"
@@ -86,7 +86,7 @@ msgstr "Астериск"
 msgid "Asterisk Uptime"
 msgstr "Астериск На Линия"
 
-#: sections/Blogs.class.php:70 sections/Blogs.class.php:78
+#: sections/Blogs.class.php:71 sections/Blogs.class.php:79
 msgid "Blogs"
 msgstr "Блогове"
 
@@ -127,7 +127,7 @@ msgstr "Изтрий Това"
 msgid "Disk"
 msgstr "Диск"
 
-#: sections/Blogs.class.php:69 sections/Blogs.class.php:77
+#: sections/Blogs.class.php:70 sections/Blogs.class.php:78
 msgid "Feed"
 msgstr "Канал"
 

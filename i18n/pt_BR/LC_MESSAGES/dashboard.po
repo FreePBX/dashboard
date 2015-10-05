@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 11:07-0700\n"
+"POT-Creation-Date: 2015-10-05 13:31-0700\n"
 "PO-Revision-Date: 2015-02-04 00:41+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -82,7 +82,7 @@ msgstr "Asterisk"
 msgid "Asterisk Uptime"
 msgstr "Tempo Ativo do Asterisk"
 
-#: sections/Blogs.class.php:70 sections/Blogs.class.php:78
+#: sections/Blogs.class.php:71 sections/Blogs.class.php:79
 msgid "Blogs"
 msgstr "Blog"
 
@@ -123,7 +123,7 @@ msgstr "Apagar Isto"
 msgid "Disk"
 msgstr "Disco"
 
-#: sections/Blogs.class.php:69 sections/Blogs.class.php:77
+#: sections/Blogs.class.php:70 sections/Blogs.class.php:78
 msgid "Feed"
 msgstr "Feed"
 

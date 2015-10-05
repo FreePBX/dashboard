@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 11:07-0700\n"
+"POT-Creation-Date: 2015-10-05 13:31-0700\n"
 "PO-Revision-Date: 2015-03-19 11:49-0400\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -69,7 +69,7 @@ msgstr "asterisk"
 msgid "Asterisk Uptime"
 msgstr "Tiempo activo Asterisk"
 
-#: sections/Blogs.class.php:70 sections/Blogs.class.php:78
+#: sections/Blogs.class.php:71 sections/Blogs.class.php:79
 msgid "Blogs"
 msgstr "Blog's"
 
@@ -110,7 +110,7 @@ msgstr "Borrar esto"
 msgid "Disk"
 msgstr "Disco"
 
-#: sections/Blogs.class.php:69 sections/Blogs.class.php:77
+#: sections/Blogs.class.php:70 sections/Blogs.class.php:78
 msgid "Feed"
 msgstr "Alimentar"
 
