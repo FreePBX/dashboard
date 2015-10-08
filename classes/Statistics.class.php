@@ -461,7 +461,7 @@ $.elycharts.templates['astchart'] = {
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
 
 		// Network interfaces!
-		$firstsi = isset($si[0])?$si[0]:'';
+		$firstsi = isset($si[0])?$si[0]:array();
 		$lastsi = FreePBX::create()->Dashboard->getSysInfo();
 
 		$interfaces = array();
@@ -481,6 +481,9 @@ $.elycharts.templates['astchart'] = {
 			// Figure out the address of the interface.  This can be either
 			// ipv4;ipv6 or mac;ipv4.
 			$tmparr = explode(';', $lastsi["psi.Network.NetDevice.$key.@attributes.Info"]);
+			//If no IP address this only returns a mac, no second field. We should not assume anything will be here
+			$tmparr[0] = isset($tmparr[0])?$tmparr[0]:'';
+			$tmparr[1] = isset($tmparr[1])?$tmparr[1]:'';
 			if (filter_var($tmparr[0], FILTER_VALIDATE_IP)) {
 				$interfaces[$key]['ipaddr'] = $tmparr[0];
 			} elseif (filter_var($tmparr[1], FILTER_VALIDATE_IP)) {
@@ -488,9 +491,11 @@ $.elycharts.templates['astchart'] = {
 			} else {
 				$interfaces[$key]['ipaddr'] = "0.0.0.0";
 			}
+			$txb = isset($firstsi["psi.Network.NetDevice.$key.@attributes.TxBytes"])?(int)$firstsi["psi.Network.NetDevice.$key.@attributes.TxBytes"]:0;
+			$rxb = isset($firstsi["psi.Network.NetDevice.$key.@attributes.RxBytes"])?(int)$firstsi["psi.Network.NetDevice.$key.@attributes.RxBytes"]:0;
 			$interfaces[$key]['previous'] = array(
-				"tx" => (int)$firstsi["psi.Network.NetDevice.$key.@attributes.TxBytes"],
-				"rx" => (int)$firstsi["psi.Network.NetDevice.$key.@attributes.RxBytes"],
+				"tx" => $txb,
+				"rx" => $rxb,
 			);
 			$retarr['series']["tx$key"] = array( "type" => "bar", "axis" => "r", "stacked" => "rx$key", "color" => $colours[$key][0],
 			   	"tooltip" => array( "frameProps" => array("stroke" => $colours[$key][2])));
