@@ -461,7 +461,7 @@ $.elycharts.templates['astchart'] = {
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
 
 		// Network interfaces!
-		$firstsi = $si[0];
+		$firstsi = isset($si[0])?$si[0]:'';
 		$lastsi = FreePBX::create()->Dashboard->getSysInfo();
 
 		$interfaces = array();
