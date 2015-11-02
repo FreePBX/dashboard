@@ -134,10 +134,8 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			break;
 			case "gethooks":
 				if (!$this->getConfig('allhooks')) {
-					$this->doDialplanHook($foo = null, null, null); // Avoid warnings.
+					$this->doDialplanHook(null, null, null); // Avoid warnings.
 				}
-				// Remove next line to enable caching.
-				// $this->doDialplanHook($foo = null, null, null); // Avoid warnings.
 				$config = $this->getConfig('allhooks');
 				$order = $this->getConfig('visualorder');
 				if(!empty($order)) {
