@@ -7,7 +7,11 @@ foreach($items as $item) {
 	}
 	$description = $item->content;
 	if ($description) {
-		$tooltip = substr(strip_tags($description,'<br>'),0,200)."...";
+		if (function_exists('mb_substr')) {
+			$tooltip = mb_substr(strip_tags($description,'<br>'),0,200, 'UTF-8')."...";
+		} else {
+			$tooltip = substr(strip_tags($description,'<br>'),0,200)."...";
+		}
 	} else {
 		$tooltip = "";
 	}
