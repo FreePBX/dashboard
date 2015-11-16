@@ -302,7 +302,7 @@ $.elycharts.templates['astchart'] = {
   uonline: '"._('Users Online')."Users Online',
   uoffline: '"._('Users Offline')."Users Offline',
   tonline: '"._('Trunks Reged')."',
-  toffline: '"._('Trnks Offline')."Trunks Offline',
+  toffline: '"._('Trunks Offline')."Trunks Offline',
   channels: '"._('Active Chans')."Active Chans',
  },
  defaultAxis : { labels : true },
