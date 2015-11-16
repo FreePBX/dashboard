@@ -10,13 +10,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-05 13:31-0700\n"
-"PO-Revision-Date: 2015-02-20 19:18-0500\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2015-11-16 11:49+0200\n"
+"Last-Translator: james <zhulizhong@gmail.com>\n"
+"Language-Team: Simplified Chinese "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/zh_CN/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
@@ -30,26 +33,26 @@ msgstr "%s 前"
 
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
-msgstr ""
+msgstr "0秒"
 
 #: views/sections/uptime.php:16
 msgid "1 Minute"
-msgstr ""
+msgstr "1分钟"
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
-msgstr ""
+msgstr "15分钟"
 
 #: views/sections/uptime.php:19
 msgid "5 Minutes"
-msgstr ""
+msgstr "5分钟"
 
 #: sections/Overview.class.php:31
 #, php-format
 msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
 "i>"
-msgstr ""
+msgstr "<strong>'%s'</strong><br><i>(用户可以通过高级设置修改名称)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
@@ -61,7 +64,7 @@ msgstr "活动通道"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
-msgstr "Asterisk"
+msgstr ""
 
 #: classes/Statistics.class.php:113
 msgid "Asterisk Uptime"
@@ -85,11 +88,11 @@ msgstr "CPU 温度"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
-msgstr ""
+msgstr "缓存"
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
-msgstr ""
+msgstr "发现严重错误"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -98,11 +101,11 @@ msgstr ""
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
 msgid "Day"
-msgstr ""
+msgstr "天"
 
 #: views/sections/overview.php:54
 msgid "Delete This"
-msgstr ""
+msgstr "删除这个"
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
@@ -110,11 +113,11 @@ msgstr "硬盘"
 
 #: sections/Blogs.class.php:70 sections/Blogs.class.php:78
 msgid "Feed"
-msgstr ""
+msgstr "订阅官方消息Feed"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
-msgstr ""
+msgstr "剩余内存"
 
 #: views/main.php:6
 msgid "Frobulating"
@@ -127,11 +130,11 @@ msgstr ""
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
-msgstr ""
+msgstr "小时"
 
 #: views/sections/overview.php:53
 msgid "Ignore This"
-msgstr ""
+msgstr "忽略这个"
 
 #: classes/Statistics.class.php:14
 msgid "Invalid Selection"
@@ -160,19 +163,19 @@ msgstr "内存"
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
-msgstr ""
+msgstr "月"
 
 #: sections/Overview.class.php:131
 msgid "MySQL"
-msgstr "MySQL"
+msgstr ""
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
-msgstr ""
+msgstr "网络"
 
 #: sections/Overview.class.php:91
 msgid "No critical issues found"
-msgstr ""
+msgstr "没有发现严重错误"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
@@ -180,7 +183,7 @@ msgstr "总览"
 
 #: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
-msgstr ""
+msgstr "请在提示模板检查错误"
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
@@ -188,7 +191,7 @@ msgstr "重新加载"
 
 #: views/sections/overview.php:64
 msgid "Resolve"
-msgstr ""
+msgstr "解决"
 
 #: sections/Overview.class.php:100
 msgid "Security Issue"
@@ -217,16 +220,16 @@ msgstr "汇总"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
-msgstr ""
+msgstr "使用的交互区"
 
 #: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
-msgstr ""
+msgstr "%s 之前，sysinfo 已更新"
 
 #: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
-msgstr ""
+msgstr "系统"
 
 #: sections/Overview.class.php:89
 msgid "System Alerts"
@@ -246,23 +249,23 @@ msgstr "系统运行时间"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr ""
+msgstr "临时"
 
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
-msgstr ""
+msgstr "这是一个严重错误，应该马上解决"
 
 #: classes/Statistics.class.php:305
 msgid "Trnks Offline"
-msgstr ""
+msgstr "中继离线"
 
 #: views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr ""
+msgstr "中继离线"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr ""
+msgstr "已注册的中继"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
@@ -271,19 +274,19 @@ msgstr "已运行时间"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
-msgstr ""
+msgstr "已使用"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
-msgstr ""
+msgstr "离线用户"
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr ""
+msgstr "在线用户"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
-msgstr ""
+msgstr "发现告警"
 
 #: sections/Overview.class.php:132
 msgid "Web Server"
@@ -296,12 +299,12 @@ msgstr "Web服务器"
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
-msgstr ""
+msgstr "周"
 
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
-msgstr ""
+msgstr "欢迎 %s"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
@@ -329,11 +332,11 @@ msgstr "分钟"
 
 #: classes/TimeUtils.class.php:11
 msgid "month"
-msgstr ""
+msgstr "月"
 
 #: classes/TimeUtils.class.php:12
 msgid "months"
-msgstr ""
+msgstr "月"
 
 #: classes/TimeUtils.class.php:21
 msgid "second"
