@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 13:31-0700\n"
+"POT-Creation-Date: 2015-11-24 13:10-0800\n"
 "PO-Revision-Date: 2015-10-11 15:13+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/"
@@ -93,6 +93,10 @@ msgstr "کش"
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
 msgstr "خطای مهم"
+
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -185,6 +189,12 @@ msgstr "بازبینی"
 msgid "Please check for errors in the notification section"
 msgstr "لطفا برای بررسی خطاها بخش اطلاع رسانی را چ کنید"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "لودمجدد"
@@ -235,6 +245,10 @@ msgstr "سیستم"
 msgid "System Alerts"
 msgstr "هشدارهای سیستم"
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr ""
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "آخرین راه اندازی مجدد سیستم"
@@ -255,11 +269,7 @@ msgstr "دما"
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "این مورد مهمی است و باید سریعا برطرف شود"
 
-#: classes/Statistics.class.php:305
-msgid "Trnks Offline"
-msgstr ""
-
-#: views/sections/statistics.php:298
+#: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
 msgstr "ترانک آفلاین"
 

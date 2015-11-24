@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 13:31-0700\n"
+"POT-Creation-Date: 2015-11-24 13:10-0800\n"
 "PO-Revision-Date: 2015-02-04 00:41+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -105,6 +105,10 @@ msgstr "Em Cache"
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
 msgstr "Erros Críticos encontrados"
+
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -197,6 +201,14 @@ msgstr "Visão Geral"
 msgid "Please check for errors in the notification section"
 msgstr "Por favor verifique por erros na seção de notificações"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"Exibe um painel de informações do sistema, mostrando informações sobre "
+"Chamadas, CPU, Memória, Discos, Rede e processos."
+
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "Recarga"
@@ -247,6 +259,10 @@ msgstr "Sistema"
 msgid "System Alerts"
 msgstr "Alertas do Sistema"
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "Painel do Sistema"
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "Última Inicialização do Sistema"
@@ -267,11 +283,7 @@ msgstr "Temp."
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "Este é um problema crítico e deve ser resolvido com urgência"
 
-#: classes/Statistics.class.php:305
-msgid "Trnks Offline"
-msgstr "Troncos Offiline"
-
-#: views/sections/statistics.php:298
+#: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
 msgstr "Troncos Offline"
 
@@ -374,18 +386,11 @@ msgstr "ano"
 msgid "years"
 msgstr "anos"
 
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "Exibe um painel de informações do sistema, mostrando informações sobre "
-#~ "Chamadas, CPU, Memória, Discos, Rede e processos."
+#~ msgid "Trnks Offline"
+#~ msgstr "Troncos Offiline"
 
 #~ msgid "Reports"
 #~ msgstr "Relatórios"
-
-#~ msgid "System Dashboard"
-#~ msgstr "Painel do Sistema"
 
 #~ msgid "System Status"
 #~ msgstr "Estado do Sistema"

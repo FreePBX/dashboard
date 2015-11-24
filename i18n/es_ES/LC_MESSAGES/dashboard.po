@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 13:31-0700\n"
+"POT-Creation-Date: 2015-11-24 13:10-0800\n"
 "PO-Revision-Date: 2015-03-19 11:49-0400\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -92,6 +92,10 @@ msgstr "cached"
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
 msgstr "Errores Críticos Encontrados"
+
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -184,6 +188,14 @@ msgstr "Visión de Conjunto"
 msgid "Please check for errors in the notification section"
 msgstr "Por favor revise los errores en la sección de notificaciones"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"Proporciona un Tablero de información del sistema, que muestra información "
+"sobre las llamadas, CPU, memoria, discos, redes y procesos."
+
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "Recarga"
@@ -234,6 +246,10 @@ msgstr "Sistema"
 msgid "System Alerts"
 msgstr "Alertas del Sistema"
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "Tablero del Sistema"
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "Ultimo reinicio del sistema"
@@ -254,11 +270,7 @@ msgstr "Temperatura"
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "Este es un asunto critico y debe ser resuelto con urgencia"
 
-#: classes/Statistics.class.php:305
-msgid "Trnks Offline"
-msgstr "Troncales Fuera de Linea"
-
-#: views/sections/statistics.php:298
+#: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
 msgstr "Troncales Fuera de Linea"
 
@@ -361,18 +373,11 @@ msgstr "año"
 msgid "years"
 msgstr "años"
 
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "Proporciona un Tablero de información del sistema, que muestra "
-#~ "información sobre las llamadas, CPU, memoria, discos, redes y procesos."
+#~ msgid "Trnks Offline"
+#~ msgstr "Troncales Fuera de Linea"
 
 #~ msgid "Reports"
 #~ msgstr "Reportes"
-
-#~ msgid "System Dashboard"
-#~ msgstr "Tablero del Sistema"
 
 #~ msgid "System Status"
 #~ msgstr "Estado del Sistema"

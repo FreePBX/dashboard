@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 13:31-0700\n"
+"POT-Creation-Date: 2015-11-24 13:10-0800\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -121,6 +121,10 @@ msgstr "キャッシュ"
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
 msgstr "致命的なエラーが見つかりました"
+
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -213,6 +217,14 @@ msgstr "一覧"
 msgid "Please check for errors in the notification section"
 msgstr "通知セクションでエラーを確認してください"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、ネッ"
+"トワークの負荷状況等を表示します。"
+
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "再読込"
@@ -263,6 +275,10 @@ msgstr "システム"
 msgid "System Alerts"
 msgstr "システム通知"
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "システムダッシュボード"
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "最後の再起動"
@@ -283,11 +299,7 @@ msgstr "温度"
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "クリティカルな問題であるため速やかに解決する必要があります"
 
-#: classes/Statistics.class.php:305
-msgid "Trnks Offline"
-msgstr "オフライントランク"
-
-#: views/sections/statistics.php:298
+#: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
 msgstr "オフライントランク"
 
@@ -390,18 +402,11 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、"
-#~ "ネットワークの負荷状況等を表示します。"
+#~ msgid "Trnks Offline"
+#~ msgstr "オフライントランク"
 
 #~ msgid "Reports"
 #~ msgstr "レポート"
-
-#~ msgid "System Dashboard"
-#~ msgstr "システムダッシュボード"
 
 #~ msgid "System Status"
 #~ msgstr "システムステータス"

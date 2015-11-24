@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 13:31-0700\n"
+"POT-Creation-Date: 2015-11-24 13:10-0800\n"
 "PO-Revision-Date: 2014-07-23 16:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/"
@@ -109,6 +109,10 @@ msgstr "Кеширани"
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
 msgstr "Намерени са Критични Грешки"
+
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -201,6 +205,14 @@ msgstr "Преглед"
 msgid "Please check for errors in the notification section"
 msgstr "Моля проверете за грешки в раздела за уведомления"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"Предоставя информация за системата, показва информация за Разговори, CPU, "
+"Памет, Твърд Диск, Мрежа и процеси."
+
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "Обновяване"
@@ -251,6 +263,10 @@ msgstr "Система"
 msgid "System Alerts"
 msgstr "Системи Предупреждения"
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "Информация за Системата"
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "Последно Рестартиране на Системата"
@@ -271,11 +287,7 @@ msgstr "Темп"
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "Това е критичен проблем и трябва да бъде решен спешно"
 
-#: classes/Statistics.class.php:305
-msgid "Trnks Offline"
-msgstr "ВънЛ Offline"
-
-#: views/sections/statistics.php:298
+#: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
 msgstr "ВънЛ Offline"
 
@@ -378,21 +390,14 @@ msgstr "година"
 msgid "years"
 msgstr "години"
 
+#~ msgid "Trnks Offline"
+#~ msgstr "ВънЛ Offline"
+
 #~ msgid "System Status"
 #~ msgstr "Статус на Системата"
 
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "Предоставя информация за системата, показва информация за Разговори, CPU, "
-#~ "Памет, Твърд Диск, Мрежа и процеси."
-
 #~ msgid "Reports"
 #~ msgstr "Отчети"
-
-#~ msgid "System Dashboard"
-#~ msgstr "Информация за Системата"
 
 #~ msgid "%s changed from %s to %s"
 #~ msgstr "%s е променен от %s на %s"

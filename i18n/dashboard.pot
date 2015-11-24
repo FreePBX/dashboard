@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 13:31-0700\n"
+"POT-Creation-Date: 2015-11-24 13:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -94,6 +94,11 @@ msgstr ""
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
+msgstr ""
+
+#: dashboard.i18n.php:6
+#: dashboard.i18n.php:10
+msgid "Dashboard"
 msgstr ""
 
 #: classes/Statistics.class.php:134
@@ -211,6 +216,12 @@ msgstr ""
 msgid "Please check for errors in the notification section"
 msgstr ""
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr ""
@@ -265,6 +276,10 @@ msgstr ""
 msgid "System Alerts"
 msgstr ""
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr ""
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr ""
@@ -287,9 +302,6 @@ msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
 #: classes/Statistics.class.php:305
-msgid "Trnks Offline"
-msgstr ""
-
 #: views/sections/statistics.php:298
 msgid "Trunks Offline"
 msgstr ""

@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 13:31-0700\n"
+"POT-Creation-Date: 2015-11-24 13:10-0800\n"
 "PO-Revision-Date: 2015-11-15 23:21+0200\n"
 "Last-Translator: Matthias <it@mitterhuemer.at>\n"
-"Language-Team: German "
-"<http://weblate.freepbx.org/projects/freepbx/dashboard/de_DE/>\n"
-"Language: de_DE\n"
+"Language-Team: German <http://weblate.freepbx.org/projects/freepbx/dashboard/"
+"de_DE/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -95,6 +95,10 @@ msgstr "Zwischengespeichert"
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
 msgstr "Kritische Fehler gefunden"
+
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -187,6 +191,12 @@ msgstr "Übersicht"
 msgid "Please check for errors in the notification section"
 msgstr "Bitte prüfe das System auf Fehler in der Benachrichtigungs Sektion"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "Neu laden"
@@ -237,6 +247,10 @@ msgstr "System"
 msgid "System Alerts"
 msgstr "System Benachrichtigungen"
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr ""
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "Letzter System Neustart"
@@ -257,11 +271,7 @@ msgstr "Temp"
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "Dies ist ein kritischer Fehler, der dringend behoben werden sollte"
 
-#: classes/Statistics.class.php:305
-msgid "Trnks Offline"
-msgstr "Trunks Offline"
-
-#: views/sections/statistics.php:298
+#: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
 msgstr "Trunks Offline"
 
@@ -363,3 +373,6 @@ msgstr "Jahr"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "Jahre"
+
+#~ msgid "Trnks Offline"
+#~ msgstr "Trunks Offline"

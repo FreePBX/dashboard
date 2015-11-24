@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-05 13:31-0700\n"
+"POT-Creation-Date: 2015-11-24 13:10-0800\n"
 "PO-Revision-Date: 2015-11-16 11:49+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
-"Language-Team: Simplified Chinese "
-"<http://weblate.freepbx.org/projects/freepbx/dashboard/zh_CN/>\n"
-"Language: zh_CN\n"
+"Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
+"freepbx/dashboard/zh_CN/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -93,6 +93,10 @@ msgstr "缓存"
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
 msgstr "发现严重错误"
+
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr ""
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -185,6 +189,12 @@ msgstr "总览"
 msgid "Please check for errors in the notification section"
 msgstr "请在提示模板检查错误"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+
 #: classes/Statistics.class.php:107
 msgid "Reload"
 msgstr "重新加载"
@@ -235,6 +245,10 @@ msgstr "系统"
 msgid "System Alerts"
 msgstr "系统告警"
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "系统状态"
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "系统最近一次重启"
@@ -255,11 +269,7 @@ msgstr "临时"
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "这是一个严重错误，应该马上解决"
 
-#: classes/Statistics.class.php:305
-msgid "Trnks Offline"
-msgstr "中继离线"
-
-#: views/sections/statistics.php:298
+#: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
 msgstr "中继离线"
 
@@ -362,11 +372,11 @@ msgstr "年"
 msgid "years"
 msgstr "年"
 
+#~ msgid "Trnks Offline"
+#~ msgstr "中继离线"
+
 #~ msgid "Reports"
 #~ msgstr "报表"
-
-#~ msgid "System Dashboard"
-#~ msgstr "系统状态"
 
 #~ msgid "System Status"
 #~ msgstr "系统状态"
