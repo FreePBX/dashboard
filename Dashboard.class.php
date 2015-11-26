@@ -80,15 +80,9 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		$file = \FreePBX::Config()->get('AMPWEBROOT')."/admin/modules/dashboard/".$this->sched;
 		$cmd = "[ -x $file ] && $file";
 
-		// Some HA machines had TWO schedulers running. Whoops. Manually
-		// remove ALL of them. (To be removed in 13)
-		$all = \FreePBX::Cron()->getAll();
-		foreach ($all as $line) {
-			if (strpos($line, "dashboard/scheduler.php") !== false) {
-				\FreePBX::Cron()->remove($line);
-			}
-		}
-		$this->Cron->addLine("* * * * * $cmd");
+		// Ensure we instantiate cron with the correct user
+		$c = \FreePBX::Cron(\FreePBX::Config()->get('AMPASTERISKWEBUSER'));
+		$c->addLine("* * * * * $cmd");
 	}
 
 	public function ajaxRequest($req, &$setting) {
