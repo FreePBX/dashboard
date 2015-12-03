@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-24 13:10-0800\n"
+"POT-Creation-Date: 2015-12-03 12:00-0800\n"
 "PO-Revision-Date: 2014-07-23 16:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/"
@@ -34,6 +34,11 @@ msgstr ""
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
+#, php-format
+msgid "%s Feed"
+msgstr ""
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
@@ -86,7 +91,7 @@ msgstr "Астериск"
 msgid "Asterisk Uptime"
 msgstr "Астериск На Линия"
 
-#: sections/Blogs.class.php:71 sections/Blogs.class.php:79
+#: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
 msgstr "Блогове"
 
@@ -130,10 +135,6 @@ msgstr "Изтрий Това"
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
 msgstr "Диск"
-
-#: sections/Blogs.class.php:70 sections/Blogs.class.php:78
-msgid "Feed"
-msgstr "Канал"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
@@ -389,6 +390,9 @@ msgstr "година"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "години"
+
+#~ msgid "Feed"
+#~ msgstr "Канал"
 
 #~ msgid "Trnks Offline"
 #~ msgstr "ВънЛ Offline"

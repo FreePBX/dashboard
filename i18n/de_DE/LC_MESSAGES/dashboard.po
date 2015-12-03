@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-24 13:10-0800\n"
+"POT-Creation-Date: 2015-12-03 12:00-0800\n"
 "PO-Revision-Date: 2015-11-15 23:21+0200\n"
 "Last-Translator: Matthias <it@mitterhuemer.at>\n"
 "Language-Team: German <http://weblate.freepbx.org/projects/freepbx/dashboard/"
@@ -20,6 +20,11 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
+
+#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
+#, php-format
+msgid "%s Feed"
+msgstr ""
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
@@ -72,7 +77,7 @@ msgstr "Asterisk"
 msgid "Asterisk Uptime"
 msgstr "Asterisk Uptime"
 
-#: sections/Blogs.class.php:71 sections/Blogs.class.php:79
+#: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
 msgstr "Blogs"
 
@@ -116,10 +121,6 @@ msgstr "Lösche dieses Objekt"
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
 msgstr "Festplatte"
-
-#: sections/Blogs.class.php:70 sections/Blogs.class.php:78
-msgid "Feed"
-msgstr "Feed"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
@@ -373,6 +374,9 @@ msgstr "Jahr"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "Jahre"
+
+#~ msgid "Feed"
+#~ msgstr "Feed"
 
 #~ msgid "Trnks Offline"
 #~ msgstr "Trunks Offline"

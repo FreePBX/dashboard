@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-24 13:10-0800\n"
+"POT-Creation-Date: 2015-12-03 12:00-0800\n"
 "PO-Revision-Date: 2015-02-04 00:41+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -30,6 +30,11 @@ msgstr ""
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 1.10-dev\n"
+
+#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
+#, php-format
+msgid "%s Feed"
+msgstr ""
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
@@ -82,7 +87,7 @@ msgstr "Asterisk"
 msgid "Asterisk Uptime"
 msgstr "Tempo Ativo do Asterisk"
 
-#: sections/Blogs.class.php:71 sections/Blogs.class.php:79
+#: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
 msgstr "Blog"
 
@@ -126,10 +131,6 @@ msgstr "Apagar Isto"
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
 msgstr "Disco"
-
-#: sections/Blogs.class.php:70 sections/Blogs.class.php:78
-msgid "Feed"
-msgstr "Feed"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
@@ -385,6 +386,9 @@ msgstr "ano"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "anos"
+
+#~ msgid "Feed"
+#~ msgstr "Feed"
 
 #~ msgid "Trnks Offline"
 #~ msgstr "Troncos Offiline"

@@ -9,13 +9,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-24 13:10-0800\n"
+"POT-Creation-Date: 2015-12-03 12:00-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: sections/Blogs.class.php:27
+#: sections/Blogs.class.php:35
+#, php-format
+msgid "%s Feed"
+msgstr ""
 
 #: classes/Statistics.class.php:365
 #: classes/Statistics.class.php:368
@@ -69,8 +75,8 @@ msgstr ""
 msgid "Asterisk Uptime"
 msgstr ""
 
-#: sections/Blogs.class.php:71
-#: sections/Blogs.class.php:79
+#: sections/Blogs.class.php:28
+#: sections/Blogs.class.php:36
 msgid "Blogs"
 msgstr ""
 
@@ -123,11 +129,6 @@ msgstr ""
 #: classes/Statistics.class.php:124
 #: views/sections/statistics.php:50
 msgid "Disk"
-msgstr ""
-
-#: sections/Blogs.class.php:70
-#: sections/Blogs.class.php:78
-msgid "Feed"
 msgstr ""
 
 #: classes/Statistics.class.php:264

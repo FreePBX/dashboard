@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-24 13:10-0800\n"
+"POT-Creation-Date: 2015-12-03 12:00-0800\n"
 "PO-Revision-Date: 2015-11-16 11:49+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -20,6 +20,11 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
+
+#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
+#, php-format
+msgid "%s Feed"
+msgstr ""
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
@@ -70,7 +75,7 @@ msgstr ""
 msgid "Asterisk Uptime"
 msgstr "Asterisk 已运行时间"
 
-#: sections/Blogs.class.php:71 sections/Blogs.class.php:79
+#: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
 msgstr ""
 
@@ -114,10 +119,6 @@ msgstr "删除这个"
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
 msgstr "硬盘"
-
-#: sections/Blogs.class.php:70 sections/Blogs.class.php:78
-msgid "Feed"
-msgstr "订阅官方消息Feed"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
@@ -371,6 +372,9 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
+
+#~ msgid "Feed"
+#~ msgstr "订阅官方消息Feed"
 
 #~ msgid "Trnks Offline"
 #~ msgstr "中继离线"
