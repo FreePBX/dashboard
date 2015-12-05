@@ -78,7 +78,7 @@ msgstr "Звонки"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr "Акт Кан"
+msgstr "Активных Каналов"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
@@ -102,7 +102,7 @@ msgstr "ЦПУ"
 
 #: classes/Statistics.class.php:368
 msgid "CPU Temp"
-msgstr "Темп. ЦПУ"
+msgstr "Температура ЦПУ"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
@@ -135,7 +135,7 @@ msgstr "Диск"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
-msgstr "Св. память"
+msgstr "Свободно памяти"
 
 #: views/main.php:6
 msgid "Frobulating"
@@ -218,7 +218,7 @@ msgstr "Перезагрузка"
 
 #: views/sections/overview.php:64
 msgid "Resolve"
-msgstr ""
+msgstr "Разрешить"
 
 #: sections/Overview.class.php:100
 msgid "Security Issue"
@@ -247,12 +247,12 @@ msgstr "Краткая сводка"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
-msgstr "Подк. исп"
+msgstr "Использование свопа"
 
 #: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
-msgstr "Сист. информация обновлена %s секунд назад"
+msgstr "Информация о системе обновлена %s секунд назад"
 
 #: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
@@ -280,36 +280,36 @@ msgstr "Система жива"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr "Темп"
+msgstr "Температура"
 
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
-msgstr "Этот важный вопрос нужно решить срочно"
+msgstr "Этот важный вопрос нужно срочно решить"
 
 #: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr "Трнк. Откл"
+msgstr "Транки отключено"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr "Трнк. Рег"
+msgstr "Транки, зарегистрировано"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr "Сис. жива"
+msgstr "Система жива"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
-msgstr "Использ"
+msgstr "Используется"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
-msgstr "Польз. Откл"
+msgstr "Пользователи офф-лайн"
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr "Польз. Вкл"
+msgstr "Пользователи он-лайн"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
@@ -393,7 +393,7 @@ msgstr "лет"
 #~ msgstr "Лента"
 
 #~ msgid "Trnks Offline"
-#~ msgstr "Трнк. Откл"
+#~ msgstr "Транки отключено"
 
 #~ msgid "Reports"
 #~ msgstr "Отчеты"
