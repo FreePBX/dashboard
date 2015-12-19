@@ -16,10 +16,11 @@
 		<dashboard display="index" access="all" category="Dashboard" order="99999">Dashboard</dashboard>
 	</menuitems>
 	<depends>
-		<version>13.0.1RC1.27</version>
+		<version>13.0.35</version>
 		<module>core ge 12.0.1beta11</module>
 	</depends>
 	<changelog>
+		*13.0.18* FREEPBX-10838
 		*13.0.17* FREEPBX-9868
 		*13.0.16* FREEPBX-10834
 		*13.0.15.5* #10721 Fix scheduler on non-standard machines.
