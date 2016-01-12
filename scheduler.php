@@ -8,13 +8,15 @@
 // Runs every minute.
 //
 
+$lockfile = "/tmp/scheduler-lock";
+
 // Sleep to fix crazy issues with large VM hosting providers
 sleep(mt_rand(1,30));
 
-// Create a lock to make sure no more than one can be running
-// on a machine at a time
-$fh = fopen("/tmp/scheduler-lock", "a");
-if (!flock($fh, LOCK_EX|LOCK_NB)) {
+// Create a lock to make sure no more than one instance of this
+// program can be running on a machine at a time
+$fh = fopen($lockfile, "a");
+if (!$fh || !flock($fh, LOCK_EX|LOCK_NB)) {
 	// Unable to lock, we're already running.
 	exit;
 }
@@ -26,5 +28,7 @@ include '/etc/freepbx.conf';
 // Run the trigger
 \FreePBX::Dashboard()->runTrigger();
 
-// Close and remove lock
+// remove lockfile, and then close handle to release kernel lock
+unlink($lockfile);
 fclose($fh);
+?>
