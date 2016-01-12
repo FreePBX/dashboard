@@ -7,5 +7,8 @@
 // Intelligence goes here to detect system types.
 // This should be included from every class in Dash2.
 
-$this->systemtype = "linux";
-
+if (PHP_OS == "FreeBSD") {
+	$this->systemtype = "freebsd";
+} else {
+	$this->systemtype = "linux";
+}
