@@ -8,7 +8,12 @@
 // Runs every minute.
 //
 
-$lockfile = "/tmp/scheduler-lock";
+// Start quickly.
+$bootstrap_settings['freepbx_auth'] = false;  // Just in case.
+$restrict_mods = true; // Takes startup from 0.2 seconds to 0.07 seconds.
+include '/etc/freepbx.conf';
+
+$lockfile = \FreePBX::Config()->get('ASTRUNDIR')."/scheduler.lock";
 
 // Sleep to fix crazy issues with large VM hosting providers
 sleep(mt_rand(1,30));
@@ -21,10 +26,6 @@ if (!$fh || !flock($fh, LOCK_EX|LOCK_NB)) {
 	exit;
 }
 
-// Start quickly.
-$bootstrap_settings['freepbx_auth'] = false;  // Just in case.
-$restrict_mods = true; // Takes startup from 0.2 seconds to 0.07 seconds.
-include '/etc/freepbx.conf';
 // Run the trigger
 \FreePBX::Dashboard()->runTrigger();
 
