@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-08 18:15-0800\n"
-"PO-Revision-Date: 2016-01-16 08:55+0200\n"
-"Last-Translator: Nicolas <forums@riendeau.org>\n"
+"PO-Revision-Date: 2016-02-03 00:05+0200\n"
+"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/fr_FR/>\n"
 "Language: fr_FR\n"
@@ -24,17 +24,17 @@ msgstr ""
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
-msgstr ""
+msgstr "Flux %s"
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
 msgid "%s Min Avg"
-msgstr ""
+msgstr "%s min moy"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
-msgstr ""
+msgstr "Il y a %s"
 
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
@@ -58,14 +58,16 @@ msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
 "i>"
 msgstr ""
+"<strong>'%s'</strong><br><i>(Vous pouvez changer ce nom dans les paramètres "
+"avancés)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
-msgstr ""
+msgstr "Appels actifs"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr ""
+msgstr "Canaux actifs"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
@@ -73,11 +75,11 @@ msgstr "Asterisk"
 
 #: classes/Statistics.class.php:113
 msgid "Asterisk Uptime"
-msgstr ""
+msgstr "Temps de disponibilité d'Asterisk"
 
 #: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
-msgstr ""
+msgstr "Blogs"
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
@@ -85,23 +87,23 @@ msgstr "Tampons"
 
 #: classes/Statistics.class.php:122
 msgid "CPU"
-msgstr ""
+msgstr "UCT"
 
 #: classes/Statistics.class.php:368
 msgid "CPU Temp"
-msgstr ""
+msgstr "Température de l'UCT"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
-msgstr ""
+msgstr "Cachée"
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
-msgstr ""
+msgstr "Erreur critiques trouvées"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
-msgstr ""
+msgstr "Tableau de bord"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -114,19 +116,19 @@ msgstr "Jour"
 
 #: views/sections/overview.php:54
 msgid "Delete This"
-msgstr ""
+msgstr "Supprimer ceci"
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
-msgstr ""
+msgstr "Disque"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
-msgstr ""
+msgstr "Mémoire libre"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr ""
+msgstr "Modifications continuelles"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -135,31 +137,31 @@ msgstr ""
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
-msgstr ""
+msgstr "Heure"
 
 #: views/sections/overview.php:53
 msgid "Ignore This"
-msgstr ""
+msgstr "Ignorez ceci"
 
 #: classes/Statistics.class.php:14
 msgid "Invalid Selection"
-msgstr ""
+msgstr "Sélection invalide"
 
 #: classes/Statistics.class.php:26
 msgid "Invalid period"
-msgstr ""
+msgstr "Période invalide"
 
 #: classes/Statistics.class.php:377
 msgid "Load"
-msgstr ""
+msgstr "Charge"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
-msgstr ""
+msgstr "Moyennes de charge"
 
 #: classes/Statistics.class.php:123 views/sections/statistics.php:39
 msgid "Memory"
-msgstr ""
+msgstr "Mémoire"
 
 #: classes/Statistics.class.php:136 classes/Statistics.class.php:147
 #: classes/Statistics.class.php:158 classes/Statistics.class.php:169
@@ -168,23 +170,23 @@ msgstr ""
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
-msgstr ""
+msgstr "Mois"
 
 #: sections/Overview.class.php:131
 msgid "MySQL"
-msgstr ""
+msgstr "MySQL"
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
-msgstr ""
+msgstr "Réseau"
 
 #: sections/Overview.class.php:91
 msgid "No critical issues found"
-msgstr ""
+msgstr "Aucun problème critique trouvé"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
@@ -202,19 +204,19 @@ msgstr ""
 
 #: views/sections/overview.php:64
 msgid "Resolve"
-msgstr ""
+msgstr "Résoudre"
 
 #: sections/Overview.class.php:100
 msgid "Security Issue"
-msgstr ""
+msgstr "Problème de sécurité"
 
 #: views/sections/overview.php:75
 msgid "Show All"
-msgstr ""
+msgstr "Afficher tout"
 
 #: views/sections/overview.php:77
 msgid "Show New"
-msgstr ""
+msgstr "Afficher les nouveaux"
 
 #: classes/Statistics.class.php:90 classes/Statistics.class.php:114
 msgid "Since Reload"
@@ -223,11 +225,11 @@ msgstr ""
 #: sections/Statistics.class.php:17 sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
 msgid "Statistics"
-msgstr ""
+msgstr "Statistiques"
 
 #: views/sections/overview.php:23
 msgid "Summary"
-msgstr ""
+msgstr "Sommaire"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
@@ -240,68 +242,70 @@ msgstr ""
 
 #: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
-msgstr ""
+msgstr "Système"
 
 #: sections/Overview.class.php:89
 msgid "System Alerts"
-msgstr ""
+msgstr "Alertes système"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
-msgstr ""
+msgstr "Tableau de bord système"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr ""
+msgstr "Dernier redémarrage système"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr ""
+msgstr "Vue d'ensemble système"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
-msgstr ""
+msgstr "Temps de disponibilité système"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr ""
+msgstr "Temp"
 
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
+"Ceci est un problème critique et devrait être résolu le plus rapidement "
+"possible"
 
 #: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr ""
+msgstr "Jonctions hors ligne"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr ""
+msgstr "Jonctions en ligne"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr ""
+msgstr "Temps de disponibilité"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
-msgstr ""
+msgstr "Utilisé(e)"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
-msgstr ""
+msgstr "Utilisateurs hors ligne"
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr ""
+msgstr "Utilisateurs en ligne"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
-msgstr ""
+msgstr "Avertissements trouvé"
 
 #: sections/Overview.class.php:132
 msgid "Web Server"
-msgstr ""
+msgstr "Serveur Web"
 
 #: classes/Statistics.class.php:135 classes/Statistics.class.php:146
 #: classes/Statistics.class.php:157 classes/Statistics.class.php:168
@@ -310,65 +314,65 @@ msgstr ""
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
-msgstr ""
+msgstr "Semaine"
 
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
-msgstr ""
+msgstr "Bienvenue à %s"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
-msgstr ""
+msgstr "jour"
 
 #: classes/TimeUtils.class.php:16
 msgid "days"
-msgstr ""
+msgstr "jours"
 
 #: classes/TimeUtils.class.php:17
 msgid "hour"
-msgstr ""
+msgstr "heure"
 
 #: classes/TimeUtils.class.php:18
 msgid "hours"
-msgstr ""
+msgstr "heures"
 
 #: classes/TimeUtils.class.php:19
 msgid "minute"
-msgstr ""
+msgstr "minute"
 
 #: classes/TimeUtils.class.php:20
 msgid "minutes"
-msgstr ""
+msgstr "minutes"
 
 #: classes/TimeUtils.class.php:11
 msgid "month"
-msgstr ""
+msgstr "mois"
 
 #: classes/TimeUtils.class.php:12
 msgid "months"
-msgstr ""
+msgstr "mois"
 
 #: classes/TimeUtils.class.php:21
 msgid "second"
-msgstr ""
+msgstr "seconde"
 
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
-msgstr ""
+msgstr "secondes"
 
 #: classes/TimeUtils.class.php:13
 msgid "week"
-msgstr ""
+msgstr "semaine"
 
 #: classes/TimeUtils.class.php:14
 msgid "weeks"
-msgstr ""
+msgstr "semaines"
 
 #: classes/TimeUtils.class.php:9
 msgid "year"
-msgstr ""
+msgstr "année"
 
 #: classes/TimeUtils.class.php:10
 msgid "years"
-msgstr ""
+msgstr "années"
