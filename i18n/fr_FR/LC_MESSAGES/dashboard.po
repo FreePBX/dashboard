@@ -3,54 +3,54 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dashboard
-# Copyright (C) 2008-2015 Sangoma, Inc.
+# Copyright (C) 2008-2016 Sangoma, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-03 12:00-0800\n"
-"PO-Revision-Date: 2016-01-20 06:47+0200\n"
-"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish "
-"<http://weblate.freepbx.org/projects/freepbx/dashboard/es_ES/>\n"
-"Language: es_ES\n"
+"POT-Creation-Date: 2016-01-08 18:15-0800\n"
+"PO-Revision-Date: 2016-02-03 08:06+0200\n"
+"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
+"Language-Team: French "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/fr_FR/>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
-msgstr "%s Alimentación"
+msgstr "Flux %s"
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
 msgid "%s Min Avg"
-msgstr "%s Min Prom"
+msgstr "%s min moy"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
-msgstr "%s"
+msgstr "Il y a %s"
 
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
-msgstr "0 segundos"
+msgstr "0 secondes"
 
 #: views/sections/uptime.php:16
 msgid "1 Minute"
-msgstr "1 Minutos"
+msgstr "1 minute"
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
-msgstr "15 Minutos"
+msgstr "15 minutes"
 
 #: views/sections/uptime.php:19
 msgid "5 Minutes"
-msgstr "5 Minutos"
+msgstr "5 minutes"
 
 #: sections/Overview.class.php:31
 #, php-format
@@ -58,52 +58,52 @@ msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
 "i>"
 msgstr ""
-"<strong>'%s'</strong><br><i>(Usted puede cambiar este nombre en "
-"Configuración Avanzada)</i>"
+"<strong>'%s'</strong><br><i>(Vous pouvez changer ce nom dans les paramètres "
+"avancés)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
-msgstr "Llamadas Activas"
+msgstr "Appels actifs"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr "Canales Activos"
+msgstr "Canaux actifs"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
-msgstr "asterisk"
+msgstr "Asterisk"
 
 #: classes/Statistics.class.php:113
 msgid "Asterisk Uptime"
-msgstr "Tiempo activo Asterisk"
+msgstr "Temps de disponibilité d'Asterisk"
 
 #: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
-msgstr "Blog's"
+msgstr "Blogs"
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
-msgstr "buffers"
+msgstr "Tampons"
 
 #: classes/Statistics.class.php:122
 msgid "CPU"
-msgstr "UCP"
+msgstr "UCT"
 
 #: classes/Statistics.class.php:368
 msgid "CPU Temp"
-msgstr "Temp CPU"
+msgstr "Température de l'UCT"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
-msgstr "cached"
+msgstr "Cachée"
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
-msgstr "Errores Críticos Encontrados"
+msgstr "Erreur critiques trouvées"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
-msgstr "Tablero"
+msgstr "Tableau de bord"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -112,23 +112,23 @@ msgstr "Tablero"
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
 msgid "Day"
-msgstr "Día"
+msgstr "Jour"
 
 #: views/sections/overview.php:54
 msgid "Delete This"
-msgstr "Borrar esto"
+msgstr "Supprimer ceci"
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
-msgstr "Disco"
+msgstr "Disque"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
-msgstr "Mem Libre"
+msgstr "Mémoire libre"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr "- Frobulating"
+msgstr "Modifications continuelles"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -137,31 +137,31 @@ msgstr "- Frobulating"
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
-msgstr "Hora"
+msgstr "Heure"
 
 #: views/sections/overview.php:53
 msgid "Ignore This"
-msgstr "Ignore esto"
+msgstr "Ignorez ceci"
 
 #: classes/Statistics.class.php:14
 msgid "Invalid Selection"
-msgstr "Selección Invalida"
+msgstr "Sélection invalide"
 
 #: classes/Statistics.class.php:26
 msgid "Invalid period"
-msgstr "Periodo Invalido"
+msgstr "Période invalide"
 
 #: classes/Statistics.class.php:377
 msgid "Load"
-msgstr "Carga"
+msgstr "Charge"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
-msgstr "Promedios de carga"
+msgstr "Moyennes de charge"
 
 #: classes/Statistics.class.php:123 views/sections/statistics.php:39
 msgid "Memory"
-msgstr "Memoria"
+msgstr "Mémoire"
 
 #: classes/Statistics.class.php:136 classes/Statistics.class.php:147
 #: classes/Statistics.class.php:158 classes/Statistics.class.php:169
@@ -170,142 +170,146 @@ msgstr "Memoria"
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
-msgstr "Mes"
+msgstr "Mois"
 
 #: sections/Overview.class.php:131
 msgid "MySQL"
-msgstr "- MySQL"
+msgstr "MySQL"
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
-msgstr "Red"
+msgstr "Réseau"
 
 #: sections/Overview.class.php:91
 msgid "No critical issues found"
-msgstr "No se encontraron asuntos criticos"
+msgstr "Aucun problème critique trouvé"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
-msgstr "Visión de Conjunto"
+msgstr "Vue d'ensemble"
 
 #: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
-msgstr "Por favor revise los errores en la sección de notificaciones"
+msgstr ""
+"S'il vous plaît, vérifiez pour la présence d'erreurs dans la section de "
+"notification"
 
 #: dashboard.i18n.php:8
 msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
-"Proporciona un Tablero de información del sistema, que muestra información "
-"sobre las llamadas, CPU, memoria, discos, redes y procesos."
+"Fournis un tableau de bord d'informations système avec de l'information sur "
+"les appels, l'UCT, la mémoire, les disques, le réseau et les processus."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
-msgstr "Recarga"
+msgstr "Recharger"
 
 #: views/sections/overview.php:64
 msgid "Resolve"
-msgstr "Resolver"
+msgstr "Résoudre"
 
 #: sections/Overview.class.php:100
 msgid "Security Issue"
-msgstr "Asunto de Seguridad"
+msgstr "Problème de sécurité"
 
 #: views/sections/overview.php:75
 msgid "Show All"
-msgstr "Mostrar todo"
+msgstr "Afficher tout"
 
 #: views/sections/overview.php:77
 msgid "Show New"
-msgstr "Mostrar nuevo"
+msgstr "Afficher les nouveaux"
 
 #: classes/Statistics.class.php:90 classes/Statistics.class.php:114
 msgid "Since Reload"
-msgstr "Desde Recarga"
+msgstr "Depuis le rechargement"
 
 #: sections/Statistics.class.php:17 sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
 msgid "Statistics"
-msgstr "Estadisticas"
+msgstr "Statistiques"
 
 #: views/sections/overview.php:23
 msgid "Summary"
-msgstr "Sumario"
+msgstr "Sommaire"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
-msgstr "Intercambiar Usado"
+msgstr "Pagination utilisée"
 
 #: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
-msgstr "Sysinfo actualizada hace %s segundos"
+msgstr "L'information système a été mise à jour il y a %s secondes"
 
 #: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
-msgstr "Sistema"
+msgstr "Système"
 
 #: sections/Overview.class.php:89
 msgid "System Alerts"
-msgstr "Alertas del Sistema"
+msgstr "Alertes système"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
-msgstr "Tablero del Sistema"
+msgstr "Tableau de bord système"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr "Ultimo reinicio del sistema"
+msgstr "Dernier redémarrage système"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr "Vision de conjunto del sistema"
+msgstr "Vue d'ensemble système"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
-msgstr "Tiempo activo sistema"
+msgstr "Temps de disponibilité système"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr "Temperatura"
+msgstr "Temp"
 
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
-msgstr "Este es un asunto critico y debe ser resuelto con urgencia"
+msgstr ""
+"Ceci est un problème critique et devrait être résolu le plus rapidement "
+"possible"
 
 #: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr "Troncales Fuera de Linea"
+msgstr "Jonctions hors ligne"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr "Troncales Registrados"
+msgstr "Jonctions en ligne"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr "Tiempo activo"
+msgstr "Temps de disponibilité"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
-msgstr "Usado"
+msgstr "Utilisé(e)"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
-msgstr "Usuarios Fuera de Linea"
+msgstr "Utilisateurs hors ligne"
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr "Usuarios en Linea"
+msgstr "Utilisateurs en ligne"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
-msgstr "Advertencias encontradas"
+msgstr "Avertissements trouvé"
 
 #: sections/Overview.class.php:132
 msgid "Web Server"
-msgstr "Servidor Web"
+msgstr "Serveur Web"
 
 #: classes/Statistics.class.php:135 classes/Statistics.class.php:146
 #: classes/Statistics.class.php:157 classes/Statistics.class.php:168
@@ -314,125 +318,65 @@ msgstr "Servidor Web"
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
-msgstr "Semana"
+msgstr "Semaine"
 
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
-msgstr "Bienvenido a %s"
+msgstr "Bienvenue à %s"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
-msgstr "dia"
+msgstr "jour"
 
 #: classes/TimeUtils.class.php:16
 msgid "days"
-msgstr "dias"
+msgstr "jours"
 
 #: classes/TimeUtils.class.php:17
 msgid "hour"
-msgstr "hora"
+msgstr "heure"
 
 #: classes/TimeUtils.class.php:18
 msgid "hours"
-msgstr "horas"
+msgstr "heures"
 
 #: classes/TimeUtils.class.php:19
 msgid "minute"
-msgstr "minuto"
+msgstr "minute"
 
 #: classes/TimeUtils.class.php:20
 msgid "minutes"
-msgstr "minutos"
+msgstr "minutes"
 
 #: classes/TimeUtils.class.php:11
 msgid "month"
-msgstr "mes"
+msgstr "mois"
 
 #: classes/TimeUtils.class.php:12
 msgid "months"
-msgstr "meses"
+msgstr "mois"
 
 #: classes/TimeUtils.class.php:21
 msgid "second"
-msgstr "segundo"
+msgstr "seconde"
 
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
-msgstr "segundos"
+msgstr "secondes"
 
 #: classes/TimeUtils.class.php:13
 msgid "week"
-msgstr "semana"
+msgstr "semaine"
 
 #: classes/TimeUtils.class.php:14
 msgid "weeks"
-msgstr "semanas"
+msgstr "semaines"
 
 #: classes/TimeUtils.class.php:9
 msgid "year"
-msgstr "año"
+msgstr "année"
 
 #: classes/TimeUtils.class.php:10
 msgid "years"
-msgstr "años"
-
-#~ msgid "Feed"
-#~ msgstr "Alimentar"
-
-#~ msgid "Trnks Offline"
-#~ msgstr "Troncales Fuera de Linea"
-
-#~ msgid "Reports"
-#~ msgstr "Reportes"
-
-#~ msgid "System Status"
-#~ msgstr "Estado del Sistema"
-
-#~ msgid "Dashboard Info Update Frequency"
-#~ msgstr "Frecuencia de Actualización del Tabero"
-
-#~ msgid "Dashboard Max Calls Initial Scale"
-#~ msgstr "Escala Inicial Máxima de Llamadas del Tablero"
-
-#~ msgid "Dashboard Non-Std SSH Port"
-#~ msgstr "Puerto SSH no Estándar del Dashboard"
-
-#~ msgid "Dashboard Stats Update Frequency"
-#~ msgstr "Frecuencia de Actualización de estadísticas en el Tablero"
-
-#~ msgid "GUI Behavior"
-#~ msgstr "Comportamiento de la GUI"
-
-#~ msgid ""
-#~ "SSH port number configured on your system if not using the default port "
-#~ "22, this allows the dashboard monitoring to watch the poper port."
-#~ msgstr ""
-#~ "Número de puerto SSH configurado en su sistema, si no se utiliza el "
-#~ "puerto predeterminado 22, esto permite que el monitoreo tablero para ver "
-#~ "el puerto correcto."
-
-#~ msgid "System Setup"
-#~ msgstr "Configuración del Sistema"
-
-#~ msgid ""
-#~ "Update rate in seconds of all sections of the System Status panel except "
-#~ "the Info box."
-#~ msgstr ""
-#~ "Tasa de actualización en segundos de todas las secciones del panel de "
-#~ "Estado del Sistema excepto la caja de Info."
-
-#~ msgid ""
-#~ "Update rate in seconds of the Info section of the System Status panel."
-#~ msgstr ""
-#~ "Tasa de actualización en segundos de la sección Info del panel del Estado "
-#~ "del Sistema."
-
-#~ msgid ""
-#~ "Use this to pre-set the scale for maximum calls on the Dashboard display. "
-#~ "If not set, the the scale is dynamically sized based on the active calls "
-#~ "on the system."
-#~ msgstr ""
-#~ "Use esto para pre-configurar la escala para las llamadas máximas en la "
-#~ "pantalla del tablero de instrumentos. Si no se establece la escala se "
-#~ "dimensiona dinámicamente basándose en las llamadas activas en el sistema."
+msgstr "années"

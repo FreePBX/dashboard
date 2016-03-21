@@ -10,21 +10,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-03 12:00-0800\n"
-"PO-Revision-Date: 2015-10-11 15:13+0200\n"
+"PO-Revision-Date: 2016-03-16 22:11+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/"
-"dashboard/fa/>\n"
+"Language-Team: Persian "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/fa/>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
-msgstr ""
+msgstr "خوراک %s"
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
@@ -58,6 +58,8 @@ msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
 "i>"
 msgstr ""
+"<strong>'%s'</strong><br><i>(You can change this name in Advanced "
+"Settings)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
@@ -65,7 +67,7 @@ msgstr "تماس های فعال"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr ""
+msgstr "شانس های فعال"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
@@ -101,7 +103,7 @@ msgstr "خطای مهم"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
-msgstr ""
+msgstr "داشبورد"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -126,7 +128,7 @@ msgstr "حافظه آزاد"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr ""
+msgstr "Frobulating"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -172,7 +174,7 @@ msgstr "ماه"
 
 #: sections/Overview.class.php:131
 msgid "MySQL"
-msgstr ""
+msgstr "MySql"
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
@@ -195,6 +197,8 @@ msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
+"ایجاد داشبورد اطلاعات سیستمی, اطلاعاتی در مورد تماس ها, پردازنده, حافظه و "
+"پردازش ها."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
@@ -248,7 +252,7 @@ msgstr "هشدارهای سیستم"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
-msgstr ""
+msgstr "داشبورد سیستم"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -276,7 +280,7 @@ msgstr "ترانک آفلاین"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr ""
+msgstr "Trunks Reged"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
