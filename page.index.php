@@ -4,4 +4,10 @@
 //	Copyright 2013 Schmooze Com Inc.
 //
 
+if (!class_exists('DashboardHooks')) {
+	include 'classes/DashboardHooks.class.php';
+}
+$allhooks = DashboardHooks::genHooks(FreePBX::Dashboard()->getConfig('visualorder'));
+FreePBX::Dashboard()->setConfig('allhooks', $allhooks);
+
 show_view(__DIR__.'/views/main.php',array("brand" => FREEPBX::Config()->get('DASHBOARD_FREEPBX_BRAND')));
