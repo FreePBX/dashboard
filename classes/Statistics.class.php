@@ -415,8 +415,14 @@ $.elycharts.templates['astchart'] = {
 		foreach ($si as $key => $row) {
 			$ttip = "";
 			foreach (array_keys($disks) as $d) {
-				$retarr['values'][$d][] = $row["psi.FileSystem.Mount.$d.@attributes.Percent"];
-				$ttip .=  $disks[$d]['Name']."<br>&nbsp;&nbsp;".$row["psi.FileSystem.Mount.$d.@attributes.Percent"]."% used<br>";
+				$var = "psi.FileSystem.Mount.$d.@attributes.Percent";
+				if (isset($row[$var])) {
+					$retarr['values'][$d][] = $row[$var];
+					$ttip .=  $disks[$d]['Name']."<br>&nbsp;&nbsp;".$row[$var]."% used<br>";
+				} else {
+					$retarr['values'][$d][] = 0;
+					$ttip .=  $disks[$d]['Name']."<br>&nbsp;&nbsp;No Information<br>";
+				}
 			}
 			$tooltips[] = $ttip;
 		}
