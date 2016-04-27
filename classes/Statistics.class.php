@@ -500,18 +500,24 @@ $.elycharts.templates['astchart'] = {
 				unset($interfaces[$key]);
 				continue;
 			}
-			// Figure out the address of the interface.  This can be either
-			// ipv4;ipv6 or mac;ipv4.
-			$tmparr = explode(';', $lastsi["psi.Network.NetDevice.$key.@attributes.Info"]);
-			//If no IP address this only returns a mac, no second field. We should not assume anything will be here
-			$tmparr[0] = isset($tmparr[0])?$tmparr[0]:'';
-			$tmparr[1] = isset($tmparr[1])?$tmparr[1]:'';
-			if (filter_var($tmparr[0], FILTER_VALIDATE_IP)) {
-				$interfaces[$key]['ipaddr'] = $tmparr[0];
-			} elseif (filter_var($tmparr[1], FILTER_VALIDATE_IP)) {
-				$interfaces[$key]['ipaddr'] = $tmparr[1];
+			// Do we know about this interface now? It may be historical.
+			if (!isset($lastsi["psi.Network.NetDevice.$key.@attributes.Info"])) {
+				// No details about this interface, so we have to guess.
+				$interfaces[$key]['ipaddr'] = "Unknown-$key";
 			} else {
-				$interfaces[$key]['ipaddr'] = "0.0.0.0";
+				// Figure out the address of the interface.  This can be either
+				// ipv4;ipv6 or mac;ipv4.
+				$tmparr = explode(';', $lastsi["psi.Network.NetDevice.$key.@attributes.Info"]);
+				//If no IP address this only returns a mac, no second field. We should not assume anything will be here
+				$tmparr[0] = isset($tmparr[0])?$tmparr[0]:'';
+				$tmparr[1] = isset($tmparr[1])?$tmparr[1]:'';
+				if (filter_var($tmparr[0], FILTER_VALIDATE_IP)) {
+					$interfaces[$key]['ipaddr'] = $tmparr[0];
+				} elseif (filter_var($tmparr[1], FILTER_VALIDATE_IP)) {
+					$interfaces[$key]['ipaddr'] = $tmparr[1];
+				} else {
+					$interfaces[$key]['ipaddr'] = "0.0.0.0";
+				}
 			}
 			$txb = isset($firstsi["psi.Network.NetDevice.$key.@attributes.TxBytes"])?(int)$firstsi["psi.Network.NetDevice.$key.@attributes.TxBytes"]:0;
 			$rxb = isset($firstsi["psi.Network.NetDevice.$key.@attributes.RxBytes"])?(int)$firstsi["psi.Network.NetDevice.$key.@attributes.RxBytes"]:0;
@@ -529,7 +535,6 @@ $.elycharts.templates['astchart'] = {
 		}
 
 		$allints = array_keys($interfaces);
-
 
 		// Graph.
 		$tooltips = array();
