@@ -10,31 +10,31 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-08 18:15-0800\n"
-"PO-Revision-Date: 2016-04-02 19:08+0200\n"
-"Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/"
-"dashboard/fa/>\n"
+"PO-Revision-Date: 2016-04-27 18:53+0200\n"
+"Last-Translator: psdk <hyavari26@gmail.com>\n"
+"Language-Team: Persian (Iran) "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/fa_IR/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
-msgstr "خوراک %s"
+msgstr "اخبار %s"
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
 msgid "%s Min Avg"
-msgstr "%s دقیقه میانگین"
+msgstr "%s مینیمم میانگین"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
-msgstr "%s پیش"
+msgstr "%s قبل"
 
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
@@ -46,11 +46,11 @@ msgstr "یک دقیقه"
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
-msgstr "۱۵دقیقه"
+msgstr "۱۵ دقیقه"
 
 #: views/sections/uptime.php:19
 msgid "5 Minutes"
-msgstr "۵دقیقه"
+msgstr "۵ دقیقه"
 
 #: sections/Overview.class.php:31
 #, php-format
@@ -58,7 +58,7 @@ msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
 "i>"
 msgstr ""
-"<strong>'%s'</strong><br><i>(شما میتوانید نام را در تنظیمات پیشرفته تغییر "
+"<strong>'%s'</strong><br><i>(شما می توانید نام را در تنظیمات پیشرفته تغییر "
 "دهید)</i>"
 
 #: views/sections/statistics.php:299
@@ -67,7 +67,7 @@ msgstr "تماس های فعال"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr "شانس های فعال"
+msgstr "کانال های فعال"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
@@ -83,7 +83,7 @@ msgstr "بلاگ ها"
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
-msgstr "بافرها"
+msgstr "بافر"
 
 #: classes/Statistics.class.php:122
 msgid "CPU"
@@ -95,11 +95,11 @@ msgstr "دمای پردازنده"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
-msgstr "کش"
+msgstr "میزان حافظه cache"
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
-msgstr "خطای مهم"
+msgstr "وجود خطاهای بحرانی"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
@@ -116,7 +116,7 @@ msgstr "روز"
 
 #: views/sections/overview.php:54
 msgid "Delete This"
-msgstr "حذف"
+msgstr "حذف این مورد"
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
