@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-08 18:15-0800\n"
-"PO-Revision-Date: 2016-04-27 18:53+0200\n"
+"PO-Revision-Date: 2016-04-27 19:49+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/fa_IR/>\n"
@@ -153,11 +153,11 @@ msgstr "دوره نامعتبر"
 
 #: classes/Statistics.class.php:377
 msgid "Load"
-msgstr "لود"
+msgstr "میزان بار"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
-msgstr "میانگین لود"
+msgstr "میانگین میزان بار"
 
 #: classes/Statistics.class.php:123 views/sections/statistics.php:39
 msgid "Memory"
@@ -174,7 +174,7 @@ msgstr "ماه"
 
 #: sections/Overview.class.php:131
 msgid "MySQL"
-msgstr "MySql"
+msgstr "سرور MySQL"
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
@@ -182,7 +182,7 @@ msgstr "شبکه"
 
 #: sections/Overview.class.php:91
 msgid "No critical issues found"
-msgstr "مورد مهمی یافت نشد"
+msgstr "مشکل بحرانی یافت نشد"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
@@ -190,19 +190,19 @@ msgstr "بازبینی"
 
 #: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
-msgstr "لطفا برای بررسی خطاها بخش اطلاع رسانی را چ کنید"
+msgstr "لطفا برای بررسی خطاها بخش اطلاع رسانی را بررسی کنید"
 
 #: dashboard.i18n.php:8
 msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
-"ایجاد داشبورد اطلاعات سیستمی, اطلاعاتی در مورد تماس ها, پردازنده, حافظه و "
+"ارائه داشبورد اطلاعات سیستمی, اطلاعاتی در مورد تماس ها, پردازنده, حافظه و "
 "پردازش ها."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
-msgstr "لودمجدد"
+msgstr "بارگذاری مجدد"
 
 #: views/sections/overview.php:64
 msgid "Resolve"
@@ -210,7 +210,7 @@ msgstr "حل کردن"
 
 #: sections/Overview.class.php:100
 msgid "Security Issue"
-msgstr "مورد امنیتی"
+msgstr "مشکل امنیتی"
 
 #: views/sections/overview.php:75
 msgid "Show All"
@@ -218,11 +218,11 @@ msgstr "نمایش همه"
 
 #: views/sections/overview.php:77
 msgid "Show New"
-msgstr "نمایش جدید"
+msgstr "نمایش مورد جدید"
 
 #: classes/Statistics.class.php:90 classes/Statistics.class.php:114
 msgid "Since Reload"
-msgstr "تا لودمجدد"
+msgstr "از آخرین بارگذاری"
 
 #: sections/Statistics.class.php:17 sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
@@ -240,7 +240,7 @@ msgstr "Swap مصرف شده"
 #: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
-msgstr "اطلاعات سیستم %s ثانیه قبل به روز شد"
+msgstr "اطلاعات سیستم %s ثانیه قبل بروز شده"
 
 #: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
@@ -256,11 +256,11 @@ msgstr "داشبورد سیستم"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr "آخرین راه اندازی مجدد سیستم"
+msgstr "آخرین زمان راه اندازی مجدد"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr "بازبینی سیستم"
+msgstr "وضعیت کلی سیستم"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
@@ -268,19 +268,19 @@ msgstr "آپ تایم سیستم"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr "دما"
+msgstr "موقت"
 
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
-msgstr "این مورد مهمی است و باید سریعا برطرف شود"
+msgstr "یک مشکل بحرانی وجود داشته و باید سریعا رفع گردد"
 
 #: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr "ترانک آفلاین"
+msgstr "ترانک های آفلاین"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr "ایجاد ترانک"
+msgstr "ترانک های رجیستر شده"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
@@ -289,7 +289,7 @@ msgstr "آپ تایم"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
-msgstr "مصرفی"
+msgstr "مصرف شده"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
@@ -327,7 +327,7 @@ msgstr "روز"
 
 #: classes/TimeUtils.class.php:16
 msgid "days"
-msgstr "روزها"
+msgstr "روز"
 
 #: classes/TimeUtils.class.php:17
 msgid "hour"
@@ -335,7 +335,7 @@ msgstr "ساعت"
 
 #: classes/TimeUtils.class.php:18
 msgid "hours"
-msgstr "ساعات"
+msgstr "ساعت"
 
 #: classes/TimeUtils.class.php:19
 msgid "minute"
@@ -343,7 +343,7 @@ msgstr "دقیقه"
 
 #: classes/TimeUtils.class.php:20
 msgid "minutes"
-msgstr "دقایق"
+msgstr "دقیقه"
 
 #: classes/TimeUtils.class.php:11
 msgid "month"
@@ -351,7 +351,7 @@ msgstr "ماه"
 
 #: classes/TimeUtils.class.php:12
 msgid "months"
-msgstr "ماه ها"
+msgstr "ماه"
 
 #: classes/TimeUtils.class.php:21
 msgid "second"
@@ -359,7 +359,7 @@ msgstr "ثانیه"
 
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
-msgstr "ثانیه ها"
+msgstr "ثانیه"
 
 #: classes/TimeUtils.class.php:13
 msgid "week"
@@ -367,7 +367,7 @@ msgstr "هفته"
 
 #: classes/TimeUtils.class.php:14
 msgid "weeks"
-msgstr "هفته ها"
+msgstr "هفته"
 
 #: classes/TimeUtils.class.php:9
 msgid "year"
@@ -375,7 +375,7 @@ msgstr "سال"
 
 #: classes/TimeUtils.class.php:10
 msgid "years"
-msgstr "سال ها"
+msgstr "سال"
 
 #~ msgid "Feed"
 #~ msgstr "فید"
