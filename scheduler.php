@@ -13,7 +13,12 @@ $bootstrap_settings['freepbx_auth'] = false;  // Just in case.
 $restrict_mods = true; // Takes startup from 0.2 seconds to 0.07 seconds.
 include '/etc/freepbx.conf';
 
-$lockfile = \FreePBX::Config()->get('ASTRUNDIR')."/scheduler.lock";
+$astrundir = \FreePBX::Config()->get('ASTRUNDIR');
+if(!is_dir($astrundir) || !is_writable($astrundir)) {
+	echo "Asterisk Run Dir [".$astrundir."] is missing or not writable! Is Asterisk running?\n";
+	exit(1);
+}
+$lockfile = $astrundir."/scheduler.lock";
 
 // Sleep to fix crazy issues with large VM hosting providers
 sleep(mt_rand(1,30));
@@ -32,4 +37,3 @@ if (!$fh || !flock($fh, LOCK_EX|LOCK_NB)) {
 // remove lockfile, and then close handle to release kernel lock
 unlink($lockfile);
 fclose($fh);
-?>
