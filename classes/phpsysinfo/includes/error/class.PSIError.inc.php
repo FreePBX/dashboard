@@ -23,7 +23,7 @@
  * @version   Release: 3.0
  * @link      http://phpsysinfo.sourceforge.net
  */
-class Error
+class PSIError
 {
     /**
      * holds the instance of this class
@@ -63,6 +63,7 @@ class Error
      */
     public static function singleton()
     {
+				dbug("yes");
         if (!isset(self::$_instance)) {
             $c = __CLASS__;
             self::$_instance = new $c;

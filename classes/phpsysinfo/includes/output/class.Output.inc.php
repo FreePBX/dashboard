@@ -37,7 +37,7 @@ abstract class Output
      */
     public function __construct()
     {
-        $this->error = Error::singleton();
+        $this->error = PSIError::singleton();
         $this->_checkConfig();
         CommonFunctions::checkForExtensions();
 //        $this->error = Error::singleton();
