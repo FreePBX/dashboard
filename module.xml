@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>13.0.22.2</version>
+	<version>14.0.1alpha1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,54 +20,7 @@
 		<module>core ge 12.0.1beta11</module>
 	</depends>
 	<changelog>
-		*13.0.22.2* FREEPBX-11465 provide error that asterisk isn't running
-		*13.0.22.1* #11547, #11314, #12052
-		*13.0.21* Generate hooks when we view the page not during reload
-		*13.0.20* Array by reference error fixes
-		*13.0.19* Use "scheduler.lock" as the lockfile name. Need to read in the configuration files first, so we know which directory will hold the lock.
-		*13.0.18* FREEPBX-10838
-		*13.0.17* FREEPBX-9868
-		*13.0.16* FREEPBX-10834
-		*13.0.15.5* #10721 Fix scheduler on non-standard machines.
-		*13.0.15.4* FREEPBX-10772
-		*13.0.15.3* Better UTF8 handling
-		*13.0.15.2* Pass by reference errors
-		*13.0.15.1* FREEPBX-10454 Additional validation for network
-		*13.0.15* FREEPBX-10454 Fix Whoops error
-		*13.0.14* FREEPBX-10446 Fix invalid array issue
-		*13.0.13* Require new framework
-		*13.0.12* FREEPBX-10376 Add hook to allow modules to declare extension prefixes that will be excluded from offline/online statistics.
-		*13.0.11* Enable PJSIP reporting
-		*13.0.10* FREEPBX-9993 Cant reload if RSS feed is down
-		*13.0.9* Fix button sizing on statistics chart
-		*13.0.8* Sleep for 0 to 30 seconds on scheduler
-    *13.0.6* Classify unsigned modules
-		*13.0.5* Translation additions
-		*13.0.4* Language fixes
-		*13.0.3* Require mbstring now
-		*13.0.2* Fix permissions
-		*13.0.1* Make RSS feeds more resilient
-		*12.0.21* FREEPBX-8184 Cant remove feeds from dashboard
-		*12.0.20* Better messages
-		*12.0.19* Make this 12 compatible with hooks
-		*12.0.18* FREEPBX-8066 Notification links not used in New Dashboard, FREEPBX-8005 Repeats Previous Alerts
-		*12.0.17* Escape out freepbx object
-		*12.0.16* Tweaks and cleanup
-		*12.0.15* Remove most core service checking to modules
-		*12.0.14* Fix Graph selectors on Firefox, also consistency!
-		*12.0.13* Allow modules to hook into Summary
-		*12.0.12* Default to Asterisk stats
-		*12.0.11* Remove RSS feed setting from dashboard
-		*12.0.10* Dont expand system overview if we are hiding or removing
-		*12.0.9* Fixes fluke Javascript error and allows processing to continue
-		*12.0.8* FREEPBX-7540 Fixed Nothing But Uptime Window Displayed
-		*12.0.7* FREEPBX-7536 allow deleting of deletable messages
-		*12.0.6* Order saving recognized and some cleanup
-		*12.0.5* Be more verbose about php-xml not being installed
-		*12.0.4* Speed improvements.
-		*12.0.3* Drag and drop order sorting and saving
-		*12.0.2* Visuals
-		*12.0.1* Initial checkin of new dashboard for FreePBX 12!
+		*14.0.1alpha1* Inital Release
 	</changelog>
 	<hooks>
 		<framework namespace="FreePBX\Console\Command" class="Chown">
@@ -75,7 +28,7 @@
 		</framework>
 	</hooks>
 	<supported>
-		<version>13.0</version>
+		<version>14.0</version>
 	</supported>
 	<location/>
 	<md5sum/>
