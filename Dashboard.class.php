@@ -72,7 +72,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		$cmd = "[ -x $file ] && $file";
 
 		// Ensure we instantiate cron with the correct user
-		$c = \FreePBX::Cron(\FreePBX::Config()->get('AMPASTERISKWEBUSER'));
+		$c = \FreePBX::create()->Cron(\FreePBX::Config()->get('AMPASTERISKWEBUSER'));
 		$c->addLine("* * * * * $cmd");
 	}
 
