@@ -58,14 +58,14 @@ class Overview {
 
 		$final['showAllMessage'] = (count($items) != count($allItems));
 		// This is where we map the Notifications priorities to Bootstrap priorities.
-		// define("NOTIFICATION_TYPE_CRITICAL", 100) -> 'danger' (orange)
+		// define("NOTIFICATION_TYPE_CRITICAL", 100) -> 'danger' (red)
 		// define("NOTIFICATION_TYPE_SECURITY", 200) -> 'danger' (red)
 		// define("NOTIFICATION_TYPE_UPDATE",   300) -> 'warning' (orange)
-		// define("NOTIFICATION_TYPE_ERROR",    400) -> 'info' (blue)
-		// define("NOTIFICATION_TYPE_WARNING" , 500) -> 'info' -> (blue)
+		// define("NOTIFICATION_TYPE_ERROR",    400) -> 'danger' (red)
+		// define("NOTIFICATION_TYPE_WARNING" , 500) -> 'warning' -> (orange)
 		// define("NOTIFICATION_TYPE_NOTICE",   600) -> 'success' -> (green)
 
-		$alerts = array(100 => "danger", 200 => "danger", 250 => 'warning', 300 => "warning", 400 => "info", 500 => "info", 600 => "success");
+		$alerts = array(100 => "danger", 200 => "danger", 250 => 'warning', 300 => "warning", 400 => "danger", 500 => "warning", 600 => "success");
 		foreach ($items as $notification) {
 			$final['nots'][] = array(
 				"id" => $notification['id'],
