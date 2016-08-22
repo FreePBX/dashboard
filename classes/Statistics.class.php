@@ -5,9 +5,6 @@
 // Copyright 2006-2014 Schmooze Com Inc.
 
 class Statistics {
-	public function getHTML() {
-		return $this->genGraph();
-	}
 
 	public function getStats() {
 		if (!isset($_REQUEST['target']) || !isset($_REQUEST['period'])) {
@@ -44,22 +41,6 @@ class Statistics {
 		}
 		// Or else...
 		return 'Code not written';
-	}
-
-	private function genGraph() {
-		$html = "<div class='row'><div class='col-sm-2'>".$this->getSidebar()."</div><div id='builtin_aststat' class='col-sm-10'style='height: 250px'></div></div>";
-		$html .= "<script type='text/javascript'>".$this->getTemplates()."
-Dashboard.sysstatAjax = { command: 'sysstat', target: 'uptime', period: 'hour', module: window.modulename };
-window.observers['builtin_aststat'] = function() {
-  $.ajax({
-    url: window.ajaxurl,
-    data: Dashboard.sysstatAjax,
-    success: function(data) { $('#builtin_aststat').chart('clear'); $('#builtin_aststat').chart(data); window.ajaxdata = data; },
-   });
-};
-</script>";
-		$html .= "</div>";
-		return $html;
 	}
 
 	public function getGraphDataUptime($period) {
@@ -115,203 +96,6 @@ window.observers['builtin_aststat'] = function() {
 		);
 		return $retarr;
 	}
-
-	public function getSidebar() {
-		$uptime = _("Uptime");
-		$asterisk = _("Asterisk");
-		$cpu = _("CPU");
-		$mem = _("Memory");
-		$disk = _("Disk");
-		$network = _("Network");
-
-		$html = '<div class="btn-group-vertical">
-  <div class="btn-group btn-group-lg" data-type="uptime">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-      '.$uptime.' <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu">
-      <li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
-      <li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
-      <li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
-	  <li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
-	</ul>
-  </div>
-  <div class="btn-group btn-group-lg" data-type="asterisk">
-	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-	  '.$asterisk.' <span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu">
-	<li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
-	<li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
-	<li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
-<li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
-	</ul>
-  </div>
-  <div class="btn-group btn-group-lg" data-type="cpuusage">
-	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-	  '.$cpu.' <span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu">
-	<li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
-	<li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
-	<li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
-<li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
-	</ul>
-  </div>
-  <div class="btn-group btn-group-lg" data-type="memusage">
-	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-	  '.$mem.' <span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu">
-	<li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
-	<li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
-	<li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
-<li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
-	</ul>
-  </div>
-  <div class="btn-group btn-group-lg" data-type="diskusage">
-	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-	  '.$disk.' <span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu">
-	<li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
-	<li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
-	<li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
-<li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
-	</ul>
-  </div>
-  <div class="btn-group btn-group-lg" data-type="networking">
-	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-	  '.$network.' <span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu">
-	<li><a href="#" onClick="sbClick()">'._("Hour").'</a></li>
-	<li><a href="#" onClick="sbClick()">'._("Day").'</a></li>
-	<li><a href="#" onClick="sbClick()">'._("Week").'</a></li>
-<li><a href="#" onClick="sbClick()">'._("Month").'</a></li>
-	</ul>
-  </div>
-</div>
-<script type="text/javascript">
-function sbClick() {
-	event.preventDefault();
-	var target = $(event.target);
-	Dashboard.sysstatAjax.period = target.text();
-	Dashboard.sysstatAjax.target = target.parents(".btn-group").data("type")
-	window.observers["builtin_aststat"]();
-}
-</script>
-';
-		return $html;
-	}
-
-	public function getTemplates() {
-		return "$.elycharts.templates['aststat'] = {
- type : 'line',
- margins : [20, 15, 10, 15],
- autoresize : true,
- defaultSeries : {
-  plotProps : { 'stroke-width' : 4 },
-  dotProps : { stroke : 'white', 'stroke-width' : 2 },
-  tooltip : { height: 130, width: 200, offset: [20, 120], frameProps : { stroke : 'yellow', opacity : 0.75 } },
-  highlight : { newProps : { fill : 'white', stroke : 'yellow', r : 8 } },
-  startAnimation : { active : true, type : 'avg', speed : 1000 },
- },
- features : {
-  mousearea : { type : 'index' },
-  highlight : {
-   indexHighlight : 'auto',
-   indexHighlightProps : { 'stroke-dasharray' : '-', 'stroke-width' : 2, opacity : 0.5 }
-  },
-  grid : {
-   forceBorder: true,
-   draw : [true, false],
-   props : { 'stroke-dasharray' : '-' },
-  },
-  legend: {
-   horizontal : true,
-   width : 'auto',
-   x : 10,
-   y : 0,
-   borderProps : { 'fill-opacity' : 0.3, 'stroke-width' : 0 },
-  },
- },
-};
-
-$.elycharts.templates['memchart'] = {
- type : 'line',
- autoresize : true,
- margins : [20, 40, 40, 30],
- defaultSeries : {
-  type : 'bar',
-  stacked : true,
-  highlight : {
-   newProps : { r : 8, opacity : 1 },
-   overlayProps : { fill : 'white', opacity : 0.2 }
-  },
- },
- series : {
-  memfree : { color : '90-#008000-#005000', tooltip : { frameProps : { stroke : 'green' } } },
-  cached : { color : '90-#90EE90-#40AA40', tooltip : { frameProps : { stroke : 'lightgreen' } } },
-  buffers : { color : '90-#FFA500-#CC6000', tooltip : { frameProps : { stroke : 'orange' } } },
-  memused : { color : '90-#FF4500-#CC2200', tooltip : { frameProps : { stroke : 'orangered' } } },
-  swappct : { color : 'midnightblue', rounded : false, dot : true, type: 'line', stacked: false,
-   dotProps : { r : 0, stroke : 'white', 'stroke-width' : 0, opacity : 0 },
-   plotProps : { 'stroke-width' : 3, 'stroke-linecap' : 'round', 'stroke-linejoin' : 'round' },
-  },
- },
- legend: {
-  memfree: '"._('Free Mem')."',
-  cached: '"._('Cached')."',
-  buffers: '"._('Buffers')."',
-  memused: '"._('Used')."',
-  swappct: '"._('Swap Used')."',
- },
- defaultAxis : { labels : true },
- axis : { r : { max: 100, suffix: '%', }, l : { max: 100, suffix: '%', normalize: false } },
- features : { grid : { draw : true, forceBorder : true, ny : 5 },
-  legend: { horizontal : true, width : 'auto', x : 10, y : 0, borderProps : { 'fill-opacity' : 0.3, 'stroke-width' : 0 }, },
- },
- barMargins : 1,
-};
-
-$.elycharts.templates['astchart'] = {
- type : 'line',
- autoresize : true,
- margins : [20, 30, 40, 0],
- defaultSeries : {
-  type: 'line',
-  axis: 'r',
-  dot: true,
-  startAnimation : { active : true, type : 'avg', speed : 1000 },
-  dotProps: { r: 0, opacity: 0,  'stroke-width' : 0, },
-  plotProps: { 'stroke-width': 2 },
-  highlight : {
-   newProps : { r : 8, opacity : 1 },
-   overlayProps : { fill : 'white', opacity : 0.2 }
-  },
- },
- series : {
-  uonline : { color : 'green', tooltip : { frameProps : { stroke : 'green' } } },
-  uoffline: { color : 'lightgreen', tooltip : { frameProps : { stroke : 'lightgreen' } } },
-  tonline : { color : 'orange', tooltip : { frameProps : { stroke : 'orange' } } },
-  toffline : { color : 'red', tooltip : { frameProps : { stroke : 'red' } }, fill: true },
-  channels : { color : 'blue', tooltip : { frameProps : { stroke : 'blue' } } },
- },
- legend: {
-  uonline: '"._('Users Online')."Users Online',
-  uoffline: '"._('Users Offline')."Users Offline',
-  tonline: '"._('Trunks Reged')."',
-  toffline: '"._('Trunks Offline')."Trunks Offline',
-  channels: '"._('Active Chans')."Active Chans',
- },
- defaultAxis : { labels : true },
- features : { grid : { draw : true, forceBorder : true, ny : 5 },
-  legend: { horizontal : true, width : 'auto', x : 0, y : 0, borderProps : { 'fill-opacity' : 0.3, 'stroke-width' : 0 }, },
- },
- barMargins : 1,
-};";
-}
 
 	public function getGraphDataCPU($period) {
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
@@ -636,49 +420,131 @@ $.elycharts.templates['astchart'] = {
 	}
 
 	public function getGraphDataAst($period) {
-		// Grab our memory info...
+		// Grab our info...
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
-		$retarr['template'] = 'astchart';
+		$retarr = array(
+			"type" => "bar",
+			"options" => array("legend" => array("labels" => array("boxWidth" => 10)),
+				"scales" => array(
+					"xAxes" => array(array(
+						"barPercentage" => 1,
+						"categoryPercentage" => 1,
+						"barThickness" => 5,
+						"borderWidth" => 0,
+						"id" => "ciu-axis",
+						"stacked" => true,
+					)),
+				)
+			),
+			"data" => array(
+				"labels" => array(),
+				"datasets" => array(
+					0 => array(
+						"type" => "bar",
+						"label" => "Channels In Use",
+						"fill" => true,
+						"backgroundColor" => "orange",
+						"borderColor" => "orange",
+						"borderWidth" => 0,
+						"xAxisID" => "ciu-axis",
+					),
+					1 => array(
+						"label" => "Users Online",
+						"type" => "line",
+						"lineTension" => 0.1,
+						"borderColor" => "green",
+						"backgroundColor" => "green",
+						"pointRadius" => 0,
+						"pointHoverRadius" => 5,
+						"pointHitRadius" => 5,
+						"fill" => false,
+					),
+					2 => array(
+						"label" => "Users Offline",
+						"type" => "line",
+						"lineTension" => 0.1,
+						"borderColor" => "red",
+						"backgroundColor" => "red",
+						"pointRadius" => 0,
+						"pointHoverRadius" => 5,
+						"pointHitRadius" => 5,
+						"fill" => false,
+					),
+					3 => array(
+						"label" => "Trunks Online",
+						"type" => "line",
+						"lineTension" => 0.1,
+						"borderColor" => "blue",
+						"backgroundColor" => "blue",
+						"pointRadius" => 0,
+						"pointHoverRadius" => 5,
+						"pointHitRadius" => 5,
+						"fill" => false,
+					),
+					4 => array(
+						"label" => "Trunks Offline",
+						"type" => "line",
+						"lineTension" => 0.1,
+						"borderColor" => "yellow",
+						"backgroundColor" => "yellow",
+						"pointRadius" => 0,
+						"pointHoverRadius" => 5,
+						"pointHitRadius" => 5,
+						"fill" => false,
+					),
+				)
+			)
+		);
 		$count = 0;
 		$trunkoffline = false;
+		$uonline = array();
+		$uoffline = array();
+		$tonline = array();
+		$toffline = array();
+		$channels = array();
+		$timestamps = array();
 		foreach ($si as $key => $val) {
+			$timestamps[$count] = $key;
 			if (!isset($val['ast.connections.users_online'])) {
-				$retarr['values']['uonline'][$count] = null;
-				$retarr['values']['uoffline'][$count] = null;
-				$retarr['values']['tonline'][$count] = null;
-				$retarr['values']['toffline'][$count] = null;
-				$retarr['values']['channels'][$count] = null;
+				$uonline[$count] = null;
+				$uoffline[$count] = null;
+				$tonline[$count] = null;
+				$toffline[$count] = null;
+				$channels[$count] = null;
 			} else {
-				$retarr['values']['uonline'][$count] = (int) $val['ast.connections.users_online'];
-				$retarr['tooltips']['uonline'][$count] = $val['ast.connections.users_online']." users online";
-				$retarr['values']['uoffline'][$count] = (int) $val['ast.connections.users_offline'];
-				$retarr['tooltips']['uoffline'][$count] = $val['ast.connections.users_offline']." users offline";
-				$retarr['values']['tonline'][$count] = (int) $val['ast.connections.trunks_online'];
-				$retarr['tooltips']['tonline'][$count] = $val['ast.connections.trunks_online']." trunks online";;
+				$uonline[$count] = (int) $val['ast.connections.users_online'];
+				$uoffline[$count] = (int) $val['ast.connections.users_offline'];
+				$tonline[$count] = (int) $val['ast.connections.trunks_online'];
 				if ($val['ast.connections.trunks_offline'] != 0) {
 					if (!$trunkoffline) {
 						$trunkoffline = true;
 						if ($count > 1) {
-							$retarr['values']['toffline'][$count-1] = 0;
+							$toffline[$count-1] = 0;
 						}
 					}
-					$retarr['values']['toffline'][$count] = (int) $val['ast.connections.trunks_offline'];
-					$retarr['tooltips']['toffline'][$count] = $val['ast.connections.trunks_offline']." trunks offline";
+					$toffline[$count] = (int) $val['ast.connections.trunks_offline'];
 				} else {
 					// We only want to render a line to zero immediately after it was not zero, so the line
 					// goes back down the bottom of the graph before vanishing.
 					if ($trunkoffline) {
-						$retarr['values']['toffline'][$count] = 0;
+						$toffline[$count] = 0;
 						$trunkoffline = false;
 					} else {
 						// $retarr['values']['toffline'][$count] = null;
 					}
 				}
-				$retarr['values']['channels'][$count] = (int) $val['ast.chan_totals.total_calls'];
-				$retarr['tooltips']['channels'][$count] = $val['ast.chan_totals.total_calls']." active calls";
+				$channels[$count] = (int) $val['ast.chan_totals.total_calls'];
 			}
-			$count++;
+			$retarr['data']['labels'][$count++] = "";
 	   	}
+		$retarr['data']['datasets'][0]['data'] = $channels;
+		$retarr['data']['datasets'][0]['timestamps'] = $timestamps;
+
+		$retarr['data']['datasets'][1]['data'] = $uonline;
+		$retarr['data']['datasets'][2]['data'] = $uoffline;
+		$retarr['data']['datasets'][3]['data'] = $tonline;
+		$retarr['data']['datasets'][4]['data'] = $toffline;
+
 		return $retarr;
 	}
 }

@@ -282,14 +282,6 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		return $o->getHTML();
 	}
 
-	private function getAjaxAsteriskStat() {
-		if (!class_exists('Statistics')) {
-			include 'classes/Statistics.class.php';
-		}
-		$s = new Statistics();
-		return $s->getHTML();
-	}
-
 	private function getAjaxSysStat() {
 		if (!class_exists('SysStat')) {
 			include 'classes/SysStat.class.php';
