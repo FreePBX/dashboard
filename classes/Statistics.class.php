@@ -6,6 +6,8 @@
 
 class Statistics {
 
+	public $width = 445;
+
 	public function getStats() {
 		if (!isset($_REQUEST['target']) || !isset($_REQUEST['period'])) {
 			return _('Invalid Selection');
@@ -99,71 +101,67 @@ class Statistics {
 
 	public function getGraphDataCPU($period) {
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
-
-		$tooltips = array();
-		$loadfive = array();
-		$loadten = array();
-		$loadfifteen = array();
+		$retarr = array(
+			"width" => $this->width,
+			"toolTip" => array("shared" => true),
+			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
+			"axisY" => array("interval" => 10),
+			"legend" => array("verticalAlign" => "top"),
+			"data" => array(
+				0 => array(
+					"xValueType" => "dateTime",
+					"name" => "5 Min Average",
+					"type" => "line",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+				),
+				1 => array(
+					"xValueType" => "dateTime",
+					"name" => "10 Min Average",
+					"type" => "line",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+				),
+				2 => array(
+					"xValueType" => "dateTime",
+					"name" => "15 Min Average",
+					"type" => "line",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+				),
+				3 => array(
+					"xValueType" => "dateTime",
+					"name" => "CPU Temperature",
+					"type" => "column",
+					"showInLegend" => false,
+					"dataPoints" => array(),
+				),
+			),
+		);
 
 		$foundtemps = false;
 		$cputemp = array();
 
-		foreach ($si as $key => $row) {
+		$count=0;
+		foreach ($si as $utime => $row) {
+			$key = $utime * 1000;
 			if (!isset($row['psi.Vitals.@attributes.LoadAvg.five'])) {
-				$lfive = 0;
-				$lten = 0;
-				$lfifteen = 0;
+				$retarr['data'][0]['dataPoints'][$count] = array( "x" => $key, "y" => null);
+				$retarr['data'][1]['dataPoints'][$count] = array( "x" => $key, "y" => null);
+				$retarr['data'][2]['dataPoints'][$count] = array( "x" => $key, "y" => null);
+				$retarr['data'][3]['dataPoints'][$count] = array( "x" => $key, "y" => null);
 			} else {
-				$lfive = $row['psi.Vitals.@attributes.LoadAvg.five'];
-				$lten = $row['psi.Vitals.@attributes.LoadAvg.ten'];
-				$lfifteen = $row['psi.Vitals.@attributes.LoadAvg.fifteen'];
+				$retarr['data'][0]['dataPoints'][$count] = array( "x" => $key, "y" => $row['psi.Vitals.@attributes.LoadAvg.five']);
+				$retarr['data'][1]['dataPoints'][$count] = array( "x" => $key, "y" => $row['psi.Vitals.@attributes.LoadAvg.ten']);
+				$retarr['data'][2]['dataPoints'][$count] = array( "x" => $key, "y" => $row['psi.Vitals.@attributes.LoadAvg.fifteen']);
 			}
 
 			if (isset($row['psi.Hardware.CPU.CpuCore.0.@attributes.CpuTemp'])) {
-				$temp = $row['psi.Hardware.CPU.CpuCore.0.@attributes.CpuTemp'];
-				$foundtemps = true;
-			} else {
-				$temp = false;
+				$retarr['data'][3]['dataPoints'][$count] = array( "x" => $key, "y" => $row['psi.Hardware.CPU.CpuCore.0.@attributes.CpuTemp']);
+				$retarr['data'][3]['showInLegend'] = true;
 			}
-
-			$ttip = date('c', $key)."<br>";
-			$ttip .= "$lfive<br>$lten<br>$lfifteen";
-			if ($temp) {
-				$cputemp[] = $temp;
-				$ttip .= "<br>"._('Temp').": $temp";
-			} else {
-				$cputemp[] = 0;
-			}
-
-			$tooltips[] = $ttip;
-
-			$loadfive[] = $lfive;
-			$loadten[] = $lten;
-			$loadfifteen[] = $lfifteen;
+			$count++;	
 		}
-
-		$retarr['template'] = 'aststat';
-		$retarr['tooltips'] = $tooltips;
-		if (!$foundtemps) {
-			$retarr['values'] = array( $loadfive, $loadten, $loadfifteen );
-			$retarr['legend'] = array( sprintf(_('%s Min Avg'),1), sprintf(_('%s Min Avg'),5), sprintf(_('%s Min Avg'),15));
-		} else {
-			$retarr['values'] = array( $loadfive, $loadten, $loadfifteen, $cputemp );
-			$retarr['legend'] = array( sprintf(_('%s Min Avg'),1), sprintf(_('%s Min Avg'),5), sprintf(_('%s Min Avg'),15), _('CPU Temp'));
-		}
-		$retarr['series'] = array(
-			array( "color" => "blue", "axis" => "l" ),
-			array( "color" => "green", "axis" => "l" ),
-			array( "color" => "red", "axis" => "l" ),
-			array( "color" => "orange", "axis" => "r" ),
-		);
-		$retarr['axis'] = array(
-			"l" => array("title" => _("Load"), "titleDistance" => 8, "labels" => true ),
-			"r" => array("title" => _("Temp"), "titleDistance" => 8, "labels" => true ),
-		);
-
- 		$retarr['margins'] = array (25, 35, 10, 35);
-
 		return $retarr;
 	}
 
@@ -388,31 +386,66 @@ class Statistics {
 	public function getGraphDataMem($period) {
 		// Grab our memory info...
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
-		$retarr['template'] = 'memchart';
+		$retarr = array(
+			"width" => $this->width,
+			"toolTip" => array("shared" => true),
+			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
+			"axisY" => array("interval" => 10),
+			"legend" => array("verticalAlign" => "top"),
+			"data" => array(
+				0 => array(
+					"xValueType" => "dateTime",
+					"name" => "% In Use",
+					"type" => "stackedColumn100",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+				),
+				1 => array(
+					"xValueType" => "dateTime",
+					"name" => "% Buffers",
+					"type" => "stackedColumn100",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+				),
+				2 => array(
+					"xValueType" => "dateTime",
+					"name" => "% Cache",
+					"type" => "stackedColumn100",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+				),
+				3 => array(
+					"xValueType" => "dateTime",
+					"name" => "% Unused",
+					"type" => "stackedColumn100",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+				),
+				4 => array(
+					"xValueType" => "dateTime",
+					"name" => "% Swap Utilized",
+					"type" => "line",
+					"color" => "red",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+				),
+			),
+		);
 		$count = 0;
-		foreach ($si as $key => $val) {
+		foreach ($si as $utime => $val) {
+			$key = $utime * 1000;
 			if (!isset($val['psi.Memory.@attributes.Percent'])) {
-				$retarr['values']['memused'][$count] = null;
-				$retarr['values']['buffers'][$count] = null;
-				$retarr['values']['cached'][$count]  = null;
-				$retarr['values']['memfree'][$count] = null;
-				$retarr['values']['swappct'][$count] = null;
-				$retarr['tooltips']['memused'][$count] = null;
-				$retarr['tooltips']['buffers'][$count] = null;
-				$retarr['tooltips']['cached'][$count]  = null;
-				$retarr['tooltips']['memfree'][$count] = null;
-				$retarr['tooltips']['swappct'][$count] = null;
+				$retarr['data'][0]['dataPoints'][$count] = array( "x" => $key, "y" => null);
+				$retarr['data'][1]['dataPoints'][$count] = array( "x" => $key, "y" => null);
+				$retarr['data'][2]['dataPoints'][$count] = array( "x" => $key, "y" => null);
+				$retarr['data'][3]['dataPoints'][$count] = array( "x" => $key, "y" => null);
+				$retarr['data'][4]['dataPoints'][$count] = array( "x" => $key, "y" => null);
 			} else {
-				$retarr['values']['memused'][$count] = (int) $val['psi.Memory.Details.@attributes.AppPercent'];
-				$retarr['values']['buffers'][$count] = (int) $val['psi.Memory.Details.@attributes.BuffersPercent'];
-				$retarr['values']['cached'][$count]  = (int) $val['psi.Memory.Details.@attributes.CachedPercent'];
-				$retarr['values']['memfree'][$count] = 100 - $val['psi.Memory.@attributes.Percent'];
-				$retarr['values']['swappct'][$count] = (int) $val['psi.Memory.Swap.@attributes.Percent'];
-				$retarr['tooltips']['memused'][$count] = "Used: ".$val['psi.Memory.Details.@attributes.AppPercent']."%";
-				$retarr['tooltips']['buffers'][$count] = "Buffers: ".$val['psi.Memory.Details.@attributes.BuffersPercent']."%";
-				$retarr['tooltips']['cached'][$count]  = "Cached: ".$val['psi.Memory.Details.@attributes.CachedPercent']."%";
-				$retarr['tooltips']['memfree'][$count] = "Free: ".(100 - $val['psi.Memory.@attributes.Percent'])."%";
-				$retarr['tooltips']['swappct'][$count] = "Swap: ".$val['psi.Memory.Swap.@attributes.Percent']."%";
+				$retarr['data'][0]['dataPoints'][$count] = array( "x" => $key, "y" => (int) $val['psi.Memory.Details.@attributes.AppPercent']);
+				$retarr['data'][1]['dataPoints'][$count] = array( "x" => $key, "y" => (int) $val['psi.Memory.Details.@attributes.BuffersPercent']);
+				$retarr['data'][2]['dataPoints'][$count] = array( "x" => $key, "y" => (int) $val['psi.Memory.Details.@attributes.CachedPercent']);
+				$retarr['data'][3]['dataPoints'][$count] = array( "x" => $key, "y" => (int) 100 - $val['psi.Memory.@attributes.Percent']);
+				$retarr['data'][4]['dataPoints'][$count] = array( "x" => $key, "y" => (int) $val['psi.Memory.Swap.@attributes.Percent']);
 			}
 			$count++;
 		}
@@ -422,7 +455,7 @@ class Statistics {
 	public function getGraphDataAst($period) {
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
 		$retarr = array(
-			"width" => 445,
+			"width" => $this->width,
 			"toolTip" => array("shared" => true),
 			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
 			"axisY" => array("interval" => 10),
