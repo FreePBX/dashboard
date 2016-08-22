@@ -420,79 +420,54 @@ class Statistics {
 	}
 
 	public function getGraphDataAst($period) {
-		// Grab our info...
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
 		$retarr = array(
-			"type" => "bar",
-			"options" => array("legend" => array("labels" => array("boxWidth" => 10)),
-				"scales" => array(
-					"xAxes" => array(array(
-						"barPercentage" => 1,
-						"categoryPercentage" => 1,
-						"barThickness" => 5,
-						"borderWidth" => 0,
-						"id" => "ciu-axis",
-						"stacked" => true,
-					)),
-				)
-			),
+			"width" => 445,
+			"toolTip" => array("shared" => true),
+			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
+			"axisY" => array("interval" => 10),
 			"data" => array(
-				"labels" => array(),
-				"datasets" => array(
-					0 => array(
-						"type" => "bar",
-						"label" => "Channels In Use",
-						"fill" => true,
-						"backgroundColor" => "orange",
-						"borderColor" => "orange",
-						"borderWidth" => 0,
-						"xAxisID" => "ciu-axis",
-					),
-					1 => array(
-						"label" => "Users Online",
-						"type" => "line",
-						"lineTension" => 0.1,
-						"borderColor" => "green",
-						"backgroundColor" => "green",
-						"pointRadius" => 0,
-						"pointHoverRadius" => 5,
-						"pointHitRadius" => 5,
-						"fill" => false,
-					),
-					2 => array(
-						"label" => "Users Offline",
-						"type" => "line",
-						"lineTension" => 0.1,
-						"borderColor" => "red",
-						"backgroundColor" => "red",
-						"pointRadius" => 0,
-						"pointHoverRadius" => 5,
-						"pointHitRadius" => 5,
-						"fill" => false,
-					),
-					3 => array(
-						"label" => "Trunks Online",
-						"type" => "line",
-						"lineTension" => 0.1,
-						"borderColor" => "blue",
-						"backgroundColor" => "blue",
-						"pointRadius" => 0,
-						"pointHoverRadius" => 5,
-						"pointHitRadius" => 5,
-						"fill" => false,
-					),
-					4 => array(
-						"label" => "Trunks Offline",
-						"type" => "line",
-						"lineTension" => 0.1,
-						"borderColor" => "yellow",
-						"backgroundColor" => "yellow",
-						"pointRadius" => 0,
-						"pointHoverRadius" => 5,
-						"pointHitRadius" => 5,
-						"fill" => false,
-					),
-				)
+				0 => array(
+					"xValueType" => "dateTime",
+					"name" => "Users Online",
+					"type" => "line",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+					"markerSize" => 1,
+				),
+				1 => array(
+					"xValueType" => "dateTime",
+					"name" => "Users Offline",
+					"type" => "line",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+					"markerSize" => 1,
+				),
+				2 => array(
+					"xValueType" => "dateTime",
+					"name" => "Trunks Online",
+					"type" => "line",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+					"markerSize" => 1,
+				),
+				3 => array(
+					"xValueType" => "dateTime",
+					"name" => "Trunks Offline",
+					"type" => "line",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+					"markerSize" => 1,
+				),
+				4 => array(
+					"xValueType" => "dateTime",
+					"legendText" => "Channels In Use",
+					"name" => "In Use",
+					"type" => "column",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+					"markerSize" => 1,
+				),
 			)
 		);
 		$count = 0;
@@ -503,18 +478,19 @@ class Statistics {
 		$toffline = array();
 		$channels = array();
 		$timestamps = array();
-		foreach ($si as $key => $val) {
+		foreach ($si as $utime => $val) {
+			$key = $utime * 1000;
 			$timestamps[$count] = $key;
 			if (!isset($val['ast.connections.users_online'])) {
-				$uonline[$count] = null;
-				$uoffline[$count] = null;
-				$tonline[$count] = null;
-				$toffline[$count] = null;
-				$channels[$count] = null;
+				$uonline[$count] = array( "x" => $key, "y" => null);
+				$uoffline[$count] = array( "x" => $key, "y" => null);
+				$tonline[$count] = array( "x" => $key, "y" => null);
+				$toffline[$count] = array( "x" => $key, "y" => null);
+				$channels[$count] = array( "x" => $key, "y" => null);
 			} else {
-				$uonline[$count] = (int) $val['ast.connections.users_online'];
-				$uoffline[$count] = (int) $val['ast.connections.users_offline'];
-				$tonline[$count] = (int) $val['ast.connections.trunks_online'];
+				$uonline[$count] = array( "x" => $key, "y" => (int) $val['ast.connections.users_online']);
+				$uoffline[$count] = array( "x" => $key, "y" => (int) $val['ast.connections.users_offline']);
+				$tonline[$count] = array( "x" => $key, "y" => (int) $val['ast.connections.trunks_online']);
 				if ($val['ast.connections.trunks_offline'] != 0) {
 					if (!$trunkoffline) {
 						$trunkoffline = true;
@@ -522,7 +498,7 @@ class Statistics {
 							$toffline[$count-1] = 0;
 						}
 					}
-					$toffline[$count] = (int) $val['ast.connections.trunks_offline'];
+					$toffline[$count] = array( "x" => $key, "y" => (int) $val['ast.connections.trunks_offline']);
 				} else {
 					// We only want to render a line to zero immediately after it was not zero, so the line
 					// goes back down the bottom of the graph before vanishing.
@@ -533,18 +509,15 @@ class Statistics {
 						// $retarr['values']['toffline'][$count] = null;
 					}
 				}
-				$channels[$count] = (int) $val['ast.chan_totals.total_calls'];
+				$channels[$count] = array( "x" => $key, "y" => (int) $val['ast.chan_totals.total_calls']);
 			}
-			$retarr['data']['labels'][$count++] = "";
+			$count++;
 	   	}
-		$retarr['data']['datasets'][0]['data'] = $channels;
-		$retarr['data']['datasets'][0]['timestamps'] = $timestamps;
-
-		$retarr['data']['datasets'][1]['data'] = $uonline;
-		$retarr['data']['datasets'][2]['data'] = $uoffline;
-		$retarr['data']['datasets'][3]['data'] = $tonline;
-		$retarr['data']['datasets'][4]['data'] = $toffline;
-
+		$retarr['data'][0]['dataPoints'] = $uonline;
+		$retarr['data'][1]['dataPoints'] = $uoffline;
+		$retarr['data'][2]['dataPoints'] = $tonline;
+		$retarr['data'][3]['dataPoints'] = $toffline;
+		$retarr['data'][4]['dataPoints'] = $channels;
 		return $retarr;
 	}
 }

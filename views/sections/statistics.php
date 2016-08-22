@@ -84,7 +84,6 @@
 		</style>
 	</div>
 	<div id="builtin_aststat" class="col-sm-10" style="height: 200px">
-		<canvas id="dashboardchart"></canvas>
 	</div>
 </div>
 <script type="text/javascript">
@@ -112,18 +111,15 @@ function generateTitle(i, d) {
 	window.currentchart = false;
 
 	window.observers['builtin_aststat'] = function() {
-		if (typeof window.currentchart !== "boolean") {
-			window.currentchart.destroy();
-		}
 		// console.log('Running', Dashboard.sysstatAjax);
 		$.ajax({
 			url: window.ajaxurl,
 			data: Dashboard.sysstatAjax,
 			success: function(data) {
 				$('#page_Main_Statistics_uptime .shadow').fadeOut('fast');
-				data.options.tooltips = { callbacks: { title: function(x,y) { return generateTitle(x, y); } }}; 
 				console.log("Data", data);
-				window.currentchart = new Chart($("#dashboardchart"), data);
+				window.currentchart = new CanvasJS.Chart("builtin_aststat", data);
+				window.currentchart.render();
 			},
 		});
 	};
