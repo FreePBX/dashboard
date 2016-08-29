@@ -105,7 +105,7 @@ class Statistics {
 			"width" => $this->width,
 			"toolTip" => array("shared" => true),
 			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
-			"legend" => array("verticalAlign" => "top"),
+			"legend" => array("verticalAlign" => "bottom", "horizontalAlign" => "left"),
 			"data" => array(
 				0 => array(
 					"xValueType" => "dateTime",
@@ -166,6 +166,14 @@ class Statistics {
 
 	public function getGraphDataDisk($period) {
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
+		$retarr = array(
+			"width" => $this->width,
+			"toolTip" => array("shared" => true),
+			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
+			"axisY" => array("interval" => 25, "maximum" => 100, "valueFormatString" => "#'%'"),
+			"legend" => array("verticalAlign" => "bottom", "horizontalAlign" => "left"),
+			"data" => array(),
+		);
 
 		// Discover my disk names and mountpoints.
 		$lastsi = FreePBX::create()->Dashboard->getSysInfo();
@@ -177,206 +185,142 @@ class Statistics {
 			}
 		}
 
-		// These are the vars we want to keep.
-		$vars = array('Name', 'Free', 'Used', 'Total', 'Percent');
+		// Get the identity and type of all the current disks
+		$vars = array('Name', 'MountPoint');
+		// This is our graph index
+		$index = 0;
 		foreach (array_keys($disks) as $d) {
 			foreach ($vars as $v) {
 				$disks[$d][$v] = $lastsi['psi.FileSystem.Mount.'.$d.'.@attributes.'.$v];
 			}
+
 			// We don't care about tmpfs's
 			if ($disks[$d]['Name'] == "tmpfs") {
 				unset($disks[$d]);
 				continue;
 			}
-			$retarr['legend'][$d] =  $lastsi['psi.FileSystem.Mount.'.$d.'.@attributes.MountPoint'];
+
+			// Set our graph index for this disk
+			$disks[$d]['index'] = $index++;
+		}
+
+		// Build the retarr
+		foreach ($disks as $id => $val) {
+			$retarr['data'][$val['index']] = array(
+				"xValueType" => "dateTime",
+				"name" => $val['MountPoint'].' ('.$val['Name'].')',
+				"type" => "line",
+				"showInLegend" => true,
+				"dataPoints" => array(),
+				"markerSize" => 1,
+			);
 		}
 
 		// Now, generate the graph!
-		$tooltips = array();
-		foreach ($si as $key => $row) {
-			$ttip = "";
-			foreach (array_keys($disks) as $d) {
-				$var = "psi.FileSystem.Mount.$d.@attributes.Percent";
-				if (isset($row[$var])) {
-					$retarr['values'][$d][] = $row[$var];
-					$ttip .=  $disks[$d]['Name']."<br>&nbsp;&nbsp;".$row[$var]."% used<br>";
-				} else {
-					$retarr['values'][$d][] = 0;
-					$ttip .=  $disks[$d]['Name']."<br>&nbsp;&nbsp;No Information<br>";
-				}
+		$count = 0;
+		foreach ($si as $utime => $row) {
+			$key = $utime * 1000;
+			// Loop through our known disks and get the percentage used
+			foreach ($disks as $diskid => $val) {
+				$keyval = "psi.FileSystem.Mount.$diskid.@attributes.Percent";
+				$retarr['data'][$val['index']]['dataPoints'][$count] = array( "x" => $key, "y" => (int) $row[$keyval]);
 			}
-			$tooltips[] = $ttip;
+			$count++;
 		}
-
-		$retarr['template'] = 'aststat';
-		$retarr['tooltips'] = $tooltips;
-		// 12 colours. That should be enough for almost everyone.
-		// Also, 640k is plenty, and there are going to be no more
-		// than 7 computers world wide, ever.
-		$retarr['series'] = array(
-			array( "color" => "blue", "axis" => "r" ),
-			array( "color" => "green", "axis" => "r" ), // Note - 1 is often tmpfs, which is stripped out above.
-			array( "color" => "cyan", "axis" => "r" ),
-			array( "color" => "orange", "axis" => "r" ),
-			array( "color" => "fuchsia", "axis" => "r" ),
-			array( "color" => "lime", "axis" => "r" ),
-			array( "color" => "purple", "axis" => "r" ),
-			array( "color" => "royalblue", "axis" => "r" ),
-			array( "color" => "teal", "axis" => "r" ),
-			array( "color" => "violet", "axis" => "r" ),
-			array( "color" => "yellow", "axis" => "r" ),
-			array( "color" => "seagreen", "axis" => "r" ),
-		);
-		$retarr['axis'] = array(
-			"r" => array("labels" => true, 'max' => 99, 'suffix' => '%' ),
-		);
- 		$retarr['margins'] = array (25, 35, 10, 5);
 		return $retarr;
 	}
 
 	public function getGraphDataNet($period) {
 
-		// Colours for the network lines.
-		$colours = array (
-			// tx (top), rx (bottom).
-			array("90-#00AA00-#99FF99", "90-#006600-#00AA00", "#00AA00"),
-			array("90-#00AA00-#99FF99", "90-#006600-#00AA00", "#00AA00"),
-			array("90-#0000AA-#9999FF", "90-#000066-#0000AA", "#0000AA"),
-			array("90-#669900-#CCDD99", "90-#336600-#339900", "#669900"),
-			array("90-#663333-#FFCCCC", "90-#FFCCCC-#663333", "#00AA00"),
-			array("90-#339933-#CCDD99", "90-#CCCD99-#339933", "#669900"),
-			array("90-#66C000-#66FF00", "90-#66C000-#66C000", "#0000AA"),
-			array("90-#00AA00-#99FF99", "90-#006600-#00AA00", "#00AA00"),
-			array("90-#0000AA-#9999FF", "90-#000066-#0000AA", "#0000AA"),
-			array("90-#669900-#CCDD99", "90-#336600-#339900", "#669900"),
-			array("90-#663333-#FFCCCC", "90-#FFCCCC-#663333", "#00AA00"),
-			array("90-#339933-#CCDD99", "90-#CCCD99-#339933", "#669900"),
-			array("90-#66C000-#66FF00", "90-#66C000-#66C000", "#0000AA"),
-			array("90-#00AA00-#99FF99", "90-#006600-#00AA00", "#00AA00"),
-			array("90-#0000AA-#9999FF", "90-#000066-#0000AA", "#0000AA"),
-			array("90-#669900-#CCDD99", "90-#336600-#339900", "#669900"),
-			array("90-#663333-#FFCCCC", "90-#FFCCCC-#663333", "#00AA00"),
-			array("90-#339933-#CCDD99", "90-#CCCD99-#339933", "#669900"),
-			array("90-#66C000-#66FF00", "90-#66C000-#66C000", "#0000AA"),
-		);
-
-		// We want one extra to act as a starting point.
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
 
-		// Network interfaces!
-		$firstsi = isset($si[0])?$si[0]:array();
-		$lastsi = FreePBX::create()->Dashboard->getSysInfo();
-
-		$interfaces = array();
-		foreach ($lastsi as $key => $val) {
-			if (strpos($key, "psi.Network.NetDevice.") === 0) {
-				$tmparr = explode('.', $key);
-				$interfaces[$tmparr[3]] = array();
-			}
-		}
-
-		foreach (array_keys($interfaces) as $key) {
-			$interfaces[$key]['name'] = $lastsi["psi.Network.NetDevice.$key.@attributes.Name"];
-			if ($interfaces[$key]['name'] == "lo") {
-				unset($interfaces[$key]);
-				continue;
-			}
-			// Do we know about this interface now? It may be historical.
-			if (!isset($lastsi["psi.Network.NetDevice.$key.@attributes.Info"])) {
-				// No details about this interface, so we have to guess.
-				$interfaces[$key]['ipaddr'] = "Unknown-$key";
-			} else {
-				// Figure out the address of the interface.  This can be either
-				// ipv4;ipv6 or mac;ipv4.
-				$tmparr = explode(';', $lastsi["psi.Network.NetDevice.$key.@attributes.Info"]);
-				//If no IP address this only returns a mac, no second field. We should not assume anything will be here
-				$tmparr[0] = isset($tmparr[0])?$tmparr[0]:'';
-				$tmparr[1] = isset($tmparr[1])?$tmparr[1]:'';
-				if (filter_var($tmparr[0], FILTER_VALIDATE_IP)) {
-					$interfaces[$key]['ipaddr'] = $tmparr[0];
-				} elseif (filter_var($tmparr[1], FILTER_VALIDATE_IP)) {
-					$interfaces[$key]['ipaddr'] = $tmparr[1];
-				} else {
-					$interfaces[$key]['ipaddr'] = "0.0.0.0";
-				}
-			}
-			$txb = isset($firstsi["psi.Network.NetDevice.$key.@attributes.TxBytes"])?(int)$firstsi["psi.Network.NetDevice.$key.@attributes.TxBytes"]:0;
-			$rxb = isset($firstsi["psi.Network.NetDevice.$key.@attributes.RxBytes"])?(int)$firstsi["psi.Network.NetDevice.$key.@attributes.RxBytes"]:0;
-			$interfaces[$key]['previous'] = array(
-				"tx" => $txb,
-				"rx" => $rxb,
-			);
-			$retarr['series']["tx$key"] = array( "type" => "bar", "axis" => "r", "stacked" => "rx$key", "color" => $colours[$key][0],
-			   	"tooltip" => array( "frameProps" => array("stroke" => $colours[$key][2])));
-			$retarr['series']["rx$key"] = array( "type" => "bar", "axis" => "r", "stacked" => "tx$key", "color" => $colours[$key][1],
-				"tooltip" => array( "frameProps" => array("stroke" => $colours[$key][2])));
-
-			// Legends.
-			$retarr['legend']["tx$key"] = $interfaces[$key]['ipaddr'];
-		}
-
-		$allints = array_keys($interfaces);
-
-		// Graph.
-		$tooltips = array();
-
-		// Remove interfaces that have no traffic.
-		$notnull = array();
-
-		foreach ($si as $key => $row) {
-			$ttip = "";
-			foreach ($allints as $i) {
-				// Difference from the previous view..
-				// If we don't HAVE a previous, then just return null, because we can't
-				// figure it out.
-				if (!$interfaces[$i]['previous']['tx'] || !isset($row["psi.Network.NetDevice.$i.@attributes.TxBytes"])) {
-					$tx = null;
-				} else {
-					$tx = (int) $row["psi.Network.NetDevice.$i.@attributes.TxBytes"] - $interfaces[$i]['previous']['tx'] ;
-					// Is it a negative? The counter has wrapped. On a 32 bit machine, this is at 2gb, so.. not much.
-					if ($tx < 0) {
-						$tx += PHP_INT_MAX;
-					}
-				}
-				if (!$interfaces[$i]['previous']['rx'] || !isset( $row["psi.Network.NetDevice.$i.@attributes.RxBytes"])) {
-					$rx = null;
-				} else {
-					$rx = (int) $row["psi.Network.NetDevice.$i.@attributes.RxBytes"] - $interfaces[$i]['previous']['rx'] ;
-					if ($tx < 0) {
-						$tx += PHP_INT_MAX;
-					}
-				}
-				$interfaces[$i]['previous']['tx'] = (int) $row["psi.Network.NetDevice.$i.@attributes.TxBytes"];
-				$interfaces[$i]['previous']['rx'] = (int) $row["psi.Network.NetDevice.$i.@attributes.RxBytes"];
-				if ($tx || $rx) {
-					$notnull[$i] = true;
-				}
-				$tx = $tx / 1024 / 1024;
-				$rx = $rx / 1024 / 1024;
-				$retarr['values']["rx$i"][] = $rx;
-				$retarr['values']["tx$i"][] = $tx;
-				$retarr['tooltips']["rx$i"][] = $interfaces[$i]['name'].":\n<br>".round($rx, 2)." MB Rx";
-				$retarr['tooltips']["tx$i"][] = $interfaces[$i]['name'].":\n<br>".round($tx, 2)." MB Tx";
-			}
-		}
- 		$retarr['margins'] = array (25, 45, 10, 0);
-		$retarr['barmargins'] = 10;
-		$retarr['features'] = array(
-			"grid" => array( "draw" => true, "forceBorder" => true, "ny" =>  5 ),
-			"legend" => array( "horizontal" => true, "width" => "auto", "x" => 10, "y" => 0,
-			"borderProps" => array('fill-opacity' => 0.3, 'stroke-width' => 0 )
-			),
+		$retarr = array(
+			"width" => $this->width,
+			"toolTip" => array("shared" => true),
+			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
+			"legend" => array("verticalAlign" => "bottom", "horizontalAlign" => "left"),
+			"dataPointMinWidth" => 5,
+			"data" => array(),
 		);
-		$retarr['type'] = "line";
- 		$retarr['autoresize'] = true;
-		$retarr['axis']['r'] = array("labels" => true, "suffix" => "MB");
 
-		// Now, remove any interfaces that have had no traffic.
-		foreach ($allints as $i) {
-			if (!isset($notnull[$i])) {
-				unset($retarr["values"]["rx$i"]);
-				unset($retarr["values"]["tx$i"]);
-				unset($retarr["legend"]["tx$i"]);
+		// This is a temporary holding array that's rebuilt before being handed to the
+		// graphing software. This is done because the device ID may change from run to
+		// run, so we can't trust it.
+		$interfaces = array();
+		$bytes = array();
+		foreach ($si as $utime => $tmparr) {
+			$key = $utime * 1000;
+			// Loop through tmparr finding all our network related bits
+			foreach ($tmparr as $k => $v) {
+				if (preg_match("/psi.Network.NetDevice.(\d+).@attributes.([TR]xBytes)/", $k, $out)) {
+					// Save our bytecount for mangling.
+					$netid = $out[1];
+					$txrx = $out[2];
+					$bytes[$key][$netid][$txrx] = $v;
+				} elseif (preg_match("/psi.Network.NetDevice.(\d+).@attributes.(\w+)/", $k, $out)) {
+					// Otherwise if it's anything else, keep it.
+					$netid = $out[1];
+					$section = $out[2];
+					$interfaces[$key][$netid][$section] = $v;
+				}
+			}
+		}
+
+		// Now we need to re-run through that array and use the *name* as the authoritative
+		// source, not the id that was discovered in the previous step
+		$data = array();
+		foreach ($interfaces as $key => $tmparr) {
+			// tmparr contains any number of interfaces.
+			foreach ($tmparr as $netid => $int) {
+				if ($int['Name'] == 'lo') {
+					// We never care about lo
+					continue;
+				}
+				// It's a real interface. Woo.
+				$data[$int['Name']][$key] = isset($bytes[$key][$netid])?$bytes[$key][$netid]:array("TxBytes" => 0, "RxBytes" => 0);
+			}
+		}
+
+		// Now loop through our data array (sigh, at least it's n*3 not n^3) and generate
+		// the actual data to send to the graph.
+		$count = 0;
+		foreach ($data as $name => $tmparr) {
+			$txid = $count++;
+			$rxid = $count++;
+			$retarr['data'][$txid] = array(
+				"xValueType" => "dateTime",
+				"name" => "$name TX MB",
+				"type" => "line",
+				"showInLegend" => true,
+				"dataPoints" => array(),
+				"markerSize" => 1,
+			);
+			$retarr['data'][$rxid] = array(
+				"xValueType" => "dateTime",
+				"name" => "$name RX MB",
+				"type" => "line",
+				"showInLegend" => true,
+				"dataPoints" => array(),
+				"markerSize" => 1,
+			);
+			// Take the first value as the starting point
+			$lastval = false;
+			foreach ($tmparr as $time => $bytearr) {
+				if ($lastval === false) {
+					$lastval = $bytearr;
+				}
+				// Now add the bytes to the dataPoints array
+				$txdiff = $bytearr['TxBytes'] - $lastval['TxBytes'];
+				while ($txdiff < 0) {
+					$txdiff += pow(2, 31);
+				}
+				$retarr['data'][$txid]['dataPoints'][] = array("x" => $time, "y" => round($txdiff / 1024 / 1024, 2));
+				$rxdiff = $bytearr['RxBytes'] - $lastval['RxBytes'];
+				while($rxdiff < 0) {
+					$rxdiff += pow(2, 31);
+				}
+				$retarr['data'][$rxid]['dataPoints'][] = array("x" => $time, "y" => round($rxdiff / 1024 / 1024, 2));
+				$lastval = $bytearr;
 			}
 		}
 		return $retarr;
@@ -390,7 +334,8 @@ class Statistics {
 			"toolTip" => array("shared" => true),
 			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
 			"axisY" => array("interval" => 10),
-			"legend" => array("verticalAlign" => "top"),
+			"legend" => array("verticalAlign" => "bottom", "horizontalAlign" => "left"),
+			"dataPointMinWidth" => 5,
 			"data" => array(
 				0 => array(
 					"xValueType" => "dateTime",
@@ -458,6 +403,7 @@ class Statistics {
 			"toolTip" => array("shared" => true),
 			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
 			"axisY" => array("interval" => 10),
+			"legend" => array("verticalAlign" => "bottom", "horizontalAlign" => "left"),
 			"data" => array(
 				0 => array(
 					"xValueType" => "dateTime",
