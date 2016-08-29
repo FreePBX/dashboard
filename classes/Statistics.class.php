@@ -105,7 +105,6 @@ class Statistics {
 			"width" => $this->width,
 			"toolTip" => array("shared" => true),
 			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
-			"axisY" => array("interval" => 10),
 			"legend" => array("verticalAlign" => "top"),
 			"data" => array(
 				0 => array(
@@ -151,9 +150,9 @@ class Statistics {
 				$retarr['data'][2]['dataPoints'][$count] = array( "x" => $key, "y" => null);
 				$retarr['data'][3]['dataPoints'][$count] = array( "x" => $key, "y" => null);
 			} else {
-				$retarr['data'][0]['dataPoints'][$count] = array( "x" => $key, "y" => $row['psi.Vitals.@attributes.LoadAvg.five']);
-				$retarr['data'][1]['dataPoints'][$count] = array( "x" => $key, "y" => $row['psi.Vitals.@attributes.LoadAvg.ten']);
-				$retarr['data'][2]['dataPoints'][$count] = array( "x" => $key, "y" => $row['psi.Vitals.@attributes.LoadAvg.fifteen']);
+				$retarr['data'][0]['dataPoints'][$count] = array( "x" => $key, "y" => round($row['psi.Vitals.@attributes.LoadAvg.five'], 2));
+				$retarr['data'][1]['dataPoints'][$count] = array( "x" => $key, "y" => round($row['psi.Vitals.@attributes.LoadAvg.ten'], 2));
+				$retarr['data'][2]['dataPoints'][$count] = array( "x" => $key, "y" => round($row['psi.Vitals.@attributes.LoadAvg.fifteen'], 2));
 			}
 
 			if (isset($row['psi.Hardware.CPU.CpuCore.0.@attributes.CpuTemp'])) {
