@@ -1,5 +1,5 @@
 ﻿/**
-* @preserve CanvasJS HTML5 & JavaScript Charts - v1.8.5 GA - http://canvasjs.com/ 
+* @preserve CanvasJS HTML5 & JavaScript Charts - v1.9.0 Beta 1 - http://canvasjs.com/ 
 * Copyright 2013 fenopix
 */
 
@@ -159,6 +159,8 @@
 			interval: null, // Interval for tick marks and grid lines
 			intervalType: null, //number, millisecond, second, minute, hour, day, month, year
 			reversed: false,
+			logarithmic: false,
+			logarithmBase: 10,
 
 			title: null, // string
 			titleFontColor: "black",
@@ -179,7 +181,6 @@
 			labelWrap: true,
 			labelMaxWidth: null,//null for auto
 			labelFormatter: null,
-			//labelStep: 1,
 
 			prefix: "",
 			suffix: "",
@@ -2824,7 +2825,7 @@
 			if (dataSeries.axisPlacement === "normal" || dataSeries.axisPlacement === "xySwapped") {
 
 				var plotAreaXMin = this.sessionVariables.axisX.newViewportMinimum ? this.sessionVariables.axisX.newViewportMinimum : (this._options.axisX && this._options.axisX.viewportMinimum) ?
-					this._options.axisX.viewportMinimum : (this._options.axisX && this._options.axisX.minimum) ? this._options.axisX.minimum : -Infinity;
+					this._options.axisX.viewportMinimum : (this._options.axisX && this._options.axisX.minimum) ? this._options.axisX.minimum : plotUnit.axisX.logarithmic ? 0 : -Infinity;
 
 				var plotAreaXMax = this.sessionVariables.axisX.newViewportMaximum ? this.sessionVariables.axisX.newViewportMaximum : (this._options.axisX && this._options.axisX.viewportMaximum) ?
 					this._options.axisX.viewportMaximum : (this._options.axisX && this._options.axisX.maximum) ? this._options.axisX.maximum : Infinity;
@@ -2838,7 +2839,7 @@
 			for (i = 0; i < dataSeries.dataPoints.length; i++) {
 
 				if (typeof dataSeries.dataPoints[i].x === "undefined") {
-					dataSeries.dataPoints[i].x = i;
+					dataSeries.dataPoints[i].x = i + (plotUnit.axisX.logarithmic ? 1 : 0);
 				}
 
 				if (dataSeries.dataPoints[i].x.getTime) {
@@ -2864,19 +2865,39 @@
 
 
 				if (i > 0) {
-					var xDiff = dataPointX - dataSeries.dataPoints[i - 1].x;
-					xDiff < 0 && (xDiff = xDiff * -1); //If Condition shortcut
+					if (plotUnit.axisX.logarithmic) {
+						var xDiff = dataPointX / dataSeries.dataPoints[i - 1].x;
+						xDiff < 1 && (xDiff = 1 / xDiff); //If Condition shortcut
 
-					if (axisXDataInfo.minDiff > xDiff && xDiff !== 0) {
-						axisXDataInfo.minDiff = xDiff;
+						if (axisXDataInfo.minDiff > xDiff && xDiff !== 1) {
+							axisXDataInfo.minDiff = xDiff;
+						}
+					}
+					else {
+						var xDiff = dataPointX - dataSeries.dataPoints[i - 1].x;
+						xDiff < 0 && (xDiff = xDiff * -1); //If Condition shortcut
+
+						if (axisXDataInfo.minDiff > xDiff && xDiff !== 0) {
+							axisXDataInfo.minDiff = xDiff;
+						}
 					}
 
 					if (dataPointY !== null && dataSeries.dataPoints[i - 1].y !== null) {
-						var yDiff = dataPointY - dataSeries.dataPoints[i - 1].y;
-						yDiff < 0 && (yDiff = yDiff * -1); //If Condition shortcut
+						if (plotUnit.axisY.logarithmic) {
+							var yDiff = dataPointY / dataSeries.dataPoints[i - 1].y;
+							yDiff < 1 && (yDiff = 1 / yDiff); //If Condition shortcut
 
-						if (axisYDataInfo.minDiff > yDiff && yDiff !== 0) {
-							axisYDataInfo.minDiff = yDiff;
+							if (axisYDataInfo.minDiff > yDiff && yDiff !== 1) {
+								axisYDataInfo.minDiff = yDiff;
+							}
+						}
+						else {
+							var yDiff = dataPointY - dataSeries.dataPoints[i - 1].y;
+							yDiff < 0 && (yDiff = yDiff * -1); //If Condition shortcut
+
+							if (axisYDataInfo.minDiff > yDiff && yDiff !== 0) {
+								axisYDataInfo.minDiff = yDiff;
+							}
 						}
 					}
 				}
@@ -2970,7 +2991,7 @@
 
 				// Requird when no x values are provided 
 				if (typeof dataSeries.dataPoints[i].x === "undefined") {
-					dataSeries.dataPoints[i].x = i;
+					dataSeries.dataPoints[i].x = i + (plotUnit.axisX.logarithmic ? 1 : 0);
 				}
 
 				if (dataSeries.dataPoints[i].x.getTime) {
@@ -2996,20 +3017,41 @@
 					axisXDataInfo.max = dataPointX;
 
 				if (i > 0) {
-					var xDiff = dataPointX - dataSeries.dataPoints[i - 1].x;
-					xDiff < 0 && (xDiff = xDiff * -1); //If Condition shortcut
+					if (plotUnit.axisX.logarithmic) {
+						var xDiff = dataPointX / dataSeries.dataPoints[i - 1].x;
+						xDiff < 1 && (xDiff = 1 / xDiff); //If Condition shortcut
 
-					if (axisXDataInfo.minDiff > xDiff && xDiff !== 0) {
-						axisXDataInfo.minDiff = xDiff;
+						if (axisXDataInfo.minDiff > xDiff && xDiff !== 1) {
+							axisXDataInfo.minDiff = xDiff;
+						}
+					} else {
+						var xDiff = dataPointX - dataSeries.dataPoints[i - 1].x;
+						xDiff < 0 && (xDiff = xDiff * -1); //If Condition shortcut
+
+						if (axisXDataInfo.minDiff > xDiff && xDiff !== 0) {
+							axisXDataInfo.minDiff = xDiff;
+						}
 					}
 
 					if (dataPointY !== null && dataSeries.dataPoints[i - 1].y !== null) {
-						var yDiff = dataPointY - dataSeries.dataPoints[i - 1].y;
-						yDiff < 0 && (yDiff = yDiff * -1); //If Condition shortcut
+						if (plotUnit.axisY.logarithmic) {
+							if (dataPointY > 0) {
+								var yDiff = dataPointY / dataSeries.dataPoints[i - 1].y;
+								yDiff < 1 && (yDiff = 1 / yDiff); //If Condition shortcut
 
-						if (axisYDataInfo.minDiff > yDiff && yDiff !== 0) {
-							axisYDataInfo.minDiff = yDiff;
+								if (axisYDataInfo.minDiff > yDiff && yDiff !== 1) {
+									axisYDataInfo.minDiff = yDiff;
+								}
+							}
+						} else {
+							var yDiff = dataPointY - dataSeries.dataPoints[i - 1].y;
+							yDiff < 0 && (yDiff = yDiff * -1); //If Condition shortcut
+
+							if (axisYDataInfo.minDiff > yDiff && yDiff !== 0) {
+								axisYDataInfo.minDiff = yDiff;
+							}
 						}
+
 					}
 				}
 
@@ -3163,7 +3205,7 @@
 
 				// Requird when no x values are provided 
 				if (typeof dataSeries.dataPoints[i].x === "undefined") {
-					dataSeries.dataPoints[i].x = i;
+					dataSeries.dataPoints[i].x = i + (plotUnit.axisX.logarithmic ? 1 : 0);
 				}
 
 				if (dataSeries.dataPoints[i].x.getTime) {
@@ -3185,19 +3227,39 @@
 					axisXDataInfo.max = dataPointX;
 
 				if (i > 0) {
-					var xDiff = dataPointX - dataSeries.dataPoints[i - 1].x;
-					xDiff < 0 && (xDiff = xDiff * -1); //If Condition shortcut
+					if (plotUnit.axisX.logarithmic) {
+						var xDiff = dataPointX / dataSeries.dataPoints[i - 1].x;
+						xDiff < 1 && (xDiff = 1 / xDiff); //If Condition shortcut
 
-					if (axisXDataInfo.minDiff > xDiff && xDiff !== 0) {
-						axisXDataInfo.minDiff = xDiff;
+						if (axisXDataInfo.minDiff > xDiff && xDiff !== 1) {
+							axisXDataInfo.minDiff = xDiff;
+						}
+					} else {
+						var xDiff = dataPointX - dataSeries.dataPoints[i - 1].x;
+						xDiff < 0 && (xDiff = xDiff * -1); //If Condition shortcut
+
+						if (axisXDataInfo.minDiff > xDiff && xDiff !== 0) {
+							axisXDataInfo.minDiff = xDiff;
+						}
 					}
 
 					if (!isNullOrUndefined(dataPointY) && dataSeries.dataPoints[i - 1].y !== null) {
-						var yDiff = dataPointY - dataSeries.dataPoints[i - 1].y;
-						yDiff < 0 && (yDiff = yDiff * -1); //If Condition shortcut
+						if (plotUnit.axisY.logarithmic) {
+							if (dataPointY > 0) {
+								var yDiff = dataPointY / dataSeries.dataPoints[i - 1].y;
+								yDiff < 1 && (yDiff = 1 / yDiff); //If Condition shortcut
 
-						if (axisYDataInfo.minDiff > yDiff && yDiff !== 0) {
-							axisYDataInfo.minDiff = yDiff;
+								if (axisYDataInfo.minDiff > yDiff && yDiff !== 1) {
+									axisYDataInfo.minDiff = yDiff;
+								}
+							}
+						} else {
+							var yDiff = dataPointY - dataSeries.dataPoints[i - 1].y;
+							yDiff < 0 && (yDiff = yDiff * -1); //If Condition shortcut
+
+							if (axisYDataInfo.minDiff > yDiff && yDiff !== 0) {
+								axisYDataInfo.minDiff = yDiff;
+							}
 						}
 					}
 				}
@@ -3254,8 +3316,11 @@
 			this.plotInfo.axisXValueType = dataSeries.xValueType = isDateTime ? "dateTime" : "number";
 		}
 
-
-		if (containsPositiveY && !containsNegativeY) {
+		if (plotUnit.axisY.logarithmic) {
+			axisYDataInfo.max = (!isNullOrUndefined(axisYDataInfo.viewPortMax)) ? Math.max(axisYDataInfo.viewPortMax, 99 * Math.pow(plotUnit.axisY.logarithmBase, -0.05)) : 99 * Math.pow(plotUnit.axisY.logarithmBase, -0.05);
+			axisYDataInfo.min = (!isNullOrUndefined(axisYDataInfo.viewPortMin)) ? Math.min(axisYDataInfo.viewPortMin, 1) : 1;
+		}
+		else if (containsPositiveY && !containsNegativeY) {
 			axisYDataInfo.max = (!isNullOrUndefined(axisYDataInfo.viewPortMax)) ? Math.max(axisYDataInfo.viewPortMax, 99) : 99;
 			axisYDataInfo.min = (!isNullOrUndefined(axisYDataInfo.viewPortMin)) ? Math.min(axisYDataInfo.viewPortMin, 1) : 1;
 		} else if (containsPositiveY && containsNegativeY) {
@@ -3314,7 +3379,7 @@
 			for (i = 0; i < dataSeries.dataPoints.length; i++) {
 
 				if (typeof dataSeries.dataPoints[i].x === "undefined") {
-					dataSeries.dataPoints[i].x = i;
+					dataSeries.dataPoints[i].x = i + (plotUnit.axisX.logarithmic ? 1 : 0);
 				}
 
 				if (dataSeries.dataPoints[i].x.getTime) {
@@ -3355,19 +3420,39 @@
 
 
 				if (i > 0) {
-					var xDiff = dataPointX - dataSeries.dataPoints[i - 1].x;
-					xDiff < 0 && (xDiff = xDiff * -1); //If Condition shortcut
+					if (plotUnit.axisX.logarithmic) {
+						var xDiff = dataPointX / dataSeries.dataPoints[i - 1].x;
+						xDiff < 1 && (xDiff = 1 / xDiff); //If Condition shortcut
 
-					if (axisXDataInfo.minDiff > xDiff && xDiff !== 0) {
-						axisXDataInfo.minDiff = xDiff;
+						if (axisXDataInfo.minDiff > xDiff && xDiff !== 1) {
+							axisXDataInfo.minDiff = xDiff;
+						}
+					}
+					else {
+						var xDiff = dataPointX - dataSeries.dataPoints[i - 1].x;
+						xDiff < 0 && (xDiff = xDiff * -1); //If Condition shortcut
+
+						if (axisXDataInfo.minDiff > xDiff && xDiff !== 0) {
+							axisXDataInfo.minDiff = xDiff;
+						}
 					}
 
 					if (dataPointY && dataPointY[0] !== null && dataSeries.dataPoints[i - 1].y && dataSeries.dataPoints[i - 1].y[0] !== null) {
-						var yDiff = dataPointY[0] - dataSeries.dataPoints[i - 1].y[0];
-						yDiff < 0 && (yDiff = yDiff * -1); //If Condition shortcut
+						if (plotUnit.axisY.logarithmic) {
+							var yDiff = dataPointY[0] / dataSeries.dataPoints[i - 1].y[0];
+							yDiff < 1 && (yDiff = 1 / yDiff); //If Condition shortcut
 
-						if (axisYDataInfo.minDiff > yDiff && yDiff !== 0) {
-							axisYDataInfo.minDiff = yDiff;
+							if (axisYDataInfo.minDiff > yDiff && yDiff !== 1) {
+								axisYDataInfo.minDiff = yDiff;
+							}
+						}
+						else {
+							var yDiff = dataPointY[0] - dataSeries.dataPoints[i - 1].y[0];
+							yDiff < 0 && (yDiff = yDiff * -1); //If Condition shortcut
+
+							if (axisYDataInfo.minDiff > yDiff && yDiff !== 0) {
+								axisYDataInfo.minDiff = yDiff;
+							}
 						}
 					}
 				}
@@ -3824,22 +3909,41 @@
 
 						for (var i = 0; i < this._axes.length; i++) {
 							var axis = this._axes[i];
+							if (axis.logarithmic) {
+								if (axis.viewportMinimum < axis.minimum) {
 
-							if (axis.viewportMinimum < axis.minimum) {
+									overflow = axis.minimum / axis.viewportMinimum;
 
-								overflow = axis.minimum - axis.viewportMinimum;
+									axis.sessionVariables.newViewportMinimum = axis.viewportMinimum * overflow;
+									axis.sessionVariables.newViewportMaximum = axis.viewportMaximum * overflow;
 
-								axis.sessionVariables.newViewportMinimum = axis.viewportMinimum + overflow;
-								axis.sessionVariables.newViewportMaximum = axis.viewportMaximum + overflow;
+									reRender = true;
+								} else if (axis.viewportMaximum > axis.maximum) {
 
-								reRender = true;
-							} else if (axis.viewportMaximum > axis.maximum) {
+									overflow = axis.viewportMaximum / axis.maximum;
+									axis.sessionVariables.newViewportMinimum = axis.viewportMinimum / overflow;
+									axis.sessionVariables.newViewportMaximum = axis.viewportMaximum / overflow;
 
-								overflow = axis.viewportMaximum - axis.maximum;
-								axis.sessionVariables.newViewportMinimum = axis.viewportMinimum - overflow;
-								axis.sessionVariables.newViewportMaximum = axis.viewportMaximum - overflow;
+									reRender = true;
+								}
+							}
+							else {
+								if (axis.viewportMinimum < axis.minimum) {
 
-								reRender = true;
+									overflow = axis.minimum - axis.viewportMinimum;
+
+									axis.sessionVariables.newViewportMinimum = axis.viewportMinimum + overflow;
+									axis.sessionVariables.newViewportMaximum = axis.viewportMaximum + overflow;
+
+									reRender = true;
+								} else if (axis.viewportMaximum > axis.maximum) {
+
+									overflow = axis.viewportMaximum - axis.maximum;
+									axis.sessionVariables.newViewportMinimum = axis.viewportMinimum - overflow;
+									axis.sessionVariables.newViewportMaximum = axis.viewportMaximum - overflow;
+
+									reRender = true;
+								}
 							}
 						}
 
@@ -4027,7 +4131,7 @@
 			}
 
 			if (isFinite(axis.dataInfo.minDiff)) {
-				if (!(Math.abs(val2 - val1) < 3 * Math.abs(axis.dataInfo.minDiff)
+				if (!(axis.logarithmic && val2 / val1 < Math.pow(axis.dataInfo.minDiff, 3) || !axis.logarithmic && Math.abs(val2 - val1) < 3 * Math.abs(axis.dataInfo.minDiff)
 				|| (val1 < axis.minimum) || (val2 > axis.maximum))) {
 					axesWithValidRange.push(axis);
 					axesRanges.push({ val1: val1, val2: val2 });
@@ -5342,7 +5446,7 @@
 		var i = 0, x, y;
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number from dataTime everytime it is used.
 
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(plotUnit.axisY.logarithmic ? plotUnit.axisY.viewportMinimum : 0);
 
 		var minBarWidth = this.dataPointMinWidth ? this.dataPointMinWidth : this.dataPointWidth ? this.dataPointWidth : 1;
 		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.dataPointWidth ? this.dataPointWidth : Math.min((this.width * .15), this.plotArea.width / plotUnit.plotType.totalDataSeries * .9) << 0;
@@ -5350,10 +5454,11 @@
 		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
 
 		if (!isFinite(xMinDiff)) {
-			xMinDiff = Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum) * .3;
+			xMinDiff = (plotUnit.axisX.logarithmic ? plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum : Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * .3;
 		}
 
-		var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.totalDataSeries * .9) << 0;
+		//var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.totalDataSeries * .9) << 0;
+		var barWidth = this.dataPointWidth ? this.dataPointWidth : (plotArea.width * (plotUnit.axisX.logarithmic ? Math.log(xMinDiff) / Math.log(plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum) : Math.abs(xMinDiff) / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) / plotUnit.plotType.totalDataSeries * .9) << 0;
 
 		if (this.dataPointMaxWidth && minBarWidth > maxBarWidth)
 			minBarWidth = Math.min(this.dataPointWidth ? this.dataPointWidth : Infinity, maxBarWidth);
@@ -5508,12 +5613,13 @@
 
 		var offsetPositiveY = [];
 		var offsetNegativeY = [];
+		var stackedY = [];
 
 		var i = 0, x, y;
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number everytime it is accessed.
 
 		//var yZeroToPixel = (axisYProps.y2 - axisYProps.height / rangeY * Math.abs(0 - plotUnit.axisY.viewportMinimum) + .5) << 0;
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(plotUnit.axisY.logarithmic ? plotUnit.axisY.viewportMinimum : 0);
 
 		var minBarWidth = this.dataPointMinWidth ? this.dataPointMinWidth : this.dataPointWidth ? this.dataPointWidth : 1;
 		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.dataPointWidth ? this.dataPointWidth : this.width * .15 << 0;
@@ -5521,10 +5627,11 @@
 		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
 
 		if (!isFinite(xMinDiff)) {
-			xMinDiff = Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum) * .3;
+			xMinDiff = (plotUnit.axisX.logarithmic ? plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum : Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * .3;
 		}
 
-		var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.plotUnits.length * .9) << 0;
+		//var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.plotUnits.length * .9) << 0;
+		var barWidth = this.dataPointWidth ? this.dataPointWidth : (plotArea.width * (plotUnit.axisX.logarithmic ? Math.log(xMinDiff) / Math.log(plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum) : Math.abs(xMinDiff) / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) / plotUnit.plotType.plotUnits.length * .9) << 0;
 
 		if (this.dataPointMaxWidth && minBarWidth > maxBarWidth)
 			minBarWidth = Math.min(this.dataPointWidth ? this.dataPointWidth : Infinity, maxBarWidth);
@@ -5584,29 +5691,42 @@
 						continue;
 
 					x = plotUnit.axisX.convertValueToPixel(dataPointX);
-					y = plotUnit.axisY.convertValueToPixel(dataPoints[i].y);
 
 					var x1 = x - (plotUnit.plotType.plotUnits.length * barWidth / 2) + (plotUnit.index * barWidth) << 0;
 					var x2 = x1 + barWidth << 0;
 					var y1;
 					var y2;
 
+					if (plotUnit.axisY.logarithmic) {
+						stackedY[dataPointX] = dataPoints[i].y + (stackedY[dataPointX] ? stackedY[dataPointX] : 0);
+						if (stackedY[dataPointX] > 0) {
+							y1 = plotUnit.axisY.convertValueToPixel(stackedY[dataPointX]);
+							y2 = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : yZeroToPixel;
 
-					if (dataPoints[i].y >= 0) {
-						var offset = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : 0;
-
-						y1 = y - offset;
-						y2 = yZeroToPixel - offset;
-
-						offsetPositiveY[dataPointX] = offset + (y2 - y1);
+							offsetPositiveY[dataPointX] = y1;
+						}
 
 					} else {
-						var offset = offsetNegativeY[dataPointX] ? offsetNegativeY[dataPointX] : 0;
 
-						y2 = y + offset;
-						y1 = yZeroToPixel + offset;
+						y = plotUnit.axisY.convertValueToPixel(dataPoints[i].y);
 
-						offsetNegativeY[dataPointX] = offset + (y2 - y1);
+						if (dataPoints[i].y >= 0) {
+							var offset = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : 0;
+
+							y1 = y - offset;
+							y2 = yZeroToPixel - offset;
+
+							offsetPositiveY[dataPointX] = offset + (y2 - y1);
+
+						} else {
+							var offset = offsetNegativeY[dataPointX] ? offsetNegativeY[dataPointX] : 0;
+
+							y2 = y + offset;
+							y1 = yZeroToPixel + offset;
+
+							offsetNegativeY[dataPointX] = offset + (y2 - y1);
+						}
+
 					}
 
 					color = dataPoints[i].color ? dataPoints[i].color : dataSeries._colorSet[i % dataSeries._colorSet.length];
@@ -5674,22 +5794,24 @@
 
 		var offsetPositiveY = [];
 		var offsetNegativeY = [];
+		var stackedY = [];
 
 		var i = 0, x, y;
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number everytime it is accessed.
 
 		//var yZeroToPixel = (axisYProps.y2 - axisYProps.height / rangeY * Math.abs(0 - plotUnit.axisY.viewportMinimum) + .5) << 0;
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(plotUnit.axisY.logarithmic ? plotUnit.axisY.viewportMinimum : 0);
 
 		var minBarWidth = this.dataPointMinWidth ? this.dataPointMinWidth : this.dataPointWidth ? this.dataPointWidth : 1;
 		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.dataPointWidth ? this.dataPointWidth : this.width * .15 << 0;
 		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
 
 		if (!isFinite(xMinDiff)) {
-			xMinDiff = Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum) * .3;
+			xMinDiff = (plotUnit.axisX.logarithmic ? plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum : Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * .3;
 		}
 
-		var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.plotUnits.length * .9) << 0;
+		//var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.plotUnits.length * .9) << 0;
+		var barWidth = this.dataPointWidth ? this.dataPointWidth : (plotArea.width * (plotUnit.axisX.logarithmic ? Math.log(xMinDiff) / Math.log(plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum) : Math.abs(xMinDiff) / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) / plotUnit.plotType.plotUnits.length * .9) << 0;
 
 		if (this.dataPointMaxWidth && minBarWidth > maxBarWidth)
 			minBarWidth = Math.min(this.dataPointWidth ? this.dataPointWidth : Infinity, maxBarWidth);
@@ -5757,29 +5879,40 @@
 						yPercent = 0;
 
 					//y = (plotUnit.axisY.conversionParameters.reference + plotUnit.axisY.conversionParameters.pixelPerUnit * (yPercent - plotUnit.axisY.conversionParameters.minimum) + .5) << 0;
-					y = plotUnit.axisY.convertValueToPixel(yPercent);
 
 					var x1 = x - (plotUnit.plotType.plotUnits.length * barWidth / 2) + (plotUnit.index * barWidth) << 0;
 					var x2 = x1 + barWidth << 0;
 					var y1;
 					var y2;
 
+					if (plotUnit.axisY.logarithmic) {
+						stackedY[dataPointX] = yPercent + (stackedY[dataPointX] ? stackedY[dataPointX] : 0);
+						if (stackedY[dataPointX] <= 0)
+							continue;
 
-					if (dataPoints[i].y >= 0) {
-						var offset = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : 0;
+						y1 = plotUnit.axisY.convertValueToPixel(stackedY[dataPointX]);
+						y2 = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : yZeroToPixel;
 
-						y1 = y - offset;
-						y2 = yZeroToPixel - offset;
+						offsetPositiveY[dataPointX] = y1;
+					}
+					else {
+						y = plotUnit.axisY.convertValueToPixel(yPercent);
+						if (dataPoints[i].y >= 0) {
+							var offset = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : 0;
 
-						offsetPositiveY[dataPointX] = offset + (y2 - y1);
+							y1 = y - offset;
+							y2 = yZeroToPixel - offset;
 
-					} else {
-						var offset = offsetNegativeY[dataPointX] ? offsetNegativeY[dataPointX] : 0;
+							offsetPositiveY[dataPointX] = offset + (y2 - y1);
 
-						y2 = y + offset;
-						y1 = yZeroToPixel + offset;
+						} else {
+							var offset = offsetNegativeY[dataPointX] ? offsetNegativeY[dataPointX] : 0;
 
-						offsetNegativeY[dataPointX] = offset + (y2 - y1);
+							y2 = y + offset;
+							y1 = yZeroToPixel + offset;
+
+							offsetNegativeY[dataPointX] = offset + (y2 - y1);
+						}
 					}
 
 
@@ -5845,17 +5978,18 @@
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number from dataTime everytime it is used.
 
 		//In case of Bar Chart, yZeroToPixel is x co-ordinate!
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(plotUnit.axisY.logarithmic ? plotUnit.axisY.viewportMinimum : 0);
 
 		var minBarWidth = this.dataPointMinWidth ? this.dataPointMinWidth : this.dataPointWidth ? this.dataPointWidth : 1;
 		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.dataPointWidth ? this.dataPointWidth : Math.min((this.height * .15), this.plotArea.height / plotUnit.plotType.totalDataSeries * .9) << 0;
 		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
 
 		if (!isFinite(xMinDiff)) {
-			xMinDiff = Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum) * .3;
+			xMinDiff = (plotUnit.axisX.logarithmic ? plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum : Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * .3;
 		}
 
-		var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.height / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.totalDataSeries * .9) << 0;
+		//var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.height / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.totalDataSeries * .9) << 0;
+		var barWidth = this.dataPointWidth ? this.dataPointWidth : (plotArea.height * (plotUnit.axisX.logarithmic ? Math.log(xMinDiff) / Math.log(plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum) : Math.abs(xMinDiff) / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) / plotUnit.plotType.totalDataSeries * .9) << 0;
 
 		if (this.dataPointMaxWidth && minBarWidth > maxBarWidth)
 			minBarWidth = Math.min(this.dataPointWidth ? this.dataPointWidth : Infinity, maxBarWidth);
@@ -5993,22 +6127,24 @@
 
 		var offsetPositiveY = [];
 		var offsetNegativeY = [];
+		var stackedY = [];
 
 		var i = 0, x, y;
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number everytime it is accessed.
 
 		//var yZeroToPixel = (axisYProps.y2 - axisYProps.height / rangeY * Math.abs(0 - plotUnit.axisY.viewportMinimum) + .5) << 0;
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(plotUnit.axisY.logarithmic ? plotUnit.axisY.viewportMinimum : 0);
 
 		var minBarWidth = this.dataPointMinWidth ? this.dataPointMinWidth : this.dataPointWidth ? this.dataPointWidth : 1;
 		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.dataPointWidth ? this.dataPointWidth : this.height * .15 << 0;
 		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
 
 		if (!isFinite(xMinDiff)) {
-			xMinDiff = Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum) * .3;
+			xMinDiff = (plotUnit.axisX.logarithmic ? plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum : Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * .3;
 		}
 
-		var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.height / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.plotUnits.length * .9) << 0;
+		//var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.height / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.plotUnits.length * .9) << 0;
+		var barWidth = this.dataPointWidth ? this.dataPointWidth : (plotArea.height * (plotUnit.axisX.logarithmic ? Math.log(xMinDiff) / Math.log(plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum) : Math.abs(xMinDiff) / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) / plotUnit.plotType.plotUnits.length * .9) << 0;
 
 		if (this.dataPointMaxWidth && minBarWidth > maxBarWidth)
 			minBarWidth = Math.min(this.dataPointWidth ? this.dataPointWidth : Infinity, maxBarWidth);
@@ -6068,7 +6204,6 @@
 
 					y = plotUnit.axisX.convertValueToPixel(dataPointX);
 					//x = (plotUnit.axisY.conversionParameters.reference + plotUnit.axisY.conversionParameters.pixelPerUnit * (dataPoints[i].y - plotUnit.axisY.conversionParameters.minimum) + .5) << 0;
-					x = plotUnit.axisY.convertValueToPixel(dataPoints[i].y);
 
 					//var x1 = x - (plotUnit.plotType.plotUnits.length * barWidth / 2) + (plotUnit.index * barWidth) << 0;
 
@@ -6077,21 +6212,31 @@
 					var x1;
 					var x2;
 
-					if (dataPoints[i].y >= 0) {
-						var offset = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : 0;
+					if (plotUnit.axisY.logarithmic) {
+						stackedY[dataPointX] = dataPoints[i].y + (stackedY[dataPointX] ? stackedY[dataPointX] : 0);
+						if (stackedY[dataPointX] > 0) {
+							x1 = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : yZeroToPixel;
+							offsetPositiveY[dataPointX] = x2 = plotUnit.axisY.convertValueToPixel(stackedY[dataPointX]);
+						}
+					}
+					else {
+						x = plotUnit.axisY.convertValueToPixel(dataPoints[i].y);
+						if (dataPoints[i].y >= 0) {
+							var offset = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : 0;
 
-						x1 = yZeroToPixel + offset;
-						x2 = x + offset;
+							x1 = yZeroToPixel + offset;
+							x2 = x + offset;
 
-						offsetPositiveY[dataPointX] = offset + (x2 - x1);
+							offsetPositiveY[dataPointX] = offset + (x2 - x1);
 
-					} else {
-						var offset = offsetNegativeY[dataPointX] ? offsetNegativeY[dataPointX] : 0;
+						} else {
+							var offset = offsetNegativeY[dataPointX] ? offsetNegativeY[dataPointX] : 0;
 
-						x1 = x - offset;
-						x2 = yZeroToPixel - offset;
+							x1 = x - offset;
+							x2 = yZeroToPixel - offset;
 
-						offsetNegativeY[dataPointX] = offset + (x2 - x1);
+							offsetNegativeY[dataPointX] = offset + (x2 - x1);
+						}
 					}
 
 
@@ -6151,22 +6296,24 @@
 
 		var offsetPositiveY = [];
 		var offsetNegativeY = [];
+		var stackedY = [];
 
 		var i = 0, x, y;
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number everytime it is accessed.
 
 		//var yZeroToPixel = (axisYProps.y2 - axisYProps.height / rangeY * Math.abs(0 - plotUnit.axisY.viewportMinimum) + .5) << 0;
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(plotUnit.axisY.logarithmic ? plotUnit.axisY.viewportMinimum : 0);
 
 		var minBarWidth = this.dataPointMinWidth ? this.dataPointMinWidth : this.dataPointWidth ? this.dataPointWidth : 1;
 		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.dataPointWidth ? this.dataPointWidth : this.height * .15 << 0;
 		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
 
 		if (!isFinite(xMinDiff)) {
-			xMinDiff = Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum) * .3;
+			xMinDiff = (plotUnit.axisX.logarithmic ? plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum : Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * .3;
 		}
 
-		var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.height / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.plotUnits.length * .9) << 0;
+		//var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.height / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.plotUnits.length * .9) << 0;
+		var barWidth = this.dataPointWidth ? this.dataPointWidth : (plotArea.height * (plotUnit.axisX.logarithmic ? Math.log(xMinDiff) / Math.log(plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum) : Math.abs(xMinDiff) / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) / plotUnit.plotType.plotUnits.length * .9) << 0;
 
 		if (this.dataPointMaxWidth && minBarWidth > maxBarWidth)
 			minBarWidth = Math.min(this.dataPointWidth ? this.dataPointWidth : Infinity, maxBarWidth);
@@ -6233,29 +6380,39 @@
 						yPercent = 0;
 
 					//x = (plotUnit.axisY.conversionParameters.reference + plotUnit.axisY.conversionParameters.pixelPerUnit * (yPercent - plotUnit.axisY.conversionParameters.minimum) + .5) << 0;
-					x = plotUnit.axisY.convertValueToPixel(yPercent);
 
 					var y1 = y - (plotUnit.plotType.plotUnits.length * barWidth / 2) + (plotUnit.index * barWidth) << 0;
 					var y2 = y1 + barWidth << 0;
 					var x1;
 					var x2;
 
+					if (plotUnit.axisY.logarithmic) {
+						stackedY[dataPointX] = yPercent + (stackedY[dataPointX] ? stackedY[dataPointX] : 0);
+						if (stackedY[dataPointX] <= 0)
+							continue;
 
-					if (dataPoints[i].y >= 0) {
-						var offset = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : 0;
+						x1 = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : yZeroToPixel;
+						offsetPositiveY[dataPointX] = x2 = plotUnit.axisY.convertValueToPixel(stackedY[dataPointX]);
 
-						x1 = yZeroToPixel + offset;
-						x2 = x + offset;
+					}
+					else {
+						x = plotUnit.axisY.convertValueToPixel(yPercent);
+						if (dataPoints[i].y >= 0) {
+							var offset = offsetPositiveY[dataPointX] ? offsetPositiveY[dataPointX] : 0;
 
-						offsetPositiveY[dataPointX] = offset + (x2 - x1);
+							x1 = yZeroToPixel + offset;
+							x2 = x + offset;
 
-					} else {
-						var offset = offsetNegativeY[dataPointX] ? offsetNegativeY[dataPointX] : 0;
+							offsetPositiveY[dataPointX] = offset + (x2 - x1);
 
-						x1 = x - offset;
-						x2 = yZeroToPixel - offset;
+						} else {
+							var offset = offsetNegativeY[dataPointX] ? offsetNegativeY[dataPointX] : 0;
 
-						offsetNegativeY[dataPointX] = offset + (x2 - x1);
+							x1 = x - offset;
+							x2 = yZeroToPixel - offset;
+
+							offsetNegativeY[dataPointX] = offset + (x2 - x1);
+						}
 					}
 
 
@@ -6356,7 +6513,7 @@
 			var i = 0, x, y;
 			var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number back and forth.
 
-			var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+			var yZeroToPixel = plotUnit.axisY.convertValueToPixel(plotUnit.axisY.logarithmic ? plotUnit.axisY.viewportMinimum : 0);
 			var baseY;
 
 			var startPoint = null;
@@ -6525,7 +6682,7 @@
 			if (dataSeries.lineThickness > 0)
 				ctx.stroke();
 
-			if (plotUnit.axisY.viewportMinimum <= 0 && plotUnit.axisY.viewportMaximum >= 0) {
+			if (plotUnit.axisY.logarithmic || plotUnit.axisY.viewportMinimum <= 0 && plotUnit.axisY.viewportMaximum >= 0) {
 				baseY = yZeroToPixel;
 			}
 			else if (plotUnit.axisY.viewportMaximum < 0)
@@ -6619,7 +6776,7 @@
 			var i = 0, x, y;
 			var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number back and forth.
 
-			var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+			var yZeroToPixel = plotUnit.axisY.convertValueToPixel(plotUnit.axisY.logarithmic ? plotUnit.axisY.viewportMinimum : 0);
 			var baseY;
 
 			var startPoint = null;
@@ -6806,7 +6963,7 @@
 
 				}
 
-				if (plotUnit.axisY.viewportMinimum <= 0 && plotUnit.axisY.viewportMaximum >= 0) {
+				if (plotUnit.axisY.logarithmic || plotUnit.axisY.viewportMinimum <= 0 && plotUnit.axisY.viewportMaximum >= 0) {
 					baseY = yZeroToPixel;
 				}
 				else if (plotUnit.axisY.viewportMaximum < 0)
@@ -6896,7 +7053,7 @@
 			var i = 0, x, y;
 			var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number back and forth.
 
-			var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+			var yZeroToPixel = plotUnit.axisY.convertValueToPixel(plotUnit.axisY.logarithmic ? plotUnit.axisY.viewportMinimum : 0);
 			var baseY;
 
 			var startPoint = null;
@@ -7070,7 +7227,7 @@
 			if (dataSeries.lineThickness > 0)
 				ctx.stroke();
 
-			if (plotUnit.axisY.viewportMinimum <= 0 && plotUnit.axisY.viewportMaximum >= 0) {
+			if (plotUnit.axisY.logarithmic || plotUnit.axisY.viewportMinimum <= 0 && plotUnit.axisY.viewportMaximum >= 0) {
 				baseY = yZeroToPixel;
 			}
 			else if (plotUnit.axisY.viewportMaximum < 0)
@@ -7128,12 +7285,13 @@
 
 		var allXValues = [];
 		//var offsetNegativeY = [];
+		var stackedY = [];
 
 		var i = 0, x, y;
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number everytime it is accessed.
 
 		//var yZeroToPixel = (axisYProps.y2 - axisYProps.height / rangeY * Math.abs(0 - plotUnit.axisY.viewportMinimum) + .5) << 0;
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(plotUnit.axisY.logarithmic ? plotUnit.axisY.viewportMinimum : 0);
 
 		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
 
@@ -7245,11 +7403,21 @@
 
 					var x = plotUnit.axisX.convertValueToPixel(dataPointX);
 					//var y = (plotUnit.axisY.conversionParameters.reference + plotUnit.axisY.conversionParameters.pixelPerUnit * (dataPoint.y - plotUnit.axisY.conversionParameters.minimum) + .5) << 0;
-					var y = plotUnit.axisY.convertValueToPixel(dataPoint.y);
-
 					var offset = offsetY[dataPointX] ? offsetY[dataPointX] : 0;
 
-					y = y - offset;
+
+					if (plotUnit.axisY.logarithmic) {
+
+						stackedY[dataPointX] = dataPoint.y + (stackedY[dataPointX] ? stackedY[dataPointX] : 0);
+						if (stackedY[dataPointX] <= 0)
+							continue;
+						var y = plotUnit.axisY.convertValueToPixel(stackedY[dataPointX]);
+
+					} else {
+						var y = plotUnit.axisY.convertValueToPixel(dataPoint.y);
+						y = y - offset;
+					}
+
 					currentBaseValues.push({ x: x, y: yZeroToPixel - offset });
 					offsetY[dataPointX] = yZeroToPixel - y;
 
@@ -7448,17 +7616,15 @@
 		var currentBaseValues = [];
 		var allXValues = [];
 		//var offsetNegativeY = [];
+		var stackedY = [];
 
 		var i = 0, x, y;
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number everytime it is accessed.
 
 
 		//var yZeroToPixel = (axisYProps.y2 - axisYProps.height / rangeY * Math.abs(0 - plotUnit.axisY.viewportMinimum) + .5) << 0;
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(plotUnit.axisY.logarithmic ? plotUnit.axisY.viewportMinimum : 0);
 
-		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.width * .15 << 0;
-		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
-		var barWidth = (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) * .9) << 0;
 
 		var ghostCtx = this._eventManager.ghostCtx;
 
@@ -7517,13 +7683,6 @@
 			var hexColor = intToHexColorString(seriesId);
 			ghostCtx.fillStyle = hexColor;
 
-			if (dataPoints.length == 1)
-				barWidth = maxBarWidth;
-
-			if (barWidth < 1)
-				barWidth = 1;
-			else if (barWidth > maxBarWidth)
-				barWidth = maxBarWidth;
 
 			currentBaseValues = [];
 
@@ -7545,7 +7704,6 @@
 					ctx.setLineDash(lineDashType);
 				}
 
-				var bevelEnabled = (barWidth > 5) ? false : false;
 
 				//ctx.strokeStyle = "#4572A7 ";
 				var prevDataNull = true;
@@ -7580,11 +7738,20 @@
 						yPercent = 0;
 
 					var x = plotUnit.axisX.convertValueToPixel(dataPointX);
-					var y = plotUnit.axisY.convertValueToPixel(yPercent);
 
 					var offset = offsetY[dataPointX] ? offsetY[dataPointX] : 0;
 
-					y = y - offset;
+					if (plotUnit.axisY.logarithmic) {
+
+						stackedY[dataPointX] = yPercent + (stackedY[dataPointX] ? stackedY[dataPointX] : 0);
+						if (stackedY[dataPointX] <= 0)
+							continue;
+						var y = plotUnit.axisY.convertValueToPixel(stackedY[dataPointX]);
+
+					} else {
+						var y = plotUnit.axisY.convertValueToPixel(yPercent);
+						y = y - offset;
+					}
 					currentBaseValues.push({ x: x, y: yZeroToPixel - offset });
 					offsetY[dataPointX] = yZeroToPixel - y;
 
@@ -7773,12 +7940,6 @@
 		var i = 0, x, y;
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number from dataTime everytime it is used.
 
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
-
-		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.width * .15 << 0;
-		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
-		var barWidth = (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / totalDataSeries * .9) << 0;
-
 
 		ctx.save();
 
@@ -7837,17 +7998,8 @@
 			var dataPoints = dataSeries.dataPoints;
 			var isFirstDataPointInPlotArea = true;
 
-			if (dataPoints.length == 1)
-				barWidth = maxBarWidth;
-
-			if (barWidth < 1)
-				barWidth = 1;
-			else if (barWidth > maxBarWidth)
-				barWidth = maxBarWidth;
 
 			if (dataPoints.length > 0) {
-				//var xy = this.getPixelCoordinatesOnPlotArea(dataPoints[0].x, dataPoints[0].y);
-				//var bevelEnabled = (barWidth > 5) ? false : false;
 
 				ctx.strokeStyle = "#4572A7 ";
 
@@ -7937,12 +8089,6 @@
 		var i = 0, x, y;
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number from dataTime everytime it is used.
 
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
-
-		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.width * .15 << 0;
-		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
-		var barWidth = (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / totalDataSeries * .9) << 0;
-
 
 		ctx.save();
 		if (isCanvasSupported)
@@ -7966,16 +8112,8 @@
 			var dataPoints = dataSeries.dataPoints;
 			var isFirstDataPointInPlotArea = true;
 
-			if (dataPoints.length == 1)
-				barWidth = maxBarWidth;
-
-			if (barWidth < 1)
-				barWidth = 1;
-			else if (barWidth > maxBarWidth)
-				barWidth = maxBarWidth;
 
 			if (dataPoints.length > 0) {
-				//var bevelEnabled = (barWidth > 5) ? false : false;
 
 				ctx.strokeStyle = "#4572A7 ";
 
@@ -8087,7 +8225,7 @@
 		var i = 0, x, y1, y2, y3, y4;
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number from dataTime everytime it is used.
 
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+		//var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
 
 		var minBarWidth = this.dataPointMinWidth ? this.dataPointMinWidth : this.dataPointWidth ? this.dataPointWidth : 1;
 		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.dataPointWidth ? this.dataPointWidth : (this.width * .015);
@@ -8095,10 +8233,11 @@
 		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
 
 		if (!isFinite(xMinDiff)) {
-			xMinDiff = Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum) * .3;
+			xMinDiff = (plotUnit.axisX.logarithmic ? plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum : Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * .3;
 		}
 
-		var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) * .7) << 0;
+		//var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) * .7) << 0;
+		var barWidth = this.dataPointWidth ? this.dataPointWidth : (plotArea.width * (plotUnit.axisX.logarithmic ? Math.log(xMinDiff) / Math.log(plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum) : Math.abs(xMinDiff) / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * .7) << 0;
 
 		if (this.dataPointMaxWidth && minBarWidth > maxBarWidth)
 			minBarWidth = Math.min(this.dataPointWidth ? this.dataPointWidth : Infinity, maxBarWidth);
@@ -8301,7 +8440,7 @@
 		var i = 0, x, y1, y2;
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number from dataTime everytime it is used.
 
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+		//var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
 
 		var minBarWidth = this.dataPointMinWidth ? this.dataPointMinWidth : this.dataPointWidth ? this.dataPointWidth : 1;
 		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.dataPointWidth ? this.dataPointWidth : (this.width * .03);
@@ -8309,11 +8448,12 @@
 		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
 
 		if (!isFinite(xMinDiff)) {
-			xMinDiff = Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum) * .3;
+			xMinDiff = (plotUnit.axisY.logarithmic ? plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum : Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * .3;
 		}
 
 		//var barWidth = (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) * .9) << 0;
-		var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.totalDataSeries * .9) << 0;
+		//var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.width / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.totalDataSeries * .9) << 0;
+		var barWidth = this.dataPointWidth ? this.dataPointWidth : (plotArea.width * (plotUnit.axisX.logarithmic ? Math.log(xMinDiff) / Math.log(plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum) : Math.abs(xMinDiff) / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) / plotUnit.plotType.totalDataSeries * .9) << 0;
 
 		if (this.dataPointMaxWidth && minBarWidth > maxBarWidth)
 			minBarWidth = Math.min(this.dataPointWidth ? this.dataPointWidth : Infinity, maxBarWidth);
@@ -8473,19 +8613,20 @@
 		var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number from dataTime everytime it is used.
 
 		//In case of Bar Chart, yZeroToPixel is x co-ordinate!
-		var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+		//var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
 
 		var minBarWidth = this.dataPointMinWidth ? this.dataPointMinWidth : this.dataPointWidth ? this.dataPointWidth : 1;
 		var maxBarWidth = this.dataPointMaxWidth ? this.dataPointMaxWidth : this.dataPointWidth ? this.dataPointWidth : Math.min((this.height * .15), this.plotArea.height / plotUnit.plotType.totalDataSeries * .9) << 0;
 		var xMinDiff = plotUnit.axisX.dataInfo.minDiff;
 
 		if (!isFinite(xMinDiff)) {
-			xMinDiff = Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum) * .3;
+			xMinDiff = (plotUnit.axisX.logarithmic ? plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum : Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * .3;
 		}
 
 		//var barWidth = (((plotArea.height / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / totalDataSeries * .9) << 0;
 
-		var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.height / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.totalDataSeries * .9) << 0;
+		//var barWidth = this.dataPointWidth ? this.dataPointWidth : (((plotArea.height / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) * Math.abs(xMinDiff)) / plotUnit.plotType.totalDataSeries * .9) << 0;
+		var barWidth = this.dataPointWidth ? this.dataPointWidth : (plotArea.height * (plotUnit.axisX.logarithmic ? Math.log(xMinDiff) / Math.log(plotUnit.axisX.viewportMaximum / plotUnit.axisX.viewportMinimum) : Math.abs(xMinDiff) / Math.abs(plotUnit.axisX.viewportMaximum - plotUnit.axisX.viewportMinimum)) / plotUnit.plotType.totalDataSeries * .9) << 0;
 
 		if (this.dataPointMaxWidth && minBarWidth > maxBarWidth)
 			minBarWidth = Math.min(this.dataPointWidth ? this.dataPointWidth : Infinity, maxBarWidth);
@@ -8682,8 +8823,8 @@
 			var i = 0, x, y1, y2;
 			var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number back and forth.
 
-			var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
-			var baseY;
+			//var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+			//var baseY;
 
 			var startPoint = null;
 
@@ -9011,8 +9152,8 @@
 			var i = 0, x, y1, y2;
 			var dataPointX; //Used so that when dataPoint.x is a DateTime value, it doesn't get converted to number back and forth.
 
-			var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
-			var baseY;
+			//var yZeroToPixel = plotUnit.axisY.convertValueToPixel(0);
+			//var baseY;
 
 			var startPoint = null;
 
@@ -10605,7 +10746,6 @@
 		this.ctx = ctx;
 		this._isDirty = true;
 		this._wrappedText = null;
-		this._lineHeight = getFontHeightInPixels(this.fontFamily, this.fontSize, this.fontWeight);
 	}
 	extend(TextBlock, CanvasJSObject);
 	TextBlock.prototype.render = function (preserveContext) {
@@ -10674,6 +10814,8 @@
 	}
 
 	TextBlock.prototype.measureText = function () {
+		this._lineHeight = getFontHeightInPixels(this.fontFamily, this.fontSize, this.fontWeight);
+
 		if (this.maxWidth === null) {
 			throw ("Please set maxWidth and height for TextBlock");
 		}
@@ -11498,13 +11640,20 @@
 			//	searchStartIndex = ((this.dataPoints.length - 1) / xRange * (x - this.dataPoints[0].x)) >> 0;
 			//else
 			//	searchStartIndex = 0;
+			if (this.axisX.logarithmic) {
+				var xRange = Math.log(this.dataPoints[this.dataPoints.length - 1].x / this.dataPoints[0].x);
+				if (xRange > 1)
+					searchStartIndex = Math.min(Math.max(((this.dataPoints.length - 1) / xRange * Math.log(x / this.dataPoints[0].x)) >> 0, 0), this.dataPoints.length);
+				else
+					searchStartIndex = 0;
+			} else {
+				var xRange = (this.dataPoints[this.dataPoints.length - 1].x - this.dataPoints[0].x);
 
-			var xRange = (this.dataPoints[this.dataPoints.length - 1].x - this.dataPoints[0].x);
-
-			if (xRange > 0)
-				searchStartIndex = Math.min(Math.max(((this.dataPoints.length - 1) / xRange * (x - this.dataPoints[0].x)) >> 0, 0), this.dataPoints.length);
-			else
-				searchStartIndex = 0;
+				if (xRange > 0)
+					searchStartIndex = Math.min(Math.max(((this.dataPoints.length - 1) / xRange * (x - this.dataPoints[0].x)) >> 0, 0), this.dataPoints.length);
+				else
+					searchStartIndex = 0;
+			}
 
 			//searchStartIndex = ((this.dataPoints[this.dataPoints.length - 1].x - this.dataPoints[0].x) / this.dataPoints.length * (x - this.dataPoints[0].x)) >> 0;
 		}
@@ -11517,7 +11666,7 @@
 
 				dataPoint = this.dataPoints[i];
 
-				var distance = Math.abs(dataPoint.x - x);
+				var distance = this.axisX.logarithmic ? dataPoint.x > x ? dataPoint.x / x : x / dataPoint.x : Math.abs(dataPoint.x - x);
 
 				if (distance < searchResult.distance) {
 					searchResult.dataPoint = dataPoint;
@@ -11525,7 +11674,7 @@
 					searchResult.index = i;
 				}
 
-				var xDistance = Math.abs(dataPoint.x - x);
+				var xDistance = distance; //Math.abs(dataPoint.x - x);
 				if (xDistance <= minimumXDistance)
 					minimumXDistance = xDistance;
 				else {
@@ -11576,19 +11725,27 @@
 		if (this.chart.plotInfo.axisPlacement !== "none") {
 			var xval = this.chart.axisX.getXValueAt({ x: x, y: y });
 
-			var xRange = (this.dataPoints[this.dataPoints.length - 1].x - this.dataPoints[0].x);
+			if (this.axisX.logarithmic) {
+				var xRange = Math.log(this.dataPoints[this.dataPoints.length - 1].x / this.dataPoints[0].x);
+				if (xRange > 1)
+					searchStartIndex = Math.min(Math.max(((this.dataPoints.length - 1) / xRange * Math.log(xval / this.dataPoints[0].x)) >> 0, 0), this.dataPoints.length);
+				else
+					searchStartIndex = 0;
+			} else {
+				var xRange = (this.dataPoints[this.dataPoints.length - 1].x - this.dataPoints[0].x);
 
-			if (xRange > 0)
-				searchStartIndex = Math.min(Math.max(((this.dataPoints.length - 1) / xRange * (xval - this.dataPoints[0].x)) >> 0, 0), this.dataPoints.length);
-			else
-				searchStartIndex = 0;
+				if (xRange > 0)
+					searchStartIndex = Math.min(Math.max(((this.dataPoints.length - 1) / xRange * (xval - this.dataPoints[0].x)) >> 0, 0), this.dataPoints.length);
+				else
+					searchStartIndex = 0;
 
-			//var xRange = (this.axisX._absoluteMaximum - this.axisX._absoluteMinimum);
+				//var xRange = (this.axisX._absoluteMaximum - this.axisX._absoluteMinimum);
 
-			//if (xRange > 0)
-			//	searchStartIndex = Math.min(Math.max(((this.dataPoints.length - 1) / xRange * (xval - this.axisX._absoluteMinimum)) >> 0, 0), this.dataPoints.length);
-			//else
-			//	searchStartIndex = 0;
+				//if (xRange > 0)
+				//	searchStartIndex = Math.min(Math.max(((this.dataPoints.length - 1) / xRange * (xval - this.axisX._absoluteMinimum)) >> 0, 0), this.dataPoints.length);
+				//else
+				//	searchStartIndex = 0;
+			}
 		}
 
 		while (true) {
@@ -11986,6 +12143,26 @@
 
 	extend(Axis, CanvasJSObject);
 
+	Axis.prototype.createExtraLabelsForLog = function (recursionCount) {
+		recursionCount = (recursionCount || 0) + 1;
+
+		if (recursionCount > 5)
+			return;
+		var start = this.logLabelValues[0] || this.intervalStartPosition;
+
+		if (Math.log(this.range) / Math.log(start / this.viewportMinimum) < this.noTicks - 1) {
+			var interval = Axis.getNiceNumber((start - this.viewportMinimum) / Math.min(Math.max(2, this.noTicks - this.logLabelValues.length), 3), true);
+			for (var i = Math.ceil(this.viewportMinimum / interval) * interval; i < start; i += interval) {
+				if (i < this.viewportMinimum)
+					continue;
+				this.logLabelValues.push(i);
+			}
+			this.logLabelValues.sort(compareNumbers);
+			this.createExtraLabelsForLog(recursionCount);
+		}
+		return;
+	}
+
 	Axis.prototype.createLabels = function () {
 		var textBlock, textBlockNext;
 		var sizeNext;
@@ -12007,9 +12184,10 @@
 		var labelMaxHeightLimit = this.chart.height * .6;
 
 		//var intervalInPixels = this.conversionParameters.pixelPerUnit * this.interval;
-		if (this.type === "axisX" && this.chart.plotInfo.axisXValueType === "dateTime") {
-			this.intervalStartPosition = this.getLabelStartPoint(new Date(this.viewportMinimum), this.intervalType, labelInterval);
-			endPoint = addToDateTime(new Date(this.viewportMaximum), labelInterval, this.intervalType)
+
+		if (this.type === "axisX" && this.chart.plotInfo.axisXValueType === "dateTime" && !this.logarithmic) {
+			this.intervalStartPosition = this.getLabelStartPoint(new Date(this.viewportMinimum), this.intervalType, this.interval);
+			endPoint = addToDateTime(new Date(this.viewportMaximum), this.interval, this.intervalType)
 
 			for (i = this.intervalStartPosition; i < endPoint; addToDateTime(i, labelInterval, this.intervalType)) {
 
@@ -12037,11 +12215,12 @@
 				});
 
 				this._labels.push({ position: i.getTime(), textBlock: textBlock, effectiveHeight: null });
-				this._ticks.push({ position: i.getTime() })
+				//this._ticks.push({ position: i.getTime() });
 			}
 
 		}
 		else {
+
 			endPoint = this.viewportMaximum;
 
 			//Check if it should be rendered as a category axis. If yes, then ceil the interval
@@ -12064,8 +12243,45 @@
 				}
 			}
 
+			if (this.logarithmic && !this.equidistantInterval) {
+
+				if (!this.logLabelValues) {
+					this.logLabelValues = [];
+					this.createExtraLabelsForLog();
+				}
+
+				for (var j = 0 ; j < this.logLabelValues.length; j++) {
+					i = this.logLabelValues[j];
+					if (i < this.viewportMinimum)
+						continue;
+
+					var text = this.labelFormatter ? this.labelFormatter({ chart: this.chart._publicChartReference, axis: this._options, value: i, label: this.labels[i] ? this.labels[i] : null })
+						: this.type === "axisX" && this.labels[i] ? this.labels[i] : numberFormat(i, this.valueFormatString, this.chart._cultureInfo);
+					textBlock = new TextBlock(this.ctx, {
+						x: 0,
+						y: 0,
+						//maxWidth: this.maxHeight,
+						//maxHeight: this.labelFontSize,
+						maxWidth: labelMaxWidth,
+						maxHeight: labelMaxHeight,
+						angle: this.labelAngle,
+						text: this.prefix + text + this.suffix,
+						horizontalAlign: "left",//left, center, right
+						fontSize: this.labelFontSize,//in pixels
+						fontFamily: this.labelFontFamily,
+						fontWeight: this.labelFontWeight, //normal, bold, bolder, lighter,
+						fontColor: this.labelFontColor,
+						fontStyle: this.labelFontStyle, // normal, italic, oblique
+						textBaseline: "middle",
+						borderThickness: 0
+					});
+					this._labels.push({ position: i, textBlock: textBlock, effectiveHeight: null });
+					//this._ticks.push({ position: i });
+				}
+			}
+
 			//parseFloat & toPrecision are being used to avoid issues related to precision.
-			for (i = this.intervalStartPosition; i <= endPoint; i = parseFloat((i + (labelInterval * labelSkipStep)).toFixed(14))) {
+			for (i = this.intervalStartPosition; i <= endPoint; i = parseFloat((this.logarithmic && this.equidistantInterval ? i * Math.pow(this.logarithmBase, this.interval) : i + this.interval).toFixed(14))) {
 				var text = this.labelFormatter ? this.labelFormatter({ chart: this.chart._publicChartReference, axis: this._options, value: i, label: this.labels[i] ? this.labels[i] : null })
 					: this.type === "axisX" && this.labels[i] ? this.labels[i] : numberFormat(i, this.valueFormatString, this.chart._cultureInfo);
 
@@ -12089,27 +12305,33 @@
 				});
 
 				this._labels.push({ position: i, textBlock: textBlock, effectiveHeight: null });
-				this._ticks.push({ position: i })
+				//this._ticks.push({ position: i });
 			}
 		}
-		if (this._position === "bottom" || this._position === "top") {
-			intervalInPixels = this.lineCoordinates.width / Math.abs(this.viewportMaximum - this.viewportMinimum) * convertToNumber(labelInterval, this.intervalType);
 
-			labelMaxWidth = typeof (this._options.labelMaxWidth) === "undefined" ? this.chart.width * .3 >> 0 : this._options.labelMaxWidth;
+		if (this._position === "bottom" || this._position === "top") {
+			//intervalInPixels = this.lineCoordinates.width / Math.abs(this.viewportMaximum - this.viewportMinimum) * convertToNumber(this.interval, this.intervalType);
+			if (this.logarithmic && !this.equidistantInterval && this._labels.length >= 2)
+				intervalInPixels = this.lineCoordinates.width * Math.log(Math.min(this._labels[this._labels.length - 1].position / this._labels[this._labels.length - 2].position, this._labels[1].position / this._labels[0].position, 5 / 2)) / Math.log(this.range);
+			else
+				intervalInPixels = this.lineCoordinates.width / (this.logarithmic && this.equidistantInterval ? Math.log(this.viewportMaximum / this.viewportMinimum) / Math.log(this.logarithmBase) : Math.abs(this.viewportMaximum - this.viewportMinimum)) * convertToNumber(this.interval, this.intervalType);
+
+			labelMaxWidth = typeof (this._options.labelMaxWidth) === "undefined" ? this.chart.width * .5 >> 0 : this._options.labelMaxWidth;
 
 			if (!(this.chart.panEnabled))
 				labelMaxHeight = typeof (this._options.labelWrap) === "undefined" || this.labelWrap ? this.chart.height * .8 >> 0 : this.labelFontSize * 1.5;
 		}
 		else if (this._position === "left" || this._position === "right") {
-
-			intervalInPixels = this.lineCoordinates.height / Math.abs(this.viewportMaximum - this.viewportMinimum) * convertToNumber(labelInterval, this.intervalType);
+			if (this.logarithmic && !this.equidistantInterval && this._labels.length >= 2)
+				intervalInPixels = this.lineCoordinates.height * Math.log(Math.min(this._labels[this._labels.length - 1].position / this._labels[this._labels.length - 2].position, this._labels[1].position / this._labels[0].position, 5 / 2)) / Math.log(this.range);
+			else
+				intervalInPixels = this.lineCoordinates.height / (this.logarithmic && this.equidistantInterval ? Math.log(this.viewportMaximum / this.viewportMinimum) / Math.log(this.logarithmBase) : Math.abs(this.viewportMaximum - this.viewportMinimum)) * convertToNumber(this.interval, this.intervalType);
 
 			if (!(this.chart.panEnabled))
 				labelMaxWidth = typeof (this._options.labelMaxWidth) === "undefined" ? this.chart.width * .3 >> 0 : this._options.labelMaxWidth;
 
 			labelMaxHeight = typeof (this._options.labelWrap) === "undefined" || this.labelWrap ? this.chart.height * .3 >> 0 : this.labelFontSize * 1.5;
 		}
-
 		for (k = 0; k < this._labels.length; k++) {
 			textBlock = this._labels[k].textBlock;
 			textBlock.maxWidth = labelMaxWidth;
@@ -12396,17 +12618,6 @@
 						textBlock = this._labels[i].textBlock;
 						var size = textBlock.measureText();
 
-						//var words = textBlock.text.split(' ');
-						//for (var k = 0; k < words.length; k++) {
-						//	var testLine = words[k];
-						//	this.ctx.font = textBlock.fontStyle + ' ' + textBlock.fontWeight + ' ' + textBlock.fontSize + 'px ' + textBlock.fontFamily;
-						//	var metrics = this.ctx.measureText(testLine);
-
-						//	if (metrics.width > labelWordWidth)
-						//		labelWordWidth = metrics.width;
-						//}
-						//this.sessionVariables.labelMaxWidth = labelMaxWidth = Math.min(Math.max(labelMaxWidth, labelWordWidth), this.chart.width * 0.3);
-
 						if (i < this._labels.length - 1) {
 							j = (i + 1);
 							textBlockNext = this._labels[j].textBlock;
@@ -12493,7 +12704,7 @@
 												this.sessionVariables.labelFontSize = (isNullOrUndefined(this._options.labelFontSize)) ? this.labelFontSize : this._options.labelFontSize;
 											}
 											else if (adjacentLabelsHeight >= (2.4 * labelMaxHeight) && adjacentLabelsHeight < (2.8 * labelMaxHeight)) {//Slant
-												this.sessionVariables.labelAngle = labelRoatationAngle;
+												//this.sessionVariables.labelAngle = labelRoatationAngle;
 												this.sessionVariables.labelMaxHeight = labelEffectiveMaxHeight;
 												this.sessionVariables.labelFontSize = this.labelFontSize;
 												this.sessionVariables.labelWrap = true;
@@ -12511,7 +12722,7 @@
 												this.sessionVariables.labelAngle = isNullOrUndefined(this.sessionVariables.labelAngle) ? 0 : this.sessionVariables.labelAngle;
 											}
 											else if (adjacentLabelsHeight >= (3.2 * labelMaxHeight) && adjacentLabelsHeight < (3.6 * labelMaxHeight)) {//Rotate+Wrap
-												this.sessionVariables.labelAngle = labelRoatationAngle;
+												//this.sessionVariables.labelAngle = labelRoatationAngle;
 												this.sessionVariables.labelMaxHeight = labelEffectiveMaxHeight;
 												this.sessionVariables.labelWrap = true;
 												this.sessionVariables.labelFontSize = this.labelFontSize;
@@ -12645,7 +12856,7 @@
 		var maxLabelEffectiveWidth = 0;
 		var i = 0;
 		this._labels = [];
-		this._ticks = [];
+		//this._ticks = [];
 		this._stripLineLabels = [];
 
 		if (this._position === "left" || this._position === "right") {
@@ -12716,7 +12927,7 @@
 	Axis.prototype.createLabelsAndCalculateHeight = function () {
 		var maxLabelEffectiveHeight = 0;
 		this._labels = [];
-		this._ticks = [];
+		//this._ticks = [];
 		this._stripLineLabels = [];
 		var textBlock;
 		var i = 0;
@@ -13009,11 +13220,11 @@
 
 				axisX.calculateValueToPixelConversionParameters();
 				if (axisX._labels && axisX._labels.length > 1) {
-					firstLabelPosition = (axisX._labels[1].position - axisX.viewportMinimum) * Math.abs(axisX.conversionParameters.pixelPerUnit) + axisX.lineCoordinates.x1;
+					firstLabelPosition = (axisX.logarithmic ? Math.log(axisX._labels[1].position / axisX.viewportMinimum) / axisX.conversionParameters.lnLogarithmBase : (axisX._labels[1].position - axisX.viewportMinimum)) * Math.abs(axisX.conversionParameters.pixelPerUnit) + axisX.lineCoordinates.x1;
 					if (axisX.chart.plotInfo.axisXValueType === "dateTime")
-						lastLabelPosition = (axisX._labels[axisX._labels.length - 2].position - axisX.viewportMinimum) * Math.abs(axisX.conversionParameters.pixelPerUnit) + axisX.lineCoordinates.x1;
+						lastLabelPosition = (axisX.logarithmic ? Math.log(axisX._labels[axisX._labels.length - 2].position / axisX.viewportMinimum) / axisX.conversionParameters.lnLogarithmBase : (axisX._labels[axisX._labels.length - 2].position - axisX.viewportMinimum)) * Math.abs(axisX.conversionParameters.pixelPerUnit) + axisX.lineCoordinates.x1;
 					else
-						lastLabelPosition = (axisX._labels[axisX._labels.length - 1].position - axisX.viewportMinimum) * Math.abs(axisX.conversionParameters.pixelPerUnit) + axisX.lineCoordinates.x1;
+						lastLabelPosition = (axisX.logarithmic ? Math.log(axisX._labels[axisX._labels.length - 1].position / axisX.viewportMinimum) / axisX.conversionParameters.lnLogarithmBase : (axisX._labels[axisX._labels.length - 1].position - axisX.viewportMinimum)) * Math.abs(axisX.conversionParameters.pixelPerUnit) + axisX.lineCoordinates.x1;
 				}
 
 				if (axisY)
@@ -13411,6 +13622,7 @@
 
 		var skipLabels = false;
 		var totalLabelWidth = 0;
+		var totalLabelHeight = 0;
 		var thresholdRatio = 1;
 		var labelCount = 0;
 		var skipStep = 2;
@@ -13422,35 +13634,83 @@
 		//Don't skip labels when interval is explicitely set
 		if (typeof (this._options.interval) === "undefined") {
 			if (this._position === "bottom" || this._position === "top") {
+				if (this.logarithmic && !this.equidistantInterval && this.labelAutoFit) {
+					var labels = [];
+					if (this.labelAngle !== 0 && this.labelAngle !== 360)
+						thresholdRatio = 1;
+					else
+						thresholdRatio = 1.2;
+					var nextWidth, nextPosition = this.viewportMaximum;
+					var pixelPerUnit = this.lineCoordinates.width / Math.log(this.range);
+					for (var i = this._labels.length - 1; i >= 0; i--) {
+						label = this._labels[i];
 
-				//thresholdRatio = .9;// More space is preferred between labels when axis is horizontally aligned
+						if (label.position < this.viewportMinimum)// don't consider stripLine's lable
+							break;
+						if (label.position > this.viewportMaximum)// don't consider stripLine's lable
+							continue;
 
-				for (var i = 0; i < this._labels.length; i++) {
-					label = this._labels[i];
-					if (label.position < this.viewportMinimum)// don't consider stripLine's label
-						continue;
-					var width = label.textBlock.width * Math.cos(Math.PI / 180 * this.labelAngle) + label.textBlock.height * Math.sin(Math.PI / 180 * this.labelAngle);
+						if (i === this._labels.length - 1 || nextWidth < Math.log(nextPosition / label.position) * pixelPerUnit / thresholdRatio) {
+							labels.push(label);
+							nextPosition = label.position;
+							nextWidth = label.textBlock.width * Math.abs(Math.cos(Math.PI / 180 * this.labelAngle)) + label.textBlock.height * Math.abs(Math.sin(Math.PI / 180 * this.labelAngle));
+						}
+					}
+					this._labels = labels;
 
-					totalLabelWidth += width;
-				}
+				} else {
+					//thresholdRatio = .9;// More space is preferred between labels when axis is horizontally aligned
 
-				if (totalLabelWidth > this.lineCoordinates.width * thresholdRatio && this.labelAutoFit) {
-					skipLabels = true;
+					for (var i = 0; i < this._labels.length; i++) {
+						label = this._labels[i];
+						if (label.position < this.viewportMinimum)// don't consider stripLine's label
+							continue;
+						var width = label.textBlock.width * Math.abs(Math.cos(Math.PI / 180 * this.labelAngle)) + label.textBlock.height * Math.abs(Math.sin(Math.PI / 180 * this.labelAngle));
+
+						totalLabelWidth += width;
+					}
+
+					if (totalLabelWidth > this.lineCoordinates.width * thresholdRatio && this.labelAutoFit) {
+						skipLabels = true;
+					}
 				}
 			} if (this._position === "left" || this._position === "right") {
-				for (var i = 0; i < this._labels.length; i++) {
-					label = this._labels[i];
-					if (label.position < this.viewportMinimum)// don't consider stripLine's lable
-						continue;
 
-					var width = label.textBlock.height * Math.cos(Math.PI / 180 * this.labelAngle) + label.textBlock.width * Math.sin(Math.PI / 180 * this.labelAngle);
+				if (this.logarithmic && !this.equidistantInterval && this.labelAutoFit) {
+					var labels = [];
+					var nextHeight, nextPosition = this.viewportMaximum;
+					var pixelPerUnit = this.lineCoordinates.height / Math.log(this.range);
+					for (var i = this._labels.length - 1; i >= 0; i--) {
+						label = this._labels[i];
 
-					totalLabelWidth += width;
+						if (label.position < this.viewportMinimum)// don't consider stripLine's lable
+							break;
+						if (label.position > this.viewportMaximum)// don't consider stripLine's lable
+							continue;
+
+						if (i === this._labels.length - 1 || nextHeight < Math.log(nextPosition / label.position) * pixelPerUnit) {
+							labels.push(label);
+							nextPosition = label.position;
+							nextHeight = label.textBlock.height * Math.abs(Math.cos(Math.PI / 180 * this.labelAngle)) + label.textBlock.width * Math.abs(Math.sin(Math.PI / 180 * this.labelAngle));
+						}
+					}
+					this._labels = labels;
+				} else {
+					for (var i = 0; i < this._labels.length; i++) {
+						label = this._labels[i];
+						if (label.position < this.viewportMinimum)// don't consider stripLine's lable
+							continue;
+
+						var height = label.textBlock.height * Math.abs(Math.cos(Math.PI / 180 * this.labelAngle)) + label.textBlock.width * Math.abs(Math.sin(Math.PI / 180 * this.labelAngle));
+
+						totalLabelHeight += height;
+					}
+
+					if (totalLabelHeight > this.lineCoordinates.height * thresholdRatio && this.labelAutoFit) {
+						skipLabels = true;
+					}
 				}
 
-				if (totalLabelWidth > this.lineCoordinates.height * thresholdRatio && this.labelAutoFit) {
-					skipLabels = true;
-				}
 			}
 		}
 		//		var width = label.textBlock.height * Math.cos(Math.PI / 180 * this.labelAngle) + label.textBlock.width * Math.sin(Math.PI / 180 * this.labelAngle);
@@ -13467,23 +13727,6 @@
 			var tick;
 			var xy;
 
-			for (i = 0; i < this._ticks.length; i++) {
-				tick = this._ticks[i];
-				if (tick.position < this.viewportMinimum || tick.position > this.viewportMaximum)
-					continue;
-
-				xy = this.getPixelCoordinatesOnAxis(tick.position);
-				if (this.tickThickness) {
-					this.ctx.lineWidth = this.tickThickness;
-					this.ctx.strokeStyle = this.tickColor;
-					var tickX = (this.ctx.lineWidth % 2 === 1) ? (xy.x << 0) + .5 : (xy.x << 0);
-					this.ctx.beginPath();
-					this.ctx.moveTo(tickX, xy.y << 0);
-					this.ctx.lineTo(tickX, (xy.y + this.tickLength) << 0);
-					this.ctx.stroke();
-				}
-			}
-
 			for (i = 0; i < this._labels.length; i++) {
 
 				label = this._labels[i];
@@ -13494,6 +13737,16 @@
 
 				if (skipLabels && labelCount++ % skipStep !== 0 && this.labelAutoFit)
 					continue;
+
+				if (this.tickThickness) {
+					this.ctx.lineWidth = this.tickThickness;
+					this.ctx.strokeStyle = this.tickColor;
+					var tickX = (this.ctx.lineWidth % 2 === 1) ? (xy.x << 0) + .5 : (xy.x << 0);
+					this.ctx.beginPath();
+					this.ctx.moveTo(tickX, xy.y << 0);
+					this.ctx.lineTo(tickX, (xy.y + this.tickLength) << 0);
+					this.ctx.stroke();
+				}
 
 				if (label.textBlock.angle === 0) {
 					xy.x -= label.textBlock.width / 2;
@@ -13507,6 +13760,7 @@
 				label.textBlock.y = xy.y;
 
 				label.textBlock.render(true);
+
 			}
 
 			if (this.title) {
@@ -13524,12 +13778,16 @@
 			var tick;
 			var xy;
 
-			for (i = 0; i < this._ticks.length; i++) {
-				tick = this._ticks[i];
-				if (tick.position < this.viewportMinimum || tick.position > this.viewportMaximum)
+			for (i = 0; i < this._labels.length; i++) {
+				label = this._labels[i];
+				if (label.position < this.viewportMinimum || label.position > this.viewportMaximum)
 					continue;
 
-				xy = this.getPixelCoordinatesOnAxis(tick.position);
+				xy = this.getPixelCoordinatesOnAxis(label.position);
+
+				if (skipLabels && labelCount++ % skipStep !== 0 && this.labelAutoFit)
+					continue;
+
 				if (this.tickThickness) {
 					this.ctx.lineWidth = this.tickThickness;
 					this.ctx.strokeStyle = this.tickColor;
@@ -13540,19 +13798,6 @@
 					this.ctx.stroke();
 
 				}
-			}
-
-			for (i = 0; i < this._labels.length; i++) {
-				label = this._labels[i];
-				if (label.position < this.viewportMinimum || label.position > this.viewportMaximum)
-					continue;
-
-				xy = this.getPixelCoordinatesOnAxis(label.position);
-
-
-
-				if (skipLabels && labelCount++ % skipStep !== 0 && this.labelAutoFit)
-					continue;
 
 				if (label.textBlock.angle === 0) {
 					xy.x -= label.textBlock.width / 2;
@@ -13584,12 +13829,16 @@
 			var tick;
 			var xy;
 
-			for (i = 0; i < this._ticks.length; i++) {
-				tick = this._ticks[i];
-				if (tick.position < this.viewportMinimum || tick.position > this.viewportMaximum)
+			for (var i = 0; i < this._labels.length; i++) {
+				label = this._labels[i];
+				if (label.position < this.viewportMinimum || label.position > this.viewportMaximum)
 					continue;
 
-				xy = this.getPixelCoordinatesOnAxis(tick.position);
+				xy = this.getPixelCoordinatesOnAxis(label.position);
+
+				if (skipLabels && labelCount++ % skipStep !== 0 && this.labelAutoFit)
+					continue;
+
 				if (this.tickThickness) {
 					this.ctx.lineWidth = this.tickThickness;
 					this.ctx.strokeStyle = this.tickColor;
@@ -13599,18 +13848,6 @@
 					this.ctx.lineTo((xy.x - this.tickLength) << 0, tickY);
 					this.ctx.stroke();
 				}
-			}
-
-			for (var i = 0; i < this._labels.length; i++) {
-				label = this._labels[i];
-				if (label.position < this.viewportMinimum || label.position > this.viewportMaximum)
-					continue;
-
-				xy = this.getPixelCoordinatesOnAxis(label.position);
-
-
-				if (skipLabels && labelCount++ % skipStep !== 0 && this.labelAutoFit)
-					continue;
 
 				//label.textBlock.x = xy.x - (label.textBlock.width * Math.cos(Math.PI / 180 * this.labelAngle)) - this.tickLength - 5;
 
@@ -13651,23 +13888,6 @@
 			var tick;
 			var xy;
 
-			for (i = 0; i < this._ticks.length; i++) {
-				tick = this._ticks[i];
-				if (tick.position < this.viewportMinimum || tick.position > this.viewportMaximum)
-					continue;
-
-				xy = this.getPixelCoordinatesOnAxis(tick.position);
-				if (this.tickThickness) {
-					this.ctx.lineWidth = this.tickThickness;
-					this.ctx.strokeStyle = this.tickColor;
-					var tickY = (this.ctx.lineWidth % 2 === 1) ? (xy.y << 0) + .5 : (xy.y << 0);
-					this.ctx.beginPath();
-					this.ctx.moveTo(xy.x << 0, tickY);
-					this.ctx.lineTo((xy.x + this.tickLength) << 0, tickY);
-					this.ctx.stroke();
-				}
-			}
-
 			for (var i = 0; i < this._labels.length; i++) {
 				label = this._labels[i];
 				if (label.position < this.viewportMinimum || label.position > this.viewportMaximum)
@@ -13677,6 +13897,16 @@
 
 				if (skipLabels && labelCount++ % skipStep !== 0 && this.labelAutoFit)
 					continue;
+
+				if (this.tickThickness) {
+					this.ctx.lineWidth = this.tickThickness;
+					this.ctx.strokeStyle = this.tickColor;
+					var tickY = (this.ctx.lineWidth % 2 === 1) ? (xy.y << 0) + .5 : (xy.y << 0);
+					this.ctx.beginPath();
+					this.ctx.moveTo(xy.x << 0, tickY);
+					this.ctx.lineTo((xy.x + this.tickLength) << 0, tickY);
+					this.ctx.stroke();
+				}
 
 				//label.textBlock.y = xy.y - (label.textBlock.width * Math.sin(Math.PI / 180 * this.labelAngle));
 
@@ -13715,15 +13945,15 @@
 
 			ctx.fillStyle = this.interlacedColor;
 
-			for (i = 0; i < this._ticks.length; i++) {
+			for (i = 0; i < this._labels.length; i++) {
 
 				if (renderInterlacedGrid) {//So that the interlaced color alternates
-					interlacedGridStartPoint = this.getPixelCoordinatesOnAxis(this._ticks[i].position);
+					interlacedGridStartPoint = this.getPixelCoordinatesOnAxis(this._labels[i].position);
 
-					if (i + 1 > this._ticks.length - 1)
+					if (i + 1 > this._labels.length - 1)
 						interlacedGridEndPoint = this.getPixelCoordinatesOnAxis(this.viewportMaximum);
 					else
-						interlacedGridEndPoint = this.getPixelCoordinatesOnAxis(this._ticks[i + 1].position);
+						interlacedGridEndPoint = this.getPixelCoordinatesOnAxis(this._labels[i + 1].position);
 					ctx.fillRect(Math.min(interlacedGridEndPoint.x, interlacedGridStartPoint.x), plotAreaCoordinates.y1, Math.abs(interlacedGridEndPoint.x - interlacedGridStartPoint.x), Math.abs(plotAreaCoordinates.y1 - plotAreaCoordinates.y2));
 					renderInterlacedGrid = false;
 				} else
@@ -13735,16 +13965,16 @@
 
 			ctx.fillStyle = this.interlacedColor;
 
-			for (i = 0; i < this._ticks.length; i++) {
+			for (i = 0; i < this._labels.length; i++) {
 
 				if (renderInterlacedGrid) {//So that the interlaced color alternates
 
 					interlacedGridEndPoint = this.getPixelCoordinatesOnAxis(this._labels[i].position);
 
-					if (i + 1 > this._ticks.length - 1)
+					if (i + 1 > this._labels.length - 1)
 						interlacedGridStartPoint = this.getPixelCoordinatesOnAxis(this.viewportMaximum);
 					else
-						interlacedGridStartPoint = this.getPixelCoordinatesOnAxis(this._ticks[i + 1].position);
+						interlacedGridStartPoint = this.getPixelCoordinatesOnAxis(this._labels[i + 1].position);
 
 					ctx.fillRect(plotAreaCoordinates.x1, Math.min(interlacedGridEndPoint.y, interlacedGridStartPoint.y), Math.abs(plotAreaCoordinates.x1 - plotAreaCoordinates.x2), Math.abs(interlacedGridStartPoint.y - interlacedGridEndPoint.y));
 					renderInterlacedGrid = false;
@@ -14179,20 +14409,14 @@
 		var height = this.lineCoordinates.height;
 
 		if (this._position === "bottom" || this._position === "top") {
-			//var pixelPerUnit = width / Math.abs(this.viewportMaximum - this.viewportMinimum);
 			var pixelPerUnit = this.conversionParameters.pixelPerUnit;
 
-			//xy.x = this.lineCoordinates.x1 + (pixelPerUnit * (value - this.viewportMinimum));
-			//xy.x = this.conversionParameters.reference + (pixelPerUnit * (value - this.viewportMinimum));
 			xy.x = this.convertValueToPixel(value);
 			xy.y = this.lineCoordinates.y1;
 		}
 		if (this._position === "left" || this._position === "right") {
-			//var pixelPerUnit = height / Math.abs(this.viewportMaximum - this.viewportMinimum);
 			var pixelPerUnit = -this.conversionParameters.pixelPerUnit;
 
-			//xy.y = this.lineCoordinates.y2 - (pixelPerUnit * (value - this.viewportMinimum));
-			//xy.y = this.conversionParameters.reference - (pixelPerUnit * (value - this.viewportMinimum));
 			xy.y = this.convertValueToPixel(value);
 			xy.x = this.lineCoordinates.x2;
 		}
@@ -14207,8 +14431,10 @@
 
 		var value = 0;
 		var p = (this._position === "left" || this._position === "right") ? pixel.y : pixel.x;
-
-		value = this.conversionParameters.minimum + (p - this.conversionParameters.reference) / this.conversionParameters.pixelPerUnit;
+		if (this.logarithmic)
+			value = Math.pow(this.logarithmBase, (p - this.conversionParameters.reference) / this.conversionParameters.pixelPerUnit) * this.viewportMinimum;
+		else
+			value = this.conversionParameters.minimum + (p - this.conversionParameters.reference) / this.conversionParameters.pixelPerUnit;
 
 		return value;
 	}
@@ -14227,10 +14453,10 @@
 		var xval = null;
 
 		if (this._position === "left") {
-			xval = (this.chart.axisX.viewportMaximum - this.chart.axisX.viewportMinimum) / this.chart.axisX.lineCoordinates.height * ((this.chart.axisX.lineCoordinates.y2 - pixel.y)) + this.chart.axisX.viewportMinimum;
+			xval = this.convertPixelToValue(pixel.y);
 		}
 		else if (this._position === "bottom") {
-			xval = (this.chart.axisX.viewportMaximum - this.chart.axisX.viewportMinimum) / this.chart.axisX.lineCoordinates.width * (pixel.x - this.chart.axisX.lineCoordinates.x1) + this.chart.axisX.viewportMinimum;
+			xval = this.convertPixelToValue(pixel.x);
 		}
 
 		return xval;
@@ -14249,12 +14475,22 @@
 		conversionParameters.minimum = this.viewportMinimum;
 
 		if (this._position === "bottom" || this._position === "top") {
-			conversionParameters.pixelPerUnit = (this.reversed ? -1 : 1) * width / Math.abs(this.viewportMaximum - this.viewportMinimum);
+			if (this.logarithmic) {
+				conversionParameters.lnLogarithmBase = Math.log(this.logarithmBase);
+				conversionParameters.pixelPerUnit = (this.reversed ? -1 : 1) * width * conversionParameters.lnLogarithmBase / Math.log(Math.abs(this.viewportMaximum / this.viewportMinimum));
+			}
+			else
+				conversionParameters.pixelPerUnit = (this.reversed ? -1 : 1) * width / Math.abs(this.viewportMaximum - this.viewportMinimum);
 			conversionParameters.reference = (this.reversed ? this.lineCoordinates.x2 : this.lineCoordinates.x1);
 		}
 
 		if (this._position === "left" || this._position === "right") {
-			conversionParameters.pixelPerUnit = (this.reversed ? 1 : -1) * height / Math.abs(this.viewportMaximum - this.viewportMinimum);
+			if (this.logarithmic) {
+				conversionParameters.lnLogarithmBase = Math.log(this.logarithmBase);
+				conversionParameters.pixelPerUnit = (this.reversed ? 1 : -1) * height * conversionParameters.lnLogarithmBase / Math.log(Math.abs(this.viewportMaximum / this.viewportMinimum));
+			}
+			else
+				conversionParameters.pixelPerUnit = (this.reversed ? 1 : -1) * height / Math.abs(this.viewportMaximum - this.viewportMinimum);
 			conversionParameters.reference = (this.reversed ? this.lineCoordinates.y1 : this.lineCoordinates.y2);
 		}
 
@@ -14264,13 +14500,22 @@
 
 	Axis.prototype.convertValueToPixel = function (value) {
 
-		//if(this._options.revesed)
-		var pixel = (this.conversionParameters.reference + this.conversionParameters.pixelPerUnit * (value - this.conversionParameters.minimum) + .5) << 0;
+		var pixel;
+
+		if (this.logarithmic)
+			pixel = (this.conversionParameters.reference + this.conversionParameters.pixelPerUnit * Math.log(value / this.conversionParameters.minimum) / this.conversionParameters.lnLogarithmBase) + .5 << 0;
+		else
+			pixel = (this.conversionParameters.reference + this.conversionParameters.pixelPerUnit * (value - this.conversionParameters.minimum) + .5) << 0;
 
 		return pixel;
 	}
 
 	Axis.prototype.calculateAxisParameters = function () {
+
+		if (this.logarithmic) {
+			this.calculateLogarithamicAxisParameters();
+			return;
+		}
 
 		var freeSpace = this.chart.layoutManager.getFreeSpace();
 		var availableWidth = 0;
@@ -14783,6 +15028,367 @@
 		//}
 	}
 
+	Axis.prototype.calculateLogarithamicAxisParameters = function () {
+
+		var freeSpace = this.chart.layoutManager.getFreeSpace();
+		var availableWidth = 0;
+		var availableHeight = 0;
+		var isLessThanTwoDataPoints = false;
+		var lnLogarithmBase = Math.log(this.logarithmBase);
+		var linearInterval;
+
+		if (this._position === "bottom" || this._position === "top") {
+			this.maxWidth = freeSpace.width;
+			this.maxHeight = freeSpace.height;
+		} else {
+			this.maxWidth = freeSpace.height;
+			this.maxHeight = freeSpace.width;
+		}
+
+		var noTicks = (this.type === "axisX" ? (this.maxWidth < 500 ? 7 : Math.max(7, Math.floor(this.maxWidth / 100))) : Math.max(Math.floor(this.maxWidth / 50), 3));
+		var min, max;
+		var minDiff;
+		var range;
+		var rangePadding = 1;
+
+
+		if (this.viewportMinimum === null || isNaN(this.viewportMinimum))
+			this.viewportMinimum = this.minimum;
+
+		if (this.viewportMaximum === null || isNaN(this.viewportMaximum))
+			this.viewportMaximum = this.maximum;
+
+		if (this.type === "axisX") {
+			min = (this.viewportMinimum !== null) ? this.viewportMinimum : this.dataInfo.viewPortMin;
+			max = (this.viewportMaximum !== null) ? this.viewportMaximum : this.dataInfo.viewPortMax;
+
+			if (max / min === 1) {
+				rangePadding = Math.pow(this.logarithmBase, typeof (this._options.interval) === "undefined" ? .4 : this._options.interval);
+
+				max *= rangePadding;
+				min /= rangePadding;
+			}
+
+			if (this.dataInfo.minDiff !== Infinity)
+				minDiff = this.dataInfo.minDiff;
+			else if (max / min > this.logarithmBase) {
+				minDiff = max / min * Math.pow(this.logarithmBase, .5);
+			}
+			else {
+				minDiff = this.logarithmBase;
+			}
+
+		} else if (this.type === "axisY") {
+
+			min = (this.viewportMinimum !== null) ? this.viewportMinimum : this.dataInfo.viewPortMin;
+			max = (this.viewportMaximum !== null) ? this.viewportMaximum : this.dataInfo.viewPortMax;
+
+			if (min <= 0 && !isFinite(max)) {
+				max = typeof (this._options.interval) === "undefined" ? 0 : this._options.interval;
+				min = 1;
+			} else if (min <= 0) {
+				min = max;
+			} else if (!isFinite(max)) {
+				max = min;
+			}
+
+			if (min === 1 && max === 1) {// When all dataPoints are one
+				max *= this.logarithmBase - 1 / this.logarithmBase;
+				min = 1;
+			}
+			else if (max / min === 1) {// When there is only a single dataPoint or when all dataPoints have same Y Value
+				rangePadding = Math.min(max * Math.pow(this.logarithmBase, .01), Math.pow(this.logarithmBase, 5));
+				max *= rangePadding;
+				min /= rangePadding;
+			}
+			else if (min > max) {
+				rangePadding = Math.min(min / max * Math.pow(this.logarithmBase, .01), Math.pow(this.logarithmBase, 5));
+
+				if (max >= 1)
+					min = max / rangePadding;
+				else
+					max = min * rangePadding;
+			}
+			else {
+
+				rangePadding = Math.min(max / min * Math.pow(this.logarithmBase, .01), Math.pow(this.logarithmBase, .04));
+
+				if (max !== 1)
+					max *= rangePadding;
+				if (min !== 1)
+					min /= rangePadding;
+			}
+
+			if (this.dataInfo.minDiff !== Infinity)
+				minDiff = this.dataInfo.minDiff;
+			else if (max / min > this.logarithmBase) {
+				minDiff = max / min * Math.pow(this.logarithmBase, .5);
+			}
+			else {
+				minDiff = this.logarithmBase;
+			}
+
+
+			//Apply includeZero
+			if (this.includeZero && (this.viewportMinimum === null || isNaN(this.viewportMinimum))) {
+				if (min > 1)
+					min = 1;
+			}
+
+			if (this.includeZero && (this.viewportMaximum === null || isNaN(this.viewportMaximum))) {
+				if (max < 1)
+					max = 1;
+			}
+		}
+
+		range = (isNaN(this.viewportMaximum) || this.viewportMaximum === null ? max : this.viewportMaximum) / (isNaN(this.viewportMinimum) || this.viewportMinimum === null ? min : this.viewportMinimum);
+		linearRange = (isNaN(this.viewportMaximum) || this.viewportMaximum === null ? max : this.viewportMaximum) - (isNaN(this.viewportMinimum) || this.viewportMinimum === null ? min : this.viewportMinimum);
+
+
+
+		this.intervalType = "number";
+
+		range = Math.pow(this.logarithmBase, Axis.getNiceNumber(Math.abs(Math.log(range) / lnLogarithmBase), false));
+
+		if (this._options && this._options.interval > 0)
+			this.interval = this._options.interval;
+		else {
+			this.interval = Axis.getNiceExponent(Math.log(range) / lnLogarithmBase / (noTicks - 1), true);
+			linearInterval = Axis.getNiceNumber(linearRange / (noTicks - 1), true);
+		}
+
+
+
+		if (this.viewportMinimum === null || isNaN(this.viewportMinimum)) {
+			if (this.type === "axisX")
+				this.viewportMinimum = min / Math.sqrt(minDiff);
+			else
+				this.viewportMinimum = Math.pow(this.logarithmBase, this.interval * Math.floor(Math.log(min) / lnLogarithmBase / this.interval));
+		}
+
+		if (this.viewportMaximum === null || isNaN(this.viewportMaximum)) {
+			if (this.type === "axisX")
+				this.viewportMaximum = max * Math.sqrt(minDiff);
+			else
+				this.viewportMaximum = Math.pow(this.logarithmBase, this.interval * Math.ceil(Math.log(max) / lnLogarithmBase / this.interval));
+		}
+
+		if (this.viewportMaximum === 1 && this.viewportMinimum === 1) {
+
+			if (this._options.viewportMinimum === 1) {
+				this.viewportMaximum *= this.logarithmBase - 1 / this.logarithmBase;
+			}
+			else if (this._options.viewportMaximum === 1) {
+				this.viewportMinimum /= this.logarithmBase - 1 / this.logarithmBase;
+			}
+
+			if (this._options && typeof (this._options.interval) === "undefined") {
+				this.interval = Axis.getNiceExponent(Math.ceil(Math.log(range) / lnLogarithmBase) / (noTicks - 1));
+				linearInterval = Axis.getNiceNumber((this.viewportMaximum - this.viewportMinimum) / (noTicks - 1), true);
+			}
+		}
+
+		//console.log(this.interval, range, lnLogarithmBase);
+
+		//Calculate minimum and maximum if not provided by the user
+		if (this.minimum === null || this.maximum === null) {
+			if (this.type === "axisX") {
+				min = (this.minimum !== null) ? this.minimum : this.dataInfo.min;
+				max = (this.maximum !== null) ? this.maximum : this.dataInfo.max;
+
+				if (max / min === 1) {
+					rangePadding = Math.pow(this.logarithmBase, typeof (this._options.interval) === "undefined" ? .4 : this._options.interval);
+
+					max *= rangePadding;
+					min /= rangePadding;
+				}
+
+				if (this.dataInfo.minDiff !== Infinity)
+					minDiff = this.dataInfo.minDiff;
+				else if (max / min > this.logarithmBase) {
+					minDiff = max / min * Math.pow(this.logarithmBase, .5);
+				}
+				else {
+					minDiff = this.logarithmBase;
+				}
+
+			} else if (this.type === "axisY") {
+
+				min = (this.minimum !== null) ? this.minimum : this.dataInfo.min;
+				max = (this.maximum !== null) ? this.maximum : this.dataInfo.max;
+
+				if (!isFinite(min) && !isFinite(max)) {
+					max = typeof (this._options.interval) === "undefined" ? 0 : this._options.interval;
+					min = 1;
+				}
+				else
+					if (min === 1 && max === 1) {// When all dataPoints are one
+						max *= this.logarithmBase;
+						min /= this.logarithmBase;
+					}
+					else if (max / min === 1) {// When there is only a single dataPoint or when all dataPoints have same Y Value
+						rangePadding = Math.pow(this.logarithmBase, this.interval); //Math.min(max * .01, 5);
+						max *= rangePadding;
+						min /= rangePadding;
+					}
+					else if (min > max) {
+						rangePadding = Math.min(min / max * .01, 5);
+
+						if (max >= 1)
+							min = max / rangePadding;
+						else
+							max = min * rangePadding;
+					}
+					else {
+
+						rangePadding = Math.min(max / min * Math.pow(this.logarithmBase, .01), Math.pow(this.logarithmBase, .04));
+
+						if (max !== 1)
+							max *= rangePadding;
+						if (min !== 1)
+							min /= rangePadding;
+					}
+
+				if (this.dataInfo.minDiff !== Infinity)
+					minDiff = this.dataInfo.minDiff;
+				else if (max / min > this.logarithmBase) {
+					minDiff = max / min * Math.pow(this.logarithmBase, .5);
+				}
+				else {
+					minDiff = this.logarithmBase;
+				}
+
+
+				//Apply includeZero
+				if (this.includeZero && (this.minimum === null || isNaN(this.minimum))) {
+					if (min > 1)
+						min = 1;
+				}
+
+				if (this.includeZero && (this.maximum === null || isNaN(this.maximum))) {
+					if (max < 1)
+						max = 1;
+				}
+			}
+
+			range = max / min;
+
+
+
+			this.intervalType = "number";
+
+			if (this.minimum === null) {
+				if (this.type === "axisX")
+					this.minimum = min / Math.sqrt(minDiff);
+				else
+					this.minimum = Math.pow(this.logarithmBase, this.interval * Math.floor(Math.log(min) / lnLogarithmBase / this.interval));
+
+				this.minimum = Math.min(this.minimum, this.sessionVariables.viewportMinimum === null || isNaN(this.sessionVariables.viewportMinimum) ? typeof this.sessionVariables.newViewportMinimum === "undefined" ? Infinity : this.sessionVariables.newViewportMinimum : this.sessionVariables.viewportMinimum);
+			}
+
+			if (this.maximum === null) {
+				if (this.type === "axisX")
+					this.maximum = max * Math.sqrt(minDiff);
+				else
+					this.maximum = Math.pow(this.logarithmBase, this.interval * Math.ceil(Math.log(max) / lnLogarithmBase / this.interval));
+
+				this.maximum = Math.max(this.maximum, this.sessionVariables.viewportMaximum === null || isNaN(this.sessionVariables.viewportMaximum) ? typeof this.sessionVariables.newViewportMaximum === "undefined" ? 0 : this.sessionVariables.newViewportMaximum : this.sessionVariables.viewportMaximum);
+			}
+
+
+
+			if (this.maximum === 1 && this.minimum === 1) {
+
+				if (this._options.minimum === 1) {
+					this.maximum *= this.logarithmBase - 1 / this.logarithmBase;
+				}
+				else if (this._options.maximum === 1) {
+					this.minimum /= this.logarithmBase - 1 / this.logarithmBase;
+				}
+			}
+
+		}
+
+		this.viewportMinimum = Math.max(this.viewportMinimum, this.minimum);
+		this.viewportMaximum = Math.min(this.viewportMaximum, this.maximum);
+
+		if (this.viewportMinimum > this.viewportMaximum) {
+			if ((this._options.viewportMinimum || this._options.minimum) && !(this._options.viewportMaximum || this._options.maximum))
+				this.viewportMaximum = this.maximum = (this._options.viewportMinimum || this._options.minimum);
+			else if (!(this._options.viewportMinimum || this._options.minimum) && (this._options.viewportMaximum || this._options.maximum))
+				this.viewportMinimum = this.minimum = (this._options.viewportMaximum || this._options.maximum) / Math.pow(this.logarithmBase, 2 * Math.ceil(this.interval));
+		}
+
+		var intervalStartPosition = Math.pow(this.logarithmBase, Math.floor(Math.log(this.viewportMinimum) / (lnLogarithmBase * this.interval) + 0.2) * this.interval);
+		this.range = this.viewportMaximum / this.viewportMinimum;
+		this.noTicks = noTicks;
+
+		if (!this._options.interval && this.range < Math.pow(this.logarithmBase, /*this.type === "axisX" || */this.viewportMaximum < 8 || noTicks < 3 ? 2 : 3)) {
+
+			var linearIntervalStartPosition = Math.floor(this.viewportMinimum / linearInterval + .5) * linearInterval;
+
+			while (linearIntervalStartPosition < this.viewportMinimum) {
+				linearIntervalStartPosition += linearInterval;
+			}
+
+			this.equidistantInterval = false;
+			this.intervalStartPosition = linearIntervalStartPosition;
+			this.interval = linearInterval;
+		}
+		else {
+			if (!this._options.interval) {
+				var lnInterval = Math.ceil(this.interval);
+				if (this.range > this.interval) {
+					this.interval = lnInterval;
+					intervalStartPosition = Math.pow(this.logarithmBase, Math.floor(Math.log(this.viewportMinimum) / (lnLogarithmBase * this.interval) + 0.2) * this.interval);
+				}
+			}
+			this.equidistantInterval = true;
+			this.intervalStartPosition = intervalStartPosition;
+		}
+
+
+		//Set valueFormatString
+		if (!this.valueFormatString) {
+			this.valueFormatString = "#,##0.##";
+
+			range = Math.abs(this.viewportMaximum - this.viewportMinimum);
+
+			if (this.viewportMinimum < 1) {
+				var numberOfDecimals = Math.floor(Math.abs(Math.log(this.viewportMinimum) / Math.LN10)) + 2;
+				if (isNaN(numberOfDecimals) || !isFinite(numberOfDecimals))
+					numberOfDecimals = 2;
+
+				if (numberOfDecimals > 2) {
+					for (var i = 0; i < numberOfDecimals - 2; i++)
+						this.valueFormatString += "#";
+				}
+			}
+
+
+		}
+	}
+
+	Axis.getNiceExponent = function (x, round) {
+
+		var exp = Math.floor(Math.log(x) / Math.LN10);
+		var f = x / Math.pow(10, exp);
+		var nf;
+
+		if (exp < 0) {
+			if (f <= 1)
+				nf = 1;
+			else if (f <= 5)
+				nf = 5;
+			else nf = 10;
+		} else {
+			nf = Math.max(Math.floor(f), 1);
+		}
+
+
+		return Number((nf * Math.pow(10, exp)).toFixed(20));
+	}
+
 	Axis.getNiceNumber = function (x, round) {
 
 		var exp = Math.floor(Math.log(x) / Math.LN10);
@@ -14903,8 +15509,8 @@
 		this._thicknessType = "pixel";
 		if (this.startValue !== null && this.endValue !== null) {
 
-			this.value = ((this.startValue.getTime ? this.startValue.getTime() : this.startValue) + (this.endValue.getTime ? this.endValue.getTime() : this.endValue)) / 2;
-			this.thickness = Math.max(this.endValue - this.startValue);
+			this.value = axis.logarithmic ? Math.sqrt((this.startValue.getTime ? this.startValue.getTime() : this.startValue) * (this.endValue.getTime ? this.endValue.getTime() : this.endValue)) : ((this.startValue.getTime ? this.startValue.getTime() : this.startValue) + (this.endValue.getTime ? this.endValue.getTime() : this.endValue)) / 2;
+			this.thickness = axis.logarithmic ? Math.log(this.endValue / this.startValue) / Math.log(axis.logarithmBase) : Math.max(this.endValue - this.startValue);
 			this._thicknessType = "value";
 		}
 	}
@@ -15180,8 +15786,8 @@
 
 					//var x = (this.chart.axisX.viewportMaximum - this.chart.axisX.viewportMinimum) / this.chart.axisX.lineCoordinates.width * (mouseX - this.chart.axisX.lineCoordinates.x1) + this.chart.axisX.viewportMinimum.valueOf();
 					var x = dataSeries.axisX.convertPixelToValue({ x: mouseX });
-
 					entry = dataSeries.getDataPointAtX(x, true);
+
 					entry.dataSeries = dataSeries;
 					this.currentDataPointIndex = entry.index;
 					dataPoint = entry.dataPoint;
@@ -15735,7 +16341,7 @@
 				value = value[index];
 
 			if (key === "x") {
-				if (chart.plotInfo.axisXValueType === "dateTime" || ds.xValueType === "dateTime" || (dp.x && dp.x.getTime))
+				if (!chart.plotInfo.plotTypes[0].plotUnits[0].axisX.logarithmic && (chart.plotInfo.axisXValueType === "dateTime" || ds.xValueType === "dateTime" || (dp.x && dp.x.getTime)))
 					return dateFormat(value, dp.xValueFormatString ? dp.xValueFormatString : ds.xValueFormatString ? ds.xValueFormatString : chart.axisX && chart.axisX.autoValueFormatString ? chart.axisX.autoValueFormatString : "DD MMM YY", chart._cultureInfo);
 				else
 					return numberFormat(value, dp.xValueFormatString ? dp.xValueFormatString : ds.xValueFormatString ? ds.xValueFormatString : "#,##0.########", chart._cultureInfo);
@@ -16297,7 +16903,7 @@
 
 	}
 
-	CanvasJS.Chart.version = "v1.8.5 GA";
+	CanvasJS.Chart.version = "v1.9.0 Beta 1";
 	window.CanvasJS = CanvasJS;
 	//#endregion Public API
 
