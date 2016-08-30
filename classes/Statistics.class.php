@@ -311,13 +311,17 @@ class Statistics {
 				}
 				// Now add the bytes to the dataPoints array
 				$txdiff = $bytearr['TxBytes'] - $lastval['TxBytes'];
-				while ($txdiff < 0) {
-					$txdiff += pow(2, 31);
+				if ($txdiff < 0) {
+					// If it's negative, then just set it to the last value. The machine
+					// may have rebooted, or it may have wrapped around. We're not caring about
+					// exact numbers, this is just good enough to get a feeling.
+					$txdiff = $bytearr['TxBytes'];
 				}
 				$retarr['data'][$txid]['dataPoints'][] = array("x" => $time, "y" => round($txdiff / 1024 / 1024, 2));
 				$rxdiff = $bytearr['RxBytes'] - $lastval['RxBytes'];
-				while($rxdiff < 0) {
-					$rxdiff += pow(2, 31);
+				if ($rxdiff < 0) {
+					// Same here.
+					$rxdiff = $bytearr['RxBytes'];
 				}
 				$retarr['data'][$rxid]['dataPoints'][] = array("x" => $time, "y" => round($rxdiff / 1024 / 1024, 2));
 				$lastval = $bytearr;
