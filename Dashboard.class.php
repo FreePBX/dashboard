@@ -9,6 +9,10 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	public function __construct($freepbx) {
 		$this->db = $freepbx->Database;
 		$this->freepbx = $freepbx;
+		$this->maxage = $this->freepbx->Config->get('SYS_STATS_MAXAGE');
+		if ($this->maxage < 50) {
+			$this->maxage = 50;
+		}
 	}
 
 	// Always regen sys stats if they're older or equal to this, in seconds.
@@ -46,6 +50,36 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 
 	public function install() {
 		$this->freepbx->Config->remove_conf_settings(array("DASHBOARD_INFO_UPDATE_TIME", "MAXCALLS", "DASHBOARD_STATS_UPDATE_TIME"));
+		$this->freepbx->Config->define_conf_setting('SYS_STATS_DISABLE', array(
+			'value'       => false,
+			'defaultval'  => false,
+			'readonly'    => false,
+			'hidden'      => false,
+			'level'       => 0,
+			'module'      => 'dashboard',
+			'category'    => 'Dashboard Module',
+			'emptyok'     => false,
+			'sortorder'   => 1,
+			'name'        => 'Disable collection of system statistics',
+			'description' => 'Set this to true to prevent persistent collection of system statistics such as CPU, memory, and channel usage.',
+			'type'        => CONF_TYPE_BOOL
+		),true);
+
+		$this->freepbx->Config->define_conf_setting('SYS_STATS_MAXAGE', array(
+			'value'       => 50,
+			'defaultval'  => 50,
+			'readonly'    => false,
+			'hidden'      => false,
+			'level'       => 0,
+			'options'     => array(50, 86400),
+			'module'      => 'dashboard',
+			'category'    => 'Dashboard Module',
+			'emptyok'     => false,
+			'sortorder'   => 1,
+			'name'        => 'Expiry time for system statistics',
+			'description' => 'Set the maximum age in seconds before system statistics are refreshed. The minimum value is 50 seconds.',
+			'type'        => CONF_TYPE_INT
+		),true);
 	}
 	public function uninstall() {
 	}
@@ -155,7 +189,9 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 
 	public function runTrigger() {
 		// This is run every minute.
-		$this->getSysInfo();
+		if (!$this->freepbx->Config->get('SYS_STATS_DISABLE')) {
+			$this->getSysInfo();
+		}
 	}
 
 	public function genSysInfo() {
