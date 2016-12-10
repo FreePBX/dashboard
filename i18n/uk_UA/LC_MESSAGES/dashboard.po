@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-08 18:15-0800\n"
-"PO-Revision-Date: 2016-10-06 16:41+0200\n"
+"PO-Revision-Date: 2016-12-09 20:44+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/uk_UA/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
-msgstr ""
+msgstr "%s Запис"
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
@@ -174,7 +174,6 @@ msgid "Month"
 msgstr "Місяць"
 
 #: sections/Overview.class.php:131
-#, fuzzy
 msgid "MySQL"
 msgstr "MySQL"
 
