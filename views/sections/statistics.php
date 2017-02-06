@@ -88,41 +88,29 @@
 </div>
 <script type="text/javascript">
 
-function generateTitle(i, d) {
-	var myindex = i[0].index;
-	if (typeof d.datasets[0].timestamps === "undefined" || typeof d.datasets[0].timestamps[myindex] === "undefined") {
-		return '';
-	}
-	// convert that timestamp to local time
-	var localdate = new Date(0);
-	localdate.setUTCSeconds(d.datasets[0].timestamps[myindex]);
-	return localdate;
+// This is our default view
+Dashboard.sysstatAjax = {
+	command: 'sysstat',
+	target: 'uptime',
+	period: 'hour',
+	module: 'dashboard'
+};
 
-}
+window.currentchart = false;
 
-	// This is our default view
-	Dashboard.sysstatAjax = {
-		command: 'sysstat',
-		target: 'uptime',
-		period: 'hour',
-		module: 'dashboard'
-	};
-
-	window.currentchart = false;
-
-	window.observers['builtin_aststat'] = function() {
-		// console.log('Running', Dashboard.sysstatAjax);
-		$.ajax({
-			url: window.ajaxurl,
-			data: Dashboard.sysstatAjax,
-			success: function(data) {
-				$('#page_Main_Statistics_uptime .shadow').fadeOut('fast');
-				console.log("Data", data);
-				window.currentchart = new CanvasJS.Chart("builtin_aststat", data);
-				window.currentchart.render();
-			},
-		});
-	};
-	Dashboard.sysstatAjax = {command: "sysstat", target: "asterisk", period: "Hour", module: "dashboard"};
-	// window.observers["builtin_aststat"]();
+window.observers['builtin_aststat'] = function() {
+	// console.log('Running', Dashboard.sysstatAjax);
+	$.ajax({
+		url: window.ajaxurl,
+		data: Dashboard.sysstatAjax,
+		success: function(data) {
+			//$('#page_Main_Statistics_uptime .shadow').fadeOut('fast');
+			console.log("CanvasJS Data", data);
+			window.currentchart = new CanvasJS.Chart("builtin_aststat", data);
+			window.currentchart.render();
+		},
+	});
+};
+Dashboard.sysstatAjax = {command: "sysstat", target: "asterisk", period: "Hour", module: "dashboard"};
+window.observers["builtin_aststat"]();
 </script>

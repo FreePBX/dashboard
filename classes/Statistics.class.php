@@ -101,6 +101,7 @@ class Statistics {
 
 	public function getGraphDataCPU($period) {
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
+		$xvfs = $this->getDateFormatString($period);
 		$retarr = array(
 			"width" => $this->width,
 			"toolTip" => array("shared" => true),
@@ -109,6 +110,7 @@ class Statistics {
 			"data" => array(
 				0 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "5 Min Average",
 					"type" => "line",
 					"showInLegend" => true,
@@ -116,6 +118,7 @@ class Statistics {
 				),
 				1 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "10 Min Average",
 					"type" => "line",
 					"showInLegend" => true,
@@ -123,6 +126,7 @@ class Statistics {
 				),
 				2 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "15 Min Average",
 					"type" => "line",
 					"showInLegend" => true,
@@ -130,6 +134,7 @@ class Statistics {
 				),
 				3 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "CPU Temperature",
 					"type" => "column",
 					"showInLegend" => false,
@@ -204,10 +209,12 @@ class Statistics {
 			$disks[$d]['index'] = $index++;
 		}
 
+		$xvfs = $this->getDateFormatString($period);
 		// Build the retarr
 		foreach ($disks as $id => $val) {
 			$retarr['data'][$val['index']] = array(
 				"xValueType" => "dateTime",
+				"xValueFormatString" => $xvfs,
 				"name" => $val['MountPoint'].' ('.$val['Name'].')',
 				"type" => "line",
 				"showInLegend" => true,
@@ -284,11 +291,13 @@ class Statistics {
 		// Now loop through our data array (sigh, at least it's n*3 not n^3) and generate
 		// the actual data to send to the graph.
 		$count = 0;
+		$xvfs = $this->getDateFormatString($period);
 		foreach ($data as $name => $tmparr) {
 			$txid = $count++;
 			$rxid = $count++;
 			$retarr['data'][$txid] = array(
 				"xValueType" => "dateTime",
+				"xValueFormatString" => $xvfs,
 				"name" => "$name TX MB",
 				"type" => "line",
 				"showInLegend" => true,
@@ -297,6 +306,7 @@ class Statistics {
 			);
 			$retarr['data'][$rxid] = array(
 				"xValueType" => "dateTime",
+				"xValueFormatString" => $xvfs,
 				"name" => "$name RX MB",
 				"type" => "line",
 				"showInLegend" => true,
@@ -333,6 +343,7 @@ class Statistics {
 	public function getGraphDataMem($period) {
 		// Grab our memory info...
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
+		$xvfs = $this->getDateFormatString($period);
 		$retarr = array(
 			"width" => $this->width,
 			"toolTip" => array("shared" => true),
@@ -343,6 +354,7 @@ class Statistics {
 			"data" => array(
 				0 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "% In Use",
 					"type" => "stackedColumn100",
 					"showInLegend" => true,
@@ -350,6 +362,7 @@ class Statistics {
 				),
 				1 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "% Buffers",
 					"type" => "stackedColumn100",
 					"showInLegend" => true,
@@ -357,6 +370,7 @@ class Statistics {
 				),
 				2 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "% Cache",
 					"type" => "stackedColumn100",
 					"showInLegend" => true,
@@ -364,6 +378,7 @@ class Statistics {
 				),
 				3 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "% Unused",
 					"type" => "stackedColumn100",
 					"showInLegend" => true,
@@ -371,6 +386,7 @@ class Statistics {
 				),
 				4 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "% Swap Utilized",
 					"type" => "line",
 					"color" => "red",
@@ -402,6 +418,7 @@ class Statistics {
 
 	public function getGraphDataAst($period) {
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
+		$xvfs = $this->getDateFormatString($period);
 		$retarr = array(
 			"width" => $this->width,
 			"toolTip" => array("shared" => true),
@@ -411,6 +428,7 @@ class Statistics {
 			"data" => array(
 				0 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "Users Online",
 					"type" => "line",
 					"showInLegend" => true,
@@ -419,6 +437,7 @@ class Statistics {
 				),
 				1 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "Users Offline",
 					"type" => "line",
 					"showInLegend" => true,
@@ -427,6 +446,7 @@ class Statistics {
 				),
 				2 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "Trunks Online",
 					"type" => "line",
 					"showInLegend" => true,
@@ -435,6 +455,7 @@ class Statistics {
 				),
 				3 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"name" => "Trunks Offline",
 					"type" => "line",
 					"showInLegend" => true,
@@ -443,6 +464,7 @@ class Statistics {
 				),
 				4 => array(
 					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
 					"legendText" => "Channels In Use",
 					"name" => "In Use",
 					"type" => "column",
@@ -502,4 +524,17 @@ class Statistics {
 		$retarr['data'][4]['dataPoints'] = $channels;
 		return $retarr;
 	}
+
+	private function getDateFormatString($period) {
+		switch($period) {
+		// If we're asking for Minutes, we don't need a year
+		case 'MINUTES':
+			return 'MMM DD HH:mm:ss';
+		case 'DAY':
+			return 'MMM DD YYYY';
+		default:
+			return 'MMM DD YYYY HH:mm';
+		}
+	}
+
 }
