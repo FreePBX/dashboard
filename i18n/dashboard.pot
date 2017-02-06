@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-08 18:15-0800\n"
+"POT-Creation-Date: 2016-10-23 23:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -107,6 +108,11 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
+#: dashboard.i18n.php:14
+#: dashboard.i18n.php:20
+msgid "Dashboard Module"
+msgstr ""
+
 #: classes/Statistics.class.php:134
 #: classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156
@@ -126,9 +132,17 @@ msgstr ""
 msgid "Delete This"
 msgstr ""
 
+#: dashboard.i18n.php:12
+msgid "Disable collection of system statistics"
+msgstr ""
+
 #: classes/Statistics.class.php:124
 #: views/sections/statistics.php:50
 msgid "Disk"
+msgstr ""
+
+#: dashboard.i18n.php:18
+msgid "Expiry time for system statistics"
 msgstr ""
 
 #: classes/Statistics.class.php:264
@@ -233,6 +247,18 @@ msgstr ""
 
 #: sections/Overview.class.php:100
 msgid "Security Issue"
+msgstr ""
+
+#: dashboard.i18n.php:22
+msgid ""
+"Set the maximum age in seconds before system statistics are refreshed. The "
+"minimum value is 50 seconds."
+msgstr ""
+
+#: dashboard.i18n.php:16
+msgid ""
+"Set this to true to prevent persistent collection of system statistics such "
+"as CPU, memory, and channel usage."
 msgstr ""
 
 #: views/sections/overview.php:75

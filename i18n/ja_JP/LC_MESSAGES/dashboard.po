@@ -37,15 +37,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-03 12:00-0800\n"
+"POT-Creation-Date: 2016-10-23 23:27+0000\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
 "dashboard/ja_JP/>\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -131,6 +131,10 @@ msgstr "致命的なエラーが見つかりました"
 msgid "Dashboard"
 msgstr ""
 
+#: dashboard.i18n.php:14 dashboard.i18n.php:20
+msgid "Dashboard Module"
+msgstr ""
+
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
 #: classes/Statistics.class.php:178 classes/Statistics.class.php:189
@@ -144,9 +148,17 @@ msgstr "日"
 msgid "Delete This"
 msgstr "削除する"
 
+#: dashboard.i18n.php:12
+msgid "Disable collection of system statistics"
+msgstr ""
+
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
 msgstr "ディスク"
+
+#: dashboard.i18n.php:18
+msgid "Expiry time for system statistics"
+msgstr ""
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
@@ -237,6 +249,18 @@ msgstr ""
 #: sections/Overview.class.php:100
 msgid "Security Issue"
 msgstr "セキュリティ問題"
+
+#: dashboard.i18n.php:22
+msgid ""
+"Set the maximum age in seconds before system statistics are refreshed. The "
+"minimum value is 50 seconds."
+msgstr ""
+
+#: dashboard.i18n.php:16
+msgid ""
+"Set this to true to prevent persistent collection of system statistics such "
+"as CPU, memory, and channel usage."
+msgstr ""
 
 #: views/sections/overview.php:75
 msgid "Show All"
