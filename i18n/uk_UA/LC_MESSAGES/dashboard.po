@@ -12,20 +12,18 @@ msgstr ""
 "POT-Creation-Date: 2016-10-23 23:27+0000\n"
 "PO-Revision-Date: 2016-10-06 16:41+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
-"Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/"
-"dashboard/uk_UA/>\n"
+"Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/dashboard/uk_UA/>\n"
 "Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.4\n"
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
-msgstr ""
+msgstr "%s Запис"
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
@@ -55,12 +53,8 @@ msgstr "5 Хвилин"
 
 #: sections/Overview.class.php:31
 #, php-format
-msgid ""
-"<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
-"i>"
-msgstr ""
-"<strong>'%s'</strong><br><i>(Ви можете змінити це ім'я в Додаткових "
-"настройках)</i>"
+msgid "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"
+msgstr "<strong>'%s'</strong><br><i>(Ви можете змінити це ім'я в Додаткових настройках)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
@@ -186,7 +180,6 @@ msgid "Month"
 msgstr "Місяць"
 
 #: sections/Overview.class.php:131
-#, fuzzy
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -207,12 +200,8 @@ msgid "Please check for errors in the notification section"
 msgstr "Будь ласка, перевірте наявність помилок в розділі повідомлень"
 
 #: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Забезпечує інформаційну панель системи, що показує інформацію про виклики, "
-"ЦП, пам'ять, диски, мережі та процеси."
+msgid "Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes."
+msgstr "Забезпечує інформаційну панель системи, що показує інформацію про виклики, ЦП, пам'ять, диски, мережі та процеси."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
@@ -227,15 +216,11 @@ msgid "Security Issue"
 msgstr "Проблеми безпеки"
 
 #: dashboard.i18n.php:22
-msgid ""
-"Set the maximum age in seconds before system statistics are refreshed. The "
-"minimum value is 50 seconds."
+msgid "Set the maximum age in seconds before system statistics are refreshed. The minimum value is 50 seconds."
 msgstr ""
 
 #: dashboard.i18n.php:16
-msgid ""
-"Set this to true to prevent persistent collection of system statistics such "
-"as CPU, memory, and channel usage."
+msgid "Set this to true to prevent persistent collection of system statistics such as CPU, memory, and channel usage."
 msgstr ""
 
 #: views/sections/overview.php:75
