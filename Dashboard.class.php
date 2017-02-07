@@ -118,8 +118,10 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	* Chown hook for freepbx fwconsole
 	*/
 	public function chownFreepbx() {
-		$files = array();
-		$files[] = array('type' => 'file', 'path' => __DIR__."/scheduler.php", 'perms' => 0755);
+		$files = array(
+			array('type' => 'file', 'path' => __DIR__."/scheduler.php", 'perms' => 0755),
+			array('type' => 'file', 'path' => __DIR__."/netmon.php", 'perms' => 0755),
+		);
 		return $files;
 	}
 
@@ -181,6 +183,12 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 				$s = new Statistics();
 				return $s->getStats();
 			break;
+			case "netmon":
+				if (!class_exists('Netmon')) {
+					include 'classes/Netmon.class.php';
+				}
+				$n = new \FreePBX\modules\Dashboard\Netmon();
+				return $n->getStats();
 			default:
 				return DashboardHooks::runHook($_REQUEST['command']);
 			break;
