@@ -47,55 +47,69 @@ class Statistics {
 
 	public function getGraphDataUptime($period) {
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
-
+		$xvfs = $this->getDateFormatString($period);
+		$retarr = array(
+			"width" => $this->width,
+			"toolTip" => array("shared" => true),
+			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
+			"axisY" => array("valueFormatString" => " ", "tickLength" => 0),
+			"legend" => array("verticalAlign" => "bottom", "horizontalAlign" => "left"),
+			"data" => array(
+				0 => array(
+					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
+					"name" => _("System"),
+					"type" => "line",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+					"markerSize" => 1,
+				),
+				1 => array(
+					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
+					"name" => "Asterisk",
+					"type" => "line",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+					"markerSize" => 1,
+				),
+				2 => array(
+					"xValueType" => "dateTime",
+					"xValueFormatString" => $xvfs,
+					"name" => _("Since Reload"),
+					"type" => "line",
+					"showInLegend" => true,
+					"dataPoints" => array(),
+					"markerSize" => 1,
+				),
+			),
+		);
 		if (!class_exists('TimeUtils')) {
 			include 'TimeUtils.class.php';
 		}
-
-		$tooltips = array();
-		$sysuptime = array();
-		$astuptime = array();
-		$astreload = array();
-		foreach ($si as $key => $row) {
-			if (!isset($row['ast.uptime.system-seconds'])) {
-				$us = 0;
-				$rs = 0;
-				$ut = 0;
-			} else {
-				$us = $row['ast.uptime.system-seconds'];
-				$rs = $row['ast.uptime.reload-seconds'];
-				$ut = $row['psi.Vitals.@attributes.Uptime'];
-			}
-
-			$ttip = date('c', $key)."<br>";
-			$ttip .= _("System").":<br>&nbsp;&nbsp; ".TimeUtils::getReadable($ut, 3)."<br>";
-			$ttip .= "Asterisk:<br>&nbsp;&nbsp; ".TimeUtils::getReadable($us, 3)."<br>";
-			$ttip .= _("Since Reload").":<br>&nbsp;&nbsp; ".TimeUtils::getReadable($rs, 3);
-			$tooltips[] = $ttip;
-
-			$sysuptime[] = $ut;
-			$astuptime[] = $us;
-			$astreload[] = $rs;
+		$count=0;
+		foreach ($si as $utime => $row) {
+			$key = $utime * 1000;
+			$sysuptime = isset($row['psi.Vitals.@attributes.Uptime']) ? (int) $row['psi.Vitals.@attributes.Uptime'] : 0;
+			$astuptime = isset($row['ast.uptime.system-seconds']) ? (int) $row['ast.uptime.system-seconds'] : 0;
+			$astreload = isset($row['ast.uptime.reload-seconds']) ? (int) $row['ast.uptime.reload-seconds'] : 0;
+			$retarr['data'][0]['dataPoints'][$count] = array(
+				"x" => $key,
+				"y" => $sysuptime,
+				"toolTipContent" => "<span style='color: {color};'>{name}: ".TimeUtils::getReadable($sysuptime, 3)."</span>"
+			);
+			$retarr['data'][1]['dataPoints'][$count] = array(
+				"x" => $key,
+				"y" => $astuptime,
+				"toolTipContent" => "<span style='color: {color};'>{name}: ".TimeUtils::getReadable($astuptime, 3)."</span>"
+			);
+			$retarr['data'][2]['dataPoints'][$count] = array(
+				"x" => $key,
+				"y" => $astreload,
+				"toolTipContent" => "<span style='color: {color};'>{name}: ".TimeUtils::getReadable($astreload, 3)."</span>"
+			);
+			$count++;
 		}
-
-		$retarr['template'] = 'aststat';
-		$retarr['tooltips'] = $tooltips;
-		$retarr['values'] = array( "sysuptime" => $sysuptime, "astuptime" => $astuptime, "astreload" => $astreload );
-		$retarr['series'] = array(
-			"sysuptime" => array( "color" => "red", "axis" => "l" ),
-			"astuptime" => array( "color" => "green", "axis" => "l" ),
-			"astreload" => array( "color" => "blue", "axis" => "r" ),
-		);
-		$retarr['axis'] = array(
-			"r" => array("title" => _("Reload"), "titleDistance" => 8 ),
-			"l" => array("title" => _("System"), "titleDistance" => 8 ),
-		);
-
-		$retarr['legend'] = array(
-			"sysuptime" => _('System Uptime'),
-			"astuptime" => _('Asterisk Uptime'),
-			"astreload" => _('Since Reload'),
-		);
 		return $retarr;
 	}
 
@@ -200,7 +214,7 @@ class Statistics {
 			}
 
 			// We don't care about tmpfs's
-			if ($disks[$d]['Name'] == "tmpfs") {
+			if ($disks[$d]['Name'] == "tmpfs" || $disks[$d]['Name'] == "devtmpfs") {
 				unset($disks[$d]);
 				continue;
 			}
@@ -348,7 +362,7 @@ class Statistics {
 			"width" => $this->width,
 			"toolTip" => array("shared" => true),
 			"axisX" => array("valueFormatString" => " ", "tickLength" => 0),
-			"axisY" => array("interval" => 10),
+			"axisY" => array("valueFormatString" => " ", "tickLength" => 0, "interval" => 10),
 			"legend" => array("verticalAlign" => "bottom", "horizontalAlign" => "left"),
 			"dataPointMinWidth" => 5,
 			"data" => array(
@@ -409,7 +423,11 @@ class Statistics {
 				$retarr['data'][1]['dataPoints'][$count] = array( "x" => $key, "y" => (int) $val['psi.Memory.Details.@attributes.BuffersPercent']);
 				$retarr['data'][2]['dataPoints'][$count] = array( "x" => $key, "y" => (int) $val['psi.Memory.Details.@attributes.CachedPercent']);
 				$retarr['data'][3]['dataPoints'][$count] = array( "x" => $key, "y" => (int) 100 - $val['psi.Memory.@attributes.Percent']);
-				$retarr['data'][4]['dataPoints'][$count] = array( "x" => $key, "y" => (int) $val['psi.Memory.Swap.@attributes.Percent']);
+				if (isset($val['psi.Memory.Swap.@attributes.Percent'])) {
+					$retarr['data'][4]['dataPoints'][$count] = array( "x" => $key, "y" => (int) $val['psi.Memory.Swap.@attributes.Percent']);
+				} else {
+					$retarr['data'][4]['dataPoints'][$count] = array( "x" => $key, "y" => 0);
+				}
 			}
 			$count++;
 		}
