@@ -80,15 +80,28 @@ function load_netmon(intname) {
 	// so it can be updated without needing to recreate the whole
 	// object.
 	window.Netchart['chartdata'] = [
-		{ xValueType: "dateTime", xValueFormatString: "HH:mm:ss", type: "splineArea", dataPoints: [] }, // rxdata
-		{ xValueType: "dateTime", xValueFormatString: "HH:mm:ss", type: "splineArea", dataPoints: [] }, // txdata
+		{
+			xValueType: "dateTime",
+			xValueFormatString: "HH:mm:ss",
+			type: "splineArea",
+			dataPoints: [],
+			toolTipContent: "<span style='color: {color};'>RX: <strong>{y}</strong>Kb/sec</span>",
+		}, // rxdata
+		{	name: "TX Kb/s",
+			xValueType: "dateTime",
+			xValueFormatString: "HH:mm:ss",
+			type: "splineArea",
+			dataPoints: [],
+			toolTipContent: "<span style='color: {color};'>TX: <strong>{y}</strong>Kb/sec</span>",
+		}, // txdata
 	];
 	window.Netchart['chart'] = new CanvasJS.Chart('netmonout', {
 		title:{ text: _("Interface") + " " + intname },
 		// animationEnabled: true,
 		data: window.Netchart.chartdata,
-		axisX: { valueFormatString: " ", tickLength: 0 },
+		saxisX: { valueFormatString: " ", tickLength: 0 },
 		axisY: { valueFormatString: " ", tickLength: 0 },
+		toolTip: { shared: true },
 	});
 	load_chart(intname);
 }
@@ -107,6 +120,9 @@ function load_chart(intname) {
 
 function render_chart(intname, data) {
 	var count = 0;
+	// Delete all previous datapoints
+	window.Netchart.chartdata[0]['dataPoints'] = [];
+	window.Netchart.chartdata[1]['dataPoints'] = [];
 	Object.keys(data).forEach(function(k) { // Timestamp
 		var rx, lastrx, rxbytes, tx, lasttx, txbytes;
 		var timestamp = k * 1000;
