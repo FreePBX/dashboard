@@ -75,7 +75,10 @@ function parse_ip_output($outarr) {
 		if ($line[0] !== " ") {
 			$intarr = explode(":", $line);
 			$current = trim($intarr[1]);
-			$ints[$current] = [ "intnum" => $intarr[0], "intname" => $current, "other" => $intarr[2] ];
+			// If it's actually 'lo', we never save that.
+			if ($current !== "lo") {
+				$ints[$current] = [ "intnum" => $intarr[0], "intname" => $current, "other" => $intarr[2] ];
+			}
 			continue;
 		}
 		$line = trim($line);
@@ -102,7 +105,10 @@ function parse_ip_output($outarr) {
 			// Which line is this?
 			$type = strtolower(substr(array_shift($nextline), 0, 2)); // Converts 'RX:' to 'rx'
 			$data = preg_split("/\s+/", $line);
-			$ints[$current][$type] = array_combine($nextline, $data);
+			// If it's actually 'lo', we never save that.
+			if ($current !== "lo") {
+				$ints[$current][$type] = array_combine($nextline, $data);
+			}
 		}
 
 	}
