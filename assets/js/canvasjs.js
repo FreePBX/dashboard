@@ -17499,7 +17499,7 @@
 
 	Chart.prototype.replaceKeywordsWithValue = function (str, dp, ds, dpIndex, indexKeywordValue) {
 		//var regex = /\{\s*[a-zA-Z]+\s*\}|"[^"]*"|'[^']*'/g;
-		var regex = /\{.*?\}|"[^"]*"|'[^']*'/g;
+		var regex = /\{.*?\}|"[^\{"]*"|'[^'\{]*'/g;
 		var chart = this;
 		indexKeywordValue = typeof (indexKeywordValue) === "undefined" ? 0 : indexKeywordValue;
 
