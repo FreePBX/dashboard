@@ -60,98 +60,116 @@ foreach ($raw as $name => $row) {
 <script>
 // Remote anything hanging around if we've been reloaded.
 if (typeof window.Netchart !== "undefined") {
-	if (typeof window.Netchart.refresh !== "undefined") {
-		clearTimeout(window.Netchart.refresh);
-	}
-	
-	// Make sure we don't have any onclick handlers hanging around
-	$("#netmon").off("click", "button");
+	window.Netchart.clear_timeout();
 } else {
 	// New instantiation
-	window.Netchart = {};
-}
-
-function load_netmon(intname) {
-	if (typeof intname == "undefined") {
-		// No interface?
-		return;
-	}
-	// Build our chart data. This is stuck to the window DOM,
-	// so it can be updated without needing to recreate the whole
-	// object.
-	window.Netchart['chartdata'] = [
-		{
+	window.NetchartObj = Class.extend({
+		refresh: false,
+		refreshperiod: 500,
+		chartdata: [{
 			xValueType: "dateTime",
-			xValueFormatString: "HH:mm:ss",
+			xValueFormatString: "h:mm:ss tt",
 			type: "splineArea",
 			dataPoints: [],
 			toolTipContent: "<span style='color: {color};'>RX: <strong>{y}</strong>Kb/sec</span>",
-		}, // rxdata
+		},
 		{	name: "TX Kb/s",
 			xValueType: "dateTime",
-			xValueFormatString: "HH:mm:ss",
+			xValueFormatString: "h:mm:ss tt",
 			type: "splineArea",
 			dataPoints: [],
 			toolTipContent: "<span style='color: {color};'>TX: <strong>{y}</strong>Kb/sec</span>",
-		}, // txdata
-	];
-	window.Netchart['chart'] = new CanvasJS.Chart('netmonout', {
-		title:{ text: _("Interface") + " " + intname },
-		// animationEnabled: true,
-		data: window.Netchart.chartdata,
-		saxisX: { valueFormatString: " ", tickLength: 0 },
-		axisY: { valueFormatString: " ", tickLength: 0 },
-		toolTip: { shared: true },
-	});
-	load_chart(intname);
-}
+		}],
+		init: function(intname) {
+			var self = this;
+			if (typeof intname == "undefined") {
+				intname = "";
+			}
+			this.chart =  new CanvasJS.Chart('netmonout', {
+				title: { text: _("Interface") + " " + intname },
+				data: self.chartdata,
+				saxisX: { valueFormatString: " ", tickLength: 0 },
+				axisY: { valueFormatString: " ", tickLength: 0 },
+				toolTip: { shared: true },
+			});
+			this.set_binds();
+			this.load_chart(intname);
+		},
+		set_binds: function() {
+			var self = this;
+			// Make sure there are none hanging around
+			$("#netmon").off("click", "button");
 
-function load_chart(intname) {
-	// Get our data
-	$.ajax({
-		url: FreePBX.ajaxurl,
-		data: { command: "netmon", module:'dashboard' },
-		success: function(data) {
-			render_chart(intname, data);
-			window.Netchart.refresh = setTimeout(function() { load_chart(intname); }, 500);
+			$("#netmon").on("click", "button", function(e) {
+				var intname = $(e.target).data('intname');
+				if (typeof intname !== "undefined") {
+					self.clear_timeout();
+					self.load_chart(intname);
+				} else {
+					console.log("Bug. No intname from e!", e);
+				}
+			});
+		},
+		clear_timeout: function() {
+			if (this.refresh !== false) {
+				clearTimeout(this.refresh);
+				this.refresh = false;
+			}
+		},
+		load_chart: function(intname) {
+			console.log("load chart called with "+intname);
+			var self = this;
+			this.clear_timeout();
+			// Get our data
+			$.ajax({
+				url: FreePBX.ajaxurl,
+				data: { command: "netmon", module:'dashboard' },
+				success: function(data) {
+					self.render_chart(intname, data);
+					self.refresh = setTimeout(function() { self.load_chart(intname); }, self.refreshperiod);
+				}
+			});
+		},
+		render_chart: function(intname, data) {
+			var self = this;
+			var count = 0;
+			self.chartdata[0]['dataPoints'] = [];
+			self.chartdata[1]['dataPoints'] = [];
+			// Loop through all the timestamps
+			Object.keys(data).forEach(function(k) {
+				var rx, lastrx, rxbytes, tx, lasttx, txbytes;
+				var timestamp = k * 1000;
+				if (typeof data[k][intname] == "undefined") {
+					self.chartdata[0]['dataPoints'][count] = { x: timestamp, y: 0, rawval: 0 };
+					self.chartdata[1]['dataPoints'][count] = { x: timestamp, y: 0, rawval: 0 };
+				} else {
+					rx = data[k][intname]['rx']['bytes'];
+					tx = data[k][intname]['tx']['bytes'];
+					if (count === 0) {
+						lastrx = rx;
+						lasttx = tx;
+					} else {
+						lastrx = self.chartdata[0]['dataPoints'][count-1]['rawval'];
+						lasttx = self.chartdata[1]['dataPoints'][count-1]['rawval'];
+					}
+					rxbytes = rx - lastrx;
+					txbytes = tx - lasttx;
+
+					self.chartdata[0]['dataPoints'][count] = { x: timestamp, y: Math.floor(rxbytes/1024), rawval: rx };
+					self.chartdata[1]['dataPoints'][count] = { x: timestamp, y: Math.floor(txbytes/1024), rawval: tx };
+				}
+				count++;
+			});
+			if (typeof self.chart.options.title !== "undefined") {
+				self.chart.options.title.text = _("Interface") + " " + intname;
+			}
+			self.chart.render();
 		},
 	});
+
 }
 
-function render_chart(intname, data) {
-	var count = 0;
-	// Delete all previous datapoints
-	window.Netchart.chartdata[0]['dataPoints'] = [];
-	window.Netchart.chartdata[1]['dataPoints'] = [];
-	Object.keys(data).forEach(function(k) { // Timestamp
-		var rx, lastrx, rxbytes, tx, lasttx, txbytes;
-		var timestamp = k * 1000;
-		if (typeof data[k][intname] == "undefined") {
-			window.Netchart.chartdata[0]['dataPoints'][count] = { x: timestamp, y: 0, rawval: 0 };
-			window.Netchart.chartdata[1]['dataPoints'][count] = { x: timestamp, y: 0, rawval: 0 };
-		} else {
-			rx = data[k][intname]['rx']['bytes'];
-			tx = data[k][intname]['tx']['bytes'];
-			if (count === 0) {
-				lastrx = rx;
-				lasttx = tx;
-			} else {
-				lastrx = window.Netchart.chartdata[0]['dataPoints'][count-1]['rawval'];
-				lasttx = window.Netchart.chartdata[1]['dataPoints'][count-1]['rawval'];
-			}
-			rxbytes = rx - lastrx;
-			txbytes = tx - lasttx;
+// (Re?)Create the window.Netchart object and start it.
+window.Netchart = new window.NetchartObj("<?php echo $first; ?>");
 
-			window.Netchart.chartdata[0]['dataPoints'][count] = { x: timestamp, y: Math.floor(rxbytes/1024), rawval: rx };
-			window.Netchart.chartdata[1]['dataPoints'][count] = { x: timestamp, y: Math.floor(txbytes/1024), rawval: tx };
-		}
-		count++;
-	});
-	window.Netchart.chart.render();
-}
-
-<?php
-// Now actually trigger a load.
-echo "load_netmon('$first');\n";
-?>
 </script>
