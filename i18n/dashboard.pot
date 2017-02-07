@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dashboard
-# Copyright (C) 2008-2016 Sangoma, Inc.
+# Copyright (C) 2008-2017 Sangoma, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 23:27+0000\n"
+"POT-Creation-Date: 2017-02-07 23:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,12 +22,6 @@ msgstr ""
 #: sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
-msgstr ""
-
-#: classes/Statistics.class.php:365
-#: classes/Statistics.class.php:368
-#, php-format
-msgid "%s Min Avg"
 msgstr ""
 
 #: views/sections/overview.php:66
@@ -59,44 +53,13 @@ msgid ""
 "i>"
 msgstr ""
 
-#: views/sections/statistics.php:299
-msgid "Active Calls"
-msgstr ""
-
-#: classes/Statistics.class.php:306
-msgid "Active Chans"
-msgstr ""
-
-#: classes/Statistics.class.php:121
 #: sections/Overview.class.php:130
 msgid "Asterisk"
-msgstr ""
-
-#: classes/Statistics.class.php:113
-msgid "Asterisk Uptime"
 msgstr ""
 
 #: sections/Blogs.class.php:28
 #: sections/Blogs.class.php:36
 msgid "Blogs"
-msgstr ""
-
-#: classes/Statistics.class.php:266
-#: views/sections/statistics.php:199
-msgid "Buffers"
-msgstr ""
-
-#: classes/Statistics.class.php:122
-msgid "CPU"
-msgstr ""
-
-#: classes/Statistics.class.php:368
-msgid "CPU Temp"
-msgstr ""
-
-#: classes/Statistics.class.php:265
-#: views/sections/statistics.php:198
-msgid "Cached"
 msgstr ""
 
 #: sections/Overview.class.php:119
@@ -113,12 +76,6 @@ msgstr ""
 msgid "Dashboard Module"
 msgstr ""
 
-#: classes/Statistics.class.php:134
-#: classes/Statistics.class.php:145
-#: classes/Statistics.class.php:156
-#: classes/Statistics.class.php:167
-#: classes/Statistics.class.php:178
-#: classes/Statistics.class.php:189
 #: views/sections/statistics.php:10
 #: views/sections/statistics.php:21
 #: views/sections/statistics.php:32
@@ -136,7 +93,6 @@ msgstr ""
 msgid "Disable collection of system statistics"
 msgstr ""
 
-#: classes/Statistics.class.php:124
 #: views/sections/statistics.php:50
 msgid "Disk"
 msgstr ""
@@ -145,21 +101,10 @@ msgstr ""
 msgid "Expiry time for system statistics"
 msgstr ""
 
-#: classes/Statistics.class.php:264
-#: views/sections/statistics.php:197
-msgid "Free Mem"
-msgstr ""
-
 #: views/main.php:6
 msgid "Frobulating"
 msgstr ""
 
-#: classes/Statistics.class.php:133
-#: classes/Statistics.class.php:144
-#: classes/Statistics.class.php:155
-#: classes/Statistics.class.php:166
-#: classes/Statistics.class.php:177
-#: classes/Statistics.class.php:188
 #: views/sections/statistics.php:9
 #: views/sections/statistics.php:20
 #: views/sections/statistics.php:31
@@ -173,33 +118,31 @@ msgstr ""
 msgid "Ignore This"
 msgstr ""
 
-#: classes/Statistics.class.php:14
+#: classes/Statistics.class.php:13
 msgid "Invalid Selection"
 msgstr ""
 
-#: classes/Statistics.class.php:26
+#: classes/Statistics.class.php:25
 msgid "Invalid period"
 msgstr ""
 
-#: classes/Statistics.class.php:377
-msgid "Load"
+#: sections/Statistics.class.php:24
+msgid "Live Network Usage"
 msgstr ""
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
 msgstr ""
 
-#: classes/Statistics.class.php:123
+#: views/sections/netmon.php:57
+#, php-format
+msgid "Loading Interface %s..."
+msgstr ""
+
 #: views/sections/statistics.php:39
 msgid "Memory"
 msgstr ""
 
-#: classes/Statistics.class.php:136
-#: classes/Statistics.class.php:147
-#: classes/Statistics.class.php:158
-#: classes/Statistics.class.php:169
-#: classes/Statistics.class.php:180
-#: classes/Statistics.class.php:191
 #: views/sections/statistics.php:12
 #: views/sections/statistics.php:23
 #: views/sections/statistics.php:34
@@ -213,7 +156,6 @@ msgstr ""
 msgid "MySQL"
 msgstr ""
 
-#: classes/Statistics.class.php:125
 #: views/sections/statistics.php:61
 msgid "Network"
 msgstr ""
@@ -235,10 +177,6 @@ msgstr ""
 msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
-msgstr ""
-
-#: classes/Statistics.class.php:107
-msgid "Reload"
 msgstr ""
 
 #: views/sections/overview.php:64
@@ -269,13 +207,13 @@ msgstr ""
 msgid "Show New"
 msgstr ""
 
-#: classes/Statistics.class.php:90
-#: classes/Statistics.class.php:114
+#: classes/Statistics.class.php:79
 msgid "Since Reload"
 msgstr ""
 
 #: sections/Statistics.class.php:17
 #: sections/Statistics.class.php:18
+#: sections/Statistics.class.php:25
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr ""
@@ -284,18 +222,12 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-#: classes/Statistics.class.php:268
-#: views/sections/statistics.php:201
-msgid "Swap Used"
-msgstr ""
-
 #: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
 msgstr ""
 
-#: classes/Statistics.class.php:88
-#: classes/Statistics.class.php:108
+#: classes/Statistics.class.php:61
 msgid "System"
 msgstr ""
 
@@ -315,48 +247,13 @@ msgstr ""
 msgid "System Overview"
 msgstr ""
 
-#: classes/Statistics.class.php:112
-msgid "System Uptime"
-msgstr ""
-
-#: classes/Statistics.class.php:349
-#: classes/Statistics.class.php:378
-msgid "Temp"
-msgstr ""
-
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
-#: classes/Statistics.class.php:305
-#: views/sections/statistics.php:298
-msgid "Trunks Offline"
-msgstr ""
-
-#: classes/Statistics.class.php:304
-#: views/sections/statistics.php:297
-msgid "Trunks Reged"
-msgstr ""
-
-#: classes/Statistics.class.php:120
 #: sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr ""
-
-#: classes/Statistics.class.php:267
-#: views/sections/statistics.php:200
-msgid "Used"
-msgstr ""
-
-#: classes/Statistics.class.php:303
-#: views/sections/statistics.php:296
-msgid "Users Offline"
-msgstr ""
-
-#: classes/Statistics.class.php:302
-#: views/sections/statistics.php:295
-msgid "Users Online"
 msgstr ""
 
 #: sections/Overview.class.php:123
@@ -367,12 +264,6 @@ msgstr ""
 msgid "Web Server"
 msgstr ""
 
-#: classes/Statistics.class.php:135
-#: classes/Statistics.class.php:146
-#: classes/Statistics.class.php:157
-#: classes/Statistics.class.php:168
-#: classes/Statistics.class.php:179
-#: classes/Statistics.class.php:190
 #: views/sections/statistics.php:11
 #: views/sections/statistics.php:22
 #: views/sections/statistics.php:33

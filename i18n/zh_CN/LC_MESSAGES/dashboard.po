@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-23 23:27+0000\n"
+"POT-Creation-Date: 2017-02-07 23:36+0000\n"
 "PO-Revision-Date: 2015-11-16 11:49+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -25,11 +25,6 @@ msgstr ""
 #, php-format
 msgid "%s Feed"
 msgstr ""
-
-#: classes/Statistics.class.php:365 classes/Statistics.class.php:368
-#, php-format
-msgid "%s Min Avg"
-msgstr "%s 分钟 平均"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
@@ -59,41 +54,13 @@ msgid ""
 "i>"
 msgstr "<strong>'%s'</strong><br><i>(用户可以通过高级设置修改名称)</i>"
 
-#: views/sections/statistics.php:299
-msgid "Active Calls"
-msgstr "活动呼叫"
-
-#: classes/Statistics.class.php:306
-msgid "Active Chans"
-msgstr "活动通道"
-
-#: classes/Statistics.class.php:121 sections/Overview.class.php:130
+#: sections/Overview.class.php:130
 msgid "Asterisk"
 msgstr ""
-
-#: classes/Statistics.class.php:113
-msgid "Asterisk Uptime"
-msgstr "Asterisk 已运行时间"
 
 #: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
 msgstr ""
-
-#: classes/Statistics.class.php:266 views/sections/statistics.php:199
-msgid "Buffers"
-msgstr "缓存"
-
-#: classes/Statistics.class.php:122
-msgid "CPU"
-msgstr "CPU"
-
-#: classes/Statistics.class.php:368
-msgid "CPU Temp"
-msgstr "CPU 温度"
-
-#: classes/Statistics.class.php:265 views/sections/statistics.php:198
-msgid "Cached"
-msgstr "缓存"
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
@@ -107,9 +74,6 @@ msgstr ""
 msgid "Dashboard Module"
 msgstr ""
 
-#: classes/Statistics.class.php:134 classes/Statistics.class.php:145
-#: classes/Statistics.class.php:156 classes/Statistics.class.php:167
-#: classes/Statistics.class.php:178 classes/Statistics.class.php:189
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
@@ -124,7 +88,7 @@ msgstr "删除这个"
 msgid "Disable collection of system statistics"
 msgstr ""
 
-#: classes/Statistics.class.php:124 views/sections/statistics.php:50
+#: views/sections/statistics.php:50
 msgid "Disk"
 msgstr "硬盘"
 
@@ -132,17 +96,10 @@ msgstr "硬盘"
 msgid "Expiry time for system statistics"
 msgstr ""
 
-#: classes/Statistics.class.php:264 views/sections/statistics.php:197
-msgid "Free Mem"
-msgstr "剩余内存"
-
 #: views/main.php:6
 msgid "Frobulating"
 msgstr ""
 
-#: classes/Statistics.class.php:133 classes/Statistics.class.php:144
-#: classes/Statistics.class.php:155 classes/Statistics.class.php:166
-#: classes/Statistics.class.php:177 classes/Statistics.class.php:188
 #: views/sections/statistics.php:9 views/sections/statistics.php:20
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
@@ -153,29 +110,31 @@ msgstr "小时"
 msgid "Ignore This"
 msgstr "忽略这个"
 
-#: classes/Statistics.class.php:14
+#: classes/Statistics.class.php:13
 msgid "Invalid Selection"
 msgstr "无效选项"
 
-#: classes/Statistics.class.php:26
+#: classes/Statistics.class.php:25
 msgid "Invalid period"
 msgstr "无效循环"
 
-#: classes/Statistics.class.php:377
-msgid "Load"
-msgstr "加载"
+#: sections/Statistics.class.php:24
+msgid "Live Network Usage"
+msgstr ""
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
 msgstr "平均负载"
 
-#: classes/Statistics.class.php:123 views/sections/statistics.php:39
+#: views/sections/netmon.php:57
+#, php-format
+msgid "Loading Interface %s..."
+msgstr ""
+
+#: views/sections/statistics.php:39
 msgid "Memory"
 msgstr "内存"
 
-#: classes/Statistics.class.php:136 classes/Statistics.class.php:147
-#: classes/Statistics.class.php:158 classes/Statistics.class.php:169
-#: classes/Statistics.class.php:180 classes/Statistics.class.php:191
 #: views/sections/statistics.php:12 views/sections/statistics.php:23
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
@@ -186,7 +145,7 @@ msgstr "月"
 msgid "MySQL"
 msgstr ""
 
-#: classes/Statistics.class.php:125 views/sections/statistics.php:61
+#: views/sections/statistics.php:61
 msgid "Network"
 msgstr "网络"
 
@@ -207,10 +166,6 @@ msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
-
-#: classes/Statistics.class.php:107
-msgid "Reload"
-msgstr "重新加载"
 
 #: views/sections/overview.php:64
 msgid "Resolve"
@@ -240,12 +195,12 @@ msgstr "显示所有信息"
 msgid "Show New"
 msgstr "显示新信息"
 
-#: classes/Statistics.class.php:90 classes/Statistics.class.php:114
+#: classes/Statistics.class.php:79
 msgid "Since Reload"
 msgstr "自从重新加载后"
 
 #: sections/Statistics.class.php:17 sections/Statistics.class.php:18
-#: sections/Uptime.class.php:16
+#: sections/Statistics.class.php:25 sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "统计数据"
 
@@ -253,16 +208,12 @@ msgstr "统计数据"
 msgid "Summary"
 msgstr "汇总"
 
-#: classes/Statistics.class.php:268 views/sections/statistics.php:201
-msgid "Swap Used"
-msgstr "使用的交互区"
-
 #: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
 msgstr "%s 之前，sysinfo 已更新"
 
-#: classes/Statistics.class.php:88 classes/Statistics.class.php:108
+#: classes/Statistics.class.php:61
 msgid "System"
 msgstr "系统"
 
@@ -282,42 +233,13 @@ msgstr "系统最近一次重启"
 msgid "System Overview"
 msgstr "系统总览"
 
-#: classes/Statistics.class.php:112
-msgid "System Uptime"
-msgstr "系统运行时间"
-
-#: classes/Statistics.class.php:349 classes/Statistics.class.php:378
-msgid "Temp"
-msgstr "临时"
-
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "这是一个严重错误，应该马上解决"
 
-#: classes/Statistics.class.php:305 views/sections/statistics.php:298
-msgid "Trunks Offline"
-msgstr "中继离线"
-
-#: classes/Statistics.class.php:304 views/sections/statistics.php:297
-msgid "Trunks Reged"
-msgstr "已注册的中继"
-
-#: classes/Statistics.class.php:120 sections/Uptime.class.php:15
-#: views/sections/statistics.php:17
+#: sections/Uptime.class.php:15 views/sections/statistics.php:17
 msgid "Uptime"
 msgstr "已运行时间"
-
-#: classes/Statistics.class.php:267 views/sections/statistics.php:200
-msgid "Used"
-msgstr "已使用"
-
-#: classes/Statistics.class.php:303 views/sections/statistics.php:296
-msgid "Users Offline"
-msgstr "离线用户"
-
-#: classes/Statistics.class.php:302 views/sections/statistics.php:295
-msgid "Users Online"
-msgstr "在线用户"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
@@ -327,9 +249,6 @@ msgstr "发现告警"
 msgid "Web Server"
 msgstr "Web服务器"
 
-#: classes/Statistics.class.php:135 classes/Statistics.class.php:146
-#: classes/Statistics.class.php:157 classes/Statistics.class.php:168
-#: classes/Statistics.class.php:179 classes/Statistics.class.php:190
 #: views/sections/statistics.php:11 views/sections/statistics.php:22
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
@@ -396,6 +315,63 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
+
+#~ msgid "%s Min Avg"
+#~ msgstr "%s 分钟 平均"
+
+#~ msgid "Active Calls"
+#~ msgstr "活动呼叫"
+
+#~ msgid "Active Chans"
+#~ msgstr "活动通道"
+
+#~ msgid "Asterisk Uptime"
+#~ msgstr "Asterisk 已运行时间"
+
+#~ msgid "Buffers"
+#~ msgstr "缓存"
+
+#~ msgid "CPU"
+#~ msgstr "CPU"
+
+#~ msgid "CPU Temp"
+#~ msgstr "CPU 温度"
+
+#~ msgid "Cached"
+#~ msgstr "缓存"
+
+#~ msgid "Free Mem"
+#~ msgstr "剩余内存"
+
+#~ msgid "Load"
+#~ msgstr "加载"
+
+#~ msgid "Reload"
+#~ msgstr "重新加载"
+
+#~ msgid "Swap Used"
+#~ msgstr "使用的交互区"
+
+#~ msgid "System Uptime"
+#~ msgstr "系统运行时间"
+
+#~ msgid "Temp"
+#~ msgstr "临时"
+
+#~ msgid "Trunks Offline"
+#~ msgstr "中继离线"
+
+#~ msgid "Trunks Reged"
+#~ msgstr "已注册的中继"
+
+#~ msgid "Used"
+#~ msgstr "已使用"
+
+#~ msgid "Users Offline"
+#~ msgstr "离线用户"
+
+#~ msgid "Users Online"
+#~ msgstr "在线用户"
 
 #~ msgid "Feed"
 #~ msgstr "订阅官方消息Feed"
