@@ -8,7 +8,7 @@ $netmon = new \FreePBX\modules\Dashboard\Netmon();
 // Wait until we actually have some data back
 $count = 5;
 $stats = $netmon->getStats();
-while ($count > 0) {
+while ($count-- > 0) {
 	if (empty($stats)) {
 		usleep(500000); // half a second
 	} else {
