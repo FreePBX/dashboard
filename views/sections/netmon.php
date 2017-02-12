@@ -40,7 +40,7 @@ foreach ($raw as $name => $row) {
 	// If there has been no traffic received on this interface, skip
 	// Why rx? If there's traffic coming in AT ALL, it means it's plugged
 	// into something. Even if it's not being used.
-	if ($row['rx']['bytes'] == 0) {
+	if (!isset($row['rx']) || $row['rx']['bytes'] == 0) {
 		continue;
 	}
 
