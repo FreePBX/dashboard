@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-03 12:00-0800\n"
-"PO-Revision-Date: 2017-02-09 19:35+0200\n"
+"PO-Revision-Date: 2017-02-24 19:51+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/pt_BR/>\n"
@@ -163,11 +163,11 @@ msgstr "Período inválido"
 
 #: classes/Statistics.class.php:377
 msgid "Load"
-msgstr "Carga"
+msgstr "Processamento"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
-msgstr "Médias de Carga"
+msgstr "Médias de Processamento"
 
 #: classes/Statistics.class.php:123 views/sections/statistics.php:39
 msgid "Memory"
