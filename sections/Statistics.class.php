@@ -14,7 +14,7 @@ class Statistics {
 
 		return array(
 			array(
-				"title" => "$brand ". _("Statistics"),
+				"title" => sprintf(_("%s Statistics"),$brand),
 				"group" => _("Statistics"),
 				"width" => "550px",
 				"order" => isset($order['statistics']) ? $order['statistics'] : '300',
