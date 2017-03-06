@@ -10,21 +10,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-03 12:00-0800\n"
-"PO-Revision-Date: 2015-11-15 23:21+0200\n"
-"Last-Translator: Matthias <it@mitterhuemer.at>\n"
-"Language-Team: German <http://weblate.freepbx.org/projects/freepbx/dashboard/"
-"de_DE/>\n"
+"PO-Revision-Date: 2017-03-06 02:15+0200\n"
+"Last-Translator: hammer125 <auswertung@aon.at>\n"
+"Language-Team: German "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/de_DE/>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
-msgstr ""
+msgstr "%s Feed (Änderungen)"
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
@@ -91,7 +91,7 @@ msgstr "CPU"
 
 #: classes/Statistics.class.php:368
 msgid "CPU Temp"
-msgstr "CPU Temp"
+msgstr "CPU Temperatur"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
@@ -103,7 +103,7 @@ msgstr "Kritische Fehler gefunden"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
-msgstr ""
+msgstr "Armaturenbrett"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -197,6 +197,9 @@ msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
+"Stellt ein Systeminformations-Armaturenbrett zur Verfügung, das "
+"Informationen über Anrufe, CPU, Speicher, Laufwerke, Netzwerk und Prozesse "
+"liefert."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
@@ -250,7 +253,7 @@ msgstr "System Benachrichtigungen"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
-msgstr ""
+msgstr "System-Armaturenbrett"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
