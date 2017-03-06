@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-03 12:00-0800\n"
-"PO-Revision-Date: 2017-03-06 02:15+0200\n"
+"PO-Revision-Date: 2017-03-06 02:22+0200\n"
 "Last-Translator: hammer125 <auswertung@aon.at>\n"
 "Language-Team: German "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/de_DE/>\n"
@@ -71,15 +71,15 @@ msgstr "Aktive Kanäle"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
-msgstr "Asterisk"
+msgstr "Asterisk-Telefonanlage"
 
 #: classes/Statistics.class.php:113
 msgid "Asterisk Uptime"
-msgstr "Asterisk Uptime"
+msgstr "Asterisk Uptime (Betriebszeit)"
 
 #: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
-msgstr "Blogs"
+msgstr "Blogs (Weblog)"
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
@@ -174,7 +174,7 @@ msgstr "Monat"
 
 #: sections/Overview.class.php:131
 msgid "MySQL"
-msgstr "MySQL"
+msgstr "MySQL-DB"
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
@@ -265,11 +265,11 @@ msgstr "System Übersicht"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
-msgstr "System Uptime"
+msgstr "System Uptime (Betriebszeit)"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr "Temp"
+msgstr "Temperatur"
 
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
@@ -277,7 +277,7 @@ msgstr "Dies ist ein kritischer Fehler, der dringend behoben werden sollte"
 
 #: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr "Trunks Offline"
+msgstr "Trunks Offline (nicht erreichbar)"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
