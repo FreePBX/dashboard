@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-12-03 12:00-0800\n"
-"PO-Revision-Date: 2017-02-24 19:51+0200\n"
+"PO-Revision-Date: 2017-03-08 17:59+0200\n"
 "Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/pt_BR/>\n"
@@ -113,7 +113,7 @@ msgstr "Erros Críticos encontrados"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
-msgstr "Painel de Indicadores"
+msgstr "Dashboard"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
