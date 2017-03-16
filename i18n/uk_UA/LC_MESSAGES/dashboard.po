@@ -3,54 +3,55 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dashboard
-# Copyright (C) 2008-2015 Sangoma, Inc.
+# Copyright (C) 2008-2016 Sangoma, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-03 12:00-0800\n"
-"PO-Revision-Date: 2017-03-07 02:05+0200\n"
-"Last-Translator: hammer125 <auswertung@aon.at>\n"
-"Language-Team: German "
-"<http://weblate.freepbx.org/projects/freepbx/dashboard/de_DE/>\n"
-"Language: de_DE\n"
+"POT-Creation-Date: 2016-01-08 18:15-0800\n"
+"PO-Revision-Date: 2016-12-09 20:44+0200\n"
+"Last-Translator: Maxim <maxim@ua.fm>\n"
+"Language-Team: Ukrainian "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/uk_UA/>\n"
+"Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.4\n"
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
-msgstr "%s Feed (Änderungen)"
+msgstr "%s Запис"
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
 msgid "%s Min Avg"
-msgstr "%s Min Durchschnitt"
+msgstr "%s Хв Серед"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
-msgstr "%s her"
+msgstr "%s тому"
 
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
-msgstr "0 Sekunden"
+msgstr "0 секунд"
 
 #: views/sections/uptime.php:16
 msgid "1 Minute"
-msgstr "1 Minute"
+msgstr "1 Хвилина"
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
-msgstr "15 Minuten"
+msgstr "15 Хвилин"
 
 #: views/sections/uptime.php:19
 msgid "5 Minutes"
-msgstr "5 Minuten"
+msgstr "5 Хвилин"
 
 #: sections/Overview.class.php:31
 #, php-format
@@ -58,52 +59,52 @@ msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
 "i>"
 msgstr ""
-"<strong>'%s'</strong><br><i>(Sie können diesen Namen in den erweiterten "
-"Einstellungen ändern)</i>"
+"<strong>'%s'</strong><br><i>(Ви можете змінити це ім'я в Додаткових "
+"настройках)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
-msgstr "Aktive Gespräche"
+msgstr "Активні виклики"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr "Aktive Kanäle"
+msgstr "Активні канали"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
-msgstr "Asterisk-Telefonanlage"
+msgstr "Астеріск"
 
 #: classes/Statistics.class.php:113
 msgid "Asterisk Uptime"
-msgstr "Asterisk Uptime (Betriebszeit)"
+msgstr "Час праці Астеріска"
 
 #: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
-msgstr "Blogs (Weblog)"
+msgstr "Блоги"
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
-msgstr "Puffer"
+msgstr "Буфери"
 
 #: classes/Statistics.class.php:122
 msgid "CPU"
-msgstr "CPU"
+msgstr "ЦП"
 
 #: classes/Statistics.class.php:368
 msgid "CPU Temp"
-msgstr "CPU Temperatur"
+msgstr "Температура ЦП"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
-msgstr "Zwischengespeichert"
+msgstr "Кешовано"
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
-msgstr "Kritische Fehler gefunden"
+msgstr "Знайдено критичні помилки"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
-msgstr "Armaturenbrett"
+msgstr "Панель приладів"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -112,23 +113,23 @@ msgstr "Armaturenbrett"
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
 msgid "Day"
-msgstr "Tag"
+msgstr "День"
 
 #: views/sections/overview.php:54
 msgid "Delete This"
-msgstr "Lösche dieses Objekt"
+msgstr "Видалити це"
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
-msgstr "Disk-Speicher"
+msgstr "Диск"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
-msgstr "Freier Arbeitsspeicher"
+msgstr "Вільної пам'яті"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr "Frobulation"
+msgstr ""
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -137,31 +138,31 @@ msgstr "Frobulation"
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
-msgstr "Stunde"
+msgstr "Година"
 
 #: views/sections/overview.php:53
 msgid "Ignore This"
-msgstr "Ignorieren"
+msgstr "Ігнорувати це"
 
 #: classes/Statistics.class.php:14
 msgid "Invalid Selection"
-msgstr "Fehlerhafte Auswahl"
+msgstr "Невірний вибір"
 
 #: classes/Statistics.class.php:26
 msgid "Invalid period"
-msgstr "Falsche Periode"
+msgstr "Невірний період"
 
 #: classes/Statistics.class.php:377
 msgid "Load"
-msgstr "Auslastung"
+msgstr "Навантаження"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
-msgstr "Durchschnittliche Auslastung"
+msgstr "Середнє навантаження"
 
 #: classes/Statistics.class.php:123 views/sections/statistics.php:39
 msgid "Memory"
-msgstr "Arbeitsspeicher"
+msgstr "Пам'ять"
 
 #: classes/Statistics.class.php:136 classes/Statistics.class.php:147
 #: classes/Statistics.class.php:158 classes/Statistics.class.php:169
@@ -170,143 +171,142 @@ msgstr "Arbeitsspeicher"
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
-msgstr "Monat"
+msgstr "Місяць"
 
 #: sections/Overview.class.php:131
 msgid "MySQL"
-msgstr "MySQL-DB"
+msgstr "MySQL"
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
-msgstr "Netzwerk"
+msgstr "Мережа"
 
 #: sections/Overview.class.php:91
 msgid "No critical issues found"
-msgstr "Keine kritischen Fehler gefunden"
+msgstr "Не знайдено критичних питань"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
-msgstr "Übersicht"
+msgstr "Огляд"
 
 #: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
-msgstr "Bitte prüfe das System auf Fehler in der Benachrichtigungs Sektion"
+msgstr "Будь ласка, перевірте наявність помилок в розділі повідомлень"
 
 #: dashboard.i18n.php:8
 msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
-"Stellt ein Systeminformations-Armaturenbrett zur Verfügung, das "
-"Informationen über Anrufe, CPU, Speicher, Laufwerke, Netzwerk und Prozesse "
-"liefert."
+"Забезпечує інформаційну панель системи, що показує інформацію про виклики, "
+"ЦП, пам'ять, диски, мережі та процеси."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
-msgstr "Neu laden"
+msgstr "Перезавантаження"
 
 #: views/sections/overview.php:64
 msgid "Resolve"
-msgstr "Beheben"
+msgstr "Вирішити"
 
 #: sections/Overview.class.php:100
 msgid "Security Issue"
-msgstr "Sicherheitslücke"
+msgstr "Проблеми безпеки"
 
 #: views/sections/overview.php:75
 msgid "Show All"
-msgstr "Alle anzeigen"
+msgstr "Показати всі"
 
 #: views/sections/overview.php:77
 msgid "Show New"
-msgstr "Neue anzeigen"
+msgstr "Показати нові"
 
 #: classes/Statistics.class.php:90 classes/Statistics.class.php:114
 msgid "Since Reload"
-msgstr "Seit dem letzten Reload"
+msgstr "Після перезавантаження"
 
 #: sections/Statistics.class.php:17 sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
 msgid "Statistics"
-msgstr "Statistiken"
+msgstr "Статистика"
 
 #: views/sections/overview.php:23
 msgid "Summary"
-msgstr "Zusammenfassung"
+msgstr "Зведення"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
-msgstr "Swap verwendet"
+msgstr "Використовується свопінг"
 
 #: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
-msgstr "SysInfo aktualisiert vor %s Sekunden"
+msgstr "Системну інформацію оновлено %s секунд тому"
 
 #: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
-msgstr "System"
+msgstr "Система"
 
 #: sections/Overview.class.php:89
 msgid "System Alerts"
-msgstr "System Benachrichtigungen"
+msgstr "Сповіщення системи"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
-msgstr "System-Armaturenbrett"
+msgstr "Системна панель"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr "Letzter System Neustart"
+msgstr "Останнє перезавантаження системи"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr "System Übersicht"
+msgstr "Огляд системи"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
-msgstr "System Uptime (Betriebszeit)"
+msgstr "Система працює"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr "Temperatur"
+msgstr "Температура"
 
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
-msgstr "Dies ist ein kritischer Fehler, der dringend behoben werden sollte"
+msgstr "Це дуже важливе питання, яке необхідно терміново вирішити"
 
 #: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr "Trunks Offline (nicht erreichbar)"
+msgstr "Автономні транки"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr "Trunks Registriert"
+msgstr "Зареєстровано транки"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr "Uptime"
+msgstr "Працює"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
-msgstr "Verwendet"
+msgstr "Використовується"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
-msgstr "Benutzer Offline"
+msgstr "Користувачі відключені"
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr "Benutzer Online"
+msgstr "Користувачі підключені"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
-msgstr "Warnungen gefunden"
+msgstr "Попередження знайдені"
 
 #: sections/Overview.class.php:132
 msgid "Web Server"
-msgstr "Web Server"
+msgstr "Веб-сервер"
 
 #: classes/Statistics.class.php:135 classes/Statistics.class.php:146
 #: classes/Statistics.class.php:157 classes/Statistics.class.php:168
@@ -315,71 +315,65 @@ msgstr "Web Server"
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
-msgstr "Woche"
+msgstr "Тиждень"
 
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
-msgstr "Willkommen zu %s"
+msgstr "Ласкаво просимо до %s"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
-msgstr "Tag"
+msgstr "день"
 
 #: classes/TimeUtils.class.php:16
 msgid "days"
-msgstr "Tage"
+msgstr "днів"
 
 #: classes/TimeUtils.class.php:17
 msgid "hour"
-msgstr "Stunde"
+msgstr "година"
 
 #: classes/TimeUtils.class.php:18
 msgid "hours"
-msgstr "Stunden"
+msgstr "години"
 
 #: classes/TimeUtils.class.php:19
 msgid "minute"
-msgstr "Minute"
+msgstr "хвилина"
 
 #: classes/TimeUtils.class.php:20
 msgid "minutes"
-msgstr "Minuten"
+msgstr "хвилин"
 
 #: classes/TimeUtils.class.php:11
 msgid "month"
-msgstr "Monat"
+msgstr "місяць"
 
 #: classes/TimeUtils.class.php:12
 msgid "months"
-msgstr "Monate"
+msgstr "місяців"
 
 #: classes/TimeUtils.class.php:21
 msgid "second"
-msgstr "Sekunde"
+msgstr "секунда"
 
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
-msgstr "Sekunden"
+msgstr "секунд"
 
 #: classes/TimeUtils.class.php:13
 msgid "week"
-msgstr "Woche"
+msgstr "тиждень"
 
 #: classes/TimeUtils.class.php:14
 msgid "weeks"
-msgstr "Wochen"
+msgstr "тижнів"
 
 #: classes/TimeUtils.class.php:9
 msgid "year"
-msgstr "Jahr"
+msgstr "рік"
 
 #: classes/TimeUtils.class.php:10
 msgid "years"
-msgstr "Jahre"
-
-#~ msgid "Feed"
-#~ msgstr "Feed"
-
-#~ msgid "Trnks Offline"
-#~ msgstr "Trunks Offline"
+msgstr "років"
