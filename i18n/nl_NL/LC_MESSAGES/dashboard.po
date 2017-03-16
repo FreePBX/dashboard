@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-08 18:15-0800\n"
+"POT-Creation-Date: 2017-03-15 17:10-0700\n"
 "PO-Revision-Date: 2016-06-01 07:22+0200\n"
 "Last-Translator: Hans <info@hansvaneijsden.nl>\n"
 "Language-Team: Dutch <http://weblate.freepbx.org/projects/freepbx/dashboard/"
@@ -30,6 +30,11 @@ msgstr "%s Feed"
 #, php-format
 msgid "%s Min Avg"
 msgstr "%s Min Gem"
+
+#: sections/Statistics.class.php:17
+#, php-format
+msgid "%s Statistics"
+msgstr ""
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
@@ -105,6 +110,10 @@ msgstr "Kritieke fouten gevonden"
 msgid "Dashboard"
 msgstr ""
 
+#: dashboard.i18n.php:14
+msgid "Dashboard Module"
+msgstr ""
+
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
 #: classes/Statistics.class.php:178 classes/Statistics.class.php:189
@@ -118,9 +127,17 @@ msgstr "Dag"
 msgid "Delete This"
 msgstr "Verwijder dit"
 
+#: dashboard.i18n.php:12
+msgid "Disable collection of system statistics"
+msgstr ""
+
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
 msgstr "Harde schijf"
+
+#: dashboard.i18n.php:18
+msgid "Expiry time for system statistics"
+msgstr ""
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
@@ -212,6 +229,18 @@ msgstr "Oplossen"
 msgid "Security Issue"
 msgstr "Beveiligingsprobleem"
 
+#: dashboard.i18n.php:20
+msgid ""
+"Set the maximum age in seconds before system statistics are refreshed. The "
+"minimum value is 50 seconds."
+msgstr ""
+
+#: dashboard.i18n.php:16
+msgid ""
+"Set this to true to prevent persistent collection of system statistics such "
+"as CPU, memory, and channel usage."
+msgstr ""
+
 #: views/sections/overview.php:75
 msgid "Show All"
 msgstr "Alles tonen"
@@ -224,8 +253,7 @@ msgstr "Nieuwe tonen"
 msgid "Since Reload"
 msgstr "Sinds de laatste update"
 
-#: sections/Statistics.class.php:17 sections/Statistics.class.php:18
-#: sections/Uptime.class.php:16
+#: sections/Statistics.class.php:18 sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "Statistieken"
 

@@ -9,17 +9,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-08 18:15-0800\n"
+"POT-Creation-Date: 2017-03-15 17:10-0700\n"
 "PO-Revision-Date: 2016-12-09 20:44+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
-"Language-Team: Ukrainian "
-"<http://weblate.freepbx.org/projects/freepbx/dashboard/uk_UA/>\n"
-"Language: uk_UA\n"
+"Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/"
+"dashboard/uk_UA/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Language: uk_UA\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.4\n"
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
@@ -31,6 +31,11 @@ msgstr "%s Запис"
 #, php-format
 msgid "%s Min Avg"
 msgstr "%s Хв Серед"
+
+#: sections/Statistics.class.php:17
+#, php-format
+msgid "%s Statistics"
+msgstr ""
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
@@ -106,6 +111,10 @@ msgstr "Знайдено критичні помилки"
 msgid "Dashboard"
 msgstr "Панель приладів"
 
+#: dashboard.i18n.php:14
+msgid "Dashboard Module"
+msgstr ""
+
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
 #: classes/Statistics.class.php:178 classes/Statistics.class.php:189
@@ -119,9 +128,17 @@ msgstr "День"
 msgid "Delete This"
 msgstr "Видалити це"
 
+#: dashboard.i18n.php:12
+msgid "Disable collection of system statistics"
+msgstr ""
+
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
 msgstr "Диск"
+
+#: dashboard.i18n.php:18
+msgid "Expiry time for system statistics"
+msgstr ""
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
@@ -213,6 +230,18 @@ msgstr "Вирішити"
 msgid "Security Issue"
 msgstr "Проблеми безпеки"
 
+#: dashboard.i18n.php:20
+msgid ""
+"Set the maximum age in seconds before system statistics are refreshed. The "
+"minimum value is 50 seconds."
+msgstr ""
+
+#: dashboard.i18n.php:16
+msgid ""
+"Set this to true to prevent persistent collection of system statistics such "
+"as CPU, memory, and channel usage."
+msgstr ""
+
 #: views/sections/overview.php:75
 msgid "Show All"
 msgstr "Показати всі"
@@ -225,8 +254,7 @@ msgstr "Показати нові"
 msgid "Since Reload"
 msgstr "Після перезавантаження"
 
-#: sections/Statistics.class.php:17 sections/Statistics.class.php:18
-#: sections/Uptime.class.php:16
+#: sections/Statistics.class.php:18 sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "Статистика"
 

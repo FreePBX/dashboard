@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dashboard
-# Copyright (C) 2008-2016 Sangoma, Inc.
+# Copyright (C) 2008-2017 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-08 18:15-0800\n"
+"POT-Creation-Date: 2017-03-15 17:10-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,11 @@ msgstr ""
 #: classes/Statistics.class.php:368
 #, php-format
 msgid "%s Min Avg"
+msgstr ""
+
+#: sections/Statistics.class.php:17
+#, php-format
+msgid "%s Statistics"
 msgstr ""
 
 #: views/sections/overview.php:66
@@ -107,6 +112,10 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
+#: dashboard.i18n.php:14
+msgid "Dashboard Module"
+msgstr ""
+
 #: classes/Statistics.class.php:134
 #: classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156
@@ -126,9 +135,17 @@ msgstr ""
 msgid "Delete This"
 msgstr ""
 
+#: dashboard.i18n.php:12
+msgid "Disable collection of system statistics"
+msgstr ""
+
 #: classes/Statistics.class.php:124
 #: views/sections/statistics.php:50
 msgid "Disk"
+msgstr ""
+
+#: dashboard.i18n.php:18
+msgid "Expiry time for system statistics"
 msgstr ""
 
 #: classes/Statistics.class.php:264
@@ -235,6 +252,18 @@ msgstr ""
 msgid "Security Issue"
 msgstr ""
 
+#: dashboard.i18n.php:20
+msgid ""
+"Set the maximum age in seconds before system statistics are refreshed. The "
+"minimum value is 50 seconds."
+msgstr ""
+
+#: dashboard.i18n.php:16
+msgid ""
+"Set this to true to prevent persistent collection of system statistics such "
+"as CPU, memory, and channel usage."
+msgstr ""
+
 #: views/sections/overview.php:75
 msgid "Show All"
 msgstr ""
@@ -248,7 +277,6 @@ msgstr ""
 msgid "Since Reload"
 msgstr ""
 
-#: sections/Statistics.class.php:17
 #: sections/Statistics.class.php:18
 #: sections/Uptime.class.php:16
 msgid "Statistics"
