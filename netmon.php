@@ -18,6 +18,17 @@ if (file_exists($outputfile)) {
 $fh = fopen($outputfile, "w");
 chmod($outputfile, 0666);
 
+// Figure out where 'ip' is
+if (file_exists("/usr/sbin/ip")) {
+	$iploc = "/usr/sbin/ip";
+} elseif (file_exists("/sbin/ip")) {
+	$iploc = "/sbin/ip";
+} else {
+	// Hope for the best...
+	$iploc = "ip";
+}
+
+
 while (true) {
 	// Does our watchfile exist?
 	if (!file_exists($watchfile)) {
@@ -43,7 +54,7 @@ while (true) {
 	}
 
 	$execoutput = [];
-	exec("/usr/sbin/ip -s link", $execoutput, $ret);
+	exec("$iploc -s link", $execoutput, $ret);
 	if ($ret !== 0) {
 		print "Error running ip, can't continue\n";
 		@unlink($outputfile);
