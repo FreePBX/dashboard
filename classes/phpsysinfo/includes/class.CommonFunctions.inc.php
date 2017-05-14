@@ -190,7 +190,7 @@ class CommonFunctions
         $strError = '';
         $pipes = array();
         $strProgram = self::_findProgram($strProgramname);
-        $error = Error::singleton();
+        $error = PSIError::singleton();
         if (!$strProgram) {
             if ($booErrorRep) {
                 $error->addError('find_program('.$strProgramname.')', 'program not found on the machine');
@@ -280,7 +280,7 @@ class CommonFunctions
 
         $strFile = "";
         $intCurLine = 1;
-        $error = Error::singleton();
+        $error = PSIError::singleton();
         if (file_exists($strFileName)) {
             if (is_readable($strFileName)) {
                 if ($fd = fopen($strFileName, 'r')) {
@@ -358,7 +358,7 @@ class CommonFunctions
     public static function gdc($strPath, $booErrorRep = true)
     {
         $arrDirectoryContent = array();
-        $error = Error::singleton();
+        $error = PSIError::singleton();
         if (is_dir($strPath)) {
             if ($handle = opendir($strPath)) {
                 while (($strFile = readdir($handle)) !== false) {

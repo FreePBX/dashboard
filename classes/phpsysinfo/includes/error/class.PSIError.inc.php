@@ -23,7 +23,7 @@
  * @version   Release: 3.0
  * @link      http://phpsysinfo.sourceforge.net
  */
-class Error
+class PSIError
 {
     /**
      * holds the instance of this class
