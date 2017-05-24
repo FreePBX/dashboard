@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-07 23:36+0000\n"
+"POT-Creation-Date: 2017-05-23 17:10-0700\n"
 "PO-Revision-Date: 2014-07-23 16:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/"
@@ -38,6 +38,11 @@ msgstr ""
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
+msgstr ""
+
+#: sections/Statistics.class.php:17
+#, php-format
+msgid "%s Statistics"
 msgstr ""
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
@@ -86,7 +91,7 @@ msgstr "Намерени са Критични Грешки"
 msgid "Dashboard"
 msgstr ""
 
-#: dashboard.i18n.php:14 dashboard.i18n.php:20
+#: dashboard.i18n.php:14
 msgid "Dashboard Module"
 msgstr ""
 
@@ -193,7 +198,7 @@ msgstr ""
 msgid "Security Issue"
 msgstr "Проблем със Сигурността"
 
-#: dashboard.i18n.php:22
+#: dashboard.i18n.php:20
 msgid ""
 "Set the maximum age in seconds before system statistics are refreshed. The "
 "minimum value is 50 seconds."
@@ -217,8 +222,8 @@ msgstr "Покажи Новите"
 msgid "Since Reload"
 msgstr "От Обновяване"
 
-#: sections/Statistics.class.php:17 sections/Statistics.class.php:18
-#: sections/Statistics.class.php:25 sections/Uptime.class.php:16
+#: sections/Statistics.class.php:18 sections/Statistics.class.php:25
+#: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "Статистики"
 

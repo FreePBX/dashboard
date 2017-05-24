@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dashboard
-# Copyright (C) 2008-2017 Sangoma, Inc.
+# Copyright (C) 2008-2017 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-07 23:36+0000\n"
+"POT-Creation-Date: 2017-05-23 17:10-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,6 +22,11 @@ msgstr ""
 #: sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
+msgstr ""
+
+#: sections/Statistics.class.php:17
+#, php-format
+msgid "%s Statistics"
 msgstr ""
 
 #: views/sections/overview.php:66
@@ -72,7 +77,6 @@ msgid "Dashboard"
 msgstr ""
 
 #: dashboard.i18n.php:14
-#: dashboard.i18n.php:20
 msgid "Dashboard Module"
 msgstr ""
 
@@ -187,7 +191,7 @@ msgstr ""
 msgid "Security Issue"
 msgstr ""
 
-#: dashboard.i18n.php:22
+#: dashboard.i18n.php:20
 msgid ""
 "Set the maximum age in seconds before system statistics are refreshed. The "
 "minimum value is 50 seconds."
@@ -211,7 +215,6 @@ msgstr ""
 msgid "Since Reload"
 msgstr ""
 
-#: sections/Statistics.class.php:17
 #: sections/Statistics.class.php:18
 #: sections/Statistics.class.php:25
 #: sections/Uptime.class.php:16

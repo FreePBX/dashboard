@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-07 23:36+0000\n"
+"POT-Creation-Date: 2017-05-23 17:10-0700\n"
 "PO-Revision-Date: 2016-04-27 19:49+0200\n"
 "Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -25,6 +25,11 @@ msgstr ""
 #, php-format
 msgid "%s Feed"
 msgstr "اخبار %s"
+
+#: sections/Statistics.class.php:17
+#, php-format
+msgid "%s Statistics"
+msgstr ""
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
@@ -72,7 +77,7 @@ msgstr "وجود خطاهای بحرانی"
 msgid "Dashboard"
 msgstr "داشبورد"
 
-#: dashboard.i18n.php:14 dashboard.i18n.php:20
+#: dashboard.i18n.php:14
 msgid "Dashboard Module"
 msgstr ""
 
@@ -179,7 +184,7 @@ msgstr "حل کردن"
 msgid "Security Issue"
 msgstr "مشکل امنیتی"
 
-#: dashboard.i18n.php:22
+#: dashboard.i18n.php:20
 msgid ""
 "Set the maximum age in seconds before system statistics are refreshed. The "
 "minimum value is 50 seconds."
@@ -203,8 +208,8 @@ msgstr "نمایش مورد جدید"
 msgid "Since Reload"
 msgstr "از آخرین بارگذاری"
 
-#: sections/Statistics.class.php:17 sections/Statistics.class.php:18
-#: sections/Statistics.class.php:25 sections/Uptime.class.php:16
+#: sections/Statistics.class.php:18 sections/Statistics.class.php:25
+#: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "آمار"
 

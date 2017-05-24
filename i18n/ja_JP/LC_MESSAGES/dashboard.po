@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-07 23:36+0000\n"
+"POT-Creation-Date: 2017-05-23 17:10-0700\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -53,6 +53,11 @@ msgstr ""
 #, php-format
 msgid "%s Feed"
 msgstr ""
+
+#: sections/Statistics.class.php:17
+#, php-format
+msgid "%s Statistics"
+msgstr "%s 統計情報"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
@@ -98,7 +103,7 @@ msgstr "致命的なエラーが見つかりました"
 msgid "Dashboard"
 msgstr ""
 
-#: dashboard.i18n.php:14 dashboard.i18n.php:20
+#: dashboard.i18n.php:14
 msgid "Dashboard Module"
 msgstr ""
 
@@ -205,7 +210,7 @@ msgstr ""
 msgid "Security Issue"
 msgstr "セキュリティ問題"
 
-#: dashboard.i18n.php:22
+#: dashboard.i18n.php:20
 msgid ""
 "Set the maximum age in seconds before system statistics are refreshed. The "
 "minimum value is 50 seconds."
@@ -229,8 +234,8 @@ msgstr "新規を表示"
 msgid "Since Reload"
 msgstr "リロード後"
 
-#: sections/Statistics.class.php:17 sections/Statistics.class.php:18
-#: sections/Statistics.class.php:25 sections/Uptime.class.php:16
+#: sections/Statistics.class.php:18 sections/Statistics.class.php:25
+#: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "統計"
 
@@ -420,9 +425,6 @@ msgstr "年"
 
 #~ msgid "%s Notices"
 #~ msgstr "%s の通知"
-
-#~ msgid "%s Statistics"
-#~ msgstr "%s 統計情報"
 
 #~ msgid "%s System Status"
 #~ msgstr "%s システムステータス"
