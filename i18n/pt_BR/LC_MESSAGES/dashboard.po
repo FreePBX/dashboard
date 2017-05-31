@@ -20,14 +20,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-15 17:10-0700\n"
-"PO-Revision-Date: 2017-03-08 17:59+0200\n"
-"Last-Translator: Kingvoice <suporte@kingvoice.com.br>\n"
-"Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
-"freepbx/dashboard/pt_BR/>\n"
+"PO-Revision-Date: 2017-05-30 21:34+0200\n"
+"Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -44,7 +44,7 @@ msgstr "%s Min Méd"
 #: sections/Statistics.class.php:17
 #, php-format
 msgid "%s Statistics"
-msgstr ""
+msgstr "%s Estatísticas"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
@@ -122,7 +122,7 @@ msgstr "Dashboard"
 
 #: dashboard.i18n.php:14
 msgid "Dashboard Module"
-msgstr ""
+msgstr "Módulo Painel"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -139,7 +139,7 @@ msgstr "Apagar Isto"
 
 #: dashboard.i18n.php:12
 msgid "Disable collection of system statistics"
-msgstr ""
+msgstr "Desabilitar coleta de estatísticas do sistema"
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
@@ -147,7 +147,7 @@ msgstr "Disco"
 
 #: dashboard.i18n.php:18
 msgid "Expiry time for system statistics"
-msgstr ""
+msgstr "Tempo de expiração das estatísticas do sistema"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
@@ -244,12 +244,16 @@ msgid ""
 "Set the maximum age in seconds before system statistics are refreshed. The "
 "minimum value is 50 seconds."
 msgstr ""
+"Definir o tempo máximo em segundos antes de atualizar as estatísticas do "
+"sistema. O valor mínimo é de 50 segundos."
 
 #: dashboard.i18n.php:16
 msgid ""
 "Set this to true to prevent persistent collection of system statistics such "
 "as CPU, memory, and channel usage."
 msgstr ""
+"Ativar para evitar a coleta persistente de estatísticas do sistema, como "
+"CPU, memória e uso de canal."
 
 #: views/sections/overview.php:75
 msgid "Show All"
