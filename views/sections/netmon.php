@@ -123,7 +123,8 @@ if (typeof window.Netchart !== "undefined") {
 			// Get our data
 			$.ajax({
 				url: FreePBX.ajaxurl,
-				data: { command: "netmon", module:'dashboard' },
+				longpoll: true,
+				data: { command: "netmon", module:'dashboard'},
 				success: function(data) {
 					self.render_chart(intname, data);
 					self.refresh = setTimeout(function() { self.load_chart(intname); }, self.refreshperiod);
