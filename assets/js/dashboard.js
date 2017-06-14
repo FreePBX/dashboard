@@ -26,9 +26,7 @@ var DashboardC = Class.extend({
 			url: "ajax.php",
 			data: { command: "gethooks", module: window.modulename},
 			success: function(data) { Dashboard.parseInfo(data); },
-		},
-		longpoll: true
-		);
+		},{longpoll: true});
 	},
 	parseInfo: function(pages) {
 		// Count how many things we have to load on the Main Page.
