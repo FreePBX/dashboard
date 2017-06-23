@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-15 17:10-0700\n"
-"PO-Revision-Date: 2017-06-22 18:58+0200\n"
+"PO-Revision-Date: 2017-06-22 19:07+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/vi/>\n"
@@ -145,7 +145,7 @@ msgstr "Thành viên miễn phí"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr ""
+msgstr "Sự thay đổi liên tục"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
