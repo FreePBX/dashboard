@@ -30,7 +30,9 @@ if (!$fh || !flock($fh, LOCK_EX|LOCK_NB)) {
 	// Unable to lock, we're already running.
 	exit;
 }
-
+if(!$astman->connected()){
+	exit;
+}
 // Run the trigger
 \FreePBX::Dashboard()->runTrigger();
 

@@ -103,7 +103,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		// still there.
 
 		$file = \FreePBX::Config()->get('AMPWEBROOT')."/admin/modules/dashboard/".$this->sched;
-		$cmd = "[ -x $file ] && $file";
+		$cmd = "[ -x $file ] && $file > /dev/null 2>&1";
 
 		// Ensure we instantiate cron with the correct user
 		$c = \FreePBX::create()->Cron(\FreePBX::Config()->get('AMPASTERISKWEBUSER'));
