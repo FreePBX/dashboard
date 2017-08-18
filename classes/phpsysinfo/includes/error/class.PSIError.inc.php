@@ -63,7 +63,6 @@ class PSIError
      */
     public static function singleton()
     {
-				dbug("yes");
         if (!isset(self::$_instance)) {
             $c = __CLASS__;
             self::$_instance = new $c;
