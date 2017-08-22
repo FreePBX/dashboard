@@ -3,59 +3,59 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dashboard
-# Copyright (C) 2008-2016 Sangoma, Inc.
+# Copyright (C) 2008-2017 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-15 17:10-0700\n"
-"PO-Revision-Date: 2017-03-16 03:28+0200\n"
-"Last-Translator: Nicolas <freepbx@riendeau.org>\n"
-"Language-Team: French "
-"<http://weblate.freepbx.org/projects/freepbx/dashboard/fr_FR/>\n"
-"Language: fr_FR\n"
+"PO-Revision-Date: 2017-06-22 19:07+0200\n"
+"Last-Translator: PETER <ftek@ymail.com>\n"
+"Language-Team: Vietnamese "
+"<http://weblate.freepbx.org/projects/freepbx/dashboard/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
-msgstr "Flux %s"
+msgstr "Cung cấp %s"
 
 #: classes/Statistics.class.php:365 classes/Statistics.class.php:368
 #, php-format
 msgid "%s Min Avg"
-msgstr "%s min moy"
+msgstr "Trung bình nhỏ nhất %s"
 
 #: sections/Statistics.class.php:17
 #, php-format
 msgid "%s Statistics"
-msgstr "Statistiques %s"
+msgstr "Các thống kê %s"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
-msgstr "Il y a %s"
+msgstr "Trước đó %s"
 
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
-msgstr "0 secondes"
+msgstr "0 giây"
 
 #: views/sections/uptime.php:16
 msgid "1 Minute"
-msgstr "1 minute"
+msgstr "1 phút"
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
-msgstr "15 minutes"
+msgstr "15 phút"
 
 #: views/sections/uptime.php:19
 msgid "5 Minutes"
-msgstr "5 minutes"
+msgstr "5 phút"
 
 #: sections/Overview.class.php:31
 #, php-format
@@ -63,56 +63,56 @@ msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
 "i>"
 msgstr ""
-"<strong>'%s'</strong><br><i>(Vous pouvez changer ce nom dans les paramètres "
-"avancés)</i>"
+"<strong>'%s'</strong><br><i>(Bạn có thể thay đổi tên này tại Cài đặt nâng "
+"cao)</i>"
 
 #: views/sections/statistics.php:299
 msgid "Active Calls"
-msgstr "Appels actifs"
+msgstr "Các cuộc gọi hoạt động"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr "Canaux actifs"
+msgstr "Các kênh hoạt động"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
-msgstr "Asterisk"
+msgstr "Tổng đài Asterisk"
 
 #: classes/Statistics.class.php:113
 msgid "Asterisk Uptime"
-msgstr "Temps de disponibilité d'Asterisk"
+msgstr "Thời gian hoạt động của Asterisk"
 
 #: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
-msgstr "Blogs"
+msgstr "Nhật ký trực tuyến"
 
 #: classes/Statistics.class.php:266 views/sections/statistics.php:199
 msgid "Buffers"
-msgstr "Tampons"
+msgstr "Bộ nhớ đệm Buffer"
 
 #: classes/Statistics.class.php:122
 msgid "CPU"
-msgstr "UCT"
+msgstr "CPU"
 
 #: classes/Statistics.class.php:368
 msgid "CPU Temp"
-msgstr "Température de l'UCT"
+msgstr "Nhiệt độ CPU"
 
 #: classes/Statistics.class.php:265 views/sections/statistics.php:198
 msgid "Cached"
-msgstr "Cachée"
+msgstr "Bộ nhớ đệm tốc độ bình thường Cache"
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
-msgstr "Erreur critiques trouvées"
+msgstr "Tìm thấy lỗi Critical Errors"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
-msgstr "Tableau de bord"
+msgstr "Bảng điều khiển Dashboard"
 
 #: dashboard.i18n.php:14
 msgid "Dashboard Module"
-msgstr "Module tableau de bord"
+msgstr "Mô đun bảng điều khiển Dashboard"
 
 #: classes/Statistics.class.php:134 classes/Statistics.class.php:145
 #: classes/Statistics.class.php:156 classes/Statistics.class.php:167
@@ -121,31 +121,31 @@ msgstr "Module tableau de bord"
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
 msgid "Day"
-msgstr "Jour"
+msgstr "Ngày"
 
 #: views/sections/overview.php:54
 msgid "Delete This"
-msgstr "Supprimer ceci"
+msgstr "Xóa cái này"
 
 #: dashboard.i18n.php:12
 msgid "Disable collection of system statistics"
-msgstr "Désactiver la collecte des statistiques"
+msgstr "Vô hiệu hóa việc thu thập các thống kê hệ thống"
 
 #: classes/Statistics.class.php:124 views/sections/statistics.php:50
 msgid "Disk"
-msgstr "Disque"
+msgstr "Ổ đĩa"
 
 #: dashboard.i18n.php:18
 msgid "Expiry time for system statistics"
-msgstr "Durée d'expiration des statistiques système"
+msgstr "Hết hạn thời gian đối với các thống kê hệ thống"
 
 #: classes/Statistics.class.php:264 views/sections/statistics.php:197
 msgid "Free Mem"
-msgstr "Mémoire libre"
+msgstr "Thành viên miễn phí"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr "Modifications continuelles"
+msgstr "Sự thay đổi liên tục"
 
 #: classes/Statistics.class.php:133 classes/Statistics.class.php:144
 #: classes/Statistics.class.php:155 classes/Statistics.class.php:166
@@ -154,31 +154,31 @@ msgstr "Modifications continuelles"
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
-msgstr "Heure"
+msgstr "Giờ"
 
 #: views/sections/overview.php:53
 msgid "Ignore This"
-msgstr "Ignorez ceci"
+msgstr "Bỏ qua điều này"
 
 #: classes/Statistics.class.php:14
 msgid "Invalid Selection"
-msgstr "Sélection invalide"
+msgstr "Lựa chọn không hợp lệ"
 
 #: classes/Statistics.class.php:26
 msgid "Invalid period"
-msgstr "Période invalide"
+msgstr "Khoảng thời gian không hợp lệ"
 
 #: classes/Statistics.class.php:377
 msgid "Load"
-msgstr "Charge"
+msgstr "Tải"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
-msgstr "Moyennes de charge"
+msgstr "Trung bình tải"
 
 #: classes/Statistics.class.php:123 views/sections/statistics.php:39
 msgid "Memory"
-msgstr "Mémoire"
+msgstr "Bộ nhớ"
 
 #: classes/Statistics.class.php:136 classes/Statistics.class.php:147
 #: classes/Statistics.class.php:158 classes/Statistics.class.php:169
@@ -187,7 +187,7 @@ msgstr "Mémoire"
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
-msgstr "Mois"
+msgstr "Tháng"
 
 #: sections/Overview.class.php:131
 msgid "MySQL"
@@ -195,151 +195,149 @@ msgstr "MySQL"
 
 #: classes/Statistics.class.php:125 views/sections/statistics.php:61
 msgid "Network"
-msgstr "Réseau"
+msgstr "Mạng"
 
 #: sections/Overview.class.php:91
 msgid "No critical issues found"
-msgstr "Aucun problème critique trouvé"
+msgstr "Không tìm thấy vấn đề nghiêm trọng nào"
 
 #: sections/Overview.class.php:16
 msgid "Overview"
-msgstr "Vue d'ensemble"
+msgstr "Tổng quan"
 
 #: sections/Overview.class.php:118 sections/Overview.class.php:122
 msgid "Please check for errors in the notification section"
-msgstr ""
-"S'il vous plaît, vérifiez pour la présence d'erreurs dans la section de "
-"notification"
+msgstr "Vui lòng kiểm tra các lỗi trên phần thông báo"
 
 #: dashboard.i18n.php:8
 msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
-"Fournis un tableau de bord d'informations système avec de l'information sur "
-"les appels, l'UCT, la mémoire, les disques, le réseau et les processus."
+"Cung cấp bảng điều khiển thông tin hệ thống, thể hiện các thông tin về các "
+"cuộc gọi, CPU, bộ nhớ, các ổ đĩa, mạng và các xử lý."
 
 #: classes/Statistics.class.php:107
 msgid "Reload"
-msgstr "Recharger"
+msgstr "Tải lại"
 
 #: views/sections/overview.php:64
 msgid "Resolve"
-msgstr "Résoudre"
+msgstr "Giải quyết"
 
 #: sections/Overview.class.php:100
 msgid "Security Issue"
-msgstr "Problème de sécurité"
+msgstr "Vấn đề bảo mật"
 
 #: dashboard.i18n.php:20
 msgid ""
 "Set the maximum age in seconds before system statistics are refreshed. The "
 "minimum value is 50 seconds."
 msgstr ""
-"Le temps maximum en secondes avant que les statistiques système soient "
-"rafraîchies. La valeur minimale est de 50 secondes."
+"Cài đặt tuổi tối đa bằng giây trước khi các thống kê hệ thống được làm mới. "
+"Gía trị thấp nhất là 50 giây."
 
 #: dashboard.i18n.php:16
 msgid ""
 "Set this to true to prevent persistent collection of system statistics such "
 "as CPU, memory, and channel usage."
 msgstr ""
+"Cài đặt về True để ngăn việc thu thấp liên tục các thông kê hệ thống như "
+"CPU, bộ nhớ và cách sử dụng kênh."
 
 #: views/sections/overview.php:75
 msgid "Show All"
-msgstr "Afficher tout"
+msgstr "Hiển thị tất cả"
 
 #: views/sections/overview.php:77
 msgid "Show New"
-msgstr "Afficher les nouveaux"
+msgstr "Hiển thị cái mới"
 
 #: classes/Statistics.class.php:90 classes/Statistics.class.php:114
 msgid "Since Reload"
-msgstr "Depuis le rechargement"
+msgstr "Từ khi tải lại"
 
 #: sections/Statistics.class.php:18 sections/Uptime.class.php:16
 msgid "Statistics"
-msgstr "Statistiques"
+msgstr "Các thống kê"
 
 #: views/sections/overview.php:23
 msgid "Summary"
-msgstr "Sommaire"
+msgstr "Tóm tắt"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
-msgstr "Pagination utilisée"
+msgstr "Swap đã được sử dụng"
 
 #: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
-msgstr "L'information système a été mise à jour il y a %s secondes"
+msgstr "SysInfo đã được cập nhật %s giây trước"
 
 #: classes/Statistics.class.php:88 classes/Statistics.class.php:108
 msgid "System"
-msgstr "Système"
+msgstr "Hệ thống"
 
 #: sections/Overview.class.php:89
 msgid "System Alerts"
-msgstr "Alertes système"
+msgstr "Cảnh báo hệ thống"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
-msgstr "Tableau de bord système"
+msgstr "Bảng điều khiển(Dashboard) hệ thống"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr "Dernier redémarrage système"
+msgstr "Hệ thống đã được khởi động lần cuối"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr "Vue d'ensemble système"
+msgstr "Tổng quan hệ thống"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
-msgstr "Temps de disponibilité système"
+msgstr "Thời gian hoạt động của hệ thống"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
-msgstr "Temp"
+msgstr "Nhiệt độ"
 
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
-msgstr ""
-"Ceci est un problème critique et devrait être résolu le plus rapidement "
-"possible"
+msgstr "Đây là một vấn đề nghiêm trọng và cần được xử lý gấp"
 
 #: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr "Jonctions hors ligne"
+msgstr "Các trung kế offline"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr "Jonctions en ligne"
+msgstr "Các trung kế đã đăng ký"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
 msgid "Uptime"
-msgstr "Disponibilité"
+msgstr "Thời gian hoạt động"
 
 #: classes/Statistics.class.php:267 views/sections/statistics.php:200
 msgid "Used"
-msgstr "Utilisé(e)"
+msgstr "Đã được sử dụng"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
-msgstr "Utilisateurs hors ligne"
+msgstr "Người dùng offline"
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr "Utilisateurs en ligne"
+msgstr "Người dùng Online"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
-msgstr "Avertissements trouvé"
+msgstr "Cảnh báo được tìm thấy"
 
 #: sections/Overview.class.php:132
 msgid "Web Server"
-msgstr "Serveur Web"
+msgstr "Máy chủ Web"
 
 #: classes/Statistics.class.php:135 classes/Statistics.class.php:146
 #: classes/Statistics.class.php:157 classes/Statistics.class.php:168
@@ -348,65 +346,65 @@ msgstr "Serveur Web"
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
-msgstr "Semaine"
+msgstr "Tuần"
 
 #: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
-msgstr "Bienvenue à %s"
+msgstr "Chào mừng tới %s"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
-msgstr "jour"
+msgstr "ngày"
 
 #: classes/TimeUtils.class.php:16
 msgid "days"
-msgstr "jours"
+msgstr "Các ngày"
 
 #: classes/TimeUtils.class.php:17
 msgid "hour"
-msgstr "heure"
+msgstr "giờ"
 
 #: classes/TimeUtils.class.php:18
 msgid "hours"
-msgstr "heures"
+msgstr "giờ"
 
 #: classes/TimeUtils.class.php:19
 msgid "minute"
-msgstr "minute"
+msgstr "phút"
 
 #: classes/TimeUtils.class.php:20
 msgid "minutes"
-msgstr "minutes"
+msgstr "phút"
 
 #: classes/TimeUtils.class.php:11
 msgid "month"
-msgstr "mois"
+msgstr "tháng"
 
 #: classes/TimeUtils.class.php:12
 msgid "months"
-msgstr "mois"
+msgstr "tháng"
 
 #: classes/TimeUtils.class.php:21
 msgid "second"
-msgstr "seconde"
+msgstr "giây"
 
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
-msgstr "secondes"
+msgstr "giây"
 
 #: classes/TimeUtils.class.php:13
 msgid "week"
-msgstr "semaine"
+msgstr "tuần"
 
 #: classes/TimeUtils.class.php:14
 msgid "weeks"
-msgstr "semaines"
+msgstr "tuần"
 
 #: classes/TimeUtils.class.php:9
 msgid "year"
-msgstr "année"
+msgstr "năm"
 
 #: classes/TimeUtils.class.php:10
 msgid "years"
-msgstr "années"
+msgstr "năm"
