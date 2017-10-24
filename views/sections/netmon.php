@@ -117,7 +117,7 @@ if (typeof window.Netchart !== "undefined") {
 			}
 		},
 		load_chart: function(intname) {
-			console.log("load chart called with "+intname);
+			//console.log("load chart called with "+intname);
 			var self = this;
 			this.clear_timeout();
 			// Get our data
