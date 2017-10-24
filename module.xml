@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>14.0.2.4</version>
+	<version>14.0.2.5</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,6 +20,7 @@
 		<module>core ge 12.0.1beta11</module>
 	</depends>
 	<changelog>
+		*14.0.2.5* FREEPBX-16001 Remove debugging
 		*14.0.2.4* FREEPBX-15092
 		*14.0.2.3* FREEPBX-14939 Longpoll flag
 		*14.0.2.2* Merge from 13
