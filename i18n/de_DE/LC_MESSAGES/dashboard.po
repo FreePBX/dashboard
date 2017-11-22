@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-15 17:10-0700\n"
-"PO-Revision-Date: 2017-11-13 04:06+0200\n"
+"PO-Revision-Date: 2017-11-22 05:16+0200\n"
 "Last-Translator: hammer125 <auswertung@aon.at>\n"
 "Language-Team: German "
 "<http://weblate.freepbx.org/projects/freepbx/dashboard/de_DE/>\n"
@@ -34,7 +34,7 @@ msgstr "%s Min Durchschnitt"
 #: sections/Statistics.class.php:17
 #, php-format
 msgid "%s Statistics"
-msgstr ""
+msgstr "%s Statistiken"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
@@ -243,6 +243,8 @@ msgid ""
 "Set this to true to prevent persistent collection of system statistics such "
 "as CPU, memory, and channel usage."
 msgstr ""
+"Aktivieren Sie das um zu verhindern, dass dauernd Systemstatistiken wie CPU, "
+"Speicher und Kanalbenützung gesammelt werden."
 
 #: views/sections/overview.php:75
 msgid "Show All"
