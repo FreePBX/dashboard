@@ -130,6 +130,7 @@ class Overview {
 			"asterisk" => _("Asterisk"),
 			"mysql" => _("MySQL"),
 			"apache" => _("Web Server"),
+			"mailq" => _("Mail Queue"),
 		);
 
 		$sysinfo = \FreePBX::create()->Dashboard->getSysInfo();
@@ -197,6 +198,39 @@ class Overview {
 	private function checkmysql() {
 		return $this->genAlertGlyphicon('ok', "No Database checks written yet.");
 	}
+
+	private function checkmailq() {
+		$mailq = fpbx_which("mailq");
+		if ($mailq) {
+			$lastline = exec($mailq, $out, $ret);
+		}
+		if (empty($out)) {
+			return $this->genAlertGlyphicon('critical', "No response from 'mailq' command");
+		}
+		if (strpos($out[0], "queue is empty") !== false) {
+			return $this->genAlertGlyphicon('ok', "No outbound mail in queue");
+		}
+
+		if (preg_match('/in (\d+) Request/', $lastline, $regex)) {
+			// We have mail.
+			$messages = (int) $regex[1];
+			if ($messages > 5) {
+				$err = "critical";
+			} else {
+				$err = "warning";
+			}
+
+			if ($messages == 1) {
+				$msg = _("1 message is queued on this machine, and has not been delivered");
+			} else {
+				$msg = sprintf(_("%s messages are queued on this machine, and have not been delivered"), $messages);
+			}
+			return $this->genAlertGlyphicon($err, $msg);
+		}
+		// This signifies a bug and must not be translated.
+		return $this->genAlertGlyphicon('critical', "Unknown output from mailq: ".json_encode([$out, $ret]));
+	}
+
 
 	private function checkapache() {
 		// This is here to allow us to fire up a small replacement httpd server if
