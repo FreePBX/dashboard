@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 17:10-0700\n"
+"POT-Creation-Date: 2018-01-10 00:06-0300\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -64,6 +64,11 @@ msgstr "%s 統計情報"
 msgid "%s ago"
 msgstr "%s 前"
 
+#: sections/Overview.class.php:226
+#, php-format
+msgid "%s messages are queued on this machine, and have not been delivered"
+msgstr ""
+
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
 msgstr "0秒"
@@ -71,6 +76,10 @@ msgstr "0秒"
 #: views/sections/uptime.php:16
 msgid "1 Minute"
 msgstr "1分"
+
+#: sections/Overview.class.php:224
+msgid "1 message is queued on this machine, and has not been delivered"
+msgstr ""
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
@@ -162,6 +171,10 @@ msgstr "ロードアベレージ"
 #: views/sections/netmon.php:57
 #, php-format
 msgid "Loading Interface %s..."
+msgstr ""
+
+#: sections/Overview.class.php:133
+msgid "Mail Queue"
 msgstr ""
 
 #: views/sections/statistics.php:39

@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 17:10-0700\n"
+"POT-Creation-Date: 2018-01-10 00:06-0300\n"
 "PO-Revision-Date: 2015-02-04 00:41+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -46,6 +46,11 @@ msgstr ""
 msgid "%s ago"
 msgstr "%s atrás"
 
+#: sections/Overview.class.php:226
+#, php-format
+msgid "%s messages are queued on this machine, and have not been delivered"
+msgstr ""
+
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
 msgstr "0 segundos"
@@ -53,6 +58,10 @@ msgstr "0 segundos"
 #: views/sections/uptime.php:16
 msgid "1 Minute"
 msgstr "1 Minuto"
+
+#: sections/Overview.class.php:224
+msgid "1 message is queued on this machine, and has not been delivered"
+msgstr ""
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
@@ -146,6 +155,10 @@ msgstr "Médias de Carga"
 #: views/sections/netmon.php:57
 #, php-format
 msgid "Loading Interface %s..."
+msgstr ""
+
+#: sections/Overview.class.php:133
+msgid "Mail Queue"
 msgstr ""
 
 #: views/sections/statistics.php:39

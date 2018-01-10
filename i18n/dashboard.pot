@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dashboard
-# Copyright (C) 2008-2017 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2018 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 17:10-0700\n"
+"POT-Creation-Date: 2018-01-10 00:06-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,12 +35,21 @@ msgstr ""
 msgid "%s ago"
 msgstr ""
 
+#: sections/Overview.class.php:226
+#, php-format
+msgid "%s messages are queued on this machine, and have not been delivered"
+msgstr ""
+
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
 msgstr ""
 
 #: views/sections/uptime.php:16
 msgid "1 Minute"
+msgstr ""
+
+#: sections/Overview.class.php:224
+msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
 #: views/sections/uptime.php:22
@@ -141,6 +150,10 @@ msgstr ""
 #: views/sections/netmon.php:57
 #, php-format
 msgid "Loading Interface %s..."
+msgstr ""
+
+#: sections/Overview.class.php:133
+msgid "Mail Queue"
 msgstr ""
 
 #: views/sections/statistics.php:39
