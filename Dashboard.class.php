@@ -118,8 +118,8 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	}
 
 	/**
-	* Chown hook for freepbx fwconsole
-	*/
+	 * Chown hook for freepbx fwconsole
+	 */
 	public function chownFreepbx() {
 		$files = array(
 			array('type' => 'file', 'path' => __DIR__."/scheduler.php", 'perms' => 0755),
@@ -134,66 +134,66 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		}
 
 		switch ($_REQUEST['command']) {
-			case "deletemessage":
-				\FreePBX::create()->Notifications->safe_delete($_REQUEST['raw'], $_REQUEST['id']);
-				return array("status" => true);
+		case "deletemessage":
+			\FreePBX::create()->Notifications->safe_delete($_REQUEST['raw'], $_REQUEST['id']);
+			return array("status" => true);
 			break;
-			case "resetmessage":
-				\FreePBX::create()->Notifications->reset($_REQUEST['raw'], $_REQUEST['id']);
-				return array("status" => true);
+		case "resetmessage":
+			\FreePBX::create()->Notifications->reset($_REQUEST['raw'], $_REQUEST['id']);
+			return array("status" => true);
 			break;
-			case "saveorder":
-				$this->setConfig('visualorder',$_REQUEST['order']);
-				return array("status" => true);
+		case "saveorder":
+			$this->setConfig('visualorder',$_REQUEST['order']);
+			return array("status" => true);
 			break;
-			case "getcontent":
-				if(file_exists(__DIR__.'/sections/'.$_REQUEST['rawname'].'.class.php')) {
-					include(__DIR__.'/sections/'.$_REQUEST['rawname'].'.class.php');
-					$class = '\\FreePBX\\modules\\Dashboard\\Sections\\'.$_REQUEST['rawname'];
-					$class = new $class();
-					return array("status" => true, "content" => $class->getContent($_REQUEST['section']));
-				} else {
-					return array("status" => false, "message" => "Missing Class Object!");
-				}
+		case "getcontent":
+			if(file_exists(__DIR__.'/sections/'.$_REQUEST['rawname'].'.class.php')) {
+				include(__DIR__.'/sections/'.$_REQUEST['rawname'].'.class.php');
+				$class = '\\FreePBX\\modules\\Dashboard\\Sections\\'.$_REQUEST['rawname'];
+				$class = new $class();
+				return array("status" => true, "content" => $class->getContent($_REQUEST['section']));
+			} else {
+				return array("status" => false, "message" => "Missing Class Object!");
+			}
 			break;
-			case "gethooks":
-				if (!$this->getConfig('allhooks')) {
-					$e = null;
-					$this->doDialplanHook($e, null, null); // Avoid warnings.
-				}
-				$config = $this->getConfig('allhooks');
-				$order = $this->getConfig('visualorder');
-				if(is_array($order)) {
-					foreach($config as &$page) {
-						$entries = array();
-						foreach($page['entries'] as $k => $e) {
-							$o = isset($order[$e['section']]) ? $order[$e['section']] : $k;
-							while(isset($entries[$o])) {
-								$o++;
-							}
-							$entries[$o] = $e;
+		case "gethooks":
+			if (!$this->getConfig('allhooks')) {
+				$e = null;
+				$this->doDialplanHook($e, null, null); // Avoid warnings.
+			}
+			$config = $this->getConfig('allhooks');
+			$order = $this->getConfig('visualorder');
+			if(is_array($order)) {
+				foreach($config as &$page) {
+					$entries = array();
+					foreach($page['entries'] as $k => $e) {
+						$o = isset($order[$e['section']]) ? $order[$e['section']] : $k;
+						while(isset($entries[$o])) {
+							$o++;
 						}
-						ksort($entries);
-						$page['entries'] = $entries;
+						$entries[$o] = $e;
 					}
+					ksort($entries);
+					$page['entries'] = $entries;
 				}
-				return $config;
+			}
+			return $config;
 			break;
-			case "sysstat":
-				if (!class_exists('Statistics')) {
-					include 'classes/Statistics.class.php';
-				}
-				$s = new Statistics();
-				return $s->getStats();
+		case "sysstat":
+			if (!class_exists('Statistics')) {
+				include 'classes/Statistics.class.php';
+			}
+			$s = new Statistics();
+			return $s->getStats();
 			break;
-			case "netmon":
-				if (!class_exists('Netmon')) {
-					include 'classes/Netmon.class.php';
-				}
-				$n = new \FreePBX\modules\Dashboard\Netmon();
-				return $n->getStats();
-			default:
-				return DashboardHooks::runHook($_REQUEST['command']);
+		case "netmon":
+			if (!class_exists('Netmon')) {
+				include 'classes/Netmon.class.php';
+			}
+			$n = new \FreePBX\modules\Dashboard\Netmon();
+			return $n->getStats();
+		default:
+			return DashboardHooks::runHook($_REQUEST['command']);
 			break;
 		}
 	}
