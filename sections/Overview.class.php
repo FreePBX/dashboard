@@ -202,7 +202,7 @@ class Overview {
 	private function checkmailq() {
 		$mailq = fpbx_which("mailq");
 		if ($mailq) {
-			$lastline = exec($mailq, $out, $ret);
+			$lastline = exec("$mailq 2>&1", $out, $ret);
 		}
 		if (empty($out)) {
 			return $this->genAlertGlyphicon('critical', "No response from 'mailq' command");
