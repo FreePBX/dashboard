@@ -3,9 +3,9 @@
 namespace FreePBX\modules\Dashboard;
 
 class Netmon {
-	public $output = "/dev/shm/netusage";
-	public $watch = "/dev/shm/running";
-	public $log = "/dev/shm/netmon-log";
+	public $output = (PHP_OS=='FreeBSD')? "/compat/linux/dev/shm/netusage" : "/dev/shm/netusage";
+	public $watch = (PHP_OS=='FreeBSD')? "/compat/linux/dev/shm/running" : "/dev/shm/running";
+	public $log = (PHP_OS=='FreeBSD')? "/compat/linux/dev/shm/netmon-log" : "/dev/shm/netmon-log";
 	public $script = false; 
 
 	public function __construct() {
