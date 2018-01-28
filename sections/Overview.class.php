@@ -204,10 +204,8 @@ class Overview {
 		if ($mailq) {
 			$lastline = exec("$mailq 2>&1", $out, $ret);
 		}
-		if (empty($out)) {
-			return $this->genAlertGlyphicon('critical', "No response from 'mailq' command");
-		}
-		if (strpos($out[0], "queue is empty") !== false) {
+		// Postfix returns 'Mail queue is empty', exim returns nothing.
+		if (empty($out) || strpos($out[0], "queue is empty") !== false) {
 			return $this->genAlertGlyphicon('ok', "No outbound mail in queue");
 		}
 
