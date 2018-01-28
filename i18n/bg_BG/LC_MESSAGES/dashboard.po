@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-10 00:06-0300\n"
+"POT-Creation-Date: 2018-01-28 19:38-0300\n"
 "PO-Revision-Date: 2014-07-23 16:31+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/dashboard/"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "%s ago"
 msgstr "преди %s"
 
-#: sections/Overview.class.php:226
+#: sections/Overview.class.php:224
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -63,7 +63,7 @@ msgstr "0 секунди"
 msgid "1 Minute"
 msgstr "1 Минута"
 
-#: sections/Overview.class.php:224
+#: sections/Overview.class.php:222
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
