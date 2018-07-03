@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-15 17:10-0700\n"
-"PO-Revision-Date: 2018-07-03 12:37+0000\n"
+"PO-Revision-Date: 2018-07-18 19:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/dashboard/bg/>\n"
 "Language: bg_BG\n"
@@ -85,7 +85,7 @@ msgstr "Активни Разговори"
 
 #: classes/Statistics.class.php:306
 msgid "Active Chans"
-msgstr "Активни Чана"
+msgstr "Активни Канали"
 
 #: classes/Statistics.class.php:121 sections/Overview.class.php:130
 msgid "Asterisk"
