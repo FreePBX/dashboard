@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-03-15 17:10-0700\n"
-"PO-Revision-Date: 2018-07-06 16:24+0000\n"
+"PO-Revision-Date: 2018-07-14 11:18+0000\n"
 "Last-Translator: Elvita Crespo <ecrespo@sangoma.com>\n"
 "Language-Team: Spanish <http://*/projects/freepbx/dashboard/es/>\n"
 "Language: es_ES\n"
@@ -258,11 +258,11 @@ msgstr "Desde Recarga"
 
 #: sections/Statistics.class.php:18 sections/Uptime.class.php:16
 msgid "Statistics"
-msgstr "Estadisticas"
+msgstr "Estadísticas"
 
 #: views/sections/overview.php:23
 msgid "Summary"
-msgstr "Sumario"
+msgstr "Resumen"
 
 #: classes/Statistics.class.php:268 views/sections/statistics.php:201
 msgid "Swap Used"
@@ -287,15 +287,15 @@ msgstr "Tablero del Sistema"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
-msgstr "Ultimo reinicio del sistema"
+msgstr "Último reinicio del sistema"
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
-msgstr "Vision de conjunto del sistema"
+msgstr "Visión de conjunto del sistema"
 
 #: classes/Statistics.class.php:112
 msgid "System Uptime"
-msgstr "Tiempo activo sistema"
+msgstr "Tiempo activo del sistema"
 
 #: classes/Statistics.class.php:349 classes/Statistics.class.php:378
 msgid "Temp"
@@ -303,15 +303,15 @@ msgstr "Temperatura"
 
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
-msgstr "Este es un asunto critico y debe ser resuelto con urgencia"
+msgstr "Esto es un problema crítico y debe resolverse con urgencia"
 
 #: classes/Statistics.class.php:305 views/sections/statistics.php:298
 msgid "Trunks Offline"
-msgstr "Troncales Fuera de Linea"
+msgstr "Troncales Fuera de Línea"
 
 #: classes/Statistics.class.php:304 views/sections/statistics.php:297
 msgid "Trunks Reged"
-msgstr "Troncales Registrados"
+msgstr "Troncales Registradas"
 
 #: classes/Statistics.class.php:120 sections/Uptime.class.php:15
 #: views/sections/statistics.php:17
@@ -324,11 +324,11 @@ msgstr "Usado"
 
 #: classes/Statistics.class.php:303 views/sections/statistics.php:296
 msgid "Users Offline"
-msgstr "Usuarios Fuera de Linea"
+msgstr "Usuarios Sin Conexión"
 
 #: classes/Statistics.class.php:302 views/sections/statistics.php:295
 msgid "Users Online"
-msgstr "Usuarios en Linea"
+msgstr "Usuarios Conectados"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
@@ -354,11 +354,11 @@ msgstr "Bienvenido a %s"
 
 #: classes/TimeUtils.class.php:15
 msgid "day"
-msgstr "dia"
+msgstr "día"
 
 #: classes/TimeUtils.class.php:16
 msgid "days"
-msgstr "dias"
+msgstr "días"
 
 #: classes/TimeUtils.class.php:17
 msgid "hour"
