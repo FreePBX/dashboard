@@ -108,7 +108,7 @@
 		});
 	})
 	$("#page_Main_Overview_overview .showAll").on("click", function() {
-		$.cookie('dashboardShowAll', ($(this).data("type") == "all"));
+		Cookies.set('dashboardShowAll', ($(this).data("type") == "all"));
 		$("#page_Main_Overview_overview .reload").click();
 	});
 </script>

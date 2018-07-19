@@ -37,15 +37,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-15 17:10-0700\n"
+"POT-Creation-Date: 2018-01-28 19:38-0300\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
 "dashboard/ja_JP/>\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -53,11 +53,6 @@ msgstr ""
 #, php-format
 msgid "%s Feed"
 msgstr ""
-
-#: classes/Statistics.class.php:365 classes/Statistics.class.php:368
-#, php-format
-msgid "%s Min Avg"
-msgstr "%s 分 平均"
 
 #: sections/Statistics.class.php:17
 #, php-format
@@ -69,6 +64,11 @@ msgstr "%s 統計情報"
 msgid "%s ago"
 msgstr "%s 前"
 
+#: sections/Overview.class.php:224
+#, php-format
+msgid "%s messages are queued on this machine, and have not been delivered"
+msgstr ""
+
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
 msgstr "0秒"
@@ -76,6 +76,10 @@ msgstr "0秒"
 #: views/sections/uptime.php:16
 msgid "1 Minute"
 msgstr "1分"
+
+#: sections/Overview.class.php:222
+msgid "1 message is queued on this machine, and has not been delivered"
+msgstr ""
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
@@ -92,41 +96,13 @@ msgid ""
 "i>"
 msgstr "<strong>'%s'</strong><br><i>(高度な設定で変更できます)</i>"
 
-#: views/sections/statistics.php:299
-msgid "Active Calls"
-msgstr "アクティブ通話"
-
-#: classes/Statistics.class.php:306
-msgid "Active Chans"
-msgstr "アクティブチャネル"
-
-#: classes/Statistics.class.php:121 sections/Overview.class.php:130
+#: sections/Overview.class.php:130
 msgid "Asterisk"
 msgstr "Asterisk"
-
-#: classes/Statistics.class.php:113
-msgid "Asterisk Uptime"
-msgstr "Asterisk稼働時間"
 
 #: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
 msgstr "ブログ"
-
-#: classes/Statistics.class.php:266 views/sections/statistics.php:199
-msgid "Buffers"
-msgstr "バッファー"
-
-#: classes/Statistics.class.php:122
-msgid "CPU"
-msgstr "CPU"
-
-#: classes/Statistics.class.php:368
-msgid "CPU Temp"
-msgstr "CPU温度"
-
-#: classes/Statistics.class.php:265 views/sections/statistics.php:198
-msgid "Cached"
-msgstr "キャッシュ"
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
@@ -140,9 +116,6 @@ msgstr ""
 msgid "Dashboard Module"
 msgstr ""
 
-#: classes/Statistics.class.php:134 classes/Statistics.class.php:145
-#: classes/Statistics.class.php:156 classes/Statistics.class.php:167
-#: classes/Statistics.class.php:178 classes/Statistics.class.php:189
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
@@ -157,7 +130,7 @@ msgstr "削除する"
 msgid "Disable collection of system statistics"
 msgstr ""
 
-#: classes/Statistics.class.php:124 views/sections/statistics.php:50
+#: views/sections/statistics.php:50
 msgid "Disk"
 msgstr "ディスク"
 
@@ -165,17 +138,10 @@ msgstr "ディスク"
 msgid "Expiry time for system statistics"
 msgstr ""
 
-#: classes/Statistics.class.php:264 views/sections/statistics.php:197
-msgid "Free Mem"
-msgstr "空きメモリ"
-
 #: views/main.php:6
 msgid "Frobulating"
 msgstr "変動"
 
-#: classes/Statistics.class.php:133 classes/Statistics.class.php:144
-#: classes/Statistics.class.php:155 classes/Statistics.class.php:166
-#: classes/Statistics.class.php:177 classes/Statistics.class.php:188
 #: views/sections/statistics.php:9 views/sections/statistics.php:20
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
@@ -186,29 +152,35 @@ msgstr "時"
 msgid "Ignore This"
 msgstr "無視する"
 
-#: classes/Statistics.class.php:14
+#: classes/Statistics.class.php:13
 msgid "Invalid Selection"
 msgstr "無効な選択"
 
-#: classes/Statistics.class.php:26
+#: classes/Statistics.class.php:25
 msgid "Invalid period"
 msgstr "無効な期間"
 
-#: classes/Statistics.class.php:377
-msgid "Load"
-msgstr "負荷"
+#: sections/Statistics.class.php:24
+msgid "Live Network Usage"
+msgstr ""
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
 msgstr "ロードアベレージ"
 
-#: classes/Statistics.class.php:123 views/sections/statistics.php:39
+#: views/sections/netmon.php:57
+#, php-format
+msgid "Loading Interface %s..."
+msgstr ""
+
+#: sections/Overview.class.php:133
+msgid "Mail Queue"
+msgstr ""
+
+#: views/sections/statistics.php:39
 msgid "Memory"
 msgstr "メモリー"
 
-#: classes/Statistics.class.php:136 classes/Statistics.class.php:147
-#: classes/Statistics.class.php:158 classes/Statistics.class.php:169
-#: classes/Statistics.class.php:180 classes/Statistics.class.php:191
 #: views/sections/statistics.php:12 views/sections/statistics.php:23
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
@@ -219,7 +191,7 @@ msgstr "月"
 msgid "MySQL"
 msgstr "MySQLサーバー"
 
-#: classes/Statistics.class.php:125 views/sections/statistics.php:61
+#: views/sections/statistics.php:61
 msgid "Network"
 msgstr "ネットワーク"
 
@@ -242,10 +214,6 @@ msgid ""
 msgstr ""
 "システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、ネッ"
 "トワークの負荷状況等を表示します。"
-
-#: classes/Statistics.class.php:107
-msgid "Reload"
-msgstr "再読込"
 
 #: views/sections/overview.php:64
 msgid "Resolve"
@@ -275,11 +243,12 @@ msgstr "全て表示"
 msgid "Show New"
 msgstr "新規を表示"
 
-#: classes/Statistics.class.php:90 classes/Statistics.class.php:114
+#: classes/Statistics.class.php:79
 msgid "Since Reload"
 msgstr "リロード後"
 
-#: sections/Statistics.class.php:18 sections/Uptime.class.php:16
+#: sections/Statistics.class.php:18 sections/Statistics.class.php:25
+#: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "統計"
 
@@ -287,16 +256,12 @@ msgstr "統計"
 msgid "Summary"
 msgstr "サマリー"
 
-#: classes/Statistics.class.php:268 views/sections/statistics.php:201
-msgid "Swap Used"
-msgstr "使用済みスワップ"
-
 #: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
 msgstr "%s 秒前にシステム情報を更新済み"
 
-#: classes/Statistics.class.php:88 classes/Statistics.class.php:108
+#: classes/Statistics.class.php:61
 msgid "System"
 msgstr "システム"
 
@@ -316,42 +281,13 @@ msgstr "最後の再起動"
 msgid "System Overview"
 msgstr "システム一覧"
 
-#: classes/Statistics.class.php:112
-msgid "System Uptime"
-msgstr "システム稼働時間"
-
-#: classes/Statistics.class.php:349 classes/Statistics.class.php:378
-msgid "Temp"
-msgstr "温度"
-
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "クリティカルな問題であるため速やかに解決する必要があります"
 
-#: classes/Statistics.class.php:305 views/sections/statistics.php:298
-msgid "Trunks Offline"
-msgstr "オフライントランク"
-
-#: classes/Statistics.class.php:304 views/sections/statistics.php:297
-msgid "Trunks Reged"
-msgstr "登録済みトランク"
-
-#: classes/Statistics.class.php:120 sections/Uptime.class.php:15
-#: views/sections/statistics.php:17
+#: sections/Uptime.class.php:15 views/sections/statistics.php:17
 msgid "Uptime"
 msgstr "稼働時間"
-
-#: classes/Statistics.class.php:267 views/sections/statistics.php:200
-msgid "Used"
-msgstr "使用済み"
-
-#: classes/Statistics.class.php:303 views/sections/statistics.php:296
-msgid "Users Offline"
-msgstr "オフラインユーザー"
-
-#: classes/Statistics.class.php:302 views/sections/statistics.php:295
-msgid "Users Online"
-msgstr "オンラインユーザー"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
@@ -361,9 +297,6 @@ msgstr "通知が見つかりました"
 msgid "Web Server"
 msgstr "Webサーバー"
 
-#: classes/Statistics.class.php:135 classes/Statistics.class.php:146
-#: classes/Statistics.class.php:157 classes/Statistics.class.php:168
-#: classes/Statistics.class.php:179 classes/Statistics.class.php:190
 #: views/sections/statistics.php:11 views/sections/statistics.php:22
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
@@ -430,6 +363,63 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
+
+#~ msgid "%s Min Avg"
+#~ msgstr "%s 分 平均"
+
+#~ msgid "Active Calls"
+#~ msgstr "アクティブ通話"
+
+#~ msgid "Active Chans"
+#~ msgstr "アクティブチャネル"
+
+#~ msgid "Asterisk Uptime"
+#~ msgstr "Asterisk稼働時間"
+
+#~ msgid "Buffers"
+#~ msgstr "バッファー"
+
+#~ msgid "CPU"
+#~ msgstr "CPU"
+
+#~ msgid "CPU Temp"
+#~ msgstr "CPU温度"
+
+#~ msgid "Cached"
+#~ msgstr "キャッシュ"
+
+#~ msgid "Free Mem"
+#~ msgstr "空きメモリ"
+
+#~ msgid "Load"
+#~ msgstr "負荷"
+
+#~ msgid "Reload"
+#~ msgstr "再読込"
+
+#~ msgid "Swap Used"
+#~ msgstr "使用済みスワップ"
+
+#~ msgid "System Uptime"
+#~ msgstr "システム稼働時間"
+
+#~ msgid "Temp"
+#~ msgstr "温度"
+
+#~ msgid "Trunks Offline"
+#~ msgstr "オフライントランク"
+
+#~ msgid "Trunks Reged"
+#~ msgstr "登録済みトランク"
+
+#~ msgid "Used"
+#~ msgstr "使用済み"
+
+#~ msgid "Users Offline"
+#~ msgstr "オフラインユーザー"
+
+#~ msgid "Users Online"
+#~ msgstr "オンラインユーザー"
 
 #~ msgid "Feed"
 #~ msgstr "フィード"

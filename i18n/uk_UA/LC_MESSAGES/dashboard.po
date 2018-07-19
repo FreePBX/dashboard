@@ -9,28 +9,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-15 17:10-0700\n"
-"PO-Revision-Date: 2016-12-09 20:44+0200\n"
+"POT-Creation-Date: 2018-01-28 19:38-0300\n"
+"PO-Revision-Date: 2016-10-06 16:41+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/"
 "dashboard/uk_UA/>\n"
+"Language: uk_UA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk_UA\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.4\n"
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
 msgstr "%s Запис"
-
-#: classes/Statistics.class.php:365 classes/Statistics.class.php:368
-#, php-format
-msgid "%s Min Avg"
-msgstr "%s Хв Серед"
 
 #: sections/Statistics.class.php:17
 #, php-format
@@ -42,6 +37,11 @@ msgstr ""
 msgid "%s ago"
 msgstr "%s тому"
 
+#: sections/Overview.class.php:224
+#, php-format
+msgid "%s messages are queued on this machine, and have not been delivered"
+msgstr ""
+
 #: classes/TimeUtils.class.php:23
 msgid "0 seconds"
 msgstr "0 секунд"
@@ -49,6 +49,10 @@ msgstr "0 секунд"
 #: views/sections/uptime.php:16
 msgid "1 Minute"
 msgstr "1 Хвилина"
+
+#: sections/Overview.class.php:222
+msgid "1 message is queued on this machine, and has not been delivered"
+msgstr ""
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
@@ -67,41 +71,13 @@ msgstr ""
 "<strong>'%s'</strong><br><i>(Ви можете змінити це ім'я в Додаткових "
 "настройках)</i>"
 
-#: views/sections/statistics.php:299
-msgid "Active Calls"
-msgstr "Активні виклики"
-
-#: classes/Statistics.class.php:306
-msgid "Active Chans"
-msgstr "Активні канали"
-
-#: classes/Statistics.class.php:121 sections/Overview.class.php:130
+#: sections/Overview.class.php:130
 msgid "Asterisk"
 msgstr "Астеріск"
-
-#: classes/Statistics.class.php:113
-msgid "Asterisk Uptime"
-msgstr "Час праці Астеріска"
 
 #: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
 msgstr "Блоги"
-
-#: classes/Statistics.class.php:266 views/sections/statistics.php:199
-msgid "Buffers"
-msgstr "Буфери"
-
-#: classes/Statistics.class.php:122
-msgid "CPU"
-msgstr "ЦП"
-
-#: classes/Statistics.class.php:368
-msgid "CPU Temp"
-msgstr "Температура ЦП"
-
-#: classes/Statistics.class.php:265 views/sections/statistics.php:198
-msgid "Cached"
-msgstr "Кешовано"
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
@@ -115,9 +91,6 @@ msgstr "Панель приладів"
 msgid "Dashboard Module"
 msgstr ""
 
-#: classes/Statistics.class.php:134 classes/Statistics.class.php:145
-#: classes/Statistics.class.php:156 classes/Statistics.class.php:167
-#: classes/Statistics.class.php:178 classes/Statistics.class.php:189
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
@@ -132,7 +105,7 @@ msgstr "Видалити це"
 msgid "Disable collection of system statistics"
 msgstr ""
 
-#: classes/Statistics.class.php:124 views/sections/statistics.php:50
+#: views/sections/statistics.php:50
 msgid "Disk"
 msgstr "Диск"
 
@@ -140,17 +113,10 @@ msgstr "Диск"
 msgid "Expiry time for system statistics"
 msgstr ""
 
-#: classes/Statistics.class.php:264 views/sections/statistics.php:197
-msgid "Free Mem"
-msgstr "Вільної пам'яті"
-
 #: views/main.php:6
 msgid "Frobulating"
 msgstr ""
 
-#: classes/Statistics.class.php:133 classes/Statistics.class.php:144
-#: classes/Statistics.class.php:155 classes/Statistics.class.php:166
-#: classes/Statistics.class.php:177 classes/Statistics.class.php:188
 #: views/sections/statistics.php:9 views/sections/statistics.php:20
 #: views/sections/statistics.php:31 views/sections/statistics.php:42
 #: views/sections/statistics.php:53 views/sections/statistics.php:64
@@ -161,29 +127,35 @@ msgstr "Година"
 msgid "Ignore This"
 msgstr "Ігнорувати це"
 
-#: classes/Statistics.class.php:14
+#: classes/Statistics.class.php:13
 msgid "Invalid Selection"
 msgstr "Невірний вибір"
 
-#: classes/Statistics.class.php:26
+#: classes/Statistics.class.php:25
 msgid "Invalid period"
 msgstr "Невірний період"
 
-#: classes/Statistics.class.php:377
-msgid "Load"
-msgstr "Навантаження"
+#: sections/Statistics.class.php:24
+msgid "Live Network Usage"
+msgstr ""
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
 msgstr "Середнє навантаження"
 
-#: classes/Statistics.class.php:123 views/sections/statistics.php:39
+#: views/sections/netmon.php:57
+#, php-format
+msgid "Loading Interface %s..."
+msgstr ""
+
+#: sections/Overview.class.php:133
+msgid "Mail Queue"
+msgstr ""
+
+#: views/sections/statistics.php:39
 msgid "Memory"
 msgstr "Пам'ять"
 
-#: classes/Statistics.class.php:136 classes/Statistics.class.php:147
-#: classes/Statistics.class.php:158 classes/Statistics.class.php:169
-#: classes/Statistics.class.php:180 classes/Statistics.class.php:191
 #: views/sections/statistics.php:12 views/sections/statistics.php:23
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
@@ -194,7 +166,7 @@ msgstr "Місяць"
 msgid "MySQL"
 msgstr "MySQL"
 
-#: classes/Statistics.class.php:125 views/sections/statistics.php:61
+#: views/sections/statistics.php:61
 msgid "Network"
 msgstr "Мережа"
 
@@ -217,10 +189,6 @@ msgid ""
 msgstr ""
 "Забезпечує інформаційну панель системи, що показує інформацію про виклики, "
 "ЦП, пам'ять, диски, мережі та процеси."
-
-#: classes/Statistics.class.php:107
-msgid "Reload"
-msgstr "Перезавантаження"
 
 #: views/sections/overview.php:64
 msgid "Resolve"
@@ -250,11 +218,12 @@ msgstr "Показати всі"
 msgid "Show New"
 msgstr "Показати нові"
 
-#: classes/Statistics.class.php:90 classes/Statistics.class.php:114
+#: classes/Statistics.class.php:79
 msgid "Since Reload"
 msgstr "Після перезавантаження"
 
-#: sections/Statistics.class.php:18 sections/Uptime.class.php:16
+#: sections/Statistics.class.php:18 sections/Statistics.class.php:25
+#: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "Статистика"
 
@@ -262,16 +231,12 @@ msgstr "Статистика"
 msgid "Summary"
 msgstr "Зведення"
 
-#: classes/Statistics.class.php:268 views/sections/statistics.php:201
-msgid "Swap Used"
-msgstr "Використовується свопінг"
-
 #: views/sections/overview.php:36
 #, php-format
 msgid "SysInfo updated %s seconds ago"
 msgstr "Системну інформацію оновлено %s секунд тому"
 
-#: classes/Statistics.class.php:88 classes/Statistics.class.php:108
+#: classes/Statistics.class.php:61
 msgid "System"
 msgstr "Система"
 
@@ -291,42 +256,13 @@ msgstr "Останнє перезавантаження системи"
 msgid "System Overview"
 msgstr "Огляд системи"
 
-#: classes/Statistics.class.php:112
-msgid "System Uptime"
-msgstr "Система працює"
-
-#: classes/Statistics.class.php:349 classes/Statistics.class.php:378
-msgid "Temp"
-msgstr "Температура"
-
 #: sections/Overview.class.php:101
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "Це дуже важливе питання, яке необхідно терміново вирішити"
 
-#: classes/Statistics.class.php:305 views/sections/statistics.php:298
-msgid "Trunks Offline"
-msgstr "Автономні транки"
-
-#: classes/Statistics.class.php:304 views/sections/statistics.php:297
-msgid "Trunks Reged"
-msgstr "Зареєстровано транки"
-
-#: classes/Statistics.class.php:120 sections/Uptime.class.php:15
-#: views/sections/statistics.php:17
+#: sections/Uptime.class.php:15 views/sections/statistics.php:17
 msgid "Uptime"
 msgstr "Працює"
-
-#: classes/Statistics.class.php:267 views/sections/statistics.php:200
-msgid "Used"
-msgstr "Використовується"
-
-#: classes/Statistics.class.php:303 views/sections/statistics.php:296
-msgid "Users Offline"
-msgstr "Користувачі відключені"
-
-#: classes/Statistics.class.php:302 views/sections/statistics.php:295
-msgid "Users Online"
-msgstr "Користувачі підключені"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
@@ -336,9 +272,6 @@ msgstr "Попередження знайдені"
 msgid "Web Server"
 msgstr "Веб-сервер"
 
-#: classes/Statistics.class.php:135 classes/Statistics.class.php:146
-#: classes/Statistics.class.php:157 classes/Statistics.class.php:168
-#: classes/Statistics.class.php:179 classes/Statistics.class.php:190
 #: views/sections/statistics.php:11 views/sections/statistics.php:22
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
 #: views/sections/statistics.php:55 views/sections/statistics.php:66
@@ -405,3 +338,60 @@ msgstr "рік"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "років"
+
+#~ msgid "%s Min Avg"
+#~ msgstr "%s Хв Серед"
+
+#~ msgid "Active Calls"
+#~ msgstr "Активні виклики"
+
+#~ msgid "Active Chans"
+#~ msgstr "Активні канали"
+
+#~ msgid "Asterisk Uptime"
+#~ msgstr "Час праці Астеріска"
+
+#~ msgid "Buffers"
+#~ msgstr "Буфери"
+
+#~ msgid "CPU"
+#~ msgstr "ЦП"
+
+#~ msgid "CPU Temp"
+#~ msgstr "Температура ЦП"
+
+#~ msgid "Cached"
+#~ msgstr "Кешовано"
+
+#~ msgid "Free Mem"
+#~ msgstr "Вільної пам'яті"
+
+#~ msgid "Load"
+#~ msgstr "Навантаження"
+
+#~ msgid "Reload"
+#~ msgstr "Перезавантаження"
+
+#~ msgid "Swap Used"
+#~ msgstr "Використовується свопінг"
+
+#~ msgid "System Uptime"
+#~ msgstr "Система працює"
+
+#~ msgid "Temp"
+#~ msgstr "Температура"
+
+#~ msgid "Trunks Offline"
+#~ msgstr "Автономні транки"
+
+#~ msgid "Trunks Reged"
+#~ msgstr "Зареєстровано транки"
+
+#~ msgid "Used"
+#~ msgstr "Використовується"
+
+#~ msgid "Users Offline"
+#~ msgstr "Користувачі відключені"
+
+#~ msgid "Users Online"
+#~ msgstr "Користувачі підключені"
