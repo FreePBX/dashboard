@@ -1,15 +1,8 @@
-# This file is part of FreePBX.
-#
-# For licensing information, please see the file named LICENSE located in the module directory
-#
-# FreePBX language template for dashboard
-# Copyright (C) 2008-2015 Sangoma, Inc.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Chinese (Simplified) (FreePBX)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-28 19:38-0300\n"
+"POT-Creation-Date: 2018-09-21 09:18+0000\n"
 "PO-Revision-Date: 2018-09-21 09:23+0000\n"
 "Last-Translator: james zhu <zhulizhong@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <http://*/projects/freepbx/dashboard/"
@@ -24,12 +17,12 @@ msgstr ""
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 #, php-format
 msgid "%s Feed"
-msgstr "%s1 推送消息"
+msgstr "%s 推送消息"
 
 #: sections/Statistics.class.php:17
 #, php-format
 msgid "%s Statistics"
-msgstr "%s1 统计结果"
+msgstr "%s 统计结果"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
@@ -70,11 +63,11 @@ msgstr "<strong>'%s'</strong><br><i>(用户可以通过高级设置修改名称)
 
 #: sections/Overview.class.php:130
 msgid "Asterisk"
-msgstr ""
+msgstr "Asterisk 服务器端"
 
 #: sections/Blogs.class.php:28 sections/Blogs.class.php:36
 msgid "Blogs"
-msgstr ""
+msgstr "博客"
 
 #: sections/Overview.class.php:119
 msgid "Critical Errors found"
@@ -82,11 +75,11 @@ msgstr "发现严重错误"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
-msgstr ""
+msgstr "系统仪表盘"
 
 #: dashboard.i18n.php:14
 msgid "Dashboard Module"
-msgstr ""
+msgstr "仪表盘模块"
 
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
@@ -134,7 +127,7 @@ msgstr "无效循环"
 
 #: sections/Statistics.class.php:24
 msgid "Live Network Usage"
-msgstr ""
+msgstr "实时网络使用状态"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
@@ -143,7 +136,7 @@ msgstr "平均负载"
 #: views/sections/netmon.php:57
 #, php-format
 msgid "Loading Interface %s..."
-msgstr ""
+msgstr "正在加载接口 %s..."
 
 #: sections/Overview.class.php:133
 msgid "Mail Queue"
@@ -224,7 +217,7 @@ msgstr "统计数据"
 
 #: views/sections/overview.php:23
 msgid "Summary"
-msgstr "汇总"
+msgstr "汇总信息"
 
 #: views/sections/overview.php:36
 #, php-format
