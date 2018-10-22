@@ -5,7 +5,6 @@
 // Copyright 2006-2014 Schmooze Com Inc.
 
 namespace FreePBX\modules\Dashboard\Sections;
-use PicoFeed\Reader\Reader;
 
 class Blogs {
 	public $rawname = 'Blogs';
@@ -21,7 +20,7 @@ class Blogs {
 			foreach($feeds as $feed) {
 				$data = $this->getFeed($feed);
 				if(!empty($data)) {
-					$title = $data->title;
+					$title = $data['title'];
 					if(!empty($title)) {
 						$blogs[] = array(
 							"title" => sprintf(_('%s Feed'),$title),
@@ -60,7 +59,7 @@ class Blogs {
 		if(empty($feed)) {
 			return '';
 		}
-		return load_view(dirname(__DIR__).'/views/sections/blog.php',array("items" => $feed->items, "limit" => 5));
+		return load_view(dirname(__DIR__).'/views/sections/blog.php',array("items" => $feed['items'], "limit" => 5));
 	}
 
 	/**
@@ -69,31 +68,38 @@ class Blogs {
 	 * @return object       Reader object
 	 */
 	private function getFeed($feed) {
-		$reader = new Reader;
 		$d = \FreePBX::Dashboard();
-		$etag = $d->getConfig($feed, "etag");
-		$last_modified = $d->getConfig($feed, "last_modified");
+		$content = $d->getConfig($feed, "content");
+		if(is_object($content)) {
+			$d->setConfig($feed, null, "content");
+			$d->setConfig($feed, null, "etag");
+			$d->setConfig($feed, null, "last_modified");
+		}
+
 		try {
-			$resource = $reader->download($feed, $last_modified, $etag);
-			if ($resource->isModified()) {
+			$reader = new \SimplePie();
+			$reader->set_cache_location(\FreePBX::Config()->get('ASTSPOOLDIR'));
+			$reader->set_cache_class("SimplePie_Cache_File");
 
-				$parser = $reader->getParser(
-					$resource->getUrl(),
-					$resource->getContent(),
-					$resource->getEncoding()
+			$reader->set_feed_url($feed);
+			$reader->enable_cache(true);
+			$reader->init();
+
+			$items = $reader->get_items();
+			$content = array(
+				"title" => $reader->get_title(),
+				"description" => $reader->get_description(),
+				"items" => array()
+			);
+			foreach ($items as $item) {
+				$content['items'][] = array(
+					"title" => $item->get_title(),
+					"url" => $item->get_permalink(),
+					"content" => $item->get_description()
 				);
-
-				$content = $parser->execute();
-				$etag = $resource->getEtag();
-				$last_modified = $resource->getLastModified();
-
-				$d->setConfig($feed, $content, "content");
-				$d->setConfig($feed, $etag, "etag");
-				$d->setConfig($feed, $last_modified, "last_modified");
-			} else {
-				$content = $d->getConfig($feed, "content");
 			}
-		}	catch (\PicoFeed\PicoFeedException $e) {
+			$d->setConfig($feed, $content, "content");
+		}	catch (\Exception $e) {
 			$content = $d->getConfig($feed, "content");
 		}
 		return $content;

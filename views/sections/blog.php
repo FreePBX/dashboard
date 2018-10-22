@@ -8,7 +8,7 @@ foreach($items as $item) {
 	if($c > $limit) {
 		break;
 	}
-	$description = $item->content;
+	$description = $item['content'];
 	if ($description) {
 		if (function_exists('mb_substr')) {
 			$tooltip = mb_substr(strip_tags($description,'<br>'),0,200, 'UTF-8')."...";
@@ -19,8 +19,8 @@ foreach($items as $item) {
 	} else {
 		$tooltip = "";
 	}
-	$href = $item->url;
-	$title = $item->title;
+	$href = $item['url'];
+	$title = $item['title'];
 	if (function_exists('mb_convert_encoding')) {
 		mb_convert_encoding($title, 'UTF-8', 'UTF-8');
 	}
