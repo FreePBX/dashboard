@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-28 19:38-0300\n"
+"POT-Creation-Date: 2018-10-22 17:08-0400\n"
 "PO-Revision-Date: 2016-02-03 08:06+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/dashboard/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
+#: sections/Blogs.class.php:26 sections/Blogs.class.php:34
 #, php-format
 msgid "%s Feed"
 msgstr "Flux %s"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Asterisk"
 msgstr "Asterisk"
 
-#: sections/Blogs.class.php:28 sections/Blogs.class.php:36
+#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 msgid "Blogs"
 msgstr "Blogs"
 

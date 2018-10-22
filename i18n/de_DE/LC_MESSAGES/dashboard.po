@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-19 18:04-0400\n"
+"POT-Creation-Date: 2018-10-22 17:08-0400\n"
 "PO-Revision-Date: 2018-07-26 14:27+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dashboard/de/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.0.1\n"
 
-#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
+#: sections/Blogs.class.php:26 sections/Blogs.class.php:34
 #, php-format
 msgid "%s Feed"
 msgstr "%s Feed (Änderungen)"
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Asterisk"
 msgstr "Asterisk-Telefonanlage"
 
-#: sections/Blogs.class.php:28 sections/Blogs.class.php:36
+#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 msgid "Blogs"
 msgstr "Blogs (Weblog)"
 

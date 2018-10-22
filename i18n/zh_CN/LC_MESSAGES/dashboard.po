@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Simplified) (FreePBX)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-21 09:18+0000\n"
+"POT-Creation-Date: 2018-10-22 17:08-0400\n"
 "PO-Revision-Date: 2018-09-21 09:23+0000\n"
 "Last-Translator: james zhu <zhulizhong@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <http://*/projects/freepbx/dashboard/"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 3.0.1\n"
 
-#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
+#: sections/Blogs.class.php:26 sections/Blogs.class.php:34
 #, php-format
 msgid "%s Feed"
 msgstr "%s 推送消息"
@@ -65,7 +65,7 @@ msgstr "<strong>'%s'</strong><br><i>(用户可以通过高级设置修改名称)
 msgid "Asterisk"
 msgstr "Asterisk 服务器端"
 
-#: sections/Blogs.class.php:28 sections/Blogs.class.php:36
+#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 msgid "Blogs"
 msgstr "博客"
 

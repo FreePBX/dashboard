@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-19 18:04-0400\n"
+"POT-Creation-Date: 2018-10-22 17:08-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: sections/Blogs.class.php:27
-#: sections/Blogs.class.php:35
+#: sections/Blogs.class.php:26
+#: sections/Blogs.class.php:34
 #, php-format
 msgid "%s Feed"
 msgstr ""
@@ -71,8 +71,8 @@ msgstr ""
 msgid "Asterisk"
 msgstr ""
 
-#: sections/Blogs.class.php:28
-#: sections/Blogs.class.php:36
+#: sections/Blogs.class.php:27
+#: sections/Blogs.class.php:35
 msgid "Blogs"
 msgstr ""
 

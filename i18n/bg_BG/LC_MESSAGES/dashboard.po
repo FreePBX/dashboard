@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-19 18:04-0400\n"
+"POT-Creation-Date: 2018-10-22 17:08-0400\n"
 "PO-Revision-Date: 2018-07-18 19:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/dashboard/bg/>\n"
@@ -34,7 +34,7 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
+#: sections/Blogs.class.php:26 sections/Blogs.class.php:34
 #, php-format
 msgid "%s Feed"
 msgstr "%s Емисия"
@@ -87,7 +87,7 @@ msgstr ""
 msgid "Asterisk"
 msgstr "Астериск"
 
-#: sections/Blogs.class.php:28 sections/Blogs.class.php:36
+#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 msgid "Blogs"
 msgstr "Блогове"
 
