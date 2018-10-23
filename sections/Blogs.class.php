@@ -69,13 +69,6 @@ class Blogs {
 	 */
 	private function getFeed($feed) {
 		$d = \FreePBX::Dashboard();
-		$content = $d->getConfig($feed, "content");
-		if(is_object($content)) {
-			$d->setConfig($feed, null, "content");
-			$d->setConfig($feed, null, "etag");
-			$d->setConfig($feed, null, "last_modified");
-		}
-
 		try {
 			$reader = new \SimplePie();
 			$reader->set_cache_location(\FreePBX::Config()->get('ASTSPOOLDIR'));

@@ -80,6 +80,19 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			'description' => 'Set the maximum age in seconds before system statistics are refreshed. The minimum value is 50 seconds.',
 			'type'        => CONF_TYPE_INT
 		),true);
+
+		$feeds = $this->freepbx->Config->get('RSSFEEDS');
+		$feeds = str_replace("\r","",$feeds);
+		if(!empty($feeds)) {
+			$feeds = explode("\n",$feeds);
+			$i = 0;
+			$urls = array();
+			foreach($feeds as $feed) {
+				$this->setConfig($feed, null, "content");
+				$this->setConfig($feed, null, "etag");
+				$this->setConfig($feed, null, "last_modified");
+			}
+		}
 	}
 	public function uninstall() {
 	}
