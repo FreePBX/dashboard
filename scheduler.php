@@ -26,7 +26,7 @@ $lockfile = $astrundir."/scheduler.lock";
 // Create a lock to make sure no more than one instance of this
 // program can be running on a machine at a time
 $fh = fopen($lockfile, "a");
-if ( fopen($lockfile, "ab") !== FALSE && flock($fh, LOCK_EX|LOCK_NB === TRUE ) {
+if ( fopen($lockfile, "ab") !== FALSE && flock($fh, LOCK_EX|LOCK_NB) === TRUE ) {
         exit;
 }
 //if (!$fh || !flock($fh, LOCK_EX|LOCK_NB)) {
