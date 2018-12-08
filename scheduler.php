@@ -8,34 +8,34 @@
 // Runs every minute.
 //
 
+// Sleep to fix crazy issues with large VM hosting providers
+//sleep(mt_rand(1,30));
+
 // Start quickly.
 $bootstrap_settings['freepbx_auth'] = false;  // Just in case.
 $restrict_mods = true; // Takes startup from 0.2 seconds to 0.07 seconds.
 include '/etc/freepbx.conf';
+
+use Symfony\Component\Lock\Factory;
+use Symfony\Component\Lock\Store\FlockStore;
 
 $astrundir = \FreePBX::Config()->get('ASTRUNDIR');
 if(!is_dir($astrundir) || !is_writable($astrundir)) {
 	echo "Asterisk Run Dir [".$astrundir."] is missing or not writable! Is Asterisk running?\n";
 	exit(1);
 }
-$lockfile = $astrundir."/scheduler.lock";
-
-// Sleep to fix crazy issues with large VM hosting providers
-sleep(mt_rand(1,30));
-
-// Create a lock to make sure no more than one instance of this
-// program can be running on a machine at a time
-$fh = fopen($lockfile, "a");
-if (!$fh || !flock($fh, LOCK_EX|LOCK_NB)) {
+$lockStore = new FlockStore($astrundir);
+$factory = new Factory($lockStore);
+$lock = $factory->createLock('scheduler',60);
+if (!$lock->acquire()) {
 	// Unable to lock, we're already running.
 	exit;
 }
+
 if(!$astman->connected()){
 	exit;
 }
 // Run the trigger
 \FreePBX::Dashboard()->runTrigger();
-
 // remove lockfile, and then close handle to release kernel lock
-unlink($lockfile);
-fclose($fh);
+$lock->release();
