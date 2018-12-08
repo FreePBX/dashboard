@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-22 17:08-0400\n"
-"PO-Revision-Date: 2018-07-26 14:27+0000\n"
+"PO-Revision-Date: 2018-10-25 09:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dashboard/de/>\n"
 "Language: de_DE\n"
@@ -85,11 +85,11 @@ msgstr "Kritische Fehler gefunden"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
-msgstr "Armaturenbrett"
+msgstr "Dashboard"
 
 #: dashboard.i18n.php:14
 msgid "Dashboard Module"
-msgstr "Armaturenbrett-Modul"
+msgstr "Dashboard-Modul"
 
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
@@ -187,9 +187,8 @@ msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
-"Stellt ein Systeminformations-Armaturenbrett zur Verfügung, das "
-"Informationen über Anrufe, CPU, Speicher, Laufwerke, Netzwerk und Prozesse "
-"liefert."
+"Stellt ein Systeminformations-Dashboard zur Verfügung, das Informationen "
+"über Anrufe, CPU, Speicher, Laufwerke, Netzwerk und Prozesse liefert."
 
 #: views/sections/overview.php:64
 msgid "Resolve"
@@ -251,7 +250,7 @@ msgstr "System Benachrichtigungen"
 
 #: dashboard.i18n.php:4
 msgid "System Dashboard"
-msgstr "System-Armaturenbrett"
+msgstr "System-Dashboard"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
