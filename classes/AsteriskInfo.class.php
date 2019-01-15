@@ -53,7 +53,6 @@ class AsteriskInfo2  {
 	}
 
 	public function get_connections() {
-
 		// Grab our list of extensions.
 		$sql = "SELECT `id` FROM `devices` WHERE `tech` <> 'custom'";
 		$alldevices = FreePBX::create()->Database->query($sql)->fetchAll(PDO::FETCH_COLUMN, 0);
@@ -94,10 +93,12 @@ class AsteriskInfo2  {
 				list($name, $null) = explode('/', $exploded[0]);
 			}
 			//prefix blacklist
-			foreach($blacklist as $num)
-			if(substr($name,0,$num['length']) == $num['value'] && $name !== $num['value']){
-				continue;
+			foreach($blacklist as $num) {
+				if(substr($name,0,$num['length']) == $num['value'] && $name !== $num['value']){
+					continue 2;
+				}
 			}
+
 			// How to we see if a trunk is down?
 			if ( $exploded[1] == "(Unspecified)" ||  // No IP Address
 				$exploded[5] == "UNREACHABLE" || $exploded[6] == "UNREACHABLE") {
@@ -201,6 +202,13 @@ class AsteriskInfo2  {
 					// Found a device
 					$isendpoint = $out[1];
 					$istrunk = false;
+
+					foreach($blacklist as $num) {
+						if(substr($isendpoint,0,$num['length']) == $num['value'] && $isendpoint !== $num['value']){
+							continue 2;
+						}
+					}
+
 					if (isset($out[3]) && strpos($out[3], "Unavail") === 0) {
 						// Unavailable endpoint.
 						$retarr['pjsip_users_offline']++;
