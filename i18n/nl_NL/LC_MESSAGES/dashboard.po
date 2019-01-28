@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-22 17:08-0400\n"
+"POT-Creation-Date: 2019-01-28 09:21+0530\n"
 "PO-Revision-Date: 2015-02-27 20:50-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -80,14 +80,6 @@ msgstr "Blogs"
 msgid "Critical Errors found"
 msgstr "Kritieke fouten gevonden"
 
-#: dashboard.i18n.php:6 dashboard.i18n.php:10
-msgid "Dashboard"
-msgstr ""
-
-#: dashboard.i18n.php:14
-msgid "Dashboard Module"
-msgstr ""
-
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
@@ -98,17 +90,9 @@ msgstr "Dag"
 msgid "Delete This"
 msgstr "Verwijder dit"
 
-#: dashboard.i18n.php:12
-msgid "Disable collection of system statistics"
-msgstr ""
-
 #: views/sections/statistics.php:50
 msgid "Disk"
 msgstr "Harde schijf"
-
-#: dashboard.i18n.php:18
-msgid "Expiry time for system statistics"
-msgstr ""
 
 #: views/main.php:6
 msgid "Frobulating"
@@ -179,14 +163,6 @@ msgstr "Overzicht"
 msgid "Please check for errors in the notification section"
 msgstr "Controleer de notificatie-sectie voor fouten"
 
-#: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Voorziet in een systeemoverzicht, met informatie over gesprekken, processor, "
-"geheugen, harde schijven, netwerk en processen."
-
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr "Oplossen"
@@ -194,18 +170,6 @@ msgstr "Oplossen"
 #: sections/Overview.class.php:100
 msgid "Security Issue"
 msgstr "Beveiligingsprobleem"
-
-#: dashboard.i18n.php:20
-msgid ""
-"Set the maximum age in seconds before system statistics are refreshed. The "
-"minimum value is 50 seconds."
-msgstr ""
-
-#: dashboard.i18n.php:16
-msgid ""
-"Set this to true to prevent persistent collection of system statistics such "
-"as CPU, memory, and channel usage."
-msgstr ""
 
 #: views/sections/overview.php:75
 msgid "Show All"
@@ -240,10 +204,6 @@ msgstr "Systeem"
 #: sections/Overview.class.php:89
 msgid "System Alerts"
 msgstr "Systeem Alerts"
-
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "Systeemoverzicht"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -336,6 +296,16 @@ msgstr "jaar"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "jaren"
+
+#~ msgid ""
+#~ "Provides a system information dashboard, showing information about Calls, "
+#~ "CPU, Memory, Disks, Network, and processes."
+#~ msgstr ""
+#~ "Voorziet in een systeemoverzicht, met informatie over gesprekken, "
+#~ "processor, geheugen, harde schijven, netwerk en processen."
+
+#~ msgid "System Dashboard"
+#~ msgstr "Systeemoverzicht"
 
 #~ msgid "%s Min Avg"
 #~ msgstr "%s Min Gem"

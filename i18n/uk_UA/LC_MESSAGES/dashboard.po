@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-22 17:08-0400\n"
+"POT-Creation-Date: 2019-01-28 09:21+0530\n"
 "PO-Revision-Date: 2016-10-06 16:41+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/"
@@ -83,14 +83,6 @@ msgstr "Блоги"
 msgid "Critical Errors found"
 msgstr "Знайдено критичні помилки"
 
-#: dashboard.i18n.php:6 dashboard.i18n.php:10
-msgid "Dashboard"
-msgstr "Панель приладів"
-
-#: dashboard.i18n.php:14
-msgid "Dashboard Module"
-msgstr ""
-
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
@@ -101,17 +93,9 @@ msgstr "День"
 msgid "Delete This"
 msgstr "Видалити це"
 
-#: dashboard.i18n.php:12
-msgid "Disable collection of system statistics"
-msgstr ""
-
 #: views/sections/statistics.php:50
 msgid "Disk"
 msgstr "Диск"
-
-#: dashboard.i18n.php:18
-msgid "Expiry time for system statistics"
-msgstr ""
 
 #: views/main.php:6
 msgid "Frobulating"
@@ -182,14 +166,6 @@ msgstr "Огляд"
 msgid "Please check for errors in the notification section"
 msgstr "Будь ласка, перевірте наявність помилок в розділі повідомлень"
 
-#: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-"Забезпечує інформаційну панель системи, що показує інформацію про виклики, "
-"ЦП, пам'ять, диски, мережі та процеси."
-
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr "Вирішити"
@@ -197,18 +173,6 @@ msgstr "Вирішити"
 #: sections/Overview.class.php:100
 msgid "Security Issue"
 msgstr "Проблеми безпеки"
-
-#: dashboard.i18n.php:20
-msgid ""
-"Set the maximum age in seconds before system statistics are refreshed. The "
-"minimum value is 50 seconds."
-msgstr ""
-
-#: dashboard.i18n.php:16
-msgid ""
-"Set this to true to prevent persistent collection of system statistics such "
-"as CPU, memory, and channel usage."
-msgstr ""
 
 #: views/sections/overview.php:75
 msgid "Show All"
@@ -243,10 +207,6 @@ msgstr "Система"
 #: sections/Overview.class.php:89
 msgid "System Alerts"
 msgstr "Сповіщення системи"
-
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "Системна панель"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -338,6 +298,19 @@ msgstr "рік"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "років"
+
+#~ msgid "Dashboard"
+#~ msgstr "Панель приладів"
+
+#~ msgid ""
+#~ "Provides a system information dashboard, showing information about Calls, "
+#~ "CPU, Memory, Disks, Network, and processes."
+#~ msgstr ""
+#~ "Забезпечує інформаційну панель системи, що показує інформацію про "
+#~ "виклики, ЦП, пам'ять, диски, мережі та процеси."
+
+#~ msgid "System Dashboard"
+#~ msgstr "Системна панель"
 
 #~ msgid "%s Min Avg"
 #~ msgstr "%s Хв Серед"
