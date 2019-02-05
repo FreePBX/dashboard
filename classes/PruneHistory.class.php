@@ -9,14 +9,14 @@ class PruneHistory {
 	private $db = false;
 	private $dash = false;
 	private $periods = array('MINUTES' => 60, 'HALFHR' => 1800, 'HOUR' => 3600, 'QTRDAY' => 21600, 'DAY' => 86400);
-	// Keeping 1 hour of Minutes, 1 day of Half Hours, 2 Days of Hours, 1 Week of Quarter Days, 3 months of Days.
-	private $keep = array('MINUTES' => 60, 'HALFHR' => 48, 'HOUR' => 48, 'QTRDAY' => 28, 'DAY' => 90);
+	// Keeping 1 hour of Minutes, 6 hours of Half Hours, 1 Day of Hours, 2 days of Quarter Days, 3 months of Days.
+	private $keep = array('MINUTES' => 60, 'HALFHR' => 12, 'HOUR' => 24, 'QTRDAY' => 8, 'DAY' => 70);
 	private $last = false;
 	private $pnext = array();
 
-	public function __construct() {
-		$db = FreePBX::Database();
-		$dash = FreePBX::Dashboard();
+	public function __construct($freepbx) {
+		$db = $freepbx->Database;
+		$dash = $freepbx->Dashboard;
 
 		if (!is_object($db)) {
 			throw new Exception("DB isn't a Database?");
@@ -40,7 +40,7 @@ class PruneHistory {
 	}
 
 	public function getPeriodBase($t, $period) {
-		// Find the base period to work from. 
+		// Find the base period to work from.
 		if (!isset($this->periods[$period])) {
 			throw new Exception("Unknown period $period");
 		}
@@ -48,7 +48,7 @@ class PruneHistory {
 			throw new Exception("Wasn't given a time");
 		}
 
-		// Now, find the base time for this period. 
+		// Now, find the base time for this period.
 		$base = $t % $this->periods[$period];
 		return $t - $base;
 	}
@@ -92,6 +92,8 @@ class PruneHistory {
 			return;
 		}
 
+		sort($keys);
+
 		// This is the first period that our entries will be
 		// averaged into
 		$currentperiod = $this->getPeriodBase($keys[0], $next);
@@ -101,8 +103,11 @@ class PruneHistory {
 
 		$currentarr = array();
 
+		$commitable = [];
+
 		// Now, go through our keys
 		foreach ($keys as $t) {
+
 			if ($t > $ignoreafter) {
 				continue;
 			}
@@ -110,7 +115,7 @@ class PruneHistory {
 			// Are we in a different period?
 			if ($currentperiod != $this->getPeriodBase($t, $next)) {
 				// We need to submit the current array
-				$this->commitAvg($currentarr, $currentperiod, $p);
+				$commitable[] = array('currentarr' => $currentarr, 'currentperiod' => $currentperiod, 'period' => $p);
 				// Then reset and continue.
 				$currentarr = array($t);
 				$currentperiod = $this->getPeriodBase($t, $next);
@@ -118,6 +123,20 @@ class PruneHistory {
 				// We're in the same period. Add it to the array
 				$currentarr[] = $t;
 			}
+		}
+
+		usort($commitable,function($a,$b) {
+			if ($a['currentperiod'] == $b['currentperiod']) {
+				return 0;
+			}
+			return ($a['currentperiod'] > $b['currentperiod']) ? -1 : 1;
+		});
+
+		//Only update the lastest current period per period.
+		//Updating anything else is a waste of db transactions because
+		//the database never changes
+		if(!empty($commitable[0])) {
+			$this->commitAvg($commitable[0]['currentarr'], $commitable[0]['currentperiod'], $commitable[0]['period']);
 		}
 	}
 
@@ -142,7 +161,7 @@ class PruneHistory {
 			$ret = $this->dash->getConfig($ts, $id);
 			if ($ret === false) {
 				throw new Exception("Severe Error getting $ts. This could indicate a database error");
-			} 
+			}
 			// Check to see if values can be averaged
 			foreach ($ret as $k => $v) {
 				if (is_numeric($v)) {
