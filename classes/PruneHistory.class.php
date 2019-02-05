@@ -103,7 +103,7 @@ class PruneHistory {
 
 		$currentarr = array();
 
-		$commitable = [];
+		$commitable = array();
 
 		// Now, go through our keys
 		foreach ($keys as $t) {
