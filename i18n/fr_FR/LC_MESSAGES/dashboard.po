@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-28 09:21+0530\n"
+"POT-Creation-Date: 2019-02-05 14:32-0500\n"
 "PO-Revision-Date: 2016-02-03 08:06+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/dashboard/"
@@ -82,6 +82,14 @@ msgstr "Blogs"
 msgid "Critical Errors found"
 msgstr "Erreur critiques trouvées"
 
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#: dashboard.i18n.php:14
+msgid "Dashboard Module"
+msgstr ""
+
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
@@ -92,9 +100,17 @@ msgstr "Jour"
 msgid "Delete This"
 msgstr "Supprimer ceci"
 
+#: dashboard.i18n.php:12
+msgid "Disable collection of system statistics"
+msgstr ""
+
 #: views/sections/statistics.php:50
 msgid "Disk"
 msgstr "Disque"
+
+#: dashboard.i18n.php:18
+msgid "Expiry time for system statistics"
+msgstr ""
 
 #: views/main.php:6
 msgid "Frobulating"
@@ -167,6 +183,14 @@ msgstr ""
 "S'il vous plaît, vérifiez pour la présence d'erreurs dans la section de "
 "notification"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"Fournis un tableau de bord d'informations système avec de l'information sur "
+"les appels, l'UCT, la mémoire, les disques, le réseau et les processus."
+
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr "Résoudre"
@@ -174,6 +198,18 @@ msgstr "Résoudre"
 #: sections/Overview.class.php:100
 msgid "Security Issue"
 msgstr "Problème de sécurité"
+
+#: dashboard.i18n.php:20
+msgid ""
+"Set the maximum age in seconds before system statistics are refreshed. The "
+"minimum value is 50 seconds."
+msgstr ""
+
+#: dashboard.i18n.php:16
+msgid ""
+"Set this to true to prevent persistent collection of system statistics such "
+"as CPU, memory, and channel usage."
+msgstr ""
 
 #: views/sections/overview.php:75
 msgid "Show All"
@@ -208,6 +244,10 @@ msgstr "Système"
 #: sections/Overview.class.php:89
 msgid "System Alerts"
 msgstr "Alertes système"
+
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "Tableau de bord système"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -301,20 +341,6 @@ msgstr "année"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "années"
-
-#~ msgid "Dashboard"
-#~ msgstr "Tableau de bord"
-
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "Fournis un tableau de bord d'informations système avec de l'information "
-#~ "sur les appels, l'UCT, la mémoire, les disques, le réseau et les "
-#~ "processus."
-
-#~ msgid "System Dashboard"
-#~ msgstr "Tableau de bord système"
 
 #~ msgid "%s Min Avg"
 #~ msgstr "%s min moy"

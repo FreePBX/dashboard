@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-28 09:21+0530\n"
+"POT-Creation-Date: 2019-02-05 14:32-0500\n"
 "PO-Revision-Date: 2018-10-25 09:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dashboard/de/>\n"
@@ -83,6 +83,14 @@ msgstr "Blogs (Weblog)"
 msgid "Critical Errors found"
 msgstr "Kritische Fehler gefunden"
 
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: dashboard.i18n.php:14
+msgid "Dashboard Module"
+msgstr "Dashboard-Modul"
+
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
@@ -93,9 +101,17 @@ msgstr "Tag"
 msgid "Delete This"
 msgstr "Lösche dieses Objekt"
 
+#: dashboard.i18n.php:12
+msgid "Disable collection of system statistics"
+msgstr "Deaktiviere die Sammlung von Systemstatistiken"
+
 #: views/sections/statistics.php:50
 msgid "Disk"
 msgstr "Disk-Speicher"
+
+#: dashboard.i18n.php:18
+msgid "Expiry time for system statistics"
+msgstr "Ablaufzeit für Systemstatistiken"
 
 #: views/main.php:6
 msgid "Frobulating"
@@ -166,6 +182,14 @@ msgstr "Übersicht"
 msgid "Please check for errors in the notification section"
 msgstr "Bitte prüfe das System auf Fehler in der Benachrichtigungs Sektion"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"Stellt ein Systeminformations-Dashboard zur Verfügung, das Informationen "
+"über Anrufe, CPU, Speicher, Laufwerke, Netzwerk und Prozesse liefert."
+
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr "Beheben"
@@ -173,6 +197,22 @@ msgstr "Beheben"
 #: sections/Overview.class.php:100
 msgid "Security Issue"
 msgstr "Sicherheitslücke"
+
+#: dashboard.i18n.php:20
+msgid ""
+"Set the maximum age in seconds before system statistics are refreshed. The "
+"minimum value is 50 seconds."
+msgstr ""
+"Setze das maximale Alter in Sekunden bevor Systemstatistiken erneuert "
+"werden. Der Mindestwert ist 50 Sekunden."
+
+#: dashboard.i18n.php:16
+msgid ""
+"Set this to true to prevent persistent collection of system statistics such "
+"as CPU, memory, and channel usage."
+msgstr ""
+"Aktivieren Sie das um zu verhindern, dass dauernd Systemstatistiken wie CPU, "
+"Speicher und Kanalbenützung gesammelt werden."
 
 #: views/sections/overview.php:75
 msgid "Show All"
@@ -207,6 +247,10 @@ msgstr "System"
 #: sections/Overview.class.php:89
 msgid "System Alerts"
 msgstr "System Benachrichtigungen"
+
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "System-Dashboard"
 
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
@@ -298,42 +342,6 @@ msgstr "Jahr"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "Jahre"
-
-#~ msgid "Dashboard"
-#~ msgstr "Dashboard"
-
-#~ msgid "Dashboard Module"
-#~ msgstr "Dashboard-Modul"
-
-#~ msgid "Disable collection of system statistics"
-#~ msgstr "Deaktiviere die Sammlung von Systemstatistiken"
-
-#~ msgid "Expiry time for system statistics"
-#~ msgstr "Ablaufzeit für Systemstatistiken"
-
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "Stellt ein Systeminformations-Dashboard zur Verfügung, das Informationen "
-#~ "über Anrufe, CPU, Speicher, Laufwerke, Netzwerk und Prozesse liefert."
-
-#~ msgid ""
-#~ "Set the maximum age in seconds before system statistics are refreshed. "
-#~ "The minimum value is 50 seconds."
-#~ msgstr ""
-#~ "Setze das maximale Alter in Sekunden bevor Systemstatistiken erneuert "
-#~ "werden. Der Mindestwert ist 50 Sekunden."
-
-#~ msgid ""
-#~ "Set this to true to prevent persistent collection of system statistics "
-#~ "such as CPU, memory, and channel usage."
-#~ msgstr ""
-#~ "Aktivieren Sie das um zu verhindern, dass dauernd Systemstatistiken wie "
-#~ "CPU, Speicher und Kanalbenützung gesammelt werden."
-
-#~ msgid "System Dashboard"
-#~ msgstr "System-Dashboard"
 
 #~ msgid "%s Min Avg"
 #~ msgstr "%s Min Durchschnitt"
