@@ -104,6 +104,15 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		return true;
 	}
 
+	public function __get($var) {
+		switch($var) {
+			case 'cache':
+				$this->cache = $this->freepbx->Cache->cloneByNamespace('dashboard');
+				return $this->cache;
+			break;
+		}
+	}
+
 	public function doConfigPageInit() {
 	}
 
@@ -244,7 +253,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 
 		$info['generationlength'] = $delay;
 
-		$this->setConfig('latestsysinfo', $info);
+		$this->cache->save('latestsysinfo', $info);
 		$this->setConfig($info['timestamp'], $info, 'MINUTES');
 
 		$this->pruneSysInfo();
@@ -257,12 +266,12 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			include 'classes/PruneHistory.class.php';
 		}
 
-		$p = new PruneHistory();
+		$p = new PruneHistory($this->freepbx);
 		$p->doPrune();
 	}
 
 	public function getSysInfo() {
-		$si = $this->getConfig('latestsysinfo');
+		$si = $this->cache->fetch('latestsysinfo');
 
 		// Does it need to be updated? Older than $maxage seconds?
 		if (!$si || $si['timestamp'] + $this->maxage <= time()) {
