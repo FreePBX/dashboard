@@ -9,8 +9,8 @@ class PruneHistory {
 	private $db = false;
 	private $dash = false;
 	private $periods = array('MINUTES' => 60, 'HALFHR' => 1800, 'HOUR' => 3600, 'QTRDAY' => 21600, 'DAY' => 86400);
-	// Keeping 1 hour of Minutes, 6 hours of Half Hours, 1 Day of Hours, 2 days of Quarter Days, 3 months of Days.
-	private $keep = array('MINUTES' => 60, 'HALFHR' => 12, 'HOUR' => 24, 'QTRDAY' => 8, 'DAY' => 70);
+	// Keeping 1 hour of Minutes, 1 day of Half Hours, 2 Days of Hours, 1 Week of Quarter Days, 3 months of Days.
+	private $keep = array('MINUTES' => 60, 'HALFHR' => 48, 'HOUR' => 48, 'QTRDAY' => 28, 'DAY' => 70);
 	private $last = false;
 	private $pnext = array();
 
