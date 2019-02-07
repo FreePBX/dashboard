@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>13.0.26.1</version>
+	<version>13.0.26.2</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -16,13 +16,14 @@
 		<dashboard display="index" access="all" category="Dashboard" order="99999">Dashboard</dashboard>
 	</menuitems>
 	<depends>
-		<version>13.0.35</version>
+		<version>13.0.195.27</version>
 		<module>core ge 12.0.1beta11</module>
 	</depends>
 	<changelog>
+		*13.0.26.2* Require framework which has cache
 		*13.0.26.1* Keep older data
 		*13.0.26* Reduce amount of database interactions per system query
-		*13.0.25.4* FFREEPBX-18939 
+		*13.0.25.4* FFREEPBX-18939
 		*13.0.25.3* FREEPBX-12335 fix class conflictions with PSI
 		*13.0.25.2* FREEPBX-15107 Dashboard Cron errors when asterisk isn't running
 		*13.0.25.1* Translation fixes
