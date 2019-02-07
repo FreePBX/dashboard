@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>14.0.5.1</version>
+	<version>14.0.5.2</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -16,9 +16,10 @@
 		<dashboard display="index" access="all" category="Dashboard" order="99999">Dashboard</dashboard>
 	</menuitems>
 	<depends>
-		<version>14.0.4</version>
+		<version>14.0.5.26</version>
 	</depends>
 	<changelog>
+		*14.0.5.2* Require framework that has caching
 		*14.0.5.1* Keep more historical data
 		*14.0.5* Reduce amount of database interactions per system query
 		*14.0.4.4* FREEPBX-19052 add back sleep to dashboard scheduler 
