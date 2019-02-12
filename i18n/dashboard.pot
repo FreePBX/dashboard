@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-07 14:43-0500\n"
+"POT-Creation-Date: 2019-02-12 16:02-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,7 +147,7 @@ msgstr ""
 msgid "Load Averages"
 msgstr ""
 
-#: views/sections/netmon.php:57
+#: views/sections/netmon.php:48
 #, php-format
 msgid "Loading Interface %s..."
 msgstr ""

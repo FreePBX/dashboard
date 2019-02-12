@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-05 14:32-0500\n"
+"POT-Creation-Date: 2019-02-12 16:02-0500\n"
 "PO-Revision-Date: 2015-02-04 00:41+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Load Averages"
 msgstr "Médias de Carga"
 
-#: views/sections/netmon.php:57
+#: views/sections/netmon.php:48
 #, php-format
 msgid "Loading Interface %s..."
 msgstr ""

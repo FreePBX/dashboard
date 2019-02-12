@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>14.0.5.2</version>
+	<version>14.0.6</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -19,6 +19,7 @@
 		<version>14.0.5.26</version>
 	</depends>
 	<changelog>
+		*14.0.6* FREEPBX-19466 Move live network graph away from running background daemon
 		*14.0.5.2* Require framework that has caching
 		*14.0.5.1* Keep more historical data
 		*14.0.5* Reduce amount of database interactions per system query

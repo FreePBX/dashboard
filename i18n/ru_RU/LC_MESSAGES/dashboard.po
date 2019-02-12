@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-05 14:32-0500\n"
+"POT-Creation-Date: 2019-02-12 16:02-0500\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Load Averages"
 msgstr "Ср. нагрузка"
 
-#: views/sections/netmon.php:57
+#: views/sections/netmon.php:48
 #, php-format
 msgid "Loading Interface %s..."
 msgstr ""

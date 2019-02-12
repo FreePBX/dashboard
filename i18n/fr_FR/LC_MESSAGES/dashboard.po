@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-05 14:32-0500\n"
+"POT-Creation-Date: 2019-02-12 16:02-0500\n"
 "PO-Revision-Date: 2016-02-03 08:06+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/dashboard/"
@@ -142,7 +142,7 @@ msgstr ""
 msgid "Load Averages"
 msgstr "Moyennes de charge"
 
-#: views/sections/netmon.php:57
+#: views/sections/netmon.php:48
 #, php-format
 msgid "Loading Interface %s..."
 msgstr ""

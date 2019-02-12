@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-05 14:32-0500\n"
+"POT-Creation-Date: 2019-02-12 16:02-0500\n"
 "PO-Revision-Date: 2019-01-25 14:36+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/dashboard/fa/>\n"
@@ -141,7 +141,7 @@ msgstr "استفاده از شبکه زنده"
 msgid "Load Averages"
 msgstr "میانگین میزان بار"
 
-#: views/sections/netmon.php:57
+#: views/sections/netmon.php:48
 #, php-format
 msgid "Loading Interface %s..."
 msgstr "بارگیری رابط ٪s1..."
