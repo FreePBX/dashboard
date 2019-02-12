@@ -1,49 +1,101 @@
 <?php
 
 namespace FreePBX\modules\Dashboard;
-
+use Hhxsv5\SSE\SSE;
+use Hhxsv5\SSE\Update;
 class Netmon {
-	public $output = (PHP_OS=='FreeBSD')? "/compat/linux/dev/shm/netusage" : "/dev/shm/netusage";
-	public $watch = (PHP_OS=='FreeBSD')? "/compat/linux/dev/shm/running" : "/dev/shm/running";
-	public $log = (PHP_OS=='FreeBSD')? "/compat/linux/dev/shm/netmon-log" : "/dev/shm/netmon-log";
-	public $script = false; 
 
 	public function __construct() {
-		$this->script = __DIR__."/../netmon.php";
-		if (!file_exists($this->script)) {
-			throw new \Exception("Error! Netmon script '$netmon' doesn't exist");
+		// Figure out where 'ip' is
+		if (file_exists("/usr/sbin/ip")) {
+			$this->iploc = "/usr/sbin/ip";
+		} elseif (file_exists("/sbin/ip")) {
+			$this->iploc = "/sbin/ip";
+		} else {
+			// Hope for the best...
+			$this->iploc = "ip";
 		}
-
-		// Touch the running script, so netmon knows we're here.
-		touch($this->watch);
-
-		// If it's not currently running, start it.
-		if (!file_exists($this->output)) {
-			$this->startScript();
-		}
-	}
-
-	private function startScript() {
-		exec($this->script." > ".$this->log." &");
 	}
 
 	public function getStats() {
-		if (!file_exists($this->output)) {
-			// Odd...
-			return [];
+		$execoutput = [];
+		exec("{$this->iploc} -s link", $execoutput, $ret);
+		if ($ret !== 0) {
+			return ["status" => false, "message" => "There was an error"];
 		}
-		$retarr = [];
-		$stats = file($this->output);
-		foreach ($stats as $line) {
-			$tmp = @json_decode($line, true);
-			// If it's not an array, something's derped
-			if (!is_array($tmp)) {
+		try {
+			$conf = $this->parse_ip_output($execoutput);
+			return ["status" => true, "data" => $conf];
+		} catch (\Exception $e) {
+			return ["status" => false, "message" => $e->getMessage()];
+		}
+	}
+
+	public function getLiveStats() {
+		session_write_close();
+		//ob_end_flush();
+		header_remove();
+		header('Content-Type: text/event-stream');
+		header('Cache-Control: no-cache');
+		header('Connection: keep-alive');
+		header('X-Accel-Buffering: no');//Nginx: unbuffered responses suitable for Comet and HTTP streaming applications
+
+		(new SSE())->start(new Update(function () {
+			return json_encode($this->getStats());
+		}, 1), 'new-msgs', 100);
+	}
+
+	function parse_ip_output($outarr) {
+		$ints = [];
+		$nextline = [];
+		$current = false;
+		foreach ($outarr as $line) {
+			if (!isset($line[0])) {
+				// Empty line?
 				continue;
 			}
-			$retarr[$tmp['timestamp']] = $tmp['data'];
+			// If the first char is NOT a space, it's a network name.
+			if ($line[0] !== " ") {
+				$intarr = explode(":", $line);
+				$current = trim($intarr[1]);
+				// If it's actually 'lo', we never save that.
+				if ($current !== "lo") {
+					$ints[$current] = [ "intnum" => $intarr[0], "intname" => $current, "other" => $intarr[2] ];
+				}
+				continue;
+			}
+			$line = trim($line);
+			// Does it start with 'link/ether'? We have a MAC
+			if (strpos($line, "link/ether") === 0) {
+				$tmparr = explode(" ", $line);
+				if (isset($tmparr[1])) {
+					$ints[$current]['mac'] = $tmparr[1];
+				}
+				continue;
+			}
+
+			// Is the SECOND char 'X'? As in 'TX' or 'RX'?
+			if ($line[1] === 'X') {
+				$nextline = preg_split("/\s+/", $line);
+				continue;
+			}
+
+			// Is the FIRST char a number?  This means we actually have data!
+			if (is_numeric($line[1])) {
+				if (!isset($nextline[0])) {
+					throw new \Exception("Error parsing ip, number received before definition\n");
+				}
+				// Which line is this?
+				$type = strtolower(substr(array_shift($nextline), 0, 2)); // Converts 'RX:' to 'rx'
+				$data = preg_split("/\s+/", $line);
+				// If it's actually 'lo', we never save that.
+				if ($current !== "lo") {
+					$ints[$current][$type] = array_combine($nextline, $data);
+				}
+			}
+
 		}
-		// Only return the last 50
-		return array_slice($retarr, -50, 50, true);
+		return $ints;
 	}
 }
 

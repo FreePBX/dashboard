@@ -8,31 +8,22 @@ $netmon = new \FreePBX\modules\Dashboard\Netmon();
 // Wait until we actually have some data back
 $count = 5;
 $stats = $netmon->getStats();
-while ($count-- > 0) {
-	if (empty($stats)) {
-		usleep(500000); // half a second
-	} else {
-		break;
-	}
-	$stats = $netmon->getStats();
-}
-
-if (empty($stats)) {
+if(!$stats['status']) {
 	echo "Error. Unable to get Netmon stats\n";
 	return;
 }
 
 // Excellent. We have data!
 ?>
+<script>var netmonData = {};</script>
 <div class="row" id="netmon">
 	<div class="col-sm-2">
 		<div class="btn-group-vertical">
 <?php
-// Grab the first one, to get the interface names
-$raw = array_shift($stats);
 
 $first = false;
-foreach ($raw as $name => $row) {
+echo "<script>netmonData[".time()."] = ".json_encode($stats['data'])."</script>";
+foreach ($stats['data'] as $name => $row) {
 	// If this is lo, skip
 	if ($name === 'lo') {
 		continue;
@@ -58,10 +49,20 @@ foreach ($raw as $name => $row) {
 </div>
 
 <script>
+var source = new EventSource(FreePBX.ajaxurl+"?module=dashboard&command=netmon", {withCredentials:true});
+source.addEventListener("new-msgs", function(event){
+	var data = JSON.parse(event.data);
+	if(!data.status) {
+		fpbxToast(data.message,_('Error'),'error')
+		source.close();
+		return;
+	}
+	var date = Date.now() / 1000 | 0;
+	netmonData[date] = data.data
+}, false);
+
 // Remote anything hanging around if we've been reloaded.
-if (typeof window.Netchart !== "undefined") {
-	window.Netchart.clear_timeout();
-} else {
+if (typeof window.Netchart === "undefined") {
 	// New instantiation
 	window.NetchartObj = Class.extend({
 		refresh: false,
@@ -117,19 +118,10 @@ if (typeof window.Netchart !== "undefined") {
 			}
 		},
 		load_chart: function(intname) {
-			//console.log("load chart called with "+intname);
 			var self = this;
-			this.clear_timeout();
-			// Get our data
-			$.ajax({
-				url: FreePBX.ajaxurl,
-				longpoll: true,
-				data: { command: "netmon", module:'dashboard'},
-				success: function(data) {
-					self.render_chart(intname, data);
-					self.refresh = setTimeout(function() { self.load_chart(intname); }, self.refreshperiod);
-				}
-			});
+			self.render_chart(intname, netmonData);
+			self.clear_timeout();
+			self.refresh = setTimeout(function() { self.load_chart(intname); }, self.refreshperiod);
 		},
 		render_chart: function(intname, data) {
 			var self = this;
@@ -137,7 +129,7 @@ if (typeof window.Netchart !== "undefined") {
 			self.chartdata[0]['dataPoints'] = [];
 			self.chartdata[1]['dataPoints'] = [];
 			// Loop through all the timestamps
-			Object.keys(data).forEach(function(k) {
+			Object.keys(data).slice(-40).forEach(function(k) {
 				var rx, lastrx, rxbytes, tx, lasttx, txbytes;
 				var timestamp = k * 1000;
 				if (typeof data[k][intname] == "undefined") {

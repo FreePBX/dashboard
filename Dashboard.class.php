@@ -208,14 +208,21 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			$s = new Statistics();
 			return $s->getStats();
 			break;
-		case "netmon":
-			if (!class_exists('Netmon')) {
-				include 'classes/Netmon.class.php';
-			}
-			$n = new \FreePBX\modules\Dashboard\Netmon();
-			return $n->getStats();
 		default:
 			return DashboardHooks::runHook($_REQUEST['command']);
+			break;
+		}
+	}
+
+	public function ajaxCustomHandler() {
+		switch($_REQUEST['command']){
+			case "netmon":
+				if (!class_exists('Netmon')) {
+					include 'classes/Netmon.class.php';
+				}
+				$n = new \FreePBX\modules\Dashboard\Netmon();
+				$n->getLiveStats();
+				die();
 			break;
 		}
 	}
