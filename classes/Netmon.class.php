@@ -33,7 +33,7 @@ class Netmon {
 
 	public function getLiveStats() {
 		session_write_close();
-		//ob_end_flush();
+		@ob_end_flush();
 		header_remove();
 		header('Content-Type: text/event-stream');
 		header('Cache-Control: no-cache');
@@ -42,7 +42,7 @@ class Netmon {
 
 		(new SSE())->start(new Update(function () {
 			return json_encode($this->getStats());
-		}, 1), 'new-msgs', 100);
+		}, 1), 'new-msgs', 1000);
 	}
 
 	function parse_ip_output($outarr) {
