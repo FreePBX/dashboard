@@ -32,14 +32,17 @@ class Netmon {
 	}
 
 	public function getLiveStats() {
+		if(function_exists("apache_setenv")) {
+			apache_setenv('no-gzip', '1');
+		}
 		session_write_close();
-		@ob_end_flush();
 		header_remove();
 		header('Content-Type: text/event-stream');
 		header('Cache-Control: no-cache');
 		header('Connection: keep-alive');
+		header("Access-Control-Allow-Origin: *");
+		header('Access-Control-Allow-Credentials: true');
 		header('X-Accel-Buffering: no');//Nginx: unbuffered responses suitable for Comet and HTTP streaming applications
-
 		(new SSE())->start(new Update(function () {
 			return json_encode($this->getStats());
 		}, 1), 'new-msgs', 1000);
