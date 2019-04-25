@@ -45,9 +45,6 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		"fake" => "fake",
 	);
 
-	// This is our scheduler task. It should run every minute.
-	private $sched = "scheduler.php";
-
 	public function install() {
 		$this->freepbx->Config->remove_conf_settings(array("DASHBOARD_INFO_UPDATE_TIME", "MAXCALLS", "DASHBOARD_STATS_UPDATE_TIME"));
 		$this->freepbx->Config->define_conf_setting('SYS_STATS_DISABLE', array(
@@ -123,16 +120,14 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	public function doDialplanHook(&$ext, $engine, $priority) {
 		// While we're here, we should check that our cronjob is
 		// still there.
+		$crons = $this->freepbx->Cron->getAll();
+		foreach($crons as $c) {
+			if(preg_match('/scheduler\.php/',$c,$matches)) {
+				$this->freepbx->Cron->remove($c);
+			}
+		}
 
-		$file = \FreePBX::Config()->get('AMPWEBROOT')."/admin/modules/dashboard/".$this->sched;
-		$cmdold = "[ -x $file ] && $file";
-		$cmd = "[ -x $file ] && $file > /dev/null 2>&1";
-
-		// Ensure we instantiate cron with the correct user
-		$c = \FreePBX::create()->Cron(\FreePBX::Config()->get('AMPASTERISKWEBUSER'));
-		//removing [ -x $file ] && $file if exists
-		$c->remove("* * * * * $cmdold");
-		$c->addLine("* * * * * $cmd");
+		$this->freepbx->Job->addClass('dashboard', 'scheduler', 'FreePBX\modules\Dashboard\Job', '* * * * *');
 	}
 
 	public function ajaxRequest($req, &$setting) {
