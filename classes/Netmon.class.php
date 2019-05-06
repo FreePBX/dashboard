@@ -3,6 +3,7 @@
 namespace FreePBX\modules\Dashboard;
 use Hhxsv5\SSE\SSE;
 use Hhxsv5\SSE\Update;
+use Symfony\Component\Process\Process;
 class Netmon {
 
 	public function __construct() {
@@ -15,14 +16,21 @@ class Netmon {
 			// Hope for the best...
 			$this->iploc = "ip";
 		}
+		set_time_limit(0);
 	}
 
 	public function getStats() {
 		$execoutput = [];
-		exec("{$this->iploc} -s link", $execoutput, $ret);
-		if ($ret !== 0) {
-			return ["status" => false, "message" => "There was an error"];
+
+		$process = new Process("{$this->iploc} -s link");
+		$process->setTimeout(30);
+		try {
+			$process->run();
+			$execoutput = explode("\n",$process->getOutput());
+		} catch(\Exception $e) {
+			return ["status" => false, "message" => $e->getMessage()];
 		}
+
 		try {
 			$conf = $this->parse_ip_output($execoutput);
 			return ["status" => true, "data" => $conf];
