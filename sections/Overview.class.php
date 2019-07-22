@@ -204,14 +204,17 @@ class Overview {
 		if ($mailq) {
 			$lastline = exec("$mailq 2>&1", $out, $ret);
 		}
-		// Postfix returns 'Mail queue is empty', exim returns nothing.
-		if (empty($out) || strpos($out[0], "queue is empty") !== false) {
+		// Postfix returns 'Mail queue is empty'; exim returns nothing; sendmail returns total
+		if (empty($out) || // exim
+			strpos($out[0], "queue is empty") !== false || // postfix status on first/only output line
+			strpos(end($out), "Total requests: 0") !== false // sendmail status on last line
+		) {
 			return $this->genAlertGlyphicon('ok', "No outbound mail in queue");
 		}
 
-		if (preg_match('/in (\d+) Request/', $lastline, $regex)) {
+		if (preg_match('/(?:in (\d+) Request)|(?:Total requests: (\d+))/', $lastline, $regex)) { // exim/postfix|sendmail
 			// We have mail.
-			$messages = (int) $regex[1];
+			$messages = (int) $regex[1] ?: (int) $regex[2]; // take whichever one matched
 			if ($messages > 5) {
 				$err = "critical";
 			} else {
