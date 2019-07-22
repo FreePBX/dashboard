@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-06 11:21-0400\n"
+"POT-Creation-Date: 2019-07-22 20:59+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "%s ago"
 msgstr ""
 
-#: sections/Overview.class.php:224
+#: sections/Overview.class.php:227
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -48,7 +48,7 @@ msgstr ""
 msgid "1 Minute"
 msgstr ""
 
-#: sections/Overview.class.php:222
+#: sections/Overview.class.php:225
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 

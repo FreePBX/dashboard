@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-12 16:02-0500\n"
+"POT-Creation-Date: 2019-07-22 20:59+0530\n"
 "PO-Revision-Date: 2018-10-25 09:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dashboard/de/>\n"
@@ -35,7 +35,7 @@ msgstr "%s Statistiken"
 msgid "%s ago"
 msgstr "%s her"
 
-#: sections/Overview.class.php:224
+#: sections/Overview.class.php:227
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -49,7 +49,7 @@ msgstr "0 Sekunden"
 msgid "1 Minute"
 msgstr "1 Minute"
 
-#: sections/Overview.class.php:222
+#: sections/Overview.class.php:225
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 "Eine Nachricht wartet auf dieser Maschine und wurde noch nicht ausgeliefert"
