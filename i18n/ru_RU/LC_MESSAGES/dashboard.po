@@ -36,12 +36,12 @@ msgstr ""
 #: sections/Blogs.class.php:26 sections/Blogs.class.php:34
 #, php-format
 msgid "%s Feed"
-msgstr ""
+msgstr "Новости %s"
 
 #: sections/Statistics.class.php:17
 #, php-format
 msgid "%s Statistics"
-msgstr ""
+msgstr "Статистика %s"
 
 #: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
@@ -63,7 +63,7 @@ msgstr "1 Минута"
 
 #: sections/Overview.class.php:225
 msgid "1 message is queued on this machine, and has not been delivered"
-msgstr ""
+msgstr "1 сообщение поставлено в очередь и не было доставлено"
 
 #: views/sections/uptime.php:22
 msgid "15 Minutes"
@@ -96,11 +96,11 @@ msgstr "Обнаружены критические ошибки"
 
 #: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
-msgstr ""
+msgstr "Панель мониторинга"
 
 #: dashboard.i18n.php:14
 msgid "Dashboard Module"
-msgstr ""
+msgstr "Модуль панели мониторинга"
 
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
@@ -114,7 +114,7 @@ msgstr "Удалить это"
 
 #: dashboard.i18n.php:12
 msgid "Disable collection of system statistics"
-msgstr ""
+msgstr "Отключить сбор системной статистики"
 
 #: views/sections/statistics.php:50
 msgid "Disk"
@@ -122,7 +122,7 @@ msgstr "Диск"
 
 #: dashboard.i18n.php:18
 msgid "Expiry time for system statistics"
-msgstr ""
+msgstr "Период времи для сбора системной статистики"
 
 #: views/main.php:6
 msgid "Frobulating"
@@ -148,7 +148,7 @@ msgstr "Неверный период"
 
 #: sections/Statistics.class.php:24
 msgid "Live Network Usage"
-msgstr ""
+msgstr "Мониторинг сети"
 
 #: views/sections/uptime.php:13
 msgid "Load Averages"
@@ -157,11 +157,11 @@ msgstr "Ср. нагрузка"
 #: views/sections/netmon.php:48
 #, php-format
 msgid "Loading Interface %s..."
-msgstr ""
+msgstr "Загрузка интерфейса %s..."
 
 #: sections/Overview.class.php:133
 msgid "Mail Queue"
-msgstr ""
+msgstr "Очередь писем"
 
 #: views/sections/statistics.php:39
 msgid "Memory"
@@ -215,12 +215,16 @@ msgid ""
 "Set the maximum age in seconds before system statistics are refreshed. The "
 "minimum value is 50 seconds."
 msgstr ""
+"Укажите максимальное значение обновления статистики в секундах. "
+"Минимальное значение составляет 50 секунд."
 
 #: dashboard.i18n.php:16
 msgid ""
 "Set this to true to prevent persistent collection of system statistics such "
 "as CPU, memory, and channel usage."
 msgstr ""
+"Установите для этого параметра значение Да, чтобы отключить постоянный сбор "
+"статистики, такой как загрузка процессора, памяти и канала."
 
 #: views/sections/overview.php:75
 msgid "Show All"
@@ -274,7 +278,7 @@ msgstr "Этот важный вопрос нужно срочно решить"
 
 #: sections/Uptime.class.php:15 views/sections/statistics.php:17
 msgid "Uptime"
-msgstr "Система жива"
+msgstr "Uptime системы"
 
 #: sections/Overview.class.php:123
 msgid "Warnings Found"
@@ -282,7 +286,7 @@ msgstr "Найдены предупреждения"
 
 #: sections/Overview.class.php:132
 msgid "Web Server"
-msgstr "Вэб сервер"
+msgstr "Web сервер"
 
 #: views/sections/statistics.php:11 views/sections/statistics.php:22
 #: views/sections/statistics.php:33 views/sections/statistics.php:44
@@ -358,10 +362,10 @@ msgstr "лет"
 #~ msgstr "Звонки"
 
 #~ msgid "Active Chans"
-#~ msgstr "Активных Каналов"
+#~ msgstr "Активных каналов"
 
 #~ msgid "Asterisk Uptime"
-#~ msgstr "Asterisk жив"
+#~ msgstr "Asterisk работает"
 
 #~ msgid "Buffers"
 #~ msgstr "Буферы"
@@ -388,7 +392,7 @@ msgstr "лет"
 #~ msgstr "Использование свопа"
 
 #~ msgid "System Uptime"
-#~ msgstr "Система жива"
+#~ msgstr "Uptime системы"
 
 #~ msgid "Temp"
 #~ msgstr "Температура"
@@ -397,7 +401,7 @@ msgstr "лет"
 #~ msgstr "Транки отключено"
 
 #~ msgid "Trunks Reged"
-#~ msgstr "Транки, зарегистрировано"
+#~ msgstr "Зарегистрированные транки"
 
 #~ msgid "Used"
 #~ msgstr "Используется"
@@ -412,7 +416,7 @@ msgstr "лет"
 #~ msgstr "Лента"
 
 #~ msgid "Trnks Offline"
-#~ msgstr "Транки отключено"
+#~ msgstr "Отключенные транки"
 
 #~ msgid "Reports"
 #~ msgstr "Отчеты"
@@ -440,7 +444,7 @@ msgstr "лет"
 #~ msgstr "Asterisk Manager Proxy работает"
 
 #~ msgid "Asterisk is not running, this is a critical service!"
-#~ msgstr "Asterisk не работает, это критично!"
+#~ msgstr "Asterisk не работает, критическая ошибка!"
 
 #~ msgid "Asterisk is running: %s"
 #~ msgstr "Asterisk работает: %s"
