@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-12 16:02-0500\n"
+"POT-Creation-Date: 2020-03-23 22:36+0530\n"
 "PO-Revision-Date: 2016-02-03 08:06+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/dashboard/"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "%s ago"
 msgstr "Il y a %s"
 
-#: sections/Overview.class.php:224
+#: sections/Overview.class.php:229
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -49,7 +49,7 @@ msgstr "0 secondes"
 msgid "1 Minute"
 msgstr "1 minute"
 
-#: sections/Overview.class.php:222
+#: sections/Overview.class.php:227
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
@@ -61,7 +61,7 @@ msgstr "15 minutes"
 msgid "5 Minutes"
 msgstr "5 minutes"
 
-#: sections/Overview.class.php:31
+#: sections/Overview.class.php:35
 #, php-format
 msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
@@ -70,7 +70,7 @@ msgstr ""
 "<strong>'%s'</strong><br><i>(Vous pouvez changer ce nom dans les paramètres "
 "avancés)</i>"
 
-#: sections/Overview.class.php:130
+#: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -78,7 +78,7 @@ msgstr "Asterisk"
 msgid "Blogs"
 msgstr "Blogs"
 
-#: sections/Overview.class.php:119
+#: sections/Overview.class.php:124
 msgid "Critical Errors found"
 msgstr "Erreur critiques trouvées"
 
@@ -147,7 +147,7 @@ msgstr "Moyennes de charge"
 msgid "Loading Interface %s..."
 msgstr ""
 
-#: sections/Overview.class.php:133
+#: sections/Overview.class.php:138
 msgid "Mail Queue"
 msgstr ""
 
@@ -161,7 +161,7 @@ msgstr "Mémoire"
 msgid "Month"
 msgstr "Mois"
 
-#: sections/Overview.class.php:131
+#: sections/Overview.class.php:136
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -169,7 +169,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr "Réseau"
 
-#: sections/Overview.class.php:91
+#: sections/Overview.class.php:96
 msgid "No critical issues found"
 msgstr "Aucun problème critique trouvé"
 
@@ -177,7 +177,7 @@ msgstr "Aucun problème critique trouvé"
 msgid "Overview"
 msgstr "Vue d'ensemble"
 
-#: sections/Overview.class.php:118 sections/Overview.class.php:122
+#: sections/Overview.class.php:123 sections/Overview.class.php:127
 msgid "Please check for errors in the notification section"
 msgstr ""
 "S'il vous plaît, vérifiez pour la présence d'erreurs dans la section de "
@@ -195,7 +195,7 @@ msgstr ""
 msgid "Resolve"
 msgstr "Résoudre"
 
-#: sections/Overview.class.php:100
+#: sections/Overview.class.php:105
 msgid "Security Issue"
 msgstr "Problème de sécurité"
 
@@ -241,7 +241,7 @@ msgstr "L'information système a été mise à jour il y a %s secondes"
 msgid "System"
 msgstr "Système"
 
-#: sections/Overview.class.php:89
+#: sections/Overview.class.php:94
 msgid "System Alerts"
 msgstr "Alertes système"
 
@@ -257,7 +257,7 @@ msgstr "Dernier redémarrage système"
 msgid "System Overview"
 msgstr "Vue d'ensemble système"
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:106
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 "Ceci est un problème critique et devrait être résolu le plus rapidement "
@@ -267,11 +267,11 @@ msgstr ""
 msgid "Uptime"
 msgstr "Temps de disponibilité"
 
-#: sections/Overview.class.php:123
+#: sections/Overview.class.php:128
 msgid "Warnings Found"
 msgstr "Avertissements trouvé"
 
-#: sections/Overview.class.php:132
+#: sections/Overview.class.php:137
 msgid "Web Server"
 msgstr "Serveur Web"
 

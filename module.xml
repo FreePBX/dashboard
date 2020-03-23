@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>14.0.8</version>
+	<version>14.0.9</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -19,6 +19,7 @@
 		<version>14.0.12</version>
 	</depends>
 	<changelog>
+		*14.0.9* Fixing FREEI-1401 
 		*14.0.8* FREEPBX-19926
 		*14.0.7* Add job class
 		*14.0.6.1-2* Clear output buffers so live network usage is more accurate
