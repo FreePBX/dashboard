@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-22 20:59+0530\n"
+"POT-Creation-Date: 2020-03-23 22:37+0530\n"
 "PO-Revision-Date: 2019-01-25 14:36+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/dashboard/fa/>\n"
@@ -35,7 +35,7 @@ msgstr "آمار ٪s1"
 msgid "%s ago"
 msgstr "%s قبل"
 
-#: sections/Overview.class.php:227
+#: sections/Overview.class.php:232
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr "پیام های ٪s1 در این دستگاه در صف قرار دارند و تحویل داده نشده است"
@@ -48,7 +48,7 @@ msgstr "صفر ثانیه"
 msgid "1 Minute"
 msgstr "یک دقیقه"
 
-#: sections/Overview.class.php:225
+#: sections/Overview.class.php:230
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr "1 پیام در این دستگاه در صف قرار دارد و تحویل داده نشده است"
 
@@ -60,7 +60,7 @@ msgstr "۱۵ دقیقه"
 msgid "5 Minutes"
 msgstr "۵ دقیقه"
 
-#: sections/Overview.class.php:31
+#: sections/Overview.class.php:35
 #, php-format
 msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
@@ -69,7 +69,7 @@ msgstr ""
 "<strong>'%s'</strong><br><i>(شما می توانید نام را در تنظیمات پیشرفته تغییر "
 "دهید)</i>"
 
-#: sections/Overview.class.php:130
+#: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "استریسک"
 
@@ -77,7 +77,7 @@ msgstr "استریسک"
 msgid "Blogs"
 msgstr "بلاگ ها"
 
-#: sections/Overview.class.php:119
+#: sections/Overview.class.php:124
 msgid "Critical Errors found"
 msgstr "وجود خطاهای بحرانی"
 
@@ -146,7 +146,7 @@ msgstr "میانگین میزان بار"
 msgid "Loading Interface %s..."
 msgstr "بارگیری رابط ٪s1..."
 
-#: sections/Overview.class.php:133
+#: sections/Overview.class.php:138
 msgid "Mail Queue"
 msgstr "صف ایمیل"
 
@@ -160,7 +160,7 @@ msgstr "حافظه"
 msgid "Month"
 msgstr "ماه"
 
-#: sections/Overview.class.php:131
+#: sections/Overview.class.php:136
 msgid "MySQL"
 msgstr "سرور MySQL"
 
@@ -168,7 +168,7 @@ msgstr "سرور MySQL"
 msgid "Network"
 msgstr "شبکه"
 
-#: sections/Overview.class.php:91
+#: sections/Overview.class.php:96
 msgid "No critical issues found"
 msgstr "مشکل بحرانی یافت نشد"
 
@@ -176,7 +176,7 @@ msgstr "مشکل بحرانی یافت نشد"
 msgid "Overview"
 msgstr "بازبینی"
 
-#: sections/Overview.class.php:118 sections/Overview.class.php:122
+#: sections/Overview.class.php:123 sections/Overview.class.php:127
 msgid "Please check for errors in the notification section"
 msgstr "لطفا برای بررسی خطاها بخش اطلاع رسانی را بررسی کنید"
 
@@ -192,7 +192,7 @@ msgstr ""
 msgid "Resolve"
 msgstr "حل کردن"
 
-#: sections/Overview.class.php:100
+#: sections/Overview.class.php:105
 msgid "Security Issue"
 msgstr "مشکل امنیتی"
 
@@ -242,7 +242,7 @@ msgstr "اطلاعات سیستم %s ثانیه قبل بروز شده"
 msgid "System"
 msgstr "سیستم"
 
-#: sections/Overview.class.php:89
+#: sections/Overview.class.php:94
 msgid "System Alerts"
 msgstr "هشدارهای سیستم"
 
@@ -258,7 +258,7 @@ msgstr "آخرین زمان راه اندازی مجدد"
 msgid "System Overview"
 msgstr "وضعیت کلی سیستم"
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:106
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "یک مشکل بحرانی وجود داشته و باید سریعا رفع گردد"
 
@@ -266,11 +266,11 @@ msgstr "یک مشکل بحرانی وجود داشته و باید سریعا ر
 msgid "Uptime"
 msgstr "آپ تایم"
 
-#: sections/Overview.class.php:123
+#: sections/Overview.class.php:128
 msgid "Warnings Found"
 msgstr "هشدار"
 
-#: sections/Overview.class.php:132
+#: sections/Overview.class.php:137
 msgid "Web Server"
 msgstr "وب سرور"
 
