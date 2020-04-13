@@ -30,7 +30,7 @@ class Overview {
 		if (\FreePBX::Config()->get("FREEPBX_SYSTEM_IDENT")) {
 			$rem_help = \FreePBX::Config()->get("FREEPBX_SYSTEM_IDENT_REM_DASHBOARD_HELP");
 			if (!empty($rem_help) && ($rem_help == 'yes')) {
-				$idline = "";
+				$idline = sprintf(_("<strong>'%s'</strong>"), \FreePBX::Config()->get("FREEPBX_SYSTEM_IDENT"));
 			} else {
 				$idline = sprintf(_("<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</i>"), \FreePBX::Config()->get("FREEPBX_SYSTEM_IDENT"));
 			}
