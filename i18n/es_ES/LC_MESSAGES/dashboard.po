@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-23 22:37+0530\n"
+"POT-Creation-Date: 2020-04-13 18:53+0530\n"
 "PO-Revision-Date: 2018-07-14 11:18+0000\n"
 "Last-Translator: Elvita Crespo <ecrespo@sangoma.com>\n"
 "Language-Team: Spanish <http://*/projects/freepbx/dashboard/es/>\n"
@@ -59,6 +59,11 @@ msgstr "15 Minutos"
 #: views/sections/uptime.php:19
 msgid "5 Minutes"
 msgstr "5 Minutos"
+
+#: sections/Overview.class.php:33
+#, php-format
+msgid "<strong>'%s'</strong>"
+msgstr ""
 
 #: sections/Overview.class.php:35
 #, php-format
