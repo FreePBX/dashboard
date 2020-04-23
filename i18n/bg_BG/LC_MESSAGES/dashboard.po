@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-13 18:45+0530\n"
-"PO-Revision-Date: 2018-07-18 19:11+0000\n"
+"PO-Revision-Date: 2020-04-24 12:00+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/dashboard/bg/>\n"
 "Language: bg_BG\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.19.1\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Poedit-Language: Bulgarian\n"
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -75,9 +75,9 @@ msgid "5 Minutes"
 msgstr "5 Минути"
 
 #: sections/Overview.class.php:33
-#, php-format
+#, fuzzy, php-format
 msgid "<strong>'%s'</strong>"
-msgstr ""
+msgstr "<strong>'%s'</strong>"
 
 #: sections/Overview.class.php:35
 #, php-format
