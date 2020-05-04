@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-22 20:59+0530\n"
+"POT-Creation-Date: 2020-04-13 18:53+0530\n"
 "PO-Revision-Date: 2016-10-06 16:41+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "%s ago"
 msgstr "%s тому"
 
-#: sections/Overview.class.php:227
+#: sections/Overview.class.php:232
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -50,7 +50,7 @@ msgstr "0 секунд"
 msgid "1 Minute"
 msgstr "1 Хвилина"
 
-#: sections/Overview.class.php:225
+#: sections/Overview.class.php:230
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
@@ -62,7 +62,12 @@ msgstr "15 Хвилин"
 msgid "5 Minutes"
 msgstr "5 Хвилин"
 
-#: sections/Overview.class.php:31
+#: sections/Overview.class.php:33
+#, php-format
+msgid "<strong>'%s'</strong>"
+msgstr ""
+
+#: sections/Overview.class.php:35
 #, php-format
 msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
@@ -71,7 +76,7 @@ msgstr ""
 "<strong>'%s'</strong><br><i>(Ви можете змінити це ім'я в Додаткових "
 "настройках)</i>"
 
-#: sections/Overview.class.php:130
+#: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Астеріск"
 
@@ -79,7 +84,7 @@ msgstr "Астеріск"
 msgid "Blogs"
 msgstr "Блоги"
 
-#: sections/Overview.class.php:119
+#: sections/Overview.class.php:124
 msgid "Critical Errors found"
 msgstr "Знайдено критичні помилки"
 
@@ -148,7 +153,7 @@ msgstr "Середнє навантаження"
 msgid "Loading Interface %s..."
 msgstr ""
 
-#: sections/Overview.class.php:133
+#: sections/Overview.class.php:138
 msgid "Mail Queue"
 msgstr ""
 
@@ -162,7 +167,7 @@ msgstr "Пам'ять"
 msgid "Month"
 msgstr "Місяць"
 
-#: sections/Overview.class.php:131
+#: sections/Overview.class.php:136
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -170,7 +175,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr "Мережа"
 
-#: sections/Overview.class.php:91
+#: sections/Overview.class.php:96
 msgid "No critical issues found"
 msgstr "Не знайдено критичних питань"
 
@@ -178,7 +183,7 @@ msgstr "Не знайдено критичних питань"
 msgid "Overview"
 msgstr "Огляд"
 
-#: sections/Overview.class.php:118 sections/Overview.class.php:122
+#: sections/Overview.class.php:123 sections/Overview.class.php:127
 msgid "Please check for errors in the notification section"
 msgstr "Будь ласка, перевірте наявність помилок в розділі повідомлень"
 
@@ -194,7 +199,7 @@ msgstr ""
 msgid "Resolve"
 msgstr "Вирішити"
 
-#: sections/Overview.class.php:100
+#: sections/Overview.class.php:105
 msgid "Security Issue"
 msgstr "Проблеми безпеки"
 
@@ -240,7 +245,7 @@ msgstr "Системну інформацію оновлено %s секунд �
 msgid "System"
 msgstr "Система"
 
-#: sections/Overview.class.php:89
+#: sections/Overview.class.php:94
 msgid "System Alerts"
 msgstr "Сповіщення системи"
 
@@ -256,7 +261,7 @@ msgstr "Останнє перезавантаження системи"
 msgid "System Overview"
 msgstr "Огляд системи"
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:106
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "Це дуже важливе питання, яке необхідно терміново вирішити"
 
@@ -264,11 +269,11 @@ msgstr "Це дуже важливе питання, яке необхідно �
 msgid "Uptime"
 msgstr "Працює"
 
-#: sections/Overview.class.php:123
+#: sections/Overview.class.php:128
 msgid "Warnings Found"
 msgstr "Попередження знайдені"
 
-#: sections/Overview.class.php:132
+#: sections/Overview.class.php:137
 msgid "Web Server"
 msgstr "Веб-сервер"
 

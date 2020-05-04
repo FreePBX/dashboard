@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Simplified) (FreePBX)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-22 20:59+0530\n"
+"POT-Creation-Date: 2020-04-13 18:53+0530\n"
 "PO-Revision-Date: 2018-09-21 09:23+0000\n"
 "Last-Translator: james zhu <zhulizhong@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <http://*/projects/freepbx/dashboard/"
@@ -29,7 +29,7 @@ msgstr "%s 统计结果"
 msgid "%s ago"
 msgstr "%s 前"
 
-#: sections/Overview.class.php:227
+#: sections/Overview.class.php:232
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -42,7 +42,7 @@ msgstr "0秒"
 msgid "1 Minute"
 msgstr "1分钟"
 
-#: sections/Overview.class.php:225
+#: sections/Overview.class.php:230
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
@@ -54,14 +54,19 @@ msgstr "15分钟"
 msgid "5 Minutes"
 msgstr "5分钟"
 
-#: sections/Overview.class.php:31
+#: sections/Overview.class.php:33
+#, php-format
+msgid "<strong>'%s'</strong>"
+msgstr ""
+
+#: sections/Overview.class.php:35
 #, php-format
 msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
 "i>"
 msgstr "<strong>'%s'</strong><br><i>(用户可以通过高级设置修改名称)</i>"
 
-#: sections/Overview.class.php:130
+#: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Asterisk 服务器端"
 
@@ -69,7 +74,7 @@ msgstr "Asterisk 服务器端"
 msgid "Blogs"
 msgstr "博客"
 
-#: sections/Overview.class.php:119
+#: sections/Overview.class.php:124
 msgid "Critical Errors found"
 msgstr "发现严重错误"
 
@@ -138,7 +143,7 @@ msgstr "平均负载"
 msgid "Loading Interface %s..."
 msgstr "正在加载接口 %s..."
 
-#: sections/Overview.class.php:133
+#: sections/Overview.class.php:138
 msgid "Mail Queue"
 msgstr ""
 
@@ -152,7 +157,7 @@ msgstr "内存"
 msgid "Month"
 msgstr "月"
 
-#: sections/Overview.class.php:131
+#: sections/Overview.class.php:136
 msgid "MySQL"
 msgstr ""
 
@@ -160,7 +165,7 @@ msgstr ""
 msgid "Network"
 msgstr "网络"
 
-#: sections/Overview.class.php:91
+#: sections/Overview.class.php:96
 msgid "No critical issues found"
 msgstr "没有发现严重错误"
 
@@ -168,7 +173,7 @@ msgstr "没有发现严重错误"
 msgid "Overview"
 msgstr "总览"
 
-#: sections/Overview.class.php:118 sections/Overview.class.php:122
+#: sections/Overview.class.php:123 sections/Overview.class.php:127
 msgid "Please check for errors in the notification section"
 msgstr "请在提示模板检查错误"
 
@@ -182,7 +187,7 @@ msgstr ""
 msgid "Resolve"
 msgstr "解决"
 
-#: sections/Overview.class.php:100
+#: sections/Overview.class.php:105
 msgid "Security Issue"
 msgstr "安全问题"
 
@@ -228,7 +233,7 @@ msgstr "%s 之前，sysinfo 已更新"
 msgid "System"
 msgstr "系统"
 
-#: sections/Overview.class.php:89
+#: sections/Overview.class.php:94
 msgid "System Alerts"
 msgstr "系统告警"
 
@@ -244,7 +249,7 @@ msgstr "系统最近一次重启"
 msgid "System Overview"
 msgstr "系统总览"
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:106
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "这是一个严重错误，应该马上解决"
 
@@ -252,11 +257,11 @@ msgstr "这是一个严重错误，应该马上解决"
 msgid "Uptime"
 msgstr "已运行时间"
 
-#: sections/Overview.class.php:123
+#: sections/Overview.class.php:128
 msgid "Warnings Found"
 msgstr "发现告警"
 
-#: sections/Overview.class.php:132
+#: sections/Overview.class.php:137
 msgid "Web Server"
 msgstr "Web服务器"
 
