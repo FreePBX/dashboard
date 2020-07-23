@@ -2,6 +2,13 @@
 
 	<div class="row">
 		<div class="col-sm-12 less-padding">
+<?php if (count($data) === 0): ?>
+			<div class="row box">
+				<div class="col-sm-12">
+					<?= htmlspecialchars(_("No notes found")) ?>
+				</div>
+			</div>
+<?php endif; ?>
 <?php foreach ($data as $timestamp=>$note): ?>
 			<div class="row box" id="dashboard_notepad_<?= $timestamp ?>">
 				<div class="col-sm-11 text-justify">
@@ -44,8 +51,8 @@
 </div>
 
 <script>
-	$('.panel-collapse').on('shown.bs.collapse', function() { $('.page').packery(); });
-	$('.panel-collapse').on('hidden.bs.collapse', function() { $('.page').packery(); });
+	$('.panel-collapse, #dashboard_notepad_new').on('shown.bs.collapse', function() { $('.page').packery(); });
+	$('.panel-collapse, #dashboard_notepad_new').on('hidden.bs.collapse', function() { $('.page').packery(); });
 	$("#dashboard_notepad_save").on("click", function() {
 		var content = $("#dashboard_notepad_content").val();
 		var page = $(this).closest("div.page").attr("id");
