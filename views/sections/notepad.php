@@ -2,14 +2,14 @@
 
 	<div class="row">
 		<div class="col-sm-12 less-padding">
-<?php if (count($data) === 0): ?>
+<?php if (count($data) === 0) { ?>
 			<div class="row box">
 				<div class="col-sm-12">
 					<?= htmlspecialchars(_("No notes found")) ?>
 				</div>
 			</div>
-<?php endif; ?>
-<?php foreach ($data as $timestamp=>$note): ?>
+<?php } ?>
+<?php foreach ($data as $timestamp=>$note) { ?>
 			<div class="row box" id="dashboard_notepad_<?= $timestamp ?>">
 				<div class="col-sm-11 text-justify">
 					<strong title="<?= htmlspecialchars($note->time) ?>">
@@ -23,7 +23,7 @@
 					</button>
 				</div>
 			</div>
-<?php endforeach; ?>
+<?php } ?>
 		</div>
 	</div>
 
