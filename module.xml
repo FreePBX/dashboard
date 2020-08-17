@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>16.0.1</version>
+	<version>16.0.2</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -12,6 +12,7 @@
 	<description>
 		Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes.
 	</description>
+	<more-info>https://wiki.freepbx.org/display/FPG/FreePBX+System+Status</more-info>
 	<menuitems>
 		<dashboard display="index" access="all" category="Dashboard" order="99999">Dashboard</dashboard>
 	</menuitems>
@@ -19,6 +20,7 @@
 		<version>14.0.5.26</version>
 	</depends>
 	<changelog>
+		*16.0.2* Packaging of ver 16.0.2
 		*16.0.1alpha* 16.0.1 alpha release
 	</changelog>
 	<hooks>
