@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-17 02:49+0000\n"
+"POT-Creation-Date: 2020-08-18 12:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,6 +72,15 @@ msgid ""
 "i>"
 msgstr ""
 
+#: views/sections/notepad.php:46
+msgid "Add a note"
+msgstr ""
+
+#: Dashboard.class.php:383
+#: Dashboard.class.php:388
+msgid "An error occured"
+msgstr ""
+
 #: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr ""
@@ -103,8 +112,13 @@ msgstr ""
 msgid "Day"
 msgstr ""
 
+#: views/sections/notepad.php:22
 #: views/sections/overview.php:54
 msgid "Delete This"
+msgstr ""
+
+#: Dashboard.class.php:388
+msgid "Deleted note"
 msgstr ""
 
 #: dashboard.i18n.php:12
@@ -186,6 +200,18 @@ msgstr ""
 msgid "No critical issues found"
 msgstr ""
 
+#: views/sections/notepad.php:8
+msgid "No notes found"
+msgstr ""
+
+#: sections/Notepad.class.php:11
+msgid "Notepad"
+msgstr ""
+
+#: sections/Notepad.class.php:12
+msgid "Notes"
+msgstr ""
+
 #: sections/Overview.class.php:16
 msgid "Overview"
 msgstr ""
@@ -203,6 +229,14 @@ msgstr ""
 
 #: views/sections/overview.php:64
 msgid "Resolve"
+msgstr ""
+
+#: views/sections/notepad.php:37
+msgid "Save"
+msgstr ""
+
+#: Dashboard.class.php:383
+msgid "Saved note"
 msgstr ""
 
 #: sections/Overview.class.php:105

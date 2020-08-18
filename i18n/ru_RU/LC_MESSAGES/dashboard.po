@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-13 18:53+0530\n"
+"POT-Creation-Date: 2020-08-18 12:36+0000\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -87,6 +87,14 @@ msgstr ""
 "<strong>'%s'</strong><br><i>(Вы можете изменить это имя в Дополнительных "
 "Настройках)</i>"
 
+#: views/sections/notepad.php:46
+msgid "Add a note"
+msgstr ""
+
+#: Dashboard.class.php:383 Dashboard.class.php:388
+msgid "An error occured"
+msgstr ""
+
 #: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Asterisk"
@@ -113,9 +121,13 @@ msgstr ""
 msgid "Day"
 msgstr "День"
 
-#: views/sections/overview.php:54
+#: views/sections/notepad.php:22 views/sections/overview.php:54
 msgid "Delete This"
 msgstr "Удалить это"
+
+#: Dashboard.class.php:388
+msgid "Deleted note"
+msgstr ""
 
 #: dashboard.i18n.php:12
 msgid "Disable collection of system statistics"
@@ -190,6 +202,18 @@ msgstr "Сеть"
 msgid "No critical issues found"
 msgstr "Критических проблем не найдено"
 
+#: views/sections/notepad.php:8
+msgid "No notes found"
+msgstr ""
+
+#: sections/Notepad.class.php:11
+msgid "Notepad"
+msgstr ""
+
+#: sections/Notepad.class.php:12
+msgid "Notes"
+msgstr ""
+
 #: sections/Overview.class.php:16
 msgid "Overview"
 msgstr "Обзор"
@@ -210,6 +234,14 @@ msgstr ""
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr "Разрешить"
+
+#: views/sections/notepad.php:37
+msgid "Save"
+msgstr ""
+
+#: Dashboard.class.php:383
+msgid "Saved note"
+msgstr ""
 
 #: sections/Overview.class.php:105
 msgid "Security Issue"
