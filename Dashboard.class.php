@@ -39,6 +39,8 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		"uptime" => "getAjaxUptime",
 		"srvstat" => "getAjaxServerStats",
 		"registered" => "getRegoInfo",
+		"notepad_save" => "saveNote",
+		"notepad_del" => "delNote",
 
 		// This is for testing, and isn't used. If you remove it, tests
 		// will fail.
@@ -372,6 +374,18 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	private function getRegoInfo() {
 		$html = "<p>There would be system info here</p><p>If rob had written it</p>\n";
 		return $html;
+	}
+
+	private function saveNote() {
+		$content = new \StdClass;
+		$content->content = substr($_REQUEST["content"], 0, 2048);
+		$result = $this->setConfig(time(), $content, "notes");
+		return $result ? _("Saved note") : _("An error occured");
+	}
+
+	private function delNote() {
+		$result = $this->setConfig($_REQUEST["id"], false, "notes");
+		return $result ? _("Deleted note") : _("An error occured");
 	}
 
 	private function getAjaxServerStats() {

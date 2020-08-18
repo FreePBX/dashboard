@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-13 18:53+0530\n"
+"POT-Creation-Date: 2020-08-18 12:36+0000\n"
 "PO-Revision-Date: 2015-02-27 20:50-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -73,6 +73,14 @@ msgstr ""
 "<strong>'%s'</strong><br><i>(Je kunt dit in Geavanceerde Instellingen "
 "veranderen)</i>"
 
+#: views/sections/notepad.php:46
+msgid "Add a note"
+msgstr ""
+
+#: Dashboard.class.php:383 Dashboard.class.php:388
+msgid "An error occured"
+msgstr ""
+
 #: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Asterisk"
@@ -99,9 +107,13 @@ msgstr ""
 msgid "Day"
 msgstr "Dag"
 
-#: views/sections/overview.php:54
+#: views/sections/notepad.php:22 views/sections/overview.php:54
 msgid "Delete This"
 msgstr "Verwijder dit"
+
+#: Dashboard.class.php:388
+msgid "Deleted note"
+msgstr ""
 
 #: dashboard.i18n.php:12
 msgid "Disable collection of system statistics"
@@ -176,6 +188,18 @@ msgstr "Netwerk"
 msgid "No critical issues found"
 msgstr "Geen kritieke problemen gevonden"
 
+#: views/sections/notepad.php:8
+msgid "No notes found"
+msgstr ""
+
+#: sections/Notepad.class.php:11
+msgid "Notepad"
+msgstr ""
+
+#: sections/Notepad.class.php:12
+msgid "Notes"
+msgstr ""
+
 #: sections/Overview.class.php:16
 msgid "Overview"
 msgstr "Overzicht"
@@ -195,6 +219,14 @@ msgstr ""
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr "Oplossen"
+
+#: views/sections/notepad.php:37
+msgid "Save"
+msgstr ""
+
+#: Dashboard.class.php:383
+msgid "Saved note"
+msgstr ""
 
 #: sections/Overview.class.php:105
 msgid "Security Issue"

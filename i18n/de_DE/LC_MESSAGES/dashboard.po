@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-13 18:53+0530\n"
+"POT-Creation-Date: 2020-08-18 12:36+0000\n"
 "PO-Revision-Date: 2018-10-25 09:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dashboard/de/>\n"
@@ -76,6 +76,14 @@ msgstr ""
 "<strong>'%s'</strong><br><i>(Sie können diesen Namen in den erweiterten "
 "Einstellungen ändern)</i>"
 
+#: views/sections/notepad.php:46
+msgid "Add a note"
+msgstr ""
+
+#: Dashboard.class.php:383 Dashboard.class.php:388
+msgid "An error occured"
+msgstr ""
+
 #: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Asterisk-Telefonanlage"
@@ -102,9 +110,13 @@ msgstr "Dashboard-Modul"
 msgid "Day"
 msgstr "Tag"
 
-#: views/sections/overview.php:54
+#: views/sections/notepad.php:22 views/sections/overview.php:54
 msgid "Delete This"
 msgstr "Lösche dieses Objekt"
+
+#: Dashboard.class.php:388
+msgid "Deleted note"
+msgstr ""
 
 #: dashboard.i18n.php:12
 msgid "Disable collection of system statistics"
@@ -179,6 +191,18 @@ msgstr "Netzwerk"
 msgid "No critical issues found"
 msgstr "Keine kritischen Fehler gefunden"
 
+#: views/sections/notepad.php:8
+msgid "No notes found"
+msgstr ""
+
+#: sections/Notepad.class.php:11
+msgid "Notepad"
+msgstr ""
+
+#: sections/Notepad.class.php:12
+msgid "Notes"
+msgstr ""
+
 #: sections/Overview.class.php:16
 msgid "Overview"
 msgstr "Übersicht"
@@ -198,6 +222,14 @@ msgstr ""
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr "Beheben"
+
+#: views/sections/notepad.php:37
+msgid "Save"
+msgstr ""
+
+#: Dashboard.class.php:383
+msgid "Saved note"
+msgstr ""
 
 #: sections/Overview.class.php:105
 msgid "Security Issue"
