@@ -22,6 +22,7 @@ class Uptime {
 	}
 
 	public function getContent($section) {
+		 
 		if (!class_exists('\CPUInfo')) {
 			include dirname(__DIR__).'/classes/CPUInfo.class.php';
 		}

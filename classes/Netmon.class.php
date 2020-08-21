@@ -22,6 +22,7 @@ class Netmon {
 	public function getStats() {
 		$execoutput = [];
 
+	
 		$process = new Process("{$this->iploc} -s link");
 		$process->setTimeout(30);
 		try {
@@ -40,6 +41,9 @@ class Netmon {
 	}
 
 	public function getLiveStats() {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Netmon class getLiveStats  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		if(function_exists("apache_setenv")) {
 			apache_setenv('no-gzip', '1');
 		}
@@ -52,6 +56,9 @@ class Netmon {
 		header('Access-Control-Allow-Credentials: true');
 		header('X-Accel-Buffering: no');//Nginx: unbuffered responses suitable for Comet and HTTP streaming applications
 		(new SSE())->start(new Update(function () {
+			$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Netmon class this will keep calling  getLiveStats  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 			return json_encode($this->getStats());
 		}, 1), 'new-msgs', 1000);
 	}

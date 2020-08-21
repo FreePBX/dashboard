@@ -16,6 +16,8 @@ class AsteriskInfo2  {
 	}
 
 	public function get_channel_totals() {
+		 $date = date("d/m/Y H:i:s",strtotime("now"));
+        error_log('asterisk get_channel_totals  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		if (!$this->astman) {
 			return array(
 				'external_calls'=>-1,
@@ -43,7 +45,9 @@ class AsteriskInfo2  {
 			} else if (preg_match('/^(\d+) active call/i', $line, $matches)) {
 				$total_calls = $matches[1];
 			}
-		}
+		} $date = date("d/m/Y H:i:s",strtotime("now"));
+        error_log('asterisk get_channel_totals  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+		
 		return array(
 			'external_calls'=>$external_calls,
 			'internal_calls'=>$internal_calls,
@@ -52,7 +56,10 @@ class AsteriskInfo2  {
 		);
 	}
 
-	public function get_connections() {
+	public function get_connections() { 
+	$date = date("d/m/Y H:i:s",strtotime("now"));
+        error_log('asterisk get_connections  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+		
 		// Grab our list of extensions.
 		$sql = "SELECT `id` FROM `devices` WHERE `tech` <> 'custom'";
 		$alldevices = FreePBX::create()->Database->query($sql)->fetchAll(PDO::FETCH_COLUMN, 0);
@@ -262,11 +269,16 @@ class AsteriskInfo2  {
 				$retarr[$v] += $retarr[$p."_".$v];
 			}
 		}
-
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('asterisk get_connections  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+	
 		return $retarr;
 	}
 
 	public function get_uptime() {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('asterisk get_uptime  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		$output = array(
 			'system' => 'Unknown',
 			'reload' => 'Unknown',
@@ -297,7 +309,10 @@ class AsteriskInfo2  {
 		$words = explode(" ", $astout[2]);
 		$output['reload'] = TimeUtils::getReadable($words[2]);
 		$output['reload-seconds'] = $words[2];
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('asterisk get_uptime  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 
+		
 		return $output;
 	}
 }

@@ -44,6 +44,9 @@ class SysInfo {
 
 
 	public function getSysInfo() {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('getSysInfo class getSysInfo starts '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		$this->flat = array();
 
 		$this->initPSI();
@@ -53,6 +56,9 @@ class SysInfo {
 		spl_autoload_unregister('psi_autoloader');
 		$this->fixPSI($xml);
 		$this->getAstinfo();
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('getSysInfo class getSysInfo ends '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		return $this->flat;
 	}
 

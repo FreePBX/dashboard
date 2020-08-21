@@ -14,10 +14,14 @@ class DiskUsage {
 
 	public function getAll() {
 		$retarr = array();
+	$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('DiskUsage getAll  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 
 		if ($this->systemtype == "linux") {
 			$retarr['df']=$this->parsedf();
 		}
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('DiskUsage getAll  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 
 		return $retarr;
 	}

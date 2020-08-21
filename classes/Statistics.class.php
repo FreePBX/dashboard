@@ -9,6 +9,11 @@ class Statistics {
 	public $width = 445;
 
 	public function getStats() {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Statistics class getStats  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
+		 $date = date("d/m/Y H:i:s",strtotime("now"));
+		  error_log('Statics getStats starts '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		if (!isset($_REQUEST['target']) || !isset($_REQUEST['period'])) {
 			return _('Invalid Selection');
 		}
@@ -27,6 +32,9 @@ class Statistics {
 
 		$settings = $defs[strtolower($_REQUEST['period'])];
 		// We've been asked for data to generate a graph!
+			$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Statistics class getStats ends on grpahs'. $t.' called now '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		switch ($t) {
 		case 'uptime':
 			return $this->getGraphDataUptime($settings);
@@ -46,6 +54,8 @@ class Statistics {
 	}
 
 	public function getGraphDataUptime($period) {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+		 error_log('Statics getGraphDataUptime  starts '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
 		$xvfs = $this->getDateFormatString($period);
 		$retarr = array(
@@ -109,11 +119,16 @@ class Statistics {
 				"toolTipContent" => "<span style='color: {color};'>{name}: ".TimeUtils::getReadable($astreload, 3)."</span>"
 			);
 			$count++;
-		}
+		}$date = date("d/m/Y H:i:s",strtotime("now"));
+		  error_log('Statics getGraphDataUptime  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+						                  
 		return $retarr;
 	}
 
 	public function getGraphDataCPU($period) {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+		 error_log('Statics getGraphDataCPU  starts '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+						                  
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
 		$xvfs = $this->getDateFormatString($period);
 		$retarr = array(
@@ -180,10 +195,14 @@ class Statistics {
 			}
 			$count++;	
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+		                 error_log('Statics getGraphDataCPU  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		return $retarr;
 	}
 
 	public function getGraphDataDisk($period) {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+                error_log('Statics getGraphDataDisk  starts '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
 		$retarr = array(
 			"width" => $this->width,
@@ -248,11 +267,14 @@ class Statistics {
 			}
 			$count++;
 		}
+		 $date = date("d/m/Y H:i:s",strtotime("now"));
+		 error_log('Statics getGraphDataDisk  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		return $retarr;
 	}
 
 	public function getGraphDataNet($period) {
-
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Statics getGraphDataNet  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
 
 		$retarr = array(
@@ -351,10 +373,14 @@ class Statistics {
 				$lastval = $bytearr;
 			}
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+		error_log('Statics getGraphDataNet  End '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		return $retarr;
 	}
 
 	public function getGraphDataMem($period) {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+		error_log('Statics getGraphDataMem  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		// Grab our memory info...
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
 		$xvfs = $this->getDateFormatString($period);
@@ -431,10 +457,14 @@ class Statistics {
 			}
 			$count++;
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+		                error_log('Statics getGraphDataMem  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		return $retarr;
 	}
 
 	public function getGraphDataAst($period) {
+		 $date = date("d/m/Y H:i:s",strtotime("now"));
+             error_log('Statics getGraphDataAst  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		$si = FreePBX::create()->Dashboard->getSysInfoPeriod($period);
 		$xvfs = $this->getDateFormatString($period);
 		$retarr = array(
@@ -540,6 +570,8 @@ class Statistics {
 		$retarr['data'][2]['dataPoints'] = $tonline;
 		$retarr['data'][3]['dataPoints'] = $toffline;
 		$retarr['data'][4]['dataPoints'] = $channels;
+		 $date = date("d/m/Y H:i:s",strtotime("now"));
+             error_log('Statics getGraphDataAst  End '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		return $retarr;
 	}
 

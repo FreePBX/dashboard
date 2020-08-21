@@ -40,6 +40,9 @@ class PruneHistory {
 	}
 
 	public function getPeriodBase($t, $period) {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('PruneHistory class getPeriodBase  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		// Find the base period to work from.
 		if (!isset($this->periods[$period])) {
 			throw new Exception("Unknown period $period");
@@ -50,10 +53,16 @@ class PruneHistory {
 
 		// Now, find the base time for this period.
 		$base = $t % $this->periods[$period];
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('PruneHistory class getPeriodBase  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		return $t - $base;
 	}
 
 	public function doPrune() {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('PruneHistory class doPrune  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		foreach (array_keys($this->periods) as $p) {
 			if ($p != $this->last) {
 				$this->avgPeriod($p);
@@ -72,9 +81,15 @@ class PruneHistory {
 				}
 			}
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('PruneHistory class doPrune  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 	}
 
 	public function avgPeriod($p) {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('PruneHistory class avgPeriod  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		if (!isset($this->periods[$p])) {
 			throw new Exception("Unknown period $p");
 		}
@@ -124,6 +139,8 @@ class PruneHistory {
 				$currentarr[] = $t;
 			}
 		}
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('PruneHistory class avgPeriod  mid '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 
 		usort($commitable,function($a,$b) {
 			if ($a['currentperiod'] == $b['currentperiod']) {
@@ -138,6 +155,9 @@ class PruneHistory {
 		if(!empty($commitable[0])) {
 			$this->commitAvg($commitable[0]['currentarr'], $commitable[0]['currentperiod'], $commitable[0]['period']);
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('PruneHistory class avgPeriod  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 	}
 
 	public function commitAvg($arr, $currentperiod, $period) {

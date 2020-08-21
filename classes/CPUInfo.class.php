@@ -14,7 +14,10 @@ class CPUInfo {
 
 	public function getAll() {
 		$retarr = array();
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('CPU getall  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 
+		
 		if ($this->systemtype == "linux") {
 			$retarr['cpuinfo'] = $this->parseProcCPU();
 			$retarr['loadavg'] = $this->parseProcLoadavg();
@@ -22,11 +25,16 @@ class CPUInfo {
 			$retarr['cpuinfo'] = $this->parseSysctlCPU();
 			$retarr['loadavg'] = $this->parseSysctlLoadavg();
 		}
+	$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('CPU getall  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 
 		return $retarr;
 	}
 
 	private function parseProcCPU() {
+			$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('CPU parseProcCPU  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		$retarr = array();
 		$rawfile = file("/proc/cpuinfo", FILE_IGNORE_NEW_LINES);
 		$procnum = 0;
@@ -48,13 +56,15 @@ class CPUInfo {
 			}
 		}
 		$retarr['cores'] = $procnum+1;
-
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('CPU parseProcCPU  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		return $retarr;
 	}
 
 	private function parseProcLoadavg() {
 		$retarr = array();
-
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('CPU parseProcLoadavg  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 		$line = file_get_contents("/proc/loadavg");
 		$arr = explode(" ", $line);
 		$retarr['util1'] = $arr[0];
@@ -62,12 +72,17 @@ class CPUInfo {
 		$retarr['util15'] = $arr[2];
 		$retarr['runningprocs'] = $arr[3];
 		$retarr['highestpid'] = $arr[4];
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('CPU parseProcLoadavg  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 
 		return $retarr;
 	}
 
 	private function parseSysctlCPU() {
 		$retarr = array();
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('CPU parseSysctlCPU  Start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 
 		$ncpu = shell_exec("sysctl -n hw.ncpu 2>/dev/null");
 		$model = shell_exec("sysctl -n hw.model 2>/dev/null");
@@ -88,12 +103,18 @@ class CPUInfo {
 		}
 		$retarr['sockets'] = 1; // hack
 		$retarr['cores'] = $ncpu;
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('CPU parseSysctlCPU  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 
 		return $retarr;
 	}
 
 	private function parseSysctlLoadavg() {
 		$retarr = array();
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('CPU parseSysctlLoadavg  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 
 		$arr = sys_getloadavg();
 		$retarr['util1'] = $arr[0];
@@ -103,6 +124,8 @@ class CPUInfo {
 		$retarr['runningprocs'] = trim($line);
 		$lastpid = shell_exec("sysctl -n kern.lastpid 2>/dev/null");
 		$retarr['highestpid'] = $lastpid;
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('CPU parseSysctlLoadavg  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 
 		return $retarr;
 	}

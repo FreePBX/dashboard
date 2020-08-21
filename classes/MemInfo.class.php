@@ -15,6 +15,8 @@ class MemInfo {
 
 	public function getAll() {
 		$retarr = array();
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('MemInfo getAll  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 
 		if ($this->systemtype=="linux") {
 			$this->parseLinuxMemInfo();
@@ -22,6 +24,10 @@ class MemInfo {
 			$retarr['mem'] = $this->getMemUsage();
 			$retarr['raw'] = $this->info;
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('MemInfo getAll  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
+	
 		return $retarr;
 	}
 

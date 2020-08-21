@@ -10,6 +10,9 @@ class Blogs {
 	public $rawname = 'Blogs';
 
 	public function getSections($order) {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Blogs class getSections starts '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		$feeds = \FreePBX::Config()->get('RSSFEEDS');
 		$feeds = str_replace("\r","",$feeds);
 		$blogs = array();
@@ -42,10 +45,16 @@ class Blogs {
 				$i++;
 			}
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Blogs class getSections ends '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		return $blogs;
 	}
 
 	public function getContent($section) {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Blogs class getContent start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		$feeds = \FreePBX::Config()->get('RSSFEEDS');
 		$feeds = str_replace("\r","",$feeds);
 		if(empty($feeds)) {
@@ -59,6 +68,9 @@ class Blogs {
 		if(empty($feed)) {
 			return '';
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+		error_log('Blogs class getContent end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		return load_view(dirname(__DIR__).'/views/sections/blog.php',array("items" => $feed['items'], "limit" => 5));
 	}
 

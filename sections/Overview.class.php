@@ -22,6 +22,9 @@ class Overview {
 	}
 
 	public function getContent($section) {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Overview class getContent start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		if (!class_exists('TimeUtils')) {
 			include dirname(__DIR__).'/classes/TimeUtils.class.php';
 		}
@@ -49,6 +52,8 @@ class Overview {
 		$notifications = $this->getNotifications((isset($_COOKIE['dashboardShowAll']) && $_COOKIE['dashboardShowAll'] == "true"));
 		$nots = $notifications['nots'];
 		$alerts = $this->getAlerts($nots);
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Overview class getContent ends '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 
 		return load_view(dirname(__DIR__).'/views/sections/overview.php',array("showAllMessage" => $notifications['showAllMessage'], "nots" => $nots, "alerts" => $alerts, "brand" => $brand, "idline" => $idline, "version" => get_framework_version(), "since" => $since, "services" => $this->getSummary()));
 	}
@@ -57,6 +62,9 @@ class Overview {
 		if (!class_exists('TimeUtils')) {
 			include dirname(__DIR__).'/classes/TimeUtils.class.php';
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Overview class getNotifications start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		$final['nots'] = array();
 		$items = \FreePBX::create()->Notifications->list_all($showall);
 		$allItems = \FreePBX::create()->Notifications->list_all(true);
@@ -85,10 +93,16 @@ class Overview {
 				"reset" => $notification['reset']
 			);
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Overview class getNotifications ends '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		return $final;
 	}
 
 	public function getAlerts($nots = false) {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Overview class getAlerts start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		// Check notifications and decide what we want to do with them.
 		// Start with everything happy
 		$alerttitle = _("System Alerts");
@@ -127,6 +141,9 @@ class Overview {
 			$text = _("Please check for errors in the notification section");
 			$alerttitle = _("Warnings Found");
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Overview class getAlerts end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		return array("alerttitle" => $alerttitle, "state" => $state, "text" => $text);
 	}
 
@@ -137,6 +154,8 @@ class Overview {
 			"apache" => _("Web Server"),
 			"mailq" => _("Mail Queue"),
 		);
+$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Overview class getSummary start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 
 		$sysinfo = \FreePBX::create()->Dashboard->getSysInfo();
 
@@ -168,6 +187,9 @@ class Overview {
 				$f = array_merge($t1, array($d1), $t2);
 			}
 		}
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('Overview class getAlerts ends '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		return $f;
 	}
 

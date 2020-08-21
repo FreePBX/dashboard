@@ -7,6 +7,8 @@ if (!class_exists('\FreePBX\modules\Dashboard\Netmon')) {
 $netmon = new \FreePBX\modules\Dashboard\Netmon();
 // Wait until we actually have some data back
 $count = 5;
+ $date = date("d/m/Y H:i:s",strtotime("now"));
+ error_log('Network monitor starts '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 $stats = $netmon->getStats();
 if(!$stats['status']) {
 	echo "Error. Unable to get Netmon stats\n";
@@ -42,6 +44,8 @@ foreach ($stats['data'] as $name => $row) {
 	// This is a valid interface, so give it a button.
 	echo "<button type='button' class='btn btn-default' data-intname='$name'>$name</button>\n";
 }
+$date = date("d/m/Y H:i:s",strtotime("now"));
+ error_log('Network monitor ends '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
 ?>
 		</div>
 	</div>

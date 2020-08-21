@@ -6,6 +6,9 @@
 
 class SysStat {
 	public function getHTML() {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('SysStat class getHTML starts '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		$html  = "<div id='builtin_sysstat'>";
 		$html .= " <div class='row'>";
 		$html .= "  <div class='col-sm-6' id='sysstat_swap'></div>";
@@ -17,6 +20,9 @@ class SysStat {
 		$html .= "</div>";
 		$html .= "</div>";
 		$html .= "<script type='text/javascript'>".$this->getJs()."</script>";
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('SysStat class getHTML ends '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		return $html;
 	}
 

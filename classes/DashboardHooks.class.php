@@ -8,8 +8,14 @@ class DashboardHooks {
 	private static $pages = array();
 
 	public static function genHooks($order) {
+		$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('DashboardHooks genHooks  start '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		self::$pages[] = array("pagename" => "Main", "entries" => self::getMainEntries($order));
 		self::addExtraPages();
+			$date = date("d/m/Y H:i:s",strtotime("now"));
+error_log('DashboardHooks genHooks  end '.$date." \n", 3, "/var/log/asterisk/dashboardload.log");
+
 		return self::$pages;
 	}
 
