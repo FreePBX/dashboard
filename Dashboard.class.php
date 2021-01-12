@@ -78,6 +78,21 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			'type'        => CONF_TYPE_INT
 		),true);
 
+		$this->freepbx->Config->define_conf_setting('VIEW_FW_STATUS', array(
+			'value'       => true,
+			'defaultval'  => true,
+			'readonly'    => false,
+			'hidden'      => false,
+			'level'       => 0,
+			'module'      => 'dashboard',
+			'category'    => 'Dashboard Module',
+			'emptyok'     => false,
+			'sortorder'   => 1,
+			'name'        => 'Display firewall status',
+			'description' => 'Display or Hide firewall status in the dashboard',
+			'type'        => CONF_TYPE_BOOL
+		),true);
+		
 		$feeds = $this->freepbx->Config->get('RSSFEEDS');
 		$feeds = str_replace("\r","",$feeds);
 		if(!empty($feeds)) {
@@ -91,6 +106,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			}
 		}
 	}
+	
 	public function uninstall() {
 	}
 	public function backup() {

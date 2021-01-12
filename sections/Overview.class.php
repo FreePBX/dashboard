@@ -159,6 +159,10 @@ class Overview {
 		foreach($t as $d) {
 			foreach($d as $d1) {
 				$order = isset($d1['order']) ? $d1['order'] : count($f);
+				if($d1['title'] == "System Firewall" && \FreePBX::Config()->get('VIEW_FW_STATUS') == false){
+					unset($d1);
+					continue;
+				}
 				if($order == 0) {
 					array_unshift($f, $d1);
 					continue;
