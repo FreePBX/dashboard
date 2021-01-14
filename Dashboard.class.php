@@ -80,7 +80,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 
 		$this->freepbx->Config->define_conf_setting('VIEW_FW_STATUS', array(
 			'value'       => true,
-			'defaultval'  => true,
+			'defaultval'  => false,
 			'readonly'    => false,
 			'hidden'      => false,
 			'level'       => 0,
@@ -89,7 +89,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			'emptyok'     => false,
 			'sortorder'   => 1,
 			'name'        => 'Display firewall status',
-			'description' => 'Display or Hide firewall status in the dashboard',
+			'description' => 'Display or Hide firewall status in the dashboard when the firewall module is disabled.',
 			'type'        => CONF_TYPE_BOOL
 		),true);
 		
