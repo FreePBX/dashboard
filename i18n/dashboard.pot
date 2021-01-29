@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dashboard
-# Copyright (C) 2008-2020 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2021 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 12:37+0000\n"
+"POT-Creation-Date: 2021-01-29 06:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "%s ago"
 msgstr ""
 
-#: sections/Overview.class.php:232
+#: sections/Overview.class.php:241
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -48,7 +48,7 @@ msgstr ""
 msgid "1 Minute"
 msgstr ""
 
-#: sections/Overview.class.php:230
+#: sections/Overview.class.php:239
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
@@ -76,8 +76,8 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:383
-#: Dashboard.class.php:388
+#: Dashboard.class.php:399
+#: Dashboard.class.php:404
 msgid "An error occured"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Delete This"
 msgstr ""
 
-#: Dashboard.class.php:388
+#: Dashboard.class.php:404
 msgid "Deleted note"
 msgstr ""
 
@@ -235,7 +235,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:383
+#: Dashboard.class.php:399
 msgid "Saved note"
 msgstr ""
 
