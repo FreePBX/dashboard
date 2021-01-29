@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>15.0.7</version>
+	<version>15.0.8</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,6 +20,7 @@
 		<version>14.0.5.26</version>
 	</depends>
 	<changelog>
+		*15.0.8* FREEPBX-22122 Recent move of Intrusion Detection, causes false failure on dashboard 
 		*15.0.7* Develop add notes 
 		*15.0.6* Packaging of ver 15.0.6
 		*15.0.5* bump 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 12:36+0000\n"
+"POT-Creation-Date: 2021-01-29 06:25+0000\n"
 "PO-Revision-Date: 2018-07-14 11:18+0000\n"
 "Last-Translator: Elvita Crespo <ecrespo@sangoma.com>\n"
 "Language-Team: Spanish <http://*/projects/freepbx/dashboard/es/>\n"
@@ -35,7 +35,7 @@ msgstr "%s Estadísticas"
 msgid "%s ago"
 msgstr "hace %s"
 
-#: sections/Overview.class.php:232
+#: sections/Overview.class.php:241
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -48,7 +48,7 @@ msgstr "0 segundos"
 msgid "1 Minute"
 msgstr "1 Minuto"
 
-#: sections/Overview.class.php:230
+#: sections/Overview.class.php:239
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:383 Dashboard.class.php:388
+#: Dashboard.class.php:399 Dashboard.class.php:404
 msgid "An error occured"
 msgstr ""
 
@@ -112,7 +112,7 @@ msgstr "Día"
 msgid "Delete This"
 msgstr "Borrar esto"
 
-#: Dashboard.class.php:388
+#: Dashboard.class.php:404
 msgid "Deleted note"
 msgstr ""
 
@@ -225,7 +225,7 @@ msgstr "Resolver"
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:383
+#: Dashboard.class.php:399
 msgid "Saved note"
 msgstr ""
 

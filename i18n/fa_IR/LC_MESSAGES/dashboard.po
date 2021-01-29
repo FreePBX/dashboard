@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 12:36+0000\n"
+"POT-Creation-Date: 2021-01-29 06:25+0000\n"
 "PO-Revision-Date: 2019-01-25 14:36+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/dashboard/fa/>\n"
@@ -35,7 +35,7 @@ msgstr "آمار ٪s1"
 msgid "%s ago"
 msgstr "%s قبل"
 
-#: sections/Overview.class.php:232
+#: sections/Overview.class.php:241
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr "پیام های ٪s1 در این دستگاه در صف قرار دارند و تحویل داده نشده است"
@@ -48,7 +48,7 @@ msgstr "صفر ثانیه"
 msgid "1 Minute"
 msgstr "یک دقیقه"
 
-#: sections/Overview.class.php:230
+#: sections/Overview.class.php:239
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr "1 پیام در این دستگاه در صف قرار دارد و تحویل داده نشده است"
 
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:383 Dashboard.class.php:388
+#: Dashboard.class.php:399 Dashboard.class.php:404
 msgid "An error occured"
 msgstr ""
 
@@ -112,7 +112,7 @@ msgstr "روز"
 msgid "Delete This"
 msgstr "حذف این مورد"
 
-#: Dashboard.class.php:388
+#: Dashboard.class.php:404
 msgid "Deleted note"
 msgstr ""
 
@@ -225,7 +225,7 @@ msgstr "حل کردن"
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:383
+#: Dashboard.class.php:399
 msgid "Saved note"
 msgstr ""
 
