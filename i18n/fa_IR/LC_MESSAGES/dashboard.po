@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-13 18:45+0530\n"
+"POT-Creation-Date: 2021-01-29 06:25+0000\n"
 "PO-Revision-Date: 2019-01-25 14:36+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/dashboard/fa/>\n"
@@ -35,7 +35,7 @@ msgstr "آمار ٪s1"
 msgid "%s ago"
 msgstr "%s قبل"
 
-#: sections/Overview.class.php:229
+#: sections/Overview.class.php:238
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr "پیام های ٪s1 در این دستگاه در صف قرار دارند و تحویل داده نشده است"
@@ -48,7 +48,7 @@ msgstr "صفر ثانیه"
 msgid "1 Minute"
 msgstr "یک دقیقه"
 
-#: sections/Overview.class.php:227
+#: sections/Overview.class.php:236
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr "1 پیام در این دستگاه در صف قرار دارد و تحویل داده نشده است"
 
