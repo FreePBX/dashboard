@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>16.0.4</version>
+	<version>16.0.5</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,6 +20,7 @@
 		<version>14.0.5.26</version>
 	</depends>
 	<changelog>
+		*16.0.5* FREEPBX-22122 change teh value by default, and the tooltips in advanced settings 
 		*16.0.4* FREEPBX-22122 Recent move of Intrusion Detection, causes false failure on dashboard 
 		*16.0.3* Develop add notes 
 		*16.0.2* Packaging of ver 16.0.2
