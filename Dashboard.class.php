@@ -82,7 +82,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 
 		$this->freepbx->Config->define_conf_setting('VIEW_FW_STATUS', array(
 			'value'       => true,
-			'defaultval'  => false,
+			'defaultval'  => true,
 			'readonly'    => false,
 			'hidden'      => false,
 			'level'       => 0,
@@ -91,7 +91,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			'emptyok'     => false,
 			'sortorder'   => 1,
 			'name'        => 'Display firewall status',
-			'description' => 'Display or Hide firewall status in the dashboard when the firewall module is disabled.',
+			'description' => 'The Dashboard will display a warning when the PBX Firewall is disabled. When this is set to \'no\', the Dashboard warning will be permanently suppressed.',
 			'type'        => CONF_TYPE_BOOL
 		),true);
 		
