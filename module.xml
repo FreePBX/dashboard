@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>15.0.9</version>
+	<version>15.0.10</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,6 +20,7 @@
 		<version>14.0.5.26</version>
 	</depends>
 	<changelog>
+		*15.0.10* FREEPBX-22195 incorrect speed display should be kB/s 
 		*15.0.9* FREEPBX-22122 change teh value by default, and the tooltips in advanced settings 
 		*15.0.8* FREEPBX-22122 Recent move of Intrusion Detection, causes false failure on dashboard 
 		*15.0.7* Develop add notes 
