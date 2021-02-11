@@ -72,14 +72,14 @@ if (typeof window.Netchart === "undefined") {
 			xValueFormatString: "h:mm:ss tt",
 			type: "splineArea",
 			dataPoints: [],
-			toolTipContent: "<span style='color: {color};'>RX: <strong>{y}</strong>Kb/sec</span>",
+			toolTipContent: "<span style='color: {color};'>RX: <strong>{y}</strong>kB/sec</span>",
 		},
 		{	name: "TX Kb/s",
 			xValueType: "dateTime",
 			xValueFormatString: "h:mm:ss tt",
 			type: "splineArea",
 			dataPoints: [],
-			toolTipContent: "<span style='color: {color};'>TX: <strong>{y}</strong>Kb/sec</span>",
+			toolTipContent: "<span style='color: {color};'>TX: <strong>{y}</strong>kB/sec</span>",
 		}],
 		init: function(intname) {
 			var self = this;
