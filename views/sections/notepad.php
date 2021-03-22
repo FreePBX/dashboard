@@ -18,9 +18,7 @@
 					<?= htmlspecialchars($note->content) ?>
 				</div>
 				<div class="col-sm-1">
-					<button data-timestamp="<?= $timestamp ?>" class="btn-link dashboard_notepad_del">
-						<i class="fa fa-times-circle " title="<?= htmlspecialchars(_("Delete This")) ?>"></i>
-					</button>
+					<i class="fa fa-times-circle help dashboard_notepad_del" data-timestamp="<?= $timestamp ?>" title="<?= htmlspecialchars(_("Delete This")) ?>"></i>
 				</div>
 			</div>
 <?php } ?>
@@ -42,9 +40,7 @@
 
 	<div class="row">
 		<div class="col-sm-12">
-			<button class="btn-link" data-target="#dashboard_notepad_new" data-toggle="collapse">
-				<i class="fa fa-plus-circle" title="<?= htmlspecialchars(_("Add a note")) ?>"></i>
-			</button>
+			<i class="fa fa-plus-circle help" data-target="#dashboard_notepad_new" data-toggle="collapse" title="<?= htmlspecialchars(_("Add a note")) ?>"></i>
 		</div>
 	</div>
 
