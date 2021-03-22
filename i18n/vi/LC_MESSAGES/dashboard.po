@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-29 06:25+0000\n"
+"POT-Creation-Date: 2021-03-22 09:14+0000\n"
 "PO-Revision-Date: 2017-03-15 17:10-0700\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -71,7 +71,7 @@ msgid ""
 "i>"
 msgstr ""
 
-#: views/sections/notepad.php:46
+#: views/sections/notepad.php:43
 msgid "Add a note"
 msgstr ""
 
@@ -105,7 +105,7 @@ msgstr ""
 msgid "Day"
 msgstr ""
 
-#: views/sections/notepad.php:22 views/sections/overview.php:54
+#: views/sections/notepad.php:21 views/sections/overview.php:54
 msgid "Delete This"
 msgstr ""
 
@@ -216,7 +216,7 @@ msgstr ""
 msgid "Resolve"
 msgstr ""
 
-#: views/sections/notepad.php:37
+#: views/sections/notepad.php:35
 msgid "Save"
 msgstr ""
 

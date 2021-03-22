@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-29 06:25+0000\n"
+"POT-Creation-Date: 2021-03-22 09:14+0000\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -101,7 +101,7 @@ msgid ""
 "i>"
 msgstr "<strong>'%s'</strong><br><i>(高度な設定で変更できます)</i>"
 
-#: views/sections/notepad.php:46
+#: views/sections/notepad.php:43
 msgid "Add a note"
 msgstr ""
 
@@ -135,7 +135,7 @@ msgstr ""
 msgid "Day"
 msgstr "日"
 
-#: views/sections/notepad.php:22 views/sections/overview.php:54
+#: views/sections/notepad.php:21 views/sections/overview.php:54
 msgid "Delete This"
 msgstr "削除する"
 
@@ -248,7 +248,7 @@ msgstr ""
 msgid "Resolve"
 msgstr ""
 
-#: views/sections/notepad.php:37
+#: views/sections/notepad.php:35
 msgid "Save"
 msgstr ""
 
