@@ -232,8 +232,8 @@ class AsteriskInfo2  {
 					// This is a registered endpoint
 					$retarr['pjsip_registrations_online']++;
 				} elseif ($istrunk !== false) {
-					// Trunk status... Check for 'avail'
-					if (strpos($l, "Avail ") === false) {
+					// Trunk status... Check for 'avail' and 'NonQual'
+					if (strpos($l, "Avail ") === false && strpos($l, "NonQual") === false) {
 						// Trunk down.
 						$retarr['pjsip_trunks_offline']++;
 					} else {
