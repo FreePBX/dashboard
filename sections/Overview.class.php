@@ -85,6 +85,27 @@ class Overview {
 				"reset" => $notification['reset']
 			);
 		}
+
+		if($this->checkIfTestingRepoEnabled()) {
+			$level = "500";
+			$final['nots'][] = array(
+				"id" => '',
+				"rawlevel" => $level,
+				"level" => !isset($alerts[$level]) ? 'danger' : $alerts[$level],
+				"candelete" => "0",
+				"title" => "Test repos are enabled.",
+				"time" => \TimeUtils::getReadable(time() - time()),
+				"text" => nl2br("'sangoma-devel' rpm is installed. \n yum repo 'sng7-testing' is enabled."),
+				"module" => "core",
+				"link" => "",
+				"reset" => "0"
+			);
+		}
+		
+		$nots = $final['nots'];
+		array_multisort( array_column( $nots, 'rawlevel' ), SORT_ASC, SORT_NUMERIC, array_column( $nots, 'module' ), SORT_ASC, $nots );
+		$final['nots'] = $nots;
+
 		return $final;
 	}
 
@@ -260,5 +281,18 @@ class Overview {
 		$mod = $_REQUEST['mod'];
 		return FreePBX::create()->Notifications->safe_delete($mod, $id);
 
+	}
+
+	private function checkIfTestingRepoEnabled() {
+		//check "sangoma-devel" rpm installed
+        $ret = exec("/usr/bin/rpm -qa|grep sangoma-devel");
+        if (!empty($ret)) {
+			//check if the yum repo "sng7-testing" is enabled
+			$ret = exec("/usr/bin/yum repolist | grep -i sng7-testing");
+			if (!empty($ret)) {
+				return true;
+			}
+        }
+        return false;
 	}
 }
