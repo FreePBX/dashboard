@@ -525,7 +525,7 @@ class Statistics {
 					// We only want to render a line to zero immediately after it was not zero, so the line
 					// goes back down the bottom of the graph before vanishing.
 					if ($trunkoffline) {
-						$toffline[$count] = 0;
+						$toffline[$count] = array( "x" => $key, "y" => 0);
 						$trunkoffline = false;
 					} else {
 						// $retarr['values']['toffline'][$count] = null;
