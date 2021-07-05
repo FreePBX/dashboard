@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-29 06:25+0000\n"
+"POT-Creation-Date: 2021-07-05 15:53+0000\n"
 "PO-Revision-Date: 2016-02-03 08:06+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/dashboard/"
@@ -75,7 +75,7 @@ msgstr ""
 "<strong>'%s'</strong><br><i>(Vous pouvez changer ce nom dans les paramètres "
 "avancés)</i>"
 
-#: views/sections/notepad.php:46
+#: views/sections/notepad.php:43
 msgid "Add a note"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Day"
 msgstr "Jour"
 
-#: views/sections/notepad.php:22 views/sections/overview.php:54
+#: views/sections/notepad.php:21 views/sections/overview.php:54
 msgid "Delete This"
 msgstr "Supprimer ceci"
 
@@ -126,6 +126,10 @@ msgid "Disk"
 msgstr "Disque"
 
 #: dashboard.i18n.php:18
+msgid "Display firewall status"
+msgstr ""
+
+#: dashboard.i18n.php:22
 msgid "Expiry time for system statistics"
 msgstr ""
 
@@ -224,7 +228,7 @@ msgstr ""
 msgid "Resolve"
 msgstr "Résoudre"
 
-#: views/sections/notepad.php:37
+#: views/sections/notepad.php:35
 msgid "Save"
 msgstr ""
 
@@ -236,7 +240,7 @@ msgstr ""
 msgid "Security Issue"
 msgstr "Problème de sécurité"
 
-#: dashboard.i18n.php:20
+#: dashboard.i18n.php:24
 msgid ""
 "Set the maximum age in seconds before system statistics are refreshed. The "
 "minimum value is 50 seconds."
@@ -293,6 +297,12 @@ msgstr "Dernier redémarrage système"
 #: sections/Overview.class.php:15
 msgid "System Overview"
 msgstr "Vue d'ensemble système"
+
+#: dashboard.i18n.php:20
+msgid ""
+"The Dashboard will display a warning when the PBX Firewall is disabled. When "
+"this is set to 'no', the Dashboard warning will be permanently suppressed."
+msgstr ""
 
 #: sections/Overview.class.php:106
 msgid "This is a critical issue and should be resolved urgently"
