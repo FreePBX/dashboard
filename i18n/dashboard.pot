@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-22 09:14+0000\n"
+"POT-Creation-Date: 2021-07-05 15:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,6 +130,10 @@ msgid "Disk"
 msgstr ""
 
 #: dashboard.i18n.php:18
+msgid "Display firewall status"
+msgstr ""
+
+#: dashboard.i18n.php:22
 msgid "Expiry time for system statistics"
 msgstr ""
 
@@ -243,7 +247,7 @@ msgstr ""
 msgid "Security Issue"
 msgstr ""
 
-#: dashboard.i18n.php:20
+#: dashboard.i18n.php:24
 msgid ""
 "Set the maximum age in seconds before system statistics are refreshed. The "
 "minimum value is 50 seconds."
@@ -300,6 +304,12 @@ msgstr ""
 
 #: sections/Overview.class.php:15
 msgid "System Overview"
+msgstr ""
+
+#: dashboard.i18n.php:20
+msgid ""
+"The Dashboard will display a warning when the PBX Firewall is disabled. When "
+"this is set to 'no', the Dashboard warning will be permanently suppressed."
 msgstr ""
 
 #: sections/Overview.class.php:106
