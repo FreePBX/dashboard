@@ -3,7 +3,6 @@
 //	License for all code of this FreePBX module can be found in the license file inside the module directory
 //	Copyright 2013 Schmooze Com Inc.
 //
-
 class Dashboard extends FreePBX_Helpers implements BMO {
 
 	public function __construct($freepbx) {
@@ -416,5 +415,11 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			}
 		}
 		return $numbers;
+	}
+
+	public function getdiskspace(){
+		include_once __DIR__.'/classes/DiskUsage.class.php';
+		$obj_diskusage = new \DiskUsage();
+		return $obj_diskusage->parsedf();
 	}
 }
