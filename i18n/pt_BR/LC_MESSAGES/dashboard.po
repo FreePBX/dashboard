@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-05 15:53+0000\n"
+"POT-Creation-Date: 2022-02-03 12:44+0000\n"
 "PO-Revision-Date: 2015-02-04 00:41+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -89,13 +89,17 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:399 Dashboard.class.php:404
+#: Dashboard.class.php:398 Dashboard.class.php:403
 msgid "An error occured"
 msgstr ""
 
 #: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Asterisk"
+
+#: Api/Gql/dashboard.php:67
+msgid "Available space details"
+msgstr ""
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 msgid "Blogs"
@@ -123,7 +127,7 @@ msgstr "Dia"
 msgid "Delete This"
 msgstr "Apagar Isto"
 
-#: Dashboard.class.php:404
+#: Dashboard.class.php:403
 msgid "Deleted note"
 msgstr ""
 
@@ -186,6 +190,10 @@ msgstr ""
 msgid "Memory"
 msgstr "Memória"
 
+#: Api/Gql/dashboard.php:95 Api/Gql/dashboard.php:127
+msgid "Message for the request"
+msgstr ""
+
 #: views/sections/statistics.php:12 views/sections/statistics.php:23
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
@@ -232,6 +240,10 @@ msgstr ""
 "Exibe um painel de informações do sistema, mostrando informações sobre "
 "Chamadas, CPU, Memória, Discos, Rede e processos."
 
+#: Api/Gql/dashboard.php:45
+msgid "Read the System licence information"
+msgstr ""
+
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr "Resolver"
@@ -240,7 +252,7 @@ msgstr "Resolver"
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:399
+#: Dashboard.class.php:398
 msgid "Saved note"
 msgstr ""
 
@@ -272,10 +284,22 @@ msgstr "Mostrar Novos"
 msgid "Since Reload"
 msgstr "Desde Recarregado"
 
+#: Api/Gql/dashboard.php:31
+msgid "Sorry, unable to find any diskspace"
+msgstr ""
+
 #: sections/Statistics.class.php:18 sections/Statistics.class.php:25
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "Estatísticas"
+
+#: Api/Gql/dashboard.php:99 Api/Gql/dashboard.php:131
+msgid "Status for the request"
+msgstr ""
+
+#: Api/Gql/dashboard.php:29
+msgid "Successfully found disks space details"
+msgstr ""
 
 #: views/sections/overview.php:23
 msgid "Summary"
@@ -320,6 +344,10 @@ msgstr "Este é um problema crítico e deve ser resolvido com urgência"
 msgid "Uptime"
 msgstr "Tempo Ativo"
 
+#: Api/Gql/dashboard.php:19
+msgid "Use to get all the diskspace"
+msgstr ""
+
 #: sections/Overview.class.php:128
 msgid "Warnings Found"
 msgstr "Avisos Encontrados"
@@ -346,6 +374,14 @@ msgstr "dia"
 #: classes/TimeUtils.class.php:16
 msgid "days"
 msgstr "dias"
+
+#: Api/Gql/dashboard.php:81
+msgid "disk total size details"
+msgstr ""
+
+#: Api/Gql/dashboard.php:88
+msgid "disk used percentage"
+msgstr ""
 
 #: classes/TimeUtils.class.php:17
 msgid "hour"
@@ -378,6 +414,14 @@ msgstr "segundo"
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
 msgstr "segundos"
+
+#: Api/Gql/dashboard.php:60
+msgid "storage path details"
+msgstr ""
+
+#: Api/Gql/dashboard.php:74
+msgid "used space details"
+msgstr ""
 
 #: classes/TimeUtils.class.php:13
 msgid "week"

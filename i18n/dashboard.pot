@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dashboard
-# Copyright (C) 2008-2021 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2022 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-05 15:53+0000\n"
+"POT-Creation-Date: 2022-02-03 12:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,13 +76,17 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:399
-#: Dashboard.class.php:404
+#: Dashboard.class.php:398
+#: Dashboard.class.php:403
 msgid "An error occured"
 msgstr ""
 
 #: sections/Overview.class.php:135
 msgid "Asterisk"
+msgstr ""
+
+#: Api/Gql/dashboard.php:67
+msgid "Available space details"
 msgstr ""
 
 #: sections/Blogs.class.php:27
@@ -117,7 +121,7 @@ msgstr ""
 msgid "Delete This"
 msgstr ""
 
-#: Dashboard.class.php:404
+#: Dashboard.class.php:403
 msgid "Deleted note"
 msgstr ""
 
@@ -183,6 +187,11 @@ msgstr ""
 msgid "Memory"
 msgstr ""
 
+#: Api/Gql/dashboard.php:95
+#: Api/Gql/dashboard.php:127
+msgid "Message for the request"
+msgstr ""
+
 #: views/sections/statistics.php:12
 #: views/sections/statistics.php:23
 #: views/sections/statistics.php:34
@@ -231,6 +240,10 @@ msgid ""
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
 
+#: Api/Gql/dashboard.php:45
+msgid "Read the System licence information"
+msgstr ""
+
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr ""
@@ -239,7 +252,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:399
+#: Dashboard.class.php:398
 msgid "Saved note"
 msgstr ""
 
@@ -271,10 +284,23 @@ msgstr ""
 msgid "Since Reload"
 msgstr ""
 
+#: Api/Gql/dashboard.php:31
+msgid "Sorry, unable to find any diskspace"
+msgstr ""
+
 #: sections/Statistics.class.php:18
 #: sections/Statistics.class.php:25
 #: sections/Uptime.class.php:16
 msgid "Statistics"
+msgstr ""
+
+#: Api/Gql/dashboard.php:99
+#: Api/Gql/dashboard.php:131
+msgid "Status for the request"
+msgstr ""
+
+#: Api/Gql/dashboard.php:29
+msgid "Successfully found disks space details"
 msgstr ""
 
 #: views/sections/overview.php:23
@@ -321,6 +347,10 @@ msgstr ""
 msgid "Uptime"
 msgstr ""
 
+#: Api/Gql/dashboard.php:19
+msgid "Use to get all the diskspace"
+msgstr ""
+
 #: sections/Overview.class.php:128
 msgid "Warnings Found"
 msgstr ""
@@ -350,6 +380,14 @@ msgstr ""
 
 #: classes/TimeUtils.class.php:16
 msgid "days"
+msgstr ""
+
+#: Api/Gql/dashboard.php:81
+msgid "disk total size details"
+msgstr ""
+
+#: Api/Gql/dashboard.php:88
+msgid "disk used percentage"
 msgstr ""
 
 #: classes/TimeUtils.class.php:17
@@ -382,6 +420,14 @@ msgstr ""
 
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
+msgstr ""
+
+#: Api/Gql/dashboard.php:60
+msgid "storage path details"
+msgstr ""
+
+#: Api/Gql/dashboard.php:74
+msgid "used space details"
 msgstr ""
 
 #: classes/TimeUtils.class.php:13
