@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-05 15:53+0000\n"
+"POT-Creation-Date: 2022-02-03 12:44+0000\n"
 "PO-Revision-Date: 2016-10-06 16:41+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/"
@@ -80,13 +80,17 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:399 Dashboard.class.php:404
+#: Dashboard.class.php:398 Dashboard.class.php:403
 msgid "An error occured"
 msgstr ""
 
 #: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Астеріск"
+
+#: Api/Gql/dashboard.php:67
+msgid "Available space details"
+msgstr ""
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 msgid "Blogs"
@@ -114,7 +118,7 @@ msgstr "День"
 msgid "Delete This"
 msgstr "Видалити це"
 
-#: Dashboard.class.php:404
+#: Dashboard.class.php:403
 msgid "Deleted note"
 msgstr ""
 
@@ -177,6 +181,10 @@ msgstr ""
 msgid "Memory"
 msgstr "Пам'ять"
 
+#: Api/Gql/dashboard.php:95 Api/Gql/dashboard.php:127
+msgid "Message for the request"
+msgstr ""
+
 #: views/sections/statistics.php:12 views/sections/statistics.php:23
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
@@ -223,6 +231,10 @@ msgstr ""
 "Забезпечує інформаційну панель системи, що показує інформацію про виклики, "
 "ЦП, пам'ять, диски, мережі та процеси."
 
+#: Api/Gql/dashboard.php:45
+msgid "Read the System licence information"
+msgstr ""
+
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr "Вирішити"
@@ -231,7 +243,7 @@ msgstr "Вирішити"
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:399
+#: Dashboard.class.php:398
 msgid "Saved note"
 msgstr ""
 
@@ -263,10 +275,22 @@ msgstr "Показати нові"
 msgid "Since Reload"
 msgstr "Після перезавантаження"
 
+#: Api/Gql/dashboard.php:31
+msgid "Sorry, unable to find any diskspace"
+msgstr ""
+
 #: sections/Statistics.class.php:18 sections/Statistics.class.php:25
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "Статистика"
+
+#: Api/Gql/dashboard.php:99 Api/Gql/dashboard.php:131
+msgid "Status for the request"
+msgstr ""
+
+#: Api/Gql/dashboard.php:29
+msgid "Successfully found disks space details"
+msgstr ""
 
 #: views/sections/overview.php:23
 msgid "Summary"
@@ -311,6 +335,10 @@ msgstr "Це дуже важливе питання, яке необхідно �
 msgid "Uptime"
 msgstr "Працює"
 
+#: Api/Gql/dashboard.php:19
+msgid "Use to get all the diskspace"
+msgstr ""
+
 #: sections/Overview.class.php:128
 msgid "Warnings Found"
 msgstr "Попередження знайдені"
@@ -337,6 +365,14 @@ msgstr "день"
 #: classes/TimeUtils.class.php:16
 msgid "days"
 msgstr "днів"
+
+#: Api/Gql/dashboard.php:81
+msgid "disk total size details"
+msgstr ""
+
+#: Api/Gql/dashboard.php:88
+msgid "disk used percentage"
+msgstr ""
 
 #: classes/TimeUtils.class.php:17
 msgid "hour"
@@ -369,6 +405,14 @@ msgstr "секунда"
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
 msgstr "секунд"
+
+#: Api/Gql/dashboard.php:60
+msgid "storage path details"
+msgstr ""
+
+#: Api/Gql/dashboard.php:74
+msgid "used space details"
+msgstr ""
 
 #: classes/TimeUtils.class.php:13
 msgid "week"

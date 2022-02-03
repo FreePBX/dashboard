@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-05 15:53+0000\n"
+"POT-Creation-Date: 2022-02-03 12:44+0000\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -105,13 +105,17 @@ msgstr "<strong>'%s'</strong><br><i>(高度な設定で変更できます)</i>"
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:399 Dashboard.class.php:404
+#: Dashboard.class.php:398 Dashboard.class.php:403
 msgid "An error occured"
 msgstr ""
 
 #: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Asterisk"
+
+#: Api/Gql/dashboard.php:67
+msgid "Available space details"
+msgstr ""
 
 #: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 msgid "Blogs"
@@ -139,7 +143,7 @@ msgstr "日"
 msgid "Delete This"
 msgstr "削除する"
 
-#: Dashboard.class.php:404
+#: Dashboard.class.php:403
 msgid "Deleted note"
 msgstr ""
 
@@ -202,6 +206,10 @@ msgstr ""
 msgid "Memory"
 msgstr "メモリー"
 
+#: Api/Gql/dashboard.php:95 Api/Gql/dashboard.php:127
+msgid "Message for the request"
+msgstr ""
+
 #: views/sections/statistics.php:12 views/sections/statistics.php:23
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
@@ -248,6 +256,10 @@ msgstr ""
 "システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、ネッ"
 "トワークの負荷状況等を表示します。"
 
+#: Api/Gql/dashboard.php:45
+msgid "Read the System licence information"
+msgstr ""
+
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr ""
@@ -256,7 +268,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:399
+#: Dashboard.class.php:398
 msgid "Saved note"
 msgstr ""
 
@@ -288,10 +300,22 @@ msgstr "新規を表示"
 msgid "Since Reload"
 msgstr "リロード後"
 
+#: Api/Gql/dashboard.php:31
+msgid "Sorry, unable to find any diskspace"
+msgstr ""
+
 #: sections/Statistics.class.php:18 sections/Statistics.class.php:25
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "統計"
+
+#: Api/Gql/dashboard.php:99 Api/Gql/dashboard.php:131
+msgid "Status for the request"
+msgstr ""
+
+#: Api/Gql/dashboard.php:29
+msgid "Successfully found disks space details"
+msgstr ""
 
 #: views/sections/overview.php:23
 msgid "Summary"
@@ -336,6 +360,10 @@ msgstr "クリティカルな問題であるため速やかに解決する必要
 msgid "Uptime"
 msgstr "稼働時間"
 
+#: Api/Gql/dashboard.php:19
+msgid "Use to get all the diskspace"
+msgstr ""
+
 #: sections/Overview.class.php:128
 msgid "Warnings Found"
 msgstr "通知が見つかりました"
@@ -362,6 +390,14 @@ msgstr "日"
 #: classes/TimeUtils.class.php:16
 msgid "days"
 msgstr "日"
+
+#: Api/Gql/dashboard.php:81
+msgid "disk total size details"
+msgstr ""
+
+#: Api/Gql/dashboard.php:88
+msgid "disk used percentage"
+msgstr ""
 
 #: classes/TimeUtils.class.php:17
 msgid "hour"
@@ -394,6 +430,14 @@ msgstr "秒"
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
 msgstr "秒"
+
+#: Api/Gql/dashboard.php:60
+msgid "storage path details"
+msgstr ""
+
+#: Api/Gql/dashboard.php:74
+msgid "used space details"
+msgstr ""
 
 #: classes/TimeUtils.class.php:13
 msgid "week"
