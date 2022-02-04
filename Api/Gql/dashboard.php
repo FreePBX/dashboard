@@ -22,8 +22,11 @@ class Dashboard extends Base {
 							try {
 								$this->diskspace_array = $this->freepbx->Dashboard->getdiskspace();
 								if (isset($this->diskspace_array) && $this->diskspace_array != null && count($this->diskspace_array) > 0) {
+									$i=1;
 									foreach($this->diskspace_array as $k=>$v) {
 										$this->diskspace_array[$k]['storage_path'] = $k;
+										$this->diskspace_array[$k]['id'] = $i;
+										$i++;
 									}
 									$list = Relay::connectionFromArray($this->diskspace_array, $args);
 									return ['response'=> $list,'status'=>true,'message'=> _("Successfully found disks space details")];
@@ -55,6 +58,13 @@ class Dashboard extends Base {
 
 		$dashboard->addFieldCallback(function() {
 			return [
+				'id' => [
+					'type' => Type::nonNull(Type::Id()),
+					'description' => _('Returns storage id'),
+					'resolve' => function($row) {
+						return isset($row['id']) ? (int)$row['id'] : 0;
+					}
+				],
 				'storage_path' => [
 					'type' => Type::string(),
 					'description' => _('storage path details'),
