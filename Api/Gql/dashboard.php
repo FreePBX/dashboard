@@ -26,6 +26,8 @@ class Dashboard extends Base {
 									foreach($this->diskspace_array as $k=>$v) {
 										$this->diskspace_array[$k]['storage_path'] = $k;
 										$this->diskspace_array[$k]['id'] = $i;
+										$this->diskspace_array[$i] = $this->diskspace_array[$k];
+										unset($this->diskspace_array[$k]);
 										$i++;
 									}
 									$list = Relay::connectionFromArray($this->diskspace_array, $args);
