@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-07 13:20+0000\n"
+"POT-Creation-Date: 2022-02-14 02:24+0000\n"
 "PO-Revision-Date: 2008-01-16 16:38+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Asterisk"
 msgstr "Asterisk"
 
-#: Api/Gql/dashboard.php:77
+#: Api/Gql/dashboard.php:79
 msgid "Available space details"
 msgstr ""
 
@@ -192,7 +192,7 @@ msgstr ""
 msgid "Memory"
 msgstr "Память"
 
-#: Api/Gql/dashboard.php:105 Api/Gql/dashboard.php:137
+#: Api/Gql/dashboard.php:107 Api/Gql/dashboard.php:139
 msgid "Message for the request"
 msgstr ""
 
@@ -243,7 +243,7 @@ msgstr ""
 "загрузке CPU, использовании памяти, занятости дисков, загруженности сети и "
 "процессов."
 
-#: Api/Gql/dashboard.php:48
+#: Api/Gql/dashboard.php:50
 msgid "Read the System licence information"
 msgstr ""
 
@@ -251,7 +251,7 @@ msgstr ""
 msgid "Resolve"
 msgstr "Разрешить"
 
-#: Api/Gql/dashboard.php:63
+#: Api/Gql/dashboard.php:65
 msgid "Returns storage id"
 msgstr ""
 
@@ -291,7 +291,7 @@ msgstr "Показать новые"
 msgid "Since Reload"
 msgstr "После перезагрузки"
 
-#: Api/Gql/dashboard.php:34
+#: Api/Gql/dashboard.php:36
 msgid "Sorry, unable to find any diskspace"
 msgstr ""
 
@@ -300,11 +300,11 @@ msgstr ""
 msgid "Statistics"
 msgstr "Статистика"
 
-#: Api/Gql/dashboard.php:109 Api/Gql/dashboard.php:141
+#: Api/Gql/dashboard.php:111 Api/Gql/dashboard.php:143
 msgid "Status for the request"
 msgstr ""
 
-#: Api/Gql/dashboard.php:32
+#: Api/Gql/dashboard.php:34
 msgid "Successfully found disks space details"
 msgstr ""
 
@@ -382,11 +382,11 @@ msgstr "день"
 msgid "days"
 msgstr "дней"
 
-#: Api/Gql/dashboard.php:91
+#: Api/Gql/dashboard.php:93
 msgid "disk total size details"
 msgstr ""
 
-#: Api/Gql/dashboard.php:98
+#: Api/Gql/dashboard.php:100
 msgid "disk used percentage"
 msgstr ""
 
@@ -422,11 +422,11 @@ msgstr "секунда"
 msgid "seconds"
 msgstr "секунды"
 
-#: Api/Gql/dashboard.php:70
+#: Api/Gql/dashboard.php:72
 msgid "storage path details"
 msgstr ""
 
-#: Api/Gql/dashboard.php:84
+#: Api/Gql/dashboard.php:86
 msgid "used space details"
 msgstr ""
 
