@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-07 13:20+0000\n"
+"POT-Creation-Date: 2022-02-14 02:25+0000\n"
 "PO-Revision-Date: 2019-01-25 14:36+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/dashboard/fa/>\n"
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Asterisk"
 msgstr "استریسک"
 
-#: Api/Gql/dashboard.php:77
+#: Api/Gql/dashboard.php:79
 msgid "Available space details"
 msgstr ""
 
@@ -179,7 +179,7 @@ msgstr "صف ایمیل"
 msgid "Memory"
 msgstr "حافظه"
 
-#: Api/Gql/dashboard.php:105 Api/Gql/dashboard.php:137
+#: Api/Gql/dashboard.php:107 Api/Gql/dashboard.php:139
 msgid "Message for the request"
 msgstr ""
 
@@ -229,7 +229,7 @@ msgstr ""
 "ارائه داشبورد اطلاعات سیستمی, اطلاعاتی در مورد تماس ها, پردازنده, حافظه و "
 "پردازش ها."
 
-#: Api/Gql/dashboard.php:48
+#: Api/Gql/dashboard.php:50
 msgid "Read the System licence information"
 msgstr ""
 
@@ -237,7 +237,7 @@ msgstr ""
 msgid "Resolve"
 msgstr "حل کردن"
 
-#: Api/Gql/dashboard.php:63
+#: Api/Gql/dashboard.php:65
 msgid "Returns storage id"
 msgstr ""
 
@@ -281,7 +281,7 @@ msgstr "نمایش مورد جدید"
 msgid "Since Reload"
 msgstr "از آخرین بارگذاری"
 
-#: Api/Gql/dashboard.php:34
+#: Api/Gql/dashboard.php:36
 msgid "Sorry, unable to find any diskspace"
 msgstr ""
 
@@ -290,11 +290,11 @@ msgstr ""
 msgid "Statistics"
 msgstr "آمار"
 
-#: Api/Gql/dashboard.php:109 Api/Gql/dashboard.php:141
+#: Api/Gql/dashboard.php:111 Api/Gql/dashboard.php:143
 msgid "Status for the request"
 msgstr ""
 
-#: Api/Gql/dashboard.php:32
+#: Api/Gql/dashboard.php:34
 msgid "Successfully found disks space details"
 msgstr ""
 
@@ -372,11 +372,11 @@ msgstr "روز"
 msgid "days"
 msgstr "روز"
 
-#: Api/Gql/dashboard.php:91
+#: Api/Gql/dashboard.php:93
 msgid "disk total size details"
 msgstr ""
 
-#: Api/Gql/dashboard.php:98
+#: Api/Gql/dashboard.php:100
 msgid "disk used percentage"
 msgstr ""
 
@@ -412,11 +412,11 @@ msgstr "ثانیه"
 msgid "seconds"
 msgstr "ثانیه"
 
-#: Api/Gql/dashboard.php:70
+#: Api/Gql/dashboard.php:72
 msgid "storage path details"
 msgstr ""
 
-#: Api/Gql/dashboard.php:84
+#: Api/Gql/dashboard.php:86
 msgid "used space details"
 msgstr ""
 

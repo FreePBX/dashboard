@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-07 13:20+0000\n"
+"POT-Creation-Date: 2022-02-14 02:25+0000\n"
 "PO-Revision-Date: 2015-02-04 00:41+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Asterisk"
 msgstr "Asterisk"
 
-#: Api/Gql/dashboard.php:77
+#: Api/Gql/dashboard.php:79
 msgid "Available space details"
 msgstr ""
 
@@ -190,7 +190,7 @@ msgstr ""
 msgid "Memory"
 msgstr "Memória"
 
-#: Api/Gql/dashboard.php:105 Api/Gql/dashboard.php:137
+#: Api/Gql/dashboard.php:107 Api/Gql/dashboard.php:139
 msgid "Message for the request"
 msgstr ""
 
@@ -240,7 +240,7 @@ msgstr ""
 "Exibe um painel de informações do sistema, mostrando informações sobre "
 "Chamadas, CPU, Memória, Discos, Rede e processos."
 
-#: Api/Gql/dashboard.php:48
+#: Api/Gql/dashboard.php:50
 msgid "Read the System licence information"
 msgstr ""
 
@@ -248,7 +248,7 @@ msgstr ""
 msgid "Resolve"
 msgstr "Resolver"
 
-#: Api/Gql/dashboard.php:63
+#: Api/Gql/dashboard.php:65
 msgid "Returns storage id"
 msgstr ""
 
@@ -288,7 +288,7 @@ msgstr "Mostrar Novos"
 msgid "Since Reload"
 msgstr "Desde Recarregado"
 
-#: Api/Gql/dashboard.php:34
+#: Api/Gql/dashboard.php:36
 msgid "Sorry, unable to find any diskspace"
 msgstr ""
 
@@ -297,11 +297,11 @@ msgstr ""
 msgid "Statistics"
 msgstr "Estatísticas"
 
-#: Api/Gql/dashboard.php:109 Api/Gql/dashboard.php:141
+#: Api/Gql/dashboard.php:111 Api/Gql/dashboard.php:143
 msgid "Status for the request"
 msgstr ""
 
-#: Api/Gql/dashboard.php:32
+#: Api/Gql/dashboard.php:34
 msgid "Successfully found disks space details"
 msgstr ""
 
@@ -379,11 +379,11 @@ msgstr "dia"
 msgid "days"
 msgstr "dias"
 
-#: Api/Gql/dashboard.php:91
+#: Api/Gql/dashboard.php:93
 msgid "disk total size details"
 msgstr ""
 
-#: Api/Gql/dashboard.php:98
+#: Api/Gql/dashboard.php:100
 msgid "disk used percentage"
 msgstr ""
 
@@ -419,11 +419,11 @@ msgstr "segundo"
 msgid "seconds"
 msgstr "segundos"
 
-#: Api/Gql/dashboard.php:70
+#: Api/Gql/dashboard.php:72
 msgid "storage path details"
 msgstr ""
 
-#: Api/Gql/dashboard.php:84
+#: Api/Gql/dashboard.php:86
 msgid "used space details"
 msgstr ""
 
