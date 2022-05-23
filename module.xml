@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>16.0.12</version>
+	<version>17.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,18 +20,7 @@
 		<version>14.0.5.26</version>
 	</depends>
 	<changelog>
-		*16.0.12* FREEI-4793 
-		*16.0.11* Packaging of ver 16.0.11
-		*16.0.10* GraphQL API to check disk free 
-		*16.0.9* Modification related FREEI-4360-GraphQL API to check disk free 
-		*16.0.8* FREEPBX-22214 modified code to consider 'NonQual' as online for trunks 
-		*16.0.7* Packaging of ver 16.0.7
-		*16.0.6* FREEPBX-22195 incorrect speed display should be kB/s 
-		*16.0.5* FREEPBX-22122 change teh value by default, and the tooltips in advanced settings 
-		*16.0.4* FREEPBX-22122 Recent move of Intrusion Detection, causes false failure on dashboard 
-		*16.0.3* Develop add notes 
-		*16.0.2* Packaging of ver 16.0.2
-		*16.0.1alpha* 16.0.1 alpha release
+		*17.0.1alpha* 17.0.1 alpha release
 	</changelog>
 	<hooks>
 		<framework namespace="FreePBX\Console\Command" class="Chown">
@@ -39,7 +28,7 @@
 		</framework>
 	</hooks>
 	<supported>
-		<version>16.0</version>
+		<version>17.0</version>
 	</supported>
 	<location/>
 	<md5sum/>
