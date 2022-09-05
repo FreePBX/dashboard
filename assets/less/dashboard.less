@@ -356,3 +356,98 @@ button.close {
 		position: absolute;
 	}
 }
+
+.toolbar-disk h2 {
+	margin-bottom: 0px;
+	margin-top: 6px;
+}
+
+.disk__usage__container {
+	padding: 1rem 4rem;
+
+	#diskUsageChart {
+		margin-top: -115px;
+		width: 375px !important;
+		height: 375px !important;
+		transform: translate(15%, 0%);
+	}
+
+	.usage__details {
+		h2 {
+			margin-top: 15px;
+		}
+
+		h4 {
+			text-align: center;
+			margin-top: -7rem;
+		}
+	}
+
+	.row {
+		// margin-top: -6rem;
+		margin-top: 2rem;
+
+		.col-xs-6 {
+			padding: 5px 17px;
+			margin-top: 1rem;
+			border-radius: 0px;
+			border: 1px solid #e1e1e1;
+
+			.color {
+				width: 10px;
+				height: 10px;
+				margin-top: 5px;
+				margin-right: 5px;
+			}
+
+			.file__name {
+				// font-weight: bold;
+				display: flex;
+				flex-direction: row;
+			}
+
+			.files__count {
+				font-size: 12px;
+			}
+
+			.size {
+				// font-weight: bold;
+			}
+		}
+	}
+	.d-flex{
+		display: flex !important;
+	}
+	.flex-row{
+		flex-direction: row !important;
+	}
+	.flex-column{
+		flex-direction: column !important;
+	}
+	.ml-auto{
+		margin-left: auto !important;
+	}
+	.align-items-center{
+		align-items: center !important;
+	}
+}
+
+.disk__noti__wrapper {
+	margin: 10px;
+}
+
+.disk__noti {
+	display: flex;
+	padding: 5px 10px;
+	border: 1px solid #31708f66;
+	align-items: center;
+
+	i {
+		cursor: pointer;
+		margin-left: auto !important;
+	}
+}
+.text-info {
+	font-size: 12px;
+	color: blue;
+}
