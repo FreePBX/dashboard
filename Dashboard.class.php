@@ -31,6 +31,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	// and size and everything to classes/DashboardHooks, too.
 	private $builtinhooks = array(
 		"overview" => "getAjaxOverview",
+		"diskspace" => "getAjaxDiskspace",
 		"blog" => "getBlogPosts",
 		"notifications" => "getAjaxNotifications",
 		"sysstat" => "getAjaxSysStat",
@@ -220,6 +221,13 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			$s = new Statistics();
 			return $s->getStats();
 			break;
+		case "getDiskSpaceUsage":
+			if (!class_exists('Diskspace')) {
+				include 'sections/Diskspace.class.php';
+			}
+			$d = new \FreePBX\modules\Dashboard\Sections\Diskspace();
+			return $d->getDiskSpaceUsage();
+			break;
 		default:
 			return DashboardHooks::runHook($_REQUEST['command']);
 			break;
@@ -367,6 +375,12 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	private function getAjaxOverview() {
 		// Autoloaded!
 		$o = new Overview();
+		return $o->getHTML();
+	}
+
+	private function getAjaxDiskspace() {
+		// Autoloaded!
+		$o = new Diskspace();
 		return $o->getHTML();
 	}
 
