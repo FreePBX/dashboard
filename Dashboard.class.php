@@ -181,13 +181,18 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			return array("status" => true);
 			break;
 		case "getcontent":
-			if(file_exists(__DIR__.'/sections/'.$_REQUEST['rawname'].'.class.php')) {
-				include(__DIR__.'/sections/'.$_REQUEST['rawname'].'.class.php');
-				$class = '\\FreePBX\\modules\\Dashboard\\Sections\\'.$_REQUEST['rawname'];
-				$class = new $class();
-				return array("status" => true, "content" => $class->getContent($_REQUEST['section']));
-			} else {
-				return array("status" => false, "message" => "Missing Class Object!");
+			# Diskspace graph is comming from sysadmin
+			if($_REQUEST['rawname'] == 'Diskspace' && $this->freepbx->Modules->checkStatus("sysadmin") && method_exists($this->freepbx->Sysadmin,'DashboardGraph')){
+				return array("status" => true, "content" => $this->freepbx->Sysadmin->DashboardGraph()->getContent());
+			}else{
+				if(file_exists(__DIR__.'/sections/'.$_REQUEST['rawname'].'.class.php')) {
+					include(__DIR__.'/sections/'.$_REQUEST['rawname'].'.class.php');
+					$class = '\\FreePBX\\modules\\Dashboard\\Sections\\'.$_REQUEST['rawname'];
+					$class = new $class();
+					return array("status" => true, "content" => $class->getContent($_REQUEST['section']));
+				} else {
+					return array("status" => false, "message" => _("Missing Class Object!"));
+				}
 			}
 			break;
 		case "gethooks":
@@ -206,6 +211,10 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 							$o++;
 						}
 						$entries[$o] = $e;
+					}
+					# Call dashboard disk graph hook
+					if($this->freepbx->Modules->checkStatus("sysadmin") && method_exists($this->freepbx->Sysadmin,'DashboardGraph')) {
+						$entries[] = $this->freepbx->Sysadmin->DashboardGraph()->getSections();
 					}
 					ksort($entries);
 					$page['entries'] = $entries;
