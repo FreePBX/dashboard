@@ -1,7 +1,7 @@
 <div class='container-fluid'>
 	<div class='row'>
 		<div class='col-sm-12'>
-			<div class='text-center h5 pt-2'>
+			<div class='text-center h4'>
 				<strong>
 					<?php echo sprintf(_('Welcome to %s'),$brand)?>
 				</strong>
@@ -24,7 +24,7 @@
 					<div class="summary">
 						<?php foreach($services as $service) { ?>
 							<div class="status-element" data-toggle="tooltip" title="<?php echo $service['tooltip']?>">
-								<div class="status-icon"><span class="fa <?php echo $service['glyph-class']?>"></span></div>
+								<div class="status-icon"><span class="glyphicon <?php echo $service['glyph-class']?>"></span></div>
 								<?php echo $service['title']?>
 							</div>
 						<?php } ?>
@@ -47,7 +47,7 @@
 		<div class='col-sm-12'>
 			<div class='panel-group' id='notifications_group'>
 				<?php foreach($nots as $n) {?>
-					<div class="panel panel-default panel-<?php echo $n['level']?>  in" id="panel_<?php echo $n['id']?>">
+					<div class="panel panel-default panel-<?php echo $n['level']?> fade in" id="panel_<?php echo $n['id']?>">
 						<div class="panel-heading collapsed" data-notid="<?php echo $n['id']?>" data-notmod="<?php echo $n['module']?>" data-toggle="collapse" data-parent="#notifications_group" href="#link_<?php echo $n['id']?>">
 							<div class="actions">
 								<i class="fa fa-minus-circle" title="<?php echo _('Ignore This')?>"></i>
