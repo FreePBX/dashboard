@@ -47,7 +47,7 @@
 		<div class='col-sm-12'>
 			<div class='panel-group' id='notifications_group'>
 				<?php foreach($nots as $n) {?>
-					<div class="panel panel-default panel-<?php echo $n['level']?>  in" id="panel_<?php echo $n['id']?>">
+					<div class="panel panel-default panel-<?php echo $n['level']?> in" id="panel_<?php echo $n['id']?>">
 						<div class="panel-heading collapsed" data-notid="<?php echo $n['id']?>" data-notmod="<?php echo $n['module']?>" data-toggle="collapse" data-parent="#notifications_group" href="#link_<?php echo $n['id']?>">
 							<div class="actions">
 								<i class="fa fa-minus-circle" title="<?php echo _('Ignore This')?>"></i>

@@ -337,7 +337,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			"error" => "fa-times text-danger",
 			"unknown" => "fa-question-circle text-info",
 			"info" => "fa-info-circle text-info",
-			"critical" => "fa-free-code-camp text-danger"
+			"critical" => "fa-fire text-danger"
 		);
 		// Are we being asked for an alert we actually know about?
 		if (!isset($glyphs[$res])) {
