@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Simplified) (FreePBX)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 02:25+0000\n"
+"POT-Creation-Date: 2022-10-17 05:08+0000\n"
 "PO-Revision-Date: 2018-09-21 09:23+0000\n"
 "Last-Translator: james zhu <zhulizhong@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <http://*/projects/freepbx/dashboard/"
@@ -70,7 +70,7 @@ msgstr "<strong>'%s'</strong><br><i>(用户可以通过高级设置修改名称)
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:398 Dashboard.class.php:403
+#: Dashboard.class.php:407 Dashboard.class.php:412
 msgid "An error occured"
 msgstr ""
 
@@ -108,7 +108,7 @@ msgstr "天"
 msgid "Delete This"
 msgstr "删除这个"
 
-#: Dashboard.class.php:403
+#: Dashboard.class.php:412
 msgid "Deleted note"
 msgstr ""
 
@@ -175,6 +175,10 @@ msgstr "内存"
 msgid "Message for the request"
 msgstr ""
 
+#: Dashboard.class.php:194
+msgid "Missing Class Object!"
+msgstr ""
+
 #: views/sections/statistics.php:12 views/sections/statistics.php:23
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
@@ -235,7 +239,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:398
+#: Dashboard.class.php:407
 msgid "Saved note"
 msgstr ""
 

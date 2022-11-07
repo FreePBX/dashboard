@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 02:25+0000\n"
+"POT-Creation-Date: 2022-10-17 05:08+0000\n"
 "PO-Revision-Date: 2017-03-15 17:10-0700\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -75,7 +75,7 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:398 Dashboard.class.php:403
+#: Dashboard.class.php:407 Dashboard.class.php:412
 msgid "An error occured"
 msgstr ""
 
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Delete This"
 msgstr ""
 
-#: Dashboard.class.php:403
+#: Dashboard.class.php:412
 msgid "Deleted note"
 msgstr ""
 
@@ -180,6 +180,10 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
+#: Dashboard.class.php:194
+msgid "Missing Class Object!"
+msgstr ""
+
 #: views/sections/statistics.php:12 views/sections/statistics.php:23
 #: views/sections/statistics.php:34 views/sections/statistics.php:45
 #: views/sections/statistics.php:56 views/sections/statistics.php:67
@@ -240,7 +244,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:398
+#: Dashboard.class.php:407
 msgid "Saved note"
 msgstr ""
 
