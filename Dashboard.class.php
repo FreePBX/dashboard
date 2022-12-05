@@ -150,6 +150,55 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	public function ajaxRequest($req, &$setting) {
 		return true;
 	}
+	
+	/**
+	 * getLicenseStatus 
+	 * Check if at least one license needs to be renew (Day -30)
+	 * and check if something is expired. 	
+	 * @param  array $licenses
+	 * @return array ["renew"] ["expired"], text message here.
+	 */
+	public function getLicenseStatus($licenses){
+        $module_renew = $support_renew = $module_expired = $support_expired ="";        
+        foreach($licenses as $key => $content){
+            $today  = strtotime("now");
+            if($key == "updates" && $update = json_decode(base64_decode($content), true)){
+                if(is_array($update)){
+                    foreach($update as $module => $expire){
+                        $remind = ($expire - $today);
+                        if($remind <= (30 * 86400) && $remind > 0){
+                            $support_renew = _("At least one update or support will expire soon.")." ";
+                        }
+                        if($remind <= (30 * 86400) && $remind < 0){
+                            $support_expired = _("At least one update or support has expired.")." ";
+                        }
+                    }
+                }
+            }
+    
+            if(preg_match('/.+_exp$/', $key, $output)){
+                $expire = strtotime($content);
+                $remind = ($expire - $today);
+                if($remind <= (30 * 86400) && $remind > 0){
+                    $module_renew = _("At least one module expire soon.")." ";
+                }
+                if($remind <= (30 * 86400) && $remind < 0){
+                    $module_expired = _("At least one module has expired.")." ";
+                }
+            };
+        }
+
+		$result = [];
+		if(!empty($support_renew) || !empty($module_renew)){
+			$result["renew"] 	= $support_renew." ".$module_renew;
+		}
+
+		if(!empty($support_expired) || !empty($module_expired)){
+			$result["expired"] 	= $support_expired." ".$module_expired;
+		}
+       
+        return $result;
+    }
 
 	/**
 	 * Chown hook for freepbx fwconsole
