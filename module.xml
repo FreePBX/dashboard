@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>16.0.14</version>
+	<version>16.0.15</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,6 +20,7 @@
 		<version>14.0.5.26</version>
 	</depends>
 	<changelog>
+		*16.0.15* FREEPBX-23909 
 		*16.0.14* FREEI-4464 Adding dashboard widget for storage  
 		*16.0.13* Reverting Bootstrap and dependent libs fixes 
 		*16.0.12* FREEI-4793 
