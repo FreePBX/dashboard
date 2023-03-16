@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-17 05:08+0000\n"
+"POT-Creation-Date: 2023-03-16 07:31+0000\n"
 "PO-Revision-Date: 2015-02-04 00:41+0200\n"
 "Last-Translator: Rafael <rafael@ibinetwork.com.br>\n"
 "Language-Team: Portuguese (Brazil) <http://git.freepbx.org/projects/freepbx/"
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:407 Dashboard.class.php:412
+#: Dashboard.class.php:403 Dashboard.class.php:408
 msgid "An error occured"
 msgstr ""
 
@@ -127,7 +127,7 @@ msgstr "Dia"
 msgid "Delete This"
 msgstr "Apagar Isto"
 
-#: Dashboard.class.php:412
+#: Dashboard.class.php:408
 msgid "Deleted note"
 msgstr ""
 
@@ -260,7 +260,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:407
+#: Dashboard.class.php:403
 msgid "Saved note"
 msgstr ""
 

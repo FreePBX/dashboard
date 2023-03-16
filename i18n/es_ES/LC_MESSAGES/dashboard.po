@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-17 05:08+0000\n"
+"POT-Creation-Date: 2023-03-16 07:31+0000\n"
 "PO-Revision-Date: 2018-07-14 11:18+0000\n"
 "Last-Translator: Elvita Crespo <ecrespo@sangoma.com>\n"
 "Language-Team: Spanish <http://*/projects/freepbx/dashboard/es/>\n"
@@ -78,7 +78,7 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:407 Dashboard.class.php:412
+#: Dashboard.class.php:403 Dashboard.class.php:408
 msgid "An error occured"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgstr "Día"
 msgid "Delete This"
 msgstr "Borrar esto"
 
-#: Dashboard.class.php:412
+#: Dashboard.class.php:408
 msgid "Deleted note"
 msgstr ""
 
@@ -249,7 +249,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:407
+#: Dashboard.class.php:403
 msgid "Saved note"
 msgstr ""
 
