@@ -7,10 +7,8 @@
 if (!class_exists('DashboardHooks')) {
 	include 'classes/DashboardHooks.class.php';
 }
-$module 	= \module_functions::create();
-$result 	= $module->getinfo('sysadmin', MODULE_STATUS_ENABLED);
-if(!empty($result)){
-	$sa     = \FreePBX::Sysadmin();
+if(FreePBX::Modules()->checkStatus("sysadmin")){
+	$sa     = FreePBX::Sysadmin();
 	if (method_exists($sa, 'updateModuleLicenseNotification')) {
 		$sa->updateModuleLicenseNotification();
 	}
