@@ -204,10 +204,6 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 			$order = $this->getConfig('visualorder');
 			if(is_array($order)) {
 				foreach($config as &$page) {
-					# Call dashboard disk graph hook
-					if ($this->freepbx->Modules->checkStatus("sysadmin") && method_exists($this->freepbx->Sysadmin, 'DashboardGraph')) {
-						$page['entries'][] = $this->freepbx->Sysadmin->DashboardGraph()->getSections();
-					}
 					$entries = array();
 					foreach($page['entries'] as $k => $e) {
 						$o = isset($order[$e['section']]) ? $order[$e['section']] : $k;

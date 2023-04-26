@@ -7,6 +7,13 @@
 if (!class_exists('DashboardHooks')) {
 	include 'classes/DashboardHooks.class.php';
 }
+
+if(FreePBX::Modules()->checkStatus("sysadmin")){
+	$sa     = \FreePBX::Sysadmin();
+	if (method_exists($sa, 'updateModuleLicenseNotification')) {
+		$sa->updateModuleLicenseNotification();
+	}
+}
 $allhooks = DashboardHooks::genHooks(FreePBX::Dashboard()->getConfig('visualorder'));
 FreePBX::Dashboard()->setConfig('allhooks', $allhooks);
 

@@ -39,6 +39,11 @@ class DashboardHooks {
 				$sections[$section['order']] = array("group" => $section['group'], "title" => $section['title'], "width" => $section['width'], "rawname" => $class->rawname, "section" => $section['section']);
 			}
 		}
+		# Call dashboard disk graph hook
+		$freePBX = FreePBX::create();
+		if ($freePBX->Modules->checkStatus("sysadmin") && method_exists($freePBX->Sysadmin, 'DashboardGraph')) {
+			$sections[] = $freePBX->Sysadmin->DashboardGraph()->getSections();
+		}
 		ksort($sections);
 
 		return array_values($sections);
