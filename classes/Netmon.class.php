@@ -22,7 +22,7 @@ class Netmon {
 	public function getStats() {
 		$execoutput = [];
 
-		$process = new Process(array("{$this->iploc}", "-s", "link"));
+		$process = \freepbx_get_process_obj(["{$this->iploc}", "-s", "link"]);
 		$process->setTimeout(30);
 		try {
 			$process->run();
