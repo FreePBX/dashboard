@@ -68,14 +68,14 @@ class Netmon {
 			// If the first char is NOT a space, it's a network name.
 			if ($line[0] !== " ") {
 				$intarr = explode(":", $line);
-				$current = trim($intarr[1]);
+				$current = freepbx_trim ($intarr[1]);
 				// If it's actually 'lo', we never save that.
 				if ($current !== "lo") {
 					$ints[$current] = [ "intnum" => $intarr[0], "intname" => $current, "other" => $intarr[2] ];
 				}
 				continue;
 			}
-			$line = trim($line);
+			$line = freepbx_trim ($line);
 			// Does it start with 'link/ether'? We have a MAC
 			if (strpos($line, "link/ether") === 0) {
 				$tmparr = explode(" ", $line);

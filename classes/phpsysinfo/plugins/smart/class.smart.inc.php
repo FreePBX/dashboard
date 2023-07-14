@@ -61,7 +61,7 @@ class SMART extends PSI_Plugin
                     }
                     foreach ($disks as $disk) {
                         $buffer = "";
-                        if (CommonFunctions::executeProgram('smartctl', '--all'.((PSI_PLUGIN_SMART_DEVICE) ? ' --device '.PSI_PLUGIN_SMART_DEVICE : '').' '.$disk, $buffer, PSI_DEBUG)) {
+                        if (CommonFunctions::executeProgram('smartctl', '--all'.((PSI_PLUGIN_SMART_DEVICES) ? ' --device '.PSI_PLUGIN_SMART_DEVICES : '').' '.$disk, $buffer, PSI_DEBUG)) {
                             $this->_filecontent[$disk] = $buffer;
                         }
                     }
