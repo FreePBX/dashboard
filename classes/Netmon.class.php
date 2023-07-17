@@ -2,7 +2,7 @@
 
 namespace FreePBX\modules\Dashboard;
 use Hhxsv5\SSE\SSE;
-use Hhxsv5\SSE\Update;
+use Hhxsv5\SSE\Event;
 use Symfony\Component\Process\Process;
 class Netmon {
 
@@ -51,9 +51,7 @@ class Netmon {
 		header("Access-Control-Allow-Origin: *");
 		header('Access-Control-Allow-Credentials: true');
 		header('X-Accel-Buffering: no');//Nginx: unbuffered responses suitable for Comet and HTTP streaming applications
-		(new SSE())->start(new Update(function () {
-			return json_encode($this->getStats());
-		}, 1), 'new-msgs', 1000);
+		(new SSE(new Event(function(){return json_encode($this->getStats());},'new-msgs')))->start();
 	}
 
 	function parse_ip_output($outarr) {
@@ -68,14 +66,14 @@ class Netmon {
 			// If the first char is NOT a space, it's a network name.
 			if ($line[0] !== " ") {
 				$intarr = explode(":", $line);
-				$current = freepbx_trim ($intarr[1]);
+				$current = trim($intarr[1]);
 				// If it's actually 'lo', we never save that.
 				if ($current !== "lo") {
 					$ints[$current] = [ "intnum" => $intarr[0], "intname" => $current, "other" => $intarr[2] ];
 				}
 				continue;
 			}
-			$line = freepbx_trim ($line);
+			$line = trim($line);
 			// Does it start with 'link/ether'? We have a MAC
 			if (strpos($line, "link/ether") === 0) {
 				$tmparr = explode(" ", $line);
