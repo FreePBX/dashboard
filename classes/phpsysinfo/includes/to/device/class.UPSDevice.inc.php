@@ -27,38 +27,28 @@ class UPSDevice
 {
     /**
      * name of the ups
-     *
-     * @var String
      */
-    private $_name = "";
+    private string $_name = "";
 
     /**
      * model of the ups
-     *
-     * @var String
      */
-    private $_model = "";
+    private string $_model = "";
 
     /**
      * mode of the ups
-     *
-     * @var String
      */
-    private $_mode = "";
+    private string $_mode = "";
 
     /**
      * last start time
-     *
-     * @var String
      */
-    private $_startTime = "";
+    private string $_startTime = "";
 
     /**
      * status of the ups
-     *
-     * @var String
      */
-    private $_status = "";
+    private string $_status = "";
 
     /**
      * temperature of the ups

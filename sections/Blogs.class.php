@@ -11,32 +11,20 @@ class Blogs {
 
 	public function getSections($order) {
 		$feeds = \FreePBX::Config()->get('RSSFEEDS');
-		$feeds = str_replace("\r","",$feeds);
-		$blogs = array();
+		$feeds = str_replace("\r","",(string) $feeds);
+		$blogs = [];
 		if(!empty($feeds)) {
 			$feeds = explode("\n",$feeds);
 			$i = 0;
-			$urls = array();
+			$urls = [];
 			foreach($feeds as $feed) {
 				$data = $this->getFeed($feed);
 				if(!empty($data)) {
 					$title = $data['title'];
 					if(!empty($title)) {
-						$blogs[] = array(
-							"title" => sprintf(_('%s Feed'),$title),
-							"group" => _("Blogs"),
-							"width" => "550px",
-							"order" => isset($order[$feed]) ? $order[$feed] : '100',
-							"section" => $i
-						);
+						$blogs[] = ["title" => sprintf(_('%s Feed'),$title), "group" => _("Blogs"), "width" => "550px", "order" => $order[$feed] ?? '100', "section" => $i];
 					} else {
-						$blogs[] = array(
-							"title" => sprintf(_('%s Feed'),$feed),
-							"group" => _("Blogs"),
-							"width" => "500px",
-							"order" => isset($order[$name]) ? $order[$feed] : '100',
-							"section" => $i
-						);
+						$blogs[] = ["title" => sprintf(_('%s Feed'),$feed), "group" => _("Blogs"), "width" => "500px", "order" => isset($order[$name]) ? $order[$feed] : '100', "section" => $i];
 					}
 				}
 				$i++;
@@ -47,7 +35,7 @@ class Blogs {
 
 	public function getContent($section) {
 		$feeds = \FreePBX::Config()->get('RSSFEEDS');
-		$feeds = str_replace("\r","",$feeds);
+		$feeds = str_replace("\r","",(string) $feeds);
 		if(empty($feeds)) {
 			return '';
 		}
@@ -59,7 +47,7 @@ class Blogs {
 		if(empty($feed)) {
 			return '';
 		}
-		return load_view(dirname(__DIR__).'/views/sections/blog.php',array("items" => $feed['items'], "limit" => 5));
+		return load_view(dirname(__DIR__).'/views/sections/blog.php',["items" => $feed['items'], "limit" => 5]);
 	}
 
 	/**
@@ -79,20 +67,12 @@ class Blogs {
 			$reader->init();
 
 			$items = $reader->get_items();
-			$content = array(
-				"title" => $reader->get_title(),
-				"description" => $reader->get_description(),
-				"items" => array()
-			);
+			$content = ["title" => $reader->get_title(), "description" => $reader->get_description(), "items" => []];
 			foreach ($items as $item) {
-				$content['items'][] = array(
-					"title" => $item->get_title(),
-					"url" => $item->get_permalink(),
-					"content" => $item->get_description()
-				);
+				$content['items'][] = ["title" => $item->get_title(), "url" => $item->get_permalink(), "content" => $item->get_description()];
 			}
 			$d->setConfig($feed, $content, "content");
-		}	catch (\Exception $e) {
+		}	catch (\Exception) {
 			$content = $d->getConfig($feed, "content");
 		}
 		return $content;

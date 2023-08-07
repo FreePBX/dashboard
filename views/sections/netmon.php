@@ -1,6 +1,6 @@
 <?php
 
-if (!class_exists('\FreePBX\modules\Dashboard\Netmon')) {
+if (!class_exists('\\' . \FreePBX\modules\Dashboard\Netmon::class)) {
 	include __DIR__."/../../classes/Netmon.class.php";
 }
 
@@ -22,7 +22,7 @@ if(!$stats['status']) {
 <?php
 
 $first = false;
-echo "<script>netmonData[".time()."] = ".json_encode($stats['data'])."</script>";
+echo "<script>netmonData[".time()."] = ".json_encode($stats['data'], JSON_THROW_ON_ERROR)."</script>";
 foreach ($stats['data'] as $name => $row) {
 	// If this is lo, skip
 	if ($name === 'lo') {

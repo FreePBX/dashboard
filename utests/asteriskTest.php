@@ -20,8 +20,8 @@ class AsteriskTest extends PHPUnit_Framework_TestCase {
 
 	public function testAstmanConnection() {
 		$astman = self::$f->astman;
-		$response = $astman->send_request('Command',array('Command'=>"core show uptime"));
-		$lines = explode("\n", $response['data']);
+		$response = $astman->send_request('Command',['Command'=>"core show uptime"]);
+		$lines = explode("\n", (string) $response['data']);
 		$this->assertSame(strpos($lines[1], "System uptime"), (int)0, "Uptime string incorrect");
 		$this->assertTrue(is_object(self::$a->astman), "AsteriskInfo's astman isn't an object");
 	}

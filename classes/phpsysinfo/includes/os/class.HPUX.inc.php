@@ -81,7 +81,7 @@ class HPUX extends OS
     private function _uptime()
     {
         if (CommonFunctions::executeProgram('uptime', '', $buf)) {
-            if (preg_match("/up (\d+) days,\s*(\d+):(\d+),/", $buf, $ar_buf)) {
+            if (preg_match("/up (\d+) days,\s*(\d+):(\d+),/", (string) $buf, $ar_buf)) {
                 $min = $ar_buf[3];
                 $hours = $ar_buf[2];
                 $days = $ar_buf[1];
@@ -98,7 +98,7 @@ class HPUX extends OS
     private function _users()
     {
         if (CommonFunctions::executeProgram('who', '-q', $ret)) {
-            $who = preg_split('/=/', $ret, -1, PREG_SPLIT_NO_EMPTY);
+            $who = preg_split('/=/', (string) $ret, -1, PREG_SPLIT_NO_EMPTY);
             $this->sys->setUsers($who[1]);
         }
     }
@@ -112,7 +112,7 @@ class HPUX extends OS
     private function _loadavg()
     {
         if (CommonFunctions::executeProgram('uptime', '', $buf)) {
-            if (preg_match("/average: (.*), (.*), (.*)$/", $buf, $ar_buf)) {
+            if (preg_match("/average: (.*), (.*), (.*)$/", (string) $buf, $ar_buf)) {
                 $this->sys->setLoad($ar_buf[1].' '.$ar_buf[2].' '.$ar_buf[3]);
             }
         }
@@ -127,13 +127,13 @@ class HPUX extends OS
     private function _cpuinfo()
     {
         if (CommonFunctions::rfts('/proc/cpuinfo', $bufr)) {
-            $processors = preg_split('/\s?\n\s?\n/', trim($bufr));
+            $processors = preg_split('/\s?\n\s?\n/', trim((string) $bufr));
             foreach ($processors as $processor) {
                 $dev = new CpuDevice();
-                $details = preg_split("/\n/", $processor, -1, PREG_SPLIT_NO_EMPTY);
+                $details = preg_split("/\n/", (string) $processor, -1, PREG_SPLIT_NO_EMPTY);
                 foreach ($details as $detail) {
-                    $arrBuff = preg_split('/\s+:\s+/', trim($detail));
-                    if (count($arrBuff) == 2) {
+                    $arrBuff = preg_split('/\s+:\s+/', trim((string) $detail));
+                    if ((is_countable($arrBuff) ? count($arrBuff) : 0) == 2) {
                         switch (strtolower($arrBuff[0])) {
                         case 'model name':
                         case 'cpu':
@@ -144,10 +144,10 @@ class HPUX extends OS
                             $dev->setCpuSpeed($arrBuff[1]);
                             break;
                         case 'cycle frequency [hz]':
-                            $dev->setCpuSpeed($arrBuff[1] / 1000000);
+                            $dev->setCpuSpeed($arrBuff[1] / 1_000_000);
                             break;
                         case 'cpu0clktck':
-                            $dev->setCpuSpeed(hexdec($arrBuff[1]) / 1000000); // Linux sparc64
+                            $dev->setCpuSpeed(hexdec($arrBuff[1]) / 1_000_000); // Linux sparc64
                             break;
                         case 'l2 cache':
                         case 'cache size':
@@ -172,14 +172,14 @@ class HPUX extends OS
     private function _pci()
     {
         if (CommonFunctions::rfts('/proc/pci', $bufr)) {
-            $bufe = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+            $bufe = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($bufe as $buf) {
-                if (preg_match('/Bus/', $buf)) {
+                if (preg_match('/Bus/', (string) $buf)) {
                     $device = true;
                     continue;
                 }
                 if ($device) {
-                    list($key, $value) = preg_split('/: /', $buf, 2);
+                    [$key, $value] = preg_split('/: /', (string) $buf, 2);
                     if (!preg_match('/bridge/i', $key) && !preg_match('/USB/i', $key)) {
                         $dev = new HWDevice();
                         $dev->setName(preg_replace('/\([^\)]+\)\.$/', '', trim($value)));
@@ -200,13 +200,13 @@ class HPUX extends OS
     {
         $bufd = CommonFunctions::gdc('/proc/ide', false);
         foreach ($bufd as $file) {
-            if (preg_match('/^hd/', $file)) {
+            if (preg_match('/^hd/', (string) $file)) {
                 $dev = new HWDevice();
-                $dev->setName(trim($file));
+                $dev->setName(trim((string) $file));
                 if (CommonFunctions::rfts("/proc/ide/".$file."/media", $buf, 1)) {
-                    if (trim($buf) == 'disk') {
+                    if (trim((string) $buf) == 'disk') {
                         if (CommonFunctions::rfts("/proc/ide/".$file."/capacity", $buf, 1, 4096, false)) {
-                            $dev->setCapacity(trim($buf) * 512 / 1024);
+                            $dev->setCapacity(trim((string) $buf) * 512 / 1024);
                         }
                     }
                 }
@@ -224,14 +224,14 @@ class HPUX extends OS
     {
         $get_type = false;
         if (CommonFunctions::rfts('/proc/scsi/scsi', $bufr, 0, 4096, PSI_DEBUG)) {
-            $bufe = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+            $bufe = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($bufe as $buf) {
-                if (preg_match('/Vendor: (.*) Model: (.*) Rev: (.*)/i', $buf, $dev)) {
+                if (preg_match('/Vendor: (.*) Model: (.*) Rev: (.*)/i', (string) $buf, $dev)) {
                     $get_type = true;
                     continue;
                 }
                 if ($get_type) {
-                    preg_match('/Type:\s+(\S+)/i', $buf, $dev_type);
+                    preg_match('/Type:\s+(\S+)/i', (string) $buf, $dev_type);
                     $dev = new HWDevice();
                     $dev->setName($dev[1].' '.$dev[2].' ('.$dev_type[1].')');
                     $this->sys->setScsiDevices($dev);
@@ -249,14 +249,14 @@ class HPUX extends OS
     private function _usb()
     {
         if (CommonFunctions::rfts('/proc/bus/usb/devices', $bufr, 0, 4096, false)) {
-            $bufe = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+            $bufe = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($bufe as $buf) {
-                if (preg_match('/^T/', $buf)) {
+                if (preg_match('/^T/', (string) $buf)) {
                     $devnum += 1;
                     $results[$devnum] = "";
-                } elseif (preg_match('/^S:/', $buf)) {
-                    list($key, $value) = preg_split('/: /', $buf, 2);
-                    list($key, $value2) = preg_split('/=/', $value, 2);
+                } elseif (preg_match('/^S:/', (string) $buf)) {
+                    [$key, $value] = preg_split('/: /', (string) $buf, 2);
+                    [$key, $value2] = preg_split('/=/', $value, 2);
                     if (trim($key) != "SerialNumber") {
                         $results[$devnum] .= " ".trim($value2);
                     }
@@ -279,9 +279,9 @@ class HPUX extends OS
     private function _network()
     {
         if (CommonFunctions::executeProgram('netstat', '-ni | tail -n +2', $netstat)) {
-            $lines = preg_split("/\n/", $netstat, -1, PREG_SPLIT_NO_EMPTY);
+            $lines = preg_split("/\n/", (string) $netstat, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($lines as $line) {
-                $ar_buf = preg_split("/\s+/", $line);
+                $ar_buf = preg_split("/\s+/", (string) $line);
                 if (! empty($ar_buf[0]) && ! empty($ar_buf[3])) {
                     $dev = new NetDevice();
                     $dev->setName($ar_buf[0]);
@@ -303,9 +303,9 @@ class HPUX extends OS
     private function _memory()
     {
         if (CommonFunctions::rfts('/proc/meminfo', $bufr)) {
-            $bufe = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+            $bufe = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($bufe as $buf) {
-                if (preg_match('/Mem:\s+(.*)$/', $buf, $ar_buf)) {
+                if (preg_match('/Mem:\s+(.*)$/', (string) $buf, $ar_buf)) {
                     $ar_buf = preg_split('/\s+/', $ar_buf[1], 6);
                     $this->sys->setMemTotal($ar_buf[0]);
                     $this->sys->setMemUsed($ar_buf[1]);
@@ -316,7 +316,7 @@ class HPUX extends OS
                 }
                 // Get info on individual swap files
                 if (CommonFunctions::rfts('/proc/swaps', $swaps)) {
-                    $swapdevs = preg_split("/\n/", $swaps, -1, PREG_SPLIT_NO_EMPTY);
+                    $swapdevs = preg_split("/\n/", (string) $swaps, -1, PREG_SPLIT_NO_EMPTY);
                     for ($i = 1, $max = (sizeof($swapdevs) - 1); $i < $max; $i++) {
                         $ar_buf = preg_split('/\s+/', $swapdevs[$i], 6);
                         $dev = new DiskDevice();
@@ -340,17 +340,18 @@ class HPUX extends OS
      */
     private function _filesystems()
     {
+        $fsdev = [];
         if (CommonFunctions::executeProgram('df', '-kP', $df, PSI_DEBUG)) {
-            $mounts = preg_split("/\n/", $df, -1, PREG_SPLIT_NO_EMPTY);
+            $mounts = preg_split("/\n/", (string) $df, -1, PREG_SPLIT_NO_EMPTY);
             if (CommonFunctions::executeProgram('mount', '-v', $s, PSI_DEBUG)) {
-                $lines = preg_split("/\n/", $s, -1, PREG_SPLIT_NO_EMPTY);
-                while (list(, $line) = each($lines)) {
-                    $a = preg_split('/ /', $line, -1, PREG_SPLIT_NO_EMPTY);
+                $lines = preg_split("/\n/", (string) $s, -1, PREG_SPLIT_NO_EMPTY);
+                foreach ($lines as $line) {
+                    $a = preg_split('/ /', (string) $line, -1, PREG_SPLIT_NO_EMPTY);
                     $fsdev[$a[0]] = $a[4];
                 }
             }
             foreach ($mounts as $mount) {
-                $ar_buf = preg_split("/\s+/", $mount, 6);
+                $ar_buf = preg_split("/\s+/", (string) $mount, 6);
                 $dev = new DiskDevice();
                 $dev->setName($ar_buf[0]);
                 $dev->setTotal($ar_buf[1] * 1024);

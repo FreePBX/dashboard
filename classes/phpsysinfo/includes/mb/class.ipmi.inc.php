@@ -27,10 +27,8 @@ class IPMI extends Sensors
 {
     /**
      * content to parse
-     *
-     * @var array
      */
-    private $_lines = array();
+    private array|bool $_lines = [];
 
     /**
      * fill the private content var through tcp or file access
@@ -38,14 +36,14 @@ class IPMI extends Sensors
     public function __construct()
     {
         parent::__construct();
-        switch (strtolower(PSI_SENSOR_ACCESS)) {
+        switch (strtolower((string) PSI_SENSOR_ACCESS)) {
         case 'command':
             CommonFunctions::executeProgram('ipmitool', 'sensor', $lines);
-            $this->_lines = preg_split("/\n/", $lines, -1, PREG_SPLIT_NO_EMPTY);
+            $this->_lines = preg_split("/\n/", (string) $lines, -1, PREG_SPLIT_NO_EMPTY);
             break;
         case 'file':
             if (CommonFunctions::rfts(APP_ROOT.'/data/ipmi.txt', $lines)) {
-                $this->_lines = preg_split("/\n/", $lines, -1, PREG_SPLIT_NO_EMPTY);
+                $this->_lines = preg_split("/\n/", (string) $lines, -1, PREG_SPLIT_NO_EMPTY);
             }
             break;
         default:
@@ -62,7 +60,7 @@ class IPMI extends Sensors
     private function _temperature()
     {
         foreach ($this->_lines as $line) {
-            $buffer = preg_split("/\s*\|\s*/", $line);
+            $buffer = preg_split("/\s*\|\s*/", (string) $line);
             if ($buffer[2] == "degrees C" && $buffer[3] != "na") {
                 $dev = new SensorDevice();
                 $dev->setName($buffer[0]);
@@ -81,7 +79,7 @@ class IPMI extends Sensors
     private function _voltage()
     {
         foreach ($this->_lines as $line) {
-            $buffer = preg_split("/\s*\|\s*/", $line);
+            $buffer = preg_split("/\s*\|\s*/", (string) $line);
             if ($buffer[2] == "Volts" && $buffer[3] != "na") {
                 $dev = new SensorDevice();
                 $dev->setName($buffer[0]);
@@ -101,7 +99,7 @@ class IPMI extends Sensors
     private function _fans()
     {
         foreach ($this->_lines as $line) {
-            $buffer = preg_split("/\s*\|\s*/", $line);
+            $buffer = preg_split("/\s*\|\s*/", (string) $line);
             if ($buffer[2] == "RPM" && $buffer[3] != "na") {
                 $dev = new SensorDevice();
                 $dev->setName($buffer[0]);
@@ -120,7 +118,7 @@ class IPMI extends Sensors
     private function _power()
     {
         foreach ($this->_lines as $line) {
-            $buffer = preg_split("/\s*\|\s*/", $line);
+            $buffer = preg_split("/\s*\|\s*/", (string) $line);
             if ($buffer[2] == "Watts" && $buffer[3] != "na") {
                 $dev = new SensorDevice();
                 $dev->setName($buffer[0]);
@@ -139,7 +137,7 @@ class IPMI extends Sensors
     private function _current()
     {
         foreach ($this->_lines as $line) {
-            $buffer = preg_split("/\s*\|\s*/", $line);
+            $buffer = preg_split("/\s*\|\s*/", (string) $line);
             if ($buffer[2] == "Amps" && $buffer[3] != "na") {
                 $dev = new SensorDevice();
                 $dev->setName($buffer[0]);

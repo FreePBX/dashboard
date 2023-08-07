@@ -28,10 +28,8 @@ class Minix extends OS
 {
     /**
      * content of the syslog
-     *
-     * @var array
      */
-    private $_dmesg = array();
+    private array|bool $_dmesg = [];
 
     /**
      * call parent constructor
@@ -50,9 +48,9 @@ class Minix extends OS
     {
         if (count($this->_dmesg) === 0) {
             if (CommonFunctions::rfts('/var/log/messages', $buf)) {
-                    $parts = preg_split("/kernel: APIC/", $buf, -1, PREG_SPLIT_NO_EMPTY);
+                    $parts = preg_split("/kernel: APIC/", (string) $buf, -1, PREG_SPLIT_NO_EMPTY);
 //                    $parts = preg_split("/ syslogd: restart\n/", $buf, -1, PREG_SPLIT_NO_EMPTY);
-                    $this->_dmesg = preg_split("/\n/", $parts[count($parts) - 1], -1, PREG_SPLIT_NO_EMPTY);
+                    $this->_dmesg = preg_split("/\n/", $parts[(is_countable($parts) ? count($parts) : 0) - 1], -1, PREG_SPLIT_NO_EMPTY);
             }
         }
 
@@ -67,14 +65,14 @@ class Minix extends OS
     protected function _cpuinfo()
     {
         if (CommonFunctions::rfts('/proc/cpuinfo', $bufr, 0, 4096, false)) {
-            $processors = preg_split('/\s?\n\s?\n/', trim($bufr));
+            $processors = preg_split('/\s?\n\s?\n/', trim((string) $bufr));
             foreach ($processors as $processor) {
                 $_n = ""; $_f = ""; $_m = ""; $_s = "";
                 $dev = new CpuDevice();
-                $details = preg_split("/\n/", $processor, -1, PREG_SPLIT_NO_EMPTY);
+                $details = preg_split("/\n/", (string) $processor, -1, PREG_SPLIT_NO_EMPTY);
                 foreach ($details as $detail) {
-                    $arrBuff = preg_split('/\s+:\s+/', trim($detail));
-                    if (count($arrBuff) == 2) {
+                    $arrBuff = preg_split('/\s+:\s+/', trim((string) $detail));
+                    if ((is_countable($arrBuff) ? count($arrBuff) : 0) == 2) {
                         switch (strtolower($arrBuff[0])) {
                         case 'model name':
                             $_n = $arrBuff[1];
@@ -110,7 +108,7 @@ class Minix extends OS
             }
         } else
         foreach ($this->readdmesg() as $line) {
-          if (preg_match('/kernel: (CPU .*) freq (.*) MHz/', $line, $ar_buf)) {
+          if (preg_match('/kernel: (CPU .*) freq (.*) MHz/', (string) $line, $ar_buf)) {
                 $dev = new CpuDevice();
                 $dev->setModel($ar_buf[1]);
                 $dev->setCpuSpeed($ar_buf[2]);
@@ -128,10 +126,10 @@ class Minix extends OS
     protected function _pci()
     {
         if (CommonFunctions::rfts('/proc/pci', $strBuf, 0, 4096, false)) {
-            $arrLines = preg_split("/\n/", $strBuf, -1, PREG_SPLIT_NO_EMPTY);
+            $arrLines = preg_split("/\n/", (string) $strBuf, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($arrLines as $strLine) {
-               $arrParams = preg_split('/\s+/', trim($strLine), 4);
-               if (count($arrParams) == 4)
+               $arrParams = preg_split('/\s+/', trim((string) $strLine), 4);
+               if ((is_countable($arrParams) ? count($arrParams) : 0) == 4)
                   $strName = $arrParams[3];
                else
                   $strName = "unknown";
@@ -160,7 +158,7 @@ class Minix extends OS
     private function _kernel()
     {
         foreach ($this->readdmesg() as $line) {
-          if (preg_match('/kernel: MINIX (.*) \((.*)\)/', $line, $ar_buf)) {
+          if (preg_match('/kernel: MINIX (.*) \((.*)\)/', (string) $line, $ar_buf)) {
                 $branch = $ar_buf[2];
           }
         }
@@ -196,12 +194,12 @@ class Minix extends OS
     private function _uptime()
     {
         if (CommonFunctions::executeProgram('uptime', '', $buf)) {
-            if (preg_match("/up (\d+) days,\s*(\d+):(\d+),/", $buf, $ar_buf)) {
+            if (preg_match("/up (\d+) days,\s*(\d+):(\d+),/", (string) $buf, $ar_buf)) {
                 $min = $ar_buf[3];
                 $hours = $ar_buf[2];
                 $days = $ar_buf[1];
                 $this->sys->setUptime($days * 86400 + $hours * 3600 + $min * 60);
-            } elseif (preg_match("/up (\d+):(\d+),/", $buf, $ar_buf)) {
+            } elseif (preg_match("/up (\d+):(\d+),/", (string) $buf, $ar_buf)) {
                 $min = $ar_buf[2];
                 $hours = $ar_buf[1];
                 $this->sys->setUptime($hours * 3600 + $min * 60);
@@ -218,7 +216,7 @@ class Minix extends OS
     private function _loadavg()
     {
         if (CommonFunctions::executeProgram('uptime', '', $buf)) {
-            if (preg_match("/load averages: (.*), (.*), (.*)$/", $buf, $ar_buf)) {
+            if (preg_match("/load averages: (.*), (.*), (.*)$/", (string) $buf, $ar_buf)) {
                 $this->sys->setLoad($ar_buf[1].' '.$ar_buf[2].' '.$ar_buf[3]);
             }
         }
@@ -232,7 +230,7 @@ class Minix extends OS
     private function _users()
     {
         if (CommonFunctions::executeProgram('uptime', '', $buf)) {
-            if (preg_match("/, (.*) users, load averages: (.*), (.*), (.*)$/", $buf, $ar_buf)) {
+            if (preg_match("/, (.*) users, load averages: (.*), (.*), (.*)$/", (string) $buf, $ar_buf)) {
                 $this->sys->setUsers($ar_buf[1]);
             }
         }
@@ -283,8 +281,8 @@ class Minix extends OS
     private function _memory()
     {
         if (CommonFunctions::rfts('/proc/meminfo', $bufr, 1, 4096, false)) {
-            $ar_buf = preg_split('/\s+/', trim($bufr));
-            if (count($ar_buf) >= 5 ) {
+            $ar_buf = preg_split('/\s+/', trim((string) $bufr));
+            if ((is_countable($ar_buf) ? count($ar_buf) : 0) >= 5 ) {
                     $this->sys->setMemTotal($ar_buf[0]*$ar_buf[1]);
                     $this->sys->setMemFree($ar_buf[0]*$ar_buf[2]);
                     $this->sys->setMemCache($ar_buf[0]*$ar_buf[4]);
@@ -314,9 +312,9 @@ class Minix extends OS
     private function _network()
     {
         if (CommonFunctions::executeProgram('ifconfig', '-a', $bufr, PSI_DEBUG)) {
-            $lines = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+            $lines = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($lines as $line) {
-                if (preg_match("/^([^\s:]+):\saddress\s(\S+)\snetmask/", $line, $ar_buf)) {
+                if (preg_match("/^([^\s:]+):\saddress\s(\S+)\snetmask/", (string) $line, $ar_buf)) {
                     $dev = new NetDevice();
                     $dev->setName($ar_buf[1]);
                     if (defined('PSI_SHOW_NETWORK_INFOS') && (PSI_SHOW_NETWORK_INFOS)) {

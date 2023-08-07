@@ -13,7 +13,7 @@ class CPUInfo {
 	}
 
 	public function getAll() {
-		$retarr = array();
+		$retarr = [];
 
 		if ($this->systemtype == "linux") {
 			$retarr['cpuinfo'] = $this->parseProcCPU();
@@ -27,23 +27,23 @@ class CPUInfo {
 	}
 
 	private function parseProcCPU() {
-		$retarr = array();
+		$retarr = [];
 		$rawfile = file("/proc/cpuinfo", FILE_IGNORE_NEW_LINES);
 		$procnum = 0;
 
 		foreach ($rawfile as $line) {
-			if (strpos($line, "processor") === 0) {
-				$procnum = substr($line, 12);
+			if (str_starts_with((string) $line, "processor")) {
+				$procnum = substr((string) $line, 12);
 				continue;
 			}
-			if (strpos($line, "model name") === 0) {
-				$retarr[$procnum]['modelname'] = substr($line, 13);
+			if (str_starts_with((string) $line, "model name")) {
+				$retarr[$procnum]['modelname'] = substr((string) $line, 13);
 			}
-			if (strpos($line, "cpu MHz") === 0) {
-				$retarr[$procnum]['mhz'] = substr($line, 11);
+			if (str_starts_with((string) $line, "cpu MHz")) {
+				$retarr[$procnum]['mhz'] = substr((string) $line, 11);
 			}
-			if (strpos($line, "physical id") === 0) {
-				$socketid = (int)substr($line,13) + 1;
+			if (str_starts_with((string) $line, "physical id")) {
+				$socketid = (int)substr((string) $line,13) + 1;
 				$retarr['sockets'] = $socketid;
 			}
 		}
@@ -53,7 +53,7 @@ class CPUInfo {
 	}
 
 	private function parseProcLoadavg() {
-		$retarr = array();
+		$retarr = [];
 
 		$line = file_get_contents("/proc/loadavg");
 		$arr = explode(" ", $line);
@@ -67,7 +67,7 @@ class CPUInfo {
 	}
 
 	private function parseSysctlCPU() {
-		$retarr = array();
+		$retarr = [];
 
 		$ncpu = shell_exec("sysctl -n hw.ncpu 2>/dev/null");
 		$model = shell_exec("sysctl -n hw.model 2>/dev/null");
@@ -93,7 +93,7 @@ class CPUInfo {
 	}
 
 	private function parseSysctlLoadavg() {
-		$retarr = array();
+		$retarr = [];
 
 		$arr = sys_getloadavg();
 		$retarr['util1'] = $arr[0];

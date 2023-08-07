@@ -6,15 +6,7 @@ class Notepad {
 	public $rawname = 'Notepad';
 
 	public function getSections($order) {
-		return array(
-			array(
-				"title" => _("Notepad"),
-				"group" => _("Notes"),
-				"width" => "550px",
-				"order" => isset($order['notepad']) ? $order['notepad'] : "400",
-				"section" => "notepad"
-			)
-		);
+		return [["title" => _("Notepad"), "group" => _("Notes"), "width" => "550px", "order" => $order['notepad'] ?? "400", "section" => "notepad"]];
 	}
 
 	public function getContent($section) {
@@ -26,7 +18,7 @@ class Notepad {
 			$note->time = date("Y-m-d H:i:s", $ts);
 			$note->ago = \TimeUtils::getReadable(time() - $ts, 1);
 		}
-		return load_view(dirname(__DIR__) . "/views/sections/notepad.php", array("data" => $notes));
+		return load_view(dirname(__DIR__) . "/views/sections/notepad.php", ["data" => $notes]);
 	}
 
 	public function getNotes() {

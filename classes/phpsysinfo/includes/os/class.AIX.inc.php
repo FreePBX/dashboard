@@ -27,7 +27,7 @@
 class AIX extends OS
 {
 
-    private $myprtconf = array();
+    private array|bool $myprtconf = [];
 
     /**
      * Virtual Host Name
@@ -82,7 +82,7 @@ class AIX extends OS
     private function _uptime()
     {
         if (CommonFunctions::executeProgram('uptime', '', $buf)) {
-            if (preg_match("/up (\d+) days,\s*(\d+):(\d+),/", $buf, $ar_buf) || preg_match("/up (\d+) day,\s*(\d+):(\d+),/", $buf, $ar_buf)) {
+            if (preg_match("/up (\d+) days,\s*(\d+):(\d+),/", (string) $buf, $ar_buf) || preg_match("/up (\d+) day,\s*(\d+):(\d+),/", (string) $buf, $ar_buf)) {
                 $min = $ar_buf[3];
                 $hours = $ar_buf[2];
                 $days = $ar_buf[1];
@@ -110,7 +110,7 @@ class AIX extends OS
     private function _loadavg()
     {
         if (CommonFunctions::executeProgram('uptime', '', $buf)) {
-            if (preg_match("/average: (.*), (.*), (.*)$/", $buf, $ar_buf)) {
+            if (preg_match("/average: (.*), (.*), (.*)$/", (string) $buf, $ar_buf)) {
                 $this->sys->setLoad($ar_buf[1].' '.$ar_buf[2].' '.$ar_buf[3]);
             }
         }
@@ -140,7 +140,7 @@ class AIX extends OS
     {
         // FIXME
         CommonFunctions::executeProgram('cat', '/tmp/webprtconf.txt |grep PCI', $bufr);
-        $lines = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+        $lines = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
         foreach ($lines as $line) {
             $dev = new HWDevice();
             $dev->setName($line);
@@ -156,7 +156,7 @@ class AIX extends OS
     {
         // FIXME
         CommonFunctions::executeProgram('cat', '/tmp/webprtconf.txt |grep IDE', $bufr);
-        $lines = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+        $lines = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
         foreach ($lines as $line) {
             $dev = new HWDevice();
             $dev->setName($line);
@@ -173,7 +173,7 @@ class AIX extends OS
     {
         // FIXME
         CommonFunctions::executeProgram('cat', '/tmp/webprtconf.txt |grep SCSI', $bufr);
-        $lines = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+        $lines = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
         foreach ($lines as $line) {
             $dev = new HWDevice();
             $dev->setName($line);
@@ -189,7 +189,7 @@ class AIX extends OS
     {
         // FIXME
         CommonFunctions::executeProgram('cat', '/tmp/webprtconf.txt |grep USB', $bufr);
-        $lines = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+        $lines = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
         foreach ($lines as $line) {
             $dev = new HWDevice();
             $dev->setName($line);
@@ -205,9 +205,9 @@ class AIX extends OS
     private function _network()
     {
         if (CommonFunctions::executeProgram('netstat', '-ni | tail -n +2', $netstat)) {
-            $lines = preg_split("/\n/", $netstat, -1, PREG_SPLIT_NO_EMPTY);
+            $lines = preg_split("/\n/", (string) $netstat, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($lines as $line) {
-                $ar_buf = preg_split("/\s+/", $line);
+                $ar_buf = preg_split("/\s+/", (string) $line);
                 if (! empty($ar_buf[0]) && ! empty($ar_buf[3])) {
                     $dev = new NetDevice();
                     $dev->setName($ar_buf[0]);
@@ -277,17 +277,18 @@ class AIX extends OS
      */
     private function _filesystems()
     {
+        $fsdev = [];
         if (CommonFunctions::executeProgram('df', '-kP', $df, PSI_DEBUG)) {
-            $mounts = preg_split("/\n/", $df, -1, PREG_SPLIT_NO_EMPTY);
+            $mounts = preg_split("/\n/", (string) $df, -1, PREG_SPLIT_NO_EMPTY);
             if (CommonFunctions::executeProgram('mount', '-v', $s, PSI_DEBUG)) {
-                $lines = preg_split("/\n/", $s, -1, PREG_SPLIT_NO_EMPTY);
-                while (list(, $line) = each($lines)) {
-                    $a = preg_split('/ /', $line, -1, PREG_SPLIT_NO_EMPTY);
+                $lines = preg_split("/\n/", (string) $s, -1, PREG_SPLIT_NO_EMPTY);
+                foreach ($lines as $line) {
+                    $a = preg_split('/ /', (string) $line, -1, PREG_SPLIT_NO_EMPTY);
                     $fsdev[$a[0]] = $a[4];
                 }
             }
             foreach ($mounts as $mount) {
-                $ar_buf = preg_split("/\s+/", $mount, 6);
+                $ar_buf = preg_split("/\s+/", (string) $mount, 6);
                 $dev = new DiskDevice();
                 $dev->setName($ar_buf[0]);
                 $dev->setTotal($ar_buf[1] * 1024);
@@ -321,7 +322,7 @@ class AIX extends OS
     {
         CommonFunctions::executeProgram('prtconf', '> /tmp/webprtconf.txt', $confret);
         CommonFunctions::rfts('/tmp/webprtconf.txt', $bufr);
-        $this->myprtconf = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+        $this->myprtconf = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
     }
 
     /**

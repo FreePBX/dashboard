@@ -43,25 +43,25 @@ class Haiku extends OS
     {
 
         if (CommonFunctions::executeProgram('sysinfo', '-cpu', $bufr, PSI_DEBUG)) {
-            $cpus = preg_split("/\nCPU #\d+/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+            $cpus = preg_split("/\nCPU #\d+/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
             $cpuspeed = "";
             foreach ($cpus as $cpu) {
-                if (preg_match("/^.*running at (\d+)MHz/", $cpu, $ar_buf)) {
+                if (preg_match("/^.*running at (\d+)MHz/", (string) $cpu, $ar_buf)) {
                     $cpuspeed = $ar_buf[1];
-                } elseif (preg_match("/^: \"(.*)\"/", $cpu, $ar_buf)) {
+                } elseif (preg_match("/^: \"(.*)\"/", (string) $cpu, $ar_buf)) {
                     $dev = new CpuDevice();
                     $dev->setModel($ar_buf[1]);
-                    $arrLines = preg_split("/\n/", $cpu, -1, PREG_SPLIT_NO_EMPTY);
+                    $arrLines = preg_split("/\n/", (string) $cpu, -1, PREG_SPLIT_NO_EMPTY);
                     foreach ($arrLines as $Line) {
-                      if (preg_match("/^\s+Data TLB:\s+(.*)K-byte/", $Line, $Line_buf)) {
+                      if (preg_match("/^\s+Data TLB:\s+(.*)K-byte/", (string) $Line, $Line_buf)) {
                         $dev->setCache(max($Line_buf[1]*1024,$dev->getCache()));
-                      } elseif (preg_match("/^\s+Data TLB:\s+(.*)M-byte/", $Line, $Line_buf)) {
+                      } elseif (preg_match("/^\s+Data TLB:\s+(.*)M-byte/", (string) $Line, $Line_buf)) {
                         $dev->setCache(max($Line_buf[1]*1024*1024,$dev->getCache()));
-                      } elseif (preg_match("/^\s+Data TLB:\s+(.*)G-byte/", $Line, $Line_buf)) {
+                      } elseif (preg_match("/^\s+Data TLB:\s+(.*)G-byte/", (string) $Line, $Line_buf)) {
                         $dev->setCache(max($Line_buf[1]*1024*1024*1024,$dev->getCache()));
-                      } elseif (preg_match("/\s+VMX/", $Line, $Line_buf)) {
+                      } elseif (preg_match("/\s+VMX/", (string) $Line, $Line_buf)) {
                         $dev->setVirt("vmx");
-                      } elseif (preg_match("/\s+SVM/", $Line, $Line_buf)) {
+                      } elseif (preg_match("/\s+SVM/", (string) $Line, $Line_buf)) {
                         $dev->setVirt("svm");
                       }
                     }
@@ -83,12 +83,12 @@ class Haiku extends OS
     {
         if (CommonFunctions::executeProgram('listdev', '', $bufr, PSI_DEBUG)) {
 //            $devices = preg_split("/^device |\ndevice /", $bufr, -1, PREG_SPLIT_NO_EMPTY);
-            $devices = preg_split("/^device /m", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+            $devices = preg_split("/^device /m", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($devices as $device) {
-                $ar_buf = preg_split("/\n/", $device);
-                if (count($ar_buf) >= 3) {
-                    if (preg_match("/^([^\(\[\n]*)/", $device, $ar_buf2)) {
-                        if (preg_match("/^[^\(]*\((.*)\)/", $device, $ar_buf3)) {
+                $ar_buf = preg_split("/\n/", (string) $device);
+                if ((is_countable($ar_buf) ? count($ar_buf) : 0) >= 3) {
+                    if (preg_match("/^([^\(\[\n]*)/", (string) $device, $ar_buf2)) {
+                        if (preg_match("/^[^\(]*\((.*)\)/", (string) $device, $ar_buf3)) {
                             $ar_buf2[1] = $ar_buf3[1];
                         }
                         $name = trim($ar_buf2[1]).": ";
@@ -117,9 +117,9 @@ class Haiku extends OS
     protected function _usb()
     {
         if (CommonFunctions::executeProgram('listusb', '', $bufr, PSI_DEBUG)) {
-            $devices = preg_split("/\n/", $bufr);
+            $devices = preg_split("/\n/", (string) $bufr);
             foreach ($devices as $device) {
-                if (preg_match("/^\S+\s+\S+\s+\"(.*)\"\s+\"(.*)\"/", $device, $ar_buf)) {
+                if (preg_match("/^\S+\s+\S+\s+\"(.*)\"\s+\"(.*)\"/", (string) $device, $ar_buf)) {
                     $dev = new HWDevice();
                     $dev->setName(trim($ar_buf[1]." ".$ar_buf[2]));
                     $this->sys->setUSBDevices($dev);
@@ -164,14 +164,14 @@ class Haiku extends OS
     private function _uptime()
     {
         if (CommonFunctions::executeProgram('uptime', '-u', $buf)) {
-            if (preg_match("/^up (\d+) minute[s]?/", $buf, $ar_buf)) {
+            if (preg_match("/^up (\d+) minute[s]?/", (string) $buf, $ar_buf)) {
                 $min = $ar_buf[1];
                 $this->sys->setUptime($min * 60);
-            } elseif (preg_match("/^up (\d+) hour[s]?, (\d+) minute[s]?/", $buf, $ar_buf)) {
+            } elseif (preg_match("/^up (\d+) hour[s]?, (\d+) minute[s]?/", (string) $buf, $ar_buf)) {
                 $min = $ar_buf[2];
                 $hours = $ar_buf[1];
                 $this->sys->setUptime($hours * 3600 + $min * 60);
-            } elseif (preg_match("/^up (\d+) day[s]?, (\d+) hour[s]?, (\d+) minute[s]?/", $buf, $ar_buf)) {
+            } elseif (preg_match("/^up (\d+) day[s]?, (\d+) hour[s]?, (\d+) minute[s]?/", (string) $buf, $ar_buf)) {
                 $min = $ar_buf[3];
                 $hours = $ar_buf[2];
                 $days = $ar_buf[1];
@@ -189,7 +189,7 @@ class Haiku extends OS
     private function _loadavg()
     {
         if (CommonFunctions::executeProgram('top', '-n 1 -i 1', $buf)) {
-            if (preg_match("/\s+(\S+)%\s+TOTAL\s+\(\S+%\s+idle time/", $buf, $ar_buf)) {
+            if (preg_match("/\s+(\S+)%\s+TOTAL\s+\(\S+%\s+idle time/", (string) $buf, $ar_buf)) {
                 $this->sys->setLoad($ar_buf[1]);
                 if (PSI_LOAD_BAR) {
                     $this->sys->setLoadPercent(round($ar_buf[1]));
@@ -253,7 +253,7 @@ class Haiku extends OS
     private function _memory()
     {
         if (CommonFunctions::executeProgram('sysinfo', '-mem', $bufr, PSI_DEBUG)) {
-            if (preg_match("/(.*)bytes free\s+\(used\/max\s+(.*)\s+\/\s+(.*)\)\s*\n\s+\(cached\s+(.*)\)/", $bufr, $ar_buf)) {
+            if (preg_match("/(.*)bytes free\s+\(used\/max\s+(.*)\s+\/\s+(.*)\)\s*\n\s+\(cached\s+(.*)\)/", (string) $bufr, $ar_buf)) {
                 $this->sys->setMemTotal($ar_buf[3]);
                 $this->sys->setMemFree($ar_buf[1]);
                 $this->sys->setMemCache($ar_buf[4]);
@@ -261,7 +261,7 @@ class Haiku extends OS
             }
         }
         if (CommonFunctions::executeProgram('vmstat', '', $bufr, PSI_DEBUG)) {
-            if (preg_match("/max swap space:\s+(.*)\nfree swap space:\s+(.*)\n/", $bufr, $ar_buf)) {
+            if (preg_match("/max swap space:\s+(.*)\nfree swap space:\s+(.*)\n/", (string) $bufr, $ar_buf)) {
                 if ($ar_buf[1]>0) {
                     $dev = new DiskDevice();
                     $dev->setMountPoint("/boot/common/var/swap");
@@ -283,10 +283,10 @@ class Haiku extends OS
     private function _filesystems()
     {
       if (CommonFunctions::executeProgram('df', '-b', $df, PSI_DEBUG)) {
-          $df = preg_split("/\n/", $df, -1, PREG_SPLIT_NO_EMPTY);
+          $df = preg_split("/\n/", (string) $df, -1, PREG_SPLIT_NO_EMPTY);
           foreach ($df as $df_line) {
-              $ar_buf = preg_split("/\s+/", $df_line);
-              if ((substr($df_line,0 ,1 ) == "/") && (count($ar_buf) == 6 )) {
+              $ar_buf = preg_split("/\s+/", (string) $df_line);
+              if ((str_starts_with((string) $df_line, "/")) && ((is_countable($ar_buf) ? count($ar_buf) : 0) == 6 )) {
                   $dev = new DiskDevice();
                   $dev->setMountPoint($ar_buf[0]);
                   $dev->setName($ar_buf[5]);
@@ -308,11 +308,14 @@ class Haiku extends OS
      */
     private function _network()
     {
+        $dev = null;
+        $errors = null;
+        $drops = null;
         if (CommonFunctions::executeProgram('ifconfig', '', $bufr, PSI_DEBUG)) {
-            $lines = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+            $lines = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
             $notwas = true;
             foreach ($lines as $line) {
-                if (preg_match("/^(\S+)/", $line, $ar_buf)) {
+                if (preg_match("/^(\S+)/", (string) $line, $ar_buf)) {
                     if (!$notwas) {
                         $dev->setErrors($errors);
                         $dev->setDrops($drops);
@@ -325,22 +328,22 @@ class Haiku extends OS
                     $notwas = false;
                 } else {
                     if (!$notwas) {
-                        if (preg_match('/\sReceive:\s\d+\spackets,\s(\d+)\serrors,\s(\d+)\sbytes,\s\d+\smcasts,\s(\d+)\sdropped/i', $line, $ar_buf2)) {
+                        if (preg_match('/\sReceive:\s\d+\spackets,\s(\d+)\serrors,\s(\d+)\sbytes,\s\d+\smcasts,\s(\d+)\sdropped/i', (string) $line, $ar_buf2)) {
                             $errors +=$ar_buf2[1];
                             $drops +=$ar_buf2[3];
                             $dev->setRxBytes($ar_buf2[2]);
-                        } elseif (preg_match('/\sTransmit:\s\d+\spackets,\s(\d+)\serrors,\s(\d+)\sbytes,\s\d+\smcasts,\s(\d+)\sdropped/i', $line, $ar_buf2)) {
+                        } elseif (preg_match('/\sTransmit:\s\d+\spackets,\s(\d+)\serrors,\s(\d+)\sbytes,\s\d+\smcasts,\s(\d+)\sdropped/i', (string) $line, $ar_buf2)) {
                             $errors +=$ar_buf2[1];
                             $drops +=$ar_buf2[3];
                             $dev->setTxBytes($ar_buf2[2]);
                         }
 
                         if (defined('PSI_SHOW_NETWORK_INFOS') && (PSI_SHOW_NETWORK_INFOS)) {
-                            if (preg_match('/\sEthernet,\s+Address:\s(\S*)/i', $line, $ar_buf2))
+                            if (preg_match('/\sEthernet,\s+Address:\s(\S*)/i', (string) $line, $ar_buf2))
                                     $dev->setInfo(preg_replace('/:/', '-', $ar_buf2[1]));
-                            elseif (preg_match('/^\s+inet\saddr:\s(\S*),/i', $line, $ar_buf2))
+                            elseif (preg_match('/^\s+inet\saddr:\s(\S*),/i', (string) $line, $ar_buf2))
                                      $dev->setInfo(($dev->getInfo()?$dev->getInfo().';':'').$ar_buf2[1]);
-                                 elseif (preg_match('/^\s+inet6\saddr:\s(\S*),/i', $line, $ar_buf2))
+                                 elseif (preg_match('/^\s+inet6\saddr:\s(\S*),/i', (string) $line, $ar_buf2))
                                           if (!preg_match('/^fe80::/i',$ar_buf2[1]))
                                             $dev->setInfo(($dev->getInfo()?$dev->getInfo().';':'').$ar_buf2[1]);
                         }

@@ -30,24 +30,10 @@ class DashboardGQLTest extends ApiBaseTestCase {
   public function test_checkdiskspace_all_return_true() {
       $mockHelper = $this->getMockBuilder(\Dashboard::class)
       ->disableOriginalConstructor()
-      ->setMethods(array('getdiskspace'))
+      ->setMethods(['getdiskspace'])
       ->getMock();
 
-      $mockHelper->method('getdiskspace')->willReturn(array(
-        "/dev/mapper/SangomaVG-root" => array(
-          "size" => "16G",
-          "used" => "9.1G",
-          "avail" => "6.2G",
-          "usepct" => "60%",
-          "mountpoint" => "/"
-        ),"/dev/sda1" => array(
-          "size" => "1.9G",
-          "used" => "58M",
-          "avail" => "1.8G",
-          "usepct" => "4%",
-          "mountpoint" => "/boot"
-        )
-      ));
+      $mockHelper->method('getdiskspace')->willReturn(["/dev/mapper/SangomaVG-root" => ["size" => "16G", "used" => "9.1G", "avail" => "6.2G", "usepct" => "60%", "mountpoint" => "/"], "/dev/sda1" => ["size" => "1.9G", "used" => "58M", "avail" => "1.8G", "usepct" => "4%", "mountpoint" => "/boot"]]);
       self::$freepbx->Dashboard = $mockHelper;
       $response = $this->request("query{
         checkdiskspace {status message}
@@ -60,7 +46,7 @@ class DashboardGQLTest extends ApiBaseTestCase {
   public function test_checkdiskspace_all_return_false() {
     $mockHelper = $this->getMockBuilder(\Dashboard::class)
     ->disableOriginalConstructor()
-    ->setMethods(array('getdiskspace'))
+    ->setMethods(['getdiskspace'])
     ->getMock();
     $mockHelper->method('getdiskspace')->willReturn([]);
     self::$freepbx->Dashboard = $mockHelper;

@@ -6,9 +6,9 @@
 class Dashboard extends FreePBX_Helpers implements BMO {
 
 	public function __construct($freepbx) {
-		$this->db = $freepbx->Database;
+		$this->db      = $freepbx->Database;
 		$this->freepbx = $freepbx;
-		$this->maxage = $this->freepbx->Config->get('SYS_STATS_MAXAGE');
+		$this->maxage  = $this->freepbx->Config->get('SYS_STATS_MAXAGE');
 		if ($this->maxage < 50) {
 			$this->maxage = 50;
 		}
@@ -22,92 +22,51 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	// if it took .1 seconds, and this is set to 100, it'll regen the
 	// status every 10 seconds (or if it took .2, every 20 seconds)
 	// This is to avoid extra load on the server when it's not needed.
-	private $regen = 100;
+	private int $regen = 100;
 
 	// Keep this number of days worth of system stats
-	private $history = 90;
+	private int $history = 90;
 
 	// IF you're adding a new builtin hook, add the descriptive name
 	// and size and everything to classes/DashboardHooks, too.
-	private $builtinhooks = array(
-		"overview" => "getAjaxOverview",
-		"blog" => "getBlogPosts",
+	private array $builtinhooks = [
+		"overview"      => "getAjaxOverview",
+		"blog"          => "getBlogPosts",
 		"notifications" => "getAjaxNotifications",
-		"sysstat" => "getAjaxSysStat",
-		"aststat" => "getAjaxAsteriskStat",
-		"uptime" => "getAjaxUptime",
-		"srvstat" => "getAjaxServerStats",
-		"registered" => "getRegoInfo",
-		"notepad_save" => "saveNote",
-		"notepad_del" => "delNote",
-
+		"sysstat"       => "getAjaxSysStat",
+		"aststat"       => "getAjaxAsteriskStat",
+		"uptime"        => "getAjaxUptime",
+		"srvstat"       => "getAjaxServerStats",
+		"registered"    => "getRegoInfo",
+		"notepad_save"  => "saveNote",
+		"notepad_del"   => "delNote",
 		// This is for testing, and isn't used. If you remove it, tests
 		// will fail.
-		"fake" => "fake",
-	);
+		"fake"          => "fake",
+	];
 
 	public function install() {
-		$this->freepbx->Config->remove_conf_settings(array("DASHBOARD_INFO_UPDATE_TIME", "MAXCALLS", "DASHBOARD_STATS_UPDATE_TIME"));
-		$this->freepbx->Config->define_conf_setting('SYS_STATS_DISABLE', array(
-			'value'       => false,
-			'defaultval'  => false,
-			'readonly'    => false,
-			'hidden'      => false,
-			'level'       => 0,
-			'module'      => 'dashboard',
-			'category'    => 'Dashboard Module',
-			'emptyok'     => false,
-			'sortorder'   => 1,
-			'name'        => 'Disable collection of system statistics',
-			'description' => 'Set this to true to prevent persistent collection of system statistics such as CPU, memory, and channel usage.',
-			'type'        => CONF_TYPE_BOOL
-		),true);
+		$this->freepbx->Config->remove_conf_settings([ "DASHBOARD_INFO_UPDATE_TIME", "MAXCALLS", "DASHBOARD_STATS_UPDATE_TIME" ]);
+		$this->freepbx->Config->define_conf_setting('SYS_STATS_DISABLE', [ 'value' => false, 'defaultval' => false, 'readonly' => false, 'hidden' => false, 'level' => 0, 'module' => 'dashboard', 'category' => 'Dashboard Module', 'emptyok' => false, 'sortorder' => 1, 'name' => 'Disable collection of system statistics', 'description' => 'Set this to true to prevent persistent collection of system statistics such as CPU, memory, and channel usage.', 'type' => CONF_TYPE_BOOL ], true);
 
-		$this->freepbx->Config->define_conf_setting('SYS_STATS_MAXAGE', array(
-			'value'       => 50,
-			'defaultval'  => 50,
-			'readonly'    => false,
-			'hidden'      => false,
-			'level'       => 0,
-			'options'     => array(50, 86400),
-			'module'      => 'dashboard',
-			'category'    => 'Dashboard Module',
-			'emptyok'     => false,
-			'sortorder'   => 1,
-			'name'        => 'Expiry time for system statistics',
-			'description' => 'Set the maximum age in seconds before system statistics are refreshed. The minimum value is 50 seconds.',
-			'type'        => CONF_TYPE_INT
-		),true);
+		$this->freepbx->Config->define_conf_setting('SYS_STATS_MAXAGE', [ 'value' => 50, 'defaultval' => 50, 'readonly' => false, 'hidden' => false, 'level' => 0, 'options' => [ 50, 86400 ], 'module' => 'dashboard', 'category' => 'Dashboard Module', 'emptyok' => false, 'sortorder' => 1, 'name' => 'Expiry time for system statistics', 'description' => 'Set the maximum age in seconds before system statistics are refreshed. The minimum value is 50 seconds.', 'type' => CONF_TYPE_INT ], true);
 
-		$this->freepbx->Config->define_conf_setting('VIEW_FW_STATUS', array(
-			'value'       => true,
-			'defaultval'  => true,
-			'readonly'    => false,
-			'hidden'      => false,
-			'level'       => 0,
-			'module'      => 'dashboard',
-			'category'    => 'Dashboard Module',
-			'emptyok'     => false,
-			'sortorder'   => 1,
-			'name'        => 'Display firewall status',
-			'description' => 'The Dashboard will display a warning when the PBX Firewall is disabled. When this is set to \'no\', the Dashboard warning will be permanently suppressed.',
-			'type'        => CONF_TYPE_BOOL
-		),true);
-		
+		$this->freepbx->Config->define_conf_setting('VIEW_FW_STATUS', [ 'value' => true, 'defaultval' => true, 'readonly' => false, 'hidden' => false, 'level' => 0, 'module' => 'dashboard', 'category' => 'Dashboard Module', 'emptyok' => false, 'sortorder' => 1, 'name' => 'Display firewall status', 'description' => 'The Dashboard will display a warning when the PBX Firewall is disabled. When this is set to \'no\', the Dashboard warning will be permanently suppressed.', 'type' => CONF_TYPE_BOOL ], true);
+
 		$feeds = $this->freepbx->Config->get('RSSFEEDS');
-		$feeds = str_replace("\r","",$feeds);
-		if(!empty($feeds)) {
-			$feeds = explode("\n",$feeds);
-			$i = 0;
-			$urls = array();
-			foreach($feeds as $feed) {
+		$feeds = str_replace("\r", "", (string) $feeds);
+		if (!empty($feeds)) {
+			$feeds = explode("\n", $feeds);
+			$i     = 0;
+			$urls  = [];
+			foreach ($feeds as $feed) {
 				$this->setConfig($feed, null, "content");
 				$this->setConfig($feed, null, "etag");
 				$this->setConfig($feed, null, "last_modified");
 			}
 		}
 	}
-	
+
 	public function uninstall() {
 	}
 	public function backup() {
@@ -119,11 +78,11 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	}
 
 	public function __get($var) {
-		switch($var) {
+		switch ($var) {
 			case 'cache':
 				$this->cache = $this->freepbx->Cache->cloneByNamespace('dashboard');
 				return $this->cache;
-			break;
+				break;
 		}
 	}
 
@@ -138,13 +97,13 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		// While we're here, we should check that our cronjob is
 		// still there.
 		$crons = $this->freepbx->Cron->getAll();
-		foreach($crons as $c) {
-			if(preg_match('/scheduler\.php/',$c,$matches)) {
+		foreach ($crons as $c) {
+			if (preg_match('/scheduler\.php/', (string) $c, $matches)) {
 				$this->freepbx->Cron->remove($c);
 			}
 		}
 
-		$this->freepbx->Job->addClass('dashboard', 'scheduler', 'FreePBX\modules\Dashboard\Job', '* * * * *');
+		$this->freepbx->Job->addClass('dashboard', 'scheduler', \FreePBX\modules\Dashboard\Job::class, '* * * * *');
 	}
 
 	public function ajaxRequest($req, &$setting) {
@@ -155,10 +114,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	 * Chown hook for freepbx fwconsole
 	 */
 	public function chownFreepbx() {
-		$files = array(
-			array('type' => 'file', 'path' => __DIR__."/scheduler.php", 'perms' => 0755),
-			array('type' => 'file', 'path' => __DIR__."/netmon.php", 'perms' => 0755),
-		);
+		$files = [ [ 'type' => 'file', 'path' => __DIR__ . "/scheduler.php", 'perms' => 0755 ], [ 'type' => 'file', 'path' => __DIR__ . "/netmon.php", 'perms' => 0755 ] ];
 		return $files;
 	}
 
@@ -168,71 +124,73 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		}
 
 		switch ($_REQUEST['command']) {
-		case "deletemessage":
-			\FreePBX::create()->Notifications->safe_delete($_REQUEST['raw'], $_REQUEST['id']);
-			return array("status" => true);
-			break;
-		case "resetmessage":
-			\FreePBX::create()->Notifications->reset($_REQUEST['raw'], $_REQUEST['id']);
-			return array("status" => true);
-			break;
-		case "saveorder":
-			$this->setConfig('visualorder',$_REQUEST['order']);
-			return array("status" => true);
-			break;
-		case "getcontent":
+			case "deletemessage":
+				\FreePBX::create()->Notifications->safe_delete($_REQUEST['raw'], $_REQUEST['id']);
+				return [ "status" => true ];
+				break;
+			case "resetmessage":
+				\FreePBX::create()->Notifications->reset($_REQUEST['raw'], $_REQUEST['id']);
+				return [ "status" => true ];
+				break;
+			case "saveorder":
+				$this->setConfig('visualorder', $_REQUEST['order']);
+				return [ "status" => true ];
+				break;
+			case "getcontent":
 				# Diskspace graph is comming from sysadmin
 				if ($_REQUEST['rawname'] == 'Diskspace' && $this->freepbx->Modules->checkStatus("sysadmin") && method_exists($this->freepbx->Sysadmin, 'DashboardGraph')) {
-					return array("status" => true, "content" => $this->freepbx->Sysadmin->DashboardGraph()->getContent());
-				} else {
+					return [ "status" => true, "content" => $this->freepbx->Sysadmin->DashboardGraph()->getContent() ];
+				}
+				else {
 					if (file_exists(__DIR__ . '/sections/' . $_REQUEST['rawname'] . '.class.php')) {
 						include(__DIR__ . '/sections/' . $_REQUEST['rawname'] . '.class.php');
 						$class = '\\FreePBX\\modules\\Dashboard\\Sections\\' . $_REQUEST['rawname'];
 						$class = new $class();
-						return array("status" => true, "content" => $class->getContent($_REQUEST['section']));
-					} else {
-						return array("status" => false, "message" => _("Missing Class Object!"));
+						return [ "status" => true, "content" => $class->getContent($_REQUEST['section']) ];
 					}
-			}
-			break;
-		case "gethooks":
-			if (!$this->getConfig('allhooks')) {
-				$e = null;
-				$this->doDialplanHook($e, null, null); // Avoid warnings.
-			}
-			$config = $this->getConfig('allhooks');
-			$order = $this->getConfig('visualorder');
-			if(is_array($order)) {
-				foreach($config as &$page) {
-					$entries = array();
-					foreach($page['entries'] as $k => $e) {
-						$o = isset($order[$e['section']]) ? $order[$e['section']] : $k;
-						while(isset($entries[$o])) {
-							$o++;
-						}
-						$entries[$o] = $e;
+					else {
+						return [ "status" => false, "message" => _("Missing Class Object!") ];
 					}
-					ksort($entries);
-					$page['entries'] = $entries;
 				}
-			}
-			return $config;
-			break;
-		case "sysstat":
-			if (!class_exists('Statistics')) {
-				include 'classes/Statistics.class.php';
-			}
-			$s = new Statistics();
-			return $s->getStats();
-			break;
-		default:
-			return DashboardHooks::runHook($_REQUEST['command']);
-			break;
+				break;
+			case "gethooks":
+				if (!$this->getConfig('allhooks')) {
+					$e = null;
+					$this->doDialplanHook($e, null, null); // Avoid warnings.
+				}
+				$config = $this->getConfig('allhooks');
+				$order = $this->getConfig('visualorder');
+				if (is_array($order)) {
+					foreach ($config as &$page) {
+						$entries = [];
+						foreach ($page['entries'] as $k => $e) {
+							$o = $order[$e['section']] ?? $k;
+							while (isset($entries[$o])) {
+								$o++;
+							}
+							$entries[$o] = $e;
+						}
+						ksort($entries);
+						$page['entries'] = $entries;
+					}
+				}
+				return $config;
+				break;
+			case "sysstat":
+				if (!class_exists('Statistics')) {
+					include 'classes/Statistics.class.php';
+				}
+				$s = new Statistics();
+				return $s->getStats();
+				break;
+			default:
+				return DashboardHooks::runHook($_REQUEST['command']);
+				break;
 		}
 	}
 
 	public function ajaxCustomHandler() {
-		switch($_REQUEST['command']){
+		switch ($_REQUEST['command']) {
 			case "netmon":
 				if (!class_exists('Netmon')) {
 					include 'classes/Netmon.class.php';
@@ -240,7 +198,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 				$n = new \FreePBX\modules\Dashboard\Netmon();
 				$n->getLiveStats();
 				die();
-			break;
+				break;
 		}
 	}
 
@@ -264,9 +222,9 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 		if (!class_exists('SysInfo')) {
 			include 'classes/SysInfo.class.php';
 		}
-		$si = SysInfo::create();
-		$info = $si->getSysInfo();
-		$end = microtime(true);
+		$si    = SysInfo::create();
+		$info  = $si->getSysInfo();
+		$end   = microtime(true);
 		$delay = (float) $end - $start;
 		// This is now a float in seconds of how long it took
 		// to generate the sysinfo.
@@ -324,7 +282,7 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 
 	// Manage Built in Hooks
 	public function doBuiltInHook($hookname) {
-		$funcname = substr($hookname, 8);
+		$funcname = substr((string) $hookname, 8);
 		if (!isset($this->builtinhooks[$funcname]))
 			throw new Exception("I was asked for $funcname, but I don't know what it is!");
 
@@ -336,34 +294,29 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	}
 
 	public function genStatusIcon($res, $tt = null) {
-		$glyphs = array(
-			"ok" => "fa-check text-success",
-			"warning" => "fa-exclamation-triangle text-warning",
-			"error" => "fa-times text-danger",
-			"unknown" => "fa-question-circle text-info",
-			"info" => "fa-info-circle text-info",
-			"critical" => "fa-fire text-danger"
-		);
+		$glyphs = [ "ok" => "fa-check text-success", "warning" => "fa-exclamation-triangle text-warning", "error" => "fa-times text-danger", "unknown" => "fa-question-circle text-info", "info" => "fa-info-circle text-info", "critical" => "fa-fire text-danger" ];
 		// Are we being asked for an alert we actually know about?
 		if (!isset($glyphs[$res])) {
-			return array('type' => 'unknown', "tooltip" => "Don't know what $res is", "glyph-class" => $glyphs['unknown']);
+			return [ 'type' => 'unknown', "tooltip" => "Don't know what $res is", "glyph-class" => $glyphs['unknown'] ];
 		}
 
 		if ($tt === null) {
 			// No Tooltip
-			return array('type' => $res, "tooltip" => null, "glyph-class" => $glyphs[$res]);
-		} else {
+			return [ 'type' => $res, "tooltip" => null, "glyph-class" => $glyphs[$res] ];
+		}
+		else {
 			// Generate a tooltip
 			$html = '';
 			if (is_array($tt)) {
 				foreach ($tt as $line) {
-					$html .= htmlentities(\ForceUTF8\Encoding::fixUTF8($line), ENT_QUOTES,"UTF-8")."\n";
+					$html .= htmlentities((string) \ForceUTF8\Encoding::fixUTF8($line), ENT_QUOTES, "UTF-8") . "\n";
 				}
-			} else {
-				$html .= htmlentities(\ForceUTF8\Encoding::fixUTF8($tt), ENT_QUOTES,"UTF-8");
+			}
+			else {
+				$html .= htmlentities((string) \ForceUTF8\Encoding::fixUTF8($tt), ENT_QUOTES, "UTF-8");
 			}
 
-			return array('type' => $res, "tooltip" => $html, "glyph-class" => $glyphs[$res]);
+			return [ 'type' => $res, "tooltip" => $html, "glyph-class" => $glyphs[$res] ];
 		}
 		return '';
 	}
@@ -397,9 +350,9 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	}
 
 	private function saveNote() {
-		$content = new \StdClass;
-		$content->content = substr($_REQUEST["content"], 0, 2048);
-		$result = $this->setConfig(time(), $content, "notes");
+		$content          = new \StdClass;
+		$content->content = substr((string) $_REQUEST["content"], 0, 2048);
+		$result           = $this->setConfig(time(), $content, "notes");
 		return $result ? _("Saved note") : _("An error occured");
 	}
 
@@ -411,19 +364,19 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 	private function getAjaxServerStats() {
 		return "No\n";
 	}
-	public function extIgnoreList(){
-		$numbers = array();
-		$hooks = \FreePBX::Hooks()->processHooks();
+	public function extIgnoreList() {
+		$numbers = [];
+		$hooks   = \FreePBX::Hooks()->processHooks();
 		foreach ($hooks as $key => $value) {
-			if(is_array($value)){
-				$numbers = array_merge($numbers,$value);
+			if (is_array($value)) {
+				$numbers = array_merge($numbers, $value);
 			}
 		}
 		return $numbers;
 	}
 
-	public function getdiskspace(){
-		include_once __DIR__.'/classes/DiskUsage.class.php';
+	public function getdiskspace() {
+		include_once __DIR__ . '/classes/DiskUsage.class.php';
 		$obj_diskusage = new \DiskUsage();
 		return $obj_diskusage->parsedf();
 	}

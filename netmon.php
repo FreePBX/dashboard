@@ -84,7 +84,7 @@ function parse_ip_output($outarr) {
 		}
 		// If the first char is NOT a space, it's a network name.
 		if ($line[0] !== " ") {
-			$intarr = explode(":", $line);
+			$intarr = explode(":", (string) $line);
 			$current = trim($intarr[1]);
 			// If it's actually 'lo', we never save that.
 			if ($current !== "lo") {
@@ -92,9 +92,9 @@ function parse_ip_output($outarr) {
 			}
 			continue;
 		}
-		$line = trim($line);
+		$line = trim((string) $line);
 		// Does it start with 'link/ether'? We have a MAC
-		if (strpos($line, "link/ether") === 0) {
+		if (str_starts_with($line, "link/ether")) {
 			$tmparr = explode(" ", $line);
 			if (isset($tmparr[1])) {
 				$ints[$current]['mac'] = $tmparr[1];

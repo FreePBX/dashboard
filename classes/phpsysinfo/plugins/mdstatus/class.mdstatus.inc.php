@@ -38,9 +38,8 @@ class MDStatus extends PSI_Plugin
 
     /**
      * variable, which holds the result before the xml is generated out of this array
-     * @var array
      */
-    private $_result = array();
+    private array $_result = [];
 
     /**
      * read the data into an internal array and also call the parent constructor
@@ -50,22 +49,16 @@ class MDStatus extends PSI_Plugin
     public function __construct($enc)
     {
         $buffer = "";
-        parent::__construct(__CLASS__, $enc);
-        switch (strtolower(PSI_PLUGIN_MDSTATUS_ACCESS)) {
-        case 'file':
-            CommonFunctions::rfts("/proc/mdstat", $buffer);
-            break;
-        case 'data':
-            CommonFunctions::rfts(APP_ROOT."/data/mdstat.txt", $buffer);
-            break;
-        default:
-            $this->global_error->addConfigError("__construct()", "PSI_PLUGIN_MDSTATUS_ACCESS");
-            break;
-        }
-        if (trim($buffer) != "") {
-            $this->_filecontent = preg_split("/\n/", $buffer, -1, PREG_SPLIT_NO_EMPTY);
+        parent::__construct(self::class, $enc);
+        match (strtolower((string) PSI_PLUGIN_MDSTATUS_ACCESS)) {
+            'file' => CommonFunctions::rfts("/proc/mdstat", $buffer),
+            'data' => CommonFunctions::rfts(APP_ROOT."/data/mdstat.txt", $buffer),
+            default => $this->global_error->addConfigError("__construct()", "PSI_PLUGIN_MDSTATUS_ACCESS"),
+        };
+        if (trim((string) $buffer) != "") {
+            $this->_filecontent = preg_split("/\n/", (string) $buffer, -1, PREG_SPLIT_NO_EMPTY);
         } else {
-            $this->_filecontent = array();
+            $this->_filecontent = [];
         }
     }
 
@@ -82,39 +75,39 @@ class MDStatus extends PSI_Plugin
             return;
         }
         // get the supported types
-        if (preg_match('/[a-zA-Z]* : (\[([a-z0-9])*\]([ \n]))+/', $this->_filecontent[0], $res)) {
+        if (preg_match('/[a-zA-Z]* : (\[([a-z0-9])*\]([ \n]))+/', (string) $this->_filecontent[0], $res)) {
             $parts = preg_split("/ : /", $res[0]);
             $parts = preg_split("/ /", $parts[1]);
             $count = 0;
             foreach ($parts as $types) {
-                if (trim($types) != "") {
-                    $this->_result['supported_types'][$count++] = substr(trim($types), 1, -1);
+                if (trim((string) $types) != "") {
+                    $this->_result['supported_types'][$count++] = substr(trim((string) $types), 1, -1);
                 }
             }
         }
         // get disks
-        if (preg_match("/^read_ahead/", $this->_filecontent[1])) {
+        if (preg_match("/^read_ahead/", (string) $this->_filecontent[1])) {
             $count = 2;
         } else {
             $count = 1;
         }
         $cnt_filecontent = count($this->_filecontent);
         do {
-            $parts = preg_split("/ : /", $this->_filecontent[$count]);
+            $parts = preg_split("/ : /", (string) $this->_filecontent[$count]);
             $dev = trim($parts[0]);
-            if (count($parts) == 2) {
+            if ((is_countable($parts) ? count($parts) : 0) == 2) {
                 $details = preg_split('/ /', $parts[1]);
                 if (!strstr($details[0], 'inactive')) {
                     $this->_result['devices'][$dev]['level'] = $details[1];
                 }
                 $this->_result['devices'][$dev]['status'] = $details[0];
-                for ($i = 2, $cnt_details = count($details); $i < $cnt_details; $i++) {
+                for ($i = 2, $cnt_details = is_countable($details) ? count($details) : 0; $i < $cnt_details; $i++) {
                     preg_match('/(([a-z0-9])+)(\[([0-9]+)\])(\([SF ]\))?/', trim($details[$i]), $partition);
                     if (count($partition) == 5 || count($partition) == 6) {
                         $this->_result['devices'][$dev]['partitions'][$partition[1]]['raid_index'] = substr(trim($partition[3]), 1, -1);
                         if (isset($partition[5])) {
-                            $search = array("(", ")");
-                            $replace = array("", "");
+                            $search = ["(", ")"];
+                            $replace = ["", ""];
                             $this->_result['devices'][$dev]['partitions'][$partition[1]]['status'] = str_replace($search, $replace, trim($partition[5]));
                         } else {
                             $this->_result['devices'][$dev]['partitions'][$partition[1]]['status'] = " ";
@@ -146,11 +139,11 @@ class MDStatus extends PSI_Plugin
                     $this->_result['devices'][$dev]['registered'] = -1;
                     $this->_result['devices'][$dev]['active'] = -1;
                 }
-                if (preg_match(('/([a-z]+)( *)=( *)([0-9\.]+)%/'), $this->_filecontent[$count + 1], $res) || (preg_match(('/([a-z]+)( *)=( *)([0-9\.]+)/'), $optionline, $res))) {
-                    list($this->_result['devices'][$dev]['action']['name'], $this->_result['devices'][$dev]['action']['percent']) = preg_split("/=/", str_replace("%", "", $res[0]));
-                    if (preg_match(('/([a-z]*=[0-9\.]+[a-z]+)/'), $this->_filecontent[$count + 1], $res)) {
+                if (preg_match(('/([a-z]+)( *)=( *)([0-9\.]+)%/'), (string) $this->_filecontent[$count + 1], $res) || (preg_match(('/([a-z]+)( *)=( *)([0-9\.]+)/'), $optionline, $res))) {
+                    [$this->_result['devices'][$dev]['action']['name'], $this->_result['devices'][$dev]['action']['percent']] = preg_split("/=/", str_replace("%", "", $res[0]));
+                    if (preg_match(('/([a-z]*=[0-9\.]+[a-z]+)/'), (string) $this->_filecontent[$count + 1], $res)) {
                         $time = preg_split("/=/", $res[0]);
-                        list($this->_result['devices'][$dev]['action']['finish_time'], $this->_result['devices'][$dev]['action']['finish_unit']) = sscanf($time[1], '%f%s');
+                        [$this->_result['devices'][$dev]['action']['finish_time'], $this->_result['devices'][$dev]['action']['finish_unit']] = sscanf($time[1], '%f%s');
                     } else {
                         $this->_result['devices'][$dev]['action']['finish_time'] = -1;
                         $this->_result['devices'][$dev]['action']['finish_unit'] = -1;
@@ -166,10 +159,10 @@ class MDStatus extends PSI_Plugin
             }
         } while ($cnt_filecontent > $count);
         $lastline = $this->_filecontent[$cnt_filecontent - 2];
-        if (strpos($lastline, "unused devices") !== false) {
-            $parts = preg_split("/:/", $lastline);
-            $search = array("<", ">");
-            $replace = array("", "");
+        if (str_contains((string) $lastline, "unused devices")) {
+            $parts = preg_split("/:/", (string) $lastline);
+            $search = ["<", ">"];
+            $replace = ["", ""];
             $this->_result['unused_devs'] = trim(str_replace($search, $replace, $parts[1]));
         } else {
             $this->_result['unused_devs'] = -1;

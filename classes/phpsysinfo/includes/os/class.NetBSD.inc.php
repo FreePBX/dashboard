@@ -61,8 +61,8 @@ class NetBSD extends BSDCommon
     {
         CommonFunctions::executeProgram('netstat', '-nbdi | cut -c1-25,44- | grep "^[a-z]*[0-9][ \t].*Link"', $netstat_b);
         CommonFunctions::executeProgram('netstat', '-ndi | cut -c1-25,44- | grep "^[a-z]*[0-9][ \t].*Link"', $netstat_n);
-        $lines_b = preg_split("/\n/", $netstat_b, -1, PREG_SPLIT_NO_EMPTY);
-        $lines_n = preg_split("/\n/", $netstat_n, -1, PREG_SPLIT_NO_EMPTY);
+        $lines_b = preg_split("/\n/", (string) $netstat_b, -1, PREG_SPLIT_NO_EMPTY);
+        $lines_n = preg_split("/\n/", (string) $netstat_n, -1, PREG_SPLIT_NO_EMPTY);
         for ($i = 0, $max = sizeof($lines_b); $i < $max; $i++) {
             $ar_buf_b = preg_split("/\s+/", $lines_b[$i]);
             $ar_buf_n = preg_split("/\s+/", $lines_n[$i]);
@@ -86,14 +86,14 @@ class NetBSD extends BSDCommon
     protected function ide()
     {
         foreach ($this->readdmesg() as $line) {
-            if (preg_match('/^(.*) at (pciide|wdc|atabus|atapibus)[0-9] (.*): <(.*)>/', $line, $ar_buf)) {
+            if (preg_match('/^(.*) at (pciide|wdc|atabus|atapibus)[0-9] (.*): <(.*)>/', (string) $line, $ar_buf)) {
                 $dev = new HWDevice();
                 $dev->setName($ar_buf[1]);
                 // now loop again and find the capacity
                 foreach ($this->readdmesg() as $line2) {
-                    if (preg_match("/^(".$ar_buf[1]."): (.*), (.*), (.*)MB, .*$/", $line2, $ar_buf_n)) {
+                    if (preg_match("/^(".$ar_buf[1]."): (.*), (.*), (.*)MB, .*$/", (string) $line2, $ar_buf_n)) {
                         $dev->setCapacity($ar_buf_n[4] * 2048 * 1.049);
-                    } elseif (preg_match("/^(".$ar_buf[1]."): (.*) MB, (.*), (.*), .*$/", $line2, $ar_buf_n)) {
+                    } elseif (preg_match("/^(".$ar_buf[1]."): (.*) MB, (.*), (.*), .*$/", (string) $line2, $ar_buf_n)) {
                         $dev->setCapacity($ar_buf_n[2] * 2048);
                     }
                 }

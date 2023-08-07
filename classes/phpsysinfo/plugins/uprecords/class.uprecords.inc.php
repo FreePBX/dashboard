@@ -27,13 +27,11 @@
 
 class uprecords extends PSI_Plugin
 {
-    private $_lines;
+    private array|bool $_lines = [];
 
     public function __construct($enc)
     {
-        parent::__construct(__CLASS__, $enc);
-
-        $this->_lines = array();
+        parent::__construct(self::class, $enc);
     }
 
     /**
@@ -44,7 +42,7 @@ class uprecords extends PSI_Plugin
 
     private function uprecords()
     {
-        $result = array ();
+        $result = [];
         $i = 0;
 
         /* default error handler */
@@ -58,13 +56,13 @@ class uprecords extends PSI_Plugin
         $diff = date("O"); //timezone offset
 
         foreach ($this->_lines as $line) {
-            if (($i > 1) and (strpos($line, '---') === false)) {
-                $buffer = preg_split("/\s*[ |]\s+/", ltrim(ltrim($line, '->'), ' '));
-                if (strpos($line, '->') !== false) {
+            if (($i > 1) and (!str_contains((string) $line, '---'))) {
+                $buffer = preg_split("/\s*[ |]\s+/", ltrim(ltrim((string) $line, '->'), ' '));
+                if (str_contains((string) $line, '->')) {
                     $buffer[0] = '-> '.$buffer[0];
                 }
 
-                if (count($buffer) > 4) {
+                if ((is_countable($buffer) ? count($buffer) : 0) > 4) {
                     $buffer[3] = $buffer[3].' '.$buffer[4];
                 }
 
@@ -93,16 +91,16 @@ class uprecords extends PSI_Plugin
 
     public function execute()
     {
-        $this->_lines = array();
-        switch (strtolower(PSI_PLUGIN_UPRECORDS_ACCESS)) {
+        $this->_lines = [];
+        switch (strtolower((string) PSI_PLUGIN_UPRECORDS_ACCESS)) {
             case 'command':
                 $lines = "";
                 if (CommonFunctions::executeProgram('uprecords', '-a -w', $lines) && !empty($lines))
-                $this->_lines = preg_split("/\n/", $lines, -1, PREG_SPLIT_NO_EMPTY);
+                $this->_lines = preg_split("/\n/", (string) $lines, -1, PREG_SPLIT_NO_EMPTY);
                 break;
             case 'data':
                 if (CommonFunctions::rfts(APP_ROOT."/data/uprecords.txt", $lines) && !empty($lines))
-                $this->_lines = preg_split("/\n/", $lines, -1, PREG_SPLIT_NO_EMPTY);
+                $this->_lines = preg_split("/\n/", (string) $lines, -1, PREG_SPLIT_NO_EMPTY);
                 break;
             default:
                 $this->error->addConfigError('__construct()', 'PSI_PLUGIN_UPRECORDS_ACCESS');

@@ -5,10 +5,10 @@
 
 class DashboardHooks {
 
-	private static $pages = array();
+	private static array $pages = [];
 
 	public static function genHooks($order) {
-		self::$pages[] = array("pagename" => "Main", "entries" => self::getMainEntries($order));
+		self::$pages[] = ["pagename" => "Main", "entries" => self::getMainEntries($order)];
 		self::addExtraPages();
 		return self::$pages;
 	}
@@ -24,9 +24,9 @@ class DashboardHooks {
 		}
 		$reged = (function_exists('sysadmin_get_license') && sysadmin_get_license());
 
-		$sections = array();
+		$sections = [];
 		foreach(glob(dirname(__DIR__).'/sections/*.class.php') as $file) {
-			$class = "\\FreePBX\\modules\\Dashboard\\Sections\\".str_replace('.class','',pathinfo($file,PATHINFO_FILENAME));
+			$class = "\\FreePBX\\modules\\Dashboard\\Sections\\".str_replace('.class','',pathinfo((string) $file,PATHINFO_FILENAME));
 			if (!class_exists($class)) {
 				include $file ;
 			}
@@ -36,7 +36,7 @@ class DashboardHooks {
 				while(isset($sections[$section['order']])) {
 					$section['order']++;
 				}
-				$sections[$section['order']] = array("group" => $section['group'], "title" => $section['title'], "width" => $section['width'], "rawname" => $class->rawname, "section" => $section['section']);
+				$sections[$section['order']] = ["group" => $section['group'], "title" => $section['title'], "width" => $section['width'], "rawname" => $class->rawname, "section" => $section['section']];
 			}
 		}
 		# Call dashboard disk graph hook
@@ -61,12 +61,12 @@ class DashboardHooks {
 	}
 
 	public static function runHook($hook) {
-		if (strpos($hook, "builtin_") === 0) {
+		if (str_starts_with((string) $hook, "builtin_")) {
 			// It's a builtin module.
 			return FreePBX::create()->Dashboard->doBuiltInHook($hook);
 		}
 
-		if (strpos($hook, "freepbx_ha_") === 0) {
+		if (str_starts_with((string) $hook, "freepbx_ha_")) {
 			return "This is not the hook you want";
 		}
 

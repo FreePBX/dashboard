@@ -27,15 +27,14 @@ class UpdateNotifier extends PSI_Plugin
 {
     /**
      * variable, which holds the content of the command
-     * @var array
      */
-    private $_filecontent = array();
+    private array|bool $_filecontent = [];
 
     /**
      * variable, which holds the result before the xml is generated out of this array
      * @var array
      */
-    private $_result = array();
+    private $_result = [];
 
     /**
      * read the data into an internal array and also call the parent constructor
@@ -44,11 +43,11 @@ class UpdateNotifier extends PSI_Plugin
      */
     public function __construct($enc)
     {
-        parent::__construct(__CLASS__, $enc);
+        parent::__construct(self::class, $enc);
 
         CommonFunctions::rfts(PSI_PLUGIN_UPDATENOTIFIER_FILE, $buffer_info);
         // Remove blank lines
-        $this->_filecontent = preg_split("/\n/", $buffer_info, -1, PREG_SPLIT_NO_EMPTY);
+        $this->_filecontent = preg_split("/\n/", (string) $buffer_info, -1, PREG_SPLIT_NO_EMPTY);
     }
 
     /**
@@ -71,7 +70,7 @@ class UpdateNotifier extends PSI_Plugin
              */
             if (count($this->_filecontent) == 2) {
                 foreach ($this->_filecontent as $line) {
-                    list($num, $text) = explode(" ", $line, 2);
+                    [$num, $text] = explode(" ", (string) $line, 2);
                     $this->_result[] = $num;
                 }
             } else {
@@ -83,8 +82,8 @@ class UpdateNotifier extends PSI_Plugin
              - A: packages to update
              - B: security packages to update
              */
-            if (count($this->_filecontent) == 1 && strpos($this->_filecontent[0], ";") !== false) {
-                $this->_result = explode(";", $this->_filecontent[0]);
+            if (count($this->_filecontent) == 1 && str_contains((string) $this->_filecontent[0], ";")) {
+                $this->_result = explode(";", (string) $this->_filecontent[0]);
             } else {
                 $this->global_error->addWarning("Unable to parse UpdateNotifier file");
             }

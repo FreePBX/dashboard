@@ -1,8 +1,8 @@
 <div class="row">
 	<div class="col-sm-2">
-		<div class="btn-group-vertical">
+		<div class="btn-group-vertical" style='align-items: flex-end;'>
 			<div class="btn-group btn-group-lg" data-type="asterisk">
-				<button type="button" class="btn btn-default dropdown-toggle btn-stats" data-toggle="dropdown">
+				<button type="button" class="btn btn-default dropdown-toggle btn-stats" data-toggle="dropdown" >
 					Asterisk <span class="caret"></span>
 				</button>
 				<ul class="dropdown-menu">

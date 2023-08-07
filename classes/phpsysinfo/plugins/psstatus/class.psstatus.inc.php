@@ -33,15 +33,13 @@ class PSStatus extends PSI_Plugin
 {
     /**
      * variable, which holds the content of the command
-     * @var array
      */
-    private $_filecontent = array();
+    private array $_filecontent = [];
 
     /**
      * variable, which holds the result before the xml is generated out of this array
-     * @var array
      */
-    private $_result = array();
+    private array $_result = [];
 
     /**
      * read the data into an internal array and also call the parent constructor
@@ -50,8 +48,8 @@ class PSStatus extends PSI_Plugin
      */
     public function __construct($enc)
     {
-        parent::__construct(__CLASS__, $enc);
-        switch (strtolower(PSI_PLUGIN_PSSTATUS_ACCESS)) {
+        parent::__construct(self::class, $enc);
+        switch (strtolower((string) PSI_PLUGIN_PSSTATUS_ACCESS)) {
         case 'command':
             if (PSI_OS == 'WINNT') {
                 try {
@@ -59,29 +57,29 @@ class PSStatus extends PSI_Plugin
                     $wmi = $objLocator->ConnectServer();
                     $process_wmi = $wmi->InstancesOf('Win32_Process');
                     foreach ($process_wmi as $process) {
-                        $this->_filecontent[] = array(trim($process->Caption), trim($process->ProcessId));
+                        $this->_filecontent[] = [trim((string) $process->Caption), trim((string) $process->ProcessId)];
                     }
-                } catch (Exception $e) {
+                } catch (Exception) {
                 }
             } else {
                 if ( defined('PSI_PLUGIN_PSSTATUS_PROCESSES') && is_string(PSI_PLUGIN_PSSTATUS_PROCESSES) ) {
                     if (preg_match(ARRAY_EXP, PSI_PLUGIN_PSSTATUS_PROCESSES)) {
                         $processes = eval(PSI_PLUGIN_PSSTATUS_PROCESSES);
                     } else {
-                        $processes = array(PSI_PLUGIN_PSSTATUS_PROCESSES);
+                        $processes = [PSI_PLUGIN_PSSTATUS_PROCESSES];
                     }
                     if ( defined('PSI_PLUGIN_PSSTATUS_USE_REGEX') && PSI_PLUGIN_PSSTATUS_USE_REGEX === true) {
                         foreach ($processes as $process) {
                             CommonFunctions::executeProgram("pgrep", "-n -x ".$process, $buffer, PSI_DEBUG);
-                            if (strlen(trim($buffer)) > 0) {
-                                $this->_filecontent[] = array($process, trim($buffer));
+                            if (strlen(trim((string) $buffer)) > 0) {
+                                $this->_filecontent[] = [$process, trim((string) $buffer)];
                             }
                         }
                     } else {
                         foreach ($processes as $process) {
                             CommonFunctions::executeProgram("pidof", "-s ".$process, $buffer, PSI_DEBUG);
-                            if (strlen(trim($buffer)) > 0) {
-                                $this->_filecontent[] = array($process, trim($buffer));
+                            if (strlen(trim((string) $buffer)) > 0) {
+                                $this->_filecontent[] = [$process, trim((string) $buffer)];
                             }
                         }
                     }
@@ -90,11 +88,11 @@ class PSStatus extends PSI_Plugin
             break;
         case 'data':
             CommonFunctions::rfts(APP_ROOT."/data/psstatus.txt", $buffer);
-            $processes = preg_split("/\n/", $buffer, -1, PREG_SPLIT_NO_EMPTY);
+            $processes = preg_split("/\n/", (string) $buffer, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($processes as $process) {
-                $ps = preg_split("/[\s]?\|[\s]?/", $process, -1, PREG_SPLIT_NO_EMPTY);
-                if (count($ps) == 2) {
-                    $this->_filecontent[] = array(trim($ps[0]), trim($ps[1]));
+                $ps = preg_split("/[\s]?\|[\s]?/", (string) $process, -1, PREG_SPLIT_NO_EMPTY);
+                if ((is_countable($ps) ? count($ps) : 0) == 2) {
+                    $this->_filecontent[] = [trim($ps[0]), trim($ps[1])];
                 }
             }
             break;
@@ -120,13 +118,13 @@ class PSStatus extends PSI_Plugin
             if (preg_match(ARRAY_EXP, PSI_PLUGIN_PSSTATUS_PROCESSES)) {
                 $processes = eval(PSI_PLUGIN_PSSTATUS_PROCESSES);
             } else {
-                $processes = array(PSI_PLUGIN_PSSTATUS_PROCESSES);
+                $processes = [PSI_PLUGIN_PSSTATUS_PROCESSES];
             }
             foreach ($processes as $process) {
                 if ($this->_recursiveinarray($process, $this->_filecontent)) {
-                    $this->_result[] = array($process, true);
+                    $this->_result[] = [$process, true];
                 } else {
-                    $this->_result[] = array($process, false);
+                    $this->_result[] = [$process, false];
                 }
             }
         }
@@ -156,7 +154,7 @@ class PSStatus extends PSI_Plugin
      *
      * @return boolean true - found<br>false - not found
      */
-    private function _recursiveinarray($needle, $haystack)
+    private function _recursiveinarray(mixed $needle, $haystack)
     {
         foreach ($haystack as $stalk) {
             if ($needle == $stalk || (is_array($stalk) && $this->_recursiveinarray($needle, $stalk))) {

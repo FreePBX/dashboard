@@ -27,7 +27,7 @@ function psi_autoloader($class_name) {
 	//$class_name = str_replace('-', '', $class_name);
 
 	/* case-insensitive folders */
-	$dirs = array('/plugins/'.strtolower($class_name).'/', '/includes/mb/', '/includes/ups/');
+	$dirs = ['/plugins/'.strtolower($class_name).'/', '/includes/mb/', '/includes/ups/'];
 
 	foreach ($dirs as $dir) {
 		if (file_exists(APP_ROOT.$dir.'class.'.strtolower($class_name).'.inc.php')) {
@@ -38,7 +38,7 @@ function psi_autoloader($class_name) {
 	}
 
 	/* case-sensitive folders */
-	$dirs = array('/includes/', '/includes/interface/', '/includes/to/', '/includes/to/device/', '/includes/os/', '/includes/plugin/', '/includes/xml/', '/includes/web/', '/includes/error/', '/includes/js/', '/includes/output/');
+	$dirs = ['/includes/', '/includes/interface/', '/includes/to/', '/includes/to/device/', '/includes/os/', '/includes/plugin/', '/includes/xml/', '/includes/web/', '/includes/error/', '/includes/js/', '/includes/output/'];
 
 	foreach ($dirs as $dir) {
 		if (file_exists(APP_ROOT.$dir.'class.'.$class_name.'.inc.php')) {

@@ -27,59 +27,43 @@ class System
 {
     /**
      * name of the host where phpSysInfo runs
-     *
-     * @var String
      */
-    private $_hostname = "localhost";
+    private string $_hostname = "localhost";
 
     /**
      * ip of the host where phpSysInfo runs
-     *
-     * @var String
      */
-    private $_ip = "127.0.0.1";
+    private string $_ip = "127.0.0.1";
 
     /**
      * detailed Information about the kernel
-     *
-     * @var String
      */
-    private $_kernel = "Unknown";
+    private string $_kernel = "Unknown";
 
     /**
      * name of the distribution
-     *
-     * @var String
      */
-    private $_distribution = "Unknown";
+    private string $_distribution = "Unknown";
 
     /**
      * icon of the distribution (must be available in phpSysInfo)
-     *
-     * @var String
      */
-    private $_distributionIcon = "unknown.png";
+    private string $_distributionIcon = "unknown.png";
 
     /**
      * time in sec how long the system is running
-     *
-     * @var Integer
      */
-    private $_uptime = 0;
+    private int $_uptime = 0;
 
     /**
      * count of users that are currently logged in
-     *
-     * @var Integer
      */
-    private $_users = 0;
+    private int $_users = 0;
 
     /**
      * load of the system
-     *
-     * @var String
      */
-    private $_load = "";
+    private string $_load = "";
 
     /**
      * load of the system in percent (all cpus, if more than one)
@@ -92,85 +76,65 @@ class System
      * array with cpu devices
      *
      * @see CpuDevice
-     *
-     * @var Array
      */
-    private $_cpus = array();
+    private array $_cpus = [];
 
     /**
      * array with network devices
      *
      * @see NetDevice
-     *
-     * @var Array
      */
-    private $_netDevices = array();
+    private array $_netDevices = [];
 
     /**
      * array with scsi devices
      *
      * @see HWDevice
-     *
-     * @var Array
      */
-    private $_scsiDevices = array();
+    private array $_scsiDevices = [];
 
     /**
      * array with pci devices
      *
      * @see HWDevice
-     *
-     * @var Array
      */
-    private $_pciDevices = array();
+    private array $_pciDevices = [];
 
     /**
      * array with usb devices
      *
      * @see HWDevice
-     *
-     * @var Array
      */
-    private $_usbDevices = array();
+    private array $_usbDevices = [];
 
     /**
      * array with ide devices
      *
      * @see HWDevice
-     *
-     * @var Array
      */
-    private $_ideDevices = array();
+    private array $_ideDevices = [];
 
     /**
      * array with disk devices
      *
      * @see DiskDevice
-     *
-     * @var Array
      */
-    private $_diskDevices = array();
+    private array $_diskDevices = [];
 
     /**
      * free memory in bytes
-     *
-     * @var Integer
      */
-    private $_memFree = 0;
+    private int $_memFree = 0;
 
     /**
      * total memory in bytes
-     *
-     * @var Integer
      */
-    private $_memTotal = 0;
+    private int $_memTotal = 0;
 
     /**
      * used memory in bytes
-     *
-     * @var Integer
      */
-    private $_memUsed = 0;
+    private int $_memUsed = 0;
 
     /**
      * used memory by applications in bytes
@@ -197,10 +161,8 @@ class System
      * array with swap devices
      *
      * @see DiskDevice
-     *
-     * @var Array
      */
-    private $_swapDevices = array();
+    private array $_swapDevices = [];
 
     /**
      * remove duplicate Entries and Count
@@ -213,7 +175,7 @@ class System
      */
     public static function removeDupsAndCount($arrDev)
     {
-        $result = array();
+        $result = [];
         foreach ($arrDev as $dev) {
             if (count($result) === 0) {
                 array_push($result, $dev);

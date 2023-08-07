@@ -27,24 +27,18 @@ class WebpageXML extends Output implements PSI_Interface_Output
 {
     /**
      * xml object that holds the generated xml
-     *
-     * @var XML
      */
-    private $_xml;
+    private ?\XML $_xml = null;
 
     /**
      * only plugin xml
-     *
-     * @var boolean
      */
-    private $_pluginRequest = false;
+    private bool $_pluginRequest = false;
 
     /**
      * complete xml
-     *
-     * @var boolean
      */
-    private $_completeXML = false;
+    private bool $_completeXML = false;
 
     /**
      * name of the plugin
@@ -67,16 +61,16 @@ class WebpageXML extends Output implements PSI_Interface_Output
             }
 
             // check if there is a valid sensor configuration in config.php
-            $foundsp = array();
+            $foundsp = [];
             if ( defined('PSI_SENSOR_PROGRAM') && is_string(PSI_SENSOR_PROGRAM) ) {
                 if (preg_match(ARRAY_EXP, PSI_SENSOR_PROGRAM)) {
                     $sensorprograms = eval(strtolower(PSI_SENSOR_PROGRAM));
                 } else {
-                    $sensorprograms = array(strtolower(PSI_SENSOR_PROGRAM));
+                    $sensorprograms = [strtolower(PSI_SENSOR_PROGRAM)];
                 }
                 foreach ($sensorprograms as $sensorprogram) {
                     if (!file_exists(APP_ROOT.'/includes/mb/class.'.$sensorprogram.'.inc.php')) {
-                        $this->error->addError("file_exists(class.".htmlspecialchars($sensorprogram).".inc.php)", "specified sensor program is not supported");
+                        $this->error->addError("file_exists(class.".htmlspecialchars((string) $sensorprogram).".inc.php)", "specified sensor program is not supported");
                     } else {
                         $foundsp[] = $sensorprogram;
                     }
@@ -105,9 +99,9 @@ class WebpageXML extends Output implements PSI_Interface_Output
             // check if there is a valid ups configuration in config.php
             $found = false;
             if (PSI_UPS_PROGRAM !== false) {
-                if (!file_exists(APP_ROOT.'/includes/ups/class.'.strtolower(PSI_UPS_PROGRAM).'.inc.php')) {
+                if (!file_exists(APP_ROOT.'/includes/ups/class.'.strtolower((string) PSI_UPS_PROGRAM).'.inc.php')) {
                     $found = false;
-                    $this->error->addError("file_exists(class.".htmlspecialchars(strtolower(PSI_UPS_PROGRAM)).".inc.php)", "specified UPS program is not supported");
+                    $this->error->addError("file_exists(class.".htmlspecialchars(strtolower((string) PSI_UPS_PROGRAM)).".inc.php)", "specified UPS program is not supported");
                 } else {
                     $found = true;
                 }

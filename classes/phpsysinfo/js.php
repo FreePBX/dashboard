@@ -17,13 +17,13 @@
  *
  * @var string
  */
-define('APP_ROOT', dirname(__FILE__));
+define('APP_ROOT', __DIR__);
 
 require_once APP_ROOT.'/includes/autoloader.inc.php';
 require_once APP_ROOT.'/config.php';
 
-$file = isset($_GET['name']) ? basename(htmlspecialchars($_GET['name'])) : null;
-$plugin = isset($_GET['plugin']) ? basename(htmlspecialchars($_GET['plugin'])) : null;
+$file = isset($_GET['name']) ? basename(htmlspecialchars((string) $_GET['name'])) : null;
+$plugin = isset($_GET['plugin']) ? basename(htmlspecialchars((string) $_GET['plugin'])) : null;
 
 if ($file != null && $plugin == null) {
     if (strtolower(substr($file, 0, 6)) == 'jquery') {
@@ -46,7 +46,7 @@ if ($script != null && file_exists($script) && is_readable($script)) {
         echo $filecontent;
     } else {
         if (defined("PSI_JS_COMPRESSION")) {
-            switch (strtolower(PSI_JS_COMPRESSION)) {
+            switch (strtolower((string) PSI_JS_COMPRESSION)) {
                 case "normal":
                     $packer = new JavaScriptPacker($filecontent);
                     echo $packer->pack();

@@ -30,24 +30,22 @@ class Template
      *
      * @Array
      */
-    private $_vars;
-
-    /**
-     * Template file
-     *
-     * @String
-     */
-    private $_file;
+    private array $_vars = [];
 
     /**
      * Constructor
      *
-     * @param String $file the template file name
+     * @param String $_file the template file name
      */
-    public function __construct($file=null)
+    public function __construct(
+        /**
+         * Template file
+         *
+         * @String
+         */
+        private $_file=null
+    )
     {
-        $this->_file = $file;
-        $this->_vars = array();
     }
 
     /**

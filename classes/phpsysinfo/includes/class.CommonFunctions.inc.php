@@ -27,11 +27,11 @@ class CommonFunctions
 {
     private static function _parse_log_file($string)
     {
-        if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && ((substr(PSI_LOG, 0, 1)=="-") || (substr(PSI_LOG, 0, 1)=="+"))) {
+        if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && ((str_starts_with(PSI_LOG, "-")) || (str_starts_with(PSI_LOG, "+")))) {
             $log_file = substr(PSI_LOG, 1);
             if (file_exists($log_file)) {
                 $contents = @file_get_contents($log_file);
-                if ($contents && preg_match("/^\-\-\-[^-\n]+\-\-\- ".preg_quote($string, '/')."\n/m", $contents, $matches, PREG_OFFSET_CAPTURE)) {
+                if ($contents && preg_match("/^\-\-\-[^-\n]+\-\-\- ".preg_quote((string) $string, '/')."\n/m", $contents, $matches, PREG_OFFSET_CAPTURE)) {
                     $findIndex = $matches[0][1];
                     if (preg_match("/\n/m", $contents, $matches, PREG_OFFSET_CAPTURE, $findIndex)) {
                         $startIndex = $matches[0][1]+1;
@@ -64,7 +64,7 @@ class CommonFunctions
         if (empty($path_parts['basename'])) {
             return;
         }
-        $arrPath = array();
+        $arrPath = [];
         if ((PSI_OS == 'WINNT') && empty($path_parts['extension'])) {
             $strProgram .= '.exe';
             $path_parts = pathinfo($strProgram);
@@ -83,7 +83,7 @@ class CommonFunctions
             if (preg_match(ARRAY_EXP, PSI_ADD_PATHS)) {
                 $arrPath = array_merge(eval(PSI_ADD_PATHS), $arrPath); // In this order so $addpaths is before $arrPath when looking for a program
             } else {
-                $arrPath = array_merge(array(PSI_ADD_PATHS), $arrPath); // In this order so $addpaths is before $arrPath when looking for a program
+                $arrPath = array_merge([PSI_ADD_PATHS], $arrPath); // In this order so $addpaths is before $arrPath when looking for a program
             }
         }
         //add some default paths if we still have no paths here
@@ -105,9 +105,9 @@ class CommonFunctions
         foreach ($arrPath as $strPath) {
             // Path with trailing slash
             if (PSI_OS == 'WINNT') {
-                $strPathS = rtrim($strPath,"\\")."\\";
+                $strPathS = rtrim((string) $strPath,"\\")."\\";
             } else {
-                $strPathS = rtrim($strPath,"/")."/";
+                $strPathS = rtrim((string) $strPath,"/")."/";
             }
             if (!((PSI_OS == 'Android') && ($strPath=='/system/bin')) //is_dir('/system/bin') Android patch
                && !is_dir($strPath)) {
@@ -118,24 +118,24 @@ class CommonFunctions
                 $inBaseDir = false;
                 if (PSI_OS == 'WINNT') {
                     foreach ($open_basedir as $openbasedir) {
-                        if (substr($openbasedir,-1)=="\\") {
+                        if (str_ends_with((string) $openbasedir, "\\")) {
                             $str_Path = $strPathS;
                         } else {
                             $str_Path = $strPath;
                         }
-                        if (stripos($str_Path, $openbasedir) === 0) {
+                        if (stripos((string) $str_Path, (string) $openbasedir) === 0) {
                             $inBaseDir = true;
                             break;
                         }
                     }
                 } else {
                     foreach ($open_basedir as $openbasedir) {
-                        if (substr($openbasedir,-1)=="/") {
+                        if (str_ends_with((string) $openbasedir, "/")) {
                             $str_Path = $strPathS;
                         } else {
                             $str_Path = $strPath;
                         }
-                        if (strpos($str_Path, $openbasedir) === 0) {
+                        if (str_starts_with((string) $str_Path, (string) $openbasedir)) {
                             $inBaseDir = true;
                             break;
                         }
@@ -146,9 +146,9 @@ class CommonFunctions
                 }
             }
             if (PSI_OS == 'WINNT') {
-                $strProgrammpath = rtrim($strPath,"\\")."\\".$strProgram;
+                $strProgrammpath = rtrim((string) $strPath,"\\")."\\".$strProgram;
             } else {
-                $strProgrammpath = rtrim($strPath,"/")."/".$strProgram;
+                $strProgrammpath = rtrim((string) $strPath,"/")."/".$strProgram;
             }
             if (is_executable($strProgrammpath)) {
                 return $strProgrammpath;
@@ -171,10 +171,10 @@ class CommonFunctions
      */
     public static function executeProgram($strProgramname, $strArgs, &$strBuffer, $booErrorRep = true)
     {
-        if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && ((substr(PSI_LOG, 0, 1)=="-") || (substr(PSI_LOG, 0, 1)=="+"))) {
+        if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && ((str_starts_with(PSI_LOG, "-")) || (str_starts_with(PSI_LOG, "+")))) {
             $out = self::_parse_log_file("Executing: ".trim($strProgramname.' '.$strArgs));
             if ($out == false) {
-                if (substr(PSI_LOG, 0, 1)=="-") {
+                if (str_starts_with(PSI_LOG, "-")) {
                     $strBuffer = '';
 
                     return false;
@@ -188,7 +188,7 @@ class CommonFunctions
 
         $strBuffer = '';
         $strError = '';
-        $pipes = array();
+        $pipes = [];
         $strProgram = self::_findProgram($strProgramname);
         $error = PSIError::singleton();
         if (!$strProgram) {
@@ -201,7 +201,7 @@ class CommonFunctions
         // see if we've gotten a |, if we have we need to do path checking on the cmd
         if ($strArgs) {
             $arrArgs = preg_split('/ /', $strArgs, -1, PREG_SPLIT_NO_EMPTY);
-            for ($i = 0, $cnt_args = count($arrArgs); $i < $cnt_args; $i++) {
+            for ($i = 0, $cnt_args = is_countable($arrArgs) ? count($arrArgs) : 0; $i < $cnt_args; $i++) {
                 if ($arrArgs[$i] == '|') {
                     $strCmd = $arrArgs[$i + 1];
                     $strNewcmd = self::_findProgram($strCmd);
@@ -209,7 +209,7 @@ class CommonFunctions
                 }
             }
         }
-        $descriptorspec = array(0=>array("pipe", "r"), 1=>array("pipe", "w"), 2=>array("pipe", "w"));
+        $descriptorspec = [0=>["pipe", "r"], 1=>["pipe", "w"], 2=>["pipe", "w"]];
         if (defined("PSI_MODE_POPEN") && PSI_MODE_POPEN === true) {
             $process = $pipes[1] = popen($strProgram." ".$strArgs." 2>/dev/null", "r");
         } else {
@@ -234,9 +234,9 @@ class CommonFunctions
 
             return false;
         }
-        $strError = trim($strError);
-        $strBuffer = trim($strBuffer);
-        if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && (substr(PSI_LOG, 0, 1)!="-") && (substr(PSI_LOG, 0, 1)!="+")) {
+        $strError = trim((string) $strError);
+        $strBuffer = trim((string) $strBuffer);
+        if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && (!str_starts_with(PSI_LOG, "-")) && (!str_starts_with(PSI_LOG, "+"))) {
             error_log("---".gmdate('r T')."--- Executing: ".trim($strProgramname.' '.$strArgs)."\n".$strBuffer."\n", 3, PSI_LOG);
         }
         if (! empty($strError)) {
@@ -263,10 +263,10 @@ class CommonFunctions
      */
     public static function rfts($strFileName, &$strRet, $intLines = 0, $intBytes = 4096, $booErrorRep = true)
     {
-        if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && ((substr(PSI_LOG, 0, 1)=="-") || (substr(PSI_LOG, 0, 1)=="+"))) {
+        if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && ((str_starts_with(PSI_LOG, "-")) || (str_starts_with(PSI_LOG, "+")))) {
             $out = self::_parse_log_file("Reading: ".$strFileName);
             if ($out == false) {
-                if (substr(PSI_LOG, 0, 1)=="-") {
+                if (str_starts_with(PSI_LOG, "-")) {
                     $strRet = '';
 
                     return false;
@@ -294,7 +294,7 @@ class CommonFunctions
                     }
                     fclose($fd);
                     $strRet = $strFile;
-                    if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && (substr(PSI_LOG, 0, 1)!="-") && (substr(PSI_LOG, 0, 1)!="+")) {
+                    if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && (!str_starts_with(PSI_LOG, "-")) && (!str_starts_with(PSI_LOG, "+"))) {
                         error_log("---".gmdate('r T')."--- Reading: ".$strFileName."\n".$strRet, 3, PSI_LOG);
                     }
                 } else {
@@ -331,14 +331,14 @@ class CommonFunctions
      */
     public static function fileexists($strFileName)
     {
-        if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && ((substr(PSI_LOG, 0, 1)=="-") || (substr(PSI_LOG, 0, 1)=="+"))) {
+        if (defined('PSI_LOG') && is_string(PSI_LOG) && (strlen(PSI_LOG)>0) && ((str_starts_with(PSI_LOG, "-")) || (str_starts_with(PSI_LOG, "+")))) {
             $log_file = substr(PSI_LOG, 1);
             if (file_exists($log_file)
                 && ($contents = @file_get_contents($log_file))
                 && preg_match("/^\-\-\-[^-\n]+\-\-\- ".preg_quote("Reading: ".$strFileName, '/')."\n/m", $contents)) {
                 return true;
             } else {
-                if (substr(PSI_LOG, 0, 1)=="-") {
+                if (str_starts_with(PSI_LOG, "-")) {
                     return false;
                 }
             }
@@ -357,7 +357,7 @@ class CommonFunctions
      */
     public static function gdc($strPath, $booErrorRep = true)
     {
-        $arrDirectoryContent = array();
+        $arrDirectoryContent = [];
         $error = PSIError::singleton();
         if (is_dir($strPath)) {
             if ($handle = opendir($strPath)) {
@@ -394,14 +394,14 @@ class CommonFunctions
      *
      * @return void
      */
-    public static function checkForExtensions($arrExt = array())
+    public static function checkForExtensions($arrExt = [])
     {
-        if ((strcasecmp(PSI_SYSTEM_CODEPAGE,"UTF-8") == 0) || (strcasecmp(PSI_SYSTEM_CODEPAGE,"CP437") == 0))
-            $arrReq = array('simplexml', 'pcre', 'xml', 'dom');
+        if ((strcasecmp((string) PSI_SYSTEM_CODEPAGE,"UTF-8") == 0) || (strcasecmp((string) PSI_SYSTEM_CODEPAGE,"CP437") == 0))
+            $arrReq = ['simplexml', 'pcre', 'xml', 'dom'];
         elseif (PSI_OS == "WINNT")
-            $arrReq = array('simplexml', 'pcre', 'xml', 'dom', 'com_dotnet');
+            $arrReq = ['simplexml', 'pcre', 'xml', 'dom', 'com_dotnet'];
         else
-            $arrReq = array('simplexml', 'pcre', 'xml', 'dom');
+            $arrReq = ['simplexml', 'pcre', 'xml', 'dom'];
         $extensions = array_merge($arrExt, $arrReq);
         $text = "";
         $error = false;
@@ -438,9 +438,9 @@ class CommonFunctions
         }
         while (!(feof($pipes[1]) || ($pipe2 && feof($pipes[2])))) {
             if ($pipe2) {
-                $read = array($pipes[1], $pipes[2]);
+                $read = [$pipes[1], $pipes[2]];
             } else {
-                $read = array($pipes[1]);
+                $read = [$pipes[1]];
             }
 
             $n = stream_select($read, $w, $e, $timeout);
@@ -474,9 +474,9 @@ class CommonFunctions
      *
      * @return array content of the class stored in an array
      */
-    public static function getWMI($wmi, $strClass, $strValue = array())
+    public static function getWMI($wmi, $strClass, $strValue = [])
     {
-        $arrData = array();
+        $arrData = [];
         if ($wmi) {
             $value = "";
             try {
@@ -487,7 +487,7 @@ class CommonFunctions
                     if (is_array($arrProp)) {
                         reset($arrProp);
                     }
-                    $arrInstance = array();
+                    $arrInstance = [];
                     foreach ($arrProp as $propItem) {
                         eval("\$value = \$objItem->".$propItem->Name.";");
                         if ( empty($strValue)) {
@@ -523,10 +523,10 @@ class CommonFunctions
             if (preg_match(ARRAY_EXP, PSI_PLUGINS)) {
                 return eval(strtolower(PSI_PLUGINS));
             } else {
-                return array(strtolower(PSI_PLUGINS));
+                return [strtolower(PSI_PLUGINS)];
             }
         } else {
-            return array();
+            return [];
         }
     }
 }

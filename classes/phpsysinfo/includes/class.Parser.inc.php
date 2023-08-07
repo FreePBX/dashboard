@@ -32,12 +32,12 @@ class Parser
      */
     public static function lspci()
     {
-        $arrResults = array();
+        $arrResults = [];
         if (CommonFunctions::executeProgram("lspci", "", $strBuf, PSI_DEBUG)) {
-            $arrLines = preg_split("/\n/", $strBuf, -1, PREG_SPLIT_NO_EMPTY);
+            $arrLines = preg_split("/\n/", (string) $strBuf, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($arrLines as $strLine) {
-                $arrParams = preg_split('/ /', trim($strLine), 2);
-                if (count($arrParams) == 2)
+                $arrParams = preg_split('/ /', trim((string) $strLine), 2);
+                if ((is_countable($arrParams) ? count($arrParams) : 0) == 2)
                    $strName = $arrParams[1];
                 else
                    $strName = "unknown";
@@ -58,13 +58,13 @@ class Parser
      */
     public static function pciconf()
     {
-        $arrResults = array();
+        $arrResults = [];
         $intS = 0;
         if (CommonFunctions::executeProgram("pciconf", "-lv", $strBuf, PSI_DEBUG)) {
-            $arrTemp = array();
-            $arrLines = preg_split("/\n/", $strBuf, -1, PREG_SPLIT_NO_EMPTY);
+            $arrTemp = [];
+            $arrLines = preg_split("/\n/", (string) $strBuf, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($arrLines as $strLine) {
-                if (preg_match("/(.*) = '(.*)'/", $strLine, $arrParts)) {
+                if (preg_match("/(.*) = '(.*)'/", (string) $strLine, $arrParts)) {
                     if (trim($arrParts[1]) == "vendor") {
                         $arrTemp[$intS] = trim($arrParts[2]);
                     } elseif (trim($arrParts[1]) == "device") {
@@ -92,32 +92,32 @@ class Parser
      */
     public static function df($df_param = "")
     {
-        $arrResult = array();
+        $arrResult = [];
         if (CommonFunctions::executeProgram('mount', '', $mount, PSI_DEBUG)) {
-            $mount = preg_split("/\n/", $mount, -1, PREG_SPLIT_NO_EMPTY);
+            $mount = preg_split("/\n/", (string) $mount, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($mount as $mount_line) {
-                if (preg_match("/(\S+) on ([\S ]+) type (.*) \((.*)\)/", $mount_line, $mount_buf)) {
+                if (preg_match("/(\S+) on ([\S ]+) type (.*) \((.*)\)/", (string) $mount_line, $mount_buf)) {
                     $mount_parm[$mount_buf[2]]['fstype'] = $mount_buf[3];
                     $mount_parm[$mount_buf[2]]['name'] = $mount_buf[1];
                     if (PSI_SHOW_MOUNT_OPTION) $mount_parm[$mount_buf[2]]['options'] = $mount_buf[4];
-                } elseif (preg_match("/(\S+) is (.*) mounted on (\S+) \(type (.*)\)/", $mount_line, $mount_buf)) {
+                } elseif (preg_match("/(\S+) is (.*) mounted on (\S+) \(type (.*)\)/", (string) $mount_line, $mount_buf)) {
                     $mount_parm[$mount_buf[3]]['fstype'] = $mount_buf[4];
                     $mount_parm[$mount_buf[3]]['name'] = $mount_buf[1];
                     if (PSI_SHOW_MOUNT_OPTION) $mount_parm[$mount_buf[3]]['options'] = $mount_buf[2];
-                } elseif (preg_match("/(\S+) (.*) on (\S+) \((.*)\)/", $mount_line, $mount_buf)) {
+                } elseif (preg_match("/(\S+) (.*) on (\S+) \((.*)\)/", (string) $mount_line, $mount_buf)) {
                     $mount_parm[$mount_buf[3]]['fstype'] = $mount_buf[2];
                     $mount_parm[$mount_buf[3]]['name'] = $mount_buf[1];
                     if (PSI_SHOW_MOUNT_OPTION) $mount_parm[$mount_buf[3]]['options'] = $mount_buf[4];
-                } elseif (preg_match("/(\S+) on ([\S ]+) \((\S+)(,\s(.*))?\)/", $mount_line, $mount_buf)) {
+                } elseif (preg_match("/(\S+) on ([\S ]+) \((\S+)(,\s(.*))?\)/", (string) $mount_line, $mount_buf)) {
                     $mount_parm[$mount_buf[2]]['fstype'] = $mount_buf[3];
                     $mount_parm[$mount_buf[2]]['name'] = $mount_buf[1];
-                    if (PSI_SHOW_MOUNT_OPTION) $mount_parm[$mount_buf[2]]['options'] = isset($mount_buf[5]) ? $mount_buf[5] : '';
+                    if (PSI_SHOW_MOUNT_OPTION) $mount_parm[$mount_buf[2]]['options'] = $mount_buf[5] ?? '';
                 }
             }
         } elseif (CommonFunctions::rfts("/etc/mtab", $mount)) {
-            $mount = preg_split("/\n/", $mount, -1, PREG_SPLIT_NO_EMPTY);
+            $mount = preg_split("/\n/", (string) $mount, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($mount as $mount_line) {
-                if (preg_match("/(\S+) (\S+) (\S+) (\S+) ([0-9]+) ([0-9]+)/", $mount_line, $mount_buf)) {
+                if (preg_match("/(\S+) (\S+) (\S+) (\S+) ([0-9]+) ([0-9]+)/", (string) $mount_line, $mount_buf)) {
                     $mount_point = preg_replace("/\\\\040/i", ' ', $mount_buf[2]); //space as \040
                     $mount_parm[$mount_point]['fstype'] = $mount_buf[3];
                     $mount_parm[$mount_point]['name'] = $mount_buf[1];
@@ -126,28 +126,28 @@ class Parser
             }
         }
         if (CommonFunctions::executeProgram('df', '-k '.$df_param, $df, PSI_DEBUG)) {
-            $df = preg_split("/\n/", $df, -1, PREG_SPLIT_NO_EMPTY);
+            $df = preg_split("/\n/", (string) $df, -1, PREG_SPLIT_NO_EMPTY);
             if (PSI_SHOW_INODES) {
                 if (CommonFunctions::executeProgram('df', '-i '.$df_param, $df2, PSI_DEBUG)) {
-                    $df2 = preg_split("/\n/", $df2, -1, PREG_SPLIT_NO_EMPTY);
+                    $df2 = preg_split("/\n/", (string) $df2, -1, PREG_SPLIT_NO_EMPTY);
                     // Store inode use% in an associative array (df_inodes) for later use
                     foreach ($df2 as $df2_line) {
-                        if (preg_match("/^(\S+).*\s([0-9]+)%/", $df2_line, $inode_buf)) {
+                        if (preg_match("/^(\S+).*\s([0-9]+)%/", (string) $df2_line, $inode_buf)) {
                             $df_inodes[$inode_buf[1]] = $inode_buf[2];
                         }
                     }
                 }
             }
             foreach ($df as $df_line) {
-                $df_buf1 = preg_split("/(\%\s)/", $df_line, 3);
-                if (count($df_buf1) < 2) {
+                $df_buf1 = preg_split("/(\%\s)/", (string) $df_line, 3);
+                if ((is_countable($df_buf1) ? count($df_buf1) : 0) < 2) {
                     continue;
                 }
                 if (preg_match("/(.*)(\s+)(([0-9]+)(\s+)([0-9]+)(\s+)([\-0-9]+)(\s+)([0-9]+)$)/", $df_buf1[0], $df_buf2)) {
-                    if (count($df_buf1) == 3) {
-                        $df_buf = array($df_buf2[1], $df_buf2[4], $df_buf2[6], $df_buf2[8], $df_buf2[10], $df_buf1[2]);
+                    if ((is_countable($df_buf1) ? count($df_buf1) : 0) == 3) {
+                        $df_buf = [$df_buf2[1], $df_buf2[4], $df_buf2[6], $df_buf2[8], $df_buf2[10], $df_buf1[2]];
                     } else {
-                        $df_buf = array($df_buf2[1], $df_buf2[4], $df_buf2[6], $df_buf2[8], $df_buf2[10], $df_buf1[1]);
+                        $df_buf = [$df_buf2[1], $df_buf2[4], $df_buf2[6], $df_buf2[8], $df_buf2[10], $df_buf1[1]];
                     }
                     if (count($df_buf) == 6) {
                         $df_buf[5] = trim($df_buf[5]);

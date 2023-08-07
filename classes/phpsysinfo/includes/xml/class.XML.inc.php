@@ -30,54 +30,39 @@ class XML
      *
      * @var PSI_Interface_OS
      */
-    private $_sysinfo;
+    private readonly \Android $_sysinfo;
 
-    /**
-     * @var System
-     */
-    private $_sys = null;
+    private ?\System $_sys = null;
 
     /**
      * xml object with the xml content
-     *
-     * @var SimpleXMLExtended
      */
-    private $_xml;
+    private \SimpleXMLExtended $_xml;
 
     /**
      * object for error handling
-     *
-     * @var Error
      */
-    private $_errors;
+    private readonly \Error $_errors;
 
     /**
      * array with all enabled plugins (name)
-     *
-     * @var array
      */
-    private $_plugins;
+    private readonly array $_plugins;
 
     /**
      * plugin name if pluginrequest
-     *
-     * @var string
      */
-    private $_plugin = '';
+    private string $_plugin = '';
 
     /**
      * generate a xml for a plugin or for the main app
-     *
-     * @var boolean
      */
-    private $_plugin_request = false;
+    private bool $_plugin_request = false;
 
     /**
      * generate the entire xml with all plugins or only a part of the xml (main or plugin)
-     *
-     * @var boolean
      */
-    private $_complete_request = false;
+    private bool $_complete_request = false;
 
     /**
      * doing some initial tasks
@@ -151,13 +136,13 @@ class XML
             if (preg_match(ARRAY_EXP, PSI_HIDE_NETWORK_INTERFACE)) {
                 $hideDevices = eval(PSI_HIDE_NETWORK_INTERFACE);
             } else {
-                $hideDevices = array(PSI_HIDE_NETWORK_INTERFACE);
+                $hideDevices = [PSI_HIDE_NETWORK_INTERFACE];
             }
         } else {
-            $hideDevices = array();
+            $hideDevices = [];
         }
         foreach ($this->_sys->getNetDevices() as $dev) {
-            if (!in_array(trim($dev->getName()), $hideDevices)) {
+            if (!in_array(trim((string) $dev->getName()), $hideDevices)) {
                 $device = $network->addChild('NetDevice');
                 $device->addAttribute('Name', $dev->getName());
                 $device->addAttribute('RxBytes', $dev->getRxBytes());
@@ -321,27 +306,27 @@ class XML
      */
     private function _buildFilesystems()
     {
-        $hideMounts = $hideFstypes = $hideDisks = array();
+        $hideMounts = $hideFstypes = $hideDisks = [];
         $i = 1;
         if ( defined('PSI_HIDE_MOUNTS') && is_string(PSI_HIDE_MOUNTS) ) {
             if (preg_match(ARRAY_EXP, PSI_HIDE_MOUNTS)) {
                 $hideMounts = eval(PSI_HIDE_MOUNTS);
             } else {
-                $hideMounts = array(PSI_HIDE_MOUNTS);
+                $hideMounts = [PSI_HIDE_MOUNTS];
             }
         }
         if ( defined('PSI_HIDE_FS_TYPES') && is_string(PSI_HIDE_FS_TYPES) ) {
             if (preg_match(ARRAY_EXP, PSI_HIDE_FS_TYPES)) {
                 $hideFstypes = eval(PSI_HIDE_FS_TYPES);
             } else {
-                $hideFstypes = array(PSI_HIDE_FS_TYPES);
+                $hideFstypes = [PSI_HIDE_FS_TYPES];
             }
         }
         if ( defined('PSI_HIDE_DISKS') && is_string(PSI_HIDE_DISKS) ) {
             if (preg_match(ARRAY_EXP, PSI_HIDE_DISKS)) {
                 $hideDisks = eval(PSI_HIDE_DISKS);
             } else {
-                $hideDisks = array(PSI_HIDE_DISKS);
+                $hideDisks = [PSI_HIDE_DISKS];
             }
         }
         $fs = $this->_xml->addChild('FileSystem');
@@ -561,12 +546,12 @@ class XML
     {
         $pluginroot = $this->_xml->addChild("Plugins");
         if (($this->_plugin_request || $this->_complete_request) && count($this->_plugins) > 0) {
-            $plugins = array();
+            $plugins = [];
             if ($this->_complete_request) {
                 $plugins = $this->_plugins;
             }
             if ($this->_plugin_request) {
-                $plugins = array($this->_plugin);
+                $plugins = [$this->_plugin];
             }
             foreach ($plugins as $plugin) {
                 $object = new $plugin($this->_sysinfo->getEncoding());
@@ -595,8 +580,8 @@ class XML
         $generation->addAttribute('version', PSI_VERSION_STRING);
         $generation->addAttribute('timestamp', time());
         $options = $this->_xml->addChild('Options');
-        $options->addAttribute('tempFormat', defined('PSI_TEMP_FORMAT') ? strtolower(PSI_TEMP_FORMAT) : 'c');
-        $options->addAttribute('byteFormat', defined('PSI_BYTE_FORMAT') ? strtolower(PSI_BYTE_FORMAT) : 'auto_binary');
+        $options->addAttribute('tempFormat', defined('PSI_TEMP_FORMAT') ? strtolower((string) PSI_TEMP_FORMAT) : 'c');
+        $options->addAttribute('byteFormat', defined('PSI_BYTE_FORMAT') ? strtolower((string) PSI_BYTE_FORMAT) : 'auto_binary');
         if ( defined('PSI_REFRESH') ) {
             if (PSI_REFRESH === false) {
                 $options->addAttribute('refresh', 0);

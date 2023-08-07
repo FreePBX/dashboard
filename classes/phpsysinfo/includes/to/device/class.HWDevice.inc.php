@@ -27,10 +27,8 @@ class HWDevice
 {
     /**
      * name of the device
-     *
-     * @var String
      */
-    private $_name = "";
+    private string $_name = "";
 
     /**
      * capacity of the device, if not available it will be null
@@ -41,10 +39,8 @@ class HWDevice
 
     /**
      * count of the device
-     *
-     * @var Integer
      */
-    private $_count = 1;
+    private int $_count = 1;
 
     /**
      * compare a given device with the internal one

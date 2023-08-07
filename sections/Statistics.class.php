@@ -12,22 +12,7 @@ class Statistics {
 	public function getSections($order) {
 		$brand = \FreePBX::Config()->get("DASHBOARD_FREEPBX_BRAND");
 
-		return array(
-			array(
-				"title" => sprintf(_("%s Statistics"),$brand),
-				"group" => _("Statistics"),
-				"width" => "550px",
-				"order" => isset($order['statistics']) ? $order['statistics'] : '300',
-				"section" => "statistics"
-			),
-			array(
-				"title" => _("Live Network Usage"),
-				"group" => _("Statistics"),
-				"width" => "550px",
-				"order" => isset($order['statistics']) ? $order['statistics'] : '300',
-				"section" => "netmon"
-			)
-		);
+		return [["title" => sprintf(_("%s Statistics"),$brand), "group" => _("Statistics"), "width" => "550px", "order" => $order['statistics'] ?? '300', "section" => "statistics"], ["title" => _("Live Network Usage"), "group" => _("Statistics"), "width" => "550px", "order" => $order['statistics'] ?? '300', "section" => "netmon"]];
 	}
 
 	public function getContent($section) {

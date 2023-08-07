@@ -32,15 +32,13 @@ class Quotas extends PSI_Plugin
 {
     /**
      * variable, which holds the content of the command
-     * @var array
      */
-    private $_filecontent = array();
+    private array|bool $_filecontent = [];
 
     /**
      * variable, which holds the result before the xml is generated out of this array
-     * @var array
      */
-    private $_result = array();
+    private array $_result = [];
 
     /**
      * read the data into an internal array and also call the parent constructor
@@ -49,23 +47,18 @@ class Quotas extends PSI_Plugin
      */
     public function __construct($enc)
     {
-        parent::__construct(__CLASS__, $enc);
-        switch (strtolower(PSI_PLUGIN_QUOTAS_ACCESS)) {
-        case 'command':
-            CommonFunctions::executeProgram("repquota", "-au", $buffer, PSI_DEBUG);
-            break;
-        case 'data':
-            CommonFunctions::rfts(APP_ROOT."/data/quotas.txt", $buffer);
-            break;
-        default:
-            $this->global_error->addConfigError("__construct()", "PSI_PLUGIN_QUOTAS_ACCESS");
-            break;
-        }
-        if (trim($buffer) != "") {
-            $this->_filecontent = preg_split("/\n/", $buffer, -1, PREG_SPLIT_NO_EMPTY);
+        $buffer = null;
+        parent::__construct(self::class, $enc);
+        match (strtolower((string) PSI_PLUGIN_QUOTAS_ACCESS)) {
+            'command' => CommonFunctions::executeProgram("repquota", "-au", $buffer, PSI_DEBUG),
+            'data' => CommonFunctions::rfts(APP_ROOT."/data/quotas.txt", $buffer),
+            default => $this->global_error->addConfigError("__construct()", "PSI_PLUGIN_QUOTAS_ACCESS"),
+        };
+        if (trim((string) $buffer) != "") {
+            $this->_filecontent = preg_split("/\n/", (string) $buffer, -1, PREG_SPLIT_NO_EMPTY);
             unset($this->_filecontent[0]);
         } else {
-            $this->_filecontent = array();
+            $this->_filecontent = [];
         }
     }
 
@@ -79,11 +72,11 @@ class Quotas extends PSI_Plugin
     public function execute()
     {
         $i = 0;
-        $quotas = array();
+        $quotas = [];
         foreach ($this->_filecontent as $thisline) {
-            $thisline = preg_replace("/([\s]--)/", "", $thisline);
+            $thisline = preg_replace("/([\s]--)/", "", (string) $thisline);
             $thisline = preg_split("/(\s)/e", $thisline, -1, PREG_SPLIT_NO_EMPTY);
-            if (count($thisline) == 7) {
+            if ((is_countable($thisline) ? count($thisline) : 0) == 7) {
                 $quotas[$i]['user'] = str_replace("--", "", $thisline[0]);
                 $quotas[$i]['byte_used'] = $thisline[1] * 1024;
                 $quotas[$i]['byte_soft'] = $thisline[2] * 1024;

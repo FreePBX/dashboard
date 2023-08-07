@@ -5,7 +5,7 @@
 
 class MemInfo {
 
-	public $info = array();
+	public $info = [];
 	public $systemtype = "unknown";
 
 	public function __construct() {
@@ -14,7 +14,7 @@ class MemInfo {
 	}
 
 	public function getAll() {
-		$retarr = array();
+		$retarr = [];
 
 		if ($this->systemtype=="linux") {
 			$this->parseLinuxMemInfo();
@@ -26,7 +26,8 @@ class MemInfo {
 	}
 
 	public function getSwapUsage() {
-		$retarr['free'] = $this->info['SwapFree'];
+		$retarr = [];
+  $retarr['free'] = $this->info['SwapFree'];
 		$retarr['total'] = $this->info['SwapTotal'];
 		$retarr['used'] = $retarr['total'] - $retarr['free'];
 		$retarr['usedpct'] = ceil($retarr['used']/$retarr['total']/100);
@@ -35,7 +36,8 @@ class MemInfo {
 	}
 
 	public function getMemUsage() {
-		$retarr['free'] = $this->info['Buffers'] + $this->info['Cached'] + $this->info['MemFree'];
+		$retarr = [];
+  $retarr['free'] = $this->info['Buffers'] + $this->info['Cached'] + $this->info['MemFree'];
 		$retarr['buffers'] = $this->info['Buffers'];
 		$retarr['cached'] = $this->info['Cached'];
 		$retarr['memfree'] = $this->info['MemFree'];
@@ -50,7 +52,7 @@ class MemInfo {
 		$rawfile = file("/proc/meminfo", FILE_IGNORE_NEW_LINES);
 
 		foreach ($rawfile as $line) {
-			if (preg_match('/([\w_\(\)]+):\s+(\d+) kB/', $line, $out)) {
+			if (preg_match('/([\w_\(\)]+):\s+(\d+) kB/', (string) $line, $out)) {
 				$this->info[$out[1]] = $out[2];
 			}
 		}

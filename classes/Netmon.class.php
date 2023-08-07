@@ -26,7 +26,7 @@ class Netmon {
 		$process->setTimeout(30);
 		try {
 			$process->run();
-			$execoutput = explode("\n",$process->getOutput());
+			$execoutput = explode("\n",(string) $process->getOutput());
 		} catch(\Exception $e) {
 			return ["status" => false, "message" => $e->getMessage()];
 		}
@@ -51,7 +51,7 @@ class Netmon {
 		header("Access-Control-Allow-Origin: *");
 		header('Access-Control-Allow-Credentials: true');
 		header('X-Accel-Buffering: no');//Nginx: unbuffered responses suitable for Comet and HTTP streaming applications
-		(new SSE(new Event(function(){return json_encode($this->getStats());},'new-msgs')))->start();
+		(new SSE(new Event(fn() => json_encode($this->getStats(), JSON_THROW_ON_ERROR),'new-msgs')))->start();
 	}
 
 	function parse_ip_output($outarr) {
@@ -65,7 +65,7 @@ class Netmon {
 			}
 			// If the first char is NOT a space, it's a network name.
 			if ($line[0] !== " ") {
-				$intarr = explode(":", $line);
+				$intarr = explode(":", (string) $line);
 				$current = trim($intarr[1]);
 				// If it's actually 'lo', we never save that.
 				if ($current !== "lo") {
@@ -73,9 +73,9 @@ class Netmon {
 				}
 				continue;
 			}
-			$line = trim($line);
+			$line = trim((string) $line);
 			// Does it start with 'link/ether'? We have a MAC
-			if (strpos($line, "link/ether") === 0) {
+			if (str_starts_with($line, "link/ether")) {
 				$tmparr = explode(" ", $line);
 				if (isset($tmparr[1])) {
 					$ints[$current]['mac'] = $tmparr[1];

@@ -31,17 +31,13 @@ abstract class PSI_Plugin implements PSI_Interface_Plugin
 {
     /**
      * name of the plugin (classname)
-     *
-     * @var string
      */
-    private $_plugin_name = "";
+    private string $_plugin_name = "";
 
     /**
      * full directory path of the plugin
-     *
-     * @var string
      */
-    private $_plugin_base = "";
+    private string $_plugin_base = "";
 
     /**
      * global object for error handling

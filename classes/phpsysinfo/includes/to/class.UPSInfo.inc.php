@@ -29,10 +29,8 @@ class UPSInfo
      * array with upsdivices
      *
      * @see UPSDevice
-     *
-     * @var Array
      */
-    private $_upsDevices = array();
+    private array $_upsDevices = [];
 
     /**
      * Returns $_upsDevices.

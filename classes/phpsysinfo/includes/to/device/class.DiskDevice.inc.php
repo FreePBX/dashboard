@@ -27,38 +27,28 @@ class DiskDevice
 {
     /**
      * name of the disk device
-     *
-     * @var String
      */
-    private $_name = "";
+    private string $_name = "";
 
     /**
      * type of the filesystem on the disk device
-     *
-     * @var String
      */
-    private $_fsType = "";
+    private string $_fsType = "";
 
     /**
      * diskspace that is free in bytes
-     *
-     * @var Integer
      */
-    private $_free = 0;
+    private int $_free = 0;
 
     /**
      * diskspace that is used in bytes
-     *
-     * @var Integer
      */
-    private $_used = 0;
+    private int $_used = 0;
 
     /**
      * total diskspace
-     *
-     * @var Integer
      */
-    private $_total = 0;
+    private int $_total = 0;
 
     /**
      * mount point of the disk device if available

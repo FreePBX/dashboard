@@ -42,9 +42,9 @@ class Android extends Linux
     private function _kernel()
     {
         if (CommonFunctions::rfts('/proc/version', $strBuf, 1)) {
-            if (preg_match('/version (.*?) /', $strBuf, $ar_buf)) {
+            if (preg_match('/version (.*?) /', (string) $strBuf, $ar_buf)) {
                 $result = $ar_buf[1];
-                if (preg_match('/SMP/', $strBuf)) {
+                if (preg_match('/SMP/', (string) $strBuf)) {
                     $result .= ' (SMP)';
                 }
                 $this->sys->setKernel($result);
@@ -70,20 +70,20 @@ class Android extends Linux
     private function _filesystems()
     {
         if (CommonFunctions::executeProgram('df', '2>/dev/null ', $df, PSI_DEBUG)) {
-            $df = preg_split("/\n/", $df, -1, PREG_SPLIT_NO_EMPTY);
+            $df = preg_split("/\n/", (string) $df, -1, PREG_SPLIT_NO_EMPTY);
             if (CommonFunctions::executeProgram('mount', '', $mount, PSI_DEBUG)) {
-                $mount = preg_split("/\n/", $mount, -1, PREG_SPLIT_NO_EMPTY);
+                $mount = preg_split("/\n/", (string) $mount, -1, PREG_SPLIT_NO_EMPTY);
                 foreach ($mount as $mount_line) {
-                    $mount_buf = preg_split('/\s+/', $mount_line);
-                    if (count($mount_buf) == 6) {
+                    $mount_buf = preg_split('/\s+/', (string) $mount_line);
+                    if ((is_countable($mount_buf) ? count($mount_buf) : 0) == 6) {
                         $mount_parm[$mount_buf[1]]['fstype'] = $mount_buf[2];
                         if (PSI_SHOW_MOUNT_OPTION) $mount_parm[$mount_buf[1]]['options'] = $mount_buf[3];
                         $mount_parm[$mount_buf[1]]['mountdev'] = $mount_buf[0];
                     }
                 }
                 foreach ($df as $df_line) {
-                    if ((preg_match("/^(\/\S+)(\s+)(([0-9\.]+)([KMGT])(\s+)([0-9\.]+)([KMGT])(\s+)([0-9\.]+)([KMGT])(\s+))/", $df_line, $df_buf)
-                         || preg_match("/^(\/[^\s\:]+)\:(\s+)(([0-9\.]+)([KMGT])(\s+total\,\s+)([0-9\.]+)([KMGT])(\s+used\,\s+)([0-9\.]+)([KMGT])(\s+available))/", $df_line, $df_buf))
+                    if ((preg_match("/^(\/\S+)(\s+)(([0-9\.]+)([KMGT])(\s+)([0-9\.]+)([KMGT])(\s+)([0-9\.]+)([KMGT])(\s+))/", (string) $df_line, $df_buf)
+                         || preg_match("/^(\/[^\s\:]+)\:(\s+)(([0-9\.]+)([KMGT])(\s+total\,\s+)([0-9\.]+)([KMGT])(\s+used\,\s+)([0-9\.]+)([KMGT])(\s+available))/", (string) $df_line, $df_buf))
                          && !preg_match('/^\/mnt\/asec\/com\./', $df_buf[1])) {
                         $dev = new DiskDevice();
                         if (PSI_SHOW_MOUNT_POINT) $dev->setMountPoint($df_buf[1]);
@@ -145,7 +145,7 @@ class Android extends Linux
     {
         $buf = "";
         if (CommonFunctions::rfts('/system/build.prop', $lines, 0, 4096, false)
-            && preg_match('/^ro\.build\.version\.release=([^\n]+)/m', $lines, $ar_buf)) {
+            && preg_match('/^ro\.build\.version\.release=([^\n]+)/m', (string) $lines, $ar_buf)) {
                 $buf = $ar_buf[1];
         }
         if ( is_null($buf) || (trim($buf) == "")) {

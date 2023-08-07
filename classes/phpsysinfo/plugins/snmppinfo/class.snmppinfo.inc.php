@@ -27,15 +27,13 @@ class SNMPPInfo extends PSI_Plugin
 {
     /**
      * variable, which holds the content of the command
-     * @var array
      */
-    private $_filecontent = array();
+    private array $_filecontent = [];
 
     /**
      * variable, which holds the result before the xml is generated out of this array
-     * @var array
      */
-    private $_result = array();
+    private array $_result = [];
 
     /**
      * read the data into an internal array and also call the parent constructor
@@ -44,26 +42,26 @@ class SNMPPInfo extends PSI_Plugin
      */
     public function __construct($enc)
     {
-        parent::__construct(__CLASS__, $enc);
-        switch (strtolower(PSI_PLUGIN_SNMPPINFO_ACCESS)) {
+        parent::__construct(self::class, $enc);
+        switch (strtolower((string) PSI_PLUGIN_SNMPPINFO_ACCESS)) {
         case 'command':
                 if ( defined('PSI_PLUGIN_SNMPPINFO_DEVICES') && is_string(PSI_PLUGIN_SNMPPINFO_DEVICES) ) {
                     if (preg_match(ARRAY_EXP, PSI_PLUGIN_SNMPPINFO_DEVICES)) {
                         $printers = eval(PSI_PLUGIN_SNMPPINFO_DEVICES);
                     } else {
-                        $printers = array(PSI_PLUGIN_SNMPPINFO_DEVICES);
+                        $printers = [PSI_PLUGIN_SNMPPINFO_DEVICES];
                     }
                     foreach ($printers as $printer) {
                         CommonFunctions::executeProgram("snmpwalk", "-Ona -c public -v 1 ".$printer." .1.3.6.1.2.1.1.5", $buffer, PSI_DEBUG);
-                        if (strlen(trim($buffer)) > 0) {
+                        if (strlen(trim((string) $buffer)) > 0) {
                             $this->_filecontent[$printer] = $buffer;
 
                             CommonFunctions::executeProgram("snmpwalk", "-Ona -c public -v 1 ".$printer." .1.3.6.1.2.1.43.11.1.1", $buffer2, PSI_DEBUG);
-                            if (strlen(trim($buffer2)) > 0) {
+                            if (strlen(trim((string) $buffer2)) > 0) {
                                $this->_filecontent[$printer] = $this->_filecontent[$printer]."\n".$buffer2;
                             }
                             CommonFunctions::executeProgram("snmpwalk", "-Ona -c public -v 1 ".$printer." .1.3.6.1.2.1.43.18.1.1", $buffer3, PSI_DEBUG);
-                            if (strlen(trim($buffer3)) > 0) {
+                            if (strlen(trim((string) $buffer3)) > 0) {
                                $this->_filecontent[$printer] =  $this->_filecontent[$printer]."\n".$buffer3;
                             }
                         }
@@ -77,7 +75,7 @@ class SNMPPInfo extends PSI_Plugin
                     if (preg_match(ARRAY_EXP, PSI_PLUGIN_SNMPPINFO_DEVICES)) {
                         $printers = eval(PSI_PLUGIN_SNMPPINFO_DEVICES);
                     } else {
-                        $printers = array(PSI_PLUGIN_SNMPPINFO_DEVICES);
+                        $printers = [PSI_PLUGIN_SNMPPINFO_DEVICES];
                     }
                     foreach ($printers as $printer) {
                         if (! PSI_DEBUG) {
@@ -85,7 +83,7 @@ class SNMPPInfo extends PSI_Plugin
                             $old_err_rep = error_reporting();
                             error_reporting(E_ERROR); /* fatal errors only */
                         }
-                        $bufferarr=snmprealwalk($printer, "public", ".1.3.6.1.2.1.1.5", 1000000, 1);
+                        $bufferarr=snmprealwalk($printer, "public", ".1.3.6.1.2.1.1.5", 1_000_000, 1);
                         if (! PSI_DEBUG) {
                             error_reporting($old_err_rep); /* restore error level */
                             set_error_handler('errorHandlerPsi'); /* restore error handler */
@@ -101,7 +99,7 @@ class SNMPPInfo extends PSI_Plugin
                                 $old_err_rep = error_reporting();
                                 error_reporting(E_ERROR); /* fatal errors only */
                             }
-                            $bufferarr2=snmprealwalk($printer, "public", ".1.3.6.1.2.1.43.11.1.1", 1000000, 1);
+                            $bufferarr2=snmprealwalk($printer, "public", ".1.3.6.1.2.1.43.11.1.1", 1_000_000, 1);
                             if (! PSI_DEBUG) {
                                 error_reporting($old_err_rep); /* restore error level */
                                 set_error_handler('errorHandlerPsi'); /* restore error handler */
@@ -117,7 +115,7 @@ class SNMPPInfo extends PSI_Plugin
                                 $old_err_rep = error_reporting();
                                 error_reporting(E_ERROR); /* fatal errors only */
                             }
-                            $bufferarr3=snmprealwalk($printer, "public", ".1.3.6.1.2.1.43.18.1.1", 1000000, 1);
+                            $bufferarr3=snmprealwalk($printer, "public", ".1.3.6.1.2.1.43.18.1.1", 1_000_000, 1);
                             if (! PSI_DEBUG) {
                                 error_reporting($old_err_rep); /* restore error level */
                                 set_error_handler('errorHandlerPsi'); /* restore error handler */
@@ -140,7 +138,7 @@ class SNMPPInfo extends PSI_Plugin
                     if (preg_match(ARRAY_EXP, PSI_PLUGIN_SNMPPINFO_DEVICES)) {
                         $printers = eval(PSI_PLUGIN_SNMPPINFO_DEVICES);
                     } else {
-                        $printers = array(PSI_PLUGIN_SNMPPINFO_DEVICES);
+                        $printers = [PSI_PLUGIN_SNMPPINFO_DEVICES];
                     }
                     $pn=0;
                     foreach ($printers as $printer) {
@@ -170,27 +168,27 @@ class SNMPPInfo extends PSI_Plugin
             return;
         }
         foreach ($this->_filecontent as $printer=>$result) {
-            $lines = preg_split('/\n/', $result);
+            $lines = preg_split('/\n/', (string) $result);
             foreach ($lines as $line) {
-                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.11\.1\.1\.6\.1\.(.*) = STRING:\s(.*)/', $line, $data)) {
+                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.11\.1\.1\.6\.1\.(.*) = STRING:\s(.*)/', (string) $line, $data)) {
                     $this->_result[$printer][$data[1]]['prtMarkerSuppliesDescription']=trim($data[2],"\"");
                 }
-                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.11\.1\.1\.7\.1\.(.*) = INTEGER:\s(.*)/', $line, $data)) {
+                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.11\.1\.1\.7\.1\.(.*) = INTEGER:\s(.*)/', (string) $line, $data)) {
                     $this->_result[$printer][$data[1]]['prtMarkerSuppliesSupplyUnit']=$data[2];
                 }
-                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.11\.1\.1\.8\.1\.(.*) = INTEGER:\s(.*)/', $line, $data)) {
+                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.11\.1\.1\.8\.1\.(.*) = INTEGER:\s(.*)/', (string) $line, $data)) {
                     $this->_result[$printer][$data[1]]['prtMarkerSuppliesMaxCapacity']=$data[2];
                 }
-                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.11\.1\.1\.9\.1\.(.*) = INTEGER:\s(.*)/', $line, $data)) {
+                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.11\.1\.1\.9\.1\.(.*) = INTEGER:\s(.*)/', (string) $line, $data)) {
                     $this->_result[$printer][$data[1]]['prtMarkerSuppliesLevel']=$data[2];
                 }
-                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.1\.5\.0 = STRING:\s(.*)/', $line, $data)) {
+                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.1\.5\.0 = STRING:\s(.*)/', (string) $line, $data)) {
                     $this->_result[$printer][0]['prtMarkerSuppliesDescription']=trim($data[1],"\"");;
                 }
-                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.18\.1\.1\.8\.1\.(.*) = STRING:\s(.*)/', $line, $data)) {
+                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.18\.1\.1\.8\.1\.(.*) = STRING:\s(.*)/', (string) $line, $data)) {
                     $this->_result[$printer][99][$data[1]]["message"]=trim($data[2],"\"");
                 }
-                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.18\.1\.1\.2\.1\.(.*) = INTEGER:\s(.*)/', $line, $data)) {
+                if (preg_match('/^\.1\.3\.6\.1\.2\.1\.43\.18\.1\.1\.2\.1\.(.*) = INTEGER:\s(.*)/', (string) $line, $data)) {
                     $this->_result[$printer][99][$data[1]]["severity"]=$data[2];
                 }
             }

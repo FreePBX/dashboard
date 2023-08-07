@@ -38,9 +38,8 @@ class DMRaid extends PSI_Plugin
 
     /**
      * variable, which holds the result before the xml is generated out of this array
-     * @var array
      */
-    private $_result = array();
+    private array $_result = [];
 
     /**
      * read the data into an internal array and also call the parent constructor
@@ -50,22 +49,16 @@ class DMRaid extends PSI_Plugin
     public function __construct($enc)
     {
         $buffer = "";
-        parent::__construct(__CLASS__, $enc);
-        switch (strtolower(PSI_PLUGIN_DMRAID_ACCESS)) {
-        case 'command':
-            CommonFunctions::executeProgram("dmraid", "-s -vv 2>&1", $buffer);
-            break;
-        case 'data':
-            CommonFunctions::rfts(APP_ROOT."/data/dmraid.txt", $buffer);
-            break;
-        default:
-            $this->global_error->addConfigError("__construct()", "PSI_PLUGIN_DMRAID_ACCESS");
-            break;
-        }
-        if (trim($buffer) != "") {
-            $this->_filecontent = preg_split("/(\n\*\*\* )|(\n--> )/", $buffer, -1, PREG_SPLIT_NO_EMPTY);
+        parent::__construct(self::class, $enc);
+        match (strtolower((string) PSI_PLUGIN_DMRAID_ACCESS)) {
+            'command' => CommonFunctions::executeProgram("dmraid", "-s -vv 2>&1", $buffer),
+            'data' => CommonFunctions::rfts(APP_ROOT."/data/dmraid.txt", $buffer),
+            default => $this->global_error->addConfigError("__construct()", "PSI_PLUGIN_DMRAID_ACCESS"),
+        };
+        if (trim((string) $buffer) != "") {
+            $this->_filecontent = preg_split("/(\n\*\*\* )|(\n--> )/", (string) $buffer, -1, PREG_SPLIT_NO_EMPTY);
         } else {
-            $this->_filecontent = array();
+            $this->_filecontent = [];
         }
     }
 
@@ -83,46 +76,46 @@ class DMRaid extends PSI_Plugin
         }
         $group = "";
         foreach ($this->_filecontent as $block) {
-            if (preg_match('/^(NOTICE: )|(ERROR: )/m', $block)) {
+            if (preg_match('/^(NOTICE: )|(ERROR: )/m', (string) $block)) {
                 $group = "";
-                $lines = preg_split("/\n/", $block, -1, PREG_SPLIT_NO_EMPTY);
+                $lines = preg_split("/\n/", (string) $block, -1, PREG_SPLIT_NO_EMPTY);
                 foreach ($lines as $line) {
-                    if (preg_match('/^NOTICE: added\s+\/dev\/(.+)\s+to RAID set\s+\"(.+)\"/', $line, $partition)) {
+                    if (preg_match('/^NOTICE: added\s+\/dev\/(.+)\s+to RAID set\s+\"(.+)\"/', (string) $line, $partition)) {
                         $this->_result['devices'][$partition[2]]['partitions'][$partition[1]]['status'] = "";
-                    } elseif (preg_match('/^ERROR: .* device\s+\/dev\/(.+)\s+(.+)\s+in RAID set\s+\"(.+)\"/', $line, $partition)) {
+                    } elseif (preg_match('/^ERROR: .* device\s+\/dev\/(.+)\s+(.+)\s+in RAID set\s+\"(.+)\"/', (string) $line, $partition)) {
                         if ($partition[2]=="broken") {
                             $this->_result['devices'][$partition[3]]['partitions'][$partition[1]]['status'] = 'F';
                         }
                     }
                 }
             } else {
-                if (preg_match('/^Group superset\s+(.+)/m', $block, $arrname)) {
+                if (preg_match('/^Group superset\s+(.+)/m', (string) $block, $arrname)) {
                     $group = $arrname[1];
                 }
-                if (preg_match('/^name\s*:\s*(.*)/m', $block, $arrname)) {
+                if (preg_match('/^name\s*:\s*(.*)/m', (string) $block, $arrname)) {
                     if ($group=="") {
                         $group = $arrname[1];
                     }
                     $this->_result['devices'][$group]['name'] = $arrname[1];
-                    if (preg_match('/^size\s*:\s*(.*)/m', $block, $size)) {
+                    if (preg_match('/^size\s*:\s*(.*)/m', (string) $block, $size)) {
                         $this->_result['devices'][$group]['size'] = $size[1];
                     }
-                    if (preg_match('/^stride\s*:\s*(.*)/m', $block, $stride)) {
+                    if (preg_match('/^stride\s*:\s*(.*)/m', (string) $block, $stride)) {
                             $this->_result['devices'][$group]['stride'] = $stride[1];
                     }
-                    if (preg_match('/^type\s*:\s*(.*)/m', $block, $type)) {
+                    if (preg_match('/^type\s*:\s*(.*)/m', (string) $block, $type)) {
                         $this->_result['devices'][$group]['type'] = $type[1];
                     }
-                    if (preg_match('/^status\s*:\s*(.*)/m', $block, $status)) {
+                    if (preg_match('/^status\s*:\s*(.*)/m', (string) $block, $status)) {
                         $this->_result['devices'][$group]['status'] = $status[1];
                     }
-                    if (preg_match('/^subsets\s*:\s*(.*)/m', $block, $subsets)) {
+                    if (preg_match('/^subsets\s*:\s*(.*)/m', (string) $block, $subsets)) {
                         $this->_result['devices'][$group]['subsets'] = $subsets[1];
                     }
-                    if (preg_match('/^devs\s*:\s*(.*)/m', $block, $devs)) {
+                    if (preg_match('/^devs\s*:\s*(.*)/m', (string) $block, $devs)) {
                         $this->_result['devices'][$group]['devs'] = $devs[1];
                     }
-                    if (preg_match('/^spares\s*:\s*(.*)/m', $block, $spares)) {
+                    if (preg_match('/^spares\s*:\s*(.*)/m', (string) $block, $spares)) {
                             $this->_result['devices'][$group]['spares'] = $spares[1];
                     }
                     $group = "";

@@ -27,10 +27,8 @@ class HWSensors extends Sensors
 {
     /**
      * content to parse
-     *
-     * @var array
      */
-    private $_lines = array();
+    private array|bool $_lines = [];
 
     /**
      * fill the private content var through tcp or file access
@@ -38,12 +36,12 @@ class HWSensors extends Sensors
     public function __construct()
     {
         parent::__construct();
-        switch (strtolower(PSI_SENSOR_ACCESS)) {
+        switch (strtolower((string) PSI_SENSOR_ACCESS)) {
         case 'command':
             $lines = "";
 //            CommonFunctions::executeProgram('sysctl', '-w hw.sensors', $lines);
             CommonFunctions::executeProgram('sysctl', 'hw.sensors', $lines);
-            $this->_lines = preg_split("/\n/", $lines, -1, PREG_SPLIT_NO_EMPTY);
+            $this->_lines = preg_split("/\n/", (string) $lines, -1, PREG_SPLIT_NO_EMPTY);
             break;
         default:
             $this->error->addConfigError('__construct()', 'PSI_SENSOR_ACCESS');
@@ -59,22 +57,22 @@ class HWSensors extends Sensors
     private function _temperature()
     {
         foreach ($this->_lines as $line) {
-            if (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+temp,\s+([0-9\.]+)\s+degC.*$/', $line, $ar_buf)) {
+            if (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+temp,\s+([0-9\.]+)\s+degC.*$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[1]);
                 $dev->setValue($ar_buf[2]);
                 $this->mbinfo->setMbTemp($dev);
-            } elseif (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+([0-9\.]+)\s+degC$/', $line, $ar_buf)) {
+            } elseif (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+([0-9\.]+)\s+degC$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[1]);
                 $dev->setValue($ar_buf[2]);
                 $this->mbinfo->setMbTemp($dev);
-            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+degC\s+\((.*)\)$/', $line, $ar_buf)) {
+            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+degC\s+\((.*)\)$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[3]);
                 $dev->setValue($ar_buf[2]);
                 $this->mbinfo->setMbTemp($dev);
-            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+degC$/', $line, $ar_buf)) {
+            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+degC$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[1]);
                 $dev->setValue($ar_buf[2]);
@@ -91,22 +89,22 @@ class HWSensors extends Sensors
     private function _fans()
     {
         foreach ($this->_lines as $line) {
-            if (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+fanrpm,\s+([0-9\.]+)\s+RPM.*$/', $line, $ar_buf)) {
+            if (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+fanrpm,\s+([0-9\.]+)\s+RPM.*$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[1]);
                 $dev->setValue($ar_buf[2]);
                 $this->mbinfo->setMbFan($dev);
-            } elseif (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+([0-9\.]+)\s+RPM$/', $line, $ar_buf)) {
+            } elseif (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+([0-9\.]+)\s+RPM$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[1]);
                 $dev->setValue($ar_buf[2]);
                 $this->mbinfo->setMbFan($dev);
-            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+RPM\s+\((.*)\)$/', $line, $ar_buf)) {
+            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+RPM\s+\((.*)\)$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[3]);
                 $dev->setValue($ar_buf[2]);
                 $this->mbinfo->setMbFan($dev);
-            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+RPM$/', $line, $ar_buf)) {
+            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+RPM$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[1]);
                 $dev->setValue($ar_buf[2]);
@@ -123,22 +121,22 @@ class HWSensors extends Sensors
     private function _voltage()
     {
         foreach ($this->_lines as $line) {
-            if (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+volts_dc,\s+([0-9\.]+)\s+V.*$/', $line, $ar_buf)) {
+            if (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+volts_dc,\s+([0-9\.]+)\s+V.*$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[1]);
                 $dev->setValue($ar_buf[2]);
                 $this->mbinfo->setMbVolt($dev);
-            } elseif (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+([0-9\.]+)\s+V\sDC$/', $line, $ar_buf)) {
+            } elseif (preg_match('/^hw\.sensors\.[0-9]+=[^\s,]+,\s+([^,]+),\s+([0-9\.]+)\s+V\sDC$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[1]);
                 $dev->setValue($ar_buf[2]);
                 $this->mbinfo->setMbVolt($dev);
-            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+VDC\s+\((.*)\)$/', $line, $ar_buf)) {
+            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+VDC\s+\((.*)\)$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[3]);
                 $dev->setValue($ar_buf[2]);
                 $this->mbinfo->setMbVolt($dev);
-            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+VDC$/', $line, $ar_buf)) {
+            } elseif (preg_match('/^hw\.sensors\.[^\.]+\.(.*)=([0-9\.]+)\s+VDC$/', (string) $line, $ar_buf)) {
                 $dev = new SensorDevice();
                 $dev->setName($ar_buf[1]);
                 $dev->setValue($ar_buf[2]);

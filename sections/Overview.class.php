@@ -10,19 +10,12 @@ class Overview {
 	public $rawname = 'Overview';
 
 	public function getSections($order) {
-		return array(
-			array(
-				"title" => _("System Overview"),
-				"group" => _("Overview"),
-				"width" => "550px",
-				"order" => isset($order['overview']) ? $order['overview'] : '1',
-				"section" => "overview"
-			)
-		);
+		return [["title" => _("System Overview"), "group" => _("Overview"), "width" => "550px", "order" => $order['overview'] ?? '1', "section" => "overview"]];
 	}
 
 	public function getContent($section) {
-		if (!class_exists('TimeUtils')) {
+		$getsi = [];
+  if (!class_exists('TimeUtils')) {
 			include dirname(__DIR__).'/classes/TimeUtils.class.php';
 		}
 		$brand = \FreePBX::Config()->get("DASHBOARD_FREEPBX_BRAND");
@@ -40,28 +33,29 @@ class Overview {
 
 		try {
 			$getsi = \FreePBX::create()->Dashboard->getSysInfo();
-		} catch (\Exception $e) {
+		} catch (\Exception) {
 
 		}
 
-		$getsi['timestamp'] = isset($getsi['timestamp']) ? $getsi['timestamp'] : time();
+		$getsi['timestamp'] ??= time();
 		$since = time() - $getsi['timestamp'];
 		$notifications = $this->getNotifications((isset($_COOKIE['dashboardShowAll']) && $_COOKIE['dashboardShowAll'] == "true"));
 		$nots = $notifications['nots'];
 		$alerts = $this->getAlerts($nots);
 
-		return load_view(dirname(__DIR__).'/views/sections/overview.php',array("showAllMessage" => $notifications['showAllMessage'], "nots" => $nots, "alerts" => $alerts, "brand" => $brand, "idline" => $idline, "version" => get_framework_version(), "since" => $since, "services" => $this->getSummary()));
+		return load_view(dirname(__DIR__).'/views/sections/overview.php',["showAllMessage" => $notifications['showAllMessage'], "nots" => $nots, "alerts" => $alerts, "brand" => $brand, "idline" => $idline, "version" => get_framework_version(), "since" => $since, "services" => $this->getSummary()]);
 	}
 
 	private function getNotifications($showall = false) {
-		if (!class_exists('TimeUtils')) {
+		$final = [];
+  if (!class_exists('TimeUtils')) {
 			include dirname(__DIR__).'/classes/TimeUtils.class.php';
 		}
-		$final['nots'] = array();
+		$final['nots'] = [];
 		$items = \FreePBX::create()->Notifications->list_all($showall);
 		$allItems = \FreePBX::create()->Notifications->list_all(true);
 
-		$final['showAllMessage'] = (count($items) != count($allItems));
+		$final['showAllMessage'] = ((is_countable($items) ? count($items) : 0) != (is_countable($allItems) ? count($allItems) : 0));
 		// This is where we map the Notifications priorities to Bootstrap priorities.
 		// define("NOTIFICATION_TYPE_CRITICAL", 100) -> 'danger' (red)
 		// define("NOTIFICATION_TYPE_SECURITY", 200) -> 'danger' (red)
@@ -70,20 +64,9 @@ class Overview {
 		// define("NOTIFICATION_TYPE_WARNING" , 500) -> 'warning' -> (orange)
 		// define("NOTIFICATION_TYPE_NOTICE",   600) -> 'success' -> (green)
 
-		$alerts = array(100 => "danger", 200 => "danger", 250 => 'warning', 300 => "warning", 400 => "danger", 500 => "warning", 600 => "success");
+		$alerts = [100 => "danger", 200 => "danger", 250 => 'warning', 300 => "warning", 400 => "danger", 500 => "warning", 600 => "success"];
 		foreach ($items as $notification) {
-			$final['nots'][] = array(
-				"id" => $notification['id'],
-				"rawlevel" => $notification['level'],
-				"level" => !isset($alerts[$notification['level']]) ? 'danger' : $alerts[$notification['level']],
-				"candelete" => $notification['candelete'],
-				"title" => $notification['display_text'],
-				"time" => \TimeUtils::getReadable(time() - $notification['timestamp']),
-				"text" => nl2br($notification['extended_text']),
-				"module" => $notification['module'],
-				"link" => $notification['link'],
-				"reset" => $notification['reset']
-			);
+			$final['nots'][] = ["id" => $notification['id'], "rawlevel" => $notification['level'], "level" => !isset($alerts[$notification['level']]) ? 'danger' : $alerts[$notification['level']], "candelete" => $notification['candelete'], "title" => $notification['display_text'], "time" => \TimeUtils::getReadable(time() - $notification['timestamp']), "text" => nl2br((string) $notification['extended_text']), "module" => $notification['module'], "link" => $notification['link'], "reset" => $notification['reset']];
 		}
 		return $final;
 	}
@@ -94,7 +77,7 @@ class Overview {
 		$alerttitle = _("System Alerts");
 		$state = "success";
 		$text = "<div class='text-center'>"._("No critical issues found")."</div>";
-		$foundalerts = array();
+		$foundalerts = [];
 		// Go through our notifications now..
 		foreach ($nots as $n) {
 			// Firstly, check for a security issue. If that happens, we don't care about
@@ -104,7 +87,7 @@ class Overview {
 				$state = "danger";
 				$alerttitle = "<center><h4><i class='fa fa-exclamation-triangle'></i> "._("Security Issue")." <i class='fa fa-exclamation-triangle'></i></h4></center>";
 				$text = "<p>".$n['title']."</p><p>" . _("This is a critical issue and should be resolved urgently") . "</p>";
-				return array("alerttitle" => $alerttitle, "state" => $state, "text" => $text);
+				return ["alerttitle" => $alerttitle, "state" => $state, "text" => $text];
 			}
 
 			// Now lets find some alerts!
@@ -127,20 +110,15 @@ class Overview {
 			$text = _("Please check for errors in the notification section");
 			$alerttitle = _("Warnings Found");
 		}
-		return array("alerttitle" => $alerttitle, "state" => $state, "text" => $text);
+		return ["alerttitle" => $alerttitle, "state" => $state, "text" => $text];
 	}
 
 	public function getSummary() {
-		$svcs = array(
-			"asterisk" => _("Asterisk"),
-			"mysql" => _("MySQL"),
-			"apache" => _("Web Server"),
-			"mailq" => _("Mail Queue"),
-		);
+		$svcs = ["asterisk" => _("Asterisk"), "mysql" => _("MySQL"), "apache" => _("Web Server"), "mailq" => _("Mail Queue")];
 
 		$sysinfo = \FreePBX::create()->Dashboard->getSysInfo();
 
-		$final = array();
+		$final = [];
 		$i = 0;
 		foreach (array_keys($svcs) as $svc) {
 			if (!method_exists($this, "check$svc")) {
@@ -158,7 +136,7 @@ class Overview {
 		$f = $final;
 		foreach($t as $d) {
 			foreach($d as $d1) {
-				$order = isset($d1['order']) ? $d1['order'] : count($f);
+				$order = $d1['order'] ?? count($f);
 				$module = \module_functions::create();
 				$fw_module = $module->getinfo('firewall', MODULE_STATUS_ENABLED);
 				if(!empty($fw_module["firewall"])){
@@ -174,7 +152,7 @@ class Overview {
 				}
 				$t1 = array_slice($f, 0, $order, true);
 				$t2 = array_slice($f, $order, count($f) - 1, true);
-				$f = array_merge($t1, array($d1), $t2);
+				$f = [...$t1, $d1, ...$t2];
 			}
 		}
 		return $f;
@@ -214,14 +192,15 @@ class Overview {
 	}
 
 	private function checkmailq() {
-		$mailq = fpbx_which("mailq");
+		$lastline = null;
+  $mailq = fpbx_which("mailq");
 		if ($mailq) {
 			$lastline = exec("$mailq 2>&1", $out, $ret);
 		}
 		// Postfix returns 'Mail queue is empty'; exim returns nothing; sendmail returns total
 		if (empty($out) || // exim
-			strpos($out[0], "queue is empty") !== false || // postfix status on first/only output line
-			strpos(end($out), "Total requests: 0") !== false // sendmail status on last line
+			str_contains($out[0], "queue is empty") || // postfix status on first/only output line
+			str_contains(end($out), "Total requests: 0") // sendmail status on last line
 		) {
 			return $this->genAlertGlyphicon('ok', "No outbound mail in queue");
 		}
@@ -243,7 +222,7 @@ class Overview {
 			return $this->genAlertGlyphicon($err, $msg);
 		}
 		// This signifies a bug and must not be translated.
-		return $this->genAlertGlyphicon('critical', "Unknown output from mailq: ".json_encode([$out, $ret]));
+		return $this->genAlertGlyphicon('critical', "Unknown output from mailq: ".json_encode([$out, $ret], JSON_THROW_ON_ERROR));
 	}
 
 

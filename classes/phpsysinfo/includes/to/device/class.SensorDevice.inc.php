@@ -27,17 +27,13 @@ class SensorDevice
 {
     /**
      * name of the sensor
-     *
-     * @var String
      */
-    private $_name = "";
+    private string $_name = "";
 
     /**
      * current value of the sensor
-     *
-     * @var Integer
      */
-    private $_value = 0;
+    private int $_value = 0;
 
     /**
      * maximum value of the sensor

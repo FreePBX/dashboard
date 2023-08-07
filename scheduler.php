@@ -9,7 +9,7 @@
 //
 
 // Sleep to fix crazy issues with large VM hosting providers
-sleep(mt_rand(1,30));
+sleep(random_int(1,30));
 
 // Start quickly.
 $bootstrap_settings['freepbx_auth'] = false;  // Just in case.

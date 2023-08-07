@@ -27,38 +27,28 @@ class NetDevice
 {
     /**
      * name of the device
-     *
-     * @var String
      */
-    private $_name = "";
+    private string $_name = "";
 
     /**
      * transmitted bytes
-     *
-     * @var Integer
      */
-    private $_txBytes = 0;
+    private int $_txBytes = 0;
 
     /**
      * received bytes
-     *
-     * @var Integer
      */
-    private $_rxBytes = 0;
+    private int $_rxBytes = 0;
 
     /**
      * counted error packages
-     *
-     * @var Integer
      */
-    private $_errors = 0;
+    private int $_errors = 0;
 
     /**
      * counted droped packages
-     *
-     * @var Integer
      */
-    private $_drops = 0;
+    private int $_drops = 0;
 
     /**
      * string with info

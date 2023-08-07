@@ -22,15 +22,20 @@ class TimeUtils {
 		$second_plural = _("seconds");
 		$zero_seconds = _("0 seconds");
 		
-		$units = array(
-			"year"   => array( "divisor" => 31536000, "one" => $year, "many" => $year_plural),   /* day * 365 */
-			"month"  => array( "divisor" =>  2628000, "one" => $month, "many" => $month_plural), /* year / 12 */
-			"week"   => array( "divisor" =>   604800, "one" => $week, "many" => $week_plural),   /* day * 7  */
-			"day"    => array( "divisor" =>    86400, "one" => $day, "many" => $day_plural),     /* hour * 24 */
-			"hour"   => array( "divisor" =>     3600, "one" => $hour, "many" => $hour_plural),   /* 60 * 60 */
-			"minute" => array( "divisor" =>       60, "one" => $minute, "many" => $minute_plural),
-			"second" => array( "divisor" =>        1, "one" => $second, "many" => $second_plural),
-		);
+		$units = [
+      "year"   => ["divisor" => 31_536_000, "one" => $year, "many" => $year_plural],
+      /* day * 365 */
+      "month"  => ["divisor" =>  2_628_000, "one" => $month, "many" => $month_plural],
+      /* year / 12 */
+      "week"   => ["divisor" =>   604800, "one" => $week, "many" => $week_plural],
+      /* day * 7  */
+      "day"    => ["divisor" =>    86400, "one" => $day, "many" => $day_plural],
+      /* hour * 24 */
+      "hour"   => ["divisor" =>     3600, "one" => $hour, "many" => $hour_plural],
+      /* 60 * 60 */
+      "minute" => ["divisor" =>       60, "one" => $minute, "many" => $minute_plural],
+      "second" => ["divisor" =>        1, "one" => $second, "many" => $second_plural],
+  ];
 
 		// specifically handle zero
 		if ( $secs == 0 ) return $zero_seconds;

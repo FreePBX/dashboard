@@ -34,8 +34,8 @@ class HDDTemp extends Sensors
      */
     private function _temperature()
     {
-        $ar_buf = array();
-        switch (strtolower(PSI_HDD_TEMP)) {
+        $ar_buf = [];
+        switch (strtolower((string) PSI_HDD_TEMP)) {
         case "tcp":
             $lines = '';
             // Timo van Roermund: connect to the hddtemp daemon, use a 5 second timeout.
@@ -57,9 +57,9 @@ class HDDTemp extends Sensors
             $strContent = "";
             $hddtemp_value = "";
             if (CommonFunctions::rfts("/proc/diskstats", $strContent, 0, 4096, false)) {
-                $arrContent = preg_split("/\n/", $strContent, -1, PREG_SPLIT_NO_EMPTY);
+                $arrContent = preg_split("/\n/", (string) $strContent, -1, PREG_SPLIT_NO_EMPTY);
                 foreach ($arrContent as $strLine) {
-                    preg_match("/^\s(.*)\s([a-z]*)\s(.*)/", $strLine, $arrSplit);
+                    preg_match("/^\s(.*)\s([a-z]*)\s(.*)/", (string) $strLine, $arrSplit);
                     if (! empty($arrSplit[2])) {
                         $strDrive = '/dev/'.$arrSplit[2];
                         if (file_exists($strDrive)) {
@@ -69,10 +69,10 @@ class HDDTemp extends Sensors
                 }
             } else {
                 if (CommonFunctions::rfts("/proc/partitions", $strContent, 0, 4096, false)) {
-                    $arrContent = preg_split("/\n/", $strContent, -1, PREG_SPLIT_NO_EMPTY);
+                    $arrContent = preg_split("/\n/", (string) $strContent, -1, PREG_SPLIT_NO_EMPTY);
                     foreach ($arrContent as $strLine) {
-                        if (!preg_match("/^\s(.*)\s([\/a-z0-9]*(\/disc))\s(.*)/", $strLine, $arrSplit)) {
-                            preg_match("/^\s(.*)\s([a-z]*)\s(.*)/", $strLine, $arrSplit);
+                        if (!preg_match("/^\s(.*)\s([\/a-z0-9]*(\/disc))\s(.*)/", (string) $strLine, $arrSplit)) {
+                            preg_match("/^\s(.*)\s([a-z]*)\s(.*)/", (string) $strLine, $arrSplit);
                         }
                         if (! empty($arrSplit[2])) {
                             $strDrive = '/dev/'.$arrSplit[2];
@@ -87,10 +87,10 @@ class HDDTemp extends Sensors
                 break;
             }
             if (CommonFunctions::executeProgram("hddtemp", $strDrives, $hddtemp_value, PSI_DEBUG)) {
-                $hddtemp_value = preg_split("/\n/", $hddtemp_value, -1, PREG_SPLIT_NO_EMPTY);
+                $hddtemp_value = preg_split("/\n/", (string) $hddtemp_value, -1, PREG_SPLIT_NO_EMPTY);
                 foreach ($hddtemp_value as $line) {
-                    $temp = preg_split("/:\s/", $line, 3);
-                    if (count($temp) == 3 && preg_match("/^[0-9]/", $temp[2])) {
+                    $temp = preg_split("/:\s/", (string) $line, 3);
+                    if ((is_countable($temp) ? count($temp) : 0) == 3 && preg_match("/^[0-9]/", $temp[2])) {
                         preg_match("/^([0-9]*)(.*)/", $temp[2], $ar_temp);
                         $temp[2] = trim($ar_temp[1]);
                         $temp[3] = trim($ar_temp[2]);
@@ -105,8 +105,8 @@ class HDDTemp extends Sensors
         }
         // Timo van Roermund: parse the info from the hddtemp daemon.
         foreach ($ar_buf as $line) {
-            $data = array();
-            if (preg_match("/\|(.*)\|(.*)\|(.*)\|(.*)\|/", $line, $data)) {
+            $data = [];
+            if (preg_match("/\|(.*)\|(.*)\|(.*)\|(.*)\|/", (string) $line, $data)) {
                 if (trim($data[3]) != "ERR") {
                     // get the info we need
                     $dev = new SensorDevice();

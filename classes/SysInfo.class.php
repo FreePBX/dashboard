@@ -13,7 +13,7 @@
 
 class SysInfo {
 	private static $obj = false;
-	private $psi = false;
+	private bool $psi = false;
 	private $astinfo = false;
 
 	public static function create() {
@@ -23,7 +23,7 @@ class SysInfo {
 		return self::$obj;
 	}
 
-	private $flat;
+	private ?array $flat = null;
 
 	private function initPSI() {
 		if (!$this->psi) {
@@ -44,7 +44,7 @@ class SysInfo {
 
 
 	public function getSysInfo() {
-		$this->flat = array();
+		$this->flat = [];
 
 		$this->initPSI();
 		spl_autoload_register('psi_autoloader');
@@ -66,7 +66,7 @@ class SysInfo {
 		$this->flat['timestamp'] = $this->flat['psi.Generation.@attributes.timestamp'];
 
 		// Explode out the load average
-		list ($five, $ten, $fifteen) = explode(' ', $this->flat['psi.Vitals.@attributes.LoadAvg']);
+		[$five, $ten, $fifteen] = explode(' ', (string) $this->flat['psi.Vitals.@attributes.LoadAvg']);
 		$this->flat['psi.Vitals.@attributes.LoadAvg.five']    = $five;
 		$this->flat['psi.Vitals.@attributes.LoadAvg.ten']     = $ten;
 		$this->flat['psi.Vitals.@attributes.LoadAvg.fifteen'] = $fifteen;
@@ -85,7 +85,8 @@ class SysInfo {
 
 	public function getAstInfo() {
 
-		if (!class_exists('AsteriskInfo2')) {
+		$retarr = [];
+  if (!class_exists('AsteriskInfo2')) {
 			include 'AsteriskInfo.class.php';
 			$this->astinfo = new AsteriskInfo2();
 		}

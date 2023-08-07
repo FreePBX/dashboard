@@ -27,10 +27,8 @@ class Healthd extends Sensors
 {
     /**
      * content to parse
-     *
-     * @var array
      */
-    private $_lines = array();
+    private array|bool $_lines = [];
 
     /**
      * fill the private content var through tcp or file access
@@ -38,11 +36,11 @@ class Healthd extends Sensors
     public function __construct()
     {
         parent::__construct();
-        switch (strtolower(PSI_SENSOR_ACCESS)) {
+        switch (strtolower((string) PSI_SENSOR_ACCESS)) {
         case 'command':
             $lines = "";
             CommonFunctions::executeProgram('healthdc', '-t', $lines);
-            $this->_lines = preg_split("/\n/", $lines, -1, PREG_SPLIT_NO_EMPTY);
+            $this->_lines = preg_split("/\n/", (string) $lines, -1, PREG_SPLIT_NO_EMPTY);
             break;
         default:
             $this->error->addConfigError('__construct()', 'PSI_SENSOR_ACCESS');

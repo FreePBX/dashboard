@@ -29,46 +29,36 @@ class MBInfo
      * array with SensorDevices for temperatures
      *
      * @see SensorDevice
-     *
-     * @var Array
      */
-    private $_mbTemp = array();
+    private array $_mbTemp = [];
 
     /**
      * array with SensorDevices for fans
      *
      * @see SensorDevice
-     *
-     * @var Array
      */
-    private $_mbFan = array();
+    private array $_mbFan = [];
 
     /**
      * array with SensorDevices for voltages
      *
      * @see SensorDevice
-     *
-     * @var Array
      */
-    private $_mbVolt = array();
+    private array $_mbVolt = [];
 
     /**
      * array with SensorDevices for power
      *
      * @see SensorDevice
-     *
-     * @var Array
      */
-    private $_mbPower = array();
+    private array $_mbPower = [];
 
     /**
      * array with SensorDevices for apmers
      *
      * @see SensorDevice
-     *
-     * @var Array
      */
-    private $_mbCurrent = array();
+    private array $_mbCurrent = [];
 
     /**
      * Returns $_mbFan.

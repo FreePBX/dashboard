@@ -2,7 +2,7 @@
 
 	<div class="row">
 		<div class="col-sm-12 less-padding">
-<?php if (count($data) === 0) { ?>
+<?php if ((is_countable($data) ? count($data) : 0) === 0) { ?>
 			<div class="row box">
 				<div class="col-sm-12">
 					<?= htmlspecialchars(_("No notes found")) ?>
@@ -12,10 +12,10 @@
 <?php foreach ($data as $timestamp=>$note) { ?>
 			<div class="row box" id="dashboard_notepad_<?= $timestamp ?>">
 				<div class="col-sm-11 text-justify">
-					<strong title="<?= htmlspecialchars($note->time) ?>">
+					<strong title="<?= htmlspecialchars((string) $note->time) ?>">
 						<?= htmlspecialchars(sprintf("%s ago:", $note->ago)) ?>
 					</strong>
-					<?= htmlspecialchars($note->content) ?>
+					<?= htmlspecialchars((string) $note->content) ?>
 				</div>
 				<div class="col-sm-1">
 					<i class="fa fa-times-circle help dashboard_notepad_del" data-timestamp="<?= $timestamp ?>" title="<?= htmlspecialchars(_("Delete This")) ?>"></i>

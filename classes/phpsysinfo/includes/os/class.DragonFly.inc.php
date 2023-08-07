@@ -48,7 +48,7 @@ class DragonFly extends BSDCommon
     private function _uptime()
     {
         $a = $this->grab_key('kern.boottime');
-        preg_match("/sec = ([0-9]+)/", $a, $buf);
+        preg_match("/sec = ([0-9]+)/", (string) $a, $buf);
         $this->sys->setUptime(time() - $buf[1]);
     }
 
@@ -61,8 +61,8 @@ class DragonFly extends BSDCommon
     {
         CommonFunctions::executeProgram('netstat', '-nbdi | cut -c1-25,44- | grep "^[a-z]*[0-9][ \t].*Link"', $netstat_b);
         CommonFunctions::executeProgram('netstat', '-ndi | cut -c1-25,44- | grep "^[a-z]*[0-9][ \t].*Link"', $netstat_n);
-        $lines_b = preg_split("/\n/", $netstat_b, -1, PREG_SPLIT_NO_EMPTY);
-        $lines_n = preg_split("/\n/", $netstat_n, -1, PREG_SPLIT_NO_EMPTY);
+        $lines_b = preg_split("/\n/", (string) $netstat_b, -1, PREG_SPLIT_NO_EMPTY);
+        $lines_n = preg_split("/\n/", (string) $netstat_n, -1, PREG_SPLIT_NO_EMPTY);
         for ($i = 0, $max = sizeof($lines_b); $i < $max; $i++) {
             $ar_buf_b = preg_split("/\s+/", $lines_b[$i]);
             $ar_buf_n = preg_split("/\s+/", $lines_n[$i]);
@@ -86,7 +86,7 @@ class DragonFly extends BSDCommon
     protected function ide()
     {
         foreach ($this->readdmesg() as $line) {
-            if (preg_match('/^(.*): (.*) <(.*)> at (ata[0-9]\-(.*)) (.*)/', $line, $ar_buf)) {
+            if (preg_match('/^(.*): (.*) <(.*)> at (ata[0-9]\-(.*)) (.*)/', (string) $line, $ar_buf)) {
                 $dev = new HWDevice();
                 $dev->setName($ar_buf[1]);
                 if (!preg_match("/^acd[0-9](.*)/", $ar_buf[1])) {

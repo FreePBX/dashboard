@@ -17,16 +17,11 @@ class AsteriskInfo2  {
 
 	public function get_channel_totals() {
 		if (!$this->astman) {
-			return array(
-				'external_calls'=>-1,
-				'internal_calls'=>-1,
-				'total_calls'=>-1,
-				'total_channels'=>-1,
-			);
+			return ['external_calls'=>-1, 'internal_calls'=>-1, 'total_calls'=>-1, 'total_channels'=>-1];
 		}
-		$response = $this->astman->send_request('Command',array('Command'=>"core show channels"));
+		$response = $this->astman->send_request('Command',['Command'=>"core show channels"]);
 
-		$astout = explode("\n",$response['data']);
+		$astout = explode("\n",(string) $response['data']);
 
 		$external_calls = 0;
 		$internal_calls = 0;
@@ -44,12 +39,7 @@ class AsteriskInfo2  {
 				$total_calls = $matches[1];
 			}
 		}
-		return array(
-			'external_calls'=>$external_calls,
-			'internal_calls'=>$internal_calls,
-			'total_calls'=>$total_calls,
-			'total_channels'=>$total_channels,
-		);
+		return ['external_calls'=>$external_calls, 'internal_calls'=>$internal_calls, 'total_calls'=>$total_calls, 'total_channels'=>$total_channels];
 	}
 
 	public function get_connections() {
@@ -58,12 +48,8 @@ class AsteriskInfo2  {
 		$alldevices = FreePBX::create()->Database->query($sql)->fetchAll(PDO::FETCH_COLUMN, 0);
 		$devices = array_flip($alldevices);
 
-		$protocols = array("sip", "iax2", "pjsip");
-		$vars = array(
-			"users_online", "users_offline", "users_total",
-			"trunks_online", "trunks_offline", "trunks_total",
-			"registrations_online", "registrations_offline", "registrations_total",
-		);
+		$protocols = ["sip", "iax2", "pjsip"];
+		$vars = ["users_online", "users_offline", "users_total", "trunks_online", "trunks_offline", "trunks_total", "registrations_online", "registrations_offline", "registrations_total"];
 
 		// Build array to return
 		foreach ($protocols as $p) {
@@ -81,16 +67,16 @@ class AsteriskInfo2  {
 			return $retarr;
 		}
 
-		$response = $this->astman->send_request('Command',array('Command'=>"sip show peers"));
-		$astout = explode("\n",$response['data']);
+		$response = $this->astman->send_request('Command',['Command'=>"sip show peers"]);
+		$astout = explode("\n",(string) $response['data']);
 		$blacklist = \FreePBX::Dashboard()->extIgnoreList();
 		foreach ($astout as $line) {
 			// Previous bug IRT trunks starting or ending with /'s here. Investigate.
 			$exploded = preg_split('/\s+/', $line);
-			if (strpos($exploded[0], '/') === false) {
+			if (!str_contains($exploded[0], '/')) {
 				$name = $exploded[0];
 			} else {
-				list($name, $null) = explode('/', $exploded[0]);
+				[$name, $null] = explode('/', $exploded[0]);
 			}
 			//prefix blacklist
 			foreach($blacklist as $num) {
@@ -119,8 +105,8 @@ class AsteriskInfo2  {
 			} // else it's not a device.
 		}
 
-		$response = $this->astman->send_request('Command',array('Command'=>"sip show registry"));
-		$astout = explode("\n",$response['data']);
+		$response = $this->astman->send_request('Command',['Command'=>"sip show registry"]);
+		$astout = explode("\n",(string) $response['data']);
 		$pos = false;
 		foreach ($astout as $line) {
 			if (trim($line) != '') {
@@ -138,8 +124,8 @@ class AsteriskInfo2  {
 			}
 		}
 
-		$response = $this->astman->send_request('Command',array('Command'=>"iax2 show peers"));
-		$astout = explode("\n",$response['data']);
+		$response = $this->astman->send_request('Command',['Command'=>"iax2 show peers"]);
+		$astout = explode("\n",(string) $response['data']);
 		foreach ($astout as $line) {
 			if (preg_match('/^(([a-z0-9\-_]+)(\/([a-z0-9\-_]+))?)\s+(\([a-z]+\)|\d{1,3}(\.\d{1,3}){3})/i', $line, $matches)) {
 				//matches: [2] = name, [4] = username, [5] = host, [6] = part of ip (if IP)
@@ -158,8 +144,8 @@ class AsteriskInfo2  {
 		}
 
 
-		$response = $this->astman->send_request('Command',array('Command'=>"iax2 show registry"));
-		$astout = explode("\n",$response['data']);
+		$response = $this->astman->send_request('Command',['Command'=>"iax2 show registry"]);
+		$astout = explode("\n",(string) $response['data']);
 		$pos = false;
 		foreach ($astout as $line) {
 			if (trim($line) != '') {
@@ -177,9 +163,9 @@ class AsteriskInfo2  {
 			}
 		}
 
-		$response = $this->astman->send_request('Command',array('Command'=>"pjsip show endpoints"));
+		$response = $this->astman->send_request('Command',['Command'=>"pjsip show endpoints"]);
 		// This is an amazingly awful format to parse.
-		$lines = explode("\n", $response['data']);
+		$lines = explode("\n", (string) $response['data']);
 		$inheader = true;
 		$istrunk = $isendpoint = false;
 		foreach ($lines as $l) {
@@ -197,7 +183,7 @@ class AsteriskInfo2  {
 			}
 
 			// If we have a line starting with 'Endpoint:' then we found one!
-			if (strpos($l, "Endpoint:") === 0) {
+			if (str_starts_with($l, "Endpoint:")) {
 				if (preg_match("/Endpoint:\s+(.+)\/(.+?)\b\s+(.+)/", $l, $out)) {
 					// Found a device
 					$isendpoint = $out[1];
@@ -209,7 +195,7 @@ class AsteriskInfo2  {
 						}
 					}
 
-					if (isset($out[3]) && strpos($out[3], "Unavail") === 0) {
+					if (isset($out[3]) && str_starts_with($out[3], "Unavail")) {
 						// Unavailable endpoint.
 						$retarr['pjsip_users_offline']++;
 					} else {
@@ -227,13 +213,13 @@ class AsteriskInfo2  {
 			}
 
 			// If we have a Contact: line, then that's something that's registered!
-			if (strpos($l, "Contact:") === 0) {
+			if (str_starts_with($l, "Contact:")) {
 				if ($isendpoint !== false) {
 					// This is a registered endpoint
 					$retarr['pjsip_registrations_online']++;
 				} elseif ($istrunk !== false) {
 					// Trunk status... Check for 'avail' and 'NonQual'
-					if (strpos($l, "Avail ") === false && strpos($l, "NonQual") === false) {
+					if (!str_contains($l, "Avail ") && !str_contains($l, "NonQual")) {
 						// Trunk down.
 						$retarr['pjsip_trunks_offline']++;
 					} else {
@@ -267,20 +253,15 @@ class AsteriskInfo2  {
 	}
 
 	public function get_uptime() {
-		$output = array(
-			'system' => 'Unknown',
-			'reload' => 'Unknown',
-			'system-seconds' => '-2',
-			'reload-seconds' => '-2',
-		);
+		$output = ['system' => 'Unknown', 'reload' => 'Unknown', 'system-seconds' => '-2', 'reload-seconds' => '-2'];
 
 		// If we can't connect to astman for some reason..
 		if (!$this->astman) {
 			return $output;
 		}
 
-		$response = $this->astman->send_request('Command',array('Command'=>"core show uptime seconds"));
-		$astout = explode("\n",$response['data']);
+		$response = $this->astman->send_request('Command',['Command'=>"core show uptime seconds"]);
+		$astout = explode("\n",(string) $response['data']);
 
 		if (!class_exists('TimeUtils')) {
 			include 'TimeUtils.class.php';

@@ -32,7 +32,7 @@ class mainTest extends PHPUnit_Framework_TestCase {
 		foreach ($res as $key => $row) {
 			$this->assertTrue(is_array($row), "$key didn't return a row");
 		} */
-		$this->assertLessThanOrEqual(61, count($res), "Returned more than 61 rows for an hour");
+		$this->assertLessThanOrEqual(61, is_countable($res) ? count($res) : 0, "Returned more than 61 rows for an hour");
 	}
 
 }

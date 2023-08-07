@@ -27,21 +27,18 @@ class SMART extends PSI_Plugin
 {
     /**
      * variable, which holds the content of the command
-     * @var array
      */
-    private $_filecontent = array();
+    private array $_filecontent = [];
 
     /**
      * variable, which holds the result before the xml is generated out of this array
-     * @var array
      */
-    private $_result = array();
+    private array $_result = [];
 
     /**
      * variable, which holds PSI_PLUGIN_SMART_IDS well formated datas
-     * @var array
      */
-    private $_ids = array();
+    private array $_ids = [];
 
     /**
      * read the data into an internal array and also call the parent constructor
@@ -50,14 +47,14 @@ class SMART extends PSI_Plugin
      */
     public function __construct($enc)
     {
-        parent::__construct(__CLASS__, $enc);
-        switch (strtolower(PSI_PLUGIN_SMART_ACCESS)) {
+        parent::__construct(self::class, $enc);
+        switch (strtolower((string) PSI_PLUGIN_SMART_ACCESS)) {
             case 'command':
                 if ( defined('PSI_PLUGIN_SMART_DEVICES') && is_string(PSI_PLUGIN_SMART_DEVICES) ) {
                     if (preg_match(ARRAY_EXP, PSI_PLUGIN_SMART_DEVICES)) {
                         $disks = eval(PSI_PLUGIN_SMART_DEVICES);
                     } else {
-                        $disks = array(PSI_PLUGIN_SMART_DEVICES);
+                        $disks = [PSI_PLUGIN_SMART_DEVICES];
                     }
                     foreach ($disks as $disk) {
                         $buffer = "";
@@ -70,10 +67,10 @@ class SMART extends PSI_Plugin
                     if (preg_match(ARRAY_EXP, PSI_PLUGIN_SMART_IDS)) {
                         $fullIds = eval(PSI_PLUGIN_SMART_IDS);
                     } else {
-                        $fullIds = array(PSI_PLUGIN_SMART_IDS);
+                        $fullIds = [PSI_PLUGIN_SMART_IDS];
                     }
                     foreach ($fullIds as $fullId) {
-                        $arrFullId = preg_split('/-/', $fullId);
+                        $arrFullId = preg_split('/-/', (string) $fullId);
                         $this->_ids[intval($arrFullId[0])] = strtolower($arrFullId[1]);
                         if (!empty($arrFullId[2]))
                             $this->_ids[intval($arrFullId[2])] = "#replace-".intval($arrFullId[0]);
@@ -85,7 +82,7 @@ class SMART extends PSI_Plugin
                     if (preg_match(ARRAY_EXP, PSI_PLUGIN_SMART_DEVICES)) {
                         $disks = eval(PSI_PLUGIN_SMART_DEVICES);
                     } else {
-                        $disks = array(PSI_PLUGIN_SMART_DEVICES);
+                        $disks = [PSI_PLUGIN_SMART_DEVICES];
                     }
                     $dn=0;
                     foreach ($disks as $disk) {
@@ -100,10 +97,10 @@ class SMART extends PSI_Plugin
                     if (preg_match(ARRAY_EXP, PSI_PLUGIN_SMART_IDS)) {
                         $fullIds = eval(PSI_PLUGIN_SMART_IDS);
                     } else {
-                        $fullIds = array(PSI_PLUGIN_SMART_IDS);
+                        $fullIds = [PSI_PLUGIN_SMART_IDS];
                     }
                     foreach ($fullIds as $fullId) {
-                        $arrFullId = preg_split('/-/', $fullId);
+                        $arrFullId = preg_split('/-/', (string) $fullId);
                         $this->_ids[intval($arrFullId[0])] = strtolower($arrFullId[1]);
                         if (!empty($arrFullId[2]))
                             $this->_ids[intval($arrFullId[2])] = "#replace-".intval($arrFullId[0]);
@@ -135,33 +132,33 @@ class SMART extends PSI_Plugin
             $vendorInfos = "";
 
             // locate the beginning string offset for the attributes
-            if ( preg_match('/(Vendor Specific SMART Attributes with Thresholds)/', $result, $matches, PREG_OFFSET_CAPTURE) )
+            if ( preg_match('/(Vendor Specific SMART Attributes with Thresholds)/', (string) $result, $matches, PREG_OFFSET_CAPTURE) )
                $startIndex = $matches[0][1];
 
             // locate the end string offset for the attributes, this is usually right before string "SMART Error Log Version" or "SMART Error Log not supported" or "Error SMART Error Log Read failed" (hopefully every output has it!)
-            if ( preg_match('/(SMART Error Log Version)|(SMART Error Log not supported)|(Error SMART Error Log Read failed)/', $result, $matches, PREG_OFFSET_CAPTURE) )
+            if ( preg_match('/(SMART Error Log Version)|(SMART Error Log not supported)|(Error SMART Error Log Read failed)/', (string) $result, $matches, PREG_OFFSET_CAPTURE) )
                $endIndex = $matches[0][1];
 
             if ($startIndex && $endIndex && ($endIndex>$startIndex))
-                 $vendorInfos = preg_split("/\n/", substr ( $result, $startIndex, $endIndex - $startIndex ));
+                 $vendorInfos = preg_split("/\n/", substr ( (string) $result, $startIndex, $endIndex - $startIndex ));
 
             if (!empty($vendorInfos)) {
                 $labels = preg_split('/\s+/', $vendorInfos[1]);
                 foreach ($labels as $k=>$v) {
-                    $labels[$k] = str_replace('#', '', strtolower($v));
+                    $labels[$k] = str_replace('#', '', strtolower((string) $v));
                 }
                 $i = 0; // Line number
                 foreach ($vendorInfos as $line) {
                     $line = preg_replace('/^\s+/', '', $line);
                     $values = preg_split('/\s+/', $line);
-                    if (count($values) > count($labels)) {
+                    if ((is_countable($values) ? count($values) : 0) > count($labels)) {
                         $values = array_slice($values, 0, count($labels), true);
                     }
                     $j = 0;
                     $found = false;
                     foreach ($values as $value) {
                         if ((in_array($value, array_keys($this->_ids)) && $labels[$j] == 'id')) {
-                          $arrFullVa = preg_split('/-/', $this->_ids[$value]);
+                          $arrFullVa = preg_split('/-/', (string) $this->_ids[$value]);
                           if (($arrFullVa[0]=="#replace") && !empty($arrFullVa[1]))
                               $value=$arrFullVa[1];
                         }
@@ -176,7 +173,7 @@ class SMART extends PSI_Plugin
             } else {
                 //SCSI devices
                 if (!empty($this->_ids[1]) && ($this->_ids[1]=="raw_value")) {
-                    preg_match('/read\: (.*)\n/', $result, $lines);
+                    preg_match('/read\: (.*)\n/', (string) $result, $lines);
                     if (!empty($lines) && !empty($lines[0])) {
                         $values=preg_split('/\s+/',$lines[0]);
                         if (!empty($values) && ($values[7]!=null)) {
@@ -188,7 +185,7 @@ class SMART extends PSI_Plugin
                     }
                 }
                 if (!empty($this->_ids[5]) && ($this->_ids[5]=="raw_value")) {
-                    preg_match('/Elements in grown defect list\: (.*)\n/', $result, $lines);
+                    preg_match('/Elements in grown defect list\: (.*)\n/', (string) $result, $lines);
                     if (!empty($lines) && !empty($lines[0])) {
                         $values=preg_split('/\s+/',$lines[0]);
                         if (!empty($values) && ($values[5]!=null)) {
@@ -200,7 +197,7 @@ class SMART extends PSI_Plugin
                     }
                 }
                 if (!empty($this->_ids[9]) && ($this->_ids[9]=="raw_value")) {
-                    preg_match('/ number of hours powered up = (.*)\n/', $result, $lines);
+                    preg_match('/ number of hours powered up = (.*)\n/', (string) $result, $lines);
                     if (!empty($lines) && !empty($lines[0])) {
                         $values=preg_split('/\s+/',$lines[0]);
                         if (!empty($values) && ($values[7]!=null)) {
@@ -212,7 +209,7 @@ class SMART extends PSI_Plugin
                     }
                 }
                 if (!empty($this->_ids[194]) && ($this->_ids[194]=="raw_value")) {
-                    preg_match('/Current Drive Temperature\: (.*)\n/', $result, $lines);
+                    preg_match('/Current Drive Temperature\: (.*)\n/', (string) $result, $lines);
                     if (!empty($lines) && !empty($lines[0])) {
                         $values=preg_split('/\s+/',$lines[0]);
                         if (!empty($values) && ($values[3]!=null)) {
@@ -226,7 +223,7 @@ class SMART extends PSI_Plugin
             }
         }
         //Usage test
-        $newIds = array();
+        $newIds = [];
         foreach ($this->_ids as $id=>$column_name) {
             $found = 0;
             foreach ($this->_result as $diskName=>$diskInfos) {

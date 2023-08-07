@@ -28,10 +28,8 @@ class QNX extends OS
 {
     /**
      * content of the syslog
-     *
-     * @var array
      */
-    private $_dmesg = array();
+    private array $_dmesg = [];
 
     /**
      * call parent constructor
@@ -49,10 +47,10 @@ class QNX extends OS
     protected function _cpuinfo()
     {
         if (CommonFunctions::executeProgram('pidin', 'info', $buf)
-           && preg_match('/^Processor\d+: (.*)/m' ,$buf)) {
-            $lines = preg_split("/\n/", $buf, -1, PREG_SPLIT_NO_EMPTY);
+           && preg_match('/^Processor\d+: (.*)/m' ,(string) $buf)) {
+            $lines = preg_split("/\n/", (string) $buf, -1, PREG_SPLIT_NO_EMPTY);
             foreach ($lines as $line) {
-                if (preg_match('/^Processor\d+: (.+)/' ,$line, $proc)) {
+                if (preg_match('/^Processor\d+: (.+)/' ,(string) $line, $proc)) {
                     $dev = new CpuDevice();
                     $dev->SetModel(trim($proc[1]));
                     if (preg_match('/(\d+)MHz/' ,$proc[1], $mhz)) {
@@ -101,7 +99,7 @@ class QNX extends OS
     {
 
         if (CommonFunctions::executeProgram('pidin', 'info', $buf)
-           && preg_match('/^.* BootTime:(.*)/' ,$buf, $bstart)
+           && preg_match('/^.* BootTime:(.*)/' ,(string) $buf, $bstart)
            && CommonFunctions::executeProgram('date', '', $bstop)) {
             /* default error handler */
             if (function_exists('errorHandlerPsi')) {
@@ -111,7 +109,7 @@ class QNX extends OS
             $old_err_rep = error_reporting();
             error_reporting(E_ERROR);
 
-            $uptime = strtotime($bstop)-strtotime($bstart[1]);
+            $uptime = strtotime((string) $bstop)-strtotime($bstart[1]);
             if ($uptime > 0) $this->sys->setUptime($uptime);
 
             /* restore error level */
@@ -178,7 +176,7 @@ class QNX extends OS
     private function _memory()
     {
         if (CommonFunctions::executeProgram('pidin', 'info', $buf)
-           && preg_match('/^.* FreeMem:(\S+)Mb\/(\S+)Mb/' ,$buf, $memm)) {
+           && preg_match('/^.* FreeMem:(\S+)Mb\/(\S+)Mb/' ,(string) $buf, $memm)) {
             $this->sys->setMemTotal(1024*1024*$memm[2]);
             $this->sys->setMemFree(1024*1024*$memm[1]);
             $this->sys->setMemUsed(1024*1024*($memm[2]-$memm[1]));
@@ -205,11 +203,12 @@ class QNX extends OS
      */
     private function _network()
     {
+        $dev = null;
         if (CommonFunctions::executeProgram('ifconfig', '', $bufr, PSI_DEBUG)) {
-            $lines = preg_split("/\n/", $bufr, -1, PREG_SPLIT_NO_EMPTY);
+            $lines = preg_split("/\n/", (string) $bufr, -1, PREG_SPLIT_NO_EMPTY);
             $notwas = true;
             foreach ($lines as $line) {
-                if (preg_match("/^([^\s:]+)/", $line, $ar_buf)) {
+                if (preg_match("/^([^\s:]+)/", (string) $line, $ar_buf)) {
                     if (!$notwas) {
                         $this->sys->setNetDevices($dev);
                     }
@@ -219,9 +218,9 @@ class QNX extends OS
                 } else {
                     if (!$notwas) {
                         if (defined('PSI_SHOW_NETWORK_INFOS') && (PSI_SHOW_NETWORK_INFOS)) {
-                            if (preg_match('/^\s+address:\s*(\S+)/i', $line, $ar_buf2)) {
+                            if (preg_match('/^\s+address:\s*(\S+)/i', (string) $line, $ar_buf2)) {
                                     $dev->setInfo(($dev->getInfo()?$dev->getInfo().';':'').$ar_buf2[1]);
-                            } elseif (preg_match('/^\s+inet\s+(\S+)\s+netmask/i', $line, $ar_buf2))
+                            } elseif (preg_match('/^\s+inet\s+(\S+)\s+netmask/i', (string) $line, $ar_buf2))
                                 $dev->setInfo(($dev->getInfo()?$dev->getInfo().';':'').$ar_buf2[1]);
 
                         }

@@ -14,15 +14,13 @@ class BAT extends PSI_Plugin
 {
     /**
      * variable, which holds the content of the command
-     * @var array
      */
-    private $_filecontent = array();
+    private array $_filecontent = [];
 
     /**
      * variable, which holds the result before the xml is generated out of this array
-     * @var array
      */
-    private $_result = array();
+    private array $_result = [];
 
     /**
      * holds the COM object that we pull all the WMI data from
@@ -38,8 +36,10 @@ class BAT extends PSI_Plugin
      */
     public function __construct($enc)
     {
-        parent::__construct(__CLASS__, $enc);
-        switch (strtolower(PSI_PLUGIN_BAT_ACCESS)) {
+        $buffer_info = null;
+        $buffer_state = null;
+        parent::__construct(self::class, $enc);
+        switch (strtolower((string) PSI_PLUGIN_BAT_ACCESS)) {
         case 'command':
             if (PSI_OS == 'Android') {
                 CommonFunctions::rfts('/sys/class/power_supply/battery/uevent', $buffer_info, 0, 4096, PSI_DEBUG);
@@ -85,12 +85,12 @@ class BAT extends PSI_Plugin
                     } else {
                         $this->_wmi = $objLocator->ConnectServer($strHostname, 'rootcimv2', $strHostname.'\\'.$strUser, $strPassword);
                     }
-                } catch (Exception $e) {
+                } catch (Exception) {
                     $this->error->addError("WMI connect error", "PhpSysInfo can not connect to the WMI interface for security reasons.\nCheck an authentication mechanism for the directory where phpSysInfo is installed.");
                 }
                 $buffer_info = '';
                 $buffer_state = '';
-                $buffer = CommonFunctions::getWMI($this->_wmi, 'Win32_Battery', array('EstimatedChargeRemaining', 'DesignVoltage', 'BatteryStatus', 'Chemistry'));
+                $buffer = CommonFunctions::getWMI($this->_wmi, 'Win32_Battery', ['EstimatedChargeRemaining', 'DesignVoltage', 'BatteryStatus', 'Chemistry']);
                 $capacity = '';
                 if (isset($buffer[0]['EstimatedChargeRemaining'])) {
                     $capacity = $buffer[0]['EstimatedChargeRemaining'];
@@ -99,20 +99,20 @@ class BAT extends PSI_Plugin
                     $buffer_state .= 'POWER_SUPPLY_VOLTAGE_NOW='.(1000*$buffer[0]['DesignVoltage'])."\n";
                 }
                 if (isset($buffer[0]['BatteryStatus'])) {
-                    switch ($buffer[0]['BatteryStatus']) {
-                        case  1: $batstat = 'Discharging'; break;
-                        case  2: $batstat = 'AC connected'; break;
-                        case  3: $batstat = 'Fully Charged'; break;
-                        case  4: $batstat = 'Low'; break;
-                        case  5: $batstat = 'Critical'; break;
-                        case  6: $batstat = 'Charging'; break;
-                        case  7: $batstat = 'Charging and High'; break;
-                        case  8: $batstat = 'Charging and Low'; break;
-                        case  9: $batstat = 'Charging and Critical'; break;
-                        case 10: $batstat = 'Undefined'; break;
-                        case 11: $batstat = 'Partially Charged'; break;
-                        default: $batstat = '';
-                    }
+                    $batstat = match ($buffer[0]['BatteryStatus']) {
+                        1 => 'Discharging',
+                        2 => 'AC connected',
+                        3 => 'Fully Charged',
+                        4 => 'Low',
+                        5 => 'Critical',
+                        6 => 'Charging',
+                        7 => 'Charging and High',
+                        8 => 'Charging and Low',
+                        9 => 'Charging and Critical',
+                        10 => 'Undefined',
+                        11 => 'Partially Charged',
+                        default => '',
+                    };
                     if ($batstat != '') $buffer_state .= 'POWER_SUPPLY_STATUS='.$batstat."\n";
                 }
                 $techn = '';
@@ -128,7 +128,7 @@ class BAT extends PSI_Plugin
                         case 8: $techn = 'Li-poly'; break;
                     }
                 }
-                $buffer = CommonFunctions::getWMI($this->_wmi, 'Win32_PortableBattery', array('DesignVoltage', 'Chemistry', 'DesignCapacity'));
+                $buffer = CommonFunctions::getWMI($this->_wmi, 'Win32_PortableBattery', ['DesignVoltage', 'Chemistry', 'DesignCapacity']);
                 if (isset($buffer[0]['DesignVoltage'])) {
                     $buffer_info .= 'POWER_SUPPLY_VOLTAGE_MAX_DESIGN='.(1000*$buffer[0]['DesignVoltage'])."\n";
                 }
@@ -196,8 +196,8 @@ class BAT extends PSI_Plugin
             $this->global_error->addConfigError("__construct()", "PSI_PLUGIN_BAT_ACCESS");
             break;
         }
-        $this->_filecontent['info'] = preg_split("/\n/", $buffer_info, -1, PREG_SPLIT_NO_EMPTY);
-        $this->_filecontent['state'] = preg_split("/\n/", $buffer_state, -1, PREG_SPLIT_NO_EMPTY);
+        $this->_filecontent['info'] = preg_split("/\n/", (string) $buffer_info, -1, PREG_SPLIT_NO_EMPTY);
+        $this->_filecontent['state'] = preg_split("/\n/", (string) $buffer_state, -1, PREG_SPLIT_NO_EMPTY);
     }
 
     /**
@@ -212,66 +212,66 @@ class BAT extends PSI_Plugin
             return;
         }
         foreach ($this->_filecontent['info'] as $roworig) {
-            if (preg_match('/^design capacity\s*:\s*(.*) (.*)$/', trim($roworig), $data)) {
+            if (preg_match('/^design capacity\s*:\s*(.*) (.*)$/', trim((string) $roworig), $data)) {
                 $bat['design_capacity'] = $data[1];
-            } elseif (preg_match('/^design voltage\s*:\s*(.*) (.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^design voltage\s*:\s*(.*) (.*)$/', trim((string) $roworig), $data)) {
                 $bat['design_voltage'] = $data[1];
-            } elseif (preg_match('/^battery type\s*:\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^battery type\s*:\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['battery_type'] = $data[1];
 
-            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_MIN_DESIGN\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_MIN_DESIGN\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['design_voltage'] = ($data[1]/1000);
-            } elseif (preg_match('/^POWER_SUPPLY_ENERGY_FULL\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_ENERGY_FULL\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['design_capacity'] = ($data[1]/1000);
-            } elseif (preg_match('/^POWER_SUPPLY_ENERGY_NOW\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_ENERGY_NOW\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['remaining_capacity'] = ($data[1]/1000);
 
             /* Android */
-            } elseif (preg_match('/^POWER_SUPPLY_CAPACITY\s*=\s*(.*)$/', trim($roworig), $data) && !isset($bat['remaining_capacity'])) {
+            } elseif (preg_match('/^POWER_SUPPLY_CAPACITY\s*=\s*(.*)$/', trim((string) $roworig), $data) && !isset($bat['remaining_capacity'])) {
                 $bat['capacity'] = $data[1];
-            } elseif (preg_match('/^POWER_SUPPLY_TEMP\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_TEMP\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['battery_temperature'] = $data[1]/10;
-            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_NOW\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_NOW\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['present_voltage'] = ($data[1]/1000);
-            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_MAX_DESIGN\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_MAX_DESIGN\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['design_voltage'] = ($data[1]/1000);
-            } elseif (preg_match('/^POWER_SUPPLY_TECHNOLOGY\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_TECHNOLOGY\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['battery_type'] = $data[1];
-            } elseif (preg_match('/^POWER_SUPPLY_STATUS\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_STATUS\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['charging_state'] = $data[1];
-            } elseif (preg_match('/^POWER_SUPPLY_HEALTH\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_HEALTH\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['battery_condition'] = $data[1];
             }
         }
         foreach ($this->_filecontent['state'] as $roworig) {
-            if (preg_match('/^remaining capacity\s*:\s*(.*) (.*)$/', trim($roworig), $data)) {
+            if (preg_match('/^remaining capacity\s*:\s*(.*) (.*)$/', trim((string) $roworig), $data)) {
                 $bat['remaining_capacity'] = $data[1];
-            } elseif (preg_match('/^present voltage\s*:\s*(.*) (.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^present voltage\s*:\s*(.*) (.*)$/', trim((string) $roworig), $data)) {
                 $bat['present_voltage'] = $data[1];
-            } elseif (preg_match('/^charging state\s*:\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^charging state\s*:\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['charging_state'] = $data[1];
 
-            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_MIN_DESIGN\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_MIN_DESIGN\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['design_voltage'] = ($data[1]/1000);
-            } elseif (preg_match('/^POWER_SUPPLY_ENERGY_FULL\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_ENERGY_FULL\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['design_capacity'] = ($data[1]/1000);
-            } elseif (preg_match('/^POWER_SUPPLY_ENERGY_NOW\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_ENERGY_NOW\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['remaining_capacity'] = ($data[1]/1000);
 
             /* Android */
-            } elseif (preg_match('/^POWER_SUPPLY_CAPACITY\s*=\s*(.*)$/', trim($roworig), $data) && !isset($bat['remaining_capacity'])) {
+            } elseif (preg_match('/^POWER_SUPPLY_CAPACITY\s*=\s*(.*)$/', trim((string) $roworig), $data) && !isset($bat['remaining_capacity'])) {
                 $bat['capacity'] = $data[1];
-            } elseif (preg_match('/^POWER_SUPPLY_TEMP\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_TEMP\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['battery_temperature'] = $data[1]/10;
-            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_NOW\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_NOW\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['present_voltage'] = ($data[1]/1000);
-            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_MAX_DESIGN\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_VOLTAGE_MAX_DESIGN\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['design_voltage'] = ($data[1]/1000);
-            } elseif (preg_match('/^POWER_SUPPLY_TECHNOLOGY\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_TECHNOLOGY\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['battery_type'] = $data[1];
-            } elseif (preg_match('/^POWER_SUPPLY_STATUS\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_STATUS\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['charging_state'] = $data[1];
-            } elseif (preg_match('/^POWER_SUPPLY_HEALTH\s*=\s*(.*)$/', trim($roworig), $data)) {
+            } elseif (preg_match('/^POWER_SUPPLY_HEALTH\s*=\s*(.*)$/', trim((string) $roworig), $data)) {
                 $bat['battery_condition'] = $data[1];
             }
         }

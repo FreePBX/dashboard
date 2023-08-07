@@ -8,12 +8,11 @@ use GraphQL\Type\Definition\EnumType;
 
 class Dashboard extends Base {
 	protected $module = 'dashboard';
-	protected $diskspace_array = array();
+	protected $diskspace_array = [];
 
 	public function queryCallback() {
 		if ($this->checkAllReadScope()) {
-			return function() {
-				return [
+			return fn() => [
 					'checkdiskspace' => [
 						'type' => $this->typeContainer->get('diskspace')->getConnectionType(),
 						'description' => _('Use to get all the diskspace'),
@@ -41,7 +40,6 @@ class Dashboard extends Base {
 						}
 					]
 				];
-			};
 		}
 	}
 
@@ -49,58 +47,43 @@ class Dashboard extends Base {
 		$dashboard = $this->typeContainer->create('diskspace');
 		$dashboard->setDescription(_('Read the System licence information'));
 
-		$dashboard->addInterfaceCallback(function() {
-			return [$this->getNodeDefinition()['nodeInterface']];
-		});
+		$dashboard->addInterfaceCallback(fn() => [$this->getNodeDefinition()['nodeInterface']]);
 
 		$dashboard->setGetNodeCallback(function() {
 			$item = $this->freepbx->Dashboard->get_licencefile_info();
-			return isset($item) ? $item : null;
+			return $item ?? null;
 		});
 
-		$dashboard->addFieldCallback(function() {
-			return [
+		$dashboard->addFieldCallback(fn() => [
 				'id' => [
 					'type' => Type::nonNull(Type::Id()),
 					'description' => _('Returns storage id'),
-					'resolve' => function($row) {
-						return isset($row['id']) ? (int)$row['id'] : 0;
-					}
+					'resolve' => fn($row) => isset($row['id']) ? (int)$row['id'] : 0
 				],
 				'storage_path' => [
 					'type' => Type::string(),
 					'description' => _('storage path details'),
-					'resolve' => function($row) {
-						return isset($row['storage_path']) ? $row['storage_path'] : null;
-					}
+					'resolve' => fn($row) => $row['storage_path'] ?? null
 				],
 				'available_space' => [
 					'type' => Type::string(),
 					'description' => _('Available space details'),
-					'resolve' => function($row) {
-						return isset($row['avail']) ? $row['avail'] : null;
-					}
+					'resolve' => fn($row) => $row['avail'] ?? null
 				],
 				'used_space' => [
 					'type' => Type::string(),
 					'description' => _('used space details'),
-					'resolve' => function($row) {
-						return isset($row['used']) ? $row['used'] : null;
-					}
+					'resolve' => fn($row) => $row['used'] ?? null
 				],
 				'total_size' => [
 					'type' => Type::string(),
 					'description' => _('disk total size details'),
-					'resolve' => function($row) {
-						return isset($row['size']) ? $row['size'] : null;
-					}
+					'resolve' => fn($row) => $row['size'] ?? null
 				],
 				'used_percentage' => [
 					'type' => Type::string(),
 					'description' => _('disk used percentage'),
-					'resolve' => function($row) {
-						return isset($row['usepct']) ? $row['usepct'] : null;
-					}
+					'resolve' => fn($row) => $row['usepct'] ?? null
 				],
 				'message' => [
 					'type' => Type::string(),
@@ -110,27 +93,19 @@ class Dashboard extends Base {
 					'type' => Type::boolean(),
 					'description' => _('Status for the request')
 				]
-			];
-		});
+			]);
 
-		$dashboard->setConnectionResolveNode(function ($edge) {
-			return $edge['node'];
-		});
+		$dashboard->setConnectionResolveNode(fn($edge) => $edge['node']);
 
-		$dashboard->setConnectionFields(function() {
-			return [
+		$dashboard->setConnectionFields(fn() => [
 				'totalCount' => [
 					'type' => Type::int(),
-					'resolve' => function($value) {
-						return count($this->diskspace_array);
-					}
+					'resolve' => fn($value) => count($this->diskspace_array)
 				],
 				'diskspace' => [
 					'type' => Type::listOf($this->typeContainer->get('diskspace')->getObject()),
 					'resolve' => function($root, $args) {
-						$data = array_map(function($row) {
-							return $row['node'];
-						},isset($root['response']) ? $root['response']['edges'] : []);
+						$data = array_map(fn($row) => $row['node'],isset($root['response']) ? $root['response']['edges'] : []);
 						   return $data;
 					}
 				],
@@ -142,8 +117,7 @@ class Dashboard extends Base {
 					'type' => Type::boolean(),
 					'description' => _('Status for the request')
 				]
-			];
-		});
+			]);
 
 	}
 }

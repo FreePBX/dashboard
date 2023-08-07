@@ -27,31 +27,23 @@ class Webpage extends Output implements PSI_Interface_Output
 {
     /**
      * configured language
-     *
-     * @var String
      */
-    private $_language;
+    private ?string $_language = null;
 
     /**
      * configured template
-     *
-     * @var String
      */
-    private $_template;
+    private ?string $_template = null;
 
     /**
      * all available templates
-     *
-     * @var Array
      */
-    private $_templates = array();
+    private array $_templates = [];
 
     /**
      * all available languages
-     *
-     * @var Array
      */
-    private $_languages = array();
+    private array $_languages = [];
 
     /**
      * check for all extensions that are needed, initialize needed vars and read config.php
@@ -71,12 +63,12 @@ class Webpage extends Output implements PSI_Interface_Output
      */
     private function _checkTemplateLanguage()
     {
-        $this->_template = trim(strtolower(PSI_DEFAULT_TEMPLATE));
+        $this->_template = trim(strtolower((string) PSI_DEFAULT_TEMPLATE));
         if (!file_exists(APP_ROOT.'/templates/'.$this->_template.".css")) {
             $this->_template = 'phpsysinfo';
         }
 
-        $this->_language = trim(strtolower(PSI_DEFAULT_LANG));
+        $this->_language = trim(strtolower((string) PSI_DEFAULT_LANG));
         if (!file_exists(APP_ROOT.'/language/'.$this->_language.".xml")) {
             $this->_language = 'en';
         }
@@ -92,8 +84,8 @@ class Webpage extends Output implements PSI_Interface_Output
         $dirlist = CommonFunctions::gdc(APP_ROOT.'/templates/');
         sort($dirlist);
         foreach ($dirlist as $file) {
-            $tpl_ext = substr($file, strlen($file) - 4);
-            $tpl_name = substr($file, 0, strlen($file) - 4);
+            $tpl_ext = substr((string) $file, strlen((string) $file) - 4);
+            $tpl_name = substr((string) $file, 0, strlen((string) $file) - 4);
             if ($tpl_ext === ".css") {
                 array_push($this->_templates, $tpl_name);
             }
@@ -110,8 +102,8 @@ class Webpage extends Output implements PSI_Interface_Output
         $dirlist = CommonFunctions::gdc(APP_ROOT.'/language/');
         sort($dirlist);
         foreach ($dirlist as $file) {
-            $lang_ext = substr($file, strlen($file) - 4);
-            $lang_name = substr($file, 0, strlen($file) - 4);
+            $lang_ext = substr((string) $file, strlen((string) $file) - 4);
+            $lang_name = substr((string) $file, 0, strlen((string) $file) - 4);
             if ($lang_ext == ".xml") {
                 array_push($this->_languages, $lang_name);
             }

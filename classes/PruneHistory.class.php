@@ -8,11 +8,11 @@ class PruneHistory {
 
 	private $db = false;
 	private $dash = false;
-	private $periods = array('MINUTES' => 60, 'HALFHR' => 1800, 'HOUR' => 3600, 'QTRDAY' => 21600, 'DAY' => 86400);
+	private array $periods = ['MINUTES' => 60, 'HALFHR' => 1800, 'HOUR' => 3600, 'QTRDAY' => 21600, 'DAY' => 86400];
 	// Keeping 1 hour of Minutes, 1 day of Half Hours, 2 Days of Hours, 1 Week of Quarter Days, 3 months of Days.
-	private $keep = array('MINUTES' => 60, 'HALFHR' => 48, 'HOUR' => 48, 'QTRDAY' => 28, 'DAY' => 70);
+	private array $keep = ['MINUTES' => 60, 'HALFHR' => 48, 'HOUR' => 48, 'QTRDAY' => 28, 'DAY' => 70];
 	private $last = false;
-	private $pnext = array();
+	private array $pnext = [];
 
 	public function __construct($freepbx) {
 		$db = $freepbx->Database;
@@ -101,9 +101,9 @@ class PruneHistory {
 		// Ignore any that haven't completed a full $next period yet
 		$ignoreafter = $this->getPeriodBase(time(), $next);
 
-		$currentarr = array();
+		$currentarr = [];
 
-		$commitable = array();
+		$commitable = [];
 
 		// Now, go through our keys
 		foreach ($keys as $t) {
@@ -115,9 +115,9 @@ class PruneHistory {
 			// Are we in a different period?
 			if ($currentperiod != $this->getPeriodBase($t, $next)) {
 				// We need to submit the current array
-				$commitable[] = array('currentarr' => $currentarr, 'currentperiod' => $currentperiod, 'period' => $p);
+				$commitable[] = ['currentarr' => $currentarr, 'currentperiod' => $currentperiod, 'period' => $p];
 				// Then reset and continue.
-				$currentarr = array($t);
+				$currentarr = [$t];
 				$currentperiod = $this->getPeriodBase($t, $next);
 			} else {
 				// We're in the same period. Add it to the array
@@ -125,12 +125,7 @@ class PruneHistory {
 			}
 		}
 
-		usort($commitable,function($a,$b) {
-			if ($a['currentperiod'] == $b['currentperiod']) {
-				return 0;
-			}
-			return ($a['currentperiod'] > $b['currentperiod']) ? -1 : 1;
-		});
+		usort($commitable,fn($a, $b) => $b['currentperiod'] <=> $a['currentperiod']);
 
 		//Only update the lastest current period per period.
 		//Updating anything else is a waste of db transactions because
@@ -151,10 +146,10 @@ class PruneHistory {
 
 	public function calcAverages($timestamps, $id) {
 
-		$myarr = array();
-		$avgs = array();
-		$totals = array();
-		$retarr = array();
+		$myarr = [];
+		$avgs = [];
+		$totals = [];
+		$retarr = [];
 
 		// Grab all our entries.
 		foreach ($timestamps as $ts) {

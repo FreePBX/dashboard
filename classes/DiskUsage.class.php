@@ -13,7 +13,7 @@ class DiskUsage {
 	}
 
 	public function getAll() {
-		$retarr = array();
+		$retarr = [];
 
 		if ($this->systemtype == "linux") {
 			$retarr['df']=$this->parsedf();
@@ -23,7 +23,8 @@ class DiskUsage {
 	}
 
 	public function parsedf() {
-		exec("/bin/df -P -hl", $output, $retcode);
+		$retarr = [];
+  exec("/bin/df -P -hl", $output, $retcode);
 		foreach ($output as $line) {
 			// If the first char isn't a /, we dont' care.
 			if ($line[0] != "/") {

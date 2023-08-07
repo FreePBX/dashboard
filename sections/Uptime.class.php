@@ -10,15 +10,7 @@ class Uptime {
 	public $rawname = 'Uptime';
 
 	public function getSections($order) {
-		return array(
-			array(
-				"title" => _("Uptime"),
-				"group" => _("Statistics"),
-				"width" => "550px",
-				"order" => isset($order['uptime']) ? $order['uptime'] : '400',
-				"section" => "uptime"
-			)
-		);
+		return [["title" => _("Uptime"), "group" => _("Statistics"), "width" => "550px", "order" => $order['uptime'] ?? '400', "section" => "uptime"]];
 	}
 
 	public function getContent($section) {
@@ -32,7 +24,7 @@ class Uptime {
 		$cpu = new \CPUInfo();
 		$time = \TimeUtils::getReadable($this->getUptimeSecs());
 
-		return load_view(dirname(__DIR__).'/views/sections/uptime.php',array("cpu" => $cpu->getAll(), "time" => $time));
+		return load_view(dirname(__DIR__).'/views/sections/uptime.php',["cpu" => $cpu->getAll(), "time" => $time]);
 	}
 
 	public function getUptimeSecs() {
@@ -43,7 +35,7 @@ class Uptime {
 			$secs = time() - $boottime;
 		} else {
 			$uptime = file_get_contents("/proc/uptime");
-			list($secs, $null) = explode(" ", $uptime);
+			[$secs, $null] = explode(" ", $uptime);
 		}
 		return round($secs);
 	}

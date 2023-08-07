@@ -27,31 +27,23 @@ class CpuDevice
 {
     /**
      * model of the cpu
-     *
-     * @var String
      */
-    private $_model = "";
+    private string $_model = "";
 
     /**
      * speed of the cpu in hertz
-     *
-     * @var Integer
      */
-    private $_cpuSpeed = 0;
+    private int $_cpuSpeed = 0;
 
     /**
      * max speed of the cpu in hertz
-     *
-     * @var Integer
      */
-    private $_cpuSpeedMax = 0;
+    private int $_cpuSpeedMax = 0;
 
     /**
      * min speed of the cpu in hertz
-     *
-     * @var Integer
      */
-    private $_cpuSpeedMin = 0;
+    private int $_cpuSpeedMin = 0;
 
     /**
      * cache size in bytes, if available

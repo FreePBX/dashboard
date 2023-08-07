@@ -29,10 +29,8 @@ class Nut extends UPS
 {
     /**
      * internal storage for all gathered data
-     *
-     * @var array
      */
-    private $_output = array();
+    private array $_output = [];
 
     /**
      * get all information from all configured ups and store output in internal array
@@ -41,7 +39,7 @@ class Nut extends UPS
     {
         parent::__construct();
         CommonFunctions::executeProgram('upsc', '-l', $output);
-        $ups_names = preg_split("/\n/", $output, -1, PREG_SPLIT_NO_EMPTY);
+        $ups_names = preg_split("/\n/", (string) $output, -1, PREG_SPLIT_NO_EMPTY);
         foreach ($ups_names as $value) {
             CommonFunctions::executeProgram('upsc', $value, $temp);
             $this->_output[$value] = $temp;
@@ -58,7 +56,7 @@ class Nut extends UPS
      */
     private function _checkIsSet($hash, $key)
     {
-        return isset($hash[$key]) ? $hash[$key] : '';
+        return $hash[$key] ?? '';
     }
 
     /**
@@ -70,10 +68,10 @@ class Nut extends UPS
     {
         if (! empty($this->_output)) {
             foreach ($this->_output as $name=>$value) {
-                $temp = preg_split("/\n/", $value, -1, PREG_SPLIT_NO_EMPTY);
-                $ups_data = array();
+                $temp = preg_split("/\n/", (string) $value, -1, PREG_SPLIT_NO_EMPTY);
+                $ups_data = [];
                 foreach ($temp as $value) {
-                    $line = preg_split('/: /', $value, 2);
+                    $line = preg_split('/: /', (string) $value, 2);
                     $ups_data[$line[0]] = isset($line[1]) ? trim($line[1]) : '';
                 }
                 $dev = new UPSDevice();

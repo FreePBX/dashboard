@@ -18,7 +18,7 @@ class HookTest extends PHPUnit_Framework_TestCase {
 	}
 
 	public function testDefaultHooks() {
-		$hooks = DashboardHooks::genHooks(array());
+		$hooks = DashboardHooks::genHooks([]);
 		$this->assertTrue(is_array($hooks), "genHooks didn't return an array");
 		$this->assertTrue(isset($hooks[0]['entries'][0]['group']), "genHooks didn't return the correct hooks");
 		$this->assertEquals($hooks[0]['entries'][0]['group'], "Overview",  "genHooks didn't return sane hooks");
@@ -27,7 +27,7 @@ class HookTest extends PHPUnit_Framework_TestCase {
 	public function testNotExistingHookErrors() {
 		try {
 			DashboardHooks::runHook("notexist");
-		} catch (Exception $e) {
+		} catch (Exception) {
 			return;
 		}
 		$this->fail("runHooks ran a hook that didn't exist");
@@ -36,16 +36,16 @@ class HookTest extends PHPUnit_Framework_TestCase {
 	public function testMissingHookErrors() {
 		try {
 			DashboardHooks::runHook("fake");
-		} catch (Exception $e) {
+		} catch (Exception) {
 			return;
 		}
 		$this->fail("runHooks found a function that didn't exist!");
 	}
 
 	public function testAllHooks() {
-		$hooks = DashboardHooks::genHooks(array());
+		$hooks = DashboardHooks::genHooks([]);
 		return;
-		$allhooks = array();
+		$allhooks = [];
 		foreach ($hooks as $page) {
 			foreach ($page['entries'] as $item) {
 				$allhooks[] = $item['func'];

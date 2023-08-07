@@ -24,14 +24,14 @@ if (!defined('PSI_CONFIG_FILE')) {
             }
             foreach ($group as $param=>$value) {
                 if (($value==="") || ($value==="0")) {
-                    define($name_prefix.strtoupper($param), false);
+                    define($name_prefix.strtoupper((string) $param), false);
                 } elseif ($value==="1") {
-                    define($name_prefix.strtoupper($param), true);
+                    define($name_prefix.strtoupper((string) $param), true);
                 } else {
-                    if (strstr($value, ',')) {
-                        define($name_prefix.strtoupper($param), 'return '.var_export(preg_split('/\s*,\s*/', $value, -1, PREG_SPLIT_NO_EMPTY),1).';');
+                    if (strstr((string) $value, ',')) {
+                        define($name_prefix.strtoupper((string) $param), 'return '.var_export(preg_split('/\s*,\s*/', (string) $value, -1, PREG_SPLIT_NO_EMPTY),1).';');
                     } else {
-                        define($name_prefix.strtoupper($param), $value);
+                        define($name_prefix.strtoupper((string) $param), $value);
                     }
                 }
             }
@@ -95,8 +95,8 @@ if (!defined('PSI_CONFIG_FILE')) {
                         } else {
                             $out = '';
                             $err = '';
-                            $pipes = array();
-                            $descriptorspec = array(0=>array("pipe", "r"), 1=>array("pipe", "w"), 2=>array("pipe", "w"));
+                            $pipes = [];
+                            $descriptorspec = [0=>["pipe", "r"], 1=>["pipe", "w"], 2=>["pipe", "w"]];
                             $process = proc_open("pwd 2>/dev/null ", $descriptorspec, $pipes);
                             if (!is_resource($process)) {
                                 define('PSI_MODE_POPEN', true);
@@ -105,7 +105,7 @@ if (!defined('PSI_CONFIG_FILE')) {
                                 $e = null;
 
                                 while (!(feof($pipes[1]) || feof($pipes[2]))) {
-                                    $read = array($pipes[1], $pipes[2]);
+                                    $read = [$pipes[1], $pipes[2]];
 
                                     $n = stream_select($read, $w, $e, 5);
 
@@ -123,7 +123,7 @@ if (!defined('PSI_CONFIG_FILE')) {
                                     }
                                 }
 
-                                if (is_null($out) || (trim($out) == "") || (substr(trim($out),0 ,1) != "/")) {
+                                if (is_null($out) || (trim($out) == "") || (!str_starts_with(trim($out), "/"))) {
                                     define('PSI_MODE_POPEN', true);
                                 }
                                 fclose($pipes[0]);

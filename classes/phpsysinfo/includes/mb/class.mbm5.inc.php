@@ -28,17 +28,13 @@ class MBM5 extends Sensors
 {
     /**
      * array with the names of the labels
-     *
-     * @var array
      */
-    private $_buf_label = array();
+    private array|bool $_buf_label = [];
 
     /**
      * array withe the values
-     *
-     * @var array
      */
-    private $_buf_value = array();
+    private array|bool $_buf_value = [];
 
     /**
      * read the MBM5.csv file and fill the private arrays
@@ -46,14 +42,14 @@ class MBM5 extends Sensors
     public function __construct()
     {
         parent::__construct();
-        switch (strtolower(PSI_SENSOR_ACCESS)) {
+        switch (strtolower((string) PSI_SENSOR_ACCESS)) {
         case 'file':
             $delim = "/;/";
             CommonFunctions::rfts(APP_ROOT."/data/MBM5.csv", $buffer);
-            if (strpos($buffer, ";") === false) {
+            if (!str_contains((string) $buffer, ";")) {
                 $delim = "/,/";
             }
-            $buffer = preg_split("/\n/", $buffer, -1, PREG_SPLIT_NO_EMPTY);
+            $buffer = preg_split("/\n/", (string) $buffer, -1, PREG_SPLIT_NO_EMPTY);
             $this->_buf_label = preg_split($delim, substr($buffer[0], 0, -2), -1, PREG_SPLIT_NO_EMPTY);
             $this->_buf_value = preg_split($delim, substr($buffer[1], 0, -2), -1, PREG_SPLIT_NO_EMPTY);
             break;
@@ -74,7 +70,7 @@ class MBM5 extends Sensors
             if ($this->_buf_value[$intPosi] == 0) {
                 continue;
             }
-            preg_match("/([0-9\.])*/", str_replace(",", ".", $this->_buf_value[$intPosi]), $hits);
+            preg_match("/([0-9\.])*/", str_replace(",", ".", (string) $this->_buf_value[$intPosi]), $hits);
             $dev = new SensorDevice();
             $dev->setName($this->_buf_label[$intPosi]);
             $dev->setValue($hits[0]);
@@ -94,7 +90,7 @@ class MBM5 extends Sensors
             if (!isset($this->_buf_value[$intPosi])) {
                 continue;
             }
-            preg_match("/([0-9\.])*/", str_replace(",", ".", $this->_buf_value[$intPosi]), $hits);
+            preg_match("/([0-9\.])*/", str_replace(",", ".", (string) $this->_buf_value[$intPosi]), $hits);
             $dev = new SensorDevice();
             $dev->setName($this->_buf_label[$intPosi]);
             $dev->setValue($hits[0]);
@@ -114,7 +110,7 @@ class MBM5 extends Sensors
             if ($this->_buf_value[$intPosi] == 0) {
                 continue;
             }
-            preg_match("/([0-9\.])*/", str_replace(",", ".", $this->_buf_value[$intPosi]), $hits);
+            preg_match("/([0-9\.])*/", str_replace(",", ".", (string) $this->_buf_value[$intPosi]), $hits);
             $dev = new SensorDevice();
             $dev->setName($this->_buf_label[$intPosi]);
             $dev->setValue($hits[0]);

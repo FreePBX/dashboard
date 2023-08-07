@@ -32,14 +32,13 @@ class PS extends PSI_Plugin
 {
     /**
      * variable, which holds the content of the command
-     * @var array
      */
-    private $_filecontent = array();
+    private array|bool $_filecontent = [];
     /**
      * variable, which holds the result before the xml is generated out of this array
      * @var array
      */
-    private $_result = array();
+    private $_result = [];
     /**
      * read the data into an internal array and also call the parent constructor
      *
@@ -47,8 +46,9 @@ class PS extends PSI_Plugin
      */
     public function __construct($enc)
     {
-        parent::__construct(__CLASS__, $enc);
-        switch (strtolower(PSI_PLUGIN_PS_ACCESS)) {
+        $buffer = null;
+        parent::__construct(self::class, $enc);
+        switch (strtolower((string) PSI_PLUGIN_PS_ACCESS)) {
         case 'command':
             if (PSI_OS == 'WINNT') {
                 try {
@@ -60,13 +60,13 @@ class PS extends PSI_Plugin
                     }
                     $process_wmi = $wmi->InstancesOf('Win32_Process');
                     foreach ($process_wmi as $process) {
-                        if (strlen(trim($process->CommandLine)) > 0) {
-                            $ps = trim($process->CommandLine);
+                        if (strlen(trim((string) $process->CommandLine)) > 0) {
+                            $ps = trim((string) $process->CommandLine);
                         } else {
-                            $ps = trim($process->Caption);
+                            $ps = trim((string) $process->Caption);
                         }
-                        if (trim($process->ProcessId) != 0) {
-                            $memusage = round(trim($process->WorkingSetSize) * 100 / $memtotal, 1);
+                        if (trim((string) $process->ProcessId) != 0) {
+                            $memusage = round(trim((string) $process->WorkingSetSize) * 100 / $memtotal, 1);
                             //ParentProcessId
                             //Unique identifier of the process that creates a process. Process identifier numbers are reused, so they
                             //only identify a process for the lifetime of that process. It is possible that the process identified by
@@ -75,10 +75,10 @@ class PS extends PSI_Plugin
                             //use the CreationDate property to determine whether the specified parent was created after the process
                             //represented by this Win32_Process instance was created.
                             //=> subtrees of processes may be missing (WHAT TODO?!?)
-                            $this->_filecontent[] = trim($process->ProcessId)." ".trim($process->ParentProcessId)." ".$memusage." ".$ps;
+                            $this->_filecontent[] = trim((string) $process->ProcessId)." ".trim((string) $process->ParentProcessId)." ".$memusage." ".$ps;
                         }
                     }
-                } catch (Exception $e) {
+                } catch (Exception) {
                 }
             } else {
                 CommonFunctions::executeProgram("ps", "axo pid,ppid,pmem,args", $buffer, PSI_DEBUG);
@@ -92,11 +92,11 @@ class PS extends PSI_Plugin
             break;
         }
         if (PSI_OS != 'WINNT') {
-            if (trim($buffer) != "") {
-                $this->_filecontent = preg_split("/\n/", $buffer, -1, PREG_SPLIT_NO_EMPTY);
+            if (trim((string) $buffer) != "") {
+                $this->_filecontent = preg_split("/\n/", (string) $buffer, -1, PREG_SPLIT_NO_EMPTY);
                 unset($this->_filecontent[0]);
             } else {
-                $this->_filecontent = array();
+                $this->_filecontent = [];
             }
         }
     }
@@ -109,12 +109,13 @@ class PS extends PSI_Plugin
      */
     public function execute()
     {
+        $items = [];
         if ( empty($this->_filecontent)) {
             return;
         }
         foreach ($this->_filecontent as $roworig) {
-            $row = preg_split("/[\s]+/", trim($roworig), 4);
-            if (count($row) != 4) {
+            $row = preg_split("/[\s]+/", trim((string) $roworig), 4);
+            if ((is_countable($row) ? count($row) : 0) != 4) {
                 break;
             }
             foreach ($row as $key=>$val) {
@@ -134,7 +135,7 @@ class PS extends PSI_Plugin
     public function xml()
     {
         if ($this->_result) {
-            $positions = array(0=>0);
+            $positions = [0=>0];
             $this->_addchild($this->_result['childs'], $this->xml, $positions);
         }
 

@@ -9,7 +9,7 @@ if (PHP_OS != 'Linux') {
     die();
 }
 
-define('APP_ROOT', dirname(__FILE__).'/..');
+define('APP_ROOT', __DIR__.'/..');
 require_once APP_ROOT.'/includes/interface/class.PSI_Interface_OS.inc.php';
 require_once APP_ROOT.'/includes/os/class.OS.inc.php';
 require_once APP_ROOT.'/includes/to/class.System.inc.php';
@@ -33,11 +33,11 @@ class Parser
 {
     public static function lspci()
     {
-        return array();
+        return [];
     }
     public static function df()
     {
-        return array();
+        return [];
     }
 }
 
@@ -48,7 +48,7 @@ class CommonFunctions
         global $log_file;
         if (file_exists($log_file)) {
             $contents = @file_get_contents($log_file);
-            if ($contents && preg_match("/^\-\-\-\-\-\-\-\-\-\-".preg_quote($string, '/')."\-\-\-\-\-\-\-\-\-\-\n/m", $contents, $matches, PREG_OFFSET_CAPTURE)) {
+            if ($contents && preg_match("/^\-\-\-\-\-\-\-\-\-\-".preg_quote((string) $string, '/')."\-\-\-\-\-\-\-\-\-\-\n/m", $contents, $matches, PREG_OFFSET_CAPTURE)) {
                 $findIndex = $matches[0][1];
                 if (preg_match("/\n/m", $contents, $matches, PREG_OFFSET_CAPTURE, $findIndex)) {
                     $startIndex = $matches[0][1]+1;
@@ -73,7 +73,7 @@ class CommonFunctions
         if ($lsb || $lsbfile || ($strFileName != "/etc/lsb-release")) {
             $strRet=self::_parse_log_file($strFileName);
             if ($strRet && ($intLines == 1)) {
-                $strRet=trim(substr($strRet, 0, strpos($strRet, "\n")));
+                $strRet=trim(substr((string) $strRet, 0, strpos((string) $strRet, "\n")));
             }
 
             return $strRet;
@@ -101,7 +101,7 @@ class CommonFunctions
         if (file_exists($log_file)
             && ($lsb || $lsbfile || ($strFileName != "/etc/lsb-release"))
             && ($contents = @file_get_contents($log_file))
-            && preg_match("/^\-\-\-\-\-\-\-\-\-\-".preg_quote($strFileName, '/')."\-\-\-\-\-\-\-\-\-\-\n/m", $contents)) {
+            && preg_match("/^\-\-\-\-\-\-\-\-\-\-".preg_quote((string) $strFileName, '/')."\-\-\-\-\-\-\-\-\-\-\n/m", $contents)) {
             return true;
         }
 
@@ -110,7 +110,7 @@ class CommonFunctions
 
     public static function gdc()
     {
-        return array();
+        return [];
     }
 }
 

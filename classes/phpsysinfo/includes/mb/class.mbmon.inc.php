@@ -27,10 +27,8 @@ class MBMon extends Sensors
 {
     /**
      * content to parse
-     *
-     * @var array
      */
-    private $_lines = array();
+    private array|bool $_lines = [];
 
     /**
      * fill the private content var through tcp or file access
@@ -38,7 +36,7 @@ class MBMon extends Sensors
     public function __construct()
     {
         parent::__construct();
-        switch (strtolower(PSI_SENSOR_ACCESS)) {
+        switch (strtolower((string) PSI_SENSOR_ACCESS)) {
         case 'tcp':
             $fp = fsockopen("localhost", 411, $errno, $errstr, 5);
             if ($fp) {
@@ -53,7 +51,7 @@ class MBMon extends Sensors
             break;
         case 'command':
             CommonFunctions::executeProgram('mbmon', '-c 1 -r', $lines, PSI_DEBUG);
-            $this->_lines = preg_split("/\n/", $lines, -1, PREG_SPLIT_NO_EMPTY);
+            $this->_lines = preg_split("/\n/", (string) $lines, -1, PREG_SPLIT_NO_EMPTY);
             break;
         default:
             $this->error->addConfigError('__construct()', 'PSI_SENSOR_ACCESS');
@@ -69,7 +67,7 @@ class MBMon extends Sensors
     private function _temperature()
     {
         foreach ($this->_lines as $line) {
-            if (preg_match('/^(TEMP\d*)\s*:\s*(.*)$/D', $line, $data)) {
+            if (preg_match('/^(TEMP\d*)\s*:\s*(.*)$/D', (string) $line, $data)) {
                 if ($data[2] <> '0') {
                     $dev = new SensorDevice();
                     $dev->setName($data[1]);
@@ -91,7 +89,7 @@ class MBMon extends Sensors
     private function _fans()
     {
         foreach ($this->_lines as $line) {
-            if (preg_match('/^(FAN\d*)\s*:\s*(.*)$/D', $line, $data)) {
+            if (preg_match('/^(FAN\d*)\s*:\s*(.*)$/D', (string) $line, $data)) {
                 if ($data[2] <> '0') {
                     $dev = new SensorDevice();
                     $dev->setName($data[1]);
@@ -111,7 +109,7 @@ class MBMon extends Sensors
     private function _voltage()
     {
         foreach ($this->_lines as $line) {
-            if (preg_match('/^(V.*)\s*:\s*(.*)$/D', $line, $data)) {
+            if (preg_match('/^(V.*)\s*:\s*(.*)$/D', (string) $line, $data)) {
                 if ($data[2] <> '+0.00') {
                     $dev = new SensorDevice();
                     $dev->setName($data[1]);

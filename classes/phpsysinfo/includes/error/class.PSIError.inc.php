@@ -29,31 +29,24 @@ class PSIError
      * holds the instance of this class
      *
      * @static
-     * @var object
      */
-    private static $_instance;
+    private static ?\PSIError $_instance = null;
 
     /**
      * holds the error messages
-     *
-     * @var array
      */
-    private $_arrErrorList = array();
+    private array $_arrErrorList = [];
 
     /**
      * current number ob errors
-     *
-     * @var integer
      */
-    private $_errors = 0;
+    private int $_errors = 0;
 
     /**
      * initalize some used vars
      */
     private function __construct()
     {
-        $this->_errors = 0;
-        $this->_arrErrorList = array();
     }
 
     /**
@@ -64,7 +57,7 @@ class PSIError
     public static function singleton()
     {
         if (!isset(self::$_instance)) {
-            $c = __CLASS__;
+            $c = self::class;
             self::$_instance = new $c;
         }
 
@@ -256,11 +249,11 @@ class PSIError
      *
      * @return string formatted string
      */
-    private function _printVar($var)
+    private function _printVar(mixed $var)
     {
         if (is_string($var)) {
-            $search = array("\x00", "\x0a", "\x0d", "\x1a", "\x09");
-            $replace = array('\0', '\n', '\r', '\Z', '\t');
+            $search = ["\x00", "\x0a", "\x0d", "\x1a", "\x09"];
+            $replace = ['\0', '\n', '\r', '\Z', '\t'];
 
             return ('"'.str_replace($search, $replace, $var).'"');
         } elseif (is_bool($var)) {

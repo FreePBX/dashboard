@@ -25,13 +25,11 @@
  */
 class ipmiinfo extends PSI_Plugin
 {
-    private $_lines;
+    private array|bool $_lines = [];
 
     public function __construct($enc)
     {
-        parent::__construct(__CLASS__, $enc);
-
-        $this->_lines = array();
+        parent::__construct(self::class, $enc);
     }
 
     /**
@@ -41,10 +39,10 @@ class ipmiinfo extends PSI_Plugin
      */
     private function temperatures()
     {
-        $result = array ();
+        $result = [];
         $i = 0;
         foreach ($this->_lines as $line) {
-            $buffer = preg_split("/\s*\|\s*/", $line);
+            $buffer = preg_split("/\s*\|\s*/", (string) $line);
             if ($buffer[2] == "degrees C" && $buffer[3] != "na") {
                 $result[$i]['label'] = $buffer[0];
                 $result[$i]['value'] = $buffer[1];
@@ -64,10 +62,10 @@ class ipmiinfo extends PSI_Plugin
      */
     private function voltages()
     {
-        $result = array ();
+        $result = [];
         $i = 0;
         foreach ($this->_lines as $line) {
-            $buffer = preg_split("/\s*\|\s*/", $line);
+            $buffer = preg_split("/\s*\|\s*/", (string) $line);
             if ($buffer[2] == "Volts" && $buffer[3] != "na") {
                 $result[$i]['label'] = $buffer[0];
                 $result[$i]['value'] = $buffer[1];
@@ -88,10 +86,10 @@ class ipmiinfo extends PSI_Plugin
      */
     private function fans()
     {
-        $result = array ();
+        $result = [];
         $i = 0;
         foreach ($this->_lines as $line) {
-            $buffer = preg_split("/\s*\|\s*/", $line);
+            $buffer = preg_split("/\s*\|\s*/", (string) $line);
             if ($buffer[2] == "RPM" && $buffer[3] != "na") {
                 $result[$i]['label'] = $buffer[0];
                 $result[$i]['value'] = $buffer[1];
@@ -111,10 +109,10 @@ class ipmiinfo extends PSI_Plugin
      */
     private function powers()
     {
-        $result = array ();
+        $result = [];
         $i = 0;
         foreach ($this->_lines as $line) {
-            $buffer = preg_split("/\s*\|\s*/", $line);
+            $buffer = preg_split("/\s*\|\s*/", (string) $line);
             if ($buffer[2] == "Watts" && $buffer[3] != "na") {
                 $result[$i]['label'] = $buffer[0];
                 $result[$i]['value'] = $buffer[1];
@@ -134,10 +132,10 @@ class ipmiinfo extends PSI_Plugin
      */
     private function currents()
     {
-        $result = array ();
+        $result = [];
         $i = 0;
         foreach ($this->_lines as $line) {
-            $buffer = preg_split("/\s*\|\s*/", $line);
+            $buffer = preg_split("/\s*\|\s*/", (string) $line);
             if ($buffer[2] == "Amps" && $buffer[3] != "na") {
                 $result[$i]['label'] = $buffer[0];
                 $result[$i]['value'] = $buffer[1];
@@ -157,10 +155,10 @@ class ipmiinfo extends PSI_Plugin
      */
     private function misc()
     {
-        $result = array ();
+        $result = [];
         $i = 0;
         foreach ($this->_lines as $line) {
-            $buffer = preg_split("/\s*\|\s*/", $line);
+            $buffer = preg_split("/\s*\|\s*/", (string) $line);
             if ($buffer[2] == "discrete" && $buffer[3] != "na") {
                 $result[$i]['label'] = $buffer[0];
                 $result[$i]['value'] = $buffer[1];
@@ -174,16 +172,16 @@ class ipmiinfo extends PSI_Plugin
 
     public function execute()
     {
-        $this->_lines = array();
-        switch (strtolower(PSI_PLUGIN_IPMIINFO_ACCESS)) {
+        $this->_lines = [];
+        switch (strtolower((string) PSI_PLUGIN_IPMIINFO_ACCESS)) {
             case 'command':
                 $lines = "";
                 if (CommonFunctions::executeProgram('ipmitool', 'sensor', $lines) && !empty($lines))
-                    $this->_lines = preg_split("/\n/", $lines, -1, PREG_SPLIT_NO_EMPTY);
+                    $this->_lines = preg_split("/\n/", (string) $lines, -1, PREG_SPLIT_NO_EMPTY);
                 break;
             case 'data':
                 if (CommonFunctions::rfts(APP_ROOT."/data/ipmiinfo.txt", $lines) && !empty($lines))
-                    $this->_lines = preg_split("/\n/", $lines, -1, PREG_SPLIT_NO_EMPTY);
+                    $this->_lines = preg_split("/\n/", (string) $lines, -1, PREG_SPLIT_NO_EMPTY);
                 break;
             default:
                 $this->error->addConfigError('__construct()', 'PSI_PLUGIN_IPMIINFO_ACCESS');
