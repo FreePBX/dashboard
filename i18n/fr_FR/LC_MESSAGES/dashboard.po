@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 02:24+0000\n"
+"POT-Creation-Date: 2023-08-09 08:19+0000\n"
 "PO-Revision-Date: 2016-02-03 08:06+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/dashboard/"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "%s ago"
 msgstr "Il y a %s"
 
-#: sections/Overview.class.php:241
+#: sections/Overview.class.php:248
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -49,7 +49,7 @@ msgstr "0 secondes"
 msgid "1 Minute"
 msgstr "1 minute"
 
-#: sections/Overview.class.php:239
+#: sections/Overview.class.php:246
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
@@ -83,7 +83,7 @@ msgstr ""
 msgid "An error occured"
 msgstr ""
 
-#: sections/Overview.class.php:135
+#: sections/Overview.class.php:142
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -95,7 +95,7 @@ msgstr ""
 msgid "Blogs"
 msgstr "Blogs"
 
-#: sections/Overview.class.php:124
+#: sections/Overview.class.php:131
 msgid "Critical Errors found"
 msgstr "Erreur critiques trouvées"
 
@@ -172,7 +172,7 @@ msgstr "Moyennes de charge"
 msgid "Loading Interface %s..."
 msgstr ""
 
-#: sections/Overview.class.php:138
+#: sections/Overview.class.php:145
 msgid "Mail Queue"
 msgstr ""
 
@@ -190,7 +190,7 @@ msgstr ""
 msgid "Month"
 msgstr "Mois"
 
-#: sections/Overview.class.php:136
+#: sections/Overview.class.php:143
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -198,7 +198,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr "Réseau"
 
-#: sections/Overview.class.php:96
+#: sections/Overview.class.php:103
 msgid "No critical issues found"
 msgstr "Aucun problème critique trouvé"
 
@@ -218,7 +218,7 @@ msgstr ""
 msgid "Overview"
 msgstr "Vue d'ensemble"
 
-#: sections/Overview.class.php:123 sections/Overview.class.php:127
+#: sections/Overview.class.php:130 sections/Overview.class.php:134
 msgid "Please check for errors in the notification section"
 msgstr ""
 "S'il vous plaît, vérifiez pour la présence d'erreurs dans la section de "
@@ -252,7 +252,7 @@ msgstr ""
 msgid "Saved note"
 msgstr ""
 
-#: sections/Overview.class.php:105
+#: sections/Overview.class.php:112
 msgid "Security Issue"
 msgstr "Problème de sécurité"
 
@@ -310,7 +310,7 @@ msgstr "L'information système a été mise à jour il y a %s secondes"
 msgid "System"
 msgstr "Système"
 
-#: sections/Overview.class.php:94
+#: sections/Overview.class.php:101
 msgid "System Alerts"
 msgstr "Alertes système"
 
@@ -332,7 +332,7 @@ msgid ""
 "this is set to 'no', the Dashboard warning will be permanently suppressed."
 msgstr ""
 
-#: sections/Overview.class.php:106
+#: sections/Overview.class.php:113
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 "Ceci est un problème critique et devrait être résolu le plus rapidement "
@@ -346,11 +346,11 @@ msgstr "Temps de disponibilité"
 msgid "Use to get all the diskspace"
 msgstr ""
 
-#: sections/Overview.class.php:128
+#: sections/Overview.class.php:135
 msgid "Warnings Found"
 msgstr "Avertissements trouvé"
 
-#: sections/Overview.class.php:137
+#: sections/Overview.class.php:144
 msgid "Web Server"
 msgstr "Serveur Web"
 

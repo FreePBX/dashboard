@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 02:24+0000\n"
+"POT-Creation-Date: 2023-08-09 08:19+0000\n"
 "PO-Revision-Date: 2018-07-18 19:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/dashboard/bg/>\n"
@@ -49,7 +49,7 @@ msgstr "%s Статистики"
 msgid "%s ago"
 msgstr "преди %s"
 
-#: sections/Overview.class.php:241
+#: sections/Overview.class.php:248
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -62,7 +62,7 @@ msgstr "0 секунди"
 msgid "1 Minute"
 msgstr "1 Минута"
 
-#: sections/Overview.class.php:239
+#: sections/Overview.class.php:246
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
@@ -96,7 +96,7 @@ msgstr ""
 msgid "An error occured"
 msgstr ""
 
-#: sections/Overview.class.php:135
+#: sections/Overview.class.php:142
 msgid "Asterisk"
 msgstr "Астериск"
 
@@ -108,7 +108,7 @@ msgstr ""
 msgid "Blogs"
 msgstr "Блогове"
 
-#: sections/Overview.class.php:124
+#: sections/Overview.class.php:131
 msgid "Critical Errors found"
 msgstr "Намерени са Критични Грешки"
 
@@ -185,7 +185,7 @@ msgstr "Средно Натоварване"
 msgid "Loading Interface %s..."
 msgstr ""
 
-#: sections/Overview.class.php:138
+#: sections/Overview.class.php:145
 msgid "Mail Queue"
 msgstr ""
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "Month"
 msgstr "Месец"
 
-#: sections/Overview.class.php:136
+#: sections/Overview.class.php:143
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -211,7 +211,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr "Мрежа"
 
-#: sections/Overview.class.php:96
+#: sections/Overview.class.php:103
 msgid "No critical issues found"
 msgstr "Няма критични проблеми"
 
@@ -231,7 +231,7 @@ msgstr ""
 msgid "Overview"
 msgstr "Преглед"
 
-#: sections/Overview.class.php:123 sections/Overview.class.php:127
+#: sections/Overview.class.php:130 sections/Overview.class.php:134
 msgid "Please check for errors in the notification section"
 msgstr "Моля проверете за грешки в раздела за уведомления"
 
@@ -263,7 +263,7 @@ msgstr ""
 msgid "Saved note"
 msgstr ""
 
-#: sections/Overview.class.php:105
+#: sections/Overview.class.php:112
 msgid "Security Issue"
 msgstr "Проблем със Сигурността"
 
@@ -325,7 +325,7 @@ msgstr "Информацията е обновена преди %s секунд�
 msgid "System"
 msgstr "Система"
 
-#: sections/Overview.class.php:94
+#: sections/Overview.class.php:101
 msgid "System Alerts"
 msgstr "Системи Предупреждения"
 
@@ -347,7 +347,7 @@ msgid ""
 "this is set to 'no', the Dashboard warning will be permanently suppressed."
 msgstr ""
 
-#: sections/Overview.class.php:106
+#: sections/Overview.class.php:113
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "Това е критичен проблем и трябва да бъде решен спешно"
 
@@ -359,11 +359,11 @@ msgstr "На Линия"
 msgid "Use to get all the diskspace"
 msgstr ""
 
-#: sections/Overview.class.php:128
+#: sections/Overview.class.php:135
 msgid "Warnings Found"
 msgstr "Намерени Предупреждения"
 
-#: sections/Overview.class.php:137
+#: sections/Overview.class.php:144
 msgid "Web Server"
 msgstr "Уеб Сървър"
 

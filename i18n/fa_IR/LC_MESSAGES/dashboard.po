@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-14 02:24+0000\n"
+"POT-Creation-Date: 2023-08-09 08:19+0000\n"
 "PO-Revision-Date: 2019-01-25 14:36+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/dashboard/fa/>\n"
@@ -35,7 +35,7 @@ msgstr "آمار ٪s1"
 msgid "%s ago"
 msgstr "%s قبل"
 
-#: sections/Overview.class.php:241
+#: sections/Overview.class.php:248
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr "پیام های ٪s1 در این دستگاه در صف قرار دارند و تحویل داده نشده است"
@@ -48,7 +48,7 @@ msgstr "صفر ثانیه"
 msgid "1 Minute"
 msgstr "یک دقیقه"
 
-#: sections/Overview.class.php:239
+#: sections/Overview.class.php:246
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr "1 پیام در این دستگاه در صف قرار دارد و تحویل داده نشده است"
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "An error occured"
 msgstr ""
 
-#: sections/Overview.class.php:135
+#: sections/Overview.class.php:142
 msgid "Asterisk"
 msgstr "استریسک"
 
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Blogs"
 msgstr "بلاگ ها"
 
-#: sections/Overview.class.php:124
+#: sections/Overview.class.php:131
 msgid "Critical Errors found"
 msgstr "وجود خطاهای بحرانی"
 
@@ -171,7 +171,7 @@ msgstr "میانگین میزان بار"
 msgid "Loading Interface %s..."
 msgstr "بارگیری رابط ٪s1..."
 
-#: sections/Overview.class.php:138
+#: sections/Overview.class.php:145
 msgid "Mail Queue"
 msgstr "صف ایمیل"
 
@@ -189,7 +189,7 @@ msgstr ""
 msgid "Month"
 msgstr "ماه"
 
-#: sections/Overview.class.php:136
+#: sections/Overview.class.php:143
 msgid "MySQL"
 msgstr "سرور MySQL"
 
@@ -197,7 +197,7 @@ msgstr "سرور MySQL"
 msgid "Network"
 msgstr "شبکه"
 
-#: sections/Overview.class.php:96
+#: sections/Overview.class.php:103
 msgid "No critical issues found"
 msgstr "مشکل بحرانی یافت نشد"
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Overview"
 msgstr "بازبینی"
 
-#: sections/Overview.class.php:123 sections/Overview.class.php:127
+#: sections/Overview.class.php:130 sections/Overview.class.php:134
 msgid "Please check for errors in the notification section"
 msgstr "لطفا برای بررسی خطاها بخش اطلاع رسانی را بررسی کنید"
 
@@ -249,7 +249,7 @@ msgstr ""
 msgid "Saved note"
 msgstr ""
 
-#: sections/Overview.class.php:105
+#: sections/Overview.class.php:112
 msgid "Security Issue"
 msgstr "مشکل امنیتی"
 
@@ -311,7 +311,7 @@ msgstr "اطلاعات سیستم %s ثانیه قبل بروز شده"
 msgid "System"
 msgstr "سیستم"
 
-#: sections/Overview.class.php:94
+#: sections/Overview.class.php:101
 msgid "System Alerts"
 msgstr "هشدارهای سیستم"
 
@@ -333,7 +333,7 @@ msgid ""
 "this is set to 'no', the Dashboard warning will be permanently suppressed."
 msgstr ""
 
-#: sections/Overview.class.php:106
+#: sections/Overview.class.php:113
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "یک مشکل بحرانی وجود داشته و باید سریعا رفع گردد"
 
@@ -345,11 +345,11 @@ msgstr "آپ تایم"
 msgid "Use to get all the diskspace"
 msgstr ""
 
-#: sections/Overview.class.php:128
+#: sections/Overview.class.php:135
 msgid "Warnings Found"
 msgstr "هشدار"
 
-#: sections/Overview.class.php:137
+#: sections/Overview.class.php:144
 msgid "Web Server"
 msgstr "وب سرور"
 
