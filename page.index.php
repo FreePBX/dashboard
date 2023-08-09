@@ -17,4 +17,3 @@ $allhooks = DashboardHooks::genHooks(FreePBX::Dashboard()->getConfig('visualorde
 FreePBX::Dashboard()->setConfig('allhooks', $allhooks);
 
 show_view(__DIR__.'/views/main.php',array("brand" => FREEPBX::Config()->get('DASHBOARD_FREEPBX_BRAND')));
-
