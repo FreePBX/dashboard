@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-16 07:31+0000\n"
+"POT-Creation-Date: 2023-08-09 08:14+0000\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -64,7 +64,7 @@ msgstr "%s 統計情報"
 msgid "%s ago"
 msgstr "%s 前"
 
-#: sections/Overview.class.php:241
+#: sections/Overview.class.php:248
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -77,7 +77,7 @@ msgstr "0秒"
 msgid "1 Minute"
 msgstr "1分"
 
-#: sections/Overview.class.php:239
+#: sections/Overview.class.php:246
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "An error occured"
 msgstr ""
 
-#: sections/Overview.class.php:135
+#: sections/Overview.class.php:142
 msgid "Asterisk"
 msgstr "Asterisk"
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Blogs"
 msgstr "ブログ"
 
-#: sections/Overview.class.php:124
+#: sections/Overview.class.php:131
 msgid "Critical Errors found"
 msgstr "致命的なエラーが見つかりました"
 
@@ -198,7 +198,7 @@ msgstr "ロードアベレージ"
 msgid "Loading Interface %s..."
 msgstr ""
 
-#: sections/Overview.class.php:138
+#: sections/Overview.class.php:145
 msgid "Mail Queue"
 msgstr ""
 
@@ -220,7 +220,7 @@ msgstr ""
 msgid "Month"
 msgstr "月"
 
-#: sections/Overview.class.php:136
+#: sections/Overview.class.php:143
 msgid "MySQL"
 msgstr "MySQLサーバー"
 
@@ -228,7 +228,7 @@ msgstr "MySQLサーバー"
 msgid "Network"
 msgstr "ネットワーク"
 
-#: sections/Overview.class.php:96
+#: sections/Overview.class.php:103
 msgid "No critical issues found"
 msgstr "クリティカルな問題は見つかりませんでした"
 
@@ -248,7 +248,7 @@ msgstr ""
 msgid "Overview"
 msgstr "一覧"
 
-#: sections/Overview.class.php:123 sections/Overview.class.php:127
+#: sections/Overview.class.php:130 sections/Overview.class.php:134
 msgid "Please check for errors in the notification section"
 msgstr "通知セクションでエラーを確認してください"
 
@@ -280,7 +280,7 @@ msgstr ""
 msgid "Saved note"
 msgstr ""
 
-#: sections/Overview.class.php:105
+#: sections/Overview.class.php:112
 msgid "Security Issue"
 msgstr "セキュリティ問題"
 
@@ -338,7 +338,7 @@ msgstr "%s 秒前にシステム情報を更新済み"
 msgid "System"
 msgstr "システム"
 
-#: sections/Overview.class.php:94
+#: sections/Overview.class.php:101
 msgid "System Alerts"
 msgstr "システム通知"
 
@@ -360,7 +360,7 @@ msgid ""
 "this is set to 'no', the Dashboard warning will be permanently suppressed."
 msgstr ""
 
-#: sections/Overview.class.php:106
+#: sections/Overview.class.php:113
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "クリティカルな問題であるため速やかに解決する必要があります"
 
@@ -372,11 +372,11 @@ msgstr "稼働時間"
 msgid "Use to get all the diskspace"
 msgstr ""
 
-#: sections/Overview.class.php:128
+#: sections/Overview.class.php:135
 msgid "Warnings Found"
 msgstr "通知が見つかりました"
 
-#: sections/Overview.class.php:137
+#: sections/Overview.class.php:144
 msgid "Web Server"
 msgstr "Webサーバー"
 
