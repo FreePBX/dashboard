@@ -50,6 +50,13 @@ class Overview {
 		$nots = $notifications['nots'];
 		$alerts = $this->getAlerts($nots);
 
+		if(\FreePBX::Modules()->checkStatus("sysadmin")){
+			$sa     = \FreePBX::Sysadmin();
+			if (method_exists($sa, 'updateModuleLicenseNotification')) {
+				$sa->updateModuleLicenseNotification();
+			}
+		}
+
 		return load_view(dirname(__DIR__).'/views/sections/overview.php',array("showAllMessage" => $notifications['showAllMessage'], "nots" => $nots, "alerts" => $alerts, "brand" => $brand, "idline" => $idline, "version" => get_framework_version(), "since" => $since, "services" => $this->getSummary()));
 	}
 
