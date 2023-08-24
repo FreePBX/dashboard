@@ -15,7 +15,7 @@
 					<strong title="<?= htmlspecialchars($note->time) ?>">
 						<?= htmlspecialchars(sprintf("%s ago:", $note->ago)) ?>
 					</strong>
-					<?= htmlspecialchars($note->content) ?>
+					<?= nl2br(htmlspecialchars($note->content)) ?>
 				</div>
 				<div class="col-sm-1">
 					<i class="fa fa-times-circle help dashboard_notepad_del" data-timestamp="<?= $timestamp ?>" title="<?= htmlspecialchars(_("Delete This")) ?>"></i>
