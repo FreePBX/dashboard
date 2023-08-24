@@ -2,7 +2,7 @@
 	<rawname>dashboard</rawname>
 	<repo>standard</repo>
 	<name>System Dashboard</name>
-	<version>16.0.18</version>
+	<version>16.0.19</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>AGPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/agpl-3.0.txt</licenselink>
@@ -20,6 +20,7 @@
 		<version>14.0.5.26</version>
 	</depends>
 	<changelog>
+		*16.0.19* Packaging of ver 16.0.19
 		*16.0.18* Packaging of ver 16.0.18
 		*16.0.17* Packaging of ver 16.0.17
 		*16.0.16* FREEPBX-24081 
