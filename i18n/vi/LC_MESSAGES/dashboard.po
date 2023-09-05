@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-16 07:31+0000\n"
+"POT-Creation-Date: 2023-09-05 06:05+0000\n"
 "PO-Revision-Date: 2017-03-15 17:10-0700\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: sections/Blogs.class.php:26 sections/Blogs.class.php:34
+#: sections/Blogs.class.php:25 sections/Blogs.class.php:27
 #, php-format
 msgid "%s Feed"
 msgstr ""
 
-#: sections/Statistics.class.php:17
+#: sections/Statistics.class.php:15
 #, php-format
 msgid "%s Statistics"
 msgstr ""
@@ -34,7 +34,7 @@ msgstr ""
 msgid "%s ago"
 msgstr ""
 
-#: sections/Overview.class.php:241
+#: sections/Overview.class.php:220
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -47,7 +47,7 @@ msgstr ""
 msgid "1 Minute"
 msgstr ""
 
-#: sections/Overview.class.php:239
+#: sections/Overview.class.php:218
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
@@ -59,12 +59,12 @@ msgstr ""
 msgid "5 Minutes"
 msgstr ""
 
-#: sections/Overview.class.php:33
+#: sections/Overview.class.php:26
 #, php-format
 msgid "<strong>'%s'</strong>"
 msgstr ""
 
-#: sections/Overview.class.php:35
+#: sections/Overview.class.php:28
 #, php-format
 msgid ""
 "<strong>'%s'</strong><br><i>(You can change this name in Advanced Settings)</"
@@ -75,23 +75,23 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:403 Dashboard.class.php:408
+#: Dashboard.class.php:356 Dashboard.class.php:361
 msgid "An error occured"
 msgstr ""
 
-#: sections/Overview.class.php:135
+#: sections/Overview.class.php:117
 msgid "Asterisk"
 msgstr ""
 
-#: Api/Gql/dashboard.php:79
+#: Api/Gql/dashboard.php:70
 msgid "Available space details"
 msgstr ""
 
-#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
+#: sections/Blogs.class.php:25 sections/Blogs.class.php:27
 msgid "Blogs"
 msgstr ""
 
-#: sections/Overview.class.php:124
+#: sections/Overview.class.php:107
 msgid "Critical Errors found"
 msgstr ""
 
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Delete This"
 msgstr ""
 
-#: Dashboard.class.php:408
+#: Dashboard.class.php:361
 msgid "Deleted note"
 msgstr ""
 
@@ -151,11 +151,11 @@ msgstr ""
 msgid "Invalid Selection"
 msgstr ""
 
-#: classes/Statistics.class.php:25
+#: classes/Statistics.class.php:20
 msgid "Invalid period"
 msgstr ""
 
-#: sections/Statistics.class.php:24
+#: sections/Statistics.class.php:15
 msgid "Live Network Usage"
 msgstr ""
 
@@ -168,7 +168,7 @@ msgstr ""
 msgid "Loading Interface %s..."
 msgstr ""
 
-#: sections/Overview.class.php:138
+#: sections/Overview.class.php:117
 msgid "Mail Queue"
 msgstr ""
 
@@ -176,11 +176,11 @@ msgstr ""
 msgid "Memory"
 msgstr ""
 
-#: Api/Gql/dashboard.php:107 Api/Gql/dashboard.php:139
+#: Api/Gql/dashboard.php:90 Api/Gql/dashboard.php:114
 msgid "Message for the request"
 msgstr ""
 
-#: Dashboard.class.php:194
+#: Dashboard.class.php:152
 msgid "Missing Class Object!"
 msgstr ""
 
@@ -190,7 +190,7 @@ msgstr ""
 msgid "Month"
 msgstr ""
 
-#: sections/Overview.class.php:136
+#: sections/Overview.class.php:117
 msgid "MySQL"
 msgstr ""
 
@@ -198,7 +198,7 @@ msgstr ""
 msgid "Network"
 msgstr ""
 
-#: sections/Overview.class.php:96
+#: sections/Overview.class.php:79
 msgid "No critical issues found"
 msgstr ""
 
@@ -206,19 +206,19 @@ msgstr ""
 msgid "No notes found"
 msgstr ""
 
-#: sections/Notepad.class.php:11
+#: sections/Notepad.class.php:9
 msgid "Notepad"
 msgstr ""
 
-#: sections/Notepad.class.php:12
+#: sections/Notepad.class.php:9
 msgid "Notes"
 msgstr ""
 
-#: sections/Overview.class.php:16
+#: sections/Overview.class.php:13
 msgid "Overview"
 msgstr ""
 
-#: sections/Overview.class.php:123 sections/Overview.class.php:127
+#: sections/Overview.class.php:106 sections/Overview.class.php:110
 msgid "Please check for errors in the notification section"
 msgstr ""
 
@@ -228,7 +228,7 @@ msgid ""
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
 
-#: Api/Gql/dashboard.php:50
+#: Api/Gql/dashboard.php:48
 msgid "Read the System licence information"
 msgstr ""
 
@@ -236,7 +236,7 @@ msgstr ""
 msgid "Resolve"
 msgstr ""
 
-#: Api/Gql/dashboard.php:65
+#: Api/Gql/dashboard.php:60
 msgid "Returns storage id"
 msgstr ""
 
@@ -244,11 +244,11 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:403
+#: Dashboard.class.php:356
 msgid "Saved note"
 msgstr ""
 
-#: sections/Overview.class.php:105
+#: sections/Overview.class.php:88
 msgid "Security Issue"
 msgstr ""
 
@@ -272,24 +272,23 @@ msgstr ""
 msgid "Show New"
 msgstr ""
 
-#: classes/Statistics.class.php:79
+#: classes/Statistics.class.php:38
 msgid "Since Reload"
 msgstr ""
 
-#: Api/Gql/dashboard.php:36
+#: Api/Gql/dashboard.php:35
 msgid "Sorry, unable to find any diskspace"
 msgstr ""
 
-#: sections/Statistics.class.php:18 sections/Statistics.class.php:25
-#: sections/Uptime.class.php:16
+#: sections/Statistics.class.php:15 sections/Uptime.class.php:13
 msgid "Statistics"
 msgstr ""
 
-#: Api/Gql/dashboard.php:111 Api/Gql/dashboard.php:143
+#: Api/Gql/dashboard.php:94 Api/Gql/dashboard.php:118
 msgid "Status for the request"
 msgstr ""
 
-#: Api/Gql/dashboard.php:34
+#: Api/Gql/dashboard.php:33
 msgid "Successfully found disks space details"
 msgstr ""
 
@@ -302,11 +301,11 @@ msgstr ""
 msgid "SysInfo updated %s seconds ago"
 msgstr ""
 
-#: classes/Statistics.class.php:61
+#: classes/Statistics.class.php:38
 msgid "System"
 msgstr ""
 
-#: sections/Overview.class.php:94
+#: sections/Overview.class.php:77
 msgid "System Alerts"
 msgstr ""
 
@@ -318,7 +317,7 @@ msgstr ""
 msgid "System Last Rebooted"
 msgstr ""
 
-#: sections/Overview.class.php:15
+#: sections/Overview.class.php:13
 msgid "System Overview"
 msgstr ""
 
@@ -328,23 +327,23 @@ msgid ""
 "this is set to 'no', the Dashboard warning will be permanently suppressed."
 msgstr ""
 
-#: sections/Overview.class.php:106
+#: sections/Overview.class.php:89
 msgid "This is a critical issue and should be resolved urgently"
 msgstr ""
 
-#: sections/Uptime.class.php:15 views/sections/statistics.php:17
+#: sections/Uptime.class.php:13 views/sections/statistics.php:17
 msgid "Uptime"
 msgstr ""
 
-#: Api/Gql/dashboard.php:19
+#: Api/Gql/dashboard.php:18
 msgid "Use to get all the diskspace"
 msgstr ""
 
-#: sections/Overview.class.php:128
+#: sections/Overview.class.php:111
 msgid "Warnings Found"
 msgstr ""
 
-#: sections/Overview.class.php:137
+#: sections/Overview.class.php:117
 msgid "Web Server"
 msgstr ""
 
@@ -367,11 +366,11 @@ msgstr ""
 msgid "days"
 msgstr ""
 
-#: Api/Gql/dashboard.php:93
+#: Api/Gql/dashboard.php:80
 msgid "disk total size details"
 msgstr ""
 
-#: Api/Gql/dashboard.php:100
+#: Api/Gql/dashboard.php:85
 msgid "disk used percentage"
 msgstr ""
 
@@ -407,11 +406,11 @@ msgstr ""
 msgid "seconds"
 msgstr ""
 
-#: Api/Gql/dashboard.php:72
+#: Api/Gql/dashboard.php:65
 msgid "storage path details"
 msgstr ""
 
-#: Api/Gql/dashboard.php:86
+#: Api/Gql/dashboard.php:75
 msgid "used space details"
 msgstr ""
 
