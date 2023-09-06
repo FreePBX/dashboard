@@ -30,7 +30,7 @@ class XML
      *
      * @var PSI_Interface_OS
      */
-    private readonly \Android $_sysinfo;
+    private $_sysinfo;
 
     private ?\System $_sys = null;
 
@@ -42,7 +42,7 @@ class XML
     /**
      * object for error handling
      */
-    private readonly \Error $_errors;
+    private $_errors;
 
     /**
      * array with all enabled plugins (name)
