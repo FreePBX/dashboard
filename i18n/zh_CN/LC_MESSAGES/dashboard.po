@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Simplified) (FreePBX)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-05 06:05+0000\n"
+"POT-Creation-Date: 2023-09-12 09:39+0000\n"
 "PO-Revision-Date: 2018-09-21 09:23+0000\n"
 "Last-Translator: james zhu <zhulizhong@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <http://*/projects/freepbx/dashboard/"
@@ -90,14 +90,6 @@ msgstr "博客"
 msgid "Critical Errors found"
 msgstr "发现严重错误"
 
-#: dashboard.i18n.php:6 dashboard.i18n.php:10
-msgid "Dashboard"
-msgstr "系统仪表盘"
-
-#: dashboard.i18n.php:14
-msgid "Dashboard Module"
-msgstr "仪表盘模块"
-
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
@@ -112,21 +104,9 @@ msgstr "删除这个"
 msgid "Deleted note"
 msgstr ""
 
-#: dashboard.i18n.php:12
-msgid "Disable collection of system statistics"
-msgstr ""
-
 #: views/sections/statistics.php:50
 msgid "Disk"
 msgstr "硬盘"
-
-#: dashboard.i18n.php:18
-msgid "Display firewall status"
-msgstr ""
-
-#: dashboard.i18n.php:22
-msgid "Expiry time for system statistics"
-msgstr ""
 
 #: views/main.php:6
 msgid "Frobulating"
@@ -217,12 +197,6 @@ msgstr "总览"
 msgid "Please check for errors in the notification section"
 msgstr "请在提示模板检查错误"
 
-#: dashboard.i18n.php:8
-msgid ""
-"Provides a system information dashboard, showing information about Calls, "
-"CPU, Memory, Disks, Network, and processes."
-msgstr ""
-
 #: Api/Gql/dashboard.php:48
 msgid "Read the System licence information"
 msgstr ""
@@ -246,18 +220,6 @@ msgstr ""
 #: sections/Overview.class.php:88
 msgid "Security Issue"
 msgstr "安全问题"
-
-#: dashboard.i18n.php:24
-msgid ""
-"Set the maximum age in seconds before system statistics are refreshed. The "
-"minimum value is 50 seconds."
-msgstr ""
-
-#: dashboard.i18n.php:16
-msgid ""
-"Set this to true to prevent persistent collection of system statistics such "
-"as CPU, memory, and channel usage."
-msgstr ""
 
 #: views/sections/overview.php:75
 msgid "Show All"
@@ -304,10 +266,6 @@ msgstr "系统"
 msgid "System Alerts"
 msgstr "系统告警"
 
-#: dashboard.i18n.php:4
-msgid "System Dashboard"
-msgstr "系统状态"
-
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "系统最近一次重启"
@@ -315,12 +273,6 @@ msgstr "系统最近一次重启"
 #: sections/Overview.class.php:13
 msgid "System Overview"
 msgstr "系统总览"
-
-#: dashboard.i18n.php:20
-msgid ""
-"The Dashboard will display a warning when the PBX Firewall is disabled. When "
-"this is set to 'no', the Dashboard warning will be permanently suppressed."
-msgstr ""
 
 #: sections/Overview.class.php:89
 msgid "This is a critical issue and should be resolved urgently"
@@ -424,6 +376,15 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
+
+#~ msgid "Dashboard"
+#~ msgstr "系统仪表盘"
+
+#~ msgid "Dashboard Module"
+#~ msgstr "仪表盘模块"
+
+#~ msgid "System Dashboard"
+#~ msgstr "系统状态"
 
 #~ msgid "%s Min Avg"
 #~ msgstr "%s 分钟 平均"
