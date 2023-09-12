@@ -4,6 +4,8 @@ namespace FreePBX\modules\Dashboard;
 use Hhxsv5\SSE\SSE;
 use Hhxsv5\SSE\Event;
 use Symfony\Component\Process\Process;
+
+#[\AllowDynamicProperties]
 class Netmon {
 
 	public function __construct() {
