@@ -5,7 +5,7 @@
 // Copyright 2006-2014 Schmooze Com Inc.
 
 namespace FreePBX\modules\Dashboard\Sections;
-
+#[\AllowDynamicProperties]
 class Overview {
 	public $rawname = 'Overview';
 
