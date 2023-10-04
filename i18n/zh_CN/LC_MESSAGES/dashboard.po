@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Chinese (Simplified) (FreePBX)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-09 08:14+0000\n"
+"POT-Creation-Date: 2023-10-04 04:48+0000\n"
 "PO-Revision-Date: 2018-09-21 09:23+0000\n"
 "Last-Translator: james zhu <zhulizhong@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <http://*/projects/freepbx/dashboard/"
@@ -29,7 +29,7 @@ msgstr "%s 统计结果"
 msgid "%s ago"
 msgstr "%s 前"
 
-#: sections/Overview.class.php:248
+#: sections/Overview.class.php:241
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -42,7 +42,7 @@ msgstr "0秒"
 msgid "1 Minute"
 msgstr "1分钟"
 
-#: sections/Overview.class.php:246
+#: sections/Overview.class.php:239
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "An error occured"
 msgstr ""
 
-#: sections/Overview.class.php:142
+#: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Asterisk 服务器端"
 
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Blogs"
 msgstr "博客"
 
-#: sections/Overview.class.php:131
+#: sections/Overview.class.php:124
 msgid "Critical Errors found"
 msgstr "发现严重错误"
 
@@ -163,7 +163,7 @@ msgstr "平均负载"
 msgid "Loading Interface %s..."
 msgstr "正在加载接口 %s..."
 
-#: sections/Overview.class.php:145
+#: sections/Overview.class.php:138
 msgid "Mail Queue"
 msgstr ""
 
@@ -185,7 +185,7 @@ msgstr ""
 msgid "Month"
 msgstr "月"
 
-#: sections/Overview.class.php:143
+#: sections/Overview.class.php:136
 msgid "MySQL"
 msgstr ""
 
@@ -193,7 +193,7 @@ msgstr ""
 msgid "Network"
 msgstr "网络"
 
-#: sections/Overview.class.php:103
+#: sections/Overview.class.php:96
 msgid "No critical issues found"
 msgstr "没有发现严重错误"
 
@@ -213,7 +213,7 @@ msgstr ""
 msgid "Overview"
 msgstr "总览"
 
-#: sections/Overview.class.php:130 sections/Overview.class.php:134
+#: sections/Overview.class.php:123 sections/Overview.class.php:127
 msgid "Please check for errors in the notification section"
 msgstr "请在提示模板检查错误"
 
@@ -243,7 +243,7 @@ msgstr ""
 msgid "Saved note"
 msgstr ""
 
-#: sections/Overview.class.php:112
+#: sections/Overview.class.php:105
 msgid "Security Issue"
 msgstr "安全问题"
 
@@ -301,7 +301,7 @@ msgstr "%s 之前，sysinfo 已更新"
 msgid "System"
 msgstr "系统"
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:94
 msgid "System Alerts"
 msgstr "系统告警"
 
@@ -323,7 +323,7 @@ msgid ""
 "this is set to 'no', the Dashboard warning will be permanently suppressed."
 msgstr ""
 
-#: sections/Overview.class.php:113
+#: sections/Overview.class.php:106
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "这是一个严重错误，应该马上解决"
 
@@ -335,11 +335,11 @@ msgstr "已运行时间"
 msgid "Use to get all the diskspace"
 msgstr ""
 
-#: sections/Overview.class.php:135
+#: sections/Overview.class.php:128
 msgid "Warnings Found"
 msgstr "发现告警"
 
-#: sections/Overview.class.php:144
+#: sections/Overview.class.php:137
 msgid "Web Server"
 msgstr "Web服务器"
 
