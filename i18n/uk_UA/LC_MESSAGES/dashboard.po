@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-09 08:19+0000\n"
+"POT-Creation-Date: 2023-10-05 10:28+0000\n"
 "PO-Revision-Date: 2016-10-06 16:41+0200\n"
 "Last-Translator: Maxim <maxim@ua.fm>\n"
 "Language-Team: Ukrainian <http://weblate.freepbx.org/projects/freepbx/"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "%s ago"
 msgstr "%s тому"
 
-#: sections/Overview.class.php:248
+#: sections/Overview.class.php:241
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr ""
@@ -50,7 +50,7 @@ msgstr "0 секунд"
 msgid "1 Minute"
 msgstr "1 Хвилина"
 
-#: sections/Overview.class.php:246
+#: sections/Overview.class.php:239
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "An error occured"
 msgstr ""
 
-#: sections/Overview.class.php:142
+#: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Астеріск"
 
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Blogs"
 msgstr "Блоги"
 
-#: sections/Overview.class.php:131
+#: sections/Overview.class.php:124
 msgid "Critical Errors found"
 msgstr "Знайдено критичні помилки"
 
@@ -173,7 +173,7 @@ msgstr "Середнє навантаження"
 msgid "Loading Interface %s..."
 msgstr ""
 
-#: sections/Overview.class.php:145
+#: sections/Overview.class.php:138
 msgid "Mail Queue"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgstr ""
 msgid "Month"
 msgstr "Місяць"
 
-#: sections/Overview.class.php:143
+#: sections/Overview.class.php:136
 msgid "MySQL"
 msgstr "MySQL"
 
@@ -199,7 +199,7 @@ msgstr "MySQL"
 msgid "Network"
 msgstr "Мережа"
 
-#: sections/Overview.class.php:103
+#: sections/Overview.class.php:96
 msgid "No critical issues found"
 msgstr "Не знайдено критичних питань"
 
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Overview"
 msgstr "Огляд"
 
-#: sections/Overview.class.php:130 sections/Overview.class.php:134
+#: sections/Overview.class.php:123 sections/Overview.class.php:127
 msgid "Please check for errors in the notification section"
 msgstr "Будь ласка, перевірте наявність помилок в розділі повідомлень"
 
@@ -251,7 +251,7 @@ msgstr ""
 msgid "Saved note"
 msgstr ""
 
-#: sections/Overview.class.php:112
+#: sections/Overview.class.php:105
 msgid "Security Issue"
 msgstr "Проблеми безпеки"
 
@@ -309,7 +309,7 @@ msgstr "Системну інформацію оновлено %s секунд �
 msgid "System"
 msgstr "Система"
 
-#: sections/Overview.class.php:101
+#: sections/Overview.class.php:94
 msgid "System Alerts"
 msgstr "Сповіщення системи"
 
@@ -331,7 +331,7 @@ msgid ""
 "this is set to 'no', the Dashboard warning will be permanently suppressed."
 msgstr ""
 
-#: sections/Overview.class.php:113
+#: sections/Overview.class.php:106
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "Це дуже важливе питання, яке необхідно терміново вирішити"
 
@@ -343,11 +343,11 @@ msgstr "Працює"
 msgid "Use to get all the diskspace"
 msgstr ""
 
-#: sections/Overview.class.php:135
+#: sections/Overview.class.php:128
 msgid "Warnings Found"
 msgstr "Попередження знайдені"
 
-#: sections/Overview.class.php:144
+#: sections/Overview.class.php:137
 msgid "Web Server"
 msgstr "Веб-сервер"
 
