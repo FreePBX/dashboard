@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-11 06:25+0000\n"
-"PO-Revision-Date: 2023-11-11 13:01+0000\n"
+"PO-Revision-Date: 2023-11-13 15:38+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/dashboard/"
 "pl/>\n"
@@ -67,7 +67,7 @@ msgstr "5 minut"
 #: sections/Overview.class.php:33
 #, php-format
 msgid "<strong>'%s'</strong>"
-msgstr ""
+msgstr "<strong>'%s'</strong>"
 
 #: sections/Overview.class.php:35
 #, php-format
@@ -89,7 +89,7 @@ msgstr "Blogi"
 
 #: sections/Overview.class.php:124
 msgid "Critical Errors found"
-msgstr ""
+msgstr "Znaleziono krytyczne błędy"
 
 #: dashboard.i18n.php:6
 #: dashboard.i18n.php:10
@@ -107,7 +107,7 @@ msgstr "Moduł pulpitu"
 #: views/sections/statistics.php:54
 #: views/sections/statistics.php:65
 msgid "Day"
-msgstr ""
+msgstr "Dzień"
 
 #: views/sections/overview.php:54
 msgid "Delete This"
@@ -127,7 +127,7 @@ msgstr "Okres wygasania statystyk systemowych"
 
 #: views/main.php:6
 msgid "Frobulating"
-msgstr ""
+msgstr "Frobulacja"
 
 #: views/sections/statistics.php:9
 #: views/sections/statistics.php:20
@@ -206,10 +206,12 @@ msgid ""
 "Provides a system information dashboard, showing information about Calls, "
 "CPU, Memory, Disks, Network, and processes."
 msgstr ""
+"Dostarcza pulpit z informacjami systemowymi takimi jak: połączenia, stan "
+"procesora, pamięci, sieci i procesów."
 
 #: views/sections/overview.php:64
 msgid "Resolve"
-msgstr "Usunięto"
+msgstr "Rozwiązano"
 
 #: sections/Overview.class.php:105
 msgid "Security Issue"
@@ -220,12 +222,16 @@ msgid ""
 "Set the maximum age in seconds before system statistics are refreshed. The "
 "minimum value is 50 seconds."
 msgstr ""
+"Ustaw maksymalny okres w sekundach, po którym statystyki zostaną odświeżone. "
+"Minimalna wartość to 50 sekund."
 
 #: dashboard.i18n.php:16
 msgid ""
 "Set this to true to prevent persistent collection of system statistics such "
 "as CPU, memory, and channel usage."
 msgstr ""
+"Ustaw na Prawda aby uniknąć ciągłego zbierania statystyk systemowych o "
+"stanie procesora, pamięci i wykorzystaniu kanałów"
 
 #: views/sections/overview.php:75
 msgid "Show All"
@@ -344,11 +350,11 @@ msgstr "sekunda"
 
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
-msgstr ""
+msgstr "sekundy"
 
 #: classes/TimeUtils.class.php:13
 msgid "week"
-msgstr ""
+msgstr "tydzień"
 
 #: classes/TimeUtils.class.php:14
 msgid "weeks"
