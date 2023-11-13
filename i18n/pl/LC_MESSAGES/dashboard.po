@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-02-11 06:25+0000\n"
-"PO-Revision-Date: 2023-11-13 15:38+0000\n"
+"PO-Revision-Date: 2023-11-14 16:00+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/dashboard/"
 "pl/>\n"
@@ -26,7 +26,7 @@ msgstr ""
 #: sections/Blogs.class.php:34
 #, php-format
 msgid "%s Feed"
-msgstr "Feed %s"
+msgstr "Kanał %s"
 
 #: sections/Statistics.class.php:17
 #, php-format
@@ -231,7 +231,7 @@ msgid ""
 "as CPU, memory, and channel usage."
 msgstr ""
 "Ustaw na Prawda aby uniknąć ciągłego zbierania statystyk systemowych o "
-"stanie procesora, pamięci i wykorzystaniu kanałów"
+"stanie procesora, pamięci i wykorzystaniu kanałów."
 
 #: views/sections/overview.php:75
 msgid "Show All"
