@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-12 09:39+0000\n"
+"POT-Creation-Date: 2024-02-05 04:23-0500\n"
 "PO-Revision-Date: 2018-10-25 09:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/dashboard/de/>\n"
@@ -100,6 +100,14 @@ msgstr "Blogs (Weblog)"
 msgid "Critical Errors found"
 msgstr "Kritische Fehler gefunden"
 
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: dashboard.i18n.php:14
+msgid "Dashboard Module"
+msgstr "Dashboard-Modul"
+
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
@@ -114,9 +122,21 @@ msgstr "Lösche dieses Objekt"
 msgid "Deleted note"
 msgstr ""
 
+#: dashboard.i18n.php:12
+msgid "Disable collection of system statistics"
+msgstr "Deaktiviere die Sammlung von Systemstatistiken"
+
 #: views/sections/statistics.php:50
 msgid "Disk"
 msgstr "Disk-Speicher"
+
+#: dashboard.i18n.php:18
+msgid "Display firewall status"
+msgstr ""
+
+#: dashboard.i18n.php:22
+msgid "Expiry time for system statistics"
+msgstr "Ablaufzeit für Systemstatistiken"
 
 #: views/main.php:6
 msgid "Frobulating"
@@ -207,6 +227,14 @@ msgstr "Übersicht"
 msgid "Please check for errors in the notification section"
 msgstr "Bitte prüfe das System auf Fehler in der Benachrichtigungs Sektion"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"Stellt ein Systeminformations-Dashboard zur Verfügung, das Informationen "
+"über Anrufe, CPU, Speicher, Laufwerke, Netzwerk und Prozesse liefert."
+
 #: Api/Gql/dashboard.php:48
 msgid "Read the System licence information"
 msgstr ""
@@ -230,6 +258,22 @@ msgstr ""
 #: sections/Overview.class.php:88
 msgid "Security Issue"
 msgstr "Sicherheitslücke"
+
+#: dashboard.i18n.php:24
+msgid ""
+"Set the maximum age in seconds before system statistics are refreshed. The "
+"minimum value is 50 seconds."
+msgstr ""
+"Setze das maximale Alter in Sekunden bevor Systemstatistiken erneuert "
+"werden. Der Mindestwert ist 50 Sekunden."
+
+#: dashboard.i18n.php:16
+msgid ""
+"Set this to true to prevent persistent collection of system statistics such "
+"as CPU, memory, and channel usage."
+msgstr ""
+"Aktivieren Sie das um zu verhindern, dass dauernd Systemstatistiken wie CPU, "
+"Speicher und Kanalbenützung gesammelt werden."
 
 #: views/sections/overview.php:75
 msgid "Show All"
@@ -276,6 +320,10 @@ msgstr "System"
 msgid "System Alerts"
 msgstr "System Benachrichtigungen"
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "System-Dashboard"
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "Letzter System Neustart"
@@ -283,6 +331,12 @@ msgstr "Letzter System Neustart"
 #: sections/Overview.class.php:13
 msgid "System Overview"
 msgstr "System Übersicht"
+
+#: dashboard.i18n.php:20
+msgid ""
+"The Dashboard will display a warning when the PBX Firewall is disabled. When "
+"this is set to 'no', the Dashboard warning will be permanently suppressed."
+msgstr ""
 
 #: sections/Overview.class.php:89
 msgid "This is a critical issue and should be resolved urgently"
@@ -386,42 +440,6 @@ msgstr "Jahr"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "Jahre"
-
-#~ msgid "Dashboard"
-#~ msgstr "Dashboard"
-
-#~ msgid "Dashboard Module"
-#~ msgstr "Dashboard-Modul"
-
-#~ msgid "Disable collection of system statistics"
-#~ msgstr "Deaktiviere die Sammlung von Systemstatistiken"
-
-#~ msgid "Expiry time for system statistics"
-#~ msgstr "Ablaufzeit für Systemstatistiken"
-
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "Stellt ein Systeminformations-Dashboard zur Verfügung, das Informationen "
-#~ "über Anrufe, CPU, Speicher, Laufwerke, Netzwerk und Prozesse liefert."
-
-#~ msgid ""
-#~ "Set the maximum age in seconds before system statistics are refreshed. "
-#~ "The minimum value is 50 seconds."
-#~ msgstr ""
-#~ "Setze das maximale Alter in Sekunden bevor Systemstatistiken erneuert "
-#~ "werden. Der Mindestwert ist 50 Sekunden."
-
-#~ msgid ""
-#~ "Set this to true to prevent persistent collection of system statistics "
-#~ "such as CPU, memory, and channel usage."
-#~ msgstr ""
-#~ "Aktivieren Sie das um zu verhindern, dass dauernd Systemstatistiken wie "
-#~ "CPU, Speicher und Kanalbenützung gesammelt werden."
-
-#~ msgid "System Dashboard"
-#~ msgstr "System-Dashboard"
 
 #~ msgid "%s Min Avg"
 #~ msgstr "%s Min Durchschnitt"

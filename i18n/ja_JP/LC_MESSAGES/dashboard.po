@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-12 09:39+0000\n"
+"POT-Creation-Date: 2024-02-05 04:23-0500\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -125,6 +125,14 @@ msgstr "ブログ"
 msgid "Critical Errors found"
 msgstr "致命的なエラーが見つかりました"
 
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
+msgid "Dashboard"
+msgstr ""
+
+#: dashboard.i18n.php:14
+msgid "Dashboard Module"
+msgstr ""
+
 #: views/sections/statistics.php:10 views/sections/statistics.php:21
 #: views/sections/statistics.php:32 views/sections/statistics.php:43
 #: views/sections/statistics.php:54 views/sections/statistics.php:65
@@ -139,9 +147,21 @@ msgstr "削除する"
 msgid "Deleted note"
 msgstr ""
 
+#: dashboard.i18n.php:12
+msgid "Disable collection of system statistics"
+msgstr ""
+
 #: views/sections/statistics.php:50
 msgid "Disk"
 msgstr "ディスク"
+
+#: dashboard.i18n.php:18
+msgid "Display firewall status"
+msgstr ""
+
+#: dashboard.i18n.php:22
+msgid "Expiry time for system statistics"
+msgstr ""
 
 #: views/main.php:6
 msgid "Frobulating"
@@ -232,6 +252,14 @@ msgstr "一覧"
 msgid "Please check for errors in the notification section"
 msgstr "通知セクションでエラーを確認してください"
 
+#: dashboard.i18n.php:8
+msgid ""
+"Provides a system information dashboard, showing information about Calls, "
+"CPU, Memory, Disks, Network, and processes."
+msgstr ""
+"システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、ネッ"
+"トワークの負荷状況等を表示します。"
+
 #: Api/Gql/dashboard.php:48
 msgid "Read the System licence information"
 msgstr ""
@@ -255,6 +283,18 @@ msgstr ""
 #: sections/Overview.class.php:88
 msgid "Security Issue"
 msgstr "セキュリティ問題"
+
+#: dashboard.i18n.php:24
+msgid ""
+"Set the maximum age in seconds before system statistics are refreshed. The "
+"minimum value is 50 seconds."
+msgstr ""
+
+#: dashboard.i18n.php:16
+msgid ""
+"Set this to true to prevent persistent collection of system statistics such "
+"as CPU, memory, and channel usage."
+msgstr ""
 
 #: views/sections/overview.php:75
 msgid "Show All"
@@ -301,6 +341,10 @@ msgstr "システム"
 msgid "System Alerts"
 msgstr "システム通知"
 
+#: dashboard.i18n.php:4
+msgid "System Dashboard"
+msgstr "システムダッシュボード"
+
 #: views/sections/uptime.php:5
 msgid "System Last Rebooted"
 msgstr "最後の再起動"
@@ -308,6 +352,12 @@ msgstr "最後の再起動"
 #: sections/Overview.class.php:13
 msgid "System Overview"
 msgstr "システム一覧"
+
+#: dashboard.i18n.php:20
+msgid ""
+"The Dashboard will display a warning when the PBX Firewall is disabled. When "
+"this is set to 'no', the Dashboard warning will be permanently suppressed."
+msgstr ""
 
 #: sections/Overview.class.php:89
 msgid "This is a critical issue and should be resolved urgently"
@@ -411,16 +461,6 @@ msgstr "年"
 #: classes/TimeUtils.class.php:10
 msgid "years"
 msgstr "年"
-
-#~ msgid ""
-#~ "Provides a system information dashboard, showing information about Calls, "
-#~ "CPU, Memory, Disks, Network, and processes."
-#~ msgstr ""
-#~ "システム情報を表示するダッシュボードです。通話数、CPU、メモリ、ディスク、"
-#~ "ネットワークの負荷状況等を表示します。"
-
-#~ msgid "System Dashboard"
-#~ msgstr "システムダッシュボード"
 
 #~ msgid "%s Min Avg"
 #~ msgstr "%s 分 平均"
