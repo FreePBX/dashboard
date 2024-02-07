@@ -9,21 +9,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-11 06:25+0000\n"
+"POT-Creation-Date: 2024-02-07 13:25+0000\n"
 "PO-Revision-Date: 2023-11-14 16:00+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/dashboard/"
 "pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.0.1\n"
 
-#: sections/Blogs.class.php:26
-#: sections/Blogs.class.php:34
+#: sections/Blogs.class.php:26 sections/Blogs.class.php:34
 #, php-format
 msgid "%s Feed"
 msgstr "Kanał %s"
@@ -33,13 +32,12 @@ msgstr "Kanał %s"
 msgid "%s Statistics"
 msgstr "Statystyki %s"
 
-#: views/sections/overview.php:66
-#: views/sections/uptime.php:6
+#: views/sections/overview.php:66 views/sections/uptime.php:6
 #, php-format
 msgid "%s ago"
 msgstr "%s temu"
 
-#: sections/Overview.class.php:238
+#: sections/Overview.class.php:241
 #, php-format
 msgid "%s messages are queued on this machine, and have not been delivered"
 msgstr "%s wiadomości znajduje się w kolejce i nie zostały dostarczone"
@@ -52,7 +50,7 @@ msgstr "0 sekund"
 msgid "1 Minute"
 msgstr "1 minuta"
 
-#: sections/Overview.class.php:236
+#: sections/Overview.class.php:239
 msgid "1 message is queued on this machine, and has not been delivered"
 msgstr "1 wiadomość znajduje się w kolejce i nie została dostarczona"
 
@@ -78,12 +76,23 @@ msgstr ""
 "<strong>'%s'</strong><br><i>(Możesz zmienić tę nazwę w Ustawieniach "
 "zaawanswanych)</i>"
 
+#: views/sections/notepad.php:43
+msgid "Add a note"
+msgstr ""
+
+#: Dashboard.class.php:403 Dashboard.class.php:408
+msgid "An error occured"
+msgstr ""
+
 #: sections/Overview.class.php:135
 msgid "Asterisk"
 msgstr "Asterisk"
 
-#: sections/Blogs.class.php:27
-#: sections/Blogs.class.php:35
+#: Api/Gql/dashboard.php:79
+msgid "Available space details"
+msgstr ""
+
+#: sections/Blogs.class.php:27 sections/Blogs.class.php:35
 msgid "Blogs"
 msgstr "Blogi"
 
@@ -91,8 +100,7 @@ msgstr "Blogi"
 msgid "Critical Errors found"
 msgstr "Znaleziono krytyczne błędy"
 
-#: dashboard.i18n.php:6
-#: dashboard.i18n.php:10
+#: dashboard.i18n.php:6 dashboard.i18n.php:10
 msgid "Dashboard"
 msgstr "Pulpit"
 
@@ -100,18 +108,19 @@ msgstr "Pulpit"
 msgid "Dashboard Module"
 msgstr "Moduł pulpitu"
 
-#: views/sections/statistics.php:10
-#: views/sections/statistics.php:21
-#: views/sections/statistics.php:32
-#: views/sections/statistics.php:43
-#: views/sections/statistics.php:54
-#: views/sections/statistics.php:65
+#: views/sections/statistics.php:10 views/sections/statistics.php:21
+#: views/sections/statistics.php:32 views/sections/statistics.php:43
+#: views/sections/statistics.php:54 views/sections/statistics.php:65
 msgid "Day"
 msgstr "Dzień"
 
-#: views/sections/overview.php:54
+#: views/sections/notepad.php:21 views/sections/overview.php:54
 msgid "Delete This"
 msgstr "Usuń to"
+
+#: Dashboard.class.php:408
+msgid "Deleted note"
+msgstr ""
 
 #: dashboard.i18n.php:12
 msgid "Disable collection of system statistics"
@@ -122,6 +131,10 @@ msgid "Disk"
 msgstr "Dysk"
 
 #: dashboard.i18n.php:18
+msgid "Display firewall status"
+msgstr ""
+
+#: dashboard.i18n.php:22
 msgid "Expiry time for system statistics"
 msgstr "Okres wygasania statystyk systemowych"
 
@@ -129,12 +142,9 @@ msgstr "Okres wygasania statystyk systemowych"
 msgid "Frobulating"
 msgstr "Frobulacja"
 
-#: views/sections/statistics.php:9
-#: views/sections/statistics.php:20
-#: views/sections/statistics.php:31
-#: views/sections/statistics.php:42
-#: views/sections/statistics.php:53
-#: views/sections/statistics.php:64
+#: views/sections/statistics.php:9 views/sections/statistics.php:20
+#: views/sections/statistics.php:31 views/sections/statistics.php:42
+#: views/sections/statistics.php:53 views/sections/statistics.php:64
 msgid "Hour"
 msgstr "Godzina"
 
@@ -171,12 +181,17 @@ msgstr "Kolejka wiadomości e-mail"
 msgid "Memory"
 msgstr "Pamięć"
 
-#: views/sections/statistics.php:12
-#: views/sections/statistics.php:23
-#: views/sections/statistics.php:34
-#: views/sections/statistics.php:45
-#: views/sections/statistics.php:56
-#: views/sections/statistics.php:67
+#: Api/Gql/dashboard.php:107 Api/Gql/dashboard.php:139
+msgid "Message for the request"
+msgstr ""
+
+#: Dashboard.class.php:194
+msgid "Missing Class Object!"
+msgstr ""
+
+#: views/sections/statistics.php:12 views/sections/statistics.php:23
+#: views/sections/statistics.php:34 views/sections/statistics.php:45
+#: views/sections/statistics.php:56 views/sections/statistics.php:67
 msgid "Month"
 msgstr "Miesiąc"
 
@@ -192,12 +207,23 @@ msgstr "Sieć"
 msgid "No critical issues found"
 msgstr "Nie znaleziono krytycznych problemów"
 
+#: views/sections/notepad.php:8
+msgid "No notes found"
+msgstr ""
+
+#: sections/Notepad.class.php:11
+msgid "Notepad"
+msgstr ""
+
+#: sections/Notepad.class.php:12
+msgid "Notes"
+msgstr ""
+
 #: sections/Overview.class.php:16
 msgid "Overview"
 msgstr "Przegląd"
 
-#: sections/Overview.class.php:123
-#: sections/Overview.class.php:127
+#: sections/Overview.class.php:123 sections/Overview.class.php:127
 msgid "Please check for errors in the notification section"
 msgstr "Proszę sprawdzić błędy w informacjach poniżej"
 
@@ -209,15 +235,31 @@ msgstr ""
 "Dostarcza pulpit z informacjami systemowymi takimi jak: połączenia, stan "
 "procesora, pamięci, sieci i procesów."
 
+#: Api/Gql/dashboard.php:50
+msgid "Read the System licence information"
+msgstr ""
+
 #: views/sections/overview.php:64
 msgid "Resolve"
 msgstr "Rozwiązano"
+
+#: Api/Gql/dashboard.php:65
+msgid "Returns storage id"
+msgstr ""
+
+#: views/sections/notepad.php:35
+msgid "Save"
+msgstr ""
+
+#: Dashboard.class.php:403
+msgid "Saved note"
+msgstr ""
 
 #: sections/Overview.class.php:105
 msgid "Security Issue"
 msgstr "Problemy bezpieczeństwa"
 
-#: dashboard.i18n.php:20
+#: dashboard.i18n.php:24
 msgid ""
 "Set the maximum age in seconds before system statistics are refreshed. The "
 "minimum value is 50 seconds."
@@ -245,11 +287,22 @@ msgstr "Pokaż nowe"
 msgid "Since Reload"
 msgstr "Od przeładowania"
 
-#: sections/Statistics.class.php:18
-#: sections/Statistics.class.php:25
+#: Api/Gql/dashboard.php:36
+msgid "Sorry, unable to find any diskspace"
+msgstr ""
+
+#: sections/Statistics.class.php:18 sections/Statistics.class.php:25
 #: sections/Uptime.class.php:16
 msgid "Statistics"
 msgstr "Statystyki"
+
+#: Api/Gql/dashboard.php:111 Api/Gql/dashboard.php:143
+msgid "Status for the request"
+msgstr ""
+
+#: Api/Gql/dashboard.php:34
+msgid "Successfully found disks space details"
+msgstr ""
 
 #: views/sections/overview.php:23
 msgid "Summary"
@@ -280,14 +333,23 @@ msgstr "System zrestartowano ostatnio"
 msgid "System Overview"
 msgstr "Przegląd systemu"
 
+#: dashboard.i18n.php:20
+msgid ""
+"The Dashboard will display a warning when the PBX Firewall is disabled. When "
+"this is set to 'no', the Dashboard warning will be permanently suppressed."
+msgstr ""
+
 #: sections/Overview.class.php:106
 msgid "This is a critical issue and should be resolved urgently"
 msgstr "To jest problem krytyczny i należy go bezzwłocznie rozwiązać"
 
-#: sections/Uptime.class.php:15
-#: views/sections/statistics.php:17
+#: sections/Uptime.class.php:15 views/sections/statistics.php:17
 msgid "Uptime"
 msgstr "Czas działania"
+
+#: Api/Gql/dashboard.php:19
+msgid "Use to get all the diskspace"
+msgstr ""
 
 #: sections/Overview.class.php:128
 msgid "Warnings Found"
@@ -297,17 +359,13 @@ msgstr "Znalezione ostrzeżenia"
 msgid "Web Server"
 msgstr "Serwer www"
 
-#: views/sections/statistics.php:11
-#: views/sections/statistics.php:22
-#: views/sections/statistics.php:33
-#: views/sections/statistics.php:44
-#: views/sections/statistics.php:55
-#: views/sections/statistics.php:66
+#: views/sections/statistics.php:11 views/sections/statistics.php:22
+#: views/sections/statistics.php:33 views/sections/statistics.php:44
+#: views/sections/statistics.php:55 views/sections/statistics.php:66
 msgid "Week"
 msgstr "Tydzień"
 
-#: views/main.php:3
-#: views/sections/overview.php:6
+#: views/main.php:3 views/sections/overview.php:6
 #, php-format
 msgid "Welcome to %s"
 msgstr "Witamy w %s"
@@ -319,6 +377,14 @@ msgstr "dzień"
 #: classes/TimeUtils.class.php:16
 msgid "days"
 msgstr "dni"
+
+#: Api/Gql/dashboard.php:93
+msgid "disk total size details"
+msgstr ""
+
+#: Api/Gql/dashboard.php:100
+msgid "disk used percentage"
+msgstr ""
 
 #: classes/TimeUtils.class.php:17
 msgid "hour"
@@ -351,6 +417,14 @@ msgstr "sekunda"
 #: classes/TimeUtils.class.php:22
 msgid "seconds"
 msgstr "sekundy"
+
+#: Api/Gql/dashboard.php:72
+msgid "storage path details"
+msgstr ""
+
+#: Api/Gql/dashboard.php:86
+msgid "used space details"
+msgstr ""
 
 #: classes/TimeUtils.class.php:13
 msgid "week"
