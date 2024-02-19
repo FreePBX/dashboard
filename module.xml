@@ -12,7 +12,7 @@
 	<description>
 		Provides a system information dashboard, showing information about Calls, CPU, Memory, Disks, Network, and processes.
 	</description>
-	<more-info>https://wiki.freepbx.org/display/FPG/FreePBX+System+Status</more-info>
+	<more-info>https://sangomakb.atlassian.net/wiki/spaces/PG/pages/26019841/FreePBX+System+Status</more-info>
 	<menuitems>
 		<dashboard display="index" access="all" category="Dashboard" order="99999">Dashboard</dashboard>
 	</menuitems>
