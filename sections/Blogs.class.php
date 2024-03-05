@@ -86,9 +86,9 @@ class Blogs {
 			);
 			foreach ($items as $item) {
 				$content['items'][] = array(
-					"title" => $item->get_title(),
-					"url" => $item->get_permalink(),
-					"content" => $item->get_description()
+					"title" => filter_var($item->get_title(), FILTER_SANITIZE_STRING),
+					"url" => filter_var($item->get_permalink(), FILTER_SANITIZE_STRING),
+					"content" => filter_var($item->get_description(), FILTER_SANITIZE_STRING)
 				);
 			}
 			$d->setConfig($feed, $content, "content");
