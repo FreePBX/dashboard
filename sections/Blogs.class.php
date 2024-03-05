@@ -86,9 +86,9 @@ class Blogs {
 			);
 			foreach ($items as $item) {
 				$content['items'][] = array(
-					"title" => $item->get_title(),
-					"url" => $item->get_permalink(),
-					"content" => $item->get_description()
+					"title" => htmlspecialchars($item->get_title(), ENT_QUOTES,'UTF-8'),
+					"url" => htmlspecialchars($item->get_permalink(), ENT_QUOTES, 'UTF-8'),
+					"content" => htmlspecialchars($item->get_description(), ENT_QUOTES, 'UTF-8')
 				);
 			}
 			$d->setConfig($feed, $content, "content");
