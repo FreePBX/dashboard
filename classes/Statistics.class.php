@@ -275,8 +275,8 @@ class Statistics {
 				if ($val['ast.connections.trunks_offline'] != 0) {
 					if (!$trunkoffline) {
 						$trunkoffline = true;
-						if ($count > 1) {
-							$toffline[$count-1] = 0;
+						if ($count > 0 && isset($timestamps[$count-1])) {
+							$toffline[$count-1] = ["x" => $timestamps[$count-1], "y" => 0];
 						}
 					}
 					$toffline[$count] = ["x" => $key, "y" => (int) $val['ast.connections.trunks_offline']];
@@ -286,19 +286,21 @@ class Statistics {
 					if ($trunkoffline) {
 						$toffline[$count] = ["x" => $key, "y" => 0];
 						$trunkoffline = false;
-					} else {
-						// $retarr['values']['toffline'][$count] = null;
 					}
+					// Note: We intentionally don't set $toffline[$count] when $trunkoffline is false
+					// to avoid showing a line when there are no offline trunks
 				}
 				$channels[$count] = ["x" => $key, "y" => (int) $val['ast.chan_totals.total_calls']];
 			}
 			$count++;
 	   	}
-		$retarr['data'][0]['dataPoints'] = $uonline;
-		$retarr['data'][1]['dataPoints'] = $uoffline;
-		$retarr['data'][2]['dataPoints'] = $tonline;
-		$retarr['data'][3]['dataPoints'] = $toffline;
-		$retarr['data'][4]['dataPoints'] = $channels;
+		// Filter out any invalid entries and ensure arrays are dense (no gaps)
+		// This prevents CanvasJS from encountering undefined values when processing dataPoints
+		$retarr['data'][0]['dataPoints'] = array_values(array_filter($uonline, function($v) { return is_array($v) && isset($v['x']); }));
+		$retarr['data'][1]['dataPoints'] = array_values(array_filter($uoffline, function($v) { return is_array($v) && isset($v['x']); }));
+		$retarr['data'][2]['dataPoints'] = array_values(array_filter($tonline, function($v) { return is_array($v) && isset($v['x']); }));
+		$retarr['data'][3]['dataPoints'] = array_values(array_filter($toffline, function($v) { return is_array($v) && isset($v['x']); }));
+		$retarr['data'][4]['dataPoints'] = array_values(array_filter($channels, function($v) { return is_array($v) && isset($v['x']); }));
 		return $retarr;
 	}
 
