@@ -142,9 +142,10 @@ class Dashboard extends FreePBX_Helpers implements BMO {
 					return [ "status" => true, "content" => $this->freepbx->Sysadmin->DashboardGraph()->getContent() ];
 				}
 				else {
-					if (file_exists(__DIR__ . '/sections/' . $_REQUEST['rawname'] . '.class.php')) {
-						include(__DIR__ . '/sections/' . $_REQUEST['rawname'] . '.class.php');
-						$class = '\\FreePBX\\modules\\Dashboard\\Sections\\' . $_REQUEST['rawname'];
+					$rawname = basename((string) ($_REQUEST['rawname'] ?? ''));
+					if (file_exists(__DIR__ . '/sections/' . $rawname . '.class.php')) {
+						include(__DIR__ . '/sections/' . $rawname . '.class.php');
+						$class = '\\FreePBX\\modules\\Dashboard\\Sections\\' . $rawname;
 						$class = new $class();
 						return [ "status" => true, "content" => $class->getContent($_REQUEST['section']) ];
 					}
