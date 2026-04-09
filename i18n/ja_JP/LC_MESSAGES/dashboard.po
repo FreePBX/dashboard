@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.10.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-05 04:23-0500\n"
+"POT-Creation-Date: 2026-04-09 01:50-0400\n"
 "PO-Revision-Date: 2015-02-21 14:32+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -105,7 +105,7 @@ msgstr "<strong>'%s'</strong><br><i>(高度な設定で変更できます)</i>"
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:356 Dashboard.class.php:361
+#: Dashboard.class.php:357 Dashboard.class.php:362
 msgid "An error occured"
 msgstr ""
 
@@ -143,7 +143,7 @@ msgstr "日"
 msgid "Delete This"
 msgstr "削除する"
 
-#: Dashboard.class.php:361
+#: Dashboard.class.php:362
 msgid "Deleted note"
 msgstr ""
 
@@ -210,7 +210,7 @@ msgstr "メモリー"
 msgid "Message for the request"
 msgstr ""
 
-#: Dashboard.class.php:152
+#: Dashboard.class.php:153
 msgid "Missing Class Object!"
 msgstr ""
 
@@ -276,7 +276,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:356
+#: Dashboard.class.php:357
 msgid "Saved note"
 msgstr ""
 

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-05 04:23-0500\n"
+"POT-Creation-Date: 2026-04-09 01:50-0400\n"
 "PO-Revision-Date: 2018-07-18 19:11+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/dashboard/bg/>\n"
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:356 Dashboard.class.php:361
+#: Dashboard.class.php:357 Dashboard.class.php:362
 msgid "An error occured"
 msgstr ""
 
@@ -130,7 +130,7 @@ msgstr "Ден"
 msgid "Delete This"
 msgstr "Изтрий Това"
 
-#: Dashboard.class.php:361
+#: Dashboard.class.php:362
 msgid "Deleted note"
 msgstr ""
 
@@ -197,7 +197,7 @@ msgstr "Памет"
 msgid "Message for the request"
 msgstr ""
 
-#: Dashboard.class.php:152
+#: Dashboard.class.php:153
 msgid "Missing Class Object!"
 msgstr ""
 
@@ -263,7 +263,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:356
+#: Dashboard.class.php:357
 msgid "Saved note"
 msgstr ""
 
