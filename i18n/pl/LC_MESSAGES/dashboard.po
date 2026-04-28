@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 13:25+0000\n"
+"POT-Creation-Date: 2026-04-28 08:58+0000\n"
 "PO-Revision-Date: 2023-11-14 16:00+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/dashboard/"
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:403 Dashboard.class.php:408
+#: Dashboard.class.php:404 Dashboard.class.php:409
 msgid "An error occured"
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr "Dzień"
 msgid "Delete This"
 msgstr "Usuń to"
 
-#: Dashboard.class.php:408
+#: Dashboard.class.php:409
 msgid "Deleted note"
 msgstr ""
 
@@ -185,7 +185,7 @@ msgstr "Pamięć"
 msgid "Message for the request"
 msgstr ""
 
-#: Dashboard.class.php:194
+#: Dashboard.class.php:195
 msgid "Missing Class Object!"
 msgstr ""
 
@@ -251,7 +251,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:403
+#: Dashboard.class.php:404
 msgid "Saved note"
 msgstr ""
 

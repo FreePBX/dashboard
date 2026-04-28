@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for dashboard
-# Copyright (C) 2008-2024 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2026 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-07 13:25+0000\n"
+"POT-Creation-Date: 2026-04-28 08:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,8 +76,8 @@ msgstr ""
 msgid "Add a note"
 msgstr ""
 
-#: Dashboard.class.php:403
-#: Dashboard.class.php:408
+#: Dashboard.class.php:404
+#: Dashboard.class.php:409
 msgid "An error occured"
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Delete This"
 msgstr ""
 
-#: Dashboard.class.php:408
+#: Dashboard.class.php:409
 msgid "Deleted note"
 msgstr ""
 
@@ -192,7 +192,7 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Dashboard.class.php:194
+#: Dashboard.class.php:195
 msgid "Missing Class Object!"
 msgstr ""
 
@@ -260,7 +260,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: Dashboard.class.php:403
+#: Dashboard.class.php:404
 msgid "Saved note"
 msgstr ""
 
