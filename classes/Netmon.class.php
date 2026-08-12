@@ -5,8 +5,8 @@ use Hhxsv5\SSE\SSE;
 use Hhxsv5\SSE\Event;
 use Symfony\Component\Process\Process;
 
-#[\AllowDynamicProperties]
 class Netmon {
+	private string $iploc;
 
 	public function __construct() {
 		// Figure out where 'ip' is
