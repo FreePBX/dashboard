@@ -5,7 +5,7 @@
 // Copyright 2006-2014 Schmooze Com Inc.
 
 namespace FreePBX\modules\Dashboard\Sections;
-#[\AllowDynamicProperties]
+
 class Overview {
 	public $rawname = 'Overview';
 
@@ -139,6 +139,7 @@ class Overview {
 				$order = $d1['order'] ?? count($f);
 				$module = \module_functions::create();
 				$fw_module = $module->getinfo('firewall', MODULE_STATUS_ENABLED);
+				$fw_status = false;
 				if(!empty($fw_module["firewall"])){
 					$fw_status = \FreePBX::Firewall()->isEnabled();
 				}

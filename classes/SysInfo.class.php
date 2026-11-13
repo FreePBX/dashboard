@@ -33,10 +33,12 @@ class SysInfo {
 			}
 			// Cast the correct incantions to let PSI Init.
 			$path = __DIR__."/phpsysinfo/";
-			define('APP_ROOT', $path);
-			include "$path/includes/autoloader.inc.php";
+			if (!defined('APP_ROOT')) {
+				define('APP_ROOT', $path);
+			}
+			include_once "$path/includes/autoloader.inc.php";
 			spl_autoload_register('psi_autoloader');
-			include "$path/config.php";
+			include_once "$path/config.php";
 			spl_autoload_unregister('psi_autoloader');
 			$this->psi = true;
 		}
